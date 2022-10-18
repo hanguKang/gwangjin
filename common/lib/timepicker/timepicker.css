@@ -1,0 +1,107 @@
+.timepicker-panel {
+  font-size:12px;
+  padding: 50px;
+  border: 1px solid #ccc;
+  margin: 50px auto;
+  max-width: 350px;
+}
+
+body .nj-timepick {
+  --nj-timepick-primary: #cecece;
+}
+
+.timepicker-panel .form-item:not(:last-child){
+  margin: 0 0 30px;
+}
+
+.timepicker-panel .help-block{
+  color: #4d4d4d;
+  font-size: 12px;
+  margin: 6px 0;
+}
+.timepicker-panel .control-label {
+  margin-right: 10px;
+}
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+.nj-timepick-input {
+  outline: 0 !important;
+}
+.nj-timepick__panel {
+  display:flex;
+  flex-wrap: wrap;
+  border:1px solid #458bff;
+  padding: 34px 6px 10px;
+  background: #fff;
+  width:167px;
+}
+.nj-timepick {
+  position:absolute;
+  left:0;
+  top: 0;
+  z-index: 5000;
+  transition:transform 0.3s;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  opacity:0;
+  transform:translateY(8px);
+}
+.nj-timepick .time_stat {position:absolute;left:0;top:0;width:100%;text-align:center;color:#222222;font-size:16px;line-height:32px;font-weight:500;}
+.nj-timepick .time_stat .hh,
+.nj-timepick .time_stat .mm {margin-left:6px;}
+.nj-timepick .time_stat .hh:after {content:'시';}
+.nj-timepick .time_stat .mm:after {content:'분';}
+
+.nj-timepick--active {
+  opacity:1;
+  transform:translateY(0);
+}
+.nj-timepick__boxes-column {
+  width: 42px;
+  overflow: hidden;
+  margin:0 4.5px;
+  font-size:12px;
+}
+
+.nj-timepick__boxes {
+  /* height: 260px; */
+  height:234px;
+  overflow: auto;
+}
+.nj-timepick__boxes::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.nj-timepick__boxes {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+.nj-timepick__box {
+  cursor: pointer;
+  border: 2px solid transparent;
+  width: 42px;
+  height: 26px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-radius:4px;
+}
+.nj-timepick__box:hover {
+ background-color: #d2e2ff;
+}
+
+.nj-timepick__box--active {
+  font-weight: 700;
+  border: 2px solid #458bff;
+  background-color:#fff;
+}
+.nj-timepick-input--active {
+  border: 1px solid #000;
+}
