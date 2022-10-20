@@ -419,6 +419,7 @@ $(function () {
     $(' .slide_btn .pagination_num').html('<span class="current">' + i + '</span> / ' + slick.slideCount);
     startProgressbar();
   });
+  
   slide2.slick({
     autoplay: false,
     autoplaySpeed: 2000,
@@ -427,7 +428,7 @@ $(function () {
     dots: true,
     appendDots: $('.slide_btn .pagination_dot'),//dot 설정
     customPaging: function (slide, i) {
-      return '<button type="button">0' + (i + 1) + '<span class="hide">슬라이드이동</span></button>'
+      return '<button type="button">' + (i + 1) + '<span class="hide">슬라이드이동</span></button>'
     },
     prevArrow: $('.prev'),//arrow 설정
     nextArrow: $('.next'),//arrow 설정
@@ -591,4 +592,6 @@ $(document).on('click', '.modal_wrap .close', function () {
   bodyScroll('on');
   $(this).closest('.modal_wrap').fadeOut();
 });
+
+
 

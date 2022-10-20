@@ -1,10 +1,4 @@
-/*만세체*/
-@font-face {
-    font-family: 'Manse';
-    src: url('../fonts/Manse.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+
 /* eb-garamond-regular - latin */
 @font-face {
   font-family: 'EB Garamond';
@@ -303,48 +297,38 @@
 					url('../fonts/NanumMyeongjoEB.otf') format('opentype'),
 					url('../fonts/NanumMyeongjoEB.eot') format('embedded-opentype');
 	}
-	@font-face {
-    font-family: 'GmarketSans';
+
+  @font-face {
+    font-family: 'NanumMyeongjo';
     font-style: normal;
-    font-weight: 300;
+    font-weight: 900;
     src: local('※'),
-        url('../fonts/GmarketSansLight.woff2') format('woff2'), 
-        url('../fonts/GmarketSansLight.woff') format('woff');
-	}
-	@font-face {
-			font-family: 'GmarketSans';
-			font-style: normal;
-			font-weight: 500;
-			src: local('※'),
-					url('../fonts/GmarketSansMedium.woff2') format('woff2'), 
-					url('../fonts/GmarketSansMedium.woff') format('woff');
-	}
-	@font-face {
-			font-family: 'GmarketSans';
-			font-style: normal;
-			font-weight: 600;
-			src: local('※'),
-					url('../fonts/GmarketSansBold.woff2') format('woff2'), 
-					url('../fonts/GmarketSansBold.woff') format('woff');
-	}
+        url('../fonts/NanumMyeongjoEB.woff2') format('woff2'), 
+        url('../fonts/DINMed.woff') format('woff'),
+        url('../fonts/NanumMyeongjoEB.ttf') format('truetype'),
+        url('../fonts/NanumMyeongjoEB.otf') format('opentype'),
+        url('../fonts/NanumMyeongjoEB.eot') format('embedded-opentype');
+}
 
-  @font-face {
-			font-family: 'Binggrae';
-			font-style: normal;
-			font-weight: 400;
-			src: local('※'),
-					url('../fonts/Binggrae.woff') format('woff'), 
-					url('../fonts/Binggrae.ttf') format('truetype'),
-          url('../fonts/Binggrae.otf') format('opentype');
-	}
 
-  @font-face {
-			font-family: 'Binggrae';
-			font-style: normal;
-			font-weight: 500;
-			src: local('※'),
-					url('../fonts/Binggrae-Bold.woff') format('woff'), 
-					url('../fonts/Binggrae-Bold.ttf') format('truetype'),
-          url('../fonts/Binggrae-Bold.otf') format('opentype');
-	}
+@font-face {
+  font-family: 'Ddin';
+  font-style: normal;
+  font-weight: 400;
+  src: local('※'),
+      url('../fonts/d-din.regular.woff') format('woff'),
+      url('../fonts/d-din.regular.ttf') format('truetype'),
+      url('../fonts/d-din.regular.otf') format('opentype'),
+      url('../fonts/d-din.regular.eot') format('embedded-opentype');
+}
 
+@font-face {
+  font-family: 'Ddin';
+  font-style: normal;
+  font-weight: 500;
+  src: local('※'),
+      url('../fonts/d-din.regular.woff') format('woff'),
+      url('../fonts/d-din.regular.ttf') format('truetype'),
+      url('../fonts/d-din.regular.otf') format('opentype'),
+      url('../fonts/d-din.regular.eot') format('embedded-opentype');
+}

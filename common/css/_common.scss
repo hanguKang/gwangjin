@@ -293,7 +293,7 @@
 }
 
 
-#contents{padding-top: 52px; @include clear; position: relative;  
+#contents{/* padding-top: 52px; */ @include clear; position: relative;  
   @include maxWidth(1220px) {
     padding-top:82px;
   }
