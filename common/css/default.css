@@ -1289,6 +1289,41 @@ input, select, textarea {
   width: 1px;
   background-color: #fff;
 }
+#contents .banner .slide_box .slide_menu {
+  margin: auto;
+  position: absolute;
+  bottom: 11%;
+  left: 24%;
+  display: block;
+  transform: translateX(-50%, -50%);
+}
+#contents .banner .slide_box .slide_menu:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#contents .banner .slide_box .slide_menu li {
+  float: left;
+  margin: 0 20px;
+}
+#contents .banner .slide_box .slide_menu li a {
+  padding: 50px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 204px;
+  height: 204px;
+}
+#contents .banner .slide_box .slide_menu li a img {
+  display: block;
+  margin: auto;
+}
+#contents .banner .slide_box .slide_menu li a b {
+  display: block;
+  color: #fff;
+  font-size: 22px;
+  text-align: center;
+  margin-top: 27px;
+}
 @media screen and (max-width: 1080px) {
   #contents .banner .slide_box .slide_btn .control .btn.next {
     right: 30px;
@@ -1341,38 +1376,146 @@ input, select, textarea {
     height: 25px;
   }
 }
-#contents .slide_menu {
-  margin: auto;
-  position: absolute;
-  bottom: 11%;
-  left: 24%;
-  display: block;
-  transform: translateX(-50%, -50%);
+
+.board {
+  padding-top: 90px;
+  margin-bottom: 90px;
+  background: #f5f5f5;
 }
-#contents .slide_menu:after {
+.board:after {
   content: "";
   display: block;
   clear: both;
 }
-#contents .slide_menu li {
+.board .tab_box {
+  position: relative;
   float: left;
-  margin: 0 20px;
+  width: calc(100% - 680px);
+  margin-right: 50px;
 }
-#contents .slide_menu li a {
-  padding: 50px 20px;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  width: 204px;
-  height: 204px;
+.board .tab_box > li {
+  float: left;
+  width: 25%;
 }
-#contents .slide_menu li a img {
-  display: block;
-  margin: auto;
-}
-#contents .slide_menu li a b {
-  display: block;
-  color: #fff;
+.board .tab_box > li > button {
+  height: 50px;
+  width: 100%;
+  padding: 0 20px;
   font-size: 22px;
-  text-align: center;
-  margin-top: 27px;
+}
+.board .tab_box > li > div {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  width: 100%;
+  border-top: 1px solid #000;
+}
+.board .tab_box > li.active > button {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: -5px;
+  position: relative;
+}
+.board .tab_box > li.active > button::before {
+  position: absolute;
+  display: block;
+  content: "";
+  background-color: #c50202;
+}
+.board .tab_box > li.active > div {
+  display: block;
+}
+.board .tab_box + .tab_con {
+  position: relative;
+}
+.board .tab_box + .tab_con > li {
+  display: none;
+}
+.board .tab_box + .tab_con > li.active {
+  display: block;
+}
+.board .banner2 {
+  width: 630px;
+  float: right;
+  overflow: hidden;
+}
+.board .banner2 h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+.board .banner2 .slide_box {
+  position: relative;
+}
+.board .banner2 .slide_box > .slide .item > a {
+  display: block;
+}
+.board .banner2 .slide_box > .control {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  font-size: 0;
+  line-height: 0;
+  padding: 15px 23px;
+}
+.board .banner2 .slide_box > .control .pagination_num {
+  padding: 5px 0;
+  margin-right: 10px !important;
+}
+.board .banner2 .slide_box > .control :nth-child(n) {
+  display: inline-block !important;
+  font-size: 1rem;
+  margin: 0 5px;
+  vertical-align: top;
+}
+.board .banner2 .slide_box > .control .btn.next {
+  background: url("../images/banner2_next.png") no-repeat center;
+  width: 7px;
+  height: 12px;
+}
+.board .banner2 .slide_box > .control .btn.prev {
+  background: url("../images/banner2_prev.png") no-repeat center;
+  width: 7px;
+  height: 12px;
+}
+.board .banner2 .slide_box > .control .btn.pause {
+  background: url("../images/banner2_pause.png") no-repeat center;
+  width: 9px;
+  height: 12px;
+}
+.board .banner2 .slide_box > .control .btn.play {
+  background: url("../images/banner_play.png") no-repeat center center;
+}
+.board .banner2 .slide_box > .control .btn.menu {
+  background: url("../images/banner2_menu.png") no-repeat center;
+  width: 10px;
+  height: 10px;
+  margin-top: 1px;
+}
+@media screen and (max-width: 720px) {
+  .board .banner2 {
+    border-radius: 0 15px 0 15px;
+    margin-top: 20px;
+  }
+  .board .banner2 .slide_box {
+    position: relative;
+  }
+  .board .banner2 .slide_box > .slide .item > a img {
+    border-radius: 0 15px 0 15px;
+  }
+  .board .banner2 .slide_box > .control {
+    padding: 8px 20px 7px;
+    border-radius: 5px 5px 0 0;
+    color: #fff;
+  }
+  .board .banner2 .slide_box > .control .pagination_num {
+    margin-right: 10px;
+    padding-top: 6px;
+  }
+  .board .banner2 .slide_box > .control :nth-child(n) {
+    font-size: 13px;
+    margin: 0 4px;
+  }
 }/*# sourceMappingURL=default.css.map */

@@ -277,47 +277,69 @@
                 </ul>
             </div>
         </div>
-      <div class="bg_con">
-        <div class="container">
-          <div class="quick">
-            <h2 class="tit"><span>바로가기</span>서비스</h2>
-            <ul>
-              <li>
-                <a href="#" target="_blank">
-                  <span class="img"><img src="../common/images/icon_quick_01.png" alt="" /></span>교육신청</a>
+        <div class="board">
+          <div class="container">
+            <ul class="tab_box tab_row">
+              <li class="active">
+                <button type="button">공지사항</button>
+                <div >
+                  <a href="#">탭1 컨텐츠 내용</a>
+                </div>
               </li>
-              <li><a href="#" target="_blank"><span class="img"><img src="../common/images/icon_quick_02.png"
-                      alt="" /></span>계좌번호안내</a></li>
-              <li><a href="#" target="_blank"><span class="img"><img src="../common/images/icon_quick_03.png"
-                      alt="" /></span>단체수강신청</a></li>
-              <li><a href="#" target="_blank"><span class="img"><img src="../common/images/icon_quick_04.png"
-                      alt="" /></span>교육신청확인</a></li>
-              <li><a href="#" target="_blank"><span class="img"><img src="../common/images/icon_quick_05.png"
-                      alt="" /></span>수료증 출력</a></li>
-              <li><a href="#" target="_blank"><span class="img"><img src="../common/images/icon_quick_06.png"
-                      alt="" /></span>계산서 발행</a></li>
+              <li>
+                <button type="button">채용정보</button>
+                <div>
+                    <ul>
+                      <li><a href="#">탭2 컨텐츠 내용</a></li>
+                      <li><a href="#">탭2 컨텐츠 내용</a></li>
+                      <li><a href="#">탭2 컨텐츠 내용</a></li>
+                      <li><a href="#">탭2 컨텐츠 내용</a></li>
+                    </ul>
+                  탭2 컨텐츠 내용 </div>
+              </li>
+              <li>
+                <button type="button">입찰공고</button>
+                <div ><a href="#">탭3 컨텐츠 내용</a> </div>
+              </li>
+              <li>
+                <button type="button">고시공고</button>
+                <div><a href="#">탭4 컨텐츠 내용</a> </div>
+              </li>
             </ul>
-          </div>
-          <div class="education">
+            <script>
+              function tabRow() {//active li의 높이를 구하고 tab_box 높이 설정
+                var tabConH = $('.tab_row').find('.active > div').outerHeight();
+                var tabH = $('.tab_row').find('li').outerHeight();
+                $('.tab_row').height(tabConH + tabH);
+              }
+              $('.tab_row > li > button').on('click', function () {
+                $(this).closest('li').addClass('active').closest('li').siblings('li').removeClass('active');
+                tabRow();
+              });
+              $(window).on('resize load', function () {
+                tabRow();
+              });
+            </script>
             <div class="banner2">
+              <h2>알림마당</h2>
               <div class="slide_box">
                 <div class="slide">
                   <div class="item">
                     <a href="#">
-                      <img src="../common/images/banner2_01.jpg" alt="">
+                      <img src="../common/images/banner2_01.png" alt="">
                     </a>
                   </div>
                   <div class="item">
                     <a href="#">
-                      <img src="../common/images/banner2_02.jpg" alt="">
+                      <img src="../common/images/banner2_02.png" alt="">
                     </a>
                   </div>
                   <div class="item">
                     <a href="#">
-                      <img src="../common/images/banner2_03.jpg" alt="">
+                      <img src="../common/images/banner2_03.png" alt="">
                     </a>
                   </div>
-
+  
                 </div>
                 <div class="control">
                   <div class="pagination_num"><span class="current">1</span>/ 5</div>
@@ -328,116 +350,9 @@
                 </div>
               </div>
             </div>
-            <div class="schedule">
-              <a href="#">
-                <em>교육일정안내</em> 교육일정 알아보기<span>교육일정 바로가기</span>
-              </a>
-              <ul>
-                <li>
-                  <a href="#"><span class="img"><img src="../common/images/schedule_01.png" alt=""></span><b>교육신청
-                      과정</b></a>
-                </li>
-                <li><a href="#"><span class="img"><img src="../common/images/schedule_02.png" alt=""></span><b>교육과정
-                      안내</b></a>
-                </li>
-                <li><a href="#"><span class="img"><img src="../common/images/schedule_03.png" alt=""></span><b>교육비 납부
-                    </b></a>
-                </li>
-                <li><a href="#"><span class="img"><img src="../common/images/schedule_04.png" alt=""></span><b>오시는길
-                    </b></a>
-                </li>
-              </ul>
-            </div>
           </div>
-          <div class="board">
-            <div>
-              <h2 class="tit">공지사항</h2>
-              <ul>
-                <li>
-                  <a href="#">
-                    <span>[교육폐강]10월 수배진설비실무(온,오프라인 혼합형)폐강 알림</span>
-                    <em>20-09-30</em>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span>2021년 하반기 교육과정 추가 개설 및 일정 변경 안내</span>
-                    <em>20-09-30</em>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span>[교육폐강]10월 수배진설비실무(온,오프라인 혼합형)폐강 알림</span>
-                    <em>20-09-30</em>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span>[교육폐강]10월 수배진설비실무(온,오프라인 혼합형)폐강 알림10월 수배진설비실무</span>
-                    <em>20-09-30</em>
-                  </a>
-                </li>
-              </ul>
-              <a href="#"><span class="hide">전체보기</span></a>
-            </div>
-            <div>
-              <h2 class="tit">교육원 소식</h2>
-              <ul>
-                <li>
-                  <a href="#">
-                    <span>전기관련학과 대학생 대상 '전기안전 미리 캠퍼스' 교육실시</span>
-                    <b>다운로드</b>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span>작업계교 교원 대상 현장직무 연수과정 개최</span>
-                    <b>다운로드</b>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span>전기안전미리캠퍼스 교육과정 관련 국토교통부 관계자 방문</span>
-                    <b>다운로드</b>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span>전기관련학과 대학생 대상 '전기안전 미리 캠퍼스' 교육실시</span>
-                    <b>다운로드</b>
-                  </a>
-                </li>
-              </ul>
-              <a href="#"><span class="hide">전체보기</span></a>
-            </div>
-          </div>
-          <div class="con2">
-            <div class="info">
-              <h2 class="tit">교육문의</h2>
-              <ul>
-                <li>041.912.3400</li>
-                <li>평일 오전 9시부터 6시까지 문의가능합니다.</li>
-                <li>점심시간 12:00 ~ 13:00</li>
-              </ul>
-            </div>
-            <div class="banner3">
-              <h2 class="tit">배너존</h2>
-              <ul>
-                <li>
-                  <a href="#">
-                    <img src="../common/images/banner3_01.png" alt="">
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img src="../common/images/banner3_02.png" alt="">
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
+        
         </div>
-      </div>
     </div>
     <!-- 메인 -->
     <!-- footer -->
