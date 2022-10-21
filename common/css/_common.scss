@@ -1,7 +1,7 @@
 
 #wrap {min-height:100vh;}
 //공통 스타일
-.container {max-width:1200px;margin:auto; 
+.container {max-width:1300px;margin:auto; 
   @include maxWidth(1260px){
     margin-right:30px;margin-left:30px;
   }
