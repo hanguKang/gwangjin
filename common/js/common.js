@@ -60,6 +60,19 @@ function initMoving(target, position, topLimit, btmLimit) {
 }
 
 function tabResizing1() {
+  function tabRow() {//active li의 높이를 구하고 tab_box 높이 설정
+    var tabConH = $('.tab_row').find('.active > div').outerHeight();
+    var tabH = $('.tab_row').find('li').outerHeight();
+    $('.tab_row').height(tabConH + tabH);
+  }
+  $('.tab_row > li > button').on('click', function () {
+    $(this).closest('li').addClass('active').closest('li').siblings('li').removeClass('active');
+    tabRow();
+  });
+  $(window).on('resize load', function () {
+    tabRow();
+  });
+  
   //탭 너비 높이 조정
   var tabH = 0;
   $('.tab_list > ul > li > a').removeAttr('style');
@@ -116,6 +129,7 @@ $(document).on('click', '.tab_list2 > button', function (e) {
     tabBox.addClass('active');
   }
 });
+
 
 
 function pcChk(width) {
@@ -268,6 +282,75 @@ $(function () {
     },
   });
 
+  //푸터 슬라이드배너
+  $slick_slider = $('.f_banner');
+  settings_slider = {
+      dots: false,
+      arrows: false,
+      slidesToShow: 5,
+      variableWidth: true,
+      infinite: false,
+      swipeToSlide: true,
+      touchThreshold: 100,
+      responsive: [
+          {
+              breakpoint: 650,
+              settings: {
+                  slidesToShow: 5,
+              },
+          },
+          {
+              breakpoint: 540,
+              settings: {
+                  slidesToShow: 4,
+              },
+          },
+          {
+              breakpoint: 430,
+              settings: {
+                  slidesToShow: 3,
+              },
+          },
+      ],
+  };
+
+
+
+  slick_on_mobile($slick_slider, settings_slider);
+
+  //footer 배너슬라이드
+  var f_banner = $('.f_banner .slide');
+  if (f_banner.find('.item').length < 6) {
+      for (var i = 0; i < 6; i++) {
+          $('.f_banner .slide .item').eq(i).clone().appendTo('.f_banner .slide');
+      }
+  }
+  f_banner.slick({
+  variableWidth: true,
+    slidesToShow: 5,
+    autoplay: true,
+    cssEase: 'ease-in',
+    infinite: true,
+    dots: false,
+    touchThreshold: 100,
+    accessibility: true,
+    autoplaySpeed: 2000,
+    prevArrow: $('.f_banner .control  .prev'), //arrow 설정
+    nextArrow: $('.f_banner .control  .next'), //arrow 설정
+  });
+
+  $('.f_banner .pause').click(function () {
+    if ($(this).hasClass('play')) {
+      $(this).removeClass('play').text('자동재생 정지');
+      f_banner.slick('slickPlay');
+    } else {
+      $(this).addClass('play').text('자동재생 시작');
+      f_banner.slick('slickPause');
+    }
+  });
+
+
+
   $(document).on('click', '.lnb ul > li > a', function (e) {
     $('.lnb .sns').removeClass('active');
     $('.lnb .sns > div').stop().slideUp();
@@ -331,7 +414,6 @@ $(window).on('resize load', function () {
 
 
 //검색
-
 function openSearch() {
   $('.btn_search_open').addClass('active');
   var schBoxH = $('.search_box').outerHeight(true);
@@ -592,6 +674,5 @@ $(document).on('click', '.modal_wrap .close', function () {
   bodyScroll('on');
   $(this).closest('.modal_wrap').fadeOut();
 });
-
 
 

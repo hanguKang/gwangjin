@@ -109,14 +109,28 @@
   }
  
 }
-.board{ @include clear; padding-top: 90px; margin-bottom: 90px; background: #f5f5f5;
+.board{ @include clear;padding: 90px 0;  background: #f5f5f5;
   .tab_box {$tabH:50px;position:relative; float: left; width: calc(100% - 680px); margin-right: 50px;
     > li {float:left;width:25%;
-        > button {height:$tabH;width:100%;padding: 0 20px; font-size: 22px; }
-        > div {display:none;position:absolute;left:0;top:$tabH;width:100%;border-top: 1px solid #000;}
+        > button {height:$tabH;width:100%;padding: 0 20px; font-size: 22px;padding-bottom: 20px;}
+        > div {display:none;position:absolute;left:0;top:$tabH;width:100%;border-top: 1px solid #000;
+          >ol{
+            li{ @include clear; padding-left: 15px; padding-top: 33px; padding-bottom: 33px; border-bottom: 1px solid #b4b4b3;@include clear;
+              div{width: calc(100% - 100px); float: left; padding-right: 60px;
+                strong{display: block; font-size: 19px; font-weight: 500; margin-bottom: 15px; @include ell1;
+                  b{font-size: 15px; margin-left: 5px;}
+                }
+                span{ color: #888; float: left;  @include ell2;  height: 48px;
+                }
+              }
+              em{ color: #888; float: right; width: 100px; padding: 0 13px; font-weight: 500;line-height: 90px;}
+              &:hover{ background-color: #fff;box-shadow:0 0 10px rgba(0,0,0,0.1); }
+            }
+          }
+        }
         &.active { 
             > button { font-size: 26px; font-weight: 600;margin-bottom: -5px; position: relative;
-              &::before{ position: absolute; display: block; content: ''; background-color: #c50202;}
+              &::before{position: absolute; display: block; content: ''; background-color: #c50202; max-width: 132px; height: 8px; bottom: -1px; z-index: 1; left: 10px; width: 100%;}
             }
             > div {display:block;}
         }
@@ -128,25 +142,25 @@
       }
     }
   }
-  .banner2{width: 630px;float: right; overflow: hidden;
-    h2{font-size: 26px; font-weight: 600; margin-bottom: 25px;}
+  .banner2{width: 630px;float: right; overflow: hidden; position: relative;
+    h2{font-size: 26px; font-weight: 600; margin-bottom: 13px;}
+    >.control { position: absolute; right:0; top: 0; font-size: 0; line-height: 0; padding: 15px 0; 
+      .pagination_num{padding: 5px 0; margin-right: 10px !important;}
+      :nth-child(n) {display:inline-block !important; font-size:1rem; margin:0 5px; vertical-align:top;}
+      .btn { 
+        &.next {background:url('../images/banner2_next.png') no-repeat center ; width: 80px; height: 14px; }
+        &.prev {background:url('../images/banner2_prev.png') no-repeat center ; width: 80px; height: 14px;}
+        &.pause {background:url('../images/banner2_pause.png') no-repeat center ;
+          width: 9px; height: 12px; 
+        }
+        &.play {background:url('../images/banner_play.png') no-repeat center center; }
+        &.menu {background:url('../images/banner2_menu.png') no-repeat center; width: 10px; height: 10px; margin-top: 1px;}
+      }
+    }
     .slide_box {position:relative; 
       >.slide {
         .item { 
           >a{display: block; }
-        }
-      }
-      >.control { position: absolute; left:50%;transform:translateX(-50%); bottom: 0; font-size: 0; line-height: 0; padding: 15px 23px; 
-        .pagination_num{padding: 5px 0; margin-right: 10px !important;}
-        :nth-child(n) {display:inline-block !important; font-size:1rem; margin:0 5px; vertical-align:top;}
-        .btn { 
-          &.next {background:url('../images/banner2_next.png') no-repeat center ; width: 7px; height: 12px; }
-          &.prev {background:url('../images/banner2_prev.png') no-repeat center ; width: 7px; height: 12px;}
-          &.pause {background:url('../images/banner2_pause.png') no-repeat center ;
-            width: 9px; height: 12px; 
-          }
-          &.play {background:url('../images/banner_play.png') no-repeat center center; }
-          &.menu {background:url('../images/banner2_menu.png') no-repeat center; width: 10px; height: 10px; margin-top: 1px;}
         }
       }
     }
