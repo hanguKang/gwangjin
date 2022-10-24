@@ -183,3 +183,50 @@
   }
 }
 
+
+/* 문화공공체육시설 */
+#MAIN_BRAND {padding-bottom:180px;}
+#MAIN_BRAND .gu_link_hover a .gu_img_area{border: 0}
+#MAIN_BRAND .list .tab_box {position:relative; left:50%; width:1280px; font-size:0; margin:35px 0 40px -640px; overflow:hidden;}
+#MAIN_BRAND .list .tab_box .btns_tab .btns_tab_inner {white-space: nowrap;}
+#MAIN_BRAND .list .tab_box .btns_tab .btns_tab_inner:after {content:""; position:absolute; top:0; left:0; width:100%; height:60px;}
+#MAIN_BRAND .list .tab_box .btns_tab .btns_tab_inner .slide_item {display: inline-block; width:390px; padding:0 18.5px; text-align: center; height:124px; line-height:124px;opacity:0.7; font-size: 28px; color: #000;}
+#MAIN_BRAND .list .tab_box .btns_tab .btns_tab_inner .slide_item.slick-current + .slide_item {opacity:1;}
+#MAIN_BRAND .list .tab_box .btn_tabArrow {position:absolute; top:40px;}
+#MAIN_BRAND .list .tab_box .btn_tabArrow_l {left:406px;}
+#MAIN_BRAND .list .tab_box .btn_tabArrow_r {right:406px;}
+#MAIN_BRAND .list .tab_box .count {width:100%; text-align: center; margin-top:20px;}
+#MAIN_BRAND .list .tab_box .count > span {font-size:16px; color:#888888;}
+#MAIN_BRAND .list .tab_box .count > span > span {color:#222;}
+#MAIN_BRAND .list .tab_box .count > span > span.current {opacity:1;}
+#MAIN_BRAND .list .list_box ul {font-size:0;border: 1px solid #e5e5e5; position:absolute;top:-9999px; display:none;}
+#MAIN_BRAND .list .list_box ul.on { position:relative;top:0; display:block; }
+#MAIN_BRAND .list .list_box ul li {position:relative; width:33.333%; display: inline-block; vertical-align:top;box-sizing: border-box;}
+#MAIN_BRAND .list .list_box ul li > a {display: block;}
+#MAIN_BRAND .list .list_box ul li > a:focus {border:1px dotted #000;}
+#MAIN_BRAND .list .list_box ul li > a video {position:absolute; top:0; left:0; width:100%; height:100%;}
+#MAIN_BRAND .list .list_box ul li img {width:100%;}
+#MAIN_BRAND .list .list_box .info_box {background-color:#ffffff;}
+#MAIN_BRAND .list .list_box .info_box.type_black {background-color:#111111;}
+#MAIN_BRAND .list .list_box .info_box.type_black .copy_container .copy_inner {color:#fff;}
+#MAIN_BRAND .list .list_box .info_box.type_black .copy_container .copy_inner .copy .desc {color:#999999; }
+#MAIN_BRAND .list .list_box .info_box.type_black .copy_container .copy_inner .copy .btn_detail {color:#999;}
+#MAIN_BRAND .list .list_box .info_box.type_black .copy_container .copy_inner .copy .btn_detail:after {background-color:#888;}
+/********************** shinsegae brand in motion set *******************************/
+#MAIN_BRAND .top_copy h2 {transform:translate(0,100px); opacity:0;}
+#MAIN_BRAND .list .tab_box {transform:translate(0,100px); opacity:0;}
+#MAIN_BRAND .list .tab_box .count {transform:translate(0,100px); opacity:0;}
+#MAIN_BRAND .list .list_box ul li {transform:translate(0,100px); opacity:0;}
+#MAIN_BRAND .list .btn_viewmore {transform:translate(0,100px); opacity:0;}
+/* art & culture in motion play */
+#MAIN_BRAND.on .top_copy h2 {transform:translate(0,0); opacity:1; transition:transform 1s, opacity 1s;}
+#MAIN_BRAND.on .list .tab_box {transform:translate(0,0); opacity:1; transition:transform 1s, opacity 1s; transition-delay:0.1s;}
+#MAIN_BRAND.on .list .tab_box .count {transform:translate(0,0); opacity:1; transition:transform 1s, opacity 1s; transition-delay:0.2s;}
+#MAIN_BRAND.on .list .list_box ul li {transform:translate(0,0); opacity:1; transition:transform 0.8s, opacity 0.8s;}
+#MAIN_BRAND.on .list .list_box ul li:nth-child(1) {transition-delay:0.3s;}
+#MAIN_BRAND.on .list .list_box ul li:nth-child(2) {transition-delay:0.4s;}
+#MAIN_BRAND.on .list .list_box ul li:nth-child(3) {transition-delay:0.5s;}
+#MAIN_BRAND.on .list .list_box ul li:nth-child(4) {transition-delay:0.6s;}
+#MAIN_BRAND.on .list .list_box ul li:nth-child(5) {transition-delay:0.7s;}
+#MAIN_BRAND.on .list .list_box ul li:nth-child(6) {transition-delay:0.8s;}
+#MAIN_BRAND.on .list .btn_viewmore {transform:translate(0,0); opacity:1; transition:transform 1s, opacity 1s; transition-delay:0.9s;}

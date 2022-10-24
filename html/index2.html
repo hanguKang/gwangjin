@@ -209,7 +209,7 @@
         <!-- 헤더 / 드롭메뉴와 검색 디자인 미완성-->
     <!-- 메인 -->
     <div id="contents">
-        <div class="banner">
+        <div class="banner1">
             <div class="slide_box">
                 <div class="slide">
                     <a href="#" class="item">
@@ -277,35 +277,50 @@
                 </ul>
             </div>
         </div>
-        <div id="MAIN_BRAND" class="section on">
-          <div class="list">
-            <div class="tab_box">
-              <div class="btns_tab">
-                <div class="btns_tab_inner">
-                  <div class="slide_item">
-                    도서관 시설
+        <div>
+          <section class="section4">
+            <div class="inner">
+              <div class="tab-wrap">
+                <!-- part info -->
+                <div class="ui-tablist">
+                  <!-- tab-btn -->
+                  <ul class="tab-ul type1" role="tablist">
+                    <li role="presentation" class="js-tab"><a role="tab" id="sec4_tab1" aria-controls="sec4_tab-panel1" href="#sec4_tab-panel1" aria-selected="false" tabindex="0" title="도서관시설"><span>도서관시설</span></a></li>
+                    <li role="presentation" class="js-tab"><a role="tab" id="sec4_tab2" aria-controls="sec4_tab-panel2" href="#sec4_tab-panel2" aria-selected="false" title="문화 공공체육시설"><span>문화 공공체육시설</span></a></li>
+                    <li role="presentation" class="js-tab"><a role="tab" id="sec4_tab3" aria-controls="sec4_tab-panel3" href="#sec4_tab-panel3" aria-selected="true" title="주차시설"><span>주차시설</span></a></li>
+                  </ul>
+                  <!--// tab-btn -->
+                  <!-- tab side btn -->
+                  <div class="control tablist">
+                    <button type="button" class="button prev" data-control="prev">탭메뉴 이전</button>
+                    <button type="button" class="button next" data-control="next">탭메뉴 다음</button>
                   </div>
-                  <div class="slide_item">
-                    문과 공공체육 시설
+                  <!-- //tab side btn -->
+                  <!-- tab-content -->
+                  <!-- tab1 도서관 시설 -->
+                  <div class="tabpanel" id="sec4_tab-panel1" role="tabpanel" aria-labelledby="sec4_tab1">
                   </div>
-                  <div class="slide_item">
-                    주차시설
-                  </div>               
+                  <!--// tab1 -->
+                    <!-- tab2 문화 공공체육시설 -->
+                    <div class="tabpanel" id="sec4_tab-panel2" role="tabpanel" aria-labelledby="sec4_tab2">
+                    </div>
+                    <!--// tab2 -->
+                    <!-- tab3 주차시설 -->
+                    <div class="tabpanel on" id="sec4_tab-panel3" role="tabpanel" aria-labelledby="sec4_tab3">
+                    </div>
+                    <!--// tab3 -->
+                  <!--// tab-content -->
                 </div>
+                <script>
+                  $(document).ready(function(){
+                     sc4_tab();
+                  })
+                </script>
+        
+                <!-- // part info -->
               </div>
-              <a href="#" class="btn_tabArrow btn_tabArrow_l gu_btn_arrow" data-pos="l" >
-                <img src="../common/images/tab_prev.png" alt="이전보기">
-              </a>
-              <a href="#" class="btn_tabArrow btn_tabArrow_r gu_btn_arrow" data-pos="l" >
-                <img src="../common/images/tab_next.png" alt="다음보기">
-              </a>
             </div>
-            <div class="list_box">
-              <ul class="on" data-attractt="Gnv8mNIeguyx45z">
-                ccc
-              </ul>
-            </div>
-          </div>
+          </section>
         </div>
         <div class="board">
           <div class="container">
@@ -520,6 +535,9 @@
         
         </div>
         <div class="new">
+
+        </div>
+        <div>
 
         </div>
     </div>

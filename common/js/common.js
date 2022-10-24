@@ -439,6 +439,82 @@ function resetSearch() {
 //   }
 // });
 $(function () {
+  
+/*** MAIN SHINSEGAE BRAND **/
+var MainBrand = (function(){
+  var g_$listBox = $("#MAIN_BRAND .list"),
+      g_$listUl = g_$listBox.find("ul"),
+      g_swiper,
+      g_currentIdx = 0,
+      g_listLen = g_$listUl.length;
+
+  function init(){
+      setTabSwiper();
+      setBtns();
+  }
+
+  function setTabSwiper(){
+      var m_brandTabInner = $("#MAIN_BRAND .btns_tab_inner");
+
+      m_brandTabInner.children("div:first-child").before(m_brandTabInner.children("div:last-child"));
+      m_brandTabInner.slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          swipeToSlide: true,
+          autoplay: false,
+          variableWidth: true,
+          prevArrow:$("#MAIN_BRAND .btn_tabArrow_l"),
+          nextArrow:$("#MAIN_BRAND .btn_tabArrow_r"),
+          dots: false
+      });
+
+      m_brandTabInner.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+          g_currentIdx = nextSlide;
+          changeGallery(g_currentIdx);
+      });
+      
+      m_brandTabInner.on('afterChange', function(event, slick, currentSlide, nextSlide){
+        var setT ;
+        setT = setTimeout(function(){
+          clearTimeout(setT);
+         $("#MAIN_BRAND .list .tab_box .btns_tab .btns_tab_inner .slick-slide").each(function(i){
+              if( $("#MAIN_BRAND .list .tab_box .btns_tab .btns_tab_inner .slick-slide").eq(i).attr("data-slick-index") == "1" ){
+                $("#MAIN_BRAND .list .tab_box .btns_tab .btns_tab_inner .slick-slide").eq(i).attr("tabindex","0");
+              }else{
+                $("#MAIN_BRAND .list .tab_box .btns_tab .btns_tab_inner .slick-slide").eq(i).attr("tabindex","-1");
+              }
+            })
+        } , 200)
+        
+      });
+  }
+
+  function setBtns(){
+      var m_$btnTab = g_$listBox.find(".btns_tab a");
+
+      m_$btnTab.on("click", function(){
+          var m_idx = parseInt($(this).attr("data-idx"));
+
+          changeGallery(m_idx);
+          g_currentIdx = m_idx;
+      })
+  }
+
+  function changeGallery(_idx){
+      var m_$listUl = g_$listBox.find("ul"),
+          m_$countBox = g_$listBox.find(".tab_box .count");
+
+      m_$listUl.removeClass("on");
+      m_$listUl.eq(_idx).addClass("on");
+
+      m_$countBox.find(".current").html(_idx+1);
+      m_$countBox.find(".total").html(g_listLen);
+  }
+
+  init();
+})();
+
+  
   //radiobox
   $('.radiobox li').click(function () {
     $(this).addClass('active').siblings().removeClass('active');
@@ -553,53 +629,6 @@ $(function () {
     }
   });
 
-  // 시설안내 슬라이드4
-  $('.pic_list li').each(function () {
-    var slide3 = $(this).find('.slide');
-    var slide3Con = $(this).find('.control');
-    var slide4 = $(this).find('.img_lg');
-    slide3.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
-      var i = (currentSlide ? currentSlide : 0) + 1;
-      slide3Con.find('.pagination_num').html(slick.slideCount + ' / <span class="current">' + i + '</span>');
-    });
-    slide3Con.find('.prev').on('click', function () {
-      var j = slide3.find('.slick-slide').length;
-      if (slide3.find('.slick-active').index() == 0) {
-
-        slide3.slick('slickGoTo', j);
-      }
-    });
-    slide3Con.find('.next').on('click', function () {
-      var j = slide3.find('.slick-slide').length - 1;
-      if (slide3.find('.slick-active').index() == j) {
-        slide3.slick('slickGoTo', 0);
-      }
-    });
-    slide3.find('.item').on('click', function () {
-      var i = $(this).index();
-      slide4.slick('slickGoTo', i);
-    });
-    slide3.slick({
-      autoplay: false,
-      cssEase: 'ease-in',
-      dots: false,
-      infinite: false,
-      variableWidth: true,
-      asNavFor: slide4,
-      slidesToShow: 1,
-      prevArrow: slide3Con.find('.prev'),//arrow 설정
-      nextArrow: slide3Con.find('.next'),//arrow 설정
-    });
-    slide4.slick({
-      arrows: false,
-      fade: true,
-      infinite: false,
-      asNavFor: slide3,
-      autoplay: false,
-      cssEase: 'ease-in',
-      dots: false,
-    });
-  });
 
   $slick_slider = $('.bg_con .quick ul');
   settings_slider = {
