@@ -1560,7 +1560,7 @@ input, select, textarea {
 
 #MAIN_BRAND .list .tab_box .btns_tab .btns_tab_inner .slide_item {
   display: inline-block;
-  width: 390px;
+  width: 447px !important;
   padding: 0 18.5px;
   text-align: center;
   height: 124px;
