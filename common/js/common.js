@@ -511,8 +511,17 @@ var MainBrand = (function(){
       m_$countBox.find(".total").html(g_listLen);
   }
 
+
+
   init();
 })();
+$(document).ready(function(){
+  $('#MAIN_BRAND .list .tab_box .btns_tab .btns_tab_inner .slide_item').on('click', function () {
+  var i = $(this).closest('li').index();
+  $(this).closest('li').addClass('active').closest('li').siblings('li').removeClass('active');
+  $(this).closest('.btns_tab_inner').siblings('.list_con').children('li').eq(i).addClass('active').siblings('li').removeClass('active');
+});
+});
 
   
   //radiobox
@@ -618,8 +627,8 @@ var MainBrand = (function(){
     prevArrow: $('.banner2 .prev'),//arrow 설정
     nextArrow: $('.banner2 .next'),//arrow 설정
   });
-  $('.banner2 .pause').click(function () {
-    if ($(this).hasClass('play')) {
+/*   $('.banner2 .pause').click(function () {
+    if ($(this).hasClass('play')) { 
       $(this).removeClass('play').children('span').text('자동재생 정지');
       slide1.slick('slickPlay');
       isPause = false;
@@ -627,7 +636,7 @@ var MainBrand = (function(){
       $(this).addClass('play').children('span').text('자동재생 시작');
       slide1.slick('slickPause');
     }
-  });
+  }); */
 
 
   $slick_slider = $('.bg_con .quick ul');
