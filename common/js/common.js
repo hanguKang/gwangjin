@@ -442,9 +442,9 @@ $(function () {
   
 /*** MAIN SHINSEGAE BRAND **/
 var MainBrand = (function(){
-  var g_$listBox = $("#MAIN_BRAND .list"),
-      g_$listUl = g_$listBox.find("ul"),
-      g_swiper,
+  var g_$listBox = $("#slide_menu .list"),
+      g_$listUl = g_$listBox.find("ol"),
+      /* g_swiper, */
       g_currentIdx = 0,
       g_listLen = g_$listUl.length;
 
@@ -454,7 +454,7 @@ var MainBrand = (function(){
   }
 
   function setTabSwiper(){
-      var m_brandTabInner = $("#MAIN_BRAND .btns_tab_inner");
+      var m_brandTabInner = $("#slide_menu .btns_tab_inner");
 
       m_brandTabInner.children("div:first-child").before(m_brandTabInner.children("div:last-child"));
       m_brandTabInner.slick({
@@ -463,8 +463,8 @@ var MainBrand = (function(){
           swipeToSlide: true,
           autoplay: false,
           variableWidth: true,
-          prevArrow:$("#MAIN_BRAND .btn_tabArrow_l"),
-          nextArrow:$("#MAIN_BRAND .btn_tabArrow_r"),
+          prevArrow:$("#slide_menu .btn_tabArrow_l"),
+          nextArrow:$("#slide_menu .btn_tabArrow_r"),
           dots: false
       });
 
@@ -477,11 +477,11 @@ var MainBrand = (function(){
         var setT ;
         setT = setTimeout(function(){
           clearTimeout(setT);
-         $("#MAIN_BRAND .list .tab_box .btns_tab .btns_tab_inner .slick-slide").each(function(i){
-              if( $("#MAIN_BRAND .list .tab_box .btns_tab .btns_tab_inner .slick-slide").eq(i).attr("data-slick-index") == "1" ){
-                $("#MAIN_BRAND .list .tab_box .btns_tab .btns_tab_inner .slick-slide").eq(i).attr("tabindex","0");
+         $("#slide_menu .list .tab_box .btns_tab .btns_tab_inner .slick-slide").each(function(i){
+              if( $("#slide_menu .list .tab_box .btns_tab .btns_tab_inner .slick-slide").eq(i).attr("data-slick-index") == "1" ){
+                $("#slide_menu .list .tab_box .btns_tab .btns_tab_inner .slick-slide").eq(i).attr("tabindex","0");
               }else{
-                $("#MAIN_BRAND .list .tab_box .btns_tab .btns_tab_inner .slick-slide").eq(i).attr("tabindex","-1");
+                $("#slide_menu .list .tab_box .btns_tab .btns_tab_inner .slick-slide").eq(i).attr("tabindex","-1");
               }
             })
         } , 200)
@@ -501,7 +501,7 @@ var MainBrand = (function(){
   }
 
   function changeGallery(_idx){
-      var m_$listUl = g_$listBox.find("ul"),
+      var m_$listUl = g_$listBox.find("ol"),
           m_$countBox = g_$listBox.find(".tab_box .count");
 
       m_$listUl.removeClass("on");
@@ -515,12 +515,12 @@ var MainBrand = (function(){
 
   init();
 })();
-$(document).ready(function(){
-  $('#MAIN_BRAND .list .tab_box .btns_tab .btns_tab_inner .slide_item').on('click', function () {
-  var i = $(this).closest('li').index();
-  $(this).closest('li').addClass('active').closest('li').siblings('li').removeClass('active');
-  $(this).closest('.btns_tab_inner').siblings('.list_con').children('li').eq(i).addClass('active').siblings('li').removeClass('active');
-});
+  $(document).ready(function(){
+    $('#slide_menu .list .tab_box .btns_tab .btns_tab_inner .slide_item').on('click', function () {
+    var i = $(this).closest('li').index();
+    $(this).closest('li').addClass('active').closest('li').siblings('li').removeClass('active');
+    $(this).closest('.btns_tab_inner').siblings('.list_con').children('li').eq(i).addClass('active').siblings('li').removeClass('active');
+  });
 });
 
   
