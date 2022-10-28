@@ -440,9 +440,9 @@ function resetSearch() {
 // });
 $(function () {
   
-/*** MAIN SHINSEGAE BRAND **/
+/***메인=문화공공체육시설 **/
 var MainBrand = (function(){
-  var g_$listBox = $("#slide_menu .list"),
+  var g_$listBox = $("#slide_menu .list, #new .list"),
       g_$listUl = g_$listBox.find("ol"),
       /* g_swiper, */
       g_currentIdx = 0,
@@ -463,7 +463,7 @@ var MainBrand = (function(){
           swipeToSlide: true,
           autoplay: false,
           variableWidth: true,
-          prevArrow:$("#slide_menu .btn_tabArrow_l"),
+          prevArrow:$(".btn_tabArrow_l"),
           nextArrow:$("#slide_menu .btn_tabArrow_r"),
           dots: false
       });
@@ -517,6 +517,89 @@ var MainBrand = (function(){
 })();
   $(document).ready(function(){
     $('#slide_menu .list .tab_box .btns_tab .btns_tab_inner .slide_item').on('click', function () {
+    var i = $(this).closest('li').index();
+    $(this).closest('li').addClass('active').closest('li').siblings('li').removeClass('active');
+    $(this).closest('.btns_tab_inner').siblings('.list_con').children('li').eq(i).addClass('active').siblings('li').removeClass('active');
+  });
+});
+
+/***공단소식 **/
+var MainBrand = (function(){
+  var g_$listBox = $("#new .list, #new .list"),
+      g_$listUl = g_$listBox.find("ol"),
+      /* g_swiper, */
+      g_currentIdx = 0,
+      g_listLen = g_$listUl.length;
+
+  function init(){
+      setTabSwiper();
+      setBtns();
+  }
+
+  function setTabSwiper(){
+      var m_brandTabInner = $("#new .btns_tab_inner");
+
+      m_brandTabInner.children("div:first-child").before(m_brandTabInner.children("div:last-child"));
+      m_brandTabInner.slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          swipeToSlide: true,
+          autoplay: false,
+          variableWidth: true,
+          prevArrow:$("#new.btn_tabArrow_l"),
+          nextArrow:$("#new .btn_tabArrow_r"),
+          dots: false
+      });
+
+      m_brandTabInner.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+          g_currentIdx = nextSlide;
+          changeGallery(g_currentIdx);
+      });
+      
+      m_brandTabInner.on('afterChange', function(event, slick, currentSlide, nextSlide){
+        var setT ;
+        setT = setTimeout(function(){
+          clearTimeout(setT);
+         $("#new .list .tab_box .btns_tab .btns_tab_inner .slick-slide").each(function(i){
+              if( $("#new .list .tab_box .btns_tab .btns_tab_inner .slick-slide").eq(i).attr("data-slick-index") == "1" ){
+                $("#new .list .tab_box .btns_tab .btns_tab_inner .slick-slide").eq(i).attr("tabindex","0");
+              }else{
+                $("#new .list .tab_box .btns_tab .btns_tab_inner .slick-slide").eq(i).attr("tabindex","-1");
+              }
+            })
+        } , 200)
+        
+      });
+  }
+
+  function setBtns(){
+      var m_$btnTab = g_$listBox.find(".btns_tab a");
+
+      m_$btnTab.on("click", function(){
+          var m_idx = parseInt($(this).attr("data-idx"));
+
+          changeGallery(m_idx);
+          g_currentIdx = m_idx;
+      })
+  }
+
+  function changeGallery(_idx){
+      var m_$listUl = g_$listBox.find("ol"),
+          m_$countBox = g_$listBox.find(".tab_box .count");
+
+      m_$listUl.removeClass("on");
+      m_$listUl.eq(_idx).addClass("on");
+
+      m_$countBox.find(".current").html(_idx+1);
+      m_$countBox.find(".total").html(g_listLen);
+  }
+
+
+
+  init();
+})();
+  $(document).ready(function(){
+    $('#new .list .tab_box .btns_tab .btns_tab_inner .slide_item').on('click', function () {
     var i = $(this).closest('li').index();
     $(this).closest('li').addClass('active').closest('li').siblings('li').removeClass('active');
     $(this).closest('.btns_tab_inner').siblings('.list_con').children('li').eq(i).addClass('active').siblings('li').removeClass('active');

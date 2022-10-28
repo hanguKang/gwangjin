@@ -1592,11 +1592,11 @@ input, select, textarea {
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px;
+  height: 100px;
 }
 #slide_menu .list .tab_box .btns_tab .btns_tab_inner .slide_item {
   display: inline-block;
-  width: 440px !important;
+  width: 430px !important;
   padding: 0 18.5px;
   text-align: center;
   height: 100px;
@@ -1607,6 +1607,12 @@ input, select, textarea {
 }
 #slide_menu .list .tab_box .btns_tab .btns_tab_inner .slide_item.slick-current + .slide_item {
   opacity: 1;
+}
+#slide_menu .list .tab_box .btns_tab .btns_tab_inner .slick-active + div .slide_item {
+  font-weight: 600;
+}
+#slide_menu .list .tab_box .btns_tab .btns_tab_inner .slick-active + div .slide_item > span {
+  border-bottom: 4px solid #000;
 }
 #slide_menu .list .tab_box .btn_tabArrow {
   position: absolute;
@@ -1718,22 +1724,159 @@ input, select, textarea {
   transition-delay: 0.8s;
 }
 
-/********************** shinsegae brand in motion set *******************************/
-/* #slide_menu .top_copy h2 {transform:translate(0,100px); opacity:0;}
-#slide_menu .list .tab_box {transform:translate(0,100px); opacity:0;}
-#slide_menu .list .tab_box .count {transform:translate(0,100px); opacity:0;}
-#slide_menu .list .list_box ul li {transform:translate(0,100px); opacity:0;}
-#slide_menu .list .btn_viewmore {transform:translate(0,100px); opacity:0;} */
-/* art & culture in motion play */
-/* #slide_menu.on .top_copy h2 {transform:translate(0,0); opacity:1; transition:transform 1s, opacity 1s;} */
-/* #slide_menu.on .list .tab_box {transform:translate(0,0); opacity:1; transition:transform 1s, opacity 1s; transition-delay:0.1s;}
-#slide_menu.on .list .tab_box .count {transform:translate(0,0); opacity:1; transition:transform 1s, opacity 1s; transition-delay:0.2s;} */
-/* #slide_menu.on .list .list_box ul li {transform:translate(0,0); opacity:1; transition:transform 0.8s, opacity 0.8s;}
-#slide_menu.on .list .list_box ul li:nth-child(1) {transition-delay:0.3s;}
-#slide_menu.on .list .list_box ul li:nth-child(2) {transition-delay:0.4s;}
-#slide_menu.on .list .list_box ul li:nth-child(3) {transition-delay:0.5s;}
-#slide_menu.on .list .list_box ul li:nth-child(4) {transition-delay:0.6s;}
-#slide_menu.on .list .list_box ul li:nth-child(5) {transition-delay:0.7s;}
-#slide_menu.on .list .list_box ul li:nth-child(6) {transition-delay:0.8s;}
-#slide_menu.on .list .btn_viewmore {transform:translate(0,0); opacity:1; transition:transform 1s, opacity 1s; transition-delay:0.9s;}
- *//*# sourceMappingURL=default.css.map */
+/* new */
+#new {
+  background-color: #eeeeee;
+  padding: 80px 0;
+}
+#new .list .tab_box {
+  position: relative;
+  left: 50%;
+  width: 1280px;
+  font-size: 0;
+  margin: 0 0 40px -640px;
+  overflow: hidden;
+  transform: translate(0, 100px);
+  opacity: 0;
+}
+#new .list .tab_box .btns_tab .btns_tab_inner {
+  white-space: nowrap;
+  position: relative;
+}
+#new .list .tab_box .btns_tab .btns_tab_inner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+}
+#new .list .tab_box .btns_tab .btns_tab_inner .slide_item {
+  display: inline-block;
+  width: 430px !important;
+  padding: 0 18.5px;
+  text-align: center;
+  height: 100px;
+  line-height: 100px;
+  opacity: 0.7;
+  font-size: 28px;
+  color: #000;
+}
+#new .list .tab_box .btns_tab .btns_tab_inner .slide_item.slick-current + .slide_item {
+  opacity: 1;
+}
+#new .list .tab_box .btns_tab .btns_tab_inner .slick-active + div .slide_item {
+  font-weight: 600;
+}
+#new .list .tab_box .btns_tab .btns_tab_inner .slick-active + div .slide_item > span {
+  border-bottom: 4px solid #000;
+}
+#new .list .tab_box .btn_tabArrow {
+  position: absolute;
+  top: 40px;
+}
+#new .list .tab_box .btn_tabArrow_l {
+  left: 406px;
+}
+#new .list .tab_box .btn_tabArrow_r {
+  right: 406px;
+}
+#new .list .tab_box .count {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+#new .list .tab_box .count > span {
+  font-size: 16px;
+  color: #888888;
+}
+#new .list .tab_box .count > span > span {
+  color: #222;
+}
+#new .list .tab_box .count > span > span.current {
+  opacity: 1;
+}
+#new .list .list_box ol {
+  top: -9999px;
+  display: none;
+}
+#new .list .list_box ol.on {
+  position: relative;
+  top: 0;
+  display: block;
+}
+#new .list .list_box ol li {
+  float: left;
+}
+#new .list .list_box .info_box ul li {
+  margin: 0 20px;
+}
+#new .list .list_box .info_box ul li a .img {
+  background: url(../images/icon_menu2_bg.png) no-repeat center;
+  width: 147px;
+  height: 140px;
+  display: block;
+}
+#new .list .list_box .info_box ul li a .img img {
+  display: block;
+  margin: auto;
+  padding: 35px 0;
+}
+#new .list .list_box .info_box ul li a .img.bg_blue {
+  background: url(../images/icon_menu2_bg_blue.png) no-repeat;
+}
+#new .list .list_box .info_box ul li a em {
+  margin-top: 10px;
+  text-align: center;
+  display: block;
+}
+#new .list .list_box .info_box ul li:first-child {
+  margin-left: 0;
+}
+#new .list .list_box .info_box ul li:last-child {
+  margin-right: 0;
+}
+#new .list .list_box .info_box ul li:last-child a em {
+  font-weight: 500;
+}
+#new .list .list_box .info_box ul li:hover a .img {
+  transition: 0.3s;
+}
+#new .list .list_box .info_box ul li:hover a .img img {
+  transition: 0.6s;
+}
+#new.on .list .tab_box {
+  transform: translate(0, 0);
+  opacity: 1;
+  transition: transform 1s, opacity 1s;
+  transition-delay: 0.1s;
+}
+#new.on .list .tab_box .count {
+  transform: translate(0, 0);
+  opacity: 1;
+  transition: transform 1s, opacity 1s;
+  transition-delay: 0.2s;
+}
+#new.on .list .tab_box ol li {
+  transform: translate(0, 0);
+  opacity: 1;
+  transition: transform 0.8s, opacity 0.8s;
+}
+#new.on .list .tab_box ol li:nth-child(1) {
+  transition-delay: 0.3s;
+}
+#new.on .list .tab_box ol li:nth-child(2) {
+  transition-delay: 0.4s;
+}
+#new.on .list .tab_box ol li:nth-child(3) {
+  transition-delay: 0.5s;
+}
+#new.on .list .tab_box ol li:nth-child(4) {
+  transition-delay: 0.6s;
+}
+#new.on .list .tab_box ol li:nth-child(5) {
+  transition-delay: 0.7s;
+}
+#new.on .list .tab_box ol li:nth-child(6) {
+  transition-delay: 0.8s;
+}/*# sourceMappingURL=default.css.map */
