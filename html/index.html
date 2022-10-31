@@ -7,9 +7,14 @@
   <title>광진구 시설관리공단 대표 홈페이지에 오신것을 환영합니다.</title>
   <link rel="stylesheet" href="../common/css/default.css">
   <link rel="stylesheet" href="../common/css/slick.css" />
+  <link rel="stylesheet" href="../common/css/aos.css" />
   <script src="../common/js/jquery-3.6.0.min.js"></script>
+  <script src="../common/js/jquery-1.11.3.min.js"></script>
+  <script src="../common/js/aos.js"></script>
   <script src="../common/js/common.js"></script>
   <script src="../common/js/slick.js"></script>
+
+
 </head>      
 <body>
     <div class="wrapper">
@@ -208,7 +213,7 @@
         </header>
         <!-- 헤더 / 드롭메뉴와 검색 디자인 미완성-->
     <!-- 메인 -->
-    <div id="contents">
+    <div id="contents" class="main">
         <div class="banner">
             <div class="slide_box">
                 <div class="slide">
@@ -278,7 +283,7 @@
             </div>
         </div>
         <div id="slide_menu" class="section on">
-            <div class="list">
+            <div class="list" >
                 <div class="tab_box">
                     <div class="btns_tab">
                         <div class="btns_tab_inner">
@@ -300,7 +305,7 @@
                         <img src="../common/images/tab_next.png" alt="다음보기">
                     </a>
                 </div>
-                <div class="list_box container">
+                <div class="list_box container"  data-aos="fade-up">
                     <ol class="on">
                         <li class="info_box">
                           <ul>
@@ -720,48 +725,318 @@
           </div>
         </div>
         <div id="new" class="section on">
+          <h2>공단 <b>소식.</b></h2>
           <div class="list">
               <div class="tab_box">
                   <div class="btns_tab">
                       <div class="btns_tab_inner">
                           <div class="slide_item">
-                              <span>공단홍보</span> 
+                            <span>보도자료</span>
                           </div>
                           <div class="slide_item">
-                            <span>광진소식지</span>
+                              <span>카드뉴스</span> 
                           </div>
                           <div class="slide_item">
-                            <span>광진 SNS</span>
+                            <span>포토갤러리</span>
+                          </div>
+                          <div class="slide_item">
+                            <span>비디오갤러리</span>
+                          </div>
+                          <div class="slide_item">
+                            <span>공단소식지</span>
                           </div>
                       </div>
                   </div>
                   <a href="#" class="btn_tabArrow btn_tabArrow_l" data-pos="l" >
+                 
                       <img src="../common/images/tab_prev.png" alt="이전보기">
+                 
+                      
                   </a>
                   <a href="#" class="btn_tabArrow btn_tabArrow_r " data-pos="l" >
                       <img src="../common/images/tab_next.png" alt="다음보기">
                   </a>
               </div>
-              <div class="list_box container">
+              <div class="list_box container " data-aos="fade-up" >
                   <ol class="on">
                       <li class="info_box">
                         <ul>
-                          
+                          <li>
+                            <a href="#">
+                              <img src="../common/images/sample_01.png" alt="">
+                              <strong>보도자료</strong>
+                              <span>광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석</span>
+                              <em>2022.06.16</em>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <img src="../common/images/sample_02.png" alt="">
+                              <strong>보도자료</strong>
+                              <span>자양한강도서관, &#60;2022 서울북스타트	&#62;그림책으로 맘 준비, 맘 돌봄! </span>
+                              <em>2022.06.16</em>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <img src="../common/images/sample_03.png" alt="">
+                              <strong>공단 소식지</strong>
+                              <span>광진구민체육센터, 고객과 함께하는 묘목 나눔 행사 안내 
+                              </span>
+                              <em>2022.06.09</em>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <img src="../common/images/sample_04.png" alt="">
+                              <strong>광진 SNS</strong>
+                              <span>광진구민체육센터, "사계절 푸르른 힐링 쉼터" 실내 스마트 가든 조성 </span>
+                              <em>2022.06.16</em>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <img src="../common/images/sample_05.png" alt="">
+                              <strong>공단 소식지</strong>
+                              <span>광진구시설관리공단, 한강공원 안전문화 캠페인 시행 </span>
+                              <em>2022.06.16</em>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <img src="../common/images/sample_06.png" alt="">
+                              <strong>공단 소식지</strong>
+                              <span>광진구시설관리공단, 노동조합사무실(고충상담소) 근무환경 개선공사 시행</span>
+                              <em>2022.06.16</em>
+                            </a>
+                          </li>
                         </ul>
                       </li>
                   </ol>
                   <ol>
                     <li class="info_box">
                       <ul>
-
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_01.png" alt="">
+                            <strong>카드 뉴스</strong>
+                            <span>광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석</span>
+                            <em>2022.06.16</em>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_02.png" alt="">
+                            <strong>카드 뉴스</strong>
+                            <span>자양한강도서관, &#60;2022 서울북스타트	&#62;그림책으로 맘 준비, 맘 돌봄! </span>
+                            <em>2022.06.16</em>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_03.png" alt="">
+                            <strong>공단 소식지</strong>
+                            <span>광진구민체육센터, 고객과 함께하는 묘목 나눔 행사 안내 
+                            </span>
+                            <em>2022.06.09</em>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_04.png" alt="">
+                            <strong>광진 SNS</strong>
+                            <span>광진구민체육센터, "사계절 푸르른 힐링 쉼터" 실내 스마트 가든 조성 </span>
+                            <em>2022.06.16</em>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_05.png" alt="">
+                            <strong>공단 소식지</strong>
+                            <span>광진구시설관리공단, 한강공원 안전문화 캠페인 시행 </span>
+                            <em>2022.06.16</em>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_06.png" alt="">
+                            <strong>공단 소식지</strong>
+                            <span>광진구시설관리공단, 노동조합사무실(고충상담소) 근무환경 개선공사 시행</span>
+                            <em>2022.06.16</em>
+                          </a>
+                        </li>
                       </ul>
                     </li>
                   </ol>
                   <ol>
                     <li class="info_box">
-                      <ul>
-
-                      </ul>
+                      <li class="info_box">
+                        <ul>
+                          <li>
+                            <a href="#">
+                              <img src="../common/images/sample_01.png" alt="">
+                              <strong>포토갤러리</strong>
+                              <span>광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석</span>
+                              <em>2022.06.16</em>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <img src="../common/images/sample_02.png" alt="">
+                              <strong>포토갤러리</strong>
+                              <span>자양한강도서관, &#60;2022 서울북스타트	&#62;그림책으로 맘 준비, 맘 돌봄! </span>
+                              <em>2022.06.16</em>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <img src="../common/images/sample_03.png" alt="">
+                              <strong>공단 소식지</strong>
+                              <span>광진구민체육센터, 고객과 함께하는 묘목 나눔 행사 안내 
+                              </span>
+                              <em>2022.06.09</em>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <img src="../common/images/sample_04.png" alt="">
+                              <strong>광진 SNS</strong>
+                              <span>광진구민체육센터, "사계절 푸르른 힐링 쉼터" 실내 스마트 가든 조성 </span>
+                              <em>2022.06.16</em>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <img src="../common/images/sample_05.png" alt="">
+                              <strong>공단 소식지</strong>
+                              <span>광진구시설관리공단, 한강공원 안전문화 캠페인 시행 </span>
+                              <em>2022.06.16</em>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <img src="../common/images/sample_06.png" alt="">
+                              <strong>공단 소식지</strong>
+                              <span>광진구시설관리공단, 노동조합사무실(고충상담소) 근무환경 개선공사 시행</span>
+                              <em>2022.06.16</em>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </li>
+                  </ol>
+                  <ol>
+                    <li class="info_box">
+                      <li class="info_box">
+                        <ul>
+                          <li>
+                            <a href="#">
+                              <img src="../common/images/sample_01.png" alt="">
+                              <strong>비디오갤러리</strong>
+                              <span>광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석</span>
+                              <em>2022.06.16</em>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <img src="../common/images/sample_02.png" alt="">
+                              <strong>비디오갤러리</strong>
+                              <span>자양한강도서관, &#60;2022 서울북스타트	&#62;그림책으로 맘 준비, 맘 돌봄! </span>
+                              <em>2022.06.16</em>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <img src="../common/images/sample_03.png" alt="">
+                              <strong>공단 소식지</strong>
+                              <span>광진구민체육센터, 고객과 함께하는 묘목 나눔 행사 안내 
+                              </span>
+                              <em>2022.06.09</em>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <img src="../common/images/sample_04.png" alt="">
+                              <strong>광진 SNS</strong>
+                              <span>광진구민체육센터, "사계절 푸르른 힐링 쉼터" 실내 스마트 가든 조성 </span>
+                              <em>2022.06.16</em>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <img src="../common/images/sample_05.png" alt="">
+                              <strong>공단 소식지</strong>
+                              <span>광진구시설관리공단, 한강공원 안전문화 캠페인 시행 </span>
+                              <em>2022.06.16</em>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <img src="../common/images/sample_06.png" alt="">
+                              <strong>공단 소식지</strong>
+                              <span>광진구시설관리공단, 노동조합사무실(고충상담소) 근무환경 개선공사 시행</span>
+                              <em>2022.06.16</em>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </li>
+                  </ol>
+                  <ol>
+                    <li class="info_box">
+                      <li class="info_box">
+                        <ul>
+                          <li>
+                            <a href="#">
+                              <img src="../common/images/sample_01.png" alt="">
+                              <strong>공단 소식지</strong>
+                              <span>광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석</span>
+                              <em>2022.06.16</em>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <img src="../common/images/sample_02.png" alt="">
+                              <strong>공단 소식지</strong>
+                              <span>자양한강도서관, &#60;2022 서울북스타트	&#62;그림책으로 맘 준비, 맘 돌봄! </span>
+                              <em>2022.06.16</em>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <img src="../common/images/sample_03.png" alt="">
+                              <strong>공단 소식지</strong>
+                              <span>광진구민체육센터, 고객과 함께하는 묘목 나눔 행사 안내 
+                              </span>
+                              <em>2022.06.09</em>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <img src="../common/images/sample_04.png" alt="">
+                              <strong>광진 SNS</strong>
+                              <span>광진구민체육센터, "사계절 푸르른 힐링 쉼터" 실내 스마트 가든 조성 </span>
+                              <em>2022.06.16</em>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <img src="../common/images/sample_05.png" alt="">
+                              <strong>공단 소식지</strong>
+                              <span>광진구시설관리공단, 한강공원 안전문화 캠페인 시행 </span>
+                              <em>2022.06.16</em>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <img src="../common/images/sample_06.png" alt="">
+                              <strong>공단 소식지</strong>
+                              <span>광진구시설관리공단, 노동조합사무실(고충상담소) 근무환경 개선공사 시행</span>
+                              <em>2022.06.16</em>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
                     </li>
                   </ol>
               </div>
@@ -816,4 +1091,14 @@
     <!-- footer -->
   </div>
 </body>
+<script>
+  var myAOS = function () {
+      AOS.init({
+          easing: 'ease',
+          duration: 1500,
+      });
+  };
+
+  myAOS();
+</script>
 </html>

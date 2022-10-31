@@ -442,7 +442,7 @@ $(function () {
   
 /***메인=문화공공체육시설 **/
 var MainBrand = (function(){
-  var g_$listBox = $("#slide_menu .list, #new .list"),
+  var g_$listBox = $("#slide_menu .list"),
       g_$listUl = g_$listBox.find("ol"),
       /* g_swiper, */
       g_currentIdx = 0,
@@ -463,7 +463,7 @@ var MainBrand = (function(){
           swipeToSlide: true,
           autoplay: false,
           variableWidth: true,
-          prevArrow:$(".btn_tabArrow_l"),
+          prevArrow:$("#slide_menu .btn_tabArrow_l"),
           nextArrow:$("#slide_menu .btn_tabArrow_r"),
           dots: false
       });
@@ -490,7 +490,7 @@ var MainBrand = (function(){
   }
 
   function setBtns(){
-      var m_$btnTab = g_$listBox.find(".btns_tab a");
+      var m_$btnTab = g_$listBox.find("#slide_menu .btns_tab a");
 
       m_$btnTab.on("click", function(){
           var m_idx = parseInt($(this).attr("data-idx"));
@@ -502,7 +502,7 @@ var MainBrand = (function(){
 
   function changeGallery(_idx){
       var m_$listUl = g_$listBox.find("ol"),
-          m_$countBox = g_$listBox.find(".tab_box .count");
+          m_$countBox = g_$listBox.find("#slide_menu .tab_box .count");
 
       m_$listUl.removeClass("on");
       m_$listUl.eq(_idx).addClass("on");
@@ -525,7 +525,7 @@ var MainBrand = (function(){
 
 /***공단소식 **/
 var MainBrand = (function(){
-  var g_$listBox = $("#new .list, #new .list"),
+  var g_$listBox = $("#new .list"),
       g_$listUl = g_$listBox.find("ol"),
       /* g_swiper, */
       g_currentIdx = 0,
@@ -546,7 +546,7 @@ var MainBrand = (function(){
           swipeToSlide: true,
           autoplay: false,
           variableWidth: true,
-          prevArrow:$("#new.btn_tabArrow_l"),
+          prevArrow:$("#new .btn_tabArrow_l"),
           nextArrow:$("#new .btn_tabArrow_r"),
           dots: false
       });
@@ -593,9 +593,6 @@ var MainBrand = (function(){
       m_$countBox.find(".current").html(_idx+1);
       m_$countBox.find(".total").html(g_listLen);
   }
-
-
-
   init();
 })();
   $(document).ready(function(){
@@ -795,5 +792,6 @@ $(document).on('click', '.modal_wrap .close', function () {
   bodyScroll('on');
   $(this).closest('.modal_wrap').fadeOut();
 });
+
 
 
