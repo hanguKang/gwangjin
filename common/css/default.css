@@ -987,7 +987,7 @@ input, select, textarea {
   padding: 14px;
   display: inline-block;
   margin-right: 6px;
-  /*           &.play {background:url(../images/btn_fb_play.png) no-repeat center center; border-radius: 0 0 5px 5px;}    */
+  /*        &.play {background:url(../images/btn_fb_play.png) no-repeat center center; border-radius: 0 0 5px 5px;}    */
 }
 .footer .f_banner .control button.next {
   background: #e61874 url(../images/f_banner_next.png) no-repeat center center;
