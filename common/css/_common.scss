@@ -18,7 +18,7 @@
 
 
 /*헤더*/
-.header{$headH:80px;position:absolute; top: 0; left: 0; width:100%;  z-index: 100;overflow-y:hidden;transition:border-radius 0.1s;/* box-shadow:0 0 10px rgba(0,0,0,0.1);  */
+.header{$headH:80px;position:absolute; top: 0; left: 0; width:100%;  z-index: 100;overflow-y:hidden;transition:border-radius 0.1s; background-color: #f2f2f2; /* box-shadow:0 0 10px rgba(0,0,0,0.1);  */
   /* &.active {border-radius:0 0 80px 0;transition:border-radius 0.1s;
     &:before {content:'';width:100%;height:1px;background-color:#ececec;position:absolute;left:0;top:100px;display:block;z-index:11;}
   } */
@@ -53,35 +53,35 @@
   }
  
   .gnb{@include clear;text-align:center;position:relative;font-size:0;z-index:12; margin-left:80px; margin-right: 230px;
+    &::before{position: absolute; display: block; content: ''; width: 90px; height: 1px; background-color: #d9d9d9; left: -80px; top: 70px;}
+    &::after{position: absolute; display: block; content: ''; width: 235px; height: 1px; background-color: #d9d9d9; right: -226px; top: 70px;}
       .logo{float: left;
           a{width:289px;background: url(../images/logo.png) no-repeat center left/ auto 40px; height:70px; line-height:70px;display:block;
           }
       } 
-      >ul{font-size:22px; @include clear; display:inline-block; width: calc(100% - 289px);
+      >ul{font-size:22px; @include clear; display:inline-block; width: calc(100% - 289px); 
           >li{float:left; width: 20%;
               &:hover{
-                  >a{color:#dd373b;} 
+                  >a{font-weight: 600;} 
               }
               &.active{
                   a {position:relative;}
                   >a::before{
-                     position:absolute;left:50%;bottom:-30px;width:100%;transform:translateX(-50%);height:2px;background-color:#dd373b;content:'';z-index:2;
+                     position:absolute;left:50%;bottom:0;width:100%;transform:translateX(-50%);height:4px;background-color:#000;content:'';z-index:5;max-width: 145px;
                   }
-                  .dep2_wrap{visibility:visible;z-index: 3;}
+                  .dep2_wrap{visibility:visible;z-index: 3; border-top: 1px solid #d9d9d9 ;}
               }
               &:first-child{
                   a{padding-left: 0;}
               }
-
               >a{font-weight: 400; position: relative;line-height: 70px; }
-              }
+          }
       }
-    .dep2_wrap {display:block; width:100%;position:absolute;top:100%; left:0; z-index:1; visibility: hidden;background-color:#fff;
-      .container{position: relative; @include clear;
-        > div{background: #fff;width:215px;position: absolute; top: 0; left: 0; padding: 10px 50px 40px 0; text-align: right;            
+    .dep2_wrap {display:block; width:100%;position:absolute;top:100%; left:0; z-index:1; visibility: hidden;background-color:#f2f2f2;@include clear;
+        > div{width: 420px;height: 100%;line-height: 23px; position: absolute;top: 0;left: 0; text-align: left; background-color: #d9d7d7;padding: 40px 90px 80px 150px;
             h2{font-weight: 500; font-size: 24px;}
         }
-        >ul{width:calc(100% - 215px);min-height:120px;  padding-left: 50px; background: #fff; @include ftItem(3,30); margin: 30px 0 30px 215px; border-left: 1px solid #cecfd1;
+        >ul{width:calc(100% - 420px);min-height:120px;  padding-left: 50px; @include ftItem(3,30); margin: 30px 0 30px 400px; border-left: 1px solid #cecfd1;
             >li{transition: 0.3s; text-align: left;  margin-bottom: 18px;
                 &:hover{
                     > a{border-color: #23408f; color: #23408f; background-image:url(../images/icon_dep2_on.png);}
@@ -111,7 +111,7 @@
               
             }
         }
-      }
+      
     }
   }
   @include maxWidth($pc){
@@ -236,11 +236,11 @@
 .footer {
   .f_banner {@include clear;padding:60px 0;background: linear-gradient(45deg, #86aee5, #005db5);
     h2{ font-size: 28px; font-weight: 500; margin-bottom: 10px}
-    .control {@include align(middle,19px);width:230px;height: 30px; float: left; text-align: right;
+    .control {@include align(middle,19px);width:230px;height: 48px; float: left; text-align: right;
       button {$btnSize : 46px; width:$btnSize;height:$btnSize;overflow:hidden;text-indent:$btnSize; padding: 14px;  display: inline-block; margin-right: 6px;
           &.next{background: #e61874 url(../images/f_banner_next.png) no-repeat center center; margin-right: 0;}
           &.prev{background: #fff url(../images/f_banner_prev.png) no-repeat center center;}
-          &.pause{border: 1px solid #000; background: url(../images/ft_banner_stop.png) no-repeat center center; }
+          /* &.pause{border: 1px solid #000; background: url(../images/ft_banner_stop.png) no-repeat center center; } */
 /*        &.play {background:url(../images/btn_fb_play.png) no-repeat center center; border-radius: 0 0 5px 5px;}    */   
       }
     } 
