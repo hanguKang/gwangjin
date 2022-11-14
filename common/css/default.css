@@ -625,6 +625,7 @@ input, select, textarea {
   z-index: 1;
   visibility: hidden;
   background-color: #f2f2f2;
+  min-height: 400px;
 }
 .header .gnb .dep2_wrap:after {
   content: "";
@@ -641,51 +642,49 @@ input, select, textarea {
   text-align: left;
   background-color: #d9d7d7;
   padding: 40px 90px 80px 150px;
+  margin-left: -80px;
 }
 .header .gnb .dep2_wrap > div h2 {
   font-weight: 500;
   font-size: 24px;
+  margin-bottom: 50px;
 }
 .header .gnb .dep2_wrap > ul {
   width: calc(100% - 420px);
   min-height: 120px;
-  padding-left: 50px;
-  margin: 30px 0 30px 400px;
-  border-left: 1px solid #cecfd1;
+  margin: 30px 0 30px 370px;
 }
-.header .gnb .dep2_wrap > ul > :nth-child(n) {
-  float: left;
-  width: calc(33.3333333333% - 20px);
-  margin-right: 30px;
-}
-.header .gnb .dep2_wrap > ul > :nth-of-type(3n) {
-  margin-right: 0;
-}
-.header .gnb .dep2_wrap > ul > :not(:nth-of-type(3n + 1)) {
-  clear: none;
-}
-.header .gnb .dep2_wrap > ul > :nth-of-type(3n + 1) {
+.header .gnb .dep2_wrap > ul:after {
+  content: "";
+  display: block;
   clear: both;
 }
 .header .gnb .dep2_wrap > ul > li {
   transition: 0.3s;
   text-align: left;
   margin-bottom: 18px;
+  float: left;
+  margin-left: 15px;
+  min-width: 140px;
 }
 .header .gnb .dep2_wrap > ul > li:hover > a {
   border-color: #23408f;
   color: #23408f;
   background-image: url(../images/icon_dep2_on.png);
 }
+.header .gnb .dep2_wrap > ul > li:first-child {
+  margin-left: 0;
+}
 .header .gnb .dep2_wrap > ul > li > a {
   line-height: 1.2em;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 500;
   padding: 12px 20px;
   transition: 0.3s;
   display: block;
+  text-align: center;
   font-weight: 500;
   border: 1px solid #cecfd1;
-  border-radius: 4px;
   transition: 0.3s;
   background: url(../images/icon_dep2.png) no-repeat right 21px center;
 }
@@ -1117,7 +1116,7 @@ input, select, textarea {
 #contents {
   /* 공지사항 */
   /* 문화공공체육시설 */
-  /* new */
+  /* news */
 }
 #contents .banner .slide_box {
   position: relative;
@@ -2055,6 +2054,24 @@ input, select, textarea {
   width: 256px;
   position: relative;
   top: -50px;
+  /* @include minWidth($tab){     
+      .dep2{
+          > li {
+              > a{
+                  &:hover {
+                    color: #fff;background-color:#2f457c;box-shadow:12px 12px 16px rgba(0,55,128,0.18);
+                  }
+              }
+              .dep3 {
+                  li {
+                      a:hover {color:#316ed2;text-decoration:underline;text-underline-offset: 0.2em;
+                          &:before {background-color:#316ed2;}
+                      }
+                  }
+              }
+          }
+      }
+  } */
 }
 .sub #lnb > strong {
   display: block;
@@ -2063,19 +2080,16 @@ input, select, textarea {
   color: #fff;
   text-align: center;
   line-height: 148px;
-  background-color: #476dc3;
+  background-color: #283f83;
   margin-bottom: 10px;
   font-weight: 300;
-}
-.sub #lnb .dep2 {
-  border: 1px solid #dde1ea;
 }
 .sub #lnb .dep2 > li {
   border-bottom: 1px solid #dde1ea;
 }
 .sub #lnb .dep2 > li > a {
   display: block;
-  padding: 19px 40px 19px 20px;
+  padding: 15px 0;
   position: relative;
   font-weight: 400;
   line-height: 1.25;
@@ -2095,8 +2109,7 @@ input, select, textarea {
   border-bottom: 0;
 }
 .sub #lnb .dep2 > li.active > a {
-  color: #fff;
-  background-color: #2f457c;
+  font-weight: 500;
 }
 .sub #lnb .dep2 > li.active > a.menu_btn:after {
   background-image: url(../images/arrow_lnb_on.png);
@@ -2105,8 +2118,6 @@ input, select, textarea {
 .sub #lnb .dep2 > li > .dep3 {
   display: none;
   border-top: 1px solid #dde1ea;
-  background-color: #f6f6f6;
-  padding: 16px 20px;
   font-size: 15px;
 }
 .sub #lnb .dep2 > li > .dep3 li a {
@@ -2133,21 +2144,6 @@ input, select, textarea {
 }
 .sub #lnb .dep2 > li > .dep3 li.selected a:before, .sub #lnb .dep2 > li > .dep3 li.active a:before {
   background-color: #316ed2;
-}
-@media screen and (min-width: 1080px) {
-  .sub #lnb .dep2 > li > a:hover {
-    color: #fff;
-    background-color: #2f457c;
-    box-shadow: 12px 12px 16px rgba(0, 55, 128, 0.18);
-  }
-  .sub #lnb .dep2 > li .dep3 li a:hover {
-    color: #316ed2;
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-  }
-  .sub #lnb .dep2 > li .dep3 li a:hover:before {
-    background-color: #316ed2;
-  }
 }
 @media screen and (max-width: 1080px) {
   .sub #lnb {
@@ -2349,7 +2345,7 @@ input, select, textarea {
   display: block;
 }
 .sub #contents .sub_top > ol > li a {
-  color: #666;
+  color: #222;
   display: inline-block;
 }
 .sub #contents .sub_top > ol > li:first-of-type {

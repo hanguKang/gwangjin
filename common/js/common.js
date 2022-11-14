@@ -291,7 +291,7 @@ $(function () {
         return false;
     }
 });
-$('#lnb .dep2 > li').each(function () {
+$('#lnb .dep2 > li a').each(function () {
     if ($(this).hasClass('active')) {
         $(this).children('.dep3').slideDown(200);
     }
