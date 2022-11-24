@@ -66,6 +66,8 @@ $fs-32:2rem;// 32px
 
 //style
 $header-height: 85px;
+
+
 //mixin
 /*clear*/
 @mixin clear{&:after {content: ''; display: block; clear: both;}}
@@ -79,15 +81,15 @@ $header-height: 85px;
 @mixin ell6{text-overflow: ellipsis; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical;}
 
 
-/*요소중앙정렬*/
-@mixin align($align,$font-size){
+/*요소 세로 중앙정렬*/
+@mixin align($align, $font-size){
     font-size:0;
     &:before{display:inline-block;height:100%;content:''; vertical-align:$align;}
     > :nth-child(n) {font-size:$font-size;display:inline-block;vertical-align:$align;}
 }
 
 /*아이템 정렬*/
-@mixin ftItem($i,$pd){
+@mixin ftItem($i, $pd){
 	> :nth-child(n){
 		float:left;
 		width:calc(#{100 / $i}% - #{($i - 1) * $pd / $i}px);

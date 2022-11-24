@@ -214,6 +214,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   border: 0;
   font-size: 100%;
   font: inherit;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -273,6 +274,7 @@ address {
 button {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border: 0 none;
   background-color: transparent;
@@ -281,7 +283,9 @@ button {
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   cursor: pointer;
 }
@@ -340,7 +344,9 @@ input, select, textarea {
   padding: 0 10px;
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
   display: block;
@@ -349,15 +355,15 @@ input, select, textarea {
 }
 
 /*clear*/
-/*요소중앙정렬*/
+/*요소 세로 중앙정렬*/
 /*아이템 정렬*/
 #wrap {
   min-height: 100vh;
 }
 
 .container {
-  max-width: 1300px;
   margin: auto;
+  max-width: 1300px;
 }
 @media screen and (max-width: 1260px) {
   .container {
@@ -406,6 +412,7 @@ input, select, textarea {
   width: 100%;
   z-index: 100;
   overflow-y: hidden;
+  -webkit-transition: border-radius 0.1s;
   transition: border-radius 0.1s;
   background-color: #f2f2f2; /* box-shadow:0 0 10px rgba(0,0,0,0.1);  */
   /* &.active {border-radius:0 0 80px 0;transition:border-radius 0.1s;
@@ -444,7 +451,8 @@ input, select, textarea {
   background: #dbdbdb;
   position: absolute;
   top: 56%;
-  transform: translateY(-60%);
+  -webkit-transform: translateY(-60%);
+          transform: translateY(-60%);
   left: -2px;
 }
 .header .hd_top ul li:first-child a {
@@ -596,7 +604,8 @@ input, select, textarea {
   left: 50%;
   bottom: 0;
   width: 100%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   height: 4px;
   background-color: #000;
   content: "";
@@ -660,6 +669,7 @@ input, select, textarea {
   clear: both;
 }
 .header .gnb .dep2_wrap > ul > li {
+  -webkit-transition: 0.3s;
   transition: 0.3s;
   text-align: left;
   margin-bottom: 18px;
@@ -680,6 +690,7 @@ input, select, textarea {
   font-size: 18px;
   font-weight: 500;
   padding: 12px 20px;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
   display: block;
   text-align: center;
@@ -720,6 +731,7 @@ input, select, textarea {
 .header .gnb .dep2_wrap > ul > li .dep3 li a span:after {
   content: "";
   width: 0;
+  -webkit-transition: 0.4s;
   transition: 0.4s;
   z-index: -1;
 }
@@ -854,7 +866,8 @@ input, select, textarea {
   color: #fff;
   background: #000 url(../images/m_join.png) no-repeat right 15px center/9px auto;
   border-radius: 30px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.33);
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.33);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.33);
 }
 .m_gnb > div .util ol li:last-child a {
   background-image: url(../images/m_login.png);
@@ -1134,7 +1147,8 @@ input, select, textarea {
   width: 100%;
   display: block;
   z-index: 1;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 #contents .banner .slide_box .slide_btn .pagination_dot {
   text-align: center;
@@ -1203,7 +1217,8 @@ input, select, textarea {
   top: 18%;
   left: 45%;
   width: 100%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   display: block;
   color: #fff;
   font-size: 60px;
@@ -1221,7 +1236,8 @@ input, select, textarea {
   display: block;
   right: 11%;
   top: 21%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   z-index: 1;
   color: #fff;
 }
@@ -1283,7 +1299,8 @@ input, select, textarea {
   bottom: 11%;
   left: 24%;
   display: block;
-  transform: translateX(-50%, -50%);
+  -webkit-transform: translateX(-50%, -50%);
+          transform: translateX(-50%, -50%);
 }
 #contents .banner .slide_box > ul:after {
   content: "";
@@ -1452,7 +1469,8 @@ input, select, textarea {
 }
 #contents .board .tab_box > li > div > ol li:hover {
   background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 #contents .board .tab_box > li > div > ol li:last-child {
   border-bottom: none;
@@ -1471,7 +1489,8 @@ input, select, textarea {
 }
 #contents .board .tab_box > li > div > ol li:last-child:hover {
   background-color: unset;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 #contents .board .tab_box > li.active > button {
   font-size: 26px;
@@ -1598,7 +1617,8 @@ input, select, textarea {
   font-size: 0;
   margin: 0 0 40px -640px;
   overflow: hidden;
-  transform: translate(0, 100px);
+  -webkit-transform: translate(0, 100px);
+          transform: translate(0, 100px);
   opacity: 0;
 }
 #contents #slide_menu .list .tab_box .btns_tab .btns_tab_inner {
@@ -1674,6 +1694,7 @@ input, select, textarea {
   margin: 0 20px;
 }
 #contents #slide_menu .list .list_box .info_box ul li a {
+  -webkit-transition: 0.6s;
   transition: 0.6s;
 }
 #contents #slide_menu .list .list_box .info_box ul li a .img {
@@ -1681,6 +1702,7 @@ input, select, textarea {
   width: 147px;
   height: 140px;
   display: block;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 #contents #slide_menu .list .list_box .info_box ul li a .img img {
@@ -1709,42 +1731,63 @@ input, select, textarea {
   position: relative;
 }
 #contents #slide_menu .list .list_box .info_box ul li:hover a .img {
-  transform: translate(0, -10%);
+  -webkit-transform: translate(0, -10%);
+          transform: translate(0, -10%);
 }
 #contents #slide_menu.on .list .tab_box {
-  transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
   opacity: 1;
+  -webkit-transition: opacity 1s, -webkit-transform 1s;
+  transition: opacity 1s, -webkit-transform 1s;
   transition: transform 1s, opacity 1s;
-  transition-delay: 0.1s;
+  transition: transform 1s, opacity 1s, -webkit-transform 1s;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
 }
 #contents #slide_menu.on .list .tab_box .count {
-  transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
   opacity: 1;
+  -webkit-transition: opacity 1s, -webkit-transform 1s;
+  transition: opacity 1s, -webkit-transform 1s;
   transition: transform 1s, opacity 1s;
-  transition-delay: 0.2s;
+  transition: transform 1s, opacity 1s, -webkit-transform 1s;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
 }
 #contents #slide_menu.on .list .tab_box ol li {
-  transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
   opacity: 1;
+  -webkit-transition: opacity 0.8s, -webkit-transform 0.8s;
+  transition: opacity 0.8s, -webkit-transform 0.8s;
   transition: transform 0.8s, opacity 0.8s;
+  transition: transform 0.8s, opacity 0.8s, -webkit-transform 0.8s;
 }
 #contents #slide_menu.on .list .tab_box ol li:nth-child(1) {
-  transition-delay: 0.3s;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
 }
 #contents #slide_menu.on .list .tab_box ol li:nth-child(2) {
-  transition-delay: 0.4s;
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
 }
 #contents #slide_menu.on .list .tab_box ol li:nth-child(3) {
-  transition-delay: 0.5s;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
 }
 #contents #slide_menu.on .list .tab_box ol li:nth-child(4) {
-  transition-delay: 0.6s;
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
 }
 #contents #slide_menu.on .list .tab_box ol li:nth-child(5) {
-  transition-delay: 0.7s;
+  -webkit-transition-delay: 0.7s;
+          transition-delay: 0.7s;
 }
 #contents #slide_menu.on .list .tab_box ol li:nth-child(6) {
-  transition-delay: 0.8s;
+  -webkit-transition-delay: 0.8s;
+          transition-delay: 0.8s;
 }
 #contents #new {
   background-color: #eeeeee;
@@ -1767,7 +1810,8 @@ input, select, textarea {
   font-size: 0;
   margin: 0 0 0 -640px;
   overflow: hidden;
-  transform: translate(0, 100px);
+  -webkit-transform: translate(0, 100px);
+          transform: translate(0, 100px);
   opacity: 0;
 }
 #contents #new .list .tab_box .btns_tab .btns_tab_inner {
@@ -1886,50 +1930,72 @@ input, select, textarea {
   clear: both;
 }
 #contents #new.on .list .tab_box {
-  transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
   opacity: 1;
+  -webkit-transition: opacity 1s, -webkit-transform 1s;
+  transition: opacity 1s, -webkit-transform 1s;
   transition: transform 1s, opacity 1s;
-  transition-delay: 0.1s;
+  transition: transform 1s, opacity 1s, -webkit-transform 1s;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
 }
 #contents #new.on .list .tab_box .count {
-  transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
   opacity: 1;
+  -webkit-transition: opacity 1s, -webkit-transform 1s;
+  transition: opacity 1s, -webkit-transform 1s;
   transition: transform 1s, opacity 1s;
-  transition-delay: 0.2s;
+  transition: transform 1s, opacity 1s, -webkit-transform 1s;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
 }
 #contents #new.on .list .tab_box ol li {
-  transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
   opacity: 1;
+  -webkit-transition: opacity 0.8s, -webkit-transform 0.8s;
+  transition: opacity 0.8s, -webkit-transform 0.8s;
   transition: transform 0.8s, opacity 0.8s;
+  transition: transform 0.8s, opacity 0.8s, -webkit-transform 0.8s;
 }
 #contents #new.on .list .tab_box ol li:nth-child(1) {
-  transition-delay: 0.3s;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
 }
 #contents #new.on .list .tab_box ol li:nth-child(2) {
-  transition-delay: 0.4s;
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
 }
 #contents #new.on .list .tab_box ol li:nth-child(3) {
-  transition-delay: 0.5s;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
 }
 #contents #new.on .list .tab_box ol li:nth-child(4) {
-  transition-delay: 0.6s;
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
 }
 #contents #new.on .list .tab_box ol li:nth-child(5) {
-  transition-delay: 0.7s;
+  -webkit-transition-delay: 0.7s;
+          transition-delay: 0.7s;
 }
 #contents #new.on .list .tab_box ol li:nth-child(6) {
-  transition-delay: 0.8s;
+  -webkit-transition-delay: 0.8s;
+          transition-delay: 0.8s;
 }
 
 @-webkit-keyframes spinner2 {
   to {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
 @keyframes spinner2 {
   to {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 .page_spot {
@@ -1952,7 +2018,8 @@ input, select, textarea {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   z-index: -1;
   -webkit-animation: bg-zoom 3s;
           animation: bg-zoom 3s;
@@ -1980,18 +2047,22 @@ input, select, textarea {
 }
 @-webkit-keyframes bg-zoom {
   from {
-    transform: translate(-50%, -50%) scale(1.2);
+    -webkit-transform: translate(-50%, -50%) scale(1.2);
+            transform: translate(-50%, -50%) scale(1.2);
   }
   to {
-    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
   }
 }
 @keyframes bg-zoom {
   from {
-    transform: translate(-50%, -50%) scale(1.2);
+    -webkit-transform: translate(-50%, -50%) scale(1.2);
+            transform: translate(-50%, -50%) scale(1.2);
   }
   to {
-    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
   }
 }
 .page_spot span {
@@ -2099,10 +2170,12 @@ input, select, textarea {
   position: absolute;
   right: 20px;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   width: 12px;
   height: 12px;
   background: url(../images/arrow_lnb_off.png) no-repeat center;
+  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 .sub #lnb .dep2 > li:last-of-type {
@@ -2113,7 +2186,8 @@ input, select, textarea {
 }
 .sub #lnb .dep2 > li.active > a.menu_btn:after {
   background-image: url(../images/arrow_lnb_on.png);
-  transform: translateY(-50%) rotate(-180deg);
+  -webkit-transform: translateY(-50%) rotate(-180deg);
+          transform: translateY(-50%) rotate(-180deg);
 }
 .sub #lnb .dep2 > li > .dep3 {
   display: none;
@@ -2382,6 +2456,7 @@ input, select, textarea {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 .sub #contents .sub_top .share ul {
@@ -2396,7 +2471,8 @@ input, select, textarea {
   background-color: #fff;
   white-space: nowrap;
   text-align: center;
-  box-shadow: 8px 8px 25px 0 rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 8px 8px 25px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 8px 8px 25px 0 rgba(0, 0, 0, 0.12);
   z-index: 2;
 }
 .sub #contents .sub_top .share ul:before {
@@ -2510,7 +2586,8 @@ input, select, textarea {
     top: 42px;
     width: 131px;
     padding: 15px;
-    box-shadow: 7px 7px 25px 0 rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 7px 7px 25px 0 rgba(0, 0, 0, 0.12);
+            box-shadow: 7px 7px 25px 0 rgba(0, 0, 0, 0.12);
     z-index: 2;
   }
   .sub #contents .sub_top .share ul:before {
@@ -2527,4 +2604,4 @@ input, select, textarea {
   .sub #contents .sub_top .share ul li img {
     width: 27.5px;
   }
-}/*# sourceMappingURL=default.css.map */
+}
