@@ -157,23 +157,31 @@ function headLine(arg) {
 }
 function gnb3Open(target) {
   if (pcChk(1000)) {
+
     var dep2H = $(target).next().outerHeight();
-    $('.header')
-      .stop()
-      .animate({ height: dep2H + headH + 'px' }, 150, function () {
-        $(target).closest('li').addClass('active').closest('li').siblings('li').removeClass('active');
-      });
+    // $('.header')
+    //   .stop()
+    //   .animate({ height: dep2H + headH + 'px' }, 150, function () {
+    //     $(target).closest('li').addClass('active').closest('li').siblings('li').removeClass('active');
+    //   });
+    $(target).closest('li').addClass('active').closest('li').siblings('li').removeClass('active');
+    $('.header').css({'height':522, 'background-color':'#f2f2f2'});
+   
+    
     headLine('on');
   }
 }
 function gnb3Close() {
   if (pcChk(1000)) {
-    $('.header')
-      .stop()
-      .animate({ height: headH + 'px' }, 150, function () {
-        $('.gnb > ul > li').removeClass('active');
-        headLine('off');
-      });
+    // $('.header')
+    //   .stop()
+    //   .animate({ height: headH + 'px' }, 150, function () {
+    //     $('.gnb > ul > li').removeClass('active');
+    //     headLine('off');
+    //   });
+    $('.gnb>ul>li').removeClass('active');
+    $('.header').css({'height':122, 'background-color':'transparent'});
+    
   }
 }
 
@@ -242,6 +250,7 @@ $(function () {
   $('.gnb >ul > li>a').on({
     mouseenter: function () {
       //검색창이 없을때 실행
+      
       if (!$('.util .btn_search_open').hasClass('active')) gnb3Open(this);
     },
     focusin: function () {
@@ -542,8 +551,9 @@ var MainBrand = (function(){
   var time = 3;  //자동재생 시간 설정
   var $bar, isPause, tick, percentTime;
   var slide2 = $('.banner .slide');
+  
   isPause = false;
-  $bar = $('.progress');
+  $bar = $('.progress').eq(0);
   function startProgressbar() {
     resetProgressbar();
     percentTime = 0;
@@ -552,13 +562,19 @@ var MainBrand = (function(){
   }
   function interval() {
     if (isPause === false) {
-      percentTime++;
-      $bar.css({
-        width: (percentTime / time) + "%"
-      });
-      if (percentTime >= 100 * time) {
-        percentTime = 100 * time;
-        slide2.slick('slickNext');
+        percentTime++;
+        
+        $bar.css({
+          width: (percentTime / time) + "%"
+        });
+      if (percentTime >= 100 * time) { //프로그레스바가 완료되면
+          percentTime = 100 * time;
+          slide2.slick('slickNext');
+          let slickIdx = $('li.slick-active').index();
+          
+          $bar = $('.progress').eq(slickIdx);
+             
+          
       }
     }
   }
@@ -583,7 +599,7 @@ var MainBrand = (function(){
     dots: true,
     appendDots: $('.slide_btn .pagination_dot'),//dot 설정
     customPaging: function (slide, i) {
-      return '<button type="button">' + (i + 1) + '<span class="hide">슬라이드이동</span></button>'
+      return '<button type="button">' + (i + 1) + '<span class="hide">슬라이드이동</span><span class="progress_bar"><span class="progress"></span></span></button>'
     },
     prevArrow: $('.prev'),//arrow 설정
     nextArrow: $('.next'),//arrow 설정
@@ -599,6 +615,8 @@ var MainBrand = (function(){
       isPause = true;
     }
   });
+
+
   var slide1 = $('.banner2 .slide');
   slide1.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
     var i = (currentSlide ? currentSlide : 0) + 1;

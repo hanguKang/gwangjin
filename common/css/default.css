@@ -362,6 +362,7 @@ input, select, textarea {
 }
 
 .container {
+  overflow: hidden;
   margin: auto;
   max-width: 1300px;
 }
@@ -413,8 +414,7 @@ input, select, textarea {
   z-index: 100;
   overflow-y: hidden;
   -webkit-transition: border-radius 0.1s;
-  transition: border-radius 0.1s;
-  background-color: #f2f2f2; /* box-shadow:0 0 10px rgba(0,0,0,0.1);  */
+  transition: border-radius 0.1s; /* box-shadow:0 0 10px rgba(0,0,0,0.1);  */
   /* &.active {border-radius:0 0 80px 0;transition:border-radius 0.1s;
     &:before {content:'';width:100%;height:1px;background-color:#ececec;position:absolute;left:0;top:100px;display:block;z-index:11;}
   } */
@@ -1135,66 +1135,71 @@ input, select, textarea {
   position: relative;
 }
 #contents .banner .slide_box .slide .item {
-  display: block; /*  height: 580px; */
+  display: block;
+  width: 100%; /*  height: 580px; */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
-#contents .banner .slide_box .slide_btn {
-  position: absolute;
-  left: 45%;
-  top: 31%;
+#contents .banner .slide_box .slide .item img {
   width: 100%;
+}
+#contents .banner .slide_box .centerBanner {
+  position: absolute;
+  left: calc(50% - 650px);
+  top: 220px;
+  width: 1300px;
+  height: 636px;
+}
+#contents .banner .slide_box .centerBanner .slide_btn {
+  position: absolute;
+  left: 0;
+  top: 180px;
+  width: 80vw;
   display: block;
   z-index: 1;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
 }
-#contents .banner .slide_box .slide_btn .pagination_dot {
+#contents .banner .slide_box .centerBanner .slide_btn .pagination_dot {
   text-align: center;
   margin-right: 10px;
   display: inline-block;
 }
-#contents .banner .slide_box .slide_btn .pagination_dot li {
+#contents .banner .slide_box .centerBanner .slide_btn .pagination_dot li {
   float: left;
   font-size: 1rem;
   margin: 0 10px;
 }
-#contents .banner .slide_box .slide_btn .pagination_dot li button {
+#contents .banner .slide_box .centerBanner .slide_btn .pagination_dot li button {
   color: #fff;
-  height: 36px;
-  line-height: 36px;
-  width: 20px;
-  overflow: hidden;
-  opacity: 0.5;
+  width: 70px;
+  opacity: 0.3;
+  text-align: left;
 }
-#contents .banner .slide_box .slide_btn .pagination_dot li.slick-active button {
-  opacity: 1;
-}
-#contents .banner .slide_box .slide_btn .progress_bar {
+#contents .banner .slide_box .centerBanner .slide_btn .pagination_dot li button .progress_bar {
   display: inline-block;
   width: 86px;
   max-width: 200px;
   height: 2px;
   background: #eee;
-  border-bottom: 2px solid #eee;
-  margin: 14px 5px;
 }
-#contents .banner .slide_box .slide_btn .progress_bar .progress {
-  width: 0%;
+#contents .banner .slide_box .centerBanner .slide_btn .pagination_dot li button .progress_bar .progress {
+  display: block;
   height: 3px;
   background: rgb(75, 162, 254);
 }
-#contents .banner .slide_box .slide_btn .control {
+#contents .banner .slide_box .centerBanner .slide_btn .pagination_dot li.slick-active button {
+  opacity: 1;
+}
+#contents .banner .slide_box .centerBanner .slide_btn .control {
   display: inline-block;
 }
-#contents .banner .slide_box .slide_btn .control :nth-child(n) {
+#contents .banner .slide_box .centerBanner .slide_btn .control :nth-child(n) {
   display: inline-block;
   font-size: 1rem;
   margin: 0 5px;
   vertical-align: top;
 }
-#contents .banner .slide_box .slide_btn .control .btn {
+#contents .banner .slide_box .centerBanner .slide_btn .control .btn {
   /* &.next,&.prev {position: absolute; bottom: 300%; right: 105px; background: #000 url('../images/banner_next.png') no-repeat center center; opacity: 40%;
     border-radius: 50px; width: 80px; height: 80px;
   }
@@ -1202,88 +1207,82 @@ input, select, textarea {
     background:#000 url('../images/banner_prev.png') no-repeat center center;
   } */
 }
-#contents .banner .slide_box .slide_btn .control .btn.pause {
+#contents .banner .slide_box .centerBanner .slide_btn .control .btn.pause {
   display: inline-block;
   background: url("../images/slide_pause.png") no-repeat center center;
   width: 9px;
   height: 12px;
   margin: -5px 0;
 }
-#contents .banner .slide_box .slide_btn .control .btn.play {
+#contents .banner .slide_box .centerBanner .slide_btn .control .btn.play {
   background: url("../images/slide_play.png") no-repeat center center;
 }
-#contents .banner .slide_box .slide_tit {
+#contents .banner .slide_box .centerBanner .slide_tit {
   position: absolute;
-  top: 18%;
-  left: 45%;
-  width: 100%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  display: block;
+  top: 0;
+  left: 0;
   color: #fff;
-  font-size: 60px;
-  text-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  font-size: 3.4vw;
+  text-shadow: 0 0 1vw rgba(0, 0, 0, 0.4);
   font-weight: 100;
-  line-height: 4rem;
+  line-height: 4vw;
 }
-#contents .banner .slide_box .slide_tit b {
+#contents .banner .slide_box .centerBanner .slide_tit b {
   display: block;
   font-weight: 400;
 }
-#contents .banner .slide_box .weather {
+#contents .banner .slide_box .centerBanner .weather {
   position: absolute;
-  content: "";
-  display: block;
-  right: 11%;
-  top: 21%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  right: 0;
+  top: 0;
   z-index: 1;
   color: #fff;
 }
-#contents .banner .slide_box .weather img {
-  margin-top: -29px;
-  margin-right: 30px;
-}
-#contents .banner .slide_box .weather > div {
+#contents .banner .slide_box .centerBanner .weather > div {
   line-height: 3rem;
 }
-#contents .banner .slide_box .weather > div strong {
+#contents .banner .slide_box .centerBanner .weather > div img {
+  margin-top: 0;
+  margin-right: 30px;
+}
+#contents .banner .slide_box .centerBanner .weather > div strong {
   font-size: 30px;
   font-family: "Ddin";
 }
-#contents .banner .slide_box .weather > div strong span {
+#contents .banner .slide_box .centerBanner .weather > div strong span {
   font-size: 85px;
+  line-heigt: 85px;
   margin-right: 10px;
   letter-spacing: -5.5px;
+  vertical-align: -30px;
 }
-#contents .banner .slide_box .weather em {
+#contents .banner .slide_box .centerBanner .weather em {
   display: block;
   margin-bottom: 10px;
   font-family: "Ddin";
   font-size: 18px;
 }
-#contents .banner .slide_box .weather ul:after {
+#contents .banner .slide_box .centerBanner .weather ul:after {
   content: "";
   display: block;
   clear: both;
 }
-#contents .banner .slide_box .weather ul li {
+#contents .banner .slide_box .centerBanner .weather ul li {
   float: left;
   padding-left: 10px;
   font-family: "Ddin";
 }
-#contents .banner .slide_box .weather ul li > span {
+#contents .banner .slide_box .centerBanner .weather ul li > span {
   color: #e61874;
   margin-left: 10px;
   font-weight: 600;
 }
-#contents .banner .slide_box .weather ul li:first-child {
+#contents .banner .slide_box .centerBanner .weather ul li:first-child {
   position: relative;
   padding-right: 10px;
   padding-left: 0;
 }
-#contents .banner .slide_box .weather ul li:first-child ::after {
+#contents .banner .slide_box .centerBanner .weather ul li:first-child ::after {
   content: "";
   position: absolute;
   top: 0;
@@ -1293,36 +1292,33 @@ input, select, textarea {
   width: 1px;
   background-color: #fff;
 }
-#contents .banner .slide_box > ul {
-  margin: auto;
+#contents .banner .slide_box .centerBanner > ul {
   position: absolute;
-  bottom: 11%;
-  left: 24%;
+  bottom: 0;
+  left: calc(50% - 488px);
   display: block;
-  -webkit-transform: translateX(-50%, -50%);
-          transform: translateX(-50%, -50%);
 }
-#contents .banner .slide_box > ul:after {
+#contents .banner .slide_box .centerBanner > ul:after {
   content: "";
   display: block;
   clear: both;
 }
-#contents .banner .slide_box > ul li {
+#contents .banner .slide_box .centerBanner > ul li {
   float: left;
   margin: 0 20px;
 }
-#contents .banner .slide_box > ul li a {
+#contents .banner .slide_box .centerBanner > ul li a {
   padding: 50px 20px;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
   width: 204px;
   height: 204px;
 }
-#contents .banner .slide_box > ul li a img {
+#contents .banner .slide_box .centerBanner > ul li a img {
   display: block;
   margin: auto;
 }
-#contents .banner .slide_box > ul li a b {
+#contents .banner .slide_box .centerBanner > ul li a b {
   display: block;
   color: #fff;
   font-size: 22px;
@@ -2604,4 +2600,4 @@ input, select, textarea {
   .sub #contents .sub_top .share ul li img {
     width: 27.5px;
   }
-}
+}/*# sourceMappingURL=default.css.map */
