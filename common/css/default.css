@@ -361,6 +361,12 @@ input, select, textarea {
   min-height: 100vh;
 }
 
+@media screen and (min-width: 1261px) {
+  .center_box {
+    margin: 0 auto;
+    width: 1300px;
+  }
+}
 .container {
   overflow: hidden;
   margin: auto;
@@ -411,15 +417,18 @@ input, select, textarea {
   top: 0;
   left: 0;
   width: 100%;
+  min-width: 1300px;
   z-index: 100;
   overflow-y: hidden;
   -webkit-transition: border-radius 0.1s;
-  transition: border-radius 0.1s; /* box-shadow:0 0 10px rgba(0,0,0,0.1);  */
+  transition: border-radius 0.1s;
+  overflow: hidden; /* box-shadow:0 0 10px rgba(0,0,0,0.1);  */
   /* &.active {border-radius:0 0 80px 0;transition:border-radius 0.1s;
     &:before {content:'';width:100%;height:1px;background-color:#ececec;position:absolute;left:0;top:100px;display:block;z-index:11;}
   } */
 }
 .header .hd_top {
+  min-width: 1300px;
   background-color: #333;
   color: #fff;
   height: 52px;
@@ -541,8 +550,8 @@ input, select, textarea {
   position: relative;
   font-size: 0;
   z-index: 12;
-  margin-left: 80px;
-  margin-right: 230px;
+  width: 1300px;
+  margin: 0 auto;
 }
 .header .gnb:after {
   content: "";
@@ -1144,14 +1153,14 @@ input, select, textarea {
 #contents .banner .slide_box .slide .item img {
   width: 100%;
 }
-#contents .banner .slide_box .centerBanner {
+#contents .banner .slide_box .layer_box {
   position: absolute;
-  left: calc(50% - 650px);
+  left: 0;
   top: 220px;
-  width: 1300px;
+  width: 100%;
   height: 636px;
 }
-#contents .banner .slide_box .centerBanner .slide_btn {
+#contents .banner .slide_box .layer_box .slide_btn {
   position: absolute;
   left: 0;
   top: 180px;
@@ -1159,47 +1168,47 @@ input, select, textarea {
   display: block;
   z-index: 1;
 }
-#contents .banner .slide_box .centerBanner .slide_btn .pagination_dot {
+#contents .banner .slide_box .layer_box .slide_btn .pagination_dot {
   text-align: center;
   margin-right: 10px;
   display: inline-block;
 }
-#contents .banner .slide_box .centerBanner .slide_btn .pagination_dot li {
+#contents .banner .slide_box .layer_box .slide_btn .pagination_dot li {
   float: left;
   font-size: 1rem;
   margin: 0 10px;
 }
-#contents .banner .slide_box .centerBanner .slide_btn .pagination_dot li button {
+#contents .banner .slide_box .layer_box .slide_btn .pagination_dot li button {
   color: #fff;
   width: 70px;
   opacity: 0.3;
   text-align: left;
 }
-#contents .banner .slide_box .centerBanner .slide_btn .pagination_dot li button .progress_bar {
+#contents .banner .slide_box .layer_box .slide_btn .pagination_dot li button .progress_bar {
   display: inline-block;
   width: 86px;
   max-width: 200px;
-  height: 2px;
+  height: 5px;
   background: #eee;
 }
-#contents .banner .slide_box .centerBanner .slide_btn .pagination_dot li button .progress_bar .progress {
+#contents .banner .slide_box .layer_box .slide_btn .pagination_dot li button .progress_bar .progress {
   display: block;
-  height: 3px;
-  background: rgb(75, 162, 254);
+  height: 5px;
+  background: rgb(230, 24, 116);
 }
-#contents .banner .slide_box .centerBanner .slide_btn .pagination_dot li.slick-active button {
+#contents .banner .slide_box .layer_box .slide_btn .pagination_dot li.slick-active button {
   opacity: 1;
 }
-#contents .banner .slide_box .centerBanner .slide_btn .control {
+#contents .banner .slide_box .layer_box .slide_btn .control {
   display: inline-block;
 }
-#contents .banner .slide_box .centerBanner .slide_btn .control :nth-child(n) {
+#contents .banner .slide_box .layer_box .slide_btn .control :nth-child(n) {
   display: inline-block;
   font-size: 1rem;
   margin: 0 5px;
   vertical-align: top;
 }
-#contents .banner .slide_box .centerBanner .slide_btn .control .btn {
+#contents .banner .slide_box .layer_box .slide_btn .control .btn {
   /* &.next,&.prev {position: absolute; bottom: 300%; right: 105px; background: #000 url('../images/banner_next.png') no-repeat center center; opacity: 40%;
     border-radius: 50px; width: 80px; height: 80px;
   }
@@ -1207,17 +1216,17 @@ input, select, textarea {
     background:#000 url('../images/banner_prev.png') no-repeat center center;
   } */
 }
-#contents .banner .slide_box .centerBanner .slide_btn .control .btn.pause {
+#contents .banner .slide_box .layer_box .slide_btn .control .btn.pause {
   display: inline-block;
   background: url("../images/slide_pause.png") no-repeat center center;
   width: 9px;
   height: 12px;
   margin: -5px 0;
 }
-#contents .banner .slide_box .centerBanner .slide_btn .control .btn.play {
+#contents .banner .slide_box .layer_box .slide_btn .control .btn.play {
   background: url("../images/slide_play.png") no-repeat center center;
 }
-#contents .banner .slide_box .centerBanner .slide_tit {
+#contents .banner .slide_box .layer_box .slide_tit {
   position: absolute;
   top: 0;
   left: 0;
@@ -1227,62 +1236,62 @@ input, select, textarea {
   font-weight: 100;
   line-height: 4vw;
 }
-#contents .banner .slide_box .centerBanner .slide_tit b {
+#contents .banner .slide_box .layer_box .slide_tit b {
   display: block;
   font-weight: 400;
 }
-#contents .banner .slide_box .centerBanner .weather {
+#contents .banner .slide_box .layer_box .weather {
   position: absolute;
   right: 0;
   top: 0;
   z-index: 1;
   color: #fff;
 }
-#contents .banner .slide_box .centerBanner .weather > div {
+#contents .banner .slide_box .layer_box .weather > div {
   line-height: 3rem;
 }
-#contents .banner .slide_box .centerBanner .weather > div img {
+#contents .banner .slide_box .layer_box .weather > div img {
   margin-top: 0;
   margin-right: 30px;
 }
-#contents .banner .slide_box .centerBanner .weather > div strong {
+#contents .banner .slide_box .layer_box .weather > div strong {
   font-size: 30px;
   font-family: "Ddin";
 }
-#contents .banner .slide_box .centerBanner .weather > div strong span {
+#contents .banner .slide_box .layer_box .weather > div strong span {
   font-size: 85px;
   line-heigt: 85px;
   margin-right: 10px;
   letter-spacing: -5.5px;
   vertical-align: -30px;
 }
-#contents .banner .slide_box .centerBanner .weather em {
+#contents .banner .slide_box .layer_box .weather em {
   display: block;
   margin-bottom: 10px;
   font-family: "Ddin";
   font-size: 18px;
 }
-#contents .banner .slide_box .centerBanner .weather ul:after {
+#contents .banner .slide_box .layer_box .weather ul:after {
   content: "";
   display: block;
   clear: both;
 }
-#contents .banner .slide_box .centerBanner .weather ul li {
+#contents .banner .slide_box .layer_box .weather ul li {
   float: left;
   padding-left: 10px;
   font-family: "Ddin";
 }
-#contents .banner .slide_box .centerBanner .weather ul li > span {
+#contents .banner .slide_box .layer_box .weather ul li > span {
   color: #e61874;
   margin-left: 10px;
   font-weight: 600;
 }
-#contents .banner .slide_box .centerBanner .weather ul li:first-child {
+#contents .banner .slide_box .layer_box .weather ul li:first-child {
   position: relative;
   padding-right: 10px;
   padding-left: 0;
 }
-#contents .banner .slide_box .centerBanner .weather ul li:first-child ::after {
+#contents .banner .slide_box .layer_box .weather ul li:first-child ::after {
   content: "";
   position: absolute;
   top: 0;
@@ -1292,33 +1301,33 @@ input, select, textarea {
   width: 1px;
   background-color: #fff;
 }
-#contents .banner .slide_box .centerBanner > ul {
+#contents .banner .slide_box .layer_box > ul {
   position: absolute;
   bottom: 0;
   left: calc(50% - 488px);
   display: block;
 }
-#contents .banner .slide_box .centerBanner > ul:after {
+#contents .banner .slide_box .layer_box > ul:after {
   content: "";
   display: block;
   clear: both;
 }
-#contents .banner .slide_box .centerBanner > ul li {
+#contents .banner .slide_box .layer_box > ul li {
   float: left;
   margin: 0 20px;
 }
-#contents .banner .slide_box .centerBanner > ul li a {
+#contents .banner .slide_box .layer_box > ul li a {
   padding: 50px 20px;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
   width: 204px;
   height: 204px;
 }
-#contents .banner .slide_box .centerBanner > ul li a img {
+#contents .banner .slide_box .layer_box > ul li a img {
   display: block;
   margin: auto;
 }
-#contents .banner .slide_box .centerBanner > ul li a b {
+#contents .banner .slide_box .layer_box > ul li a b {
   display: block;
   color: #fff;
   font-size: 22px;
