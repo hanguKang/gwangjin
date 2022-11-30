@@ -361,12 +361,14 @@ function resetSearch() {
 $(function () {
   
 /***메인=문화공공체육시설 **/
-var MainBrand = (function(){
-  var g_$listBox = $("#slide_menu .list"),
-      g_$listUl = g_$listBox.find("ol"),
+var MainBrand = ( function(){
+  var g_$listBox = $("#slide_menu .list"), // 제목 및 컨텐츠를 모두 갖고 있는 요소
+      g_$listUl = g_$listBox.find("ol"), // 스크롤할 때 떠오르는 아이콘들
       /* g_swiper, */
       g_currentIdx = 0,
       g_listLen = g_$listUl.length;
+
+      m_brandTabInner = null; 
 
   function init(){
       setTabSwiper();
@@ -374,7 +376,7 @@ var MainBrand = (function(){
   }
 
   function setTabSwiper(){
-      var m_brandTabInner = $("#slide_menu .btns_tab_inner");
+      m_brandTabInner = $("#slide_menu .btns_tab_inner"); //메인> 문화 공공체육 시설, 도서관 시설, 주차 시설 제목들 합친 그룹
 
       m_brandTabInner.children("div:first-child").before(m_brandTabInner.children("div:last-child"));
       m_brandTabInner.slick({
@@ -390,6 +392,7 @@ var MainBrand = (function(){
 
       m_brandTabInner.on('beforeChange', function(event, slick, currentSlide, nextSlide){
           g_currentIdx = nextSlide;
+          //console.log(g_currentIdx);
           changeGallery(g_currentIdx);
       });
       
@@ -397,8 +400,8 @@ var MainBrand = (function(){
         var setT ;
         setT = setTimeout(function(){
           clearTimeout(setT);
-         $("#slide_menu .list .tab_box .btns_tab .btns_tab_inner .slick-slide").each(function(i){
-              if( $("#slide_menu .list .tab_box .btns_tab .btns_tab_inner .slick-slide").eq(i).attr("data-slick-index") == "1" ){
+         $("#slide_menu .list .tab_box .btns_tab .btns_tab_inner .slick-slide").each(function(i){ //각 제목들 : 문화 공공체육 시설, 도서관 시설, 주차 시설
+              if( $("#slide_menu .list .tab_box .btns_tab .btns_tab_inner .slick-slide").eq(i).data("slick-index") == "1" ){ // 세개 제목 중 가운데 제목이라면   
                 $("#slide_menu .list .tab_box .btns_tab .btns_tab_inner .slick-slide").eq(i).attr("tabindex","0");
               }else{
                 $("#slide_menu .list .tab_box .btns_tab .btns_tab_inner .slick-slide").eq(i).attr("tabindex","-1");
@@ -409,15 +412,33 @@ var MainBrand = (function(){
       });
   }
 
-  function setBtns(){
-      var m_$btnTab = g_$listBox.find("#slide_menu .btns_tab a");
+  function setBtns(){ //제목들 버튼 세팅하는 것 같은데. 이전 사람이 변수명 이름 보면
 
-      m_$btnTab.on("click", function(){
-          var m_idx = parseInt($(this).attr("data-idx"));
-
-          changeGallery(m_idx);
-          g_currentIdx = m_idx;
-      })
+      //제목클릭
+      //var m_$btnTab = g_$listBox.find("#slide_menu .btns_tab a"); //메인> 문화 공공체육 시설 제목들 합친 그룹 좌우 버튼 - 이전 사람이 한 것
+      let m_$btnTab = $("#slide_menu .btns_tab .slide_item"); //메인> 문화 공공체육 시설 제목들 합친 그룹 
+      //console.log(m_$btnTab);
+      m_$btnTab.each( function(i,v ){
+          //console.log(this);
+          $(v).on('click', function(){
+              //alert(1234);
+              //var m_idx = parseInt($(this).attr("data-idx")); //이전 사람이 한 것
+              var m_idx = parseInt( $(this).data("slick-index") );
+              //console.log(m_idx);
+              changeGallery(m_idx);
+              g_currentIdx = m_idx;
+          });
+      });
+      
+      //좌우 화살표 클릭
+      $('.btn_tabArrow_l').on('click', function(e){
+        e.preventDefault();
+        //m_brandTabInner.slick('slickPrev');
+      });
+      $('.btn_tabArrow_r').on('click', function(e){
+        e.preventDefault();
+       // m_brandTabInner.slick('slickNext');
+      });
   }
 
   function changeGallery(_idx){
@@ -431,17 +452,17 @@ var MainBrand = (function(){
       m_$countBox.find(".total").html(g_listLen);
   }
 
-
-
   init();
+
 })();
 
-  $(document).ready(function(){
-    $('#slide_menu .list .tab_box .btns_tab .btns_tab_inner .slide_item').on('click', function () {
-    var i = $(this).closest('li').index();
-    $(this).closest('li').addClass('active').closest('li').siblings('li').removeClass('active');
-    $(this).closest('.btns_tab_inner').siblings('.list_con').children('li').eq(i).addClass('active').siblings('li').removeClass('active');
-  });
+
+$(document).ready(function(){
+    $('#slide_menu .list .tab_box .btns_tab .btns_tab_inner .slide_item').on('click', function () { //#slide_menu의 제목들 좌우 버튼들
+      var i = $(this).closest('li').index();
+      $(this).closest('li').addClass('active').closest('li').siblings('li').removeClass('active');
+      $(this).closest('.btns_tab_inner').siblings('.list_con').children('li').eq(i).addClass('active').siblings('li').removeClass('active');
+    });
 });
 
 /***공단소식 **/
@@ -569,8 +590,9 @@ $(document).ready(function(){
   
   $bar = null;
 
-  function startProgressbar() {
-    $bar = $('.slick-dots>li.slick-active .progress');
+  function startProgressbar(idx) {
+    //$bar = $('.slick-dots>li.slick-active .progress');
+    $bar = $(`.swiper-pagination>button:eq(${idx})`).find('.progress');
     resetProgressbar();
 
     percentTime = 0;
@@ -580,8 +602,9 @@ $(document).ready(function(){
   }
   function resetProgressbar() {
     clearTimeout(tick);
+    $bar.closest('button').siblings().find('.progress').css('width','0%');
     $bar.css({
-      width: 0 + '%'
+      width: '0%'
     });
   }
 
@@ -599,12 +622,17 @@ $(document).ready(function(){
           //console.log('test'+( 100 * time) );
           percentTime = 100 * time;
           //slide2.slick('slickNext');
-          resetProgressbar();
-          //자동재생중인지 판단
-          $bar.closest('li').siblings('li').find('.progress').css('width','0%');
-          if( !$('.banner .pause').hasClass('play') ){ //현재 재생버튼이 보이지 않는다면, 재생 중이다. 
-            slide2.slick('slickNext');
+          // resetProgressbar();
+          // //자동재생중인지 판단
+          // $bar.closest('li').siblings('li').find('.progress').css('width','0%');
+          // if( !$('.banner .pause').hasClass('play') ){ //현재 재생버튼이 보이지 않는다면, 재생 중이다. 
+          //   slide2.slick('slickNext');
+          // }
+          console.log(!isPause);
+          if(!isPause){
+            swiper.autoplay.start();
           }
+          
       }
     }
   }
@@ -613,17 +641,91 @@ $(document).ready(function(){
     loop: true,
     pagination: {
       el: '.swiper-pagination',
+      type: 'custom',
 			clickable: true,
-      renderBullet: function (i, className) {
-          return '<button type="button">' + (i + 1) + '<span class="hide">슬라이드이동</span><span class="progress_bar"><span class="progress"></span></span></button>';
-        },
+      bulletActiveClass:'swiper-pagination-bullet-active',
+      renderCustom:(swiper, current, total)=>{
+        //console.log(swiper);
+
+        // let cphtml = "";
+        // for(let i = 0; i < total; i++) {
+        //     cphtml += '<button type="button" title="'+i+'번째 배너로 이동" class="swiper-pagination-bullet '+(i == (current - 1) ? ' swiper-pagination-bullet-active' : '')+'"><span>'+current+'</span><span class="hide">슬라이드이동</span><span class="progress_bar"><span class="progress"></span></span></button>';
+        // }
+        // return cphtml;
+
+        var cphtml = "";
+        for(var i = 0; i < total; i++) {
+          cphtml += `<button class="swiper-pagination-bullet ${i == (current - 1) ? ' swiper-pagination-bullet-active' : ''}" title="${i}번째 배너로 이동">${i+1}<span class="hide">슬라이드이동</span><span class="progress_bar"><span class="progress"></span></span></button>`;
+        }
+        return cphtml;
+
+        // let html_msg = '';
+
+        // for(let i = 1; i<= total; i++) {
+        //   if( current == i ){
+        //     html_msg += `<button type="button" title="${i}번째 배너로 이동" class="swiper-pagination-bullet-active">${i}<span class="hide">슬라이드이동</span><span class="progress_bar"><span class="progress"></span></span></button>`;
+        //   }else{
+        //     `<button type="button" title="${i}번째 배너로 이동">${i}<span class="hide">슬라이드이동</span><span class="progress_bar"><span class="progress"></span></span></button>`
+        //   }
+        // }
+        
+        // return html_msg;
+      }
+      // renderBullet: function (i) {
+      //     return '<button type="button" title="배너 '+(i+1)+'로 이동">' + (i + 1) + '<span class="hide">슬라이드이동</span><span class="progress_bar"><span class="progress"></span></span></button>';
+      //   },
     },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+    on:{
+      init: () =>{ //맨처음 시작할 때 
+        startProgressbar(0);
+        
+      },
+      slideChangeTransitionStart:(sw)=>{ //슬라이드 바뀔 때
+        //startProgressbar();
+        let idx = $('.swiper-pagination-bullet-active').index();
+        startProgressbar(idx);
+      }
+    },
+    autoplay:{
+      delay:3000,
+      pauseOnMouseEnter:false,
+      disableOnInteraction:false,
+      waitForTransition:true,
+    },
 
   });
+
+   // 일시정지
+   $('.banner .pause').click(function () {
+      isPause = true;
+      $(this).addClass('active').siblings().removeClass('active').find('span').text('자동재생 정지');//puase 버튼이 나타나고 play해라.
+      swiper.autoplay.stop();
+      
+   });
+
+  $('.banner .play').click(function () {
+      
+      isPause = false;
+      $(this).addClass('active').siblings().removeClass('active').find('span').text('자동재생 시작'); //play 버튼이 나타나고 pause해라.
+      swiper.autoplay.start();
+  });
+  
+  // $('.banner .pause').click(function () {
+  //   if ( $(this).hasClass('play') ) {
+  //     $(this).removeClass('play').children('span').text('자동재생 정지');//puase 버튼이 나타나고 play해라.
+  //     swiper.autoplayResume();
+  //     isPause = false;
+  //   } else {
+  //     $(this).addClass('play').children('span').text('자동재생 시작'); //play 버튼이 나타나고 pause해라.
+  //     swiper.autoplayPuase();
+  //     isPause = true;
+  //   }
+  // });
+
   
   //startProgressbar();
 
@@ -666,16 +768,16 @@ $(document).ready(function(){
   // });
 
   //페이징 클릭시
-  $('.slick-dots').children('li').click((e)=>{ 
+  // $('.slick-dots').children('li').click((e)=>{ 
 
       
-      //console.log($(e.target));
-      //console.log( $(e.target).closest('li').hasClass('slick-active') );
-      $(e.target).closest('li').siblings('li').find('.progress').css('width','0%');
-      //$(this).siblings('li').find('.progress').css('width','100%'); this가 document객체다.
+  //     //console.log($(e.target));
+  //     //console.log( $(e.target).closest('li').hasClass('slick-active') );
+  //     $(e.target).closest('li').siblings('li').find('.progress').css('width','0%');
+  //     //$(this).siblings('li').find('.progress').css('width','100%'); this가 document객체다.
 
-      startProgressbar();
-  });
+  //     startProgressbar();
+  // });
   //일시정지
   // $('.banner .pause').click(function () {
   //   if ( $(this).hasClass('play') ) {

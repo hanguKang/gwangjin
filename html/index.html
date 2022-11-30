@@ -247,13 +247,13 @@
                 </div> -->
             <article class="swiper">
                 <div class="swiper-wrapper">
-                  <a href="#" class="swiper-slide">
+                  <a href="#" class="swiper-slide" data-title="배너 첫 번째로 이동">
                       <img src="../common/images/main_slide_01.png" alt="배너 첫 번째">
                   </a>
-                  <a href="#" class="swiper-slide" >
+                  <a href="#" class="swiper-slide"  data-title="배너 두 번째로 이동">
                       <img src="../common/images/main_slide_02.png" alt="배너 두 번째" >
                   </a>
-                  <a href="#" class="swiper-slide">
+                  <a href="#" class="swiper-slide" data-title="배너 세 번째로 이동">
                       <img src="../common/images/main_slide_03.png" alt="배너 세 번째">
                   </a>
                 </div>
@@ -271,9 +271,10 @@
                       <!--<div class="pagination_dot"></div> slick 사용할 때 사용 -->
                         
                         <div class="control">
-                            <button class="btn prev"><span class="hide">이전</span></button>
-                            <button class="btn next"><span class="hide">다음</span></button>
+                            <!--<button class="btn prev"><span class="hide">이전</span></button>
+                            <button class="btn next"><span class="hide">다음</span></button>-->
                             <button class="btn pause"><span class="hide">자동재생 정지</span></button>
+                            <button class="btn play active"><span class="hide">자동재생 정지</span></button>
                         </div>
                     </div>
                     <div class="weather container">
@@ -294,26 +295,34 @@
                 <ul class="container">
                     <li>
                         <a href="#" title="공단소개">
-                        <img src="../common/images/icon_menu_01.png" alt="공단소개">
-                        <b>공단소개</b>
+                          <span>
+                            <img src="../common/images/icon_menu_01.png" alt="공단소개">
+                            <b>공단소개</b>
+                          </span>
                         </a>
                     </li>
                     <li>
                         <a href="#" title="사전정보공표">
-                        <img src="../common/images/icon_menu_02.png" alt="사전정보공표">
-                        <b>사전정보공표</b>
+                          <span>
+                            <img src="../common/images/icon_menu_02.png" alt="사전정보공표">
+                            <b>사전정보공표</b>
+                          </span>
                         </a>
                     </li>
                     <li>
                         <a href="#" title="고객의소리">
-                        <img src="../common/images/icon_menu_03.png" alt="고객의소리">
-                        <b>고객의소리</b>
+                          <span>
+                            <img src="../common/images/icon_menu_03.png" alt="고객의소리">
+                            <b>고객의소리</b>
+                          </span>
                         </a>
                     </li>
                     <li>
                         <a href="#" title="광나루24">
-                        <img src="../common/images/icon_menu_04.png" alt="광나루24">
-                        <b>광나루24</b>
+                          <span>
+                            <img src="../common/images/icon_menu_04.png" alt="광나루24">
+                            <b>광나루24</b>
+                          </span>
                         </a>
                     </li>
                 </ul>
@@ -341,7 +350,7 @@
                     <a href="#" class="btn_tabArrow btn_tabArrow_l" data-pos="l" >
                         <img src="../common/images/tab_prev.png" alt="이전보기">
                     </a>
-                    <a href="#" class="btn_tabArrow btn_tabArrow_r " data-pos="l" >
+                    <a href="#" class="btn_tabArrow btn_tabArrow_r " data-pos="r" >
                         <img src="../common/images/tab_next.png" alt="다음보기">
                     </a>
                 </div>

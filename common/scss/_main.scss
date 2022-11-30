@@ -1,5 +1,5 @@
 #contents{
-  .banner{min-width:1300px;
+  .banner{
     // .slide_box {
     //   position:relative; 
      
@@ -10,15 +10,21 @@
       // }
     .swiper{position:relative; 
       .layer_box_1{ position:absolute; left:0; top:220px; width:100%; z-index:100;
+        @include maxWidth(1550px){
+          padding:0 50px;
+          top:150px;
+        }
         .center_box{position:relative; margin:0 auto; max-width:1300px;
-          .slide_btn{ display: flex; justify-content: flex-start;
+          .slide_btn{ display: flex; justify-content: flex-start; align-items:center;
             .swiper-pagination{ flex:0 0 auto; width:auto; position:static; margin-top:10px; transition: none;  z-index: 10; text-align:left;
-              button{ margin:0 10px; width:70px; color:#fff; opacity:0.3;  text-align: left; 
-                .progress_bar { display: inline-block; width: 86px; max-width:200px; height: 5px; background: #eee; 
+              button{ margin:0 2px; width:100px; border-radius:0; height:50px; color:#fff; opacity:0.3;  text-align: left; background:transparent;
+                &.swiper-pagination-bullet-active{opacity:1;}
+                .progress_bar { display: block; width: 86px; max-width:200px; height: 5px; background: #eee; 
                   .progress {display: block; width:0%; height: 5px;background: rgb(230, 24, 116);}
                  }
 
               }
+
             }
             //slick사용
             // .pagination_dot {text-align:center;  margin-right: 10px; margin-top:30px; display: inline-block; 
@@ -33,17 +39,18 @@
             // }
 
             .control { flex:0 0 auto; 
-              :nth-child(n) {display:inline-block; font-size:1rem; margin:0 5px; }
-              .btn { vertical-align:bottom;
+              :nth-child(n) {display:inline-block; font-size:1rem; margin:0 5px;}
+              .btn { vertical-align:bottom; border-radius:50%; 
                   /* &.next,&.prev {position: absolute; bottom: 300%; right: 105px; background: #000 url('../images/banner_next.png') no-repeat center center; opacity: 40%;
                     border-radius: 50px; width: 80px; height: 80px;
                   }
                   &.prev { position: absolute;left: 105px;
                     background:#000 url('../images/banner_prev.png') no-repeat center center;
                   } */
-                  &.pause {display: inline-block; background:url('../images/slide_pause.png') no-repeat center center;width: 9px; height: 12px; margin: 0 0;}
-                  &.play {background:url('../images/slide_play.png') no-repeat center center;}
+                  &.pause {display: inline-block; background:url('../images/slide_pause.png') no-repeat 52% center; width: 28px; height: 28px; margin: 0 10px;}
+                  &.play {background:url('../images/slide_play.png') no-repeat 52% center; width: 28px; height: 28px;}
               }
+              .btn.active{border:1px solid #fff; }
             }
 
           }
@@ -75,12 +82,19 @@
         }
       } //layer_box_1 End
 
-      ul.container{ position:absolute; left:50%; transform:translateX(-50%); bottom:105px; width:976px; z-index:100;
-        li{float: left; margin: 0 20px;
-          a{ padding: 50px 20px;  background-color: rgba( 0, 0, 0, 0.5 ); border-radius: 50%; width: 204px; height: 204px;
-            img{display: block; margin: auto;}
-            b{display: block; color: #fff; font-size: 22px; text-align: center; margin-top: 27px;}
+      ul.container{ display:flex; justify-content: space-between; align-items:center; position:absolute; left:50%; transform:translateX(-50%); bottom:105px; padding:5px; width:976px; z-index:100;
+        @include maxWidth(1550px){
+          width:800px; bottom:30px;
+        }
+        li{display:flex; flex:0 0 20%; margin: 0 20px; 
+          a{display: flex; justify-content:center; border-radius: 50%; width:100%; min-width: 140px; min-height: 140px; text-align: center; line-height: 1;box-sizing: content-box;white-space:nowrap; background-color:rgba( 0, 0, 0, 0.5 ); 
+            span{display:flex; flex-direction: column; justify-content: center; align-items: center;
+              img{display:block; margin:0 auto; text-align:center; }
+              b{display:block; color: #fff; font-size: 22px; text-align: center; margin-top:25px; } 
+            }
+           // &:before{content:""; display:inline-block; vertical-align: middle; padding-top:100%; height:0;}  //width값 없이, 높이 값을 padding-top으로 설정해 준다. padding값은 부모요소의 width가 기준이다. 
           }
+          &:before{content:""; display:inline-block; vertical-align: middle; width:0; padding-top:100%; height:0;}
         }
       }
       
@@ -206,11 +220,11 @@
   /* 문화공공체육시설 */
   #slide_menu{background-color: #eeeeee;  padding: 80px 0;
     .list{
-      .tab_box{position:relative; left:50%; width:1280px; font-size:0; margin:0 0 40px -640px;overflow:hidden;transform: translate(0,100px);opacity: 0;
+      .tab_box{position:relative; margin:0 auto 60px auto;  max-width:1280px; font-size:0; overflow:hidden;transform: translate(0,100px);opacity: 0;
         .btns_tab{
           .btns_tab_inner{white-space: nowrap; position: relative;
-            &::after{content:""; position:absolute; top:0; left:0; width:100%; height:100px;}
-            .slide_item{display: inline-block; width:430px !important; padding:0 18.5px; text-align: center; height:100px; line-height:100px;opacity:0.7; font-size: 28px; color: #000;
+            //&::after{content:""; position:absolute; top:0; left:0; width:100%; height:100px;}
+            .slide_item{display: inline-block; width:430px !important; padding:0 18.5px; text-align: center; height:100px; line-height:100px;opacity:0.7; font-size: 28px; color: #000; cursor:pointer; 
               &.slick-current + .slide_item {opacity:1;}
               
             }
@@ -240,7 +254,7 @@
         }
         .info_box{
           ul{
-            li{margin: 0 20px;
+            li{margin:20px;
               a{transition: 0.6s;
                 .img{background: url(../images/icon_menu2_bg.png) no-repeat center;width: 147px;height: 140px;display: block; transition: 0.3s;
                   img{display: block;  margin: auto; padding: 35px 0;}
@@ -284,12 +298,12 @@
   }
 
   /* news */
-  #new{background-color: #eeeeee;  padding: 80px 0;
+  #new{background-color: #eeeeee;  padding: 80px 0; 
     h2{font-size: 60px; display: block; margin: auto; text-align: center; margin-bottom: 20px;
       b{ font-weight: 600; }
     }
     .list{
-      .tab_box{position:relative; left:50%; width:1280px; font-size:0; margin:0 0 0 -640px;overflow:hidden;transform: translate(0,100px);opacity: 0;
+      .tab_box{position:relative; max-width:1280px; font-size:0; overflow:hidden;transform: translate(0,100px);opacity: 0;
         .btns_tab{
           .btns_tab_inner{white-space: nowrap; position: relative;
             &::after{content:""; position:absolute; top:0; left:0; width:100%; height:100px;}
