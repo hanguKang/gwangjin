@@ -1,3 +1,4 @@
+
 var elFocus, headH;
 function initMoving(target, position, topLimit, btmLimit) {
   if (!target)
@@ -155,7 +156,7 @@ function headLine(arg) {
     $('.header').removeClass('active');
   }
 }
-function gnb3Open(target) {
+function gnb3Open(target) { //
   if (pcChk(1000)) {
 
     var dep2H = $(target).next().outerHeight();
@@ -164,8 +165,8 @@ function gnb3Open(target) {
     //   .animate({ height: dep2H + headH + 'px' }, 150, function () {
     //     $(target).closest('li').addClass('active').closest('li').siblings('li').removeClass('active');
     //   });
-    $(target).closest('li').addClass('active').closest('li').siblings('li').removeClass('active');
-    $('.header').css({'height':522, 'background-color':'#f2f2f2'});
+    $(target).closest('li').addClass('active').siblings('li').removeClass('active');//.end().closest('li').siblings('li').removeClass('active');
+    $('.header').css({'background-color':'#f2f2f2'});
    
     
     headLine('on');
@@ -264,11 +265,13 @@ $(function () {
   });
   $('#gnb .dep2_wrap a')
     .last()
-    .on({
-      focusout: function () {
+    .on({focusout: function () {
         gnb3Close();
       },
     });
+  $('.logo>a').focus(()=>{ 
+      gnb3Close();
+   });
   $(document).on('click', '.btn_sitemap_open', function (e) {
     if (!pcChk(720)) {
       openSitemap(); //사이트맵 열기
@@ -432,6 +435,7 @@ var MainBrand = (function(){
 
   init();
 })();
+
   $(document).ready(function(){
     $('#slide_menu .list .tab_box .btns_tab .btns_tab_inner .slide_item').on('click', function () {
     var i = $(this).closest('li').index();
@@ -441,7 +445,7 @@ var MainBrand = (function(){
 });
 
 /***공단소식 **/
-var MainBrand = (function(){
+var MainBrand = ( function(){
   var g_$listBox = $("#new .list"),
       g_$listUl = g_$listBox.find("ol"),
       /* g_swiper, */
@@ -510,10 +514,16 @@ var MainBrand = (function(){
       m_$countBox.find(".current").html(_idx+1);
       m_$countBox.find(".total").html(g_listLen);
   }
+  
   init();
-})();
-  $(document).ready(function(){
-    $('#new .list .tab_box .btns_tab .btns_tab_inner .slide_item').on('click', function () {
+
+})(); //공단소식 끝
+
+
+
+
+$(document).ready(function(){
+  $('#new .list .tab_box .btns_tab .btns_tab_inner .slide_item').on('click', function () {
     var i = $(this).closest('li').index();
     $(this).closest('li').addClass('active').closest('li').siblings('li').removeClass('active');
     $(this).closest('.btns_tab_inner').siblings('.list_con').children('li').eq(i).addClass('active').siblings('li').removeClass('active');
@@ -548,73 +558,138 @@ var MainBrand = (function(){
     }
     return false;
   });
+
+
+  // 메인 배너 
   var time = 3;  //자동재생 시간 설정
   var $bar, isPause, tick, percentTime;
   var slide2 = $('.banner .slide');
   
   isPause = false;
-  $bar = $('.progress').eq(0);
-  function startProgressbar() {
-    resetProgressbar();
-    percentTime = 0;
+  
+  $bar = null;
 
+  function startProgressbar() {
+    $bar = $('.slick-dots>li.slick-active .progress');
+    resetProgressbar();
+
+    percentTime = 0;
+    
     tick = setInterval(interval, 10);
-  }
-  function interval() {
-    if (isPause === false) {
-        percentTime++;
-        
-        $bar.css({
-          width: (percentTime / time) + "%"
-        });
-      if (percentTime >= 100 * time) { //프로그레스바가 완료되면
-          percentTime = 100 * time;
-          slide2.slick('slickNext');
-          let slickIdx = $('li.slick-active').index();
-          
-          $bar = $('.progress').eq(slickIdx);
-             
-          
-      }
-    }
+
   }
   function resetProgressbar() {
+    clearTimeout(tick);
     $bar.css({
       width: 0 + '%'
     });
-    clearTimeout(tick);
   }
-  startProgressbar();
-  slide2.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
-    var i = (currentSlide ? currentSlide : 0) + 1;
-    $(' .slide_btn .pagination_num').html('<span class="current">' + i + '</span> / ' + slick.slideCount);
-    startProgressbar();
+
+  function interval() {
+    if (isPause === false) {
+
+        percentTime++;
+        //console.log(percentTime / time);
+        let resultPer = percentTime / time;
+        $bar.css({
+          width: resultPer + "%"
+        })
+        
+      if (percentTime >= 100 * time) { //프로그레스바가 완료되면 0.01초마다 인터벌이 되니, 100*3(time)번 이상이라면 300 이상이고 0.01초당 실행(setInterval)된다면, 300번이면 3초다. 
+          //console.log('test'+( 100 * time) );
+          percentTime = 100 * time;
+          //slide2.slick('slickNext');
+          resetProgressbar();
+          //자동재생중인지 판단
+          $bar.closest('li').siblings('li').find('.progress').css('width','0%');
+          if( !$('.banner .pause').hasClass('play') ){ //현재 재생버튼이 보이지 않는다면, 재생 중이다. 
+            slide2.slick('slickNext');
+          }
+      }
+    }
+  }
+  
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+			clickable: true,
+      renderBullet: function (i, className) {
+          return '<button type="button">' + (i + 1) + '<span class="hide">슬라이드이동</span><span class="progress_bar"><span class="progress"></span></span></button>';
+        },
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
   });
   
-  slide2.slick({
-    autoplay: false,
-    autoplaySpeed: 2000,
-    cssEase: 'ease-in',
-    infinite: true,
-    dots: true,
-    appendDots: $('.slide_btn .pagination_dot'),//dot 설정
-    customPaging: function (slide, i) {
-      return '<button type="button">' + (i + 1) + '<span class="hide">슬라이드이동</span><span class="progress_bar"><span class="progress"></span></span></button>'
-    },
-    prevArrow: $('.prev'),//arrow 설정
-    nextArrow: $('.next'),//arrow 설정
+  //startProgressbar();
+
+  // slide2.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+  //   var i = (currentSlide ? currentSlide : 0) + 1;
+  //   $(' .slide_btn .pagination_num').html('<span class="current">' + i + '</span> / ' + slick.slideCount);
+  //   startProgressbar();
+  // });
+
+  // init과 reinit은 slick선언하기 전에 작성할 것
+  // slide2.on('init', (slick)=>{
+    
+  //   startProgressbar();
+  // });
+  // slide2.on('reinit', (slick)=>{
+    
+  //   startProgressbar();
+  // });
+  // slide2.slick({
+  //   pasueOnHover:false,
+  //   variableWidth:false,
+  //   autoplay: false,
+  //   autoplaySpeed: 3000,
+  //   slideToShow:1,
+  //   cssEase: 'ease-in',
+  //   infinite: true,
+  //   dots: true,
+  //   appendDots: $('.slide_btn .pagination_dot'),//dot 설정
+  //   customPaging: function (slide, i) {
+  //     return '<button type="button">' + (i + 1) + '<span class="hide">슬라이드이동</span><span class="progress_bar"><span class="progress"></span></span></button>'
+  //   },
+  //   prevArrow: $('.prev'),//arrow 설정
+  //   nextArrow: $('.next'),//arrow 설정
+  // });
+
+  
+  // slide2.on('afterChange', function(slick, currentSlide){
+  // //   //console.log(slick);
+  //   startProgressbar();
+  // });
+
+  //페이징 클릭시
+  $('.slick-dots').children('li').click((e)=>{ 
+
+      
+      //console.log($(e.target));
+      //console.log( $(e.target).closest('li').hasClass('slick-active') );
+      $(e.target).closest('li').siblings('li').find('.progress').css('width','0%');
+      //$(this).siblings('li').find('.progress').css('width','100%'); this가 document객체다.
+
+      startProgressbar();
   });
-  $('.pause').click(function () {
-    if ($(this).hasClass('play')) {
-      $(this).removeClass('play').children('span').text('자동재생 정지');
-      slide2.slick('slickPlay');
-      isPause = false;
-    } else {
-      $(this).addClass('play').children('span').text('자동재생 시작');
-      slide2.slick('slickPause');
-      isPause = true;
-    }
-  });
+  //일시정지
+  // $('.banner .pause').click(function () {
+  //   if ( $(this).hasClass('play') ) {
+  //     $(this).removeClass('play').children('span').text('자동재생 정지');//puase 버튼이 나타나고 play해라.
+  //     slide2.slick('slickPlay');
+  //     isPause = false;
+  //   } else {
+  //     $(this).addClass('play').children('span').text('자동재생 시작'); //play 버튼이 나타나고 pause해라.
+  //     slide2.slick('slickPause');
+  //     isPause = true;
+  //   }
+  // });
+
+
 
 
   var slide1 = $('.banner2 .slide');

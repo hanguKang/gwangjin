@@ -8,11 +8,13 @@
   <link rel="stylesheet" href="../common/css/default.css">
   <link rel="stylesheet" href="../common/css/slick.css" />
   <link rel="stylesheet" href="../common/css/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <script src="../common/js/jquery-3.6.0.min.js"></script>
   <script src="../common/js/jquery-1.11.3.min.js"></script>
   <script src="../common/js/aos.js"></script>
   <script src="../common/js/common.js"></script>
   <script src="../common/js/slick.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </head>      
 <body>
     <div class="wrapper">
@@ -25,32 +27,33 @@
         <!-- 헤더 -->
         <!-- lnb 안산시의회 형식 참고, header 배경 화이트로 변경진행 -->
         <header class="header">
-          <div class="cetnerBox">
-            <div class="hd_top">
-                <ul>
-                    <li>
-                        <a href="#">광진구시설관리공단</a>
-                    </li>
-                    <li>
-                        <a href="#">통합주차</a>
-                    </li>
-                    <li>
-                        <a href="#">문화체육시설</a>
-                    </li>
-                </ul>
-                <ol class="util">
-                    <li><a href="#">로그인</a></li>
-                    <li><a href="#">회원가입</a></li>
-                    <li> <a href="#" class="btn_sitemap_open"><span class="hide">사이트맵 열기</span></a></li>
-                </ol>
-            </div>
+
+          <div class="hd_top">
+              <ul>
+                  <li>
+                      <a href="#">광진구시설관리공단</a>
+                  </li>
+                  <li>
+                      <a href="#">통합주차</a>
+                  </li>
+                  <li>
+                      <a href="#">문화체육시설</a>
+                  </li>
+              </ul>
+              <ol class="util">
+                  <li><a href="#">로그인</a></li>
+                  <li><a href="#">회원가입</a></li>
+                  <li> <a href="#" class="btn_sitemap_open"><span class="hide">사이트맵 열기</span></a></li>
+              </ol>
           </div>
-          <div id="gnb" class="gnb">
+
+          <div class="layer_gnb">
+            <div id="gnb" class="gnb">
               <h1 class="logo"><a href="#"><span class="hide">로고</span></a></h1>
               <ul>
                   <li>
-                      <a href="#">시설 안내</a>
-                      <div class="dep2_wrap">
+                      <a href="#"><span>시설 안내</span></a>
+                      <div class="dep2_wrap">                          
                         <div>
                             <h2>시설 안내</h2>
                             <img src="../common/images/gnb_tit_icon_1.png" alt="시설안내 아이콘">
@@ -59,116 +62,118 @@
                             <li><a href="#">문화/공공체육시설</a></li>
                             <li><a href="#">도서관 시설</a></li>
                             <li><a href="#">주차 시설</a></li>
-                        </ul>
+                        </ul>                          
                       </div>
                   </li>
                   <li>
-                      <a href="#">정보마당</a>
+                      <a href="#"><span>정보마당</span></a>
+                      <div class="dep2_wrap">
+                          <div>
+                              <h2>정보마당</h2>
+                              <img src="../common/images/gnb_tit_icon_1.png" alt="정보마당 아이콘">
+                          </div>
+                          <ul>
+                              <li class="on"><a href="#">공지사항</a></li>
+                              <li><a href="#">채용공고</a></li>
+                              <li><a href="#">입찰정보</a></li>
+                              <li><a href="#">수의계약내역 공개</a></li>
+                              <li><a href="#">고시 및 공고</a></li>
+                              <li><a href="#">자료실</a></li>
+                          </ul>
+                        </div>
+                  </li>
+                  <li>
+                      <a href="#"><span>고객 광장</span></a>
+                      <div class="dep2_wrap">
+                          <div>
+                              <h2>고객광장</h2>
+                              <img src="../common/images/gnb_tit_icon_1.png" alt="고객광장 아이콘">
+                          </div>
+                          <ul>
+                              <li><a href="#">고객의 소리</a></li>
+                              <li><a href="#">자주 묻는 질문</a></li>
+                              <li><a href="#">Q&A</a></li>
+                              <li><a href="#">자주묻는질문</a></li>
+                              <li><a href="#">클린신고</a></li>
+                              <li><a href="#">광나루24!(고객 제안)</a></li>
+                          </ul>
+                      </div>
+                  </li>
+                  <li>
+                      <a href="#"><span>지속가능성 경영</span></a>
                       <div class="dep2_wrap">
                         <div>
-                            <h2>정보마당</h2>
-                            <img src="../common/images/gnb_tit_icon_1.png" alt="정보마당 아이콘">
+                            <h2>지속가능성 경영</h2>
+                            <img src="../common/images/gnb_tit_icon_1.png" alt="지속가능성 경영 아이콘">
                         </div>
                         <ul>
-                            <li class="on"><a href="#">공지사항</a></li>
-                            <li><a href="#">채용공고</a></li>
-                            <li><a href="#">입찰정보</a></li>
-                            <li><a href="#">수의계약내역 공개</a></li>
-                            <li><a href="#">고시 및 공고</a></li>
-                            <li><a href="#">자료실</a></li>
+                            <li>
+                              <a href="#">열린혁신</a>
+                              <ul class="dep3">
+                                  <li><a href="#">열린혁신</a></li>
+                                  <li><a href="#">주민참여형 제안사업</a></li>
+                                  <li><a href="#">적극행정</a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="#">정보공개</a>
+                              <ul class="dep3">
+                                  <li><a href="#">행정정보공개</a></li>
+                                  <li><a href="#">사전정보공표</a></li>
+                                  <li><a href="#">정보목록</a></li>
+                                  <li><a href="#">경영공시 및 현황</a></li>
+                                  <li><a href="#">공공데이터 개방</a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="#">ESG경영</a>
+                              <ul class="dep3">
+                                  <li><a href="#">경영 전략체계</a></li>
+                                  <li><a href="#">실천선언문</a></li>
+                                  <li><a href="#">ESG경영 자료실</a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="#">윤리·인권</a>
+                              <ul class="dep3">
+                                  <li><a href="#">윤리경영헌장</a></li>
+                                  <li><a href="#">임직원행동강령</a></li>
+                                  <li><a href="#">윤리경영주요활동</a></li>
+                                  <li><a href="#">인권경영 이행사항</a></li>
+                                  <li><a href="#">인권경영 선언문</a></li>
+                                  <li><a href="#">인권영향평가</a></li>
+                                  <li><a href="#">인권경영주요활동</a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="#">안전·보건</a>
+                              <ul class="dep3">
+                                  <li><a href="#">안전·보건 경영방침</a></li>
+                                  <li><a href="#">목표 및 과제</a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="#">고객서비스</a>
+                              <ul class="dep3">
+                                  <li><a href="#">고객만족경영시스템</a></li>
+                                  <li><a href="#">고객만족도 조사결과</a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="#">사회공헌</a>
+                              <ul class="dep3">
+                                  <li><a href="#">사회공헌 경영방침</a></li>
+                                  <li><a href="#">목표 및 과제</a></li>
+                              </ul>
+                            </li>
                         </ul>
+
                       </div>
                   </li>
                   <li>
-                      <a href="#">고객 광장</a>
+                      <a href="#"><span>공단소개</span></a>
                       <div class="dep2_wrap">
-                        <div>
-                            <h2>고객광장</h2>
-                            <img src="../common/images/gnb_tit_icon_1.png" alt="고객광장 아이콘">
-                        </div>
-                        <ul>
-                            <li><a href="#">고객의 소리</a></li>
-                            <li><a href="#">자주 묻는 질문</a></li>
-                            <li><a href="#">Q&A</a></li>
-                            <li><a href="#">자주묻는질문</a></li>
-                            <li><a href="#">클린신고</a></li>
-                            <li><a href="#">광나루24!(고객 제안)</a></li>
-                        </ul>
-                      </div>
-                  </li>
-                  <li>
-                      <a href="#">지속가능성 경영</a>
-                      <div class="dep2_wrap">
-                            <div>
-                                <h2>지속가능성 경영</h2>
-                                <img src="../common/images/gnb_tit_icon_1.png" alt="지속가능성 경영 아이콘">
-                            </div>
-                            <ul>
-                                <li>
-                                  <a href="#">열린혁신</a>
-                                  <ul class="dep3">
-                                      <li><a href="#">열린혁신</a></li>
-                                      <li><a href="#">주민참여형 제안사업</a></li>
-                                      <li><a href="#">적극행정</a></li>
-                                  </ul>
-                                </li>
-                                <li>
-                                  <a href="#">정보공개</a>
-                                  <ul class="dep3">
-                                      <li><a href="#">행정정보공개</a></li>
-                                      <li><a href="#">사전정보공표</a></li>
-                                      <li><a href="#">정보목록</a></li>
-                                      <li><a href="#">경영공시 및 현황</a></li>
-                                      <li><a href="#">공공데이터 개방</a></li>
-                                  </ul>
-                                </li>
-                                <li>
-                                  <a href="#">ESG경영</a>
-                                  <ul class="dep3">
-                                      <li><a href="#">경영 전략체계</a></li>
-                                      <li><a href="#">실천선언문</a></li>
-                                      <li><a href="#">ESG경영 자료실</a></li>
-                                  </ul>
-                                </li>
-                                <li>
-                                  <a href="#">윤리·인권</a>
-                                  <ul class="dep3">
-                                      <li><a href="#">윤리경영헌장</a></li>
-                                      <li><a href="#">임직원행동강령</a></li>
-                                      <li><a href="#">윤리경영주요활동</a></li>
-                                      <li><a href="#">인권경영 이행사항</a></li>
-                                      <li><a href="#">인권경영 선언문</a></li>
-                                      <li><a href="#">인권영향평가</a></li>
-                                      <li><a href="#">인권경영주요활동</a></li>
-                                  </ul>
-                                </li>
-                                <li>
-                                  <a href="#">안전·보건</a>
-                                  <ul class="dep3">
-                                      <li><a href="#">안전·보건 경영방침</a></li>
-                                      <li><a href="#">목표 및 과제</a></li>
-                                  </ul>
-                                </li>
-                                <li>
-                                  <a href="#">고객서비스</a>
-                                  <ul class="dep3">
-                                      <li><a href="#">고객만족경영시스템</a></li>
-                                      <li><a href="#">고객만족도 조사결과</a></li>
-                                  </ul>
-                                </li>
-                                <li>
-                                  <a href="#">사회공헌</a>
-                                  <ul class="dep3">
-                                      <li><a href="#">사회공헌 경영방침</a></li>
-                                      <li><a href="#">목표 및 과제</a></li>
-                                  </ul>
-                                </li>
-                            </ul>
-                      </div>
-                  </li>
-                  <li>
-                      <a href="#">공단소개</a>
-                      <div class="dep2_wrap">
+
                           <div>
                               <h2>공단소개</h2>
                               <img src="../common/images/gnb_tit_icon_1.png" alt="공단소개 아이콘">
@@ -201,9 +206,10 @@
                                 <a href="#">오시는 길</a>
                               </li>
                           </ul>
-                      </div>
-                  </li>
-              </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
           </div>
           <div class="m_gnb">
               <div>
@@ -227,8 +233,8 @@
     <!-- 메인 -->
     <div id="contents" class="main">
         <div class="banner">
-            <div class="slide_box">
-                <div class="slide">
+            <!--<div class="slide_box">-->
+                <!-- <div class="slide">
                     <a href="#" class="item">
                         <img src="../common/images/main_slide_01.png" alt="배너 첫 번째">
                     </a>
@@ -238,14 +244,31 @@
                     <a href="#" class="item">
                         <img src="../common/images/main_slide_03.png" alt="배너 세 번째">
                     </a>
+                </div> -->
+            <article class="swiper">
+                <div class="swiper-wrapper">
+                  <a href="#" class="swiper-slide">
+                      <img src="../common/images/main_slide_01.png" alt="배너 첫 번째">
+                  </a>
+                  <a href="#" class="swiper-slide" >
+                      <img src="../common/images/main_slide_02.png" alt="배너 두 번째" >
+                  </a>
+                  <a href="#" class="swiper-slide">
+                      <img src="../common/images/main_slide_03.png" alt="배너 세 번째">
+                  </a>
                 </div>
-                <div class="layer_box">
+                
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <div class="layer_box_1">
                   <div class="center_box">
                     <h2 class="slide_tit container">
                         <b>고객에게</b>삶의 질을 서비스하는 최고의 공단
                     </h2>
                     <div class="slide_btn container">
-                        <div class="pagination_dot"></div>
+                      <div class="swiper-pagination"></div>
+                      <!--<div class="pagination_dot"></div> slick 사용할 때 사용 -->
                         
                         <div class="control">
                             <button class="btn prev"><span class="hide">이전</span></button>
@@ -266,36 +289,39 @@
                             <li>초미세먼지<span>좋음</span></li>
                         </ul>
                     </div>
-                    <ul class="container">
-                        <li>
-                            <a href="#" title="공단소개">
-                            <img src="../common/images/icon_menu_01.png" alt="공단소개">
-                            <b>공단소개</b>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" title="사전정보공표">
-                            <img src="../common/images/icon_menu_02.png" alt="사전정보공표">
-                            <b>사전정보공표</b>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" title="고객의소리">
-                            <img src="../common/images/icon_menu_03.png" alt="고객의소리">
-                            <b>고객의소리</b>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" title="광나루24">
-                            <img src="../common/images/icon_menu_04.png" alt="광나루24">
-                            <b>광나루24</b>
-                            </a>
-                        </li>
-                    </ul>
-                  </div><!---->
+                  </div>
                 </div>
-            </div>
+                <ul class="container">
+                    <li>
+                        <a href="#" title="공단소개">
+                        <img src="../common/images/icon_menu_01.png" alt="공단소개">
+                        <b>공단소개</b>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="사전정보공표">
+                        <img src="../common/images/icon_menu_02.png" alt="사전정보공표">
+                        <b>사전정보공표</b>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="고객의소리">
+                        <img src="../common/images/icon_menu_03.png" alt="고객의소리">
+                        <b>고객의소리</b>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="광나루24">
+                        <img src="../common/images/icon_menu_04.png" alt="광나루24">
+                        <b>광나루24</b>
+                        </a>
+                    </li>
+                </ul>
+            </article>
+
+            <!--</div>-->
         </div>
+
         <div id="slide_menu" class="section on">
             <div class="list" >
                 <div class="tab_box">
