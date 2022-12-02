@@ -86,9 +86,9 @@
         @include maxWidth(1550px){
           width:800px; bottom:30px;
         }
-        li{display:flex; flex:0 0 20%; margin: 0 20px; 
+        li{display:flex; flex:0 0 22%; 
           a{display: flex; justify-content:center; border-radius: 50%; width:100%; min-width: 140px; min-height: 140px; text-align: center; line-height: 1;box-sizing: content-box;white-space:nowrap; background-color:rgba( 0, 0, 0, 0.5 ); 
-            span{display:flex; flex-direction: column; justify-content: center; align-items: center;
+            span{display:flex; flex-direction: column; justify-content: center; align-items: center; letter-spacing: -1px;
               img{display:block; margin:0 auto; text-align:center; }
               b{display:block; color: #fff; font-size: 22px; text-align: center; margin-top:25px; } 
             }
@@ -98,7 +98,7 @@
         }
       }
       
-    }//swiper를 사용하면 swiper End slide_box를 사용하면 .slide_box End
+    }//swiper End
     @include maxWidth($tab){
       .slide_box {
         .slide_btn {
@@ -156,8 +156,13 @@
                 em{color: #888; float: right; width: 100px; padding: 0 13px; font-weight: 500;}
                 &:hover{ background-color: #fff;box-shadow:0 0 10px rgba(0,0,0,0.1); }
                 &:last-child{border-bottom: none; margin: auto; display: block; padding-left: 0;
-                  span{background: url(../images/board_more.png) no-repeat top 10px right;  font-size: 22px; display: block; width: 130px; margin: auto; padding-right: 40px; font-weight: 500;}
+                  span{position:relative; display: block;  font-size: 22px; width: 130px; margin: auto; padding-right: 40px; font-weight: 500;
+                    &::before{content:''; position:absolute; right:0; top:50%; width:20px; border-bottom:2px solid #000; }
+                    &::after{content:''; position:absolute; right:9px; top:7px; height:20px; border-left:2px solid #000;}
+                    &:hover::before, &:hover::after{ border-color: #e61874;}
+                  }
                   &:hover{background-color: unset; box-shadow: none;}
+                  
                 }
               }
               
@@ -220,24 +225,35 @@
   /* 문화공공체육시설 */
   #slide_menu{background-color: #eeeeee;  padding: 80px 0;
     .list{
-      .tab_box{position:relative; margin:0 auto 60px auto;  max-width:1280px; font-size:0; overflow:hidden;transform: translate(0,100px);opacity: 0;
-        .btns_tab{
-          .btns_tab_inner{white-space: nowrap; position: relative;
+      .tab_box{position:relative; margin:0 auto 60px auto;  max-width:1280px; font-size:0; overflow:hidden;transform: translate(0,100px);opacity: 0; 
+        .btns_tab{ width:100%; 
+          .btns_tab_inner{white-space: nowrap; /* --------------------- 이전 사용자가 슬릭 사용하는 요소 -----------------------*/
             //&::after{content:""; position:absolute; top:0; left:0; width:100%; height:100px;}
-            .slide_item{display: inline-block; width:430px !important; padding:0 18.5px; text-align: center; height:100px; line-height:100px;opacity:0.7; font-size: 28px; color: #000; cursor:pointer; 
-              &.slick-current + .slide_item {opacity:1;}
-              
-            }
-            .slick-active+div{
-              .slide_item{font-weight: 600; 
-                >span{border-bottom: 4px solid #000;}
+
+            .slide_item{ padding:0 20px; text-align: center; height:100px; line-height:100px;opacity:0.7; font-size: 28px; color: #000; cursor:pointer; 
+              //&.slick-current + .slide_item {opacity:1;}
+
+              &.active{font-weight: 600; 
+                a{
+                  span{border-bottom: 4px solid #000;}
+                }
               }
             }
+            
           }
         }
-        .btn_tabArrow{position:absolute; top:40px;}
-        .btn_tabArrow_l {left:406px;}
-        .btn_tabArrow_r {right:406px;}
+        .btn_tabArrow{ align-items: center; position:absolute; top:40px; z-index:9999; width:30px; height:30px; border-radius:50%;  
+          img{vertical-align: -26px;}
+        }
+        .btn_tabArrow.active{  
+          &::before{content: ''; position: absolute; width:30px; height:30px; left:0%; top:0%; border:1px solid #000; border-radius:50%; }
+        }
+        .btn_tabArrow_l {left:33.333%;
+          img{padding-left:7px; padding-top:5px;}
+        }
+        .btn_tabArrow_r {right:33.333%;
+          img{padding-left:10px; padding-top:5px;}
+        }
         .count{width:100%; text-align: center; margin-top:20px;
           >span{font-size:16px; color:#888888;
             >span{color:#222;
@@ -247,34 +263,35 @@
         }
       }
       .list_box{
-        ol{top:-9999px; display:none;
-          &.on{position:relative;top:0; display:block;}
-          li {float: left; 
-          }
-        }
-        .info_box{
-          ul{
-            li{margin:20px;
-              a{transition: 0.6s;
-                .img{background: url(../images/icon_menu2_bg.png) no-repeat center;width: 147px;height: 140px;display: block; transition: 0.3s;
-                  img{display: block;  margin: auto; padding: 35px 0;}
-                  &.bg_blue{background: url(../images/icon_menu2_bg_blue.png) no-repeat;}
+        ol{ 
+          &.on{}
+          li.info_box.on{ display:block;}
+          li.info_box{ display:none;  position:relative; left:0; top:0; 
+            
+            ul{
+              li{margin:20px; float:left;
+                a{transition: 0.6s;
+                  .img{background: url(../images/icon_menu2_bg.png) no-repeat center;width: 147px;height: 140px;display: block; transition: 0.3s;
+                    img{display: block;  margin: auto; padding: 35px 0;}
+                    &.bg_blue{background: url(../images/icon_menu2_bg_blue.png) no-repeat;}
+                  }
+                  em{margin-top: 10px; text-align: center; display: block;}
                 }
-                em{margin-top: 10px; text-align: center; display: block;}
-              }
-              &:first-child{margin-left: 0;}
-              &:last-child{margin-right: 0; 
-                a{
-                  em{font-weight: 500;}
+                &:first-child{margin-left: 0;}
+                &:last-child{margin-right: 0; 
+                  a{
+                    em{font-weight: 500;}
+                  }
                 }
-              }
-              &:hover{ position: relative;
-                a{ 
-                  .img{ transform: translate(0, -10%);}
+                &:hover{ position: relative;
+                  a{ 
+                    .img{ transform: translate(0, -10%);}
+                  }
                 }
               }
             }
           }
+          
         }
       }
     }
@@ -379,4 +396,4 @@
     to {
         transform: rotate(360deg);
     }
-  }
+}

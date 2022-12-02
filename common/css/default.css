@@ -1336,9 +1336,8 @@ input, select, textarea {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 20%;
-          flex: 0 0 20%;
-  margin: 0 20px;
+      -ms-flex: 0 0 22%;
+          flex: 0 0 22%;
 }
 #contents .banner .swiper ul.container li a {
   display: -webkit-box;
@@ -1372,6 +1371,7 @@ input, select, textarea {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  letter-spacing: -1px;
 }
 #contents .banner .swiper ul.container li a span img {
   display: block;
@@ -1543,13 +1543,32 @@ input, select, textarea {
   padding-left: 0;
 }
 #contents .board .tab_box > li > div > ol li:last-child span {
-  background: url(../images/board_more.png) no-repeat top 10px right;
-  font-size: 22px;
+  position: relative;
   display: block;
+  font-size: 22px;
   width: 130px;
   margin: auto;
   padding-right: 40px;
   font-weight: 500;
+}
+#contents .board .tab_box > li > div > ol li:last-child span::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 20px;
+  border-bottom: 2px solid #000;
+}
+#contents .board .tab_box > li > div > ol li:last-child span::after {
+  content: "";
+  position: absolute;
+  right: 9px;
+  top: 7px;
+  height: 20px;
+  border-left: 2px solid #000;
+}
+#contents .board .tab_box > li > div > ol li:last-child span:hover::before, #contents .board .tab_box > li > div > ol li:last-child span:hover::after {
+  border-color: #e61874;
 }
 #contents .board .tab_box > li > div > ol li:last-child:hover {
   background-color: unset;
@@ -1684,14 +1703,14 @@ input, select, textarea {
           transform: translate(0, 100px);
   opacity: 0;
 }
+#contents #slide_menu .list .tab_box .btns_tab {
+  width: 100%;
+}
 #contents #slide_menu .list .tab_box .btns_tab .btns_tab_inner {
-  white-space: nowrap;
-  position: relative;
+  white-space: nowrap; /* --------------------- 이전 사용자가 슬릭 사용하는 요소 -----------------------*/
 }
 #contents #slide_menu .list .tab_box .btns_tab .btns_tab_inner .slide_item {
-  display: inline-block;
-  width: 430px !important;
-  padding: 0 18.5px;
+  padding: 0 20px;
   text-align: center;
   height: 100px;
   line-height: 100px;
@@ -1700,24 +1719,49 @@ input, select, textarea {
   color: #000;
   cursor: pointer;
 }
-#contents #slide_menu .list .tab_box .btns_tab .btns_tab_inner .slide_item.slick-current + .slide_item {
-  opacity: 1;
-}
-#contents #slide_menu .list .tab_box .btns_tab .btns_tab_inner .slick-active + div .slide_item {
+#contents #slide_menu .list .tab_box .btns_tab .btns_tab_inner .slide_item.active {
   font-weight: 600;
 }
-#contents #slide_menu .list .tab_box .btns_tab .btns_tab_inner .slick-active + div .slide_item > span {
+#contents #slide_menu .list .tab_box .btns_tab .btns_tab_inner .slide_item.active a span {
   border-bottom: 4px solid #000;
 }
 #contents #slide_menu .list .tab_box .btn_tabArrow {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: absolute;
   top: 40px;
+  z-index: 9999;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+#contents #slide_menu .list .tab_box .btn_tabArrow img {
+  vertical-align: -26px;
+}
+#contents #slide_menu .list .tab_box .btn_tabArrow.active::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 0%;
+  top: 0%;
+  border: 1px solid #000;
+  border-radius: 50%;
 }
 #contents #slide_menu .list .tab_box .btn_tabArrow_l {
-  left: 406px;
+  left: 33.333%;
+}
+#contents #slide_menu .list .tab_box .btn_tabArrow_l img {
+  padding-left: 7px;
+  padding-top: 5px;
 }
 #contents #slide_menu .list .tab_box .btn_tabArrow_r {
-  right: 406px;
+  right: 33.333%;
+}
+#contents #slide_menu .list .tab_box .btn_tabArrow_r img {
+  padding-left: 10px;
+  padding-top: 5px;
 }
 #contents #slide_menu .list .tab_box .count {
   width: 100%;
@@ -1734,26 +1778,24 @@ input, select, textarea {
 #contents #slide_menu .list .tab_box .count > span > span.current {
   opacity: 1;
 }
-#contents #slide_menu .list .list_box ol {
-  top: -9999px;
-  display: none;
-}
-#contents #slide_menu .list .list_box ol.on {
-  position: relative;
-  top: 0;
+#contents #slide_menu .list .list_box ol li.info_box.on {
   display: block;
 }
-#contents #slide_menu .list .list_box ol li {
+#contents #slide_menu .list .list_box ol li.info_box {
+  display: none;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+#contents #slide_menu .list .list_box ol li.info_box ul li {
+  margin: 20px;
   float: left;
 }
-#contents #slide_menu .list .list_box .info_box ul li {
-  margin: 20px;
-}
-#contents #slide_menu .list .list_box .info_box ul li a {
+#contents #slide_menu .list .list_box ol li.info_box ul li a {
   -webkit-transition: 0.6s;
   transition: 0.6s;
 }
-#contents #slide_menu .list .list_box .info_box ul li a .img {
+#contents #slide_menu .list .list_box ol li.info_box ul li a .img {
   background: url(../images/icon_menu2_bg.png) no-repeat center;
   width: 147px;
   height: 140px;
@@ -1761,32 +1803,32 @@ input, select, textarea {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-#contents #slide_menu .list .list_box .info_box ul li a .img img {
+#contents #slide_menu .list .list_box ol li.info_box ul li a .img img {
   display: block;
   margin: auto;
   padding: 35px 0;
 }
-#contents #slide_menu .list .list_box .info_box ul li a .img.bg_blue {
+#contents #slide_menu .list .list_box ol li.info_box ul li a .img.bg_blue {
   background: url(../images/icon_menu2_bg_blue.png) no-repeat;
 }
-#contents #slide_menu .list .list_box .info_box ul li a em {
+#contents #slide_menu .list .list_box ol li.info_box ul li a em {
   margin-top: 10px;
   text-align: center;
   display: block;
 }
-#contents #slide_menu .list .list_box .info_box ul li:first-child {
+#contents #slide_menu .list .list_box ol li.info_box ul li:first-child {
   margin-left: 0;
 }
-#contents #slide_menu .list .list_box .info_box ul li:last-child {
+#contents #slide_menu .list .list_box ol li.info_box ul li:last-child {
   margin-right: 0;
 }
-#contents #slide_menu .list .list_box .info_box ul li:last-child a em {
+#contents #slide_menu .list .list_box ol li.info_box ul li:last-child a em {
   font-weight: 500;
 }
-#contents #slide_menu .list .list_box .info_box ul li:hover {
+#contents #slide_menu .list .list_box ol li.info_box ul li:hover {
   position: relative;
 }
-#contents #slide_menu .list .list_box .info_box ul li:hover a .img {
+#contents #slide_menu .list .list_box ol li.info_box ul li:hover a .img {
   -webkit-transform: translate(0, -10%);
           transform: translate(0, -10%);
 }
