@@ -372,7 +372,7 @@ function resetSearch() {
 $(function () {
   
 
-/**** 메인 >시설 정보 ****/
+/**** 메인 >시설 정보  문화 공공체육, 시설 도서관 시설, 주차 시설****/
 // var MainBrand = ( function(){
 //   let g_$listBox = $("#slide_menu .list"), // 제목 및 컨텐츠를 모두 갖고 있는 요소
 //       g_$listUl = g_$listBox.find("ol"), // 스크롤할 때 떠오르는 아이콘들
@@ -499,13 +499,14 @@ function call_slideChangeTransitionEnd(active_label, active_panel_id, tab_panele
   //console.log(active_panel_id);
   active_label.addClass('active').siblings().removeClass('active');
   
-
+  
   for(let i = 0; i< tab_paneles.length; i++){
-    console.log(1234);
+    //console.log(1234);
     let labeledby, activePanel; 
 
     activePanel = tab_paneles.eq(i); //li요소들 : tabPanel들 컨텐츠들
     labeledby = activePanel.attr('aria-labeledby');
+
     //console.log(labeledby, active_panel_id);
     if(active_panel_id == labeledby){
       activePanel.attr('arria-hidden','false').addClass('on').siblings().removeClass('on').attr('arria-hidden','true');
@@ -531,12 +532,12 @@ const swiper_facility = new Swiper('.facility',{
   },
 });
 
-function showTabActiveArrow(elm, dir){
+function showTabActiveArrow(elm, dir, swiper){
   elm.addClass('active').siblings().removeClass('active');
   if(dir){
-    swiper_facility.slidePrev();
+    swiper.slidePrev();
   }else{
-    swiper_facility.slideNext();
+    swiper.slideNext();
   }
   
 }
@@ -547,7 +548,8 @@ $('.facility_tabArrow_l').on('click', function(e){
   let _this, dir 
   _this = $(this);
   dir = true;
-  showTabActiveArrow(_this, dir);
+  swiper = swiper_facility;
+  showTabActiveArrow(_this, dir, swiper);
   //m_brandTabInner.slick('slickPrev');
 });
 $('.facility_tabArrow_r').on('click', function(e){
@@ -555,7 +557,8 @@ $('.facility_tabArrow_r').on('click', function(e){
   let _this, dir 
   _this = $(this);
   dir = false;
-  showTabActiveArrow(_this, dir);  
+  swiper = swiper_facility;
+  showTabActiveArrow(_this, dir, swiper);  
   // m_brandTabInner.slick('slickNext');
 });
 //제목 클릭
@@ -572,21 +575,21 @@ $('.facility .slide_item').each((i,v)=>{
 
       abs_idx = active_idx - current_idx;
       //alert(abs_idx);
-      goToTab(abs_idx);
+      goToTab(abs_idx, '.facility');
   });
     
 });
 
-function goToTab(abs_idx){
+function goToTab(abs_idx, selecElm){
 
   if( abs_idx > 0){
     for(let i = 0; i < abs_idx; i++){
-      $('.facility_tabArrow_l').trigger('click');
+      $(selecElm+'_tabArrow_l').trigger('click');
     }
   }else if( abs_idx < 0){
     abs_idx = -abs_idx; 
     for(let i = 0; i < abs_idx; i++){
-      $('.facility_tabArrow_r').trigger('click');
+      $(selecElm+'_tabArrow_r').trigger('click');
     }
   }
 }
@@ -597,7 +600,8 @@ function goToTab(abs_idx){
 
 
 
-/***공단소식 ---slick사용 - 이전 사람이 사용 버전 **/
+/***   공단소식   **/
+//---slick사용했던 건 이전 사람이 사용 버전
 // var MainBrand = ( function(){
 //   var g_$listBox = $("#new .list"),
 //       g_$listUl = g_$listBox.find("ol"),
@@ -678,41 +682,79 @@ function goToTab(abs_idx){
   
   //radiobox
   
+  /* --------------------- 공단 소식  ----------------- */
   
-
-  
-  const swiper_notice = new Swiper('.notice',{
+  const swiper_news = new Swiper('.news_box',{
   
     slidesPerView:3,
     loop:true,
     on:{
       slideChangeTransitionEnd:()=>{
-        let active_label, active_panel_id;
-        active_label = $('.swiper-slide-active').next(); //이동이 된 직후, .swiper-slide-active로 활성화되어 있는 요소는 화면에서 보이는 요소 중 첫 번째 요소이다. 
-        active_panel_id = active_label.children('a').attr('id');
-        //console.log(active_panel_id);
-        active_label.addClass('active').siblings().removeClass('active');
+        // let active_label, active_panel_id;
+        // active_label = $('.swiper-slide-active').next(); //이동이 된 직후, .swiper-slide-active로 활성화되어 있는 요소는 화면에서 보이는 요소 중 첫 번째 요소이다. 
+        // active_panel_id = active_label.children('a').attr('id');
+        // //console.log(active_panel_id);
+        // active_label.addClass('active').siblings().removeClass('active');
         
   
-        for(let i = 0; i< $('.tabPanels').children().length; i++){
-          let labeledby, activePanel; 
-          activePanel = $('.tabPanels').children().eq(i); //li요소들 : tabPanel들 컨텐츠들
-          labeledby = activePanel.attr('aria-labeledby');
-          //console.log(labeledby, active_panel_id);
-          if(active_panel_id == labeledby){
-            activePanel.attr('arria-hidden','false').addClass('on').siblings().removeClass('on').attr('arria-hidden','true');
-          }
-        }
-      },
-      beforeTransitionStart:()=>{
-        
-      },
+        // for(let i = 0; i< $('.tabPanels').children().length; i++){
+        //   let labeledby, activePanel; 
+        //   activePanel = $('.tabPanels').children().eq(i); //li요소들 : tabPanel들 컨텐츠들
+        //   labeledby = activePanel.attr('aria-labeledby');
+        //   //console.log(labeledby, active_panel_id);
+        //   if(active_panel_id == labeledby){
+        //     activePanel.attr('arria-hidden','false').addClass('on').siblings().removeClass('on').attr('arria-hidden','true');
+        //   }
+        // } // fon문 End
+        let active_label, active_panel_id, tab_paneles;
+        active_label = $('.news_box .swiper-slide-active').next(); //이동이 된 직후, .swiper-slide-active로 활성화되어 있는 요소는 화면에서 보이는 요소 중 첫 번째 요소이다. 
+        active_panel_id = active_label.children('a').attr('id');
+        tab_paneles = $('.news_box_outer').next('.list_box').children('.tabPanels').children(); //일반 요소 자식들을 감싸는 ul
+        call_slideChangeTransitionEnd(active_label, active_panel_id, tab_paneles);
+      },//slideChangeTransitionEnd End 
+     
   
     
-    },
+    }, //on End 
+  }); //swiepr_news End 
+
+  $('.news_tabArrow_l').on('click', function(e){
+    e.preventDefault();
+    let _this, dir 
+    _this = $(this);
+    dir = true;
+    swiper = swiper_news;
+    showTabActiveArrow(_this, dir, swiper);  
+    //m_brandTabInner.slick('slickPrev');
   });
-
-
+  $('.news_tabArrow_r').on('click', function(e){
+    e.preventDefault();
+    let _this, dir 
+    _this = $(this);
+    dir = false;
+    swiper = swiper_news;
+    showTabActiveArrow(_this, dir, swiper);   
+    // m_brandTabInner.slick('slickNext');
+  });
+  //제목 클릭
+  $('.news_box .slide_item').each((i,v)=>{
+    let _this, active_idx, current_idx, abs_idx;
+    _this = $(v);
+  
+    _this.click(function(e){
+        e.preventDefault();
+        current_idx = _this.index();
+       
+        active_idx = $('.news_box .slide_item.active').index();
+        // alert(current_idx);
+        // alert(active_idx);
+  
+        abs_idx = active_idx - current_idx;
+        //alert(abs_idx);
+        goToTab(abs_idx, '.news');
+    });
+      
+  });
   
 
 
@@ -966,33 +1008,44 @@ function goToTab(abs_idx){
 
 
 
+/* ------------------------------------------------*/
 
+
+
+  //알림마당
   var slide1 = $('.banner2 .slide');
   slide1.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
     var i = (currentSlide ? currentSlide : 0) + 1;
     $('.banner2 .pagination_num').html('<span class="current">' + i + '</span> /&nbsp;  ' + slick.slideCount);
   });
+
   slide1.slick({
     autoplay: true,
     cssEase: 'ease-in',
-    dots: true,
-    appendDots: $('.banner2 .pagination_dot'),//dot 설정
-    customPaging: function (slide, i) {
-      return '<button type="button">' + (i + 1) + '번째 슬라이드로 이동</button>'
-    },
+    //dots: true,
+    //appendDots: $('.banner2 .pagination_dot'),//dot 설정
+    // customPaging: function (slide, i) {
+    //   return '<button type="button">' + (i + 1) + '번째 슬라이드로 이동</button>'
+    // },
     prevArrow: $('.banner2 .prev'),//arrow 설정
     nextArrow: $('.banner2 .next'),//arrow 설정
   });
-  /*  $('.banner2 .pause').click(function () {
-    if ($(this).hasClass('play')) { 
-      $(this).removeClass('play').children('span').text('자동재생 정지');
-      slide1.slick('slickPlay');
-      isPause = false;
-    } else {
-      $(this).addClass('play').children('span').text('자동재생 시작');
+
+  $('.banner2  .btn').on('click', (e)=>{
+    e.preventDefault();
+    e.stopPropagation();
+    //console.log(e.target);
+    $(e.target).addClass('active').siblings().removeClass('active');
+  });
+
+ $('.banner2 .pause').click(function () {
       slide1.slick('slickPause');
-    }
-  });  */
+  });
+    
+  $('.banner2 .play').click(function () {
+      slide1.slick('slickPlay');
+  }); 
+  
 
 
   $slick_slider = $('.bg_con .quick ul');
