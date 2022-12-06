@@ -191,7 +191,7 @@ function gnb3Close() {
     //     $('.gnb > ul > li').removeClass('active');
     //     headLine('off');
     //   });
-    $('.gnb>ul>li').removeClass('active');
+    $('.gnb>nav>ul>li').removeClass('active');
     $('.header').css({'height':122, 'background-color':'transparent'});
     
   }
@@ -259,7 +259,7 @@ function mGnbDrop() {
 $(function () {
   headH = $('.header').outerHeight();
   initMoving(document.getElementById("sc_1"), 200, 50, -3000);//퀵메뉴 스크롤 이동
-  $('.gnb >ul > li>a').on({
+  $('.gnb > nav >ul > li> a').on({
     mouseenter: function () {
       //검색창이 없을때 실행
       
@@ -269,7 +269,7 @@ $(function () {
       if (!$('.util .btn_search_open').hasClass('active')) gnb3Open(this);
     },
   });
-  $('.gnb > ul').on({
+  $('.gnb > nav').on({
     mouseleave: function () {
       if (!$('.util .btn_search_open').hasClass('active')) gnb3Close();
     },
@@ -502,13 +502,13 @@ function call_slideChangeTransitionEnd(active_label, active_panel_id, tab_panele
   
   for(let i = 0; i< tab_paneles.length; i++){
     //console.log(1234);
-    let labeledby, activePanel; 
+    let labelledby, activePanel; 
 
     activePanel = tab_paneles.eq(i); //li요소들 : tabPanel들 컨텐츠들
-    labeledby = activePanel.attr('aria-labeledby');
+    labelledby = activePanel.attr('aria-labelledby');
 
-    //console.log(labeledby, active_panel_id);
-    if(active_panel_id == labeledby){
+    //console.log(labelledby, active_panel_id);
+    if(active_panel_id == labelledby){
       activePanel.attr('arria-hidden','false').addClass('on').siblings().removeClass('on').attr('arria-hidden','true');
     }
   }

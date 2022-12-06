@@ -420,10 +420,10 @@
         }
       }
       .list_box{
-        ol{ 
+        .tabPanels{ 
           &.on{}
-          li.info_box.on{ display:block;}
-          li.info_box{ display:none;  position:relative; left:0; top:0; 
+          .info_box.on{ display:block;}
+          .info_box{ display:none;  position:relative; left:0; top:0; 
             
             ul{ display: flex; flex-wrap:wrap; justify-content: center;
               li{margin:20px; 
@@ -528,7 +528,7 @@
       }
       /* 컨텐츠들 */
       .list_box{
-        ol{ position: relative; top:0;
+        .tabPanels{ position: relative; top:0;
           .info_box{ display:none;
             &.on{display:block; }
             ul{ display:flex; flex-wrap:wrap;
