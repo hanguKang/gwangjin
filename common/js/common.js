@@ -145,7 +145,7 @@ $(document).on('click', '.tab_list2 > button', function (e) {
 
 
 function pcChk(width) {
-  //창크기 768px보다 크면 true 반환
+  //창크기 arguments보다 크면 true 반환
   if ($(window).width() > width) {
     return true;
   } else {
@@ -153,7 +153,7 @@ function pcChk(width) {
   }
 }
 function mChk(width) {
-  //창크기 768px보다 크면 true 반환
+  //창크기  arguments보다 크면 true 반환
   if ($(window).width() > width) {
     return true;
   } else {
@@ -168,7 +168,7 @@ function headLine(arg) {
   }
 }
 function gnb3Open(target) { //
-  if (pcChk(1000)) {
+  if (pcChk(720)) {
 
     var dep2H = $(target).next().outerHeight();
     // $('.header')
@@ -184,7 +184,7 @@ function gnb3Open(target) { //
   }
 }
 function gnb3Close() {
-  if (pcChk(1000)) {
+  if (pcChk(720)) {
     // $('.header')
     //   .stop()
     //   .animate({ height: headH + 'px' }, 150, function () {
@@ -275,8 +275,7 @@ $(function () {
     },
   });
   $('#gnb .dep2_wrap a')
-    .last()
-    .on({focusout: function () {
+  .last().on({focusout: function () {
         gnb3Close();
       },
     });
@@ -284,7 +283,7 @@ $(function () {
       gnb3Close();
    });
   $(document).on('click', '.btn_sitemap_open', function (e) {
-    if (!pcChk(720)) {
+    if (!pcChk(720)) { //720보다 크면 true판별 ---> 모바일이면 !false 
       openSitemap(); //사이트맵 열기
       saveFocus(); //포커스 요소 저장
       bodyScroll('off');
@@ -295,6 +294,7 @@ $(function () {
   // 사이트맵 닫기
   $('.btn_sitemap_close').on({
     click: function () {
+      
       closeSitemap(); //사이트맵닫기
       bodyScroll('on');
       returnFocus(); //이전 포커스 요소로 되돌리기
@@ -1013,22 +1013,55 @@ function goToTab(abs_idx, selecElm){
 
 
   //알림마당
-  var slide1 = $('.banner2 .slide');
-  slide1.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
-    var i = (currentSlide ? currentSlide : 0) + 1;
-    $('.banner2 .pagination_num').html('<span class="current">' + i + '</span> /&nbsp;  ' + slick.slideCount);
-  });
+  // var slide1 = $('.banner2 .slide');
+  // slide1.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+  //   var i = (currentSlide ? currentSlide : 0) + 1;
+  //   $('.banner2 .pagination_num').html('<span class="current">' + i + '</span> /&nbsp;  ' + slick.slideCount);
+  // });
 
-  slide1.slick({
-    autoplay: true,
-    cssEase: 'ease-in',
-    //dots: true,
-    //appendDots: $('.banner2 .pagination_dot'),//dot 설정
-    // customPaging: function (slide, i) {
-    //   return '<button type="button">' + (i + 1) + '번째 슬라이드로 이동</button>'
-    // },
-    prevArrow: $('.banner2 .prev'),//arrow 설정
-    nextArrow: $('.banner2 .next'),//arrow 설정
+  // slide1.slick({
+  //   autoplay: true,
+  //   cssEase: 'ease-in',
+  //   //dots: true,
+  //   //appendDots: $('.banner2 .pagination_dot'),//dot 설정
+  //   // customPaging: function (slide, i) {
+  //   //   return '<button type="button">' + (i + 1) + '번째 슬라이드로 이동</button>'
+  //   // },
+  //   prevArrow: $('.banner2 .prev'),//arrow 설정
+  //   nextArrow: $('.banner2 .next'),//arrow 설정
+  //   responsive: [
+  //     {
+  //       breakpoint: 1080,
+  //       settings: {
+  //         slidesToScroll: 1,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 980,
+  //       settings: {
+  //         slidesToScroll: 1,
+  //       },
+  //     },
+      
+  //   ],
+
+  // });
+
+  let swiper_notice = new Swiper('.swiper-notice',{
+    loop: true,
+    autoplay:true,
+    a11y: {
+      prevSlideMessage: '이전 배너',
+      nextSlideMessage: '다음 배너',
+    },
+    navigation:{
+      nextEl:'.notice_next',
+      prevEl:'.notice_prev',
+    },
+    pagination: {
+      el: '.pagination_num',
+      type: 'fraction',
+    }
   });
 
   $('.banner2  .btn').on('click', (e)=>{
@@ -1038,13 +1071,16 @@ function goToTab(abs_idx, selecElm){
     $(e.target).addClass('active').siblings().removeClass('active');
   });
 
- $('.banner2 .pause').click(function () {
-      slide1.slick('slickPause');
+ $('.banner2 .notice_pause').click(function () {
+    swiper_notice.pause();
+      //slide1.slick('slickPause');
   });
     
-  $('.banner2 .play').click(function () {
-      slide1.slick('slickPlay');
+  $('.banner2 .notice_play').click(function () {
+    swiper_notice.play();
+      //slide1.slick('slickPlay');
   }); 
+  
   
 
 
@@ -1080,7 +1116,7 @@ function goToTab(abs_idx, selecElm){
 
   }
   slick_on_mobile($slick_slider, settings_slider);
-
+ 
 
   $('.inp_btn.file span, .file button').click(function (e) {
     $(this).siblings('input').click();

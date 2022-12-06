@@ -133,6 +133,12 @@ $m720: 720px;
     }   
 }
 
+@mixin testBd(){
+  border:1px solid red;
+}
+@mixin testBg(){
+  background:red;
+}
 
 
 
