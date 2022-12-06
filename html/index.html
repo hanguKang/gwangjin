@@ -8,13 +8,25 @@
   <link rel="stylesheet" href="../common/css/default.css">
   <link rel="stylesheet" href="../common/css/slick.css" />
   <link rel="stylesheet" href="../common/css/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <script src="../common/js/jquery-3.6.0.min.js"></script>
-  <script src="../common/js/jquery-1.11.3.min.js"></script>
+  <!--<script src="../common/js/jquery-1.11.3.min.js"></script>-->
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
   <script src="../common/js/aos.js"></script>
   <script src="../common/js/common.js"></script>
   <script src="../common/js/slick.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </head>      
 <body>
+  <script>
+    var myAOS = function () {
+        AOS.init({
+          disable: false, // 'phone', 'tablet', 'mobile'
+        });
+    };
+  
+    myAOS();
+  </script>
     <div class="wrapper">
         <!-- 스킵내비게이션 -->
         <div class="skip_navi">
@@ -25,44 +37,47 @@
         <!-- 헤더 -->
         <!-- lnb 안산시의회 형식 참고, header 배경 화이트로 변경진행 -->
         <header class="header">
-            <div class="hd_top">
-                <ul>
-                    <li>
-                        <a href="#">광진구시설관리공단</a>
-                    </li>
-                    <li>
-                        <a href="#">통합주차</a>
-                    </li>
-                    <li>
-                        <a href="#">문화체육시설</a>
-                    </li>
-                </ul>
-                <ol class="util">
-                    <li><a href="#">로그인</a></li>
-                    <li><a href="#">회원가입</a></li>
-                    <li> <a href="#" class="btn_sitemap_open"><span class="hide">사이트맵 열기</span></a></li>
-                </ol>
-            </div>
+
+          <div class="hd_top">
+              <ul>
+                  <li>
+                      <a href="#">광진구시설관리공단</a>
+                  </li>
+                  <li>
+                      <a href="#">통합주차</a>
+                  </li>
+                  <li>
+                      <a href="#">문화체육시설</a>
+                  </li>
+              </ul>
+              <ol class="util">
+                  <li><a href="#">로그인</a></li>
+                  <li><a href="#">회원가입</a></li>
+                  <li> <a href="#" class="btn_sitemap_open"><span class="hide">사이트맵 열기</span></a></li>
+              </ol>
+          </div>
+
+          <div class="layer_gnb">
             <div id="gnb" class="gnb">
-                <h1 class="logo"><a href="#"><span class="hide">로고</span></a></h1>
-                <ul>
-                    <li>
-                        <a href="#">시설 안내</a>
-                        <div class="dep2_wrap">
-                          <div>
-                              <h2>시설 안내</h2>
-                              <img src="../common/images/gnb_tit_icon_1.png" alt="시설안내 아이콘">
-                          </div>
-                          <ul>
-                              <li><a href="#">문화/공공체육시설</a></li>
-                              <li><a href="#">도서관 시설</a></li>
-                              <li><a href="#">주차 시설</a></li>
-                          </ul>
+              <h1 class="logo"><a href="#"><span class="hide">로고</span></a></h1>
+              <ul>
+                  <li>
+                      <a href="#"><span>시설 안내</span></a>
+                      <div class="dep2_wrap">                          
+                        <div>
+                            <h2>시설 안내</h2>
+                            <img src="../common/images/gnb_tit_icon_1.png" alt="시설안내 아이콘">
                         </div>
-                    </li>
-                    <li>
-                        <a href="#">정보마당</a>
-                        <div class="dep2_wrap">
+                        <ul>
+                            <li><a href="#">문화/공공체육시설</a></li>
+                            <li><a href="#">도서관 시설</a></li>
+                            <li><a href="#">주차 시설</a></li>
+                        </ul>                          
+                      </div>
+                  </li>
+                  <li>
+                      <a href="#"><span>정보마당</span></a>
+                      <div class="dep2_wrap">
                           <div>
                               <h2>정보마당</h2>
                               <img src="../common/images/gnb_tit_icon_1.png" alt="정보마당 아이콘">
@@ -76,10 +91,10 @@
                               <li><a href="#">자료실</a></li>
                           </ul>
                         </div>
-                    </li>
-                    <li>
-                        <a href="#">고객 광장</a>
-                        <div class="dep2_wrap">
+                  </li>
+                  <li>
+                      <a href="#"><span>고객 광장</span></a>
+                      <div class="dep2_wrap">
                           <div>
                               <h2>고객광장</h2>
                               <img src="../common/images/gnb_tit_icon_1.png" alt="고객광장 아이콘">
@@ -92,141 +107,144 @@
                               <li><a href="#">클린신고</a></li>
                               <li><a href="#">광나루24!(고객 제안)</a></li>
                           </ul>
+                      </div>
+                  </li>
+                  <li>
+                      <a href="#"><span>지속가능성 경영</span></a>
+                      <div class="dep2_wrap">
+                        <div>
+                            <h2>지속가능성 경영</h2>
+                            <img src="../common/images/gnb_tit_icon_1.png" alt="지속가능성 경영 아이콘">
                         </div>
-                    </li>
-                    <li>
-                        <a href="#">지속가능성 경영</a>
-                        <div class="dep2_wrap">
-                              <div>
-                                  <h2>지속가능성 경영</h2>
-                                  <img src="../common/images/gnb_tit_icon_1.png" alt="지속가능성 경영 아이콘">
-                              </div>
-                              <ul>
-                                  <li>
-                                    <a href="#">열린혁신</a>
-                                    <ul class="dep3">
-                                        <li><a href="#">열린혁신</a></li>
-                                        <li><a href="#">주민참여형 제안사업</a></li>
-                                        <li><a href="#">적극행정</a></li>
-                                    </ul>
-                                  </li>
-                                  <li>
-                                    <a href="#">정보공개</a>
-                                    <ul class="dep3">
-                                        <li><a href="#">행정정보공개</a></li>
-                                        <li><a href="#">사전정보공표</a></li>
-                                        <li><a href="#">정보목록</a></li>
-                                        <li><a href="#">경영공시 및 현황</a></li>
-                                        <li><a href="#">공공데이터 개방</a></li>
-                                    </ul>
-                                  </li>
-                                  <li>
-                                    <a href="#">ESG경영</a>
-                                    <ul class="dep3">
-                                        <li><a href="#">경영 전략체계</a></li>
-                                        <li><a href="#">실천선언문</a></li>
-                                        <li><a href="#">ESG경영 자료실</a></li>
-                                    </ul>
-                                  </li>
-                                  <li>
-                                    <a href="#">윤리·인권</a>
-                                    <ul class="dep3">
-                                        <li><a href="#">윤리경영헌장</a></li>
-                                        <li><a href="#">임직원행동강령</a></li>
-                                        <li><a href="#">윤리경영주요활동</a></li>
-                                        <li><a href="#">인권경영 이행사항</a></li>
-                                        <li><a href="#">인권경영 선언문</a></li>
-                                        <li><a href="#">인권영향평가</a></li>
-                                        <li><a href="#">인권경영주요활동</a></li>
-                                    </ul>
-                                  </li>
-                                  <li>
-                                    <a href="#">안전·보건</a>
-                                    <ul class="dep3">
-                                        <li><a href="#">안전·보건 경영방침</a></li>
-                                        <li><a href="#">목표 및 과제</a></li>
-                                    </ul>
-                                  </li>
-                                  <li>
-                                    <a href="#">고객서비스</a>
-                                    <ul class="dep3">
-                                        <li><a href="#">고객만족경영시스템</a></li>
-                                        <li><a href="#">고객만족도 조사결과</a></li>
-                                    </ul>
-                                  </li>
-                                  <li>
-                                    <a href="#">사회공헌</a>
-                                    <ul class="dep3">
-                                        <li><a href="#">사회공헌 경영방침</a></li>
-                                        <li><a href="#">목표 및 과제</a></li>
-                                    </ul>
-                                  </li>
+                        <ul>
+                            <li>
+                              <a href="#">열린혁신</a>
+                              <ul class="dep3">
+                                  <li><a href="#">열린혁신</a></li>
+                                  <li><a href="#">주민참여형 제안사업</a></li>
+                                  <li><a href="#">적극행정</a></li>
                               </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">공단소개</a>
-                        <div class="dep2_wrap">
-                            <div>
-                                <h2>공단소개</h2>
-                                <img src="../common/images/gnb_tit_icon_1.png" alt="공단소개 아이콘">
-                            </div>
-                            <ul>
-                                <li>
-                                  <a href="#">이사장 인사말</a>
-                                </li>
-                                <li>
-                                  <a href="#">공단 현황</a>
-                                  <ul class="dep3">
-                                      <li><a href="#">일반현황</a></li>
-                                      <li><a href="#">공단 미션·비전</a></li>
-                                      <li><a href="#">연혁</a></li>
-                                      <li><a href="#">인증현황</a></li>
-                                      <li><a href="#">조직 안내</a></li>
-                                  </ul>
-                                </li>
-                                <li>
-                                  <a href="#">홍보 마당</a>
-                                  <ul class="dep3">
-                                    <li><a href="#">미디어</a></li>
-                                    <li><a href="#">뉴미디어 바로 가기</a></li>
-                                  </ul>
-                                </li>
-                                <li>
-                                  <a href="#">공단CI</a>
-                                </li>
-                                <li>
-                                  <a href="#">오시는 길</a>
-                                </li>
-                            </ul>
+                            </li>
+                            <li>
+                              <a href="#">정보공개</a>
+                              <ul class="dep3">
+                                  <li><a href="#">행정정보공개</a></li>
+                                  <li><a href="#">사전정보공표</a></li>
+                                  <li><a href="#">정보목록</a></li>
+                                  <li><a href="#">경영공시 및 현황</a></li>
+                                  <li><a href="#">공공데이터 개방</a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="#">ESG경영</a>
+                              <ul class="dep3">
+                                  <li><a href="#">경영 전략체계</a></li>
+                                  <li><a href="#">실천선언문</a></li>
+                                  <li><a href="#">ESG경영 자료실</a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="#">윤리·인권</a>
+                              <ul class="dep3">
+                                  <li><a href="#">윤리경영헌장</a></li>
+                                  <li><a href="#">임직원행동강령</a></li>
+                                  <li><a href="#">윤리경영주요활동</a></li>
+                                  <li><a href="#">인권경영 이행사항</a></li>
+                                  <li><a href="#">인권경영 선언문</a></li>
+                                  <li><a href="#">인권영향평가</a></li>
+                                  <li><a href="#">인권경영주요활동</a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="#">안전·보건</a>
+                              <ul class="dep3">
+                                  <li><a href="#">안전·보건 경영방침</a></li>
+                                  <li><a href="#">목표 및 과제</a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="#">고객서비스</a>
+                              <ul class="dep3">
+                                  <li><a href="#">고객만족경영시스템</a></li>
+                                  <li><a href="#">고객만족도 조사결과</a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="#">사회공헌</a>
+                              <ul class="dep3">
+                                  <li><a href="#">사회공헌 경영방침</a></li>
+                                  <li><a href="#">목표 및 과제</a></li>
+                              </ul>
+                            </li>
+                        </ul>
+
+                      </div>
+                  </li>
+                  <li>
+                      <a href="#"><span>공단소개</span></a>
+                      <div class="dep2_wrap">
+
+                          <div>
+                              <h2>공단소개</h2>
+                              <img src="../common/images/gnb_tit_icon_1.png" alt="공단소개 아이콘">
+                          </div>
+                          <ul>
+                              <li>
+                                <a href="#">이사장 인사말</a>
+                              </li>
+                              <li>
+                                <a href="#">공단 현황</a>
+                                <ul class="dep3">
+                                    <li><a href="#">일반현황</a></li>
+                                    <li><a href="#">공단 미션·비전</a></li>
+                                    <li><a href="#">연혁</a></li>
+                                    <li><a href="#">인증현황</a></li>
+                                    <li><a href="#">조직 안내</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#">홍보 마당</a>
+                                <ul class="dep3">
+                                  <li><a href="#">미디어</a></li>
+                                  <li><a href="#">뉴미디어 바로 가기</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#">공단CI</a>
+                              </li>
+                              <li>
+                                <a href="#">오시는 길</a>
+                              </li>
+                          </ul>
                         </div>
                     </li>
                 </ul>
             </div>
-            <div class="m_gnb">
-                <div>
-                    <div class="util">
-                        <ol>
-                            <li>
-                            <a href="#">회원가입</a>
-                            </li>
-                            <li>
-                            <a href="#">로그인</a>
-                            </li>
-                        </ol>
-                        <button type="button" class="btn_sitemap_close"><span class="hide">사이트맵 닫기</span></button>
-                    </div>
-                    <!-- 클론예정 -->
-                    <!-- // 클론예정 -->
-                </div>
-            </div>
+          </div>
+          <div class="m_gnb">
+              <div>
+                  <div class="util">
+                      <ol>
+                          <li>
+                          <a href="#">회원가입</a>
+                          </li>
+                          <li>
+                          <a href="#">로그인</a>
+                          </li>
+                      </ol>
+                      <button type="button" class="btn_sitemap_close"><span class="hide">사이트맵 닫기</span></button>
+                  </div>
+                  <!-- 클론예정 -->
+                  <!-- // 클론예정 -->
+              </div>
+          </div>
         </header>
         <!-- 헤더 / 드롭메뉴와 검색 디자인 미완성-->
     <!-- 메인 -->
     <div id="contents" class="main">
         <div class="banner">
-            <div class="slide_box">
-                <div class="slide">
+            <!--<div class="slide_box">-->
+                <!-- <div class="slide">
                     <a href="#" class="item">
                         <img src="../common/images/main_slide_01.png" alt="배너 첫 번째">
                     </a>
@@ -236,88 +254,131 @@
                     <a href="#" class="item">
                         <img src="../common/images/main_slide_03.png" alt="배너 세 번째">
                     </a>
+                </div> -->
+            <article class="swiper swiper_main_banner">
+                <div class="swiper-wrapper">
+                  <a href="#" class="swiper-slide" data-title="배너 첫 번째로 이동">
+                      <img src="../common/images/main_slide_01.png" alt="배너 첫 번째">
+                  </a>
+                  <a href="#" class="swiper-slide"  data-title="배너 두 번째로 이동">
+                      <img src="../common/images/main_slide_02.png" alt="배너 두 번째" >
+                  </a>
+                  <a href="#" class="swiper-slide" data-title="배너 세 번째로 이동">
+                      <img src="../common/images/main_slide_03.png" alt="배너 세 번째">
+                  </a>
                 </div>
-                <div class="centerBanner">
-                  <h2 class="slide_tit container">
-                      <b>고객에게</b>삶의 질을 서비스하는 최고의 공단
-                  </h2>
-                  <div class="slide_btn container">
-                      <div class="pagination_dot"></div>
-                      
-                      <div class="control">
-                          <button class="btn prev"><span class="hide">이전</span></button>
-                          <button class="btn next"><span class="hide">다음</span></button>
-                          <button class="btn pause"><span class="hide">자동재생 정지</span></button>
-                      </div>
-                  </div>
-                  <div class="weather container">
-                      <!-- 아이콘 이름은 icon_weather_1.png ~ 7까지 되어있습니다.
-                      날씨에 따른 아이콘 변경하실때 참고바랍니다. -->
-                      <div>
-                          <img src="../common/images/icon_weather_1.png" alt="날씨 구름조금">
-                          <strong><span>22.0</span>℃</strong>
-                      </div>
-                      <em>2022.06.20</em>
-                      <ul>
-                          <li>미세먼지<span>좋음</span></li>
-                          <li>초미세먼지<span>좋음</span></li>
-                      </ul>
-                  </div>
-                  <ul class="container">
-                      <li>
-                          <a href="#" title="공단소개">
-                          <img src="../common/images/icon_menu_01.png" alt="공단소개">
-                          <b>공단소개</b>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" title="사전정보공표">
-                          <img src="../common/images/icon_menu_02.png" alt="사전정보공표">
-                          <b>사전정보공표</b>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" title="고객의소리">
-                          <img src="../common/images/icon_menu_03.png" alt="고객의소리">
-                          <b>고객의소리</b>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" title="광나루24">
-                          <img src="../common/images/icon_menu_04.png" alt="광나루24">
-                          <b>광나루24</b>
-                          </a>
-                      </li>
-                  </ul>
-                </div><!---->
-            </div>
-        </div>
-        <div id="slide_menu" class="section on">
-            <div class="list" >
-                <div class="tab_box">
-                    <div class="btns_tab">
-                        <div class="btns_tab_inner">
-                            <div class="slide_item">
-                                <span>문화 공공체육 시설</span> 
-                            </div>
-                            <div class="slide_item">
-                              <span>도서관 시설</span>
-                            </div>
-                            <div class="slide_item">
-                              <span>주차 시설</span>
-                            </div>
+                
+                <div class="swiper-button-prev swiper-button-prev-banner"></div>
+                <div class="swiper-button-next swiper-button-prev-banner"></div>
+
+                <div class="layer_box_1">
+                  <div class="center_box">
+                    <h2 class="slide_tit container">
+                        <b>고객에게</b>삶의 질을 서비스하는 최고의 공단
+                    </h2>
+                    <div class="slide_btn container">
+                      <div class="swiper-pagination"></div>
+                      <!--<div class="pagination_dot"></div> slick 사용할 때 사용 -->
+                        
+                        <div class="control">
+                            <!--<button class="btn prev"><span class="hide">이전</span></button>
+                            <button class="btn next"><span class="hide">다음</span></button>-->
+                            <button class="btn pause"><span class="hide">자동재생 정지</span></button>
+                            <button class="btn play active"><span class="hide">자동재생 정지</span></button>
                         </div>
                     </div>
-                    <a href="#" class="btn_tabArrow btn_tabArrow_l" data-pos="l" >
-                        <img src="../common/images/tab_prev.png" alt="이전보기">
-                    </a>
-                    <a href="#" class="btn_tabArrow btn_tabArrow_r " data-pos="l" >
-                        <img src="../common/images/tab_next.png" alt="다음보기">
-                    </a>
+                    <div class="weather container">
+                        <!-- 아이콘 이름은 icon_weather_1.png ~ 7까지 되어있습니다.
+                        날씨에 따른 아이콘 변경하실때 참고바랍니다. -->
+                        <div>
+                            <img src="../common/images/icon_weather_1.png" alt="날씨 구름조금">
+                            <strong><span>22.0</span>℃</strong>
+                        </div>
+                        <em>2022.06.20</em>
+                        <ul>
+                            <li>미세먼지<span>좋음</span></li>
+                            <li>초미세먼지<span>좋음</span></li>
+                        </ul>
+                    </div>
+                  </div>
                 </div>
-                <div class="list_box container"  data-aos="fade-up">
-                    <ol class="on">
-                        <li class="info_box">
+                <ul class="container">
+                    <li>
+                        <a href="#" title="공단소개">
+                          <span>
+                            <img src="../common/images/icon_menu_01.png" alt="공단소개">
+                            <b>공단소개</b>
+                          </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="사전정보공표">
+                          <span>
+                            <img src="../common/images/icon_menu_02.png" alt="사전정보공표">
+                            <b>사전정보공표</b>
+                          </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="공단 통합민원 센터">
+                          <span>
+                            <img src="../common/images/icon_menu_03.png" alt="공단 통합민원 센터">
+                            <b>공단 통합민원센터 </b>
+                          </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="이사장에게 바란다">
+                          <span>
+                            <img src="../common/images/icon_menu_04.png" alt="이사장에게 바란다">
+                            <b>이사장에게 바란다</b>
+                          </span>
+                        </a>
+                    </li>
+                </ul>
+            </article>
+
+            <!--</div>-->
+        </div>
+
+        <main>
+          <h2 class="hide">메인 컨텐츠</h2>
+
+
+
+          <!-- 시설(facility) 관련 -->
+          <div id="slide_menu" class="section on">
+              <div class="list" >
+                  <div class="tab_box facility_outer">
+                      <div class="btns_tab swiper facility">
+                          <ul class="btns_tab_inner swiper-wrapper"><!-- 이전 사람이 slick 사용 common.js > setTabSwiper() -->
+                              <li class="slide_item swiper-slide" role="tablist">
+                                <a href="#"role="tab" aria-selected="false" aria-controls="tab-panel-01" id="tab-facility-01">
+                                  <span>문화 공공체육 시설</span>
+                                </a> 
+                              </li>
+                              <li class="slide_item swiper-slide active" role="tablist">
+                                <a href="#" role="tab" aria-selected="true" aria-controls="tab-panel-02" id="tab-facility-02">
+                                  <span>도서관 시설</span>
+                                </a>
+                              </li>
+                              <li class="slide_item swiper-slide" role="tablist">
+                                <a href="#" role="tab" aria-selected="false" aria-controls="tab-panel-03" id="tab-facility-03">
+                                  <span>주차 시설</span>
+                                </a>
+                              </li>
+                          </ul>
+                      </div> 
+                      <a href="#" class="btn_tabArrow btn_tabArrow_l facility_tabArrow_l" data-pos="l" >
+                          <img src="../common/images/tab_prev.png" alt="이전보기">
+                      </a>
+                      <a href="#" class="btn_tabArrow btn_tabArrow_r facility_tabArrow_r" data-pos="r" >
+                          <img src="../common/images/tab_next.png" alt="다음보기">
+                      </a>
+                  </div>
+                  <div class="list_box container"><!--data-aos="fade-up" data-aos-offset="-120"   data-aos-duration="300"-->
+                      <ol class="tabPanels">
+                        <li class="info_box" id="tab-facility-panel-01" role="tabpanel" aria-labeledby="tab-facility-01" aria-hidden="true">
                           <ul>
                             <li>
                                 <a href="#">
@@ -377,451 +438,457 @@
                             </li>
                           </ul>
                         </li>
-                    </ol>
-                    <ol>
-                      <li class="info_box">
-                        <ul>
-                          <li>
-                              <a href="#">
-                              <span class="img">
-                                  <img src="../common/images/icon_menu2_1.png" alt="광진 문화예술회관">
-                              </span>
-                              <em>광진 문화예술회관222</em>
-                              </a>
-                          </li>
-                          <li>
-                              <a href="#">
-                              <span class="img">
-                                  <img src="../common/images/icon_menu2_2.png" alt="광진 구민체욱센터">
-                              </span>
-                              <em>광진 구민체욱센터</em>
-                              </a>
-                          </li>
-                          <li>
-                              <a href="#">
-                              <span class="img">
-                                  <img src="../common/images/icon_menu2_3.png" alt="광진 구민체욱센터">
-                              </span>
-                              <em>중곡 문화체육센터</em>
-                              </a>
-                          </li>
-                          <li>
-                              <a href="#">
-                              <span class="img">
-                                  <img src="../common/images/icon_menu2_4.png" alt="아차산배수지 체육공원">
-                              </span>
-                              <em>아차산배수지 체육공원</em>
-                              </a>
-                          </li>
-                          <li>
-                              <a href="#">
-                              <span class="img">
-                                  <img src="../common/images/icon_menu2_5.png" alt="광장동 실내배드민턴장">
-                              </span>
-                              <em>광장동 실내배드민턴장</em>
-                              </a>
-                          </li>
-                          <li>
-                              <a href="#">
-                              <span class="img">
-                                  <img src="../common/images/icon_menu2_6.png" alt="광진 구립도서관">
-                              </span>
-                              <em>광진 구립도서관</em>
-                              </a>
-                          </li>
-                          <li>
-                              <a href="#">
-                              <span class="img bg_blue">
-                                  <img src="../common/images/icon_menu2_7.png" alt="온라인 예약">
-                              </span>
-                              <em>온라인 예약</em>
-                              </a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ol>
-                    <ol>
-                      <li class="info_box">
-                        <ul>
-                          <li>
-                              <a href="#">
-                              <span class="img">
-                                  <img src="../common/images/icon_menu2_1.png" alt="광진 문화예술회관">
-                              </span>
-                              <em>광진 문화예술회관333</em>
-                              </a>
-                          </li>
-                          <li>
-                              <a href="#">
-                              <span class="img">
-                                  <img src="../common/images/icon_menu2_2.png" alt="광진 구민체욱센터">
-                              </span>
-                              <em>광진 구민체욱센터</em>
-                              </a>
-                          </li>
-                          <li>
-                              <a href="#">
-                              <span class="img">
-                                  <img src="../common/images/icon_menu2_3.png" alt="광진 구민체욱센터">
-                              </span>
-                              <em>중곡 문화체육센터</em>
-                              </a>
-                          </li>
-                          <li>
-                              <a href="#">
-                              <span class="img">
-                                  <img src="../common/images/icon_menu2_4.png" alt="아차산배수지 체육공원">
-                              </span>
-                              <em>아차산배수지 체육공원</em>
-                              </a>
-                          </li>
-                          <li>
-                              <a href="#">
-                              <span class="img">
-                                  <img src="../common/images/icon_menu2_5.png" alt="광장동 실내배드민턴장">
-                              </span>
-                              <em>광장동 실내배드민턴장</em>
-                              </a>
-                          </li>
-                          <li>
-                              <a href="#">
-                              <span class="img">
-                                  <img src="../common/images/icon_menu2_6.png" alt="광진 구립도서관">
-                              </span>
-                              <em>광진 구립도서관</em>
-                              </a>
-                          </li>
-                          <li>
-                              <a href="#">
-                              <span class="img bg_blue">
-                                  <img src="../common/images/icon_menu2_7.png" alt="온라인 예약">
-                              </span>
-                              <em>온라인 예약</em>
-                              </a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-        <div class="board">
-          <div class="container">
-            <ul class="tab_box tab_row">
-              <li class="active">
-                <button type="button">공지사항</button>
-                <div>
-                  <ol>
-                    <li>
-                      <a href="#">
-                        <div>
-                          <strong>일자리 상황판 시스템점검안내일자리<b>(2/19 ~ 2/20)</b></strong>
-                        <span>일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를 일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를</span>
-                        </div>
-                        
-                        <em>2022.06.30</em>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div>
-                          <strong>일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내<b>(2/19 ~ 2/20)</b></strong>
-                        <span>일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를 일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를</span>
-                        </div>
-                        
-                        <em>2022.06.30</em>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div>
-                          <strong>일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내<b>(2/19 ~ 2/20)</b></strong>
-                        <span>일자리 상황판 시스템점검안내드립니다.</span>
-                        </div>
-                        
-                        <em>2022.06.30</em>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div>
-                          <strong>일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내<b>(2/19 ~ 2/20)</b></strong>
-                        <span>일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를 일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를</span>
-                        </div>
-                        <em>2022.06.30</em>
-                      </a>
-                    </li>
-                    <!-- 전체 보기 해당 목록 화면으로 이동-->
-                    <li>
-                      <a href="#" ><span>전체 보기</span></a>
-                    </li>
-                    <!-- 전체 보기 해당 목록 화면으로 이동-->
-                  </ol>
-                </div>
-              </li>
-              <li>
-                <button type="button">채용정보</button>
-                <div>
-                  <ol>
-                    <li>
-                      <a href="#">
-                        <div>
-                          <strong>채용정보채용정보채용정보채용정보<b>(2/19 ~ 2/20)</b></strong>
-                        <span>일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를 일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를</span>
-                        </div>
-                        <em>2022.06.30</em>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div>
-                          <strong>일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내<b>(2/19 ~ 2/20)</b></strong>
-                        <span>일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를 일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를</span>
-                        </div>
-                        <em>2022.06.30</em>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div>
-                          <strong>일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내<b>(2/19 ~ 2/20)</b></strong>
-                        <span>일자리 상황판 시스템점검안내드립니다.</span>
-                        </div>
-                        <em>2022.06.30</em>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div>
-                          <strong>일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내<b>(2/19 ~ 2/20)</b></strong>
-                        <span>일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를 일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를</span>
-                        </div>
-                        <em>2022.06.30</em>
-                      </a>
-                    </li>
-                     <!-- 전체 보기 해당 목록 화면으로 이동-->
-                     <li>
-                      <a href="#" ><span>전체 보기</span></a>
-                    </li>
-                    <!-- 전체 보기 해당 목록 화면으로 이동-->
-                  </ol>
-                </div>
-              </li>
-              <li>
-                <button type="button">입찰공고</button>
-                <div>
-                  <ol>
-                    <li>
-                      <a href="#">
-                        <div>
-                          <strong>입찰공고입찰공고입찰공고<b>(2/19 ~ 2/20)</b></strong>
-                        <span>일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를 일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를</span>
-                        </div>
-                        <em>2022.06.30</em>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div>
-                          <strong>일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내<b>(2/19 ~ 2/20)</b></strong>
-                        <span>일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를 일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를</span>
-                        </div>
-                        <em>2022.06.30</em>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div>
-                          <strong>일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내<b>(2/19 ~ 2/20)</b></strong>
-                        <span>일자리 상황판 시스템점검안내드립니다.</span>
-                        </div>
-                        <em>2022.06.30</em>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div>
-                          <strong>일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내<b>(2/19 ~ 2/20)</b></strong>
-                        <span>일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를 일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를</span>
-                        </div>
-                        <em>2022.06.30</em>
-                      </a>
-                    </li>
-                    <!-- 전체 보기 해당 목록 화면으로 이동-->
-                    <li>
-                      <a href="#" ><span>전체 보기</span></a>
-                    </li>
-                    <!-- 전체 보기 해당 목록 화면으로 이동-->
-                  </ol>
-                </div>
-              </li>
-              <li>
-                <button type="button">고시공고</button>
-                <div>
-                  <ol>
-                    <li>
-                      <a href="#">
-                        <div>
-                          <strong>고시공고고시공고고시공고고시공고<b>(2/19 ~ 2/20)</b></strong>
-                        <span>일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를 일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를</span>
-                        </div>
-                        <em>2022.06.30</em>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div>
-                          <strong>일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내<b>(2/19 ~ 2/20)</b></strong>
-                        <span>일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를 일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를</span>
-                        </div>
-                        <em>2022.06.30</em>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div>
-                          <strong>일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내<b>(2/19 ~ 2/20)</b></strong>
-                        <span>일자리 상황판 시스템점검안내드립니다.</span>
-                        </div>
-                        <em>2022.06.30</em>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div>
-                          <strong>일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내<b>(2/19 ~ 2/20)</b></strong>
-                        <span>일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를 일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를</span>
-                        </div>
-                        <em>2022.06.30</em>
-                      </a>
-                    </li>
-                    <!-- 전체 보기 해당 목록 화면으로 이동-->
-                    <li>
-                      <a href="#" ><span>전체 보기</span></a>
-                    </li>
-                    <!-- 전체 보기 해당 목록 화면으로 이동-->
-                  </ol>
-                </div>
-              </li>
-            </ul>
-            <div class="banner2">
-              <h2>알림마당</h2>
-              <div class="control">
-                <div class="pagination_num"><span class="current">1</span>/ 5</div>
-                <button class="btn prev"><span class="hide">이전</span></button>
-                <button class="btn pause"><span class="hide">자동재생 정지</span></button>
-                <button class="btn next"><span class="hide">다음</span></button>
+                        <li class="info_box on" id="tab-facility-panel-02" role="tabpanel" aria-labeledby="tab-facility-02" aria-hidden="false">
+                          <ul>
+                            <li>
+                                <a href="#">
+                                <span class="img">
+                                    <img src="../common/images/icon_menu2_1.png" alt="광진 문화예술회관">
+                                </span>
+                                <em>광진 문화예술회관222</em>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                <span class="img">
+                                    <img src="../common/images/icon_menu2_2.png" alt="광진 구민체욱센터">
+                                </span>
+                                <em>광진 구민체욱센터</em>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                <span class="img">
+                                    <img src="../common/images/icon_menu2_3.png" alt="광진 구민체욱센터">
+                                </span>
+                                <em>중곡 문화체육센터</em>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                <span class="img">
+                                    <img src="../common/images/icon_menu2_4.png" alt="아차산배수지 체육공원">
+                                </span>
+                                <em>아차산배수지 체육공원</em>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                <span class="img">
+                                    <img src="../common/images/icon_menu2_5.png" alt="광장동 실내배드민턴장">
+                                </span>
+                                <em>광장동 실내배드민턴장</em>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                <span class="img">
+                                    <img src="../common/images/icon_menu2_6.png" alt="광진 구립도서관">
+                                </span>
+                                <em>광진 구립도서관</em>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                <span class="img bg_blue">
+                                    <img src="../common/images/icon_menu2_7.png" alt="온라인 예약">
+                                </span>
+                                <em>온라인 예약</em>
+                                </a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="info_box" id="tab-facility-panel-03" role="tabpanel" aria-labeledby="tab-facility-03" aria-hidden="true">
+                          <ul>
+                            <li>
+                                <a href="#">
+                                <span class="img">
+                                    <img src="../common/images/icon_menu2_1.png" alt="광진 문화예술회관">
+                                </span>
+                                <em>광진 문화예술회관333</em>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                <span class="img">
+                                    <img src="../common/images/icon_menu2_2.png" alt="광진 구민체욱센터">
+                                </span>
+                                <em>광진 구민체욱센터</em>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                <span class="img">
+                                    <img src="../common/images/icon_menu2_3.png" alt="광진 구민체욱센터">
+                                </span>
+                                <em>중곡 문화체육센터</em>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                <span class="img">
+                                    <img src="../common/images/icon_menu2_4.png" alt="아차산배수지 체육공원">
+                                </span>
+                                <em>아차산배수지 체육공원</em>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                <span class="img">
+                                    <img src="../common/images/icon_menu2_5.png" alt="광장동 실내배드민턴장">
+                                </span>
+                                <em>광장동 실내배드민턴장</em>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                <span class="img">
+                                    <img src="../common/images/icon_menu2_6.png" alt="광진 구립도서관">
+                                </span>
+                                <em>광진 구립도서관</em>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                <span class="img bg_blue">
+                                    <img src="../common/images/icon_menu2_7.png" alt="온라인 예약">
+                                </span>
+                                <em>온라인 예약</em>
+                                </a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ol>
+                  </div>
               </div>
-              <div class="slide_box">
-                <div class="slide">
-                  <div class="item">
-                    <a href="#">
-                      <img src="../common/images/banner2_01.png" alt="">
-                    </a>
+          </div>
+          <!-- 공지(notice) & 알림마당 관련-->
+          <div class="board">
+            <div class="container">
+              <ul class="tab_box tab_row">
+                <li class="active">
+                  <button type="button" id="tab-row-01" role="tab" aria-selected="true" aria-controls="tab-row-panel-01">공지사항</button>
+                  <div id="tab-row-panel-01" role="tabpanel" aria-labelledby="tab-row-01" aria-hidden="false">
+                    <ol>
+                      <li>
+                        <a href="#">
+                          <div>
+                            <strong>일자리 상황판 시스템점검안내일자리<b>(2/19 ~ 2/20)</b></strong>
+                          <span>일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를 일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를</span>
+                          </div>
+                          
+                          <em>2022.06.30</em>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div>
+                            <strong>일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내<b>(2/19 ~ 2/20)</b></strong>
+                          <span>일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를 일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를</span>
+                          </div>
+                          
+                          <em>2022.06.30</em>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div>
+                            <strong>일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내<b>(2/19 ~ 2/20)</b></strong>
+                          <span>일자리 상황판 시스템점검안내드립니다.</span>
+                          </div>
+                          
+                          <em>2022.06.30</em>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div>
+                            <strong>일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내<b>(2/19 ~ 2/20)</b></strong>
+                          <span>일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를 일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를</span>
+                          </div>
+                          <em>2022.06.30</em>
+                        </a>
+                      </li>
+                      <!-- 전체 보기 해당 목록 화면으로 이동-->
+                      <li>
+                        <a href="#" ><span>전체 보기</span></a>
+                      </li>
+                      <!-- 전체 보기 해당 목록 화면으로 이동-->
+                    </ol>
                   </div>
-                  <div class="item">
-                    <a href="#">
-                      <img src="../common/images/banner2_02.png" alt="">
-                    </a>
+                </li>
+                <li>
+                  <button type="button" id="tab-row-02" role="tab" aria-selected="false" aria-controls="tab-row-panel-02">채용정보</button>
+                  <div id="tab-row-panel-02" role="tabpanel" aria-labelledby="tab-row-02" aria-hidden="true">
+                    <ol>
+                      <li>
+                        <a href="#">
+                          <div>
+                            <strong>채용정보채용정보채용정보채용정보<b>(2/19 ~ 2/20)</b></strong>
+                          <span>일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를 일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를</span>
+                          </div>
+                          <em>2022.06.30</em>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div>
+                            <strong>일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내<b>(2/19 ~ 2/20)</b></strong>
+                          <span>일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를 일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를</span>
+                          </div>
+                          <em>2022.06.30</em>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div>
+                            <strong>일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내<b>(2/19 ~ 2/20)</b></strong>
+                          <span>일자리 상황판 시스템점검안내드립니다.</span>
+                          </div>
+                          <em>2022.06.30</em>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div>
+                            <strong>일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내<b>(2/19 ~ 2/20)</b></strong>
+                          <span>일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를 일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를</span>
+                          </div>
+                          <em>2022.06.30</em>
+                        </a>
+                      </li>
+                      <!-- 전체 보기 해당 목록 화면으로 이동-->
+                      <li>
+                        <a href="#" ><span>전체 보기</span></a>
+                      </li>
+                      <!-- 전체 보기 해당 목록 화면으로 이동-->
+                    </ol>
                   </div>
-                  <div class="item">
-                    <a href="#">
-                      <img src="../common/images/banner2_03.png" alt="">
-                    </a>
+                </li>
+                <li>
+                  <button type="button" id="tab-row-03" role="tab" aria-selected="false" aria-controls="tab-row-panel-03">입찰공고</button>
+                  <div id="tab-row-panel-03" role="tabpanel" aria-labelledby="tab-row-03" aria-hidden="true">
+                    <ol>
+                      <li>
+                        <a href="#">
+                          <div>
+                            <strong>입찰공고입찰공고입찰공고<b>(2/19 ~ 2/20)</b></strong>
+                          <span>일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를 일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를</span>
+                          </div>
+                          <em>2022.06.30</em>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div>
+                            <strong>일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내<b>(2/19 ~ 2/20)</b></strong>
+                          <span>일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를 일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를</span>
+                          </div>
+                          <em>2022.06.30</em>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div>
+                            <strong>일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내<b>(2/19 ~ 2/20)</b></strong>
+                          <span>일자리 상황판 시스템점검안내드립니다.</span>
+                          </div>
+                          <em>2022.06.30</em>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div>
+                            <strong>일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내<b>(2/19 ~ 2/20)</b></strong>
+                          <span>일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를 일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를</span>
+                          </div>
+                          <em>2022.06.30</em>
+                        </a>
+                      </li>
+                      <!-- 전체 보기 해당 목록 화면으로 이동-->
+                      <li>
+                        <a href="#" ><span>전체 보기</span></a>
+                      </li>
+                      <!-- 전체 보기 해당 목록 화면으로 이동-->
+                    </ol>
+                  </div>
+                </li>
+                <li>
+                  <button type="button" id="tab-row-04" role="tab" aria-selected="true" aria-controls="tab-row-panel-04">고시공고</button>
+                  <div id="tab-row-panel-04" role="tabpanel" aria-labelledby="tab-row-04" aria-hidden="true">
+                    <ol>
+                      <li>
+                        <a href="#">
+                          <div>
+                            <strong>고시공고고시공고고시공고고시공고<b>(2/19 ~ 2/20)</b></strong>
+                          <span>일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를 일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를</span>
+                          </div>
+                          <em>2022.06.30</em>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div>
+                            <strong>일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내<b>(2/19 ~ 2/20)</b></strong>
+                          <span>일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를 일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를</span>
+                          </div>
+                          <em>2022.06.30</em>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div>
+                            <strong>일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내<b>(2/19 ~ 2/20)</b></strong>
+                          <span>일자리 상황판 시스템점검안내드립니다.</span>
+                          </div>
+                          <em>2022.06.30</em>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div>
+                            <strong>일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내일자리 상황판 시스템점검안내<b>(2/19 ~ 2/20)</b></strong>
+                          <span>일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를 일자리 상황판 시스템점검안내드립니다. 점검후 빠르게 원하시는 정보를</span>
+                          </div>
+                          <em>2022.06.30</em>
+                        </a>
+                      </li>
+                      <!-- 전체 보기 해당 목록 화면으로 이동-->
+                      <li>
+                        <a href="#" ><span>전체 보기</span></a>
+                      </li>
+                      <!-- 전체 보기 해당 목록 화면으로 이동-->
+                    </ol>
+                  </div>
+                </li>
+              </ul>
+              <div class="banner2">
+                <h2>알림마당</h2>
+                <div class="control">
+                    <div class="pagination_num"><span class="current">1</span>/ 5</div><!-- pagination End -->
+                    <button class="btn prev"><span class="hide">이전</span></button>
+                    <button class="btn pause"><span class="hide">자동재생</span></button>
+                    <button class="btn play active"><span class="hide">정지</span></button>
+                    <button class="btn next"><span class="hide">다음</span></button>
+                </div><!--control End-->
+                <div class="slide_box">
+                  <div class="slide">
+                    <div class="item">
+                      <a href="#">
+                        <img src="../common/images/banner2_01.png" alt="">
+                      </a>
+                    </div>
+                    <div class="item">
+                      <a href="#">
+                        <img src="../common/images/banner2_02.png" alt="">
+                      </a>
+                    </div>
+                    <div class="item">
+                      <a href="#">
+                        <img src="../common/images/banner2_03.png" alt="">
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </div> 
             </div>
           </div>
-        </div>
-        <div id="new" class="section on">
-          <h2>공단 <b>소식.</b></h2>
-          <div class="list">
-              <div class="tab_box">
-                  <div class="btns_tab">
-                      <div class="btns_tab_inner">
-                          <div class="slide_item">
-                            <span>보도자료</span>
-                          </div>
-                          <div class="slide_item">
-                              <span>카드뉴스</span> 
-                          </div>
-                          <div class="slide_item">
-                            <span>포토갤러리</span>
-                          </div>
-                          <div class="slide_item">
-                            <span>비디오갤러리</span>
-                          </div>
-                          <div class="slide_item">
-                            <span>공단소식지</span>
-                          </div>
-                      </div>
+          <div id="news" class="section on">
+            <h3>공단 <b>소식.</b></h3>
+            <div class="list">
+              <div class="tab_box news_box_outer">
+                  <div class="swiper btns_tab news_box">
+                      <ul class="swiper-wrapper btns_tab_inner">
+                        <li class="slide_item swiper-slide" role="tablist">
+                          <a href="#" role="tab" aria-selected="false" aria-controls="tab-news-panel-01" id="tab-news-01">
+                            <span>보도 자료</span>
+                          </a> 
+                        </li>
+                        <li class="slide_item swiper-slide active" role="tablist">
+                          <a href="#" role="tab" aria-selected="true" aria-controls="tab-news-panel-02" id="tab-news-02">
+                            <span>카드 뉴스</span>
+                          </a>
+                        </li>
+                        <li class="slide_item swiper-slide" role="tablist">
+                          <a href="#" role="tab" aria-selected="false" aria-controls="tab-news-panel-03" id="tab-news-03">
+                            <span>포토 갤러리</span>
+                          </a>
+                        </li>
+                        <li class="slide_item swiper-slide" role="tablist">
+                          <a href="#" role="tab" aria-selected="false" aria-controls="tab-news-panel-04" id="tab-news-04">
+                            <span>비디오 갤러리</span>
+                          </a>
+                        </li>
+                        <li class="slide_item swiper-slide" role="tablist">
+                          <a href="#" role="tab" aria-selected="false" aria-controls="tab-news-panel-05" id="tab-news-05">
+                            <span>공단 소식지</span>
+                          </a>
+                        </li>
+                      </ul>
                   </div>
-                  <a href="#" class="btn_tabArrow btn_tabArrow_l" data-pos="l" >
+                  <a href="#" class="btn_tabArrow news_tabArrow_l" data-pos="l" >
                       <img src="../common/images/tab_prev.png" alt="이전보기">
                   </a>
-                  <a href="#" class="btn_tabArrow btn_tabArrow_r " data-pos="l" >
+                  <a href="#" class="btn_tabArrow news_tabArrow_r" data-pos="r" >
                       <img src="../common/images/tab_next.png" alt="다음보기">
                   </a>
               </div>
-              <div class="list_box container " data-aos="fade-up" >
-                  <ol class="on">
-                      <li class="info_box">
-                        <ul>
-                          <li>
-                            <a href="#">
-                              <img src="../common/images/sample_01.png" alt="">
-                              <strong>보도자료</strong>
-                              <span>광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석</span>
-                              <em>2022.06.16</em>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <img src="../common/images/sample_02.png" alt="">
-                              <strong>보도자료</strong>
-                              <span>자양한강도서관, &#60;2022 서울북스타트	&#62;그림책으로 맘 준비, 맘 돌봄! </span>
-                              <em>2022.06.16</em>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <img src="../common/images/sample_03.png" alt="">
-                              <strong>공단 소식지</strong>
-                              <span>광진구민체육센터, 고객과 함께하는 묘목 나눔 행사 안내 
-                              </span>
-                              <em>2022.06.09</em>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <img src="../common/images/sample_04.png" alt="">
-                              <strong>광진 SNS</strong>
-                              <span>광진구민체육센터, "사계절 푸르른 힐링 쉼터" 실내 스마트 가든 조성 </span>
-                              <em>2022.06.16</em>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <img src="../common/images/sample_05.png" alt="">
-                              <strong>공단 소식지</strong>
-                              <span>광진구시설관리공단, 한강공원 안전문화 캠페인 시행 </span>
-                              <em>2022.06.16</em>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <img src="../common/images/sample_06.png" alt="">
-                              <strong>공단 소식지</strong>
-                              <span>광진구시설관리공단, 노동조합사무실(고충상담소) 근무환경 개선공사 시행</span>
-                              <em>2022.06.16</em>
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                  </ol>
-                  <ol>
-                    <li class="info_box">
+              <div class="list_box container " data-aos="fade-up"  data-aos-offset="200" >
+                  <ol class="tabPanels">
+                    <li class="info_box tabPanels" aria-labeledby="tab-news-01" id="tab-news-panel-01" role="tabpanel" aria-hidden="true">
+                      <ul>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_01.png" alt="">
+                            <strong>보도자료</strong>
+                            <span>광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석</span>
+                            <em>2022.06.16</em>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_02.png" alt="">
+                            <strong>보도자료</strong>
+                            <span>자양한강도서관, &#60;2022 서울북스타트	&#62;그림책으로 맘 준비, 맘 돌봄! </span>
+                            <em>2022.06.16</em>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_03.png" alt="">
+                            <strong>공단 소식지</strong>
+                            <span>광진구민체육센터, 고객과 함께하는 묘목 나눔 행사 안내 
+                            </span>
+                            <em>2022.06.09</em>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_04.png" alt="">
+                            <strong>광진 SNS</strong>
+                            <span>광진구민체육센터, "사계절 푸르른 힐링 쉼터" 실내 스마트 가든 조성 </span>
+                            <em>2022.06.16</em>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_05.png" alt="">
+                            <strong>공단 소식지</strong>
+                            <span>광진구시설관리공단, 한강공원 안전문화 캠페인 시행 </span>
+                            <em>2022.06.16</em>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_06.png" alt="">
+                            <strong>공단 소식지</strong>
+                            <span>광진구시설관리공단, 노동조합사무실(고충상담소) 근무환경 개선공사 시행</span>
+                            <em>2022.06.16</em>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="info_box tabPanels on" aria-labeledby="tab-news-02" id="tab-news-panel-02" role="tabpanel" aria-hidden="false">
                       <ul>
                         <li>
                           <a href="#">
@@ -874,181 +941,171 @@
                         </li>
                       </ul>
                     </li>
-                  </ol>
-                  <ol>
-                    <li class="info_box">
-                      <li class="info_box">
-                        <ul>
-                          <li>
-                            <a href="#">
-                              <img src="../common/images/sample_01.png" alt="">
-                              <strong>포토갤러리</strong>
-                              <span>광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석</span>
-                              <em>2022.06.16</em>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <img src="../common/images/sample_02.png" alt="">
-                              <strong>포토갤러리</strong>
-                              <span>자양한강도서관, &#60;2022 서울북스타트	&#62;그림책으로 맘 준비, 맘 돌봄! </span>
-                              <em>2022.06.16</em>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <img src="../common/images/sample_03.png" alt="">
-                              <strong>공단 소식지</strong>
-                              <span>광진구민체육센터, 고객과 함께하는 묘목 나눔 행사 안내 
-                              </span>
-                              <em>2022.06.09</em>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <img src="../common/images/sample_04.png" alt="">
-                              <strong>광진 SNS</strong>
-                              <span>광진구민체육센터, "사계절 푸르른 힐링 쉼터" 실내 스마트 가든 조성 </span>
-                              <em>2022.06.16</em>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <img src="../common/images/sample_05.png" alt="">
-                              <strong>공단 소식지</strong>
-                              <span>광진구시설관리공단, 한강공원 안전문화 캠페인 시행 </span>
-                              <em>2022.06.16</em>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <img src="../common/images/sample_06.png" alt="">
-                              <strong>공단 소식지</strong>
-                              <span>광진구시설관리공단, 노동조합사무실(고충상담소) 근무환경 개선공사 시행</span>
-                              <em>2022.06.16</em>
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
+                    <li class="info_box tabPanels" aria-labeledby="tab-news-03" id="tab-news-panel-03" role="tabpanel" aria-hidden="true">
+                      <ul>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_01.png" alt="">
+                            <strong>포토갤러리</strong>
+                            <span>광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석</span>
+                            <em>2022.06.16</em>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_02.png" alt="">
+                            <strong>포토갤러리</strong>
+                            <span>자양한강도서관, &#60;2022 서울북스타트	&#62;그림책으로 맘 준비, 맘 돌봄! </span>
+                            <em>2022.06.16</em>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_03.png" alt="">
+                            <strong>공단 소식지</strong>
+                            <span>광진구민체육센터, 고객과 함께하는 묘목 나눔 행사 안내 
+                            </span>
+                            <em>2022.06.09</em>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_04.png" alt="">
+                            <strong>광진 SNS</strong>
+                            <span>광진구민체육센터, "사계절 푸르른 힐링 쉼터" 실내 스마트 가든 조성 </span>
+                            <em>2022.06.16</em>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_05.png" alt="">
+                            <strong>공단 소식지</strong>
+                            <span>광진구시설관리공단, 한강공원 안전문화 캠페인 시행 </span>
+                            <em>2022.06.16</em>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_06.png" alt="">
+                            <strong>공단 소식지</strong>
+                            <span>광진구시설관리공단, 노동조합사무실(고충상담소) 근무환경 개선공사 시행</span>
+                            <em>2022.06.16</em>
+                          </a>
+                        </li>
+                      </ul>
                     </li>
-                  </ol>
-                  <ol>
-                    <li class="info_box">
-                      <li class="info_box">
-                        <ul>
-                          <li>
-                            <a href="#">
-                              <img src="../common/images/sample_01.png" alt="">
-                              <strong>비디오갤러리</strong>
-                              <span>광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석</span>
-                              <em>2022.06.16</em>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <img src="../common/images/sample_02.png" alt="">
-                              <strong>비디오갤러리</strong>
-                              <span>자양한강도서관, &#60;2022 서울북스타트	&#62;그림책으로 맘 준비, 맘 돌봄! </span>
-                              <em>2022.06.16</em>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <img src="../common/images/sample_03.png" alt="">
-                              <strong>공단 소식지</strong>
-                              <span>광진구민체육센터, 고객과 함께하는 묘목 나눔 행사 안내 
-                              </span>
-                              <em>2022.06.09</em>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <img src="../common/images/sample_04.png" alt="">
-                              <strong>광진 SNS</strong>
-                              <span>광진구민체육센터, "사계절 푸르른 힐링 쉼터" 실내 스마트 가든 조성 </span>
-                              <em>2022.06.16</em>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <img src="../common/images/sample_05.png" alt="">
-                              <strong>공단 소식지</strong>
-                              <span>광진구시설관리공단, 한강공원 안전문화 캠페인 시행 </span>
-                              <em>2022.06.16</em>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <img src="../common/images/sample_06.png" alt="">
-                              <strong>공단 소식지</strong>
-                              <span>광진구시설관리공단, 노동조합사무실(고충상담소) 근무환경 개선공사 시행</span>
-                              <em>2022.06.16</em>
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
+                    <li class="info_box tabPanels" aria-labeledby="tab-news-04" id="tab-news-panel-04" role="tabpanel" aria-hidden="true">
+                      <ul>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_01.png" alt="">
+                            <strong>비디오갤러리</strong>
+                            <span>광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석</span>
+                            <em>2022.06.16</em>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_02.png" alt="">
+                            <strong>비디오갤러리</strong>
+                            <span>자양한강도서관, &#60;2022 서울북스타트	&#62;그림책으로 맘 준비, 맘 돌봄! </span>
+                            <em>2022.06.16</em>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_03.png" alt="">
+                            <strong>공단 소식지</strong>
+                            <span>광진구민체육센터, 고객과 함께하는 묘목 나눔 행사 안내 
+                            </span>
+                            <em>2022.06.09</em>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_04.png" alt="">
+                            <strong>광진 SNS</strong>
+                            <span>광진구민체육센터, "사계절 푸르른 힐링 쉼터" 실내 스마트 가든 조성 </span>
+                            <em>2022.06.16</em>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_05.png" alt="">
+                            <strong>공단 소식지</strong>
+                            <span>광진구시설관리공단, 한강공원 안전문화 캠페인 시행 </span>
+                            <em>2022.06.16</em>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_06.png" alt="">
+                            <strong>공단 소식지</strong>
+                            <span>광진구시설관리공단, 노동조합사무실(고충상담소) 근무환경 개선공사 시행</span>
+                            <em>2022.06.16</em>
+                          </a>
+                        </li>
+                      </ul>
+
                     </li>
-                  </ol>
-                  <ol>
-                    <li class="info_box">
-                      <li class="info_box">
-                        <ul>
-                          <li>
-                            <a href="#">
-                              <img src="../common/images/sample_01.png" alt="">
-                              <strong>공단 소식지</strong>
-                              <span>광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석</span>
-                              <em>2022.06.16</em>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <img src="../common/images/sample_02.png" alt="">
-                              <strong>공단 소식지</strong>
-                              <span>자양한강도서관, &#60;2022 서울북스타트	&#62;그림책으로 맘 준비, 맘 돌봄! </span>
-                              <em>2022.06.16</em>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <img src="../common/images/sample_03.png" alt="">
-                              <strong>공단 소식지</strong>
-                              <span>광진구민체육센터, 고객과 함께하는 묘목 나눔 행사 안내 
-                              </span>
-                              <em>2022.06.09</em>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <img src="../common/images/sample_04.png" alt="">
-                              <strong>광진 SNS</strong>
-                              <span>광진구민체육센터, "사계절 푸르른 힐링 쉼터" 실내 스마트 가든 조성 </span>
-                              <em>2022.06.16</em>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <img src="../common/images/sample_05.png" alt="">
-                              <strong>공단 소식지</strong>
-                              <span>광진구시설관리공단, 한강공원 안전문화 캠페인 시행 </span>
-                              <em>2022.06.16</em>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <img src="../common/images/sample_06.png" alt="">
-                              <strong>공단 소식지</strong>
-                              <span>광진구시설관리공단, 노동조합사무실(고충상담소) 근무환경 개선공사 시행</span>
-                              <em>2022.06.16</em>
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
+                    <li class="info_box tabPanels" aria-labeledby="tab-news-05" id="tab-news-panel-05" role="tabpanel" aria-hidden="true">
+                      <ul>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_01.png" alt="">
+                            <strong>공단 소식지</strong>
+                            <span>광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석광진구시설관리공단, 전국 시·군·구 지방공기업 협의회 CEO 연찬회 참석</span>
+                            <em>2022.06.16</em>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_02.png" alt="">
+                            <strong>공단 소식지</strong>
+                            <span>자양한강도서관, &#60;2022 서울북스타트	&#62;그림책으로 맘 준비, 맘 돌봄! </span>
+                            <em>2022.06.16</em>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_03.png" alt="">
+                            <strong>공단 소식지</strong>
+                            <span>광진구민체육센터, 고객과 함께하는 묘목 나눔 행사 안내 
+                            </span>
+                            <em>2022.06.09</em>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_04.png" alt="">
+                            <strong>광진 SNS</strong>
+                            <span>광진구민체육센터, "사계절 푸르른 힐링 쉼터" 실내 스마트 가든 조성 </span>
+                            <em>2022.06.16</em>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_05.png" alt="">
+                            <strong>공단 소식지</strong>
+                            <span>광진구시설관리공단, 한강공원 안전문화 캠페인 시행 </span>
+                            <em>2022.06.16</em>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="../common/images/sample_06.png" alt="">
+                            <strong>공단 소식지</strong>
+                            <span>광진구시설관리공단, 노동조합사무실(고충상담소) 근무환경 개선공사 시행</span>
+                            <em>2022.06.16</em>
+                          </a>
+                        </li>
+                      </ul>
                     </li>
                   </ol>
               </div>
           </div>
-      </div>
+        </main>
+        </div>
     </div>
     <!-- 메인 -->
     <!-- footer -->
@@ -1098,14 +1155,5 @@
     <!-- footer -->
   </div>
 </body>
-<script>
-  var myAOS = function () {
-      AOS.init({
-          easing: 'ease',
-          duration: 1500,
-      });
-  };
 
-  myAOS();
-</script>
 </html>

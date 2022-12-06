@@ -1,6 +1,6 @@
-
 #wrap {min-height:100vh;}
 //공통 스타일
+
 .container {
   overflow:hidden;
   margin:auto; 
@@ -23,11 +23,12 @@
 
 
 /*헤더*/
-.header{$headH:80px;position:absolute; top: 0; left: 0; width:100%;  z-index: 100;overflow-y:hidden; transition:border-radius 0.1s;  /* box-shadow:0 0 10px rgba(0,0,0,0.1);  */
+.header{$headH:80px;position:absolute; top: 0; left: 0; width:100%;  z-index: 100;  transition:border-radius 0.1s; /* overflow-y:hidden; box-shadow:0 0 10px rgba(0,0,0,0.1);  */
   /* &.active {border-radius:0 0 80px 0;transition:border-radius 0.1s;
     &:before {content:'';width:100%;height:1px;background-color:#ececec;position:absolute;left:0;top:100px;display:block;z-index:11;}
   } */
-  .hd_top { @include clear; background-color: #333; color: #fff; height: 52px;
+  .hd_top { @include clear; background-color: #333; color: #fff; height: 52px; 
+
       ul{float: left;margin-left: 80px;
           li{display: inline-block; vertical-align: middle;position: relative;
             a{line-height: 52px; padding: 0 45px; font-weight: 300;} 
@@ -56,74 +57,86 @@
         }
       }
   }
- 
-  .gnb{@include clear;text-align:center;position:relative;font-size:0;z-index:12; margin-left:80px; margin-right: 230px;
-    
+ .layer_gnb{@include clear; background:transparent;
+   &:hover{border-bottom:1px solid #dddddd; background:rgb(242,242,242);}
+  .gnb{display:flex; text-align:center; font-size:0;z-index:12; 
+   /* 
     &::before{position: absolute; display: block; content: ''; width: 90px; height: 1px; background-color: #d9d9d9; left: -80px; top: 70px;}
     &::after{position: absolute; display: block; content: ''; width: 235px; height: 1px; background-color: #d9d9d9; right: -226px; top: 70px;}
-      .logo{float: left;
+   */
+      .logo{ margin-left:80px;
           a{
-            width:289px;background: url(../images/logo.png) no-repeat center left/ auto 40px; height:70px; line-height:70px;display:block;
+            width:289px; background: url(../images/logo.png) no-repeat center left/ auto 40px; height:70px; line-height:70px;display:block;
             
           }
       } 
-      >ul{font-size:22px; @include clear; display:inline-block; width: calc(100% - 289px); 
-          >li{float:left; width: 20%;
-              
+      >ul{ @include clear;  display:flex; width: calc(100% - 589px); font-size:22px; justify-content: space-between; 
+          >li{flex:0 0 20%;
+             
               &:hover{
                   >a{font-weight: 600;} 
               }
               &.active{
-                  a {position:relative;}
-                  >a::before{
-                     position:absolute;left:50%;bottom:0;width:100%;transform:translateX(-50%);height:4px;background-color:#000;content:'';z-index:5;max-width: 145px;
+                  span{
+                    display: inline-block;
+                     position:relative; 
+                     &::after{ content:""; position:absolute; left:10%; bottom:-1px; width:80%; height:4px; background-color:#000; z-index:5;}
                   }
-                  .dep2_wrap{visibility:visible;z-index: 3; border-top: 1px solid #d9d9d9 ;}
+                  .dep2_wrap{visibility: visible; top:122px;  z-index: 3; border-top: 1px solid #d9d9d9 ;}
               }
               &:first-child{
-                  a{padding-left: 0;}
+                  a{padding-left: 0; }
               }
            
-            >a{font-weight: 400; position: relative;line-height: 70px; }
-          }
-      }
-    .dep2_wrap {display:block; width:100%;position:absolute;top:100%; left:0; z-index:1; visibility: hidden;background-color:#f2f2f2;@include clear;min-height: 400px;
-        > div{width: 420px;height: 100%;line-height: 23px; position: absolute;top: 0;left: 0; text-align: left; background-color: #d9d7d7;padding: 40px 90px 80px 150px; margin-left: -80px;
-            h2{font-weight: 500; font-size: 24px;margin-bottom: 50px;}
-        }
-        >ul{width:calc(100% - 420px);min-height:120px; margin: 30px 0 30px 370px; @include clear;
-            >li{transition: 0.3s; text-align: left; margin-bottom: 18px; float: left; margin-left: 15px; min-width: 140px;
-                &:hover{
-                    > a{border-color: #23408f; color: #23408f; background-image:url(../images/icon_dep2_on.png);}
-                }
-                &:first-child{margin-left: 0;}
-                >a{ line-height:1.2em; font-size: 18px; font-weight: 500; padding: 12px 20px; transition: 0.3s; display: block; text-align: center;font-weight: 500; border: 1px solid #cecfd1;transition: 0.3s; background: url(../images/icon_dep2.png) no-repeat right 21px center; 
-                }
-                .dep3{margin-top: 10px;
-                    li{padding:0 20px; 
-                        &:hover{
-                            a{color: #23408f; 
-                                span{
-                                    &:after{
-                                        content: ""; width: 100%; height: 6px; border-radius: 3px; background: #ffe7d0; position: absolute; bottom: 0; left: 0; 
+            >a{font-weight: 400; position: relative; line-height: 70px; }
+
+
+            .dep2_wrap { display:flex; width:100%; position:absolute; top:-9999px; left:0; z-index:1;  @include clear; visibility: hidden; background-color: #dddddd;
+              
+              >div{position:relative; flex:0 0 369px; height: 340px;line-height: 23px; text-align: left; background-color: #dddddd;padding: 40px 0px 80px 150px;
+                  h2{font-weight: 500; font-size: 24px;margin-bottom: 50px;}
+              }
+              >ul{ flex:1 0 auto;   align-content:stretch; display:flex; flex-wrap:wrap; padding:30px 0 60px 30px; width:calc(100% - 519px); background-color: #f2f2f2; @include clear;
+                >li{flex:0 1 auto; /*transition: 0.3s;*/ text-align: left;  margin-right:15px;  width:220px;
+                    &:hover{
+                        > a{border-color: #23408f; color: #23408f; background-image:url(../images/icon_dep2_on.png);}
+                    }
+                    &:first-child{margin-left: 0;}
+                    >a{ line-height:1.2em; font-size: 18px; font-weight: 500; padding: 4px 20px;  /*transition: 0.3s; */ display: block; text-align: center;font-weight: 500; border: 1px solid #cecfd1; /* transition: 0.3s; */ background: url(../images/icon_dep2.png) no-repeat right 21px center; color:#222222;
+                    }
+                    .dep3{margin-top: 10px; margin-bottom:30px;
+                        li{  
+                            &:hover{
+                                a{color: #23408f;
+                                    span{
+                                        &:after{
+                                            content: ""; width: 100%; height: 6px; border-radius: 3px; background: #ffe7d0; position: absolute; bottom: 0; left: 0; 
+                                        }
                                     }
                                 }
                             }
-                        }
-                        a{display:block;font-size: 15px; padding: 4px 0 4px 14px; position: relative;
-                          span{position: relative; z-index: 0;
-                            &:after{content:""; width: 0; transition: 0.4s; z-index: -1;}
-                          }
-                            &:before{content: ""; display: block; width: 4px; height: 4px; border-radius: 50%; background: #3667c7; position: absolute; top: 12px; left: 0;}
+                            a{display:block;font-size: 14px; padding: 4px 0 4px 14px; position: relative;color:#222222;
+                              span{position: relative; z-index: 0;
+                                &:after{content:""; width: 0; transition: 0.4s; z-index: -1;}
+                              }
+                                &:before{content: ""; display: block; width: 4px; height: 4px; border-radius: 50%; background: #3667c7; position: absolute; top: 12px; left: 0;}
+                            }
                         }
                     }
+                  
                 }
-              
-            }
-        }
-      
-    }
+              }
+          }
+
+
+          }
+
+
+
+      }
+    
   }
+}
   @include maxWidth($pc){
       .gnb{         
           .dep2_wrap{
@@ -230,7 +243,7 @@
 
 #contents{/* padding-top: 52px; */ @include clear; position: relative;  
   @include maxWidth(1220px) {
-    padding-top:82px;
+    
   }
    @include maxWidth(1080px) {
     padding-top:70px;
