@@ -9,20 +9,28 @@
       //   }
       // }
     .swiper{position:relative; 
-      .layer_box_1{ position:absolute; left:0; top:220px; width:100%; z-index:100;
-        @include maxWidth(1550px){
-          padding:0 50px;
-          top:150px;
+      .swiper-button-prev-banner{ top:auto; bottom:15%; width:60px; height:60px; border-radius:50%; border:1px solid rgba(255, 255, 255, 0.2); background:rgba(255, 255, 255, 0.2);
+        &:hover, &:focus{
+          border:1px solid rgba(255, 255, 255, 1); background:rgba(255, 255, 255, 1);
         }
-        .center_box{position:relative; margin:0 auto; max-width:1300px;
-          .slide_btn{ display: flex; justify-content: flex-start; align-items:center;
+      }
+      
+      .layer_box_1{ position:absolute; left:0; top:220px; width:100%; z-index:100;
+        
+        .center_box{display:flex; flex-wrap:wrap; justify-content: flex-start; align-items: flex-start; position:relative; margin:0 auto; max-width:1300px;
+          .slide_btn{ display: flex; justify-content: flex-start; margin:0;
+            @include maxWidth(1080px){
+              margin: 0;
+            }
             .swiper-pagination{ flex:0 0 auto; width:auto; position:static; margin-top:10px; transition: none;  z-index: 10; text-align:left;
               button{ margin:0 2px; width:100px; border-radius:0; height:50px; color:#fff; opacity:0.3;  text-align: left; background:transparent;
                 &.swiper-pagination-bullet-active{opacity:1;}
                 .progress_bar { display: block; width: 86px; max-width:200px; height: 5px; background: #eee; 
                   .progress {display: block; width:0%; height: 5px;background: rgb(230, 24, 116);}
                  }
-
+                @include maxWidth(900px){
+                  height:30px;
+                }
               }
 
             }
@@ -39,8 +47,8 @@
             // }
 
             .control { flex:0 0 auto; 
-              :nth-child(n) {display:inline-block; font-size:1rem; margin:0 5px;}
-              .btn { vertical-align:bottom; border-radius:50%; 
+              :nth-child(n) {display:inline-block; font-size:1rem; margin:0 5px;  }
+              .btn { vertical-align:bottom; border-radius:50%;  vertical-align:-10px; 
                   /* &.next,&.prev {position: absolute; bottom: 300%; right: 105px; background: #000 url('../images/banner_next.png') no-repeat center center; opacity: 40%;
                     border-radius: 50px; width: 80px; height: 80px;
                   }
@@ -55,46 +63,129 @@
 
           }
 
-          .slide_tit{ color: #fff; font-size: 52px; text-shadow: 0 0 1vw rgba(0,0,0,0.4); font-weight: 100; line-height: 60px;
+          .slide_tit{ flex:0 0 65%; margin:0; color: #fff; font-size: 52px; text-shadow: 0 0 1vw rgba(0,0,0,0.4); font-weight: 100; line-height: 60px; word-break: keep-all;
             b{display: block; font-weight: 400;}
+            @include maxWidth(1200px){
+              font-size:46px;
+            }
+            @include maxWidth(1080px){
+              font-size:38px;
+              line-height:1;
+            }
+            @include maxWidth(900px){
+              flex:0 0 75%
+            }
           }
 
-          .weather{position: absolute; right: 0; top: 0;  z-index: 1; color: #fff; 
-            >div{line-height: 3rem;
-              img{margin-top: 0; margin-right: 30px;}
-              strong{font-size: 30px; font-family:'Ddin';  
-                span{font-size: 85px; line-heigt:85px; margin-right: 10px;letter-spacing: -5.5px; vertical-align: -30px;}
-              }
-            }
-            
-            em{display: block; margin-bottom: 10px;font-family:'Ddin'; font-size: 18px;}
-            ul{ @include clear;
-              li{float: left; padding-left: 10px;font-family:'Ddin'; 
-                >span{color: #e61874;; margin-left: 10px;font-weight: 600;}
-                &:first-child{position: relative;padding-right: 10px; padding-left: 0;
-                  ::after{content: ''; position: absolute; top: 0;  right: 0; display: block; height: 20px; width: 1px; background-color: #fff;}
+          .weather{ overflow: visible; flex:0 0 30%; display:flex; justify-content: flex-end; color: #fff; font-size:10px;
+            >div{
+              >div.img_box{ display:flex;justify-content:space-between; align-items:flex-start; line-height: 3em;
+                img{ flex:0 0 1.2em; display:inline-block; margin-top: 3em; margin-right:1em; vertical-align: bottom;}
+                strong{position:relative; display:inline-block;   font-family:'Ddin';
+                  span{ line-height:1; letter-spacing: -5.5px; font-size: 8.2em; letter-spacing: -0.05em;}
+                  em{position:absolute; right:-1.2em; bottom:0.3em; font-size: 3em; font-weight: lighter;}
                 }
               }
             }
+           
+            
+            time{display: block; margin-bottom: 1em; font-family:'Ddin'; font-size: 1.8em;} /*날짜*/
+            ul{ display:flex; 
+              li{flex:0 0 50%; padding-left: 10px; font-family:'Ddin'; font-size:1.4em; white-space: nowrap;
+                >span{color: #e61874;; margin-left: 1em;font-weight: 600;}
+                &:first-child{position: relative;padding-right: 1em; padding-left: 0;
+                  ::after{content: ''; position: absolute; top: 0;  right: 0; display: block; height: 1.4em; width: 1px; background-color: #fff;}
+                }
+              }
+            }
+
+            @include maxWidth(1200px){
+              font-size:8px;
+            }
+
+            @include maxWidth(900px){
+              flex:0 0 20%;
+              font-size:4px;
+              >div{
+                >div.img_box{
+                  img{flex:0 0 0.8em; margin-top:1em; }
+                }
+              }
+            }
+
           }
 
           
         }
+
+        @include maxWidth(1550px){
+          padding:0 50px;
+          top:150px;
+        }
+        @include maxWidth(1080px){
+          padding:0 50px;
+          top:100px;
+        }
+        @include maxWidth(900px){
+          padding:0 30px;
+          top:80px;
+        }
       } //layer_box_1 End
 
       ul.container{ display:flex; justify-content: space-between; align-items:center; position:absolute; left:50%; transform:translateX(-50%); bottom:105px; padding:5px; width:976px; z-index:100;
-        @include maxWidth(1550px){
-          width:800px; bottom:30px;
-        }
+        
         li{display:flex; flex:0 0 22%; 
-          a{display: flex; justify-content:center; border-radius: 50%; width:100%; min-width: 140px; min-height: 140px; text-align: center; line-height: 1;box-sizing: content-box;white-space:nowrap; background-color:rgba( 0, 0, 0, 0.5 ); 
+          a{display: flex; justify-content:center; border-radius: 50%; width:100%; min-width: 140px; min-height: 140px; text-align: center; font-size: 22px; line-height: 1; box-sizing: content-box;white-space:nowrap; background-color:rgba( 0, 0, 0, 0.5 ); 
             span{display:flex; flex-direction: column; justify-content: center; align-items: center; letter-spacing: -1px;
               img{display:block; margin:0 auto; text-align:center; }
-              b{display:block; color: #fff; font-size: 22px; text-align: center; margin-top:25px; } 
+              b{display:block; color: #fff;  text-align: center; margin-top:25px; } 
             }
+            @include maxWidth(1550px){
+             font-size:16px;
+              span{
+                b{margin-top:15px; }
+              }
+            }
+            @include maxWidth(1200px){
+              min-width:100px; min-height:100px; 
+              font-size:14px;
+              span{
+                b{margin-top:5px; font-weight:lighter;}
+              }
+            }
+           
            // &:before{content:""; display:inline-block; vertical-align: middle; padding-top:100%; height:0;}  //width값 없이, 높이 값을 padding-top으로 설정해 준다. padding값은 부모요소의 width가 기준이다. 
           }
           &:before{content:""; display:inline-block; vertical-align: middle; width:0; padding-top:100%; height:0;}
+        }
+
+        @include maxWidth(1550px){
+          width:800px; bottom:30px;
+        }
+        @include maxWidth(1200px){
+          width:600px; bottom:20px; 
+        }
+        @include maxWidth(900px){
+          width:460px; bottom:10px; 
+          li{flex:0 0 18%; max-width:70px;
+            a{
+              span{ flex:0 0 auto; width:70%;
+                img{max-width: 60%;}
+                b{margin-top:5px; }
+              }
+            }
+          }
+        }
+        @include maxWidth(755px){
+           bottom:5px; 
+          li{flex:0 0 18%; 
+            a{
+              span{ flex:0 0 auto; width:70%;
+                img{max-width: 60%;}
+                b{margin-top:5px; }
+              }
+            }
+          }
         }
       }
       
@@ -139,13 +230,25 @@
     }
   }
     /* 공지사항 */
-  .board{ @include clear;padding: 90px 0;  background: #f5f5f5;
+  .board{ @include clear;  padding: 90px 0;  background: #f5f5f5;
+    @include maxWidth(1080px){
+     padding:40px 0;
+    }
     .tab_box {$tabH:50px;position:relative; float: left; width: calc(100% - 680px); margin-right: 50px;
+      @include maxWidth(1080px){
+        width:calc(50% - 10px); margin-right:10px; 
+      }
       > li {float:left;width:25%;
-          > button {height:$tabH;width:100%;padding: 0 20px; font-size: 22px;padding-bottom: 20px;}
+          > button {height:$tabH;width:100%;padding: 0 20px; font-size: 22px;padding-bottom: 20px;  white-space:nowrap;
+            @include maxWidth(1100px){
+              padding:0 5px; 
+              font-size:18px;
+            }
+          }
           > div {display:none;position:absolute;left:0;top:$tabH;width:100%;border-top: 1px solid #000;
             >ol{
               li{ @include clear; padding-left: 15px; padding-top: 25px; padding-bottom: 25px; border-bottom: 1px solid #b4b4b3;@include clear;
+               
                 div{width: calc(100% - 100px); float: left; padding-right: 60px;
                   strong{display: block; font-size: 19px; font-weight: 500; margin-bottom: 15px; @include ell1;
                     b{font-size: 15px; margin-left: 5px;}
@@ -162,15 +265,54 @@
                     &:hover::before, &:hover::after{ border-color: #e61874;}
                   }
                   &:hover{background-color: unset; box-shadow: none;}
-                  
+
                 }
-              }
+                @include maxWidth(1080px){
+                  padding:10px 0 10px 15px;
+                }
+                @include maxWidth(980px){
+                  padding:8px 0 8px 15px;
+                  div{
+                    strong{
+                      margin-bottom:5px;
+                    }
+                  }
+                }
+                @include maxWidth(880px){
+                  padding:8px 0px 8px 15px;
+                  div{
+                    strong{
+                      margin-bottom:3px;
+                    }
+                  }
+                }
+                @include maxWidth(880px){
+                  padding:4px 0px 4px 15px;
+                  div{
+                    strong{
+                      margin-bottom:2px;
+                    }
+                  }
+                }
+                @include maxWidth(800px){
+                  padding:0px 0px 0px 15px;
+                  div{
+                    strong{
+                      margin-bottom:2px;
+                    }
+                  }
+                }
+              }// 공지사항 각 목록들
               
             }
           }
           &.active { 
               > button { font-size: 26px; font-weight: 600;margin-bottom: -5px; position: relative;
                 &::before{position: absolute; display: block; content: ''; background-color: #e61874; max-width: 132px; height: 8px; bottom: -1px; z-index: 1; left: 10px; width: 100%;}
+                @include maxWidth(1100px){
+                  padding:0 5px; 
+                  font-size:20px;
+                }
               }
               > div {display:block;}
           }
@@ -183,17 +325,20 @@
       }
     }
     .banner2{width: 630px;float: right; overflow: hidden; position: relative;
+      @include maxWidth(1080px){
+        width:50%;
+      }
       h2{font-size: 26px; font-weight: 600; margin-bottom: 13px;}
-      >.control {position: absolute; right:0; top: 0; font-size: 0; line-height: 0; padding: 15px 0; 
-        .pagination_num{padding: 10px 0; margin-right: 10px !important;
-          .current{color: #e61874;}
+      >.control {display:flex; justify-content: flex-end; align-items:center;  position: absolute; right:0; top: 0;  padding: 5px 0; width:220px; 
+        :nth-child(n) {flex:0 1 auto; font-size:$fs-22; margin:0 5px; }
+        .pagination_num{ display:inline-block; position:relative; left:0; top:0; text-align: left; margin-right: 10px; 
+          .swiper-pagination-current{color: #e61874;}
         }
-        :nth-child(n) {display:inline-block !important; font-size:$fs-22; margin:0 5px; vertical-align:top; }
-        .btn { position:relative; margin:0 10px; width: 22px; height: 22px; 
-          &.next {background:url('../images/banner2_next.png') no-repeat 60% center ;  }
-          &.prev {background:url('../images/banner2_prev.png') no-repeat 40% center ; }
-          &.pause {background:url('../images/banner2_stop.png') no-repeat center ;}
-          &.play {background:url('../images/banner2_play.png') no-repeat 80% center; }
+        .btn { position:relative; padding:0 5px; margin:0 10px; width: 24px; height: 24px; cursor:pointer; vertical-align:top;
+          &.notice_next {margin-right:20px; background:url('../images/banner2_next.png') no-repeat 60% center ;  }
+          &.notice_prev {background:url('../images/banner2_prev.png') no-repeat 40% center ; }
+          &.notice_pause {background:url('../images/banner2_stop.png') no-repeat center ;}
+          &.notice_play {background:url('../images/banner2_play.png') no-repeat 80% center; }
           &.active::after {position:absolute; left:50%; top:50%; transform:translateX(-50%) translateY(-50%); content:''; border-radius:50%; width:30px; height:30px; border:1px solid #000000; }
         }
       }
@@ -225,25 +370,36 @@
 
   /* 문화공공체육시설 */
   #slide_menu{background-color: #eeeeee;  padding: 80px 0;
+    @include maxWidth(1080px){
+      padding:40px 0;
+    }
     .list{
       .tab_box{position:relative; margin:0 auto 60px auto;  max-width:1280px; font-size:0; overflow:hidden;transform: translate(0,100px);opacity: 0; 
+        @include maxWidth(1080px){
+          margin:0 auto 20px auto;
+        }
         .btns_tab{ width:100%; 
           .btns_tab_inner{white-space: nowrap; /* --------------------- 이전 사용자가 슬릭 사용하는 요소 -----------------------*/
             //&::after{content:""; position:absolute; top:0; left:0; width:100%; height:100px;}
 
             .slide_item{ padding:0 20px; text-align: center; height:100px; line-height:100px;opacity:0.7; font-size: 28px; color: #000; cursor:pointer; 
               //&.slick-current + .slide_item {opacity:1;}
-
+              
+              a{height:98px; margin-top:1px;}
               &.active{font-weight: 600; 
-                a{
+                a{ 
                   span{border-bottom: 4px solid #000;}
                 }
+              }
+              @include maxWidth(1080px){
+                height:60px; line-height:60px;
+                a{height:58px}
               }
             }
             
           }
         }
-        .btn_tabArrow{ align-items: center; position:absolute; top:40px; z-index:9999; width:30px; height:30px; border-radius:50%;  
+        .btn_tabArrow{ align-items: center; position:absolute; top:50%; transform:translateY(-50%); z-index:9999; width:30px; height:30px; border-radius:50%;  
           img{vertical-align: -26px;}
           &.active, &:hover{  
             &::before{content: ''; position: absolute; width:30px; height:30px; left:0%; top:0%; border:1px solid #000; border-radius:50%; }
@@ -269,8 +425,11 @@
           li.info_box.on{ display:block;}
           li.info_box{ display:none;  position:relative; left:0; top:0; 
             
-            ul{
-              li{margin:20px; float:left;
+            ul{ display: flex; flex-wrap:wrap; justify-content: center;
+              li{margin:20px; 
+                @include maxWidth(1080px){
+                  margin:10px;
+                }
                 a{transition: 0.6s;
                   .img{background: url(../images/icon_menu2_bg.png) no-repeat center;width: 147px;height: 140px;display: block; transition: 0.3s;
                     img{display: block;  margin: auto; padding: 35px 0;}
@@ -317,25 +476,36 @@
 
   /* news */
   #news{background-color: #eeeeee;  padding: 80px 0;  
+    @include maxWidth(1080px){
+      padding:40px 0;
+    };
     h3{font-size: 60px; display: block; margin: auto; text-align: center; margin-bottom: 20px;
       b{ font-weight: 600; }
     }
     .list{
-      .tab_box{position:relative; margin:0 auto; max-width:1280px; font-size:0; overflow:hidden;transform: translate(0,100px);opacity: 0; 
+      .tab_box{position:relative; margin:0 auto; margin-bottom:10px; max-width:1280px; font-size:0; overflow:hidden;transform: translate(0,100px);opacity: 0; 
+        @include maxWidth(1080px){
+          margin-bottom:20px;
+        }
         .btns_tab{ /* 스와이퍼 시작  탭메뉴들 */
           .btns_tab_inner{white-space: nowrap; 
             .slide_item{padding:0 18.5px; text-align: center; height:100px; line-height:100px;opacity:0.7; font-size: 28px; color: #000;
               //&.slick-current + .slide_item {opacity:1;}
+              a{height:98px; margin-top:1px;}
               &.active{
                 a{
                   span{border-bottom: 4px solid #000;}
                 }
               }  
+              @include maxWidth(1080px){
+                height:60px; line-height:60px;
+                a{height:58px;}
+              }
             }
             
           }
         }
-        .btn_tabArrow{ align-items: center; position:absolute; top:40px; z-index:9999; width:30px; height:30px; border-radius:50%;  
+        .btn_tabArrow{ align-items: center; position:absolute; top:50%; transform:translateY(-50%); z-index:9999; width:30px; height:30px; border-radius:50%;  
           img{vertical-align: -26px;}
           &.active, &:hover{  
             &::before{content: ''; position: absolute; width:30px; height:30px; left:0%; top:0%; border:1px solid #000; border-radius:50%; }
