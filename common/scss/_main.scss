@@ -329,7 +329,7 @@
         width:50%;
       }
       h2{font-size: 26px; font-weight: 600; margin-bottom: 13px;}
-      >.control {display:flex; justify-content: flex-end; align-items:center;  position: absolute; right:0; top: 0;  padding: 15px 0; width:220px; 
+      >.control {display:flex; justify-content: flex-end; align-items:center;  position: absolute; right:0; top: 0;  padding: 5px 0; width:220px; 
         :nth-child(n) {flex:0 1 auto; font-size:$fs-22; margin:0 5px; }
         .pagination_num{ display:inline-block; position:relative; left:0; top:0; text-align: left; margin-right: 10px; 
           .swiper-pagination-current{color: #e61874;}

@@ -1958,7 +1958,7 @@ input, select, textarea {
   position: absolute;
   right: 0;
   top: 0;
-  padding: 15px 0;
+  padding: 5px 0;
   width: 220px;
 }
 #contents .board .banner2 > .control :nth-child(n) {
