@@ -6,10 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
   <title>게시판 | 광진구 시설관리 공단</title>
   <link rel="stylesheet" href="../common/css/default.css">
+  <link rel="stylesheet" href="../common/css/slick.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <script src="../common/js/jquery-3.6.0.min.js"></script>
   <!--<script src="../common/js/jquery-1.11.3.min.js"></script>-->
   <script type="text/javascript" src="//code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
+  <script src="../common/js/slick.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="../common/js/common.js"></script>
 </head>      
@@ -323,7 +325,7 @@
             </li>
           </ul>
         </nav>
-        <section class="contents_sub">
+        <article class="contents_sub">
           <header class="sub_top">
             <h1 class="hide">공통 일반 게시판</h1>
             <ol>
@@ -343,14 +345,151 @@
                     <li><a href="#" class="kko">카카오</a></li>
                     <li><a href="#" class="kkostory">카카오스토리</a></li>
                   </ul>
-                </li>
-                <p class="share_close"></p>
-              </div>
-              <li class="print_btn"><a><span class="hide">프린트하기</span></a></li>
+                  <p class="share_close"></p>
+                </div>
+              </li>
+              <li class="print_btn"><a href="#"><span class="hide">프린트하기</span></a></li>
             </ul>
                
           </header>
-        </section>
+          <form action="">
+            <fieldset class="srch-box">
+              <legend>게시물 검색</legend>
+              <div class="p-bg p-search-box">
+                <div class="flex-box">
+                  <select name="" id="" title="검색 방식" class="p-input main-border" >
+                    <option value="">제목</option>
+                    <option value="">작성자</option>
+                    <option value="">내용</option>
+                  </select>
+                  <input type="search" class="p-search main-border" placeholder="검색단어를 입력해 주세요.">
+                  <button class="p-button main-border button-color"><span>검색</span></button>
+                </div>
+              </div>
+            </fieldset>
+            <div class="table-tit flex-box">
+              <p> 총 게시물 <span class="board_count">1</span>건 </p>
+              <p>&#91; <strong>1</strong> / <span>1</span> 페이지	&#93;</p>
+            </div>
+            <fieldset>
+              <legend>게시물 목록</legend>
+              <table class="p-table">
+                <caption>게시판 목록 - 번호 ,제목 ,등록자 ,등록일, 조회수</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">번호</th>
+                    <th scope="col">제목</th>
+                    <th scope="col">등록자</th>
+                    <th scope="col">등록일</th>
+                    <th scope="col">첨부파일</th>
+                    <th scope="col">조회수</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="cnt"><span class="tit_notice"><em>공지</em></span></td>
+                    <td class="tit"><span>공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트</span></td>
+                    <td class="writer">관리공단</td>
+                    <td class="date"><time date-time="2022-12-07">2022-12-07</time></td>
+                    <td class="flie"><img src="../common/images/ico_fie_doc.png" alt=""></td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td class="cnt"><span class="tit_notice"><em>공지</em></span></td>
+                    <td class="tit"><span>공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트</span></td>
+                    <td class="writer">관리공단</td>
+                    <td class="date"><time date-time="2022-12-07">2022-12-07</time></td>
+                    <td class="flie"><img src="../common/images/ico_fie_pdf.png" alt=""></td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td class="cnt"><span class="tit_notice"><em>공지</em></span></td>
+                    <td class="tit"><span>공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트</span></td>
+                    <td class="writer">관리공단</td>
+                    <td class="date"><time date-time="2022-12-07">2022-12-07</time></td>
+                    <td class="flie"><img src="../common/images/ico_fie_pic.png" alt=""></td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td class="cnt">3</td>
+                    <td class="tit"><span>일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트</span> </td>
+                    <td class="writer">홍길동</td>
+                    <td class="date"><time date-time="2022-12-07">2022-12-07</time></td>
+                    <td class="flie"><img src="../common/images/ico_fie_txt.png" alt=""></td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td class="cnt">2</td>
+                    <td class="tit"><span>일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트</span> </td>
+                    <td class="writer">홍길동</td>
+                    <td class="date"><time date-time="2022-12-07">2022-12-07</time></td>
+                    <td class="flie"><img src="../common/images/ico_fie_xls.png" alt=""></td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td class="cnt">1</td>
+                    <td class="tit"><span>일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트</span> </td>
+                    <td class="writer">홍길동</td>
+                    <td class="date"><time date-time="2022-12-07">2022-12-07</time></td>
+                    <td class="flie"><img src="../common/images/ico_fie_zip.png" alt=""></td>
+                    <td>0</td>
+                  </tr>
+                </tbody>           
+              </table>
+            </fieldset>
+            <div class="p-pagination">								
+              <span class="p-page__control">
+                <a href="#" class="p-page__link prev-end" title="맨 처음으로 이동"><span class="hide">최신 페이지로 이동</span></a>
+                <a href="#" class="p-page__link prev" title="앞 페이지로 이동" onclick="fnGoPage('10'); return false;"><span class="hide">앞 페이지로 이동</span></a>
+                <a href="#" class="p-page__link prev-one" title="앞 페이지로 이동"><span class="hide">앞 페이지로 이동</span></a>
+              </span>
+              <span class="p-page__link-group">
+              <strong class="p-page__link active">1</strong>
+              <a href="#" class="p-page__link">2</a>
+              <a href="#" class="p-page__link">3</a>
+              <a href="#" class="p-page__link">4</a>
+              <a href="#" class="p-page__link">5</a>
+              <a href="#" class="p-page__link">6</a>
+              <a href="#" class="p-page__link">7</a>
+              <a href="#" class="p-page__link">8</a>
+              <a href="#" class="p-page__link">9</a>
+              <a href="#" class="p-page__link">10</a>
+              </span>
+              <span class="p-page__control">
+                <a href="#" class="p-page__link next" title="뒤로 이동"><span class="hide">뒤로 이동</span></a>
+                <a href="#" class="p-page__link next-end" title="시작 페이지 이동"><span class="hide">시작 페이지로 이동</span></a>
+                <a href="#" class="p-page__link next-one" title="뒤로 이동"><span class="hide">뒤로 이동</span></a>
+              </span>
+              <input type="hidden" name="currentPage" id="currentPage" value="1">
+						</div>
+          </form>
+          <address>
+            <p class="addr">
+              <span class="department"> 콘텐츠 관리부서 <span class="bar">|</span> 문화사업팀 </span> 
+              <span class="manage"> 담당자 <span class="bar">|</span> 홍길동/차장</span>
+              <span class="tel">전화번호 <img src="../common/images/free-icon-telephone-49181.png" alt="전화기 이미지"></span>
+              <a href="tel:02-2049-1234">02-2049-1234</a>
+            </p>
+          </address>
+          <section class="satisfaction_box">
+            <form action="">
+              <div class="top">
+                <h1>만족도 조사</h1>
+                <dl>
+                  <dt>이 페이지에서 제공하는 정보에 대하여 만족하시나요?</dt>
+                  <dd><input type="radio" name="satisfaction" value="5" id="star_5" checked="checked"><label for="star_5"><span>매우 만족</span> &starf; &starf; &starf; &starf; &starf;</label></dd>
+                  <dd><input type="radio" name="satisfaction" value="4" id="star_4"><label for="star_4"><span>만족</span> &starf; &starf; &starf; &starf;</label></dd>
+                  <dd><input type="radio" name="satisfaction" value="3" id="star_3"><label for="star_3"><span>보통</span> &starf; &starf; &starf; </label></dd>
+                  <dd><input type="radio" name="satisfaction" value="2" id="star_2"><label for="star_2"><span>불만족</span> &starf; &starf; </label></dd>
+                  <dd><input type="radio" name="satisfaction" value="1" id="star_1"><label for="star_1"><span>매우 불만족</span> &starf;</label></dd>
+                </dl>
+              </div>
+              <div class="bottom">
+                <textarea name="" id="" cols="30" rows="10"></textarea><button class="button-color">의견등록</button></form>
+              </div>
+          </section>
+
+        </article>
       </div><!-- .contents_sub End -->
     </main>
 

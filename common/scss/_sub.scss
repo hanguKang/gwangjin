@@ -54,7 +54,7 @@
 }
 
 main.sub{ @include clear; 
-    .contents_sub_box{display: flex; 
+    .contents_sub_box{display: flex;
         .lnb{flex:0 0 256px; position:relative; top:-50px; 
             > h1 {display:block;width:100%;font-size:32px;color:#fff;text-align:center;line-height:148px; background-color: #283f83; margin-bottom:10px;font-weight: 300;}
             .dep2{
@@ -129,7 +129,7 @@ main.sub{ @include clear;
             
             
         }
-        .contents_sub { flex:0 0 auto;width:calc(100% - 256px);padding-top:46px;padding-bottom:100px;padding-left:82px;position:relative;z-index:0;
+        .contents_sub { flex:0 0 auto; width:calc(100% - 256px);padding-top:46px;padding-bottom:100px;padding-left:82px;position:relative;z-index:0;
             &.sch_result {width:100%;padding-left:0;}
             @include maxWidth(1380px){padding-left:40px;}
             .tit_md{background: url(../images/h3_tit.png)no-repeat top left; font-size: 22px; font-weight: 500; font-family: 'noto sans';padding-top: 17px;margin-bottom:15px;color:#000;
@@ -157,6 +157,7 @@ main.sub{ @include clear;
             
             }
             
+
             .dep{
                 &.term {
                 color:#555;font-size:15px;
@@ -194,8 +195,10 @@ main.sub{ @include clear;
                 }
             }
             }
+
+             /* 컨텐츠 타이틀 바*/
             .sub_top {@include clear; display:flex;justify-content: flex-end;margin-bottom:45px;padding-bottom:15px;border-bottom:1px solid #999;line-height:33px;
-                > ol{@include align(middle,16px);text-align:left;
+                > ol{@include align(middle,16px);text-align:left; //타이틀바 로게이션 
                     > li{padding-left:22px;line-height:33px; position: relative;
                         &::before{ position: absolute; content: '>'; top: 0; left: 10px;display: block;}
                         a {color:#222;display:inline-block;}
@@ -215,6 +218,7 @@ main.sub{ @include clear;
                     }
         
                 }  
+                /* 공유 기능과 프린트 */
                 >ul{ @include align(middle,16px); display: flex; align-items:center;
                     .share {display:inline-block;padding-left:0;background:none;margin-left:25px;position:relative;
                         button {background-image:url(../images/btn_share_off.png);width:17px;height:17px;vertical-align:middle;background-repeat:no-repeat;background-position:center;background-size:cover;transition:all 0.3s;}
@@ -254,7 +258,7 @@ main.sub{ @include clear;
                         }             
                         }
                     }  
-                    .share {
+                    .share { /* sns 시작*/
                         button {width:30px;height:30px;border-radius:30px;background-size:30px auto;}
                         ul{right:-15px;top:42px;width:131px;padding:15px;box-shadow:7px 7px 25px 0 rgba(0,0,0,0.12);z-index:2;
                         &:before{position:absolute;right:24px;top:-10px;width:13px;height:11px;background-size:13px auto;}
@@ -265,6 +269,38 @@ main.sub{ @include clear;
                     }  
                 }     
             }
+            /* 검색창 바 */
+            .srch-box{
+                select.p-input{flex:0 0 33%;}
+                input.p-search{flex:0 0 56%;
+                    &::placeholder {color:#000;}
+                }
+                button.p-button{flex:0 0 9%;}
+            }
+            /* 테이블 */
+            .table-tit{margin-top:17px; height:30px; line-height:30px;}
+            .p-table{border-top: 2px solid #222; background-color:#ffffff;
+                
+                td, th {padding: 13px 11px; border-bottom: 1px solid #d9d9d9; text-align:center; vertical-align: middle;font-size:16px; line-height:1.4;
+                    span{@include ell2;}
+                }
+                th {
+                    
+                    background: #fbfbfb;
+                    color: #000;
+                    text-align: center;
+                    font-weight: 400;
+                }
+                th:nth-child(1),td:nth-child(1){width:10%;}
+                th:nth-child(2),td:nth-child(2){width:40%;}
+                th:nth-child(3),td:nth-child(3){width:15%;}
+                th:nth-child(4),td:nth-child(4){width:12%;}
+                th:nth-child(5),td:nth-child(5){width:13%;}
+                th:nth-child(6),td:nth-child(6){width:10%;}
+
+                
+            }
+            
         }
     }
 }

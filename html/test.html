@@ -8,27 +8,29 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <script src="../common/js/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <style>
-    .facility2{
-      margin:0 auto; 
-      width:800px; 
-      border:1px solid red;
-    }
-  </style>
+
 </head>
 <body>
-  <div class="swiper facility2">
-    <ul class="swiper-wrapper">
-      <li class="swiper-slide">박스1</li>
-      <li class="swiper-slide">박스2</li>
-      <li class="swiper-slide">박스3</li>
-    </ul>
-  </div>
+<div class="bg_svg">
+
+</div>
+<style>
+  :before{
+    content:'';
+  }
+  .bg_svg:before {
+    background-image: url(../common/images/p-icon-view.svg#angle-double-left);
+    display: inline-block;
+    width: 12px;
+    height: 18px;
+    margin-top: -2px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 16px 18px;
+    vertical-align: middle; 
+  }
+  
+</style>
 </body>
-<script>
-  const swiper1 = new Swiper('.facility2',{
-    loop:true,
-    slidesPerView:3,
-  });
-</script>
+
 </html>

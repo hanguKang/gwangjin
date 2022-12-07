@@ -22,6 +22,17 @@ select::-ms-expand { display: none; }
 input::-ms-check { display: none; }
 form {display:block;width:100%;}
 input, select, textarea {padding: 0 10px; -webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; appearance: none; -webkit-box-sizing: border-box; box-sizing: border-box; width: 100%; display: block; border: 0; font-family: inherit; }
+
+a:visited {
+  color: #636363;
+  text-decoration: none;
+}
+a:link {
+  color: #636363;
+  text-decoration: none;
+}
+
+
 // input[type="date"]::-webkit-calendar-picker-indicator{
 //   opacity:0;
 //   z-index: 1;
@@ -33,6 +44,8 @@ $color1:#c50202;
 $color2:#567eff;
 $bg-color1: #f9fafb;
 $bg-color2: #f5f7f9;
+$bg-color3: #eeeeee;
+
 
 //border
 $border1: 1px solid #cbcccd;
@@ -141,6 +154,38 @@ $m720: 720px;
 }
 
 
-/*sub 페이지 */
-.sub_title { font-size: $fs-42; line-height:1; }
-.center_box_pc{margin:0 auto; max-width:1300px; }
+/* 이미지 사이즈 */
+@mixin imgSize($width:'auto',$vertical-val:'middle'){
+  width:$width; height:auto; vertical-align: $vertical-val;
+}
+
+
+/* flex 관련 */
+@mixin flex-box( $flex-val:'0 1 auto', $justify_val:'space-between', $align_val:'center'){
+  display:flex; 
+  @if $align_val == 'center' {
+    align-items: center; 
+  }
+  @else{
+    align-items: $align_val;
+  }
+
+  @if $justify_val == 'space-between'{
+    justify-content: space-between;
+
+  }@else{
+    justify-content: $justify_val;
+  }
+  > :nth-child(n){
+    @if $flex-val == '0 1 auto'{
+      flex:0 1 auto;
+    }@else{
+      $n-val:1/$flex-val*100%;
+      flex:0 0 $n-val;
+    }
+  }
+  
+}
+
+.flex-box{ @include flex-box }
+
