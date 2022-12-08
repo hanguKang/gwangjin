@@ -257,6 +257,7 @@ function mGnbDrop() {
 }
 
 $(function () {
+  
   headH = $('.header').outerHeight();
   initMoving(document.getElementById("sc_1"), 200, 50, -3000);//퀵메뉴 스크롤 이동
   $('.gnb > nav >ul > li> a').on({

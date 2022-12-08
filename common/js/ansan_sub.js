@@ -6,45 +6,39 @@ try {
 		if(typeof $ === 'function') {
 
 			//사이드메뉴
-			// $(function() {
-			// 	$('.side_menu .menu').menu({
-			// 		cut : {},
-			// 		event : 'click',
-			// 		namespace : 'side'
-			// 	});
-			// });
-
-			
-			
+			$(function() {
+				$('.side_menu .menu').menu({
+					cut : {},
+					event : 'click',
+					namespace : 'side'
+				});
+			});
 
 			//sns공유
 			$(function(){
-				
+
 				// 공유아이콘 틀릭 열기/닫기 이벤트
-				$('.share button').on('click', function(e) {
-					console.log(e.target);
-					e.preventDefault();
-					$('.share').addClass('active');
+				$('.share_open button').on('click', function(event) {
+					$('.share').addClass('share_active');
 				});
 
-				$('.share_close').on('click', function(e) {
-					e.preventDefault();
-					$('.share').removeClass('active');
+				$('.share_close button').on('click', function(event) {
+					$('.share').removeClass('share_active');
 				});
 
 				// SNS 아이콘 별 이벤트 추가
-				$(".share_box a").click(function(){
+				$(".share_content a").click(function(){
 
-					let elmId = $(this).attr("id");
+					var elmId = $(this).attr("id");
 
 					// 해당 페이지 URL
-					// let snsShareURL = document.querySelector("meta[property='og:url']").content;
-					let snsShareURL = location.href;
+					// var snsShareURL = document.querySelector("meta[property='og:url']").content;
+					var snsShareURL = location.href;
 
 					// 해당페이지 제목
-					let text = $(".sub > .sub1 >.sub_title").text();
-					let description = '광진구시설관리공단';
-					let href = "";
+					var text = $("#sub01 > div.sub_visual > div > div > div.sub_title > h2").text();
+
+					var href = "";
 
 					if( elmId == "share_popup_twitter" || elmId == "share_popup_facebook" || elmId == "share_popup_band"){
 						if( elmId == "share_popup_twitter"){
@@ -56,22 +50,22 @@ try {
 						}
 						window.open(href, "blogShare", "width=400, height=450, scrollbars=yes, resizable=yes");
 					} else if ( elmId=="share_popup_kko"){
-						fnKakaoLink(text,description);
+						fnKakaoLink();
 					} else if ( elmId=="share_popup_story"){
-						fnKakaoStoryLink(text,description);
+						fnKakaoStoryLink();
 					}
 
 
 				});
 
-				function fnKakaoLink(txt, description){
-					let snsShareURL = location.href;
+				function fnKakaoLink(){
+					var snsShareURL = location.href;
 					Kakao.Link.sendDefault({
 					  objectType: 'feed',
 					  content: {
-						title: txt,
-						description: description,
-						imageUrl: '../common/images/logo.png',
+						title: '안산시 코로나19 대응 지원시책',
+						description: '#안산시#코로나19대응지원시책',
+						imageUrl: 'http://www.ansan.go.kr/site/www/images/popup/as_logo.png',
 						link: {
 						  mobileWebUrl: snsShareURL,
 						  webUrl: snsShareURL
@@ -89,23 +83,17 @@ try {
 					});
 				}
 
-				function fnKakaoStoryLink(txt){
+				function fnKakaoStoryLink(){
 
-					let snsShareURL = location.href;
+					var snsShareURL = location.href;
 
 					Kakao.Story.share({
 					  url: snsShareURL,
-					  text: txt,
+					  text: '#안산시#코로나19대응지원시책'
 					});
 				}
 			});
 
-
-
-
-
-
-			//테이블
 			$(function() {
 				$('table.table.responsive').not($('.prettyprint').children()).each(function() {
 					var RowSpanExist = $(this).find('td, th').is('[rowspan]'),
@@ -125,7 +113,6 @@ try {
 				});
 			});
 
-			//약도
 			$(function(){
 				$('.temp_map_btn').on('click', function(event) {
 					if($('.temp_map_img').hasClass("open")) {
@@ -172,16 +159,6 @@ try {
 							}
 						}
 					]
-				});
-			});
-
-			
-			//프린트
-			$(function(){
-				$('.print_btn>a').on('click',(e)=>{
-					//alert(1234);
-					e.preventDefault();
-					window.print();
 				});
 			});
 

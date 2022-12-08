@@ -1,0 +1,518 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ko">
+
+<head>
+  <title>고시공고</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+  <link rel="stylesheet" href="/emwp/css/ofr/PlnOfrStyleSub.css" type="text/css">
+  <script type="text/javascript" src="/emwp/js/cmm/jsp/calendar.js"></script>
+  <script type="text/javascript" src="/emwp/js/cmm/jsp/common.js"></script>
+  <script type="text/javascript" src="/emwp/js/common.js"></script>
+  <script type="text/javascript">
+    var srchLoad;
+    //-------------------------------------------------------------------
+    // 설명   : 초기화
+    //-------------------------------------------------------------------
+    function init() {
+      var f = document.form1;
+      var ck = "gov.mogaha.ntis.cmm.util.Page@37c8f089";
+      if (ck == "null") {
+        srchList();
+      }
+      srchLoad = "Y";
+    }
+    //-------------------------------------------------------------------
+    // 설명   : 고시공고 목록 조회
+    //-------------------------------------------------------------------
+    function search() {
+      if (srchLoad == "N") {
+        alert("목록을 불러오는 중입니다. 잠시만 기다려주세요.");
+        return false;
+      }
+      srchLoad = "N";
+
+      var add_chk = "OK";
+      if (add_chk == "OK") {
+        document.getElementById("loading").style.display = "block";
+      } else {
+        document.getElementById("loading").style.display = "none";
+      }
+
+      var f = document.form1;
+      var key = f.Key.value;
+      var temp = f.temp.value.length;
+      var temp_key = "";
+      f.temp.value = filteringStr(f.temp.value);
+      if (key == "B_Subject") {
+        f.not_ancmt_sj.value = f.temp.value;
+      } else if (key == "B_Content") {
+        f.not_ancmt_cn.value = f.temp.value;
+      } else if (key == "B_Dept") {
+        f.dept_nm.value = f.temp.value;
+      } else if (key == "B_RegNo") {
+        for (i = 0; i < temp; i++) {
+          if ((f.temp.value.charAt(i) == "1") || (f.temp.value.charAt(i) == "2") || (f.temp.value.charAt(i) == "3") ||
+            (f.temp.value.charAt(i) == "4") || (f.temp.value.charAt(i) == "5") || (f.temp.value.charAt(i) == "6") ||
+            (f.temp.value.charAt(i) == "7") || (f.temp.value.charAt(i) == "8") || (f.temp.value.charAt(i) == "9") || (f.temp.value.charAt(i) == "0")) {
+            temp_key = temp_key + "" + f.temp.value.charAt(i);
+          }
+        }
+        f.not_ancmt_reg_no.value = temp_key;
+        f.temp.value = temp_key;
+      }
+      f.target = "_self";
+      f.action = "/emwp/gov/mogaha/ntis/web/ofr/action/OfrAction.do";
+      f.method.value = "selectListOfrNotAncmt"; //Action
+      f.methodnm.value = "selectListOfrNotAncmtHomepage";
+      f.submit();
+    }
+    //-------------------------------------------------------------------
+    // 설명   : 검색버튼 클릭시 페이지정보 초기화 하고 조회
+    //-------------------------------------------------------------------
+    function srchList() {
+      document.form1.pageIndex.value = "";    //페이지 인덱스 초기화
+      search();
+    }
+    //-------------------------------------------------------------------
+    // 설명   : 페이지 이동시 조회
+    //-------------------------------------------------------------------
+    function goPage() {
+      search();
+    }
+    //-------------------------------------------------------------------
+    // 설명   : 고시공고 상세내용 조회
+    //-------------------------------------------------------------------
+    function searchDetail(not_ancmt_mgt_no) {
+      var f = document.form1;
+      f.not_ancmt_mgt_no.value = not_ancmt_mgt_no;
+      f.target = "_self";
+      f.action = "/emwp/gov/mogaha/ntis/web/ofr/action/OfrAction.do";
+      f.method.value = "selectOfrNotAncmt"; //Action
+      f.methodnm.value = "selectOfrNotAncmtRegst";
+      f.submit();
+    }
+    //-------------------------------------------------------------------
+    // 설명   : 엔터 눌렀을 때, 검색버튼 클릭시와 같은 기능
+    //-------------------------------------------------------------------
+    function enterKey() {
+      //var f = document.form1;
+      //var tempKey = f.Key.value;
+      //var temp = f.temp.value;
+      var key = event.keyCode;
+      /*if(tempKey == "B_RegNo"){
+        if(temp.length == 4){
+          f.temp.value = f.temp.value.substring(0,4)+"-"+f.temp.value.substring(4,f.temp.value.length);
+        }
+      }
+      */
+      if (key == 13) {
+        srchList();
+      }
+    }
+    //-------------------------------------------------------------------
+    //  설명   : 2015.06.16 유명화
+    //	고시공고 크로스사이트스크립팅(XSS) 취약점 개선 - 검색값에 대해 필터링을 위한 함수
+    //	str에 대해 필터링을 하여 str 반환
+    //-------------------------------------------------------------------
+    function filteringStr(str) {
+      var strLength = str.length;
+      var returnStr = "";
+
+      for (i = 0; i < strLength; i++) {
+        if (str.charAt(i) != ">" && str.charAt(i) != "<" && str.charAt(i) != "!" && str.charAt(i) != "%" && str.charAt(i) != "&" && str.charAt(i) != "'" && str.charAt(i) != "/" && str.charAt(i) != "\"" && str.charAt(i) != ";") {
+          returnStr = returnStr + str.charAt(i);
+        }
+      }
+
+      return returnStr;
+    }
+  </script>
+</head>
+
+<body onLoad="javascript:init()">
+  <form name="form1" method="post" onsubmit="return false;" action="">
+    <!--
+	epcCheck
+	값이 없을 경우 : 실시간으로 결재상태를 체크하여 고시공고를 가져옵니다.
+				 결재상태가 실시간으로 반영되나 속도가 지연될 수 있습니다.
+	값이 Y일 경우 : 결재상태가 실시간이 아닌 간격으로 체크하여 업데이트됩니다.
+				속도가 빠른 장점이 있으나 고시공고가 올라오거나 내려오는데 시간이 걸립니다.
+ -->
+    <input type="hidden" name="epcCheck" value="Y" />
+    <input type="hidden" name="pageIndex" value="" />
+    <input type="hidden" name="jndinm" value="OfrNotAncmtEJB" />
+    <input type="hidden" name="context" value="NTIS" />
+    <input type="hidden" name="method" value="" />
+    <input type="hidden" name="methodnm" value="" />
+    <input type="hidden" name="not_ancmt_mgt_no" value="" />
+    <input type="hidden" name="homepage_pbs_yn" value="Y" />
+    <!--
+	시군구 페이지에 맞게 커스터마이징 된 JSP페이지 여부(Y/N) 설정 반드시 해줘야 함.
+	Sub파일 적용시   OfrNotAncmtL.jsp 의 subCheck는 N으로 설정해주시고
+				 OfrNotAncmtLSub.jsp 의 subCheck는 Y으로 설정해주시길 바랍니다.
+-->
+    <input type="hidden" name="subCheck" value="Y" />
+    <!-- 한 페이지당 게시글 갯수 -->
+    <input type="hidden" name="ofr_pageSize" value="10" />
+    <input type="hidden" name="not_ancmt_se_code" value="01,04,05" />
+    <input type="hidden" name="title" value="고시공고" />
+    <input type="hidden" name="cha_dep_code_nm" value="" />
+    <input type="hidden" name="initValue" value="Y" />
+    <input type="hidden" name="countYn" value="Y" />
+    <!--
+	list_gubun의 value="A" 일 경우 게재기간에 관계없이 모든 고시공고 데이터를 가져옵니다.
+				 value="Y" 일 경우 게재기간이 지난 고시공고 데이터를 가져오며, 영구게재인 고시공고 데이터는 가져오지 않습니다.
+				 value="" 일 경우 게재기간 중인 고시공고 데이터만 가져옵니다.
+-->
+    <input type="hidden" name="list_gubun" value="" />
+    <input type="hidden" name="not_ancmt_sj" value="" />
+    <input type="hidden" name="not_ancmt_cn" value="" />
+    <input type="hidden" name="dept_nm" value="" />
+    <input type="hidden" name="cgg_code" value="" />
+    <!-- 시작 검색년도 넣기
+	 예) <input type="hidden" name="yyyy" value="2013"> 일 경우,
+	 	게재(공고)일자 기준으로 년도가 2013년 이후의 데이터를 가져옵니다.
+-->
+    <input type="hidden" name="yyyy" value="2020" />
+    <!-- 시작 일자 넣기
+	 예) <input type="hidden" name="yyyymmdd" value="20150101"> 일 경우,
+	 	게재(공고)일자 기준으로 2015년 01월 01일 이후의 데이터를 가져옵니다.
+-->
+    <input type="hidden" name="yyyymmdd" value="" />
+    <!-- 최근 몇달 이내의 자료만 가져오도록 설정
+	 예) <input type="hidden" name="recent_mm" value="12"> 일 경우,
+	 	게재(공고)일자 기준으로 최근 12개월 이내의 자료만 가져옵니다.
+-->
+    <input type="hidden" name="recent_mm" value="" />
+    <!-- 몇달 이후의 자료만 가져오도록 설정
+	 예) <input type="hidden" name="last_mm" value="12"> 일 경우,
+	 	게재(공고)일자 기준으로 12개월이 지난 자료만 가져옵니다.
+-->
+    <input type="hidden" name="last_mm" value="" />
+    <!-- 기간미설정인 건들에 대해서만 기간을 설정
+	 nodate_recent_mm 	: 기간미설정인 건들에 대해서 최근 몇달 이내의 자료만 가져오도록 설정
+	 					    해당 설정은 list_gubun이 value="" 일때만 적용됩니다.
+	 nodate_last_mm		: 기간미설정인 건들에 대해서 몇달 이후의 자료만 가져오도록 설정
+	 					    해당 설정은 list_gubun이 value="Y" 일때만 적용됩니다.
+-->
+    <input type="hidden" name="nodate_recent_mm" value="" />
+    <input type="hidden" name="nodate_last_mm" value="" />
+
+    <!--고시공고번호 검색기능-->
+    <input type="hidden" name="not_ancmt_reg_no" value="" />
+
+    <div class="p-warp bbs bbs_list">
+      <!-- 게시물 검색 -->
+      <form id="form1" method="get" class="boardSearchForm">
+        <input type="hidden" name="key" id="key" value="${before_key}" />
+        <fieldset>
+          <legend>게시물 검색</legend>
+          <div class="card card--bgcolor p-search">
+            <div class="p-form-group">
+              <select name="Key" id="Key" title="검색조건" class="p-input">
+                <option value="B_Subject" selected>제 목</option>
+                <option value="B_Content">내 용</option>
+                <option value="B_Dept">담당부서</option>
+                <option value="B_RegNo">고시공고번호</option>
+              </select>
+              <span class="p-form__split"></span>
+              <input type=text id="temp" name="temp" value="" class="p-input p-input--beside search" title="검색내용"
+                onkeypress="javascript:enterKey();" />
+              <span class="p-form-group__button">
+                <!-- <button type="submit" class="p-button black">검색</button> -->
+                <button type="button" class="p-button black" onclick="javascript:srchList();">검색</button>
+              </span>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="row">
+          <div class="col-12 col-sm-24 margin_t_10 small">
+            총 <em class="em_black" data-mask="#,##0" data-mask-reverse="true">1232</em>건 &nbsp;[ <em
+              class="em_b_black">1</em>/124 페이지 ]
+          </div>
+        </div>
+        <!-- // 게시물 검색 -->
+        <!-- 게시물 리스트  -->
+        <fieldset style="width: 100%">
+          <legend>게시물 목록</legend>
+          <table class="p-table simple" data-table="rwd" data-tabletype="simple" data-breakpoint="760">
+            <caption>고시공고목록 - 번호,고시공고번호,제목,등록부서,등록일</caption>
+            <colgroup>
+              <col style="width:8%;">
+              <col style="width:22%;">
+              <col style="width:35%;">
+              <col style="width:15%;">
+              <col style="width:11%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">번호</th>
+                <th scope="col">고시공고번호</th>
+                <th scope="col">제목</th>
+                <th scope="col">담당부서</th>
+                <th scope="col">등록일</th>
+              </tr>
+            </thead>
+            <tbody class="text_center">
+
+              <tr>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83689')">1232</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83689')">안산시 고시 제2022-256호</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83689')">결혼중개업 공시(22년 11월말 기준)</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83689')">여성가족과</a>
+                </td>
+                <td align="center" style="cursor:hand;">
+                  <a href="#" onclick="javaScript:searchDetail('83689')">2022-12-08</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83678')">1231</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83678')">안산시 고시 제2022-255호</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83678')">건물번호 부여 및 폐지에 따른 고시(2022년 제55차)</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83678')">토지정보과</a>
+                </td>
+                <td align="center" style="cursor:hand;">
+                  <a href="#" onclick="javaScript:searchDetail('83678')">2022-12-08</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83566')">1230</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83566')">안산시 고시 제2022-252호</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83566')">도시계획시설(176호 주차장) 사업 실시계획 고시</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83566')">도시계획과</a>
+                </td>
+                <td align="center" style="cursor:hand;">
+                  <a href="#" onclick="javaScript:searchDetail('83566')">2022-12-08</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83693')">1229</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83693')">안산시 공고 제2022-2404호</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83693')">2023년 안산시 공설묘지관리분야 기간제근로자 공개채용 최종 합격자 명단...</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83693')">노인복지과</a>
+                </td>
+                <td align="center" style="cursor:hand;">
+                  <a href="#" onclick="javaScript:searchDetail('83693')">2022-12-08</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83688')">1228</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83688')">안산시 공고 제2022-2401호</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83688')">도로지정 공고(대부동동 1084-1번지 건축관련)</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83688')">대부개발과</a>
+                </td>
+                <td align="center" style="cursor:hand;">
+                  <a href="#" onclick="javaScript:searchDetail('83688')">2022-12-08</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83687')">1227</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83687')">안산시 공고 제2022-2400호</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83687')">도로지정 공고(대부동동 643-12 외 1필지 건축관련)</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83687')">대부개발과</a>
+                </td>
+                <td align="center" style="cursor:hand;">
+                  <a href="#" onclick="javaScript:searchDetail('83687')">2022-12-08</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83655')">1226</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83655')">안산시 공고 제2022-2389호</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83655')">2023년 문화예술과 문화시설 운영을 위한 일반 기간제근로자 공개채용 최...</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83655')">문화예술과</a>
+                </td>
+                <td align="center" style="cursor:hand;">
+                  <a href="#" onclick="javaScript:searchDetail('83655')">2022-12-08</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83653')">1225</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83653')">안산시 공고 제2022-2388호</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83653')">2023년 안산시 문화예술시설 업무보조 기간제근로자 공개채용 최종합격자 ...</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83653')">문화예술과</a>
+                </td>
+                <td align="center" style="cursor:hand;">
+                  <a href="#" onclick="javaScript:searchDetail('83653')">2022-12-08</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83628')">1224</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83628')">안산시 공고 제2022-2379호</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83628')">2023년 안산시 도시재생 현장지원센터 기간제근로자 공개채용 최종 합격자...</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83628')">도시재생과</a>
+                </td>
+                <td align="center" style="cursor:hand;">
+                  <a href="#" onclick="javaScript:searchDetail('83628')">2022-12-08</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83592')">1223</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83592')">안산시 공고 제2022-2369호</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83592')">수용재결신청서 열람공고[345kV 서서울-신광명 기설송전선로 권원확보사업...</a>
+                </td>
+                <td>
+                  <a href="#" onclick="javaScript:searchDetail('83592')">에너지정책과</a>
+                </td>
+                <td align="center" style="cursor:hand;">
+                  <a href="#" onclick="javaScript:searchDetail('83592')">2022-12-08</a>
+                </td>
+              </tr>
+
+
+            </tbody>
+          </table>
+        </fieldset>
+        <!-- //게시물 리스트  -->
+        <!-- 페이지 네비게이션 -->
+        <table width="98%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td align="center">
+              <!-- page -->
+              <table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+                <tr>
+                  <td align="center">
+
+                    <table border='0' cellspacing='0' cellpadding='0'>
+                      <tr>
+                        <td><img src='/emwp/img/icon/icon_prevend.gif' width='13' height='13' border='0'
+                            alt='첫 페이지로 이동'></td>
+                        <td width='3'></td>
+                        <td width='28'><img src='/emwp/img/icon/icon_prev.gif' border='0' alt='이전 페이지로 이동'></td>
+                        <td>
+                          <span class='page_no'>
+                            <font><b>1</b></font>
+                          </span>
+                          <span class='page_sep'>|</span>
+                          <span class='page_no'><a href='#'
+                              onclick='javascript:document.form1.pageIndex.value=2;goPage()'>2</a></span>
+                          <span class='page_sep'>|</span>
+                          <span class='page_no'><a href='#'
+                              onclick='javascript:document.form1.pageIndex.value=3;goPage()'>3</a></span>
+                          <span class='page_sep'>|</span>
+                          <span class='page_no'><a href='#'
+                              onclick='javascript:document.form1.pageIndex.value=4;goPage()'>4</a></span>
+                          <span class='page_sep'>|</span>
+                          <span class='page_no'><a href='#'
+                              onclick='javascript:document.form1.pageIndex.value=5;goPage()'>5</a></span>
+                          <span class='page_sep'>|</span>
+                          <span class='page_no'><a href='#'
+                              onclick='javascript:document.form1.pageIndex.value=6;goPage()'>6</a></span>
+                          <span class='page_sep'>|</span>
+                          <span class='page_no'><a href='#'
+                              onclick='javascript:document.form1.pageIndex.value=7;goPage()'>7</a></span>
+                          <span class='page_sep'>|</span>
+                          <span class='page_no'><a href='#'
+                              onclick='javascript:document.form1.pageIndex.value=8;goPage()'>8</a></span>
+                          <span class='page_sep'>|</span>
+                          <span class='page_no'><a href='#'
+                              onclick='javascript:document.form1.pageIndex.value=9;goPage()'>9</a></span>
+                          <span class='page_sep'>|</span>
+                          <span class='page_no'><a href='#'
+                              onclick='javascript:document.form1.pageIndex.value=10;goPage()'>10</a></span>
+                        </td>
+                        <td width='28' align='right'><a href='#'
+                            onclick='javascript:document.form1.pageIndex.value=2;goPage()'><img
+                              src='/emwp/img/icon/icon_next.gif' border='0' alt='다음 페이지로 이동'></a></td>
+                        <td width='3'></td>
+                        <td width='20'><a href='#' onclick='javascript:document.form1.pageIndex.value=11;goPage()'><img
+                              src='/emwp/img/icon/icon_nextend.gif' width='13' height='13' border='0'
+                              alt='마지막 페이지로 이동'></a></td>
+                      </tr>
+                    </table>
+
+
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <!-- //페이지 네비게이션 -->
+      </form>
+    </div>
+
+    <div id="loading" style="position:absolute;top:30%;left:180px;display:none;">
+      <img src="/emwp/img/ofr/loading01.gif" alt="화면을 불러오고 있습니다. 잠시만 기다려주십시오." />
+    </div>
+
+</body>
+
+</html>

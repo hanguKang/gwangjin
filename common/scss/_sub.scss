@@ -197,6 +197,7 @@ main.sub{ @include clear;
             }
 
              /* 컨텐츠 타이틀 바*/
+             /* 페이지 로케이션 */
             .sub_top {@include clear; display:flex;justify-content: flex-end;margin-bottom:45px;padding-bottom:15px;border-bottom:1px solid #999;line-height:33px;
                 > ol{@include align(middle,16px);text-align:left; //타이틀바 로게이션 
                     > li{padding-left:22px;line-height:33px; position: relative;
@@ -218,24 +219,34 @@ main.sub{ @include clear;
                     }
         
                 }  
-                /* 공유 기능과 프린트 */
+                /* sns 공유 기능과 프린트 */
                 >ul{ @include align(middle,16px); display: flex; align-items:center;
-                    .share {display:inline-block;padding-left:0;background:none;margin-left:25px;position:relative;
+                    li{width:34px; height:34px; text-align:center;}
+                    .share {display:inline-block;padding-left:0;background:none;margin-left:25px;position:relative; overflow:hidden;
                         button {background-image:url(../images/btn_share_off.png);width:17px;height:17px;vertical-align:middle;background-repeat:no-repeat;background-position:center;background-size:cover;transition:all 0.3s;}
-                        ul{border:1px solid #000;display:none;position:absolute;right:-19px;top:55px;font-size:0;width:158px;padding:17px;background-color:#fff;white-space:nowrap;text-align:center;box-shadow:8px 8px 25px 0 rgba(0,0,0,0.12);z-index:2;
-                            &:before{position:absolute;right:25px;top:-12px;width:17px;height:12px;background:url(../images/arrow_share.png) no-repeat center;content:'';}
-                            li {display:inline-block;margin-left:10px;vertical-align:middle;
-                                &:first-of-type{margin-left:0;}
-                            }        
+                        .share_box {position:absolute;top: 34px;right: 0;width: 34px;
+                            ul{border:1px solid #000; box-shadow:8px 8px 25px 0 rgba(0,0,0,0.12);
+                                &:before{position:absolute;right:25px;top:-12px;width:17px;height:12px;background:url(../images/arrow_share.png) no-repeat center;content:'';}
+                                li:not(:last-child) {border-bottom:1px solid #000;}        
+                            }
                         }
-                        &.active {             
+                        &.active {position:relative;overflow:visible;
                             button{background-image:url(../images/btn_share_on.png);}
+                            .share_box {display: block;padding: 0;background: #fff;
+                                ul{display: block; width: 34px;
+                                    li{display:block; text-align: center;}
+                                }
+                                .share_close{ position:absolute; top:-35px; width:34px; height:34px; 
+                                    a{height:34px; }
+                                }
+                            }
                         }
                     }
                     .print_btn{margin-left:10px;
-                        a{background: url(../images/sub_print_btn.png) no-repeat center; width: 20px;height: 21px;vertical-align: middle;}
+                        a{ display:inline-block; width: 20px;height: 21px; background: url(../images/sub_print_btn.png) no-repeat center;vertical-align: middle;}
                     } 
-                }         
+                
+                }        
             }     
             @include maxWidth($tab){width:100%;padding:40px 0 80px;
                 .sub_top {margin-bottom:30px;padding-bottom:0;border-bottom:0;position:relative;line-height:1.4;

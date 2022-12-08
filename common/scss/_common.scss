@@ -332,7 +332,7 @@
         a{color: #fff; padding: 0 22px; font-size: 17px;
           
         }
-        &::before{content: ''; display: block; right: 0; top: 3px; height: 20px; width: 1px; background-color: #fff;position: absolute;}
+        &::before{content: ''; display: block; right: 0; top: 3px; height: 20px; width: 1px; background-color: #fff; position: absolute;}
         &:last-child{
           &::before{display: none;}
         }

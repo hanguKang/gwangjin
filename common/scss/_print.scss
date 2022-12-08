@@ -1,0 +1,42 @@
+@page {
+  size:210mm 297mm; /*A4*/
+  margin:0mm
+ }
+ 
+@media print{
+  
+     body>.wrapper>header{
+      display:none;
+     }
+     .lnb{
+      display:none;
+     }
+     .sub{
+      .contents_sub_box{
+        .contents_sub{
+          .sub_top{
+            display: none;
+            >ol{display:none;}
+            >ul{display:none;}
+          }
+        }
+      }
+    }
+    
+  // .page > .content { /*img를 .page안에 꽉차게 */
+  //   position:absolute;
+  //   top:0;
+  //   left:0;
+  //   right:0;
+  //   width:100%;
+  //   height:100%
+  // } 
+  // .page > .watermark { 
+  //   position:absolute;
+  //   top:45%;
+  //   left:25%;
+  //   width:50%;
+  //   height:10%;
+  //   z-index:50
+  // }
+}
