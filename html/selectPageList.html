@@ -259,7 +259,7 @@
               <li>HOME</li>
               <li><a href="#">시설안내</a></li>
               <li><a href="#">주차시설</a></li>
-              <li><a href="#">-</a></li>
+              <li class="location_none"><a href="#">-</a></li>
             </ol>
             <ul>
               <li class="share">
@@ -276,129 +276,71 @@
                 </div>
               </li>
               <li class="print_btn"><a href="#"><span class="hide">프린트하기</span></a></li>
-            </ul>
-               
+            </ul>     
           </header>
-          <form action="">
-            <fieldset class="srch-box">
-              <legend>게시물 검색</legend>
-              <div class="p-bg p-search-box">
-                <div class="flex-box">
-                  <select name="" id="sch_type" class="p-input main-border" title="검색영역 선택" >
-                    <option value="">제목</option>
-                    <option value="">작성자</option>
-                    <option value="">내용</option>
-                  </select>
-                  <input type="search" class="p-search main-border" placeholder="검색단어를 입력해 주세요." title="검색단어 입력">
-                  <button class="p-button main-border button-color" title="검색하기"><span>검색</span></button>
-                </div>
+          <article class="details_view_box">
+            <form action="">
+              <header>
+                <h1>한국생산성본부 회장 표창 수상</h1>
+                <address>
+                  <p>
+                    <span class="writer">홍길동</span><span class="bar">|</span>
+                    <time datetime="2022-12-08">2022-12-08</time>
+                    조회수: <span class="count">1</span>
+                  </p>
+                </address>
+              </header>
+              <section class="bbs_file">
+                <h1>첨부파일</h1>
+                <ul>
+                  <li>
+                    <a href="#">
+                      <span class="ico_file">
+                        <img src="../common/images/ico_fie_doc.png" alt="한글파일">
+                      </span>
+                      <span class="file_txt">시설관리공단 샘플 양식 신청서.hwp</span>
+                      <i class="btn_bbs_down">다운로드</i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="ico_file">
+                        <img src="../common/images/ico_fie_pdf.png" alt="pdf파일">
+                      </span>
+                      <span class="file_txt">
+                        시설관리동단 샘플양식 신청 안내문(2022).hwp
+                      </span>
+                      <i class="btn_bbs_down">다운로드</i>
+                    </a>
+                  </li>
+                </ul>
+              </section>
+              <div class="bbs_view_details">
+                <table class="view_conts">
+                  <tbody>
+                    <tr>
+                      <th scope="row" class="view_tit">신청 기간 : </th>
+                      <td class="view_conts">2022-12-08 ( <span>목</span> ) ~ 2022-12-16 ( <span>금</span> )</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="view_tit">신청 기관 : </th>
+                      <td class="view_conts">광진구시설관리공단</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="view_tit">신청 방법 : </th>
+                      <td class="view_conts">신청기간 중 사업신청서를 신청기관에 제출</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-            </fieldset>
-            <div class="table-tit flex-box">
-              <p> 총 게시물 <span class="board_count">1</span>건 </p>
-              <p>&#91; <strong>1</strong> / <span>1</span> 페이지	&#93;</p>
-            </div>
-            <fieldset>
-              <legend>게시물 목록</legend>
-              <table class="p-table">
-                <caption>게시판 목록 - 번호 ,제목 ,등록자 ,등록일, 조회수</caption>
-                <thead>
-                  <tr>
-                    <th scope="col">번호</th>
-                    <th scope="col">제목</th>
-                    <th scope="col">등록자</th>
-                    <th scope="col">등록일</th>
-                    <th scope="col">첨부파일</th>
-                    <th scope="col">조회수</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="cnt"><span class="tit_notice"><em>공지</em></span></td>
-                    <td class="tit"><span>공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트</span></td>
-                    <td class="writer">관리공단</td>
-                    <td class="date"><time datetime="2022-12-07">2022-12-07</time></td>
-                    <td class="flie"><img src="../common/images/ico_fie_doc.png" alt="한글 파일"></td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td class="cnt"><span class="tit_notice"><em>공지</em></span></td>
-                    <td class="tit"><span>공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트</span></td>
-                    <td class="writer">관리공단</td>
-                    <td class="date"><time datetime="2022-12-07">2022-12-07</time></td>
-                    <td class="flie"><img src="../common/images/ico_fie_pdf.png" alt="피디에프 파일"></td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td class="cnt"><span class="tit_notice"><em>공지</em></span></td>
-                    <td class="tit"><span>공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트 공지사항 테스트</span></td>
-                    <td class="writer">관리공단</td>
-                    <td class="date"><time datetime="2022-12-07">2022-12-07</time></td>
-                    <td class="flie"><img src="../common/images/ico_fie_pic.png" alt="이미지 파일"></td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td class="cnt">3</td>
-                    <td class="tit"><span>일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트</span> </td>
-                    <td class="writer">홍길동</td>
-                    <td class="date"><time datetime="2022-12-07">2022-12-07</time></td>
-                    <td class="flie"><img src="../common/images/ico_fie_txt.png" alt="한글 파일"></td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td class="cnt">2</td>
-                    <td class="tit"><span>일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트</span> </td>
-                    <td class="writer">홍길동</td>
-                    <td class="date"><time datetime="2022-12-07">2022-12-07</time></td>
-                    <td class="flie"><img src="../common/images/ico_fie_xls.png" alt="엑셀 파일"></td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td class="cnt">1</td>
-                    <td class="tit"><span>일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트 일반 테스트</span> </td>
-                    <td class="writer">홍길동</td>
-                    <td class="date"><time datetime="2022-12-07">2022-12-07</time></td>
-                    <td class="flie"><img src="../common/images/ico_fie_zip.png" alt="압축 파일"></td>
-                    <td>0</td>
-                  </tr>
-                </tbody>           
-              </table>
-            </fieldset>
-            <div class="p-pagination">								
-              <span class="p-page__control">
-                <a href="#" class="p-page__link prev-end" title="맨 처음으로 이동"><span class="hide">최신 페이지로 이동</span></a>
-                <a href="#" class="p-page__link prev" title="앞 페이지로 이동"><span class="hide">앞 페이지로 이동</span></a>
-                <a href="#" class="p-page__link prev-one" title="앞 페이지로 이동"><span class="hide">앞 페이지로 이동</span></a>
-              </span>
-              <span class="p-page__link-group">
-                <strong class="p-page__link active">1</strong>
-                <a href="#" class="p-page__link">2</a>
-                <a href="#" class="p-page__link">3</a>
-                <a href="#" class="p-page__link">4</a>
-                <a href="#" class="p-page__link">5</a>
-                <a href="#" class="p-page__link">6</a>
-                <a href="#" class="p-page__link">7</a>
-                <a href="#" class="p-page__link">8</a>
-                <a href="#" class="p-page__link">9</a>
-                <a href="#" class="p-page__link">10</a>
-              </span>
-              <span class="p-page__control">
-                <a href="#" class="p-page__link next" title="뒤로 이동"><span class="hide">뒤로 이동</span></a>
-                <a href="#" class="p-page__link next-end" title="마지막 페이지 이동"><span class="hide">마지막 페이지로 이동</span></a>
-                <a href="#" class="p-page__link next-one" title="뒤로 이동"><span class="hide">뒤로 이동</span></a>
-              </span>
-              <input type="hidden" name="currentPage" id="currentPage" value="1">
-						</div>
-          </form>
-          <address>
-            <p class="addr">
-              <span class="department"> 콘텐츠 관리부서 <span class="bar">|</span> 문화사업팀 </span> 
-              <span class="manage"> 담당자 <span class="bar">|</span> 홍길동/차장</span>
-              <span class="tel">전화번호 <img src="../common/images/free-icon-telephone-49181.png" alt="전화기 이미지"></span>
-              <a href="tel:02-2049-1234">02-2049-1234</a>
-            </p>
-          </address>
-          <section class="satisfaction_box">
+              <ul class="p-move">
+                <li class="p-move-next"><strong class="p-move-title">다음글</strong><a href="#" class="p-move-link">다음 글이 없습니다. </a></li>
+                <li class="p-move-prev"><strong class="p-move-title">이전글</strong><a href="#" class="p-move-link">시설관리공단 양식 신청 계획</a></li>
+              </ul>
+              <a href="#">목록<span class="hide">보기</span></a>
+            </form>
+          </article>
+          <section class="satisfaction_box"><!-- 만족도 조사-->
             <form action="">
               <div class="top">
                 <h1>만족도 조사</h1>

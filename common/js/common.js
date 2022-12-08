@@ -305,20 +305,23 @@ $(function () {
     },
   });
 
-  //lnb dep2클릭시
-  $(document).on('click', '#lnb .dep2 a', function () {
-    var innerMenu = $(this).next('ul');
-    $(this).closest('li').toggleClass('active').siblings('li').removeClass('active').find('ul').stop().slideUp(200);
-    innerMenu.stop().slideToggle(200);
-    if ($(this).hasClass('menu_btn')) {
-        return false;
-    }
-});
-$('#lnb .dep2 > li a').each(function () {
+  $('#lnb .dep2 > li > a').each(function () {
     if ($(this).hasClass('active')) {
         $(this).children('.dep3').slideDown(200);
     }
 });
+  //lnb dep2클릭시
+  $(document).on('click', '#lnb .dep2>li>a', function () {
+    var innerMenu = $(this).next('ul'); 
+    innerMenu.stop().slideToggle(200);
+    $(this).closest('li').toggleClass('active')
+    .siblings('li').removeClass('active').children('ul').stop().slideUp(200);
+    
+    if ($(this).hasClass('menu_btn')) {
+        return false;
+    }
+});
+
 
 
 

@@ -269,37 +269,10 @@ main.sub{ @include clear;
                     }  
                 }     
             }
-            /* 검색창 바 */
-            .srch-box{
-                select.p-input{flex:0 0 33%;}
-                input.p-search{flex:0 0 56%;
-                    &::placeholder {color:#000;}
-                }
-                button.p-button{flex:0 0 9%;}
-            }
-            /* 테이블 */
-            .table-tit{margin-top:17px; height:30px; line-height:30px;}
-            .p-table{border-top: 2px solid #222; background-color:#ffffff;
-                
-                td, th {padding: 13px 11px; border-bottom: 1px solid #d9d9d9; text-align:center; vertical-align: middle;font-size:16px; line-height:1.4;
-                    span{@include ell2;}
-                }
-                th {
-                    
-                    background: #fbfbfb;
-                    color: #000;
-                    text-align: center;
-                    font-weight: 400;
-                }
-                th:nth-child(1),td:nth-child(1){width:10%;}
-                th:nth-child(2),td:nth-child(2){width:40%;}
-                th:nth-child(3),td:nth-child(3){width:15%;}
-                th:nth-child(4),td:nth-child(4){width:12%;}
-                th:nth-child(5),td:nth-child(5){width:13%;}
-                th:nth-child(6),td:nth-child(6){width:10%;}
+            
 
-                
-            }
+            /*게시판 목록 셀렉션 페이지*/
+            
             
         }
     }
