@@ -51,7 +51,13 @@
         &:before{background-image:url(../images/bg_pagespot_7_m.jpg);}} 
       span {font-size:11px;margin-top:3px;}
     }
+
+
+    /*sub 페이지 제목*/
+    .sub_title { font-family: 'Noto Sans'; font-weight:500; font-size: $fs-42;  line-height:1; }
+    
 }
+
 
 main.sub{ @include clear; 
     .contents_sub_box{display: flex;
@@ -66,7 +72,7 @@ main.sub{ @include clear;
                     }
                     &:last-of-type{border-bottom:0;}
                     &.active, &.selected{
-                        > a {font-weight: 500;
+                        > a {font-weight: 600;
                             &.menu_btn {
                                 &:after {background-image:url(../images/arrow_lnb_on.png); transform:translateY(-50%) rotate(-180deg);}
                             }
@@ -122,16 +128,13 @@ main.sub{ @include clear;
                     }
                 }
             } */
-            @include maxWidth($tab){width:100%;
-                display:none;
-                strong, .lnb{display:none;}
-            }
+           
             
             
         }
         .contents_sub { flex:0 0 auto; width:calc(100% - 256px);padding-top:46px;padding-bottom:100px;padding-left:82px;position:relative;z-index:0;
             &.sch_result {width:100%;padding-left:0;}
-            @include maxWidth(1380px){padding-left:40px;}
+
             .tit_md{background: url(../images/h3_tit.png)no-repeat top left; font-size: 22px; font-weight: 500; font-family: 'noto sans';padding-top: 17px;margin-bottom:15px;color:#000;
                 + p {margin-bottom:15px;}
                 @include maxWidth($m720){font-size: 19px; margin-bottom: 15px; padding-top: 10px;}
@@ -248,14 +251,14 @@ main.sub{ @include clear;
                 
                 }        
             }     
-            @include maxWidth($tab){width:100%;padding:40px 0 80px;
-                .sub_top {margin-bottom:30px;padding-bottom:0;border-bottom:0;position:relative;line-height:1.4;
-                    > h2 {font-size:24px;margin-bottom:8px;line-height:33px;}
-                    > ol{float:left;width:100%;}  
-                    .share {margin:0;position:absolute;right:33px;top:0;}          
-                    .print_btn{position:absolute;right:0;top:0;}
-                } 
-            }     
+            // @include maxWidth($tab){width:100%;padding:40px 0 80px;
+            //     .sub_top {margin-bottom:30px;padding-bottom:0;border-bottom:0;position:relative;line-height:1.4;
+            //         > h2 {font-size:24px;margin-bottom:8px;line-height:33px;}
+            //         > ol{float:left;width:100%;}  
+            //         .share {margin:0;position:absolute;right:33px;top:0;}          
+            //         .print_btn{position:absolute;right:0;top:0;}
+            //     } 
+            // }     
             @include maxWidth($m720){padding:21px 0 60px;
                 .title{ margin-bottom: 20px;
                     span{font-size: 22px;} 

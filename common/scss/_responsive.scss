@@ -1,0 +1,37 @@
+/*서브 페이지 테이블 반응형 레이아웃 */
+body{
+  $sub_table_view : 900px;
+  .sub{
+      .contents_sub_box{margin:0 auto; max-width:1300px; 
+        @include maxWidth($web){width:1000px;
+          .lnb{flex:0 0 220px;}
+          .contents_sub{ width:calc(100% - 260px); padding-left:40px;}
+        }
+        @include maxWidth($tab){padding:0 15px; width:auto; justify-content: space-between;
+          .lnb{flex:0 0 200px;}
+          .contents_sub{ width:calc(100% - 220px); padding-left:0; margin-left:20px;}
+        }
+        
+        @include maxWidth($sub_table_view){ width:100%;
+          .lnb{display:none;
+            strong, .lnb{display:none;}
+          }
+          .contents_sub{ width:100%; margin-left:0; padding-left:0;}
+        }
+        @include maxWidth($m720){width:100%;
+          .lnb{display:none; 
+            strong, .lnb{display:none;}
+          }
+          .contents_sub{ width: 100%;}
+        }
+        
+        .contents_sub{ 
+          @include minWidth($wide){}
+          @include maxWidth($web){}
+          @include maxWidth($tab){padding-left:0;}
+        }
+        
+      }
+
+  }
+}

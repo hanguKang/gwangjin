@@ -294,8 +294,7 @@ $(function () {
   });
   // 사이트맵 닫기
   $('.btn_sitemap_close').on({
-    click: function () {
-      
+    click: function () {      
       closeSitemap(); //사이트맵닫기
       bodyScroll('on');
       returnFocus(); //이전 포커스 요소로 되돌리기
@@ -305,25 +304,6 @@ $(function () {
       bodyScroll('on');
     },
   });
-
-  $('#lnb .dep2 > li > a').each(function () {
-    if ($(this).hasClass('active')) {
-        $(this).children('.dep3').slideDown(200);
-    }
-});
-  //lnb dep2클릭시
-  $(document).on('click', '#lnb .dep2>li>a', function () {
-    var innerMenu = $(this).next('ul'); 
-    innerMenu.stop().slideToggle(200);
-    $(this).closest('li').toggleClass('active')
-    .siblings('li').removeClass('active').children('ul').stop().slideUp(200);
-    
-    if ($(this).hasClass('menu_btn')) {
-        return false;
-    }
-});
-
-
 
 
 });

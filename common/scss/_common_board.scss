@@ -1,6 +1,3 @@
-/*sub 페이지 게시판 */
-.sub_title { font-size: $fs-42; line-height:1; }
-.center_box_pc{margin:0 auto; max-width:1300px; }
 
 /* form관련 스타일 */
 /*검색창*/
@@ -18,11 +15,65 @@ select.p-input{background: #fff url(../images/arrow_dropdown.png) no-repeat righ
   input.p-search{flex:0 0 56%;
       &::placeholder {color:#000;}
   }
+  &.news{
+    input.p-search{flex:0 0 90%;}
+  }
   button.p-button{flex:0 0 9%;}
 }
 /* 테이블 */
-.table-tit{margin-top:17px; height:30px; line-height:30px;}
+.table-tit{margin-top:17px; height:30px; line-height:30px;
+  .board_count, .current_pg {padding:0 5px; color:$color2;}
+  .amount{font-weight:900;}
+}
 .p-table{border-top: 2px solid #222; background-color:#ffffff;
+  /*------------  소식지 -------------*/
+  &.news{
+    td:nth-child(1){width:25%;}
+    td:nth-child(2){width:25%;}
+    td:nth-child(3){width:25%;}
+    td:nth-child(4){width:25%;}
+    td{position:relative; 
+      .item_img{ position:relative; z-index:1; display:flex; flex-direction: column; justify-content: center; align-items: center; min-height:300px;
+        img{margin-bottom:15px;}
+        .tit_txt{
+          font-size:$fs-16; letter-spacing: -1px;
+          .season{
+            
+            font-size:$fs-15;
+          }
+        }
+      }
+      &:after{content:''; position:absolute; left:0; bottom:0; width:100%; height:50%; background:#eeeeee;}
+    }
+  }
+  /*----------소식지 목록 선택 페이지-----------*/
+  &.news.slct_list{
+    td{ background:#eeeeee;
+      .details_view_info{
+        min-height:520px;
+        strong{display:none; font-size:26px; font-family:'Noto sans'; color:#222222;}
+        &.none{
+          background:url(../images/sub/common_board/text_none_pic.png) no-repeat 50% 50% /10% auto;
+          strong{display:block; position:absolute; left:50%; bottom:30%; transform:translateX(-50%) translateY(-50%);}
+        }
+      }
+      &:after{display:none;}
+    }
+  }
+
+  /*------- 썸네일 ---------*/
+  &.thumbnail_box{
+    td:nth-child(1){width:33.333%;}
+    td:nth-child(2){width:33.333%;}
+    td:nth-child(3){width:33.333%;}
+    td{position:relative; 
+      .item_img{ position:relative; z-index:1; display:flex; flex-direction: column; justify-content: center; align-items: center; min-height:300px;
+        img{margin-bottom:15px;}
+        .tit_txt{align-self:flex-start; height:39px; font-size:$fs-16; line-height:1.2; letter-spacing: -1px; @include ell2;}
+        time{align-self:flex-start;}
+      }
+    }
+  }
   
   td, th {padding: 13px 11px; border-bottom: 1px solid #d9d9d9; text-align:center; vertical-align: middle;font-size:16px; line-height:1.4;
       span{@include ell2;}
@@ -80,13 +131,19 @@ select.p-input{background: #fff url(../images/arrow_dropdown.png) no-repeat righ
 .satisfaction_box{ padding:32px 52px; background-color:$bg-color3;
   form{
     div.top{position:relative;  display:flex; align-items:center; margin-bottom:30px; height:90px; 
-      h1{ flex:0 0 15%; font-size:$fs-23;
+      h1{ flex:0 0 15%; font-size:$fs-23; word-break: keep-all;
         &::after{content:''; position:absolute; left:15%; top:0; height:100%; border-right:$border1;}
       }
-      dl{flex:0 0 85%; display: flex; justify-content: flex-start; align-content: stretch; flex-wrap: wrap; font-size:$fs-16; padding-left:60px;
+      dl{flex:0 0 85%; display: flex; justify-content: flex-start; align-content: stretch; flex-wrap: wrap; font-size:$fs-16; padding-left:40px;
+        @include maxWidth($web){padding-left:30px;}
         dt{flex:0 0 100%; margin-bottom:18px;}
-        dd{flex:1 1 auto; 
-          input[type=radio]{position:relative; padding:0; margin:0; margin-right:5px; display:inline-block; width:14px; height:14px; border-radius: 50%; border:1px solid #222222; vertical-align: -1px;cursor:pointer;
+        dd{flex:1 0 auto; 
+          @include maxWidth($web){
+            &:nth-child(n){
+              flex:0 0 50%;
+            }
+          }
+         input[type=radio]{position:relative; padding:0; margin:0; margin-right:5px; display:inline-block; width:14px; height:14px; border-radius: 50%; border:1px solid #222222; vertical-align: -1px;cursor:pointer;
             &[type=radio]:checked:after{content:''; position:absolute; top:50%; left:50%; transform:translateX(-52%) translateY(-52%);  width:70%; height:70%; border-radius: 50%; background-color:#000000;}
           }
           label{cursor:pointer;}
@@ -109,7 +166,15 @@ select.p-input{background: #fff url(../images/arrow_dropdown.png) no-repeat righ
       .bar{margin:0 5px; vertical-align: 1px;}
     }
   }
-  .bbs_file{margin-top:40px; border-bottom:2px solid #000;
+  .bbs_pic{
+    div.flex-box{ align-items:flex-start;  padding:20px;
+      table{margin:30px 45px;
+        th{width:30%; text-align:left;}
+        td{}
+      }
+    }
+  }
+  .bbs_file{margin-top:40px; 
     h1{padding:15px; border-bottom:2px solid #000;font-size:$fs-26; line-height:1;}
     ul{padding:15px;
       li:not(:last-child){margin-bottom:10px;}
@@ -125,11 +190,15 @@ select.p-input{background: #fff url(../images/arrow_dropdown.png) no-repeat righ
       }
     }
   }
-  .bbs_view_details{padding:20px;
-    .view_conts{ margin-bottom:350px;
-      .view_tit{ width:10%; height:28px;}
-      .view_conts{height:28px;}
+  .bbs_view_details{
+    h1{padding:15px; border-bottom:2px solid #000;font-size:$fs-26; line-height:1;}
+    div{padding:20px;
+      .view_conts{ margin-bottom:350px;
+        .view_tit{ width:10%; height:28px;}
+        .view_conts{height:28px;}
+      }
     }
+    
   }
   .p-move{ border-bottom:1px solid #000;
     >li{padding-left:15px; display:flex; align-items:center; height:42px; border-top:1px solid #ddd;
