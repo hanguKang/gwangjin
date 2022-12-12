@@ -316,15 +316,15 @@ $(window).on('resize load', function () {
   $('.header').removeAttr('style');
   $('.btn_search_open').removeClass('active');
   
-  if (pcChk(breakPoint)) {
-    headH = $('#gnb').outerHeight(); //기본 헤더 높이 전역변수
-    var gnbLeng = $('#gnb .dep1 > li').length; //gnb 너비 조정
-    $('#gnb .dep1 > li').width(100 / gnbLeng + '%'); //gnb 너비 조정
-    menuInit('#lnb .dep2 a');
-} else {
-    $('#gnb .dep1 > li').removeAttr('style'); //gnb 너비 조정
-    menuInit('#gnb .dep1 a');
-}
+//   if (pcChk(breakPoint)) {
+//     headH = $('#gnb').outerHeight(); //기본 헤더 높이 전역변수
+//     var gnbLeng = $('#gnb .dep1 > li').length; //gnb 너비 조정
+//     $('#gnb .dep1 > li').width(100 / gnbLeng + '%'); //gnb 너비 조정
+//     menuInit('#lnb .dep2 a');
+// } else {
+//     $('#gnb .dep1 > li').removeAttr('style'); //gnb 너비 조정
+//     menuInit('#gnb .dep1 a');
+// }
 });
 
 
