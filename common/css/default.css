@@ -3279,9 +3279,10 @@ select.p-input {
 .p-table {
   border-top: 2px solid #222;
   background-color: #ffffff;
-  /*------------  소식지 -------------*/
+  /*------------  소식지 게시판 -------------*/
   /*----------소식지 목록 선택 페이지-----------*/
-  /*------- 썸네일 ---------*/
+  /*------- 썸네일 게시판 ---------*/
+  /*----------- 동영상 게시판 ----------*/
 }
 .p-table.news td:nth-child(1) {
   width: 25%;
@@ -3410,6 +3411,21 @@ select.p-input {
 .p-table.thumbnail_box td .item_img time {
   -ms-flex-item-align: start;
       align-self: flex-start;
+}
+.p-table.vid .item_img {
+  position: relative;
+}
+.p-table.vid .item_img::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  width: 25%;
+  padding-top: 25%;
+  border-radius: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  background: url(../images/sub/common_board/vid_play_pic.png) no-repeat 50% 50%/contain;
 }
 .p-table td, .p-table th {
   padding: 13px 11px;
@@ -3727,6 +3743,9 @@ select.p-input {
 }
 
 /* 게시판 목록 선택 상세 보기 페이지 */
+.details_view_box {
+  /*목록 버튼*/
+}
 .details_view_box header {
   padding: 15px;
   border-bottom: 1px solid #999;
@@ -3749,7 +3768,7 @@ select.p-input {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  padding: 20px;
+  padding: 40px;
 }
 .details_view_box .bbs_pic div.flex-box table {
   margin: 30px 45px;
@@ -3757,6 +3776,12 @@ select.p-input {
 .details_view_box .bbs_pic div.flex-box table th {
   width: 30%;
   text-align: left;
+}
+.details_view_box .bbs_pic.vid div.flex-box {
+  padding: 40px 130px;
+}
+.details_view_box .bbs_pic.vid div.flex-box > * {
+  width: 100%;
 }
 .details_view_box .bbs_file {
   margin-top: 40px;
@@ -3851,11 +3876,13 @@ select.p-input {
   text-align: right;
 }
 .details_view_box .show-bbs-list-box .show-bbs-ist {
-  float: right;
-  margin: 20px;
+  margin: 30px auto 80px auto;
   padding: 12px 30px;
-  display: inline-block;
-  background: #202e70;
+  width: 234px;
+  height: 60px;
+  line-height: 36px;
+  text-align: center;
+  background: #476dc3;
   color: #fff;
 }
 

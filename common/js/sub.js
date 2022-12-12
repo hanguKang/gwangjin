@@ -112,7 +112,7 @@ try {
 					  content: {
 						title: txt,
 						description: description,
-						imageUrl: '../common/images/logo.png',
+						imageUrl: '../../common/images/logo.png',
 						link: {
 						  mobileWebUrl: snsShareURL,
 						  webUrl: snsShareURL

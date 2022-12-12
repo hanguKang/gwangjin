@@ -26,7 +26,7 @@ select.p-input{background: #fff url(../images/arrow_dropdown.png) no-repeat righ
   .amount{font-weight:900;}
 }
 .p-table{border-top: 2px solid #222; background-color:#ffffff;
-  /*------------  소식지 -------------*/
+  /*------------  소식지 게시판 -------------*/
   &.news{
     td:nth-child(1){width:25%;}
     td:nth-child(2){width:25%;}
@@ -61,7 +61,7 @@ select.p-input{background: #fff url(../images/arrow_dropdown.png) no-repeat righ
     }
   }
 
-  /*------- 썸네일 ---------*/
+  /*------- 썸네일 게시판 ---------*/
   &.thumbnail_box{
     td:nth-child(1){width:33.333%;}
     td:nth-child(2){width:33.333%;}
@@ -73,6 +73,14 @@ select.p-input{background: #fff url(../images/arrow_dropdown.png) no-repeat righ
         time{align-self:flex-start;}
       }
     }
+  }
+  /*----------- 동영상 게시판 ----------*/
+  &.vid{
+
+    .item_img{position:relative; 
+      &::after{content:''; position:absolute; left:50%; top:40%; width:25%; padding-top:25%; border-radius:50%; transform:translateX(-50%) translateY(-50%); background:url(../images/sub/common_board/vid_play_pic.png) no-repeat 50% 50%/contain; }
+    }
+
   }
   
   td, th {padding: 13px 11px; border-bottom: 1px solid #d9d9d9; text-align:center; vertical-align: middle;font-size:16px; line-height:1.4;
@@ -167,10 +175,15 @@ select.p-input{background: #fff url(../images/arrow_dropdown.png) no-repeat righ
     }
   }
   .bbs_pic{
-    div.flex-box{ align-items:flex-start;  padding:20px;
+    div.flex-box{ align-items:flex-start;  padding:40px;
       table{margin:30px 45px;
         th{width:30%; text-align:left;}
         td{}
+      }
+    }
+    &.vid{
+      div.flex-box{padding:40px 130px;
+        >*{ width:100%;}
       }
     }
   }
@@ -209,8 +222,9 @@ select.p-input{background: #fff url(../images/arrow_dropdown.png) no-repeat righ
     }
     
   }
+  /*목록 버튼*/
   .show-bbs-list-box{ overflow:hidden; text-align:right; 
-    .show-bbs-ist{float:right; margin:20px; padding:12px 30px;display:inline-block; background: #202e70; color:#fff;
+    .show-bbs-ist{margin:30px auto 80px auto; padding:12px 30px;  width:234px; height:60px; line-height:36px; text-align:center; background: #476dc3; color:#fff;
   }
   
   }
