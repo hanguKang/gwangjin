@@ -132,6 +132,7 @@ main.sub{ @include clear;
             
             
         }
+        /* --------- 오른쪽 컨텐츠 article ----------*/
         .contents_sub { flex:0 0 auto; width:calc(100% - 256px);padding-top:46px;padding-bottom:100px;padding-left:82px;position:relative;z-index:0;
             &.sch_result {width:100%;padding-left:0;}
 
@@ -285,8 +286,22 @@ main.sub{ @include clear;
             }
             
 
-            /*게시판 목록 셀렉션 페이지*/
-            
+            /* 컨텐츠 부분 상단 탭 네비게이터 */
+            .sub_conts_nav{margin:10px 0;
+                .sub_conts_navList{@include flex-box((a_margin:2px));
+                    .sub_conts_navItem{ 
+                        >a{ border:1px solid #e8e8e8;height:60px; text-align:center; color:#252525; background-color:#f6f7f8; }
+                        &.active{  
+                            >a{color:#fff; background:#476dc3;}
+                        }
+                        &:hover{font-weight:500;}
+                    }
+                    &.count5{@include flex-box((flex_val:5,a_margin:2px));}
+                    &.count4{@include flex-box((flex_val:4,a_margin:2px));}
+                    &.count3{@include flex-box((flex_val:3,a_margin:2px));}
+                    &.count2{@include flex-box((flex_val:2,a_margin:2px));}
+                }
+            }
             
         }
     }

@@ -7,8 +7,8 @@ body {font-size: 16px; line-height: 1.4; color: #222;font-family:'Noto Sans','sa
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
 h1, h2, h3, h4, h5, h6 { font-size: 1rem; font-weight: normal;}
 ul, ol, li { list-style-type: none; }
-ul:after,ol:after,dl:after {display:block;clear:both;content:'';}
-a {color: inherit; text-decoration: none;display:block; }
+ul:after,ol:after,dl:after {}
+a {color: inherit; text-decoration: none; display:block; }
 img { max-width: 100%; border: 0;vertical-align:middle; }
 p { max-height: 9999px; }
 address { font-style: normal; }
@@ -28,7 +28,8 @@ a:visited {
   text-decoration: none;
 }
 a:link {
-  color: #636363;
+  /*color: #636363;*/
+  color: #252525;
   text-decoration: none;
 }
 
@@ -164,29 +165,44 @@ $m720: 720px;
 
 
 /* flex 관련 */
-@mixin flex-box( $flex-val:'0 1 auto', $justify_val:'space-between', $align_val:'center'){
+@mixin flex-box( $flex_prop:('flex_val':0 0 auto, 'justify_val':space-between, 'align_val':center, 'a_margin':0px) ){
   display:flex; 
-  @if $align_val == 'center' {
-    align-items: center; 
-  }
-  @else{
-    align-items: $align_val;
-  }
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap:wrap;
+  
+  $g:&;
+  $space : map-get($map: $flex_prop, $key: 'a_margin');
+  
+  @each $prop, $val in $flex_prop{
+    @if $prop == 'align_val' {
+      align-items: $val; 
+    }
+    @if $prop == 'justify_val' {
+      justify-content: $val;
+    }
 
-  @if $justify_val == 'space-between'{
-    justify-content: space-between;
-
-  }@else{
-    justify-content: $justify_val;
-  }
-  > :nth-child(n){
-    @if $flex-val == '0 1 auto'{
-      flex:0 1 auto;
-    }@else{
-      $n-val:1/$flex-val*100%;
-      flex:0 0 $n-val;
+    @if $prop == 'flex_val' {
+      > :nth-child(n){
+        
+        @if type-of($val) == 'string'{
+          flex:$val;
+        }@else if type-of($val) == 'number'{
+          $n-val:1/$val*100%;
+          flex:0 0 $n-val;
+        }
+        // #{&g}{justify-content: flex-start;}
+        >a{display:flex; align-items:center; justify-content:center; margin:0 $space+$space;}
+      }
+      >:first-child{
+        >a{margin-left:0;}
+      }
+      >:last-child{
+        >a{margin-right:0;}
+      }
     }
   }
+ 
   
 }
 
