@@ -51,7 +51,7 @@ select.p-input{background: #fff url(../images/arrow_dropdown.png) no-repeat righ
   &.count2{@include flex-box((flex_val:2,justify_val:flex-start));}
   >li{position:relative;
     >a{flex-direction:column;}
-    >.item_img{ position:relative; z-index:1; display:flex; flex-direction: column; justify-content: center; align-items: center; min-height:300px;
+    >.item_img{ position:relative; z-index:1; display:flex; flex-direction: column; justify-content: center; align-items: center; min-height:300px; 
       img{margin-bottom:15px;}
       .tit_txt{
         font-size:$fs-16; letter-spacing: -1px;
