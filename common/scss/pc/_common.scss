@@ -1,0 +1,35 @@
+#wrap {min-height:100vh;}
+//공통 스타일
+
+.container {
+  overflow:hidden;
+  margin: 0 auto; 
+  max-width:1300px;
+
+  @include maxWidth(1260px){
+    //margin-right:30px; margin-left:30px;
+  }
+
+  @include maxWidth(720px){
+    //margin-right:13px; margin-left:13px;
+  }
+}
+
+
+
+
+#contents{/* padding-top: 52px; */  @include clear; position: relative;  
+  @include maxWidth(1220px) {
+    
+  }
+   @include maxWidth(1080px) {
+    padding-top:50px;
+  }
+  @include maxWidth($m720) {
+    padding-top:55px;
+  }
+}
+
+
+
+

@@ -137,6 +137,7 @@ $web : 1300px;
 $container: 1420px;
 $pc: 1200px;
 $tab: 1080px;
+$m721: 721px;
 $m720: 720px;
 
 @mixin maxWidth($width){
@@ -205,6 +206,8 @@ $m720: 720px;
  
   
 }
-
+@mixin afterBefore($aftBef : ('_width':auto, '_height':auto,'_border':0 none, 'border-radius':50%, '_padding':0 )){
+  content:''; width:map-get($map: $aftBef, $key:'_width'); height:map-get($map:$aftBef, $key:'_height'); border:map-get($map: $aftBef, $key:'_border'); border-radius:map-get($map:$aftBef, $key:'_border-radius'); padding:map-get($map: $aftBef, $key:'_padding');
+}
 .flex-box{ @include flex-box }
 

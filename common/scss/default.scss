@@ -1,10 +1,13 @@
 @charset "UTF-8";
-@import "font"; //폰트
+@import "./fonts/font"; //폰트
 @import 'reset'; // 1. 리셋 & scss변수
-@import 'common'; // 2. header, footer, 공통(popup,sitemap)
-@import 'main'; // 3. main
-@import 'sub'; // 4. sub
-@import 'common_board'; // 4. sub
-@import 'responsive';
-@import 'print';
+@import './pc/common'; // 2. 공통(popup,sitemap)
+@import './pc/header'; //3 header
+@import './pc/footer'; //4. footer
+@import './pc/main'; // 5. main
+@import './pc/sub'; // 6. sub
+@import './pc/common_board'; // 7. sub_bbs관련
+@import 'responsive'; //8. responsive
+@import './print';
+@import './mo/m_header.scss';
 

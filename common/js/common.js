@@ -894,9 +894,17 @@ function goToTab(abs_idx, selecElm){
       waitForTransition:true,
     },
 
-  });
+    breakpoints : {
+      721:{
+        
+      },
+      320:{
+        
+      }
+    }
+  }); //스와이퍼 기본 설정 끝
 
-   // 일시정지
+   // 배너 일시정지
    $('.banner .pause').click(function () {
       isPause = true;
       $(this).addClass('active').siblings().removeClass('active').find('span').text('자동재생 정지');//puase 버튼이 나타나고 play해라.

@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <script src="../../common/js/jquery-3.6.0.min.js"></script>
   <!--<script src="../../common/js/jquery-1.11.3.min.js"></script>-->
-  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
+  <!-- <script type="text/javascript" src="//code.jquery.com/jquery-migrate-3.3.2.min.js"></script> -->
   <script src="../../common/js/slick.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="../../common/js/common.js"></script>
@@ -316,18 +316,13 @@
             </div>
             <fieldset>
               <legend>소식지 게시물 목록</legend>
-              <table class="p-table news slct_list none">
-                <caption>소식직 게시판 목록 </caption>
-                <tbody>
-                  <tr>
-                    <td>
-                      <div class="details_view_info">
-                        <strong>등록된 동영상이 존재하지 않습니다.</strong>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>           
-              </table>
+              <ul class="p-list slct_list none"> 
+                <li class="p-list__item">
+                  <div class="details_view_info">
+                    <strong>등록된 게시 글이 존재하지 않습니다.</strong>
+                  </div>
+                </li>
+              </ul>
             </fieldset>
             <div class="p-pagination">								
               <span class="p-page__control">
@@ -379,7 +374,7 @@
     </main>
 
 
-    <div class="footer">
+    <footer class="footer">
       <div class="f_banner">
         <div class="container">
           <h2>관련사이트 바로가기</h2>
@@ -423,7 +418,7 @@
           </ol>
         </div>
       </div> 
-    </div>
+    </footer>
     <!-- footer -->
   </div>
 </body>

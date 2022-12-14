@@ -38,7 +38,7 @@
     <!-- lnb 안산시의회 형식 참고, header 배경 화이트로 변경진행 -->
     <header class="header">
 
-      <div class="hd_top">
+      <div class="hd_top pc">
           <ul>
               <li>
                   <a href="#">광진구시설관리공단</a>
@@ -61,8 +61,20 @@
         <div id="gnb" class="gnb">
           <h1 class="logo"><a href="#"><span class="hide">로고</span></a></h1>
           <nav>
+            <div class="mo"><p class="link_home"><a href="#"><span class="hide">홈으로 이동</span></a></p><button class="close"><span class="hide">닫기</span></button></div>
             <h1 class="hide">글로벌 네비게이터</h1>
-            <ul>
+            <ul class="mo">
+              <li class="active">
+                  <a href="#">광진구시설관리공단</a>
+              </li>
+              <li>
+                  <a href="#">통합주차</a>
+              </li>
+              <li>
+                  <a href="#">문화체육시설</a>
+              </li>
+            </ul>
+            <ul class="nav_items">
                 <li>
                     <a href="#"><span>시설 안내</span></a>
                     <div class="dep2_wrap">                          
@@ -184,7 +196,6 @@
                 <li>
                     <a href="#"><span>공단소개</span></a>
                     <div class="dep2_wrap">
-
                         <div>
                             <h2>공단소개</h2>
                             <img src="../common/images/gnb_tit_icon_1.png" alt="공단소개 아이콘">
@@ -314,17 +325,17 @@
                       </a>
                   </li>
                   <li>
-                      <a href="#" title="공단 통합민원 센터">
+                      <a href="#" title="고객의 소리">
                         <span>
-                          <img src="../common/images/icon_menu_03.png" alt="공단 통합민원 센터">
-                          <b>공단 통합민원센터 </b>
+                          <img src="../common/images/icon_menu_03.png" alt="아이콘 확성기">
+                          <b> 고객의소리 </b>
                         </span>
                       </a>
                   </li>
                   <li>
                       <a href="#" title="이사장에게 바란다">
                         <span>
-                          <img src="../common/images/icon_menu_04.png" alt="이사장에게 바란다">
+                          <img src="../common/images/icon_menu_04.png" alt="이사장 아이콘">
                           <b>이사장에게 바란다</b>
                         </span>
                       </a>
@@ -1095,7 +1106,7 @@
       </main><!-- main End -->
     </div><!-- .contents End -->
     <!-- footer -->
-    <div class="footer">
+    <footer class="footer">
       <div class="f_banner">
         <div class="container">
           <h2>관련사이트 바로가기</h2>
@@ -1139,7 +1150,7 @@
           </ol>
         </div>
       </div>
-    </div>
+    </footer>
     <!-- footer -->
   </div><!-- .wrapper End -->
 </body>
