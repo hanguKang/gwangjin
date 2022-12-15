@@ -373,11 +373,8 @@
     }
   }
 
-  /* 문화공공체육시설 */
-  #slide_menu{background-color: #eeeeee;  padding: 80px 0;
-    @include maxWidth(1080px){
-      padding:40px 0;
-    }
+  /* ----------------  문화공공체육시설(상단), 공단소식(하단) 슬라이드 탭 메뉴 공통사항 ---------------- */
+  .slide_tab{
     .list{
       .tab_box{position:relative; margin:0 auto 60px auto;  max-width:1280px; font-size:0; overflow:hidden;transform: translate(0,100px);opacity: 0; 
         @include maxWidth(1080px){
@@ -386,7 +383,7 @@
         .btns_tab{ width:100%; 
           .btns_tab_inner{white-space: nowrap; /* --------------------- 이전 사용자가 슬릭 사용하는 요소 -----------------------*/
             //&::after{content:""; position:absolute; top:0; left:0; width:100%; height:100px;}
-
+  
             .slide_item{ padding:0 20px; text-align: center; height:100px; line-height:100px;opacity:0.7; font-size: 28px; color: #000; cursor:pointer; 
               //&.slick-current + .slide_item {opacity:1;}
               
@@ -459,7 +456,7 @@
           
         }
       }
-    }
+    }//탭메뉴 목록 끝
     &.on{
       .list{
         .tab_box {transform:translate(0,0); opacity:1; transition:transform 1s, opacity 1s; transition-delay:0.1s;
@@ -476,10 +473,18 @@
           }
         }
       }
+    }//탬메뉴 애니메이션 끝
+  }//텝메뉴 끝
+  
+
+  /* 문화공공체육시설 탭메뉴*/
+  #slide_menu{background-color: #eeeeee;  padding: 80px 0;
+    @include maxWidth(1080px){
+      padding:40px 0;
     }
   }
 
-  /* news */
+  /* 공단소식 텝메뉴 news */
   #news{background-color: #eeeeee;  padding: 80px 0;  
     @include maxWidth(1080px){
       padding:40px 0;
@@ -487,89 +492,89 @@
     h3{font-size: 60px; display: block; margin: auto; text-align: center; margin-bottom: 20px;
       b{ font-weight: 600; }
     }
-    .list{
-      .tab_box{position:relative; margin:0 auto; margin-bottom:10px; max-width:1280px; font-size:0; overflow:hidden;transform: translate(0,100px);opacity: 0; 
-        @include maxWidth(1080px){
-          margin-bottom:20px;
-        }
-        .btns_tab{ /* 스와이퍼 시작  탭메뉴들 */
-          .btns_tab_inner{white-space: nowrap; 
-            .slide_item{padding:0 18.5px; text-align: center; height:100px; line-height:100px;opacity:0.7; font-size: 28px; color: #000;
-              //&.slick-current + .slide_item {opacity:1;}
-              a{height:98px; margin-top:1px;}
-              &.active{
-                a{
-                  span{border-bottom: 4px solid #000;}
-                }
-              }  
-              @include maxWidth(1080px){
-                height:60px; line-height:60px;
-                a{height:58px;}
-              }
-            }
+    // .list{
+    //   .tab_box{position:relative; margin:0 auto; margin-bottom:10px; max-width:1280px; font-size:0; overflow:hidden;transform: translate(0,100px);opacity: 0; 
+    //     @include maxWidth(1080px){
+    //       margin-bottom:20px;
+    //     }
+    //     .btns_tab{ /* 스와이퍼 시작  탭메뉴들 */
+    //       .btns_tab_inner{white-space: nowrap; 
+    //         .slide_item{padding:0 18.5px; text-align: center; height:100px; line-height:100px;opacity:0.7; font-size: 28px; color: #000;
+    //           //&.slick-current + .slide_item {opacity:1;}
+    //           a{height:98px; margin-top:1px;}
+    //           &.active{
+    //             a{
+    //               span{border-bottom: 4px solid #000;}
+    //             }
+    //           }  
+    //           @include maxWidth(1080px){
+    //             height:60px; line-height:60px;
+    //             a{height:58px;}
+    //           }
+    //         }
             
-          }
-        }
-        .btn_tabArrow{ align-items: center; position:absolute; top:50%; transform:translateY(-50%); z-index:9999; width:30px; height:30px; border-radius:50%;  
-          img{vertical-align: -26px;}
-          &.active, &:hover{  
-            &::before{content: ''; position: absolute; width:30px; height:30px; left:0%; top:0%; border:1px solid #000; border-radius:50%; }
-          }
-        }
-        .news_tabArrow_l {left:33.333%;
-            img{padding-left:7px; padding-top:5px;}
-        }
-        .news_tabArrow_r {right:33.333%;
-          img{padding-left:10px; padding-top:5px;}
-        }
+    //       }
+    //     }
+    //     .btn_tabArrow{ align-items: center; position:absolute; top:50%; transform:translateY(-50%); z-index:9999; width:30px; height:30px; border-radius:50%;  
+    //       img{vertical-align: -26px;}
+    //       &.active, &:hover{  
+    //         &::before{content: ''; position: absolute; width:30px; height:30px; left:0%; top:0%; border:1px solid #000; border-radius:50%; }
+    //       }
+    //     }
+    //     .news_tabArrow_l {left:33.333%;
+    //         img{padding-left:7px; padding-top:5px;}
+    //     }
+    //     .news_tabArrow_r {right:33.333%;
+    //       img{padding-left:10px; padding-top:5px;}
+    //     }
 
-        // .count{width:100%; text-align: center; margin-top:20px;
-        //   >span{font-size:16px; color:#888888;
-        //     >span{color:#222;
-        //       &.current {opacity:1;}
-        //     }
-        //   }
-        // }
-      }
-      /* 컨텐츠들 */
-      .list_box{
-        .tabPanels{ position: relative; top:0;
-          .info_box{ display:none;
-            &.on{display:block; }
-            ul{ display:flex; flex-wrap:wrap;
-              li{ flex: 0 0 33.33%;  margin-bottom: 40px;
-                a{ display:block; margin:0 15px; 
-                  >img{display: block;width: 100%; height:50%; max-width: 428px;}
-                  strong{display: block; margin-top: 14px; background-color: #0b3380; color: #fff; max-width: 100px; text-align: center; padding: 5px;}
-                  span{display: block; @include ell2; max-width: 400px; margin-top: 10px; font-size: $fs-18; word-break: keep-all;}
-                  em{margin-top: 18px; display: block; font-size: $fs-15; color: #999999;}
-                }
-                &:first-child{margin-left: 0;}
-                &:nth-child(3n){margin-right: 0;}
-                &:nth-child(3n+1){clear: both;}
-              }
-            }
-          }
-        }
-      }
-    }
-    &.on{
-      .list{
-        .tab_box {transform:translate(0,0); opacity:1; transition:transform 1s, opacity 1s; transition-delay:0.1s;
-          .count {transform:translate(0,0); opacity:1; transition:transform 1s, opacity 1s; transition-delay:0.2s;}
-          ol{
-            li{transform:translate(0,0); opacity:1; transition:transform 0.8s, opacity 0.8s;
-              &:nth-child(1){transition-delay:0.3s;}
-              &:nth-child(2){transition-delay:0.4s;}
-              &:nth-child(3){transition-delay:0.5s;}
-              &:nth-child(4){transition-delay:0.6s;}
-              &:nth-child(5){transition-delay:0.7s;}
-              &:nth-child(6){transition-delay:0.8s;}
-            }
-          }
-        }
-      }
-    }
+    //     // .count{width:100%; text-align: center; margin-top:20px;
+    //     //   >span{font-size:16px; color:#888888;
+    //     //     >span{color:#222;
+    //     //       &.current {opacity:1;}
+    //     //     }
+    //     //   }
+    //     // }
+    //   }
+    //   /* 컨텐츠들 */
+    //   .list_box{
+    //     .tabPanels{ position: relative; top:0;
+    //       .info_box{ display:none;
+    //         &.on{display:block; }
+    //         ul{ display:flex; flex-wrap:wrap;
+    //           li{ flex: 0 0 33.33%;  margin-bottom: 40px;
+    //             a{ display:block; margin:0 15px; 
+    //               >img{display: block;width: 100%; height:50%; max-width: 428px;}
+    //               strong{display: block; margin-top: 14px; background-color: #0b3380; color: #fff; max-width: 100px; text-align: center; padding: 5px;}
+    //               span{display: block; @include ell2; max-width: 400px; margin-top: 10px; font-size: $fs-18; word-break: keep-all;}
+    //               em{margin-top: 18px; display: block; font-size: $fs-15; color: #999999;}
+    //             }
+    //             &:first-child{margin-left: 0;}
+    //             &:nth-child(3n){margin-right: 0;}
+    //             &:nth-child(3n+1){clear: both;}
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+    // &.on{
+    //   .list{
+    //     .tab_box {transform:translate(0,0); opacity:1; transition:transform 1s, opacity 1s; transition-delay:0.1s;
+    //       .count {transform:translate(0,0); opacity:1; transition:transform 1s, opacity 1s; transition-delay:0.2s;}
+    //       ol{
+    //         li{transform:translate(0,0); opacity:1; transition:transform 0.8s, opacity 0.8s;
+    //           &:nth-child(1){transition-delay:0.3s;}
+    //           &:nth-child(2){transition-delay:0.4s;}
+    //           &:nth-child(3){transition-delay:0.5s;}
+    //           &:nth-child(4){transition-delay:0.6s;}
+    //           &:nth-child(5){transition-delay:0.7s;}
+    //           &:nth-child(6){transition-delay:0.8s;}
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
   }
 }
 

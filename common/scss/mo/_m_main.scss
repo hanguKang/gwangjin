@@ -1,0 +1,112 @@
+@include maxWidth($m720){
+
+  #contents{
+    main{
+      .slide_tab{
+        .list{
+          .tab_box{position:relative; margin:0 auto 60px auto;  max-width:1280px; font-size:0; overflow:hidden;transform: translate(0,100px);opacity: 0; 
+            @include maxWidth(1080px){
+              margin:0 auto 20px auto;
+            }
+            .btns_tab{ width:100%; 
+              .btns_tab_inner{white-space: nowrap; /* --------------------- 이전 사용자가 슬릭 사용하는 요소 -----------------------*/
+                //&::after{content:""; position:absolute; top:0; left:0; width:100%; height:100px;}
+      
+                .slide_item{ padding:0 20px; text-align: center; height:100px; line-height:100px;opacity:0.7; font-size: 20px; color: #000; cursor:pointer; transform: scale(0.6); transition: all .1s ease;
+                  //&.slick-current + .slide_item {opacity:1;}
+                  
+                  a{height:98px; margin-top:1px; }
+                  &.active{font-weight: 600; font-size:20px; transform: scale(1); 
+                    a{ text-align:center;
+                      span{border-bottom: 4px solid #000;}
+                    }
+                  }
+                  
+                  @include maxWidth(1080px){
+                    height:60px; line-height:60px;
+                    a{height:58px}
+                  }
+                }
+                
+              }
+            }
+            .btn_tabArrow{ align-items: center; position:absolute; top:50%; transform:translateY(-50%); z-index:9999; width:30px; height:30px; border-radius:50%;  
+              img{vertical-align: -26px;}
+              &.active, &:hover{  
+                &::before{content: ''; position: absolute; width:30px; height:30px; left:0%; top:0%; border:1px solid #000; border-radius:50%; }
+              }
+            }
+            .btn_tabArrow_l {left:25%;
+              img{padding-left:7px; padding-top:5px;}
+            }
+            .btn_tabArrow_r {right:25%;
+              img{padding-left:10px; padding-top:5px;}
+            }
+            .count{width:100%; text-align: center; margin-top:20px;
+              >span{font-size:16px; color:#888888;
+                >span{color:#222;
+                  &.current {opacity:1;}
+                }
+              }
+            }
+          }
+          .list_box{
+            .tabPanels{ 
+              &.on{}
+              .info_box.on{ display:block;}
+              .info_box{ display:none;  position:relative; left:0; top:0; 
+                
+                ul{ display: flex; flex-wrap:wrap; justify-content: center;
+                  li{margin:20px; 
+                    @include maxWidth(1080px){
+                      margin:10px;
+                    }
+                    a{transition: 0.6s;
+                      .img{background: url(../images/icon_menu2_bg.png) no-repeat center;width: 147px;height: 140px;display: block; transition: 0.3s;
+                        img{display: block;  margin: auto; padding: 35px 0;}
+                        &.bg_blue{background: url(../images/icon_menu2_bg_blue.png) no-repeat;}
+                      }
+                      em{margin-top: 10px; text-align: center; display: block;}
+                    }
+                    &:first-child{margin-left: 0;}
+                    &:last-child{margin-right: 0; 
+                      a{
+                        em{font-weight: 500;}
+                      }
+                    }
+                    &:hover{ position: relative;
+                      a{ 
+                        .img{ transform: translate(0, -10%);}
+                      }
+                    }
+                  }
+                }
+              }
+              
+            }
+          }
+        }//탭메뉴 목록 끝
+        &.on{
+          .list{
+            .tab_box {transform:translate(0,0); opacity:1; transition:transform 1s, opacity 1s; transition-delay:0.1s;
+              .count {transform:translate(0,0); opacity:1; transition:transform 1s, opacity 1s; transition-delay:0.2s;}
+              ol{
+                li{transform:translate(0,0); opacity:1; transition:transform 0.8s, opacity 0.8s;
+                  &:nth-child(1){transition-delay:0.3s;}
+                  &:nth-child(2){transition-delay:0.4s;}
+                  &:nth-child(3){transition-delay:0.5s;}
+                  &:nth-child(4){transition-delay:0.6s;}
+                  &:nth-child(5){transition-delay:0.7s;}
+                  &:nth-child(6){transition-delay:0.8s;}
+                }
+              }
+            }
+          }
+        }//탬메뉴 애니메이션 끝
+      }//텝메뉴 끝
+      
+    }
+  }
+  
+  
+}

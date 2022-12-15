@@ -2,6 +2,8 @@ try {
 	(function($) {
 		'use strict';
 
+
+
 		//제이쿼리가 있을 때
 		if(typeof $ === 'function') {
 
@@ -15,45 +17,43 @@ try {
 			// });
 
 			//네비게이션 페이지별로 active
-			(function () {
-				let current = location.pathname.split('/');
-				current = current[current.length-1];
-				if (current === "") return;
-				let menuItems = document.querySelectorAll('.menu-item a');
-				for (let i = 0, len = menuItems.length; i < len; i++) {
-						if (menuItems[i].getAttribute("href").indexOf(current) !== -1) {
-								//menuItems[i].className += "active";
-								menuItems[i].parentElement.className += "active"; //최하단 li요소
-								//menuItems[i].parentElement.parentElement //최하단 li요소의 부모 ul요소
-								//menuItems[i].parentElement.parentElement //최하단 li요소의 부모 ul요소의 부모 li요소
-								if(!menuItems[i].parentElement.parentElement.parentElement) return; 
-								menuItems[i].parentElement.parentElement.parentElement.className += "active";
-						}
-				}
-			})();
+			$(()=>{
+				spotNavActive('.menu_item a');
+			});
+			// (function () {
+				
+			// 	spotNavActive('.menu_item a');
+			// 	// let current = location.pathname.split('/');
+			// 	// current = current[current.length-1];
+			// 	// if (current === "") return;
+			// 	// let menuItems = document.querySelectorAll('.menu_item a');
+			// 	// for (let i = 0, len = menuItems.length; i < len; i++) {
+			// 	// 		if (menuItems[i].getAttribute("href").indexOf(current) !== -1) {
+			// 	// 				//menuItems[i].className += "active";
+			// 	// 				menuItems[i].parentElement.classList.add("active"); //각 페이지 현재url에 해당하는 a요소의 부모 li
+			// 	// 				//menuItems[i].parentElement.parentElement //최하단 li요소의 부모 ul요소
+			// 	// 				//menuItems[i].parentElement.parentElement.parentElement //최하단 li요소의 부모 ul요소의 부모 li요소
+			// 	// 				if(!menuItems[i].parentElement.parentElement.parentElement) return; 
+			// 	// 				menuItems[i].parentElement.parentElement.parentElement.classList.add("active");
+			// 	// 		}
+			// 	// }
+			// })();
 			/* sub 페이지 lnb관련 */
 			/* lnb 관련 */
-			$('#lnb .dep2 > li > a').each(function () {
-				if ($(this).hasClass('active')) {
+			$('#lnb .dep2 > li ').each(function () {
+				if ($(this).hasClass('active')) { 
 						$(this).children('.dep3').slideDown(200);
 				}
 			});
+
+			
+
+
 			//lnb dep2클릭시
 			$(document).on('click', '#lnb .dep2>li>a', function (e) {
 				e.preventDefault();
-				
-				if ( $(this).next('ul').length != 0 ){
-					var innerMenu = $(this).next('ul'); 
-					innerMenu.stop().slideToggle(200);
-					$(this).closest('li').toggleClass('active')
-					.siblings('li').removeClass('active').children('ul').stop().slideUp(200);
-					
-					if ($(this).hasClass('menu_btn')) {
-							return false;
-					}
-				}else{
-					window.location.href=$(this).attr('href');
-				}
+				let _this = this; 
+				makeDropDownNav( _this );
 			});
 
 						
