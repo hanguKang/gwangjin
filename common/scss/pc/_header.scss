@@ -63,17 +63,17 @@
       }
   }
  .layer_gnb{@include clear; background:transparent;
-  &.sub, &:hover {border-bottom:1px solid #dddddd; background:rgb(242,242,242); }
+  &.sub, &:hover { }
   .gnb{display:flex; text-align:center; font-size:0;z-index:12; 
    /* 
     &::before{position: absolute; display: block; content: ''; width: 90px; height: 1px; background-color: #d9d9d9; left: -80px; top: 70px;}
     &::after{position: absolute; display: block; content: ''; width: 235px; height: 1px; background-color: #d9d9d9; right: -226px; top: 70px;}
    */
       .logo{ flex:0 0 289px; margin-left:80px;
-          a{width:289px; background: url(../images/logo.png) no-repeat center left/ auto 40px; height:70px; line-height:70px;display:block;}
-        @include maxWidth(1080px){
+          a{width:289px; background: url(../images/logo.png) no-repeat center left/auto 40px; height:70px; line-height:70px;display:block;}
+        @include maxWidth(900px){
           flex:0 0 240px;
-          margin:0 20px 0 20px;
+          margin:0 20px 0 10px;
           width:240px;
         }
       }
@@ -151,9 +151,10 @@
               flex:0 1 auto; padding:0 5px; 
             }
           }
-          @include maxWidth(840px){
-            margin:0px 0px;
+          @include maxWidth(900px){
+            margin:0px 10px;
           }
+     
         }// nav>ul End 
 
       /* nav 1300px */

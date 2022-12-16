@@ -209,7 +209,16 @@
        url('../fonts/open-sans-v23-latin-800italic.svg#OpenSans') format('svg'); /* Legacy iOS */
 }
 /* Noto Sans */
-@font-face {
+  @font-face {
+	font-family: 'Noto Sans';
+	font-weight: 100;
+	font-style: normal;
+	src: url('../fonts/NotoSansKR-Thin.eot');
+	src: local(※), url('../fonts/NotoSansKR-Thin.eot#iefix') format('embedded-opentype'),
+	url('../fonts/NotoSansKR-Thin.woff') format('woff'),
+	url('../fonts/NotoSansKR-Thin.otf') format('opentype');
+	}
+  @font-face {
 	font-family: 'Noto Sans';
 	font-weight: 200;
 	font-style: normal;

@@ -58,7 +58,12 @@
       <div class="layer_gnb">
         <div id="gnb" class="gnb">
           <h1 class="logo"><a href="#"><span class="hide">로고</span></a></h1>
-          <p class="mo showNav"><button><span class="hide">메뉴보기</span></button></p>
+          <p class="mo showNav">
+            <button>
+              <i><span class="hide">메뉴보기</span></i>
+            </button>
+          </p>
+          <div class="mo curtain"></div>
           <nav>
             <div class="mo"><p class="link_home"><a href="#"><span class="hide">홈으로 이동</span></a></p></div>
             <h1 class="hide">글로벌 네비게이터</h1>
@@ -257,7 +262,7 @@
               <div class="layer_box_1">
                 <div class="center_box">
                   <h2 class="slide_tit container">
-                      <b>고객에게</b>삶의 질을 서비스하는 최고의 공단
+                      <b>고객에게</b>삶의 질을 서비스하는 <span> 최고의 공단 </span>
                   </h2><!--배너 전체 고정 타이틀 -->
                   <div class="weather container">
                       <!-- 아이콘 이름은 icon_weather_1.png ~ 7까지 되어있습니다.
@@ -281,12 +286,12 @@
                     <div class="swiper-pagination"></div>
                     <!--<div class="pagination_dot"></div> slick 사용할 때 사용 -->
                       
-                      <div class="control">
-                          <!--<button class="btn prev"><span class="hide">이전</span></button>
-                          <button class="btn next"><span class="hide">다음</span></button>-->
-                          <button class="btn pause" title="자동재생 정지"><span class="hide">자동재생 정지</span></button>
-                          <button class="btn play active" title="자동재생"><span class="hide">자동재생</span></button>
-                      </div>
+                    <div class="control">
+                        <!--<button class="btn prev"><span class="hide">이전</span></button>
+                        <button class="btn next"><span class="hide">다음</span></button>-->
+                        <button class="btn pause" title="자동재생 정지"><span class="hide">자동재생 정지</span></button>
+                        <button class="btn play active" title="자동재생"><span class="hide">자동재생</span></button>
+                    </div>
                   </div>
                 </div><!-- center_box-->
               </div><!-- .layaer_box_1 End -->
@@ -303,7 +308,7 @@
                       <a href="#" title="사전정보공표">
                         <span>
                           <img src="../common/images/icon_menu_02.png" alt="사전정보공표">
-                          <b>사전정보공표</b>
+                          <b>사전정보 공표</b>
                         </span>
                       </a>
                   </li>
@@ -311,7 +316,7 @@
                       <a href="#" title="고객의 소리">
                         <span>
                           <img src="../common/images/icon_menu_03.png" alt="아이콘 확성기">
-                          <b> 고객의소리 </b>
+                          <b> 고객의 소리 </b>
                         </span>
                       </a>
                   </li>
@@ -338,7 +343,7 @@
                         <ul class="btns_tab_inner swiper-wrapper" aria-labelledby="tablist-1" role="tablist"><!-- 이전 사람이 slick 사용 common.js > setTabSwiper() -->
                             <li class="slide_item swiper-slide">
                               <a href="#" role="tab" aria-selected="false" aria-controls="tab-facility-panel-01" id="tab-facility-01">
-                                <span>문화 공공체육 시설</span>
+                                <span class="lineH">문화 공공 체육 <em>시설</em></span>
                               </a> 
                             </li>
                             <li class="slide_item swiper-slide active">

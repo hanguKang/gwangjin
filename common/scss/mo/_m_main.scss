@@ -1,8 +1,93 @@
 @include maxWidth($m720){
 
   #contents{
+
+    .banner{
+      .swiper{min-height:220px;
+        &.swiper_main_banner {
+          .swiper-wrapper{
+            .swiper-slide{min-height:220px; overflow:hidden;
+              img{min-height:220px; min-width:460px; margin-left:50%; transform:translate(-50%);}
+            }
+          }
+          .swiper-button-prev.swiper-button-prev-banner,
+          .swiper-button-next.swiper-button-prev-banner{display:none;}
+        }//.swiper_main_banner End
+
+        @include maxWidth(600px){
+          .layer_box_1{ padding:0 10px; 
+            .center_box{display:flex; justify-content: space-around; align-items:flex-end; flex-wrap: nowrap; 
+              .slide_tit{align-self:flex-start; flex:0 1 auto; font-size:$fs-24; line-height:1.4;
+                span{display:block; }
+              }
+              .slide_btn{ display:block; 
+             
+                .swiper-pagination{
+                  button{ margin:0 2px; width:50px; border-radius:0; height:50px; color:#fff; opacity:0.3;  text-align: left; background:transparent;
+                    .progress_bar { max-width:50px; height: 4px; background: #eee; 
+                      .progress {height: 5px;}
+                     }
+                  }
+                }//swiper-pagination End
+                .control{display:block; height:36px; line-height:0;}
+               
+              } //slide_btn End 
+            }//centerBox End 
+          }//layer_box_1 end
+        } 
+        @include maxWidth(500px){
+          .layer_box_1{ padding:0 10px; 
+            .center_box{display:flex; justify-content: space-around; align-items:flex-start; flex-wrap: nowrap; 
+              .slide_tit{align-self:flex-start; flex:0 1 auto; font-size:$fs-16; line-height:1.4;
+                span{display:block; }
+              }
+              .slide_btn{ display:block; 
+                .swiper-pagination{margin-top:0;
+                  button{ margin:0 2px; width:30px; border-radius:0; height:50px; color:#fff; opacity:0.3;  text-align: left; background:transparent;
+                    @include maxWidth(500px){ 
+                      height:40px;
+                    }
+                    .progress_bar { max-width:30px; height: 4px; background: #eee; 
+                      .progress {height: 5px;}
+                     }
+                  }
+                }//swiper-pagination End
+                .control{display:block; height:36px; line-height:0;}
+               
+              } //slide_btn End 
+            }//centerBox End 
+          }//layer_box_1 end
+        }
+        
+        ul.container{ overflow:visible; bottom:38px;width:80%; height:28%; 
+          @include maxWidth(500px){
+            bottom:42px;
+          }
+          li{
+            a{position:relative; min-width:40px; min-height:40px;
+              span{
+                img{ max-width:90%; }
+                b{position:absolute; top:90%; width:140%; height:auto; word-break:keep-all; white-space:normal; font-family:'Noto Sans'; font-size:$fs-16; font-weight:100; line-height:1.25; text-align:center; }
+                @include maxWidth(600px){
+                  b{ font-size:$fs-13; }
+                } 
+                @include maxWidth(500px){
+                  b{top:85%; }
+                  
+                } 
+              }
+              
+            }
+          }
+        }//ul.container End
+      }
+    }//.banner End
+
     main{
       .slide_tab{
+        @include maxWidth(600px){
+          padding:20px 0;
+        }
         .list{
           .tab_box{position:relative; margin:0 auto 60px auto;  max-width:1280px; font-size:0; overflow:hidden;transform: translate(0,100px);opacity: 0; 
             @include maxWidth(1080px){
@@ -12,11 +97,10 @@
               .btns_tab_inner{white-space: nowrap; /* --------------------- 이전 사용자가 슬릭 사용하는 요소 -----------------------*/
                 //&::after{content:""; position:absolute; top:0; left:0; width:100%; height:100px;}
       
-                .slide_item{ padding:0 20px; text-align: center; height:100px; line-height:100px;opacity:0.7; font-size: 20px; color: #000; cursor:pointer; transform: scale(0.6); transition: all .1s ease;
+                .slide_item{ padding:0 20px; text-align: center; height:100px; line-height:100px;opacity:0.7; font-size: 20px; color: #000; cursor:pointer; transform: scale(1); transition: all .1s ease; text-align:center;
                   //&.slick-current + .slide_item {opacity:1;}
-                  
                   a{height:98px; margin-top:1px; }
-                  &.active{font-weight: 600; font-size:20px; transform: scale(1); 
+                  &.active{font-weight: 600; font-size:24px; transform: scale(1); 
                     a{ text-align:center;
                       span{border-bottom: 4px solid #000;}
                     }
@@ -26,11 +110,35 @@
                     height:60px; line-height:60px;
                     a{height:58px}
                   }
+                  @include maxWidth(620px){
+                    height:50px; line-height:50px; font-size:18px;
+                    a{height:50px}
+                    &.active{font-size:22px;}
+                  }
+                  @include maxWidth(550px){
+                    height:46px; line-height:46px; font-size:16px;
+                    a{height:64px;
+                      // span.lineH{display:block; line-height:23px;
+                      //   em{display:block;}
+                      // }
+                    }
+                    &.active{font-size:18px;}
+                  }
+                  @include maxWidth(440px){
+                    height:40px; line-height:40px; font-size:14px;
+                    a{height:40px}
+                    &.active{font-size:16px;}
+                  }
+                  @include maxWidth(380px){
+                    height:30px; line-height:30px; font-size:11px;
+                    a{height:30px}
+                    &.active{font-size:14px;}
+                  }
                 }
                 
               }
             }
-            .btn_tabArrow{ align-items: center; position:absolute; top:50%; transform:translateY(-50%); z-index:9999; width:30px; height:30px; border-radius:50%;  
+            .btn_tabArrow{ display:none; align-items: center; position:absolute; top:50%; transform:translateY(-50%); z-index:9999; width:30px; height:30px; border-radius:50%;  
               img{vertical-align: -26px;}
               &.active, &:hover{  
                 &::before{content: ''; position: absolute; width:30px; height:30px; left:0%; top:0%; border:1px solid #000; border-radius:50%; }
