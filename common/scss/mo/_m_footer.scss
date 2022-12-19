@@ -1,0 +1,96 @@
+/*푸터*/
+@include maxWidth($m720){
+  .footer {
+    .f_banner {@include clear;padding:60px 0; background: linear-gradient(45deg, #86aee5, #005db5);
+      @include maxWidth(1080px){
+        padding:30px 15px; 
+      }
+      h2{ 
+        @include maxWidth(680px){font-size:24px;}// 680px End
+        @include maxWidth(550px){font-size:22px;}// 550px End
+        @include maxWidth(450px){font-size:18px;}// 450px End
+      }
+      
+      .footer_banner{display:flex;
+        .control {@include align(middle, 19px); flex:0 0 20%; padding-right:0; margin-top:8px; height: 48px; text-align: right;
+          @include maxWidth(360px){
+            margin-top:12px; 
+          }
+          &:before{display:none;}
+          button {$btnSize : 36px; width:$btnSize;height:$btnSize;overflow:hidden;text-indent:$btnSize; padding: 14px;  display: inline-block; margin-right: 6px;
+            @include maxWidth(420px){
+              $btnSize : 30px;width:$btnSize;height:$btnSize;
+            }
+            @include maxWidth(360px){
+              padding:12px; $btnSize : 16px; width:$btnSize;height:$btnSize;
+            }
+              &.next{background: #e61874 url(../images/f_banner_next.png) no-repeat center center; margin-right: 0;}
+              &.prev{background: #fff url(../images/f_banner_prev.png) no-repeat center center;}
+              /* &.pause{border: 1px solid #000; background: url(../images/ft_banner_stop.png) no-repeat center center; } */
+    /*        &.play {background:url(../images/btn_fb_play.png) no-repeat center center; border-radius: 0 0 5px 5px;}    */   
+          }
+        } 
+        .slide {flex:0 0 65%; height: 30px; margin: 5px auto; margin-left:10px;
+          .slick-slide{ padding:3px 0;
+            .item { float:left; margin:2px 0; padding-left: 15px;padding-right: 35px; font-size: 22px; line-height:28px; position: relative; transition:all .3s ease;
+              &::after{display: block; position: absolute; background: url(../images/f_banner_slide.png) no-repeat 0 0/contain; content: '';width: 35px;height: 53px;right: 0;top: 0;}
+              @include maxWidth(420px){font-size:20px;
+                &:after{width: 25px;height: 45px;}
+              }
+              @include maxWidth(360px){font-size:16px;
+                &:after{width: 16px;height: 25px;}
+              }
+            }
+          }
+        }
+      }
+    }
+    .f_nav{ position:relative; background-color: #333333; padding-top: 40px; padding-bottom: 50px;
+      padding:30px 0; 
+      
+      .fnb{float: none; background: url(../images/logo@x2_gray.png) no-repeat 50% 0/50% auto; padding-top: 160px; @include clear; margin-bottom: 20px; text-align:center;
+        @include maxWidth(500px){
+          background-size:70%;
+        }
+        li{ float: none; display:inline-block; position: relative; 
+          @include maxWidth(782px){
+            &:last-child {
+              
+            }
+          }
+          a{color: #fff; padding: 0 15px; font-size: 14px; font-weight:100;
+            @include maxWidth(500px){
+              font-size:12px;
+            }
+            
+          }
+          &::before{content: ''; display: block; right: 0; top: 50%; transform:translateY(-50%); height: 80%; width: 1px; background-color: #fff; position: absolute;}
+          &:last-child{
+            &::before{display: none;}
+          }
+          &:first-child{
+            a{padding-left: 15px;}
+          }
+        }
+      }
+      .sns{position:absolute; left:50%; transform:translateX(-50%); top:110px; display:flex; justify-content:center; float: none; width:50%; margin: 0 auto 10px auto;
+        @include maxWidth(500px){
+          width:70%;
+        } 
+        li{flex:0 0 25%;
+          a{padding: 0 10px;}
+          &:last-child{
+            a{padding-right: 0;}
+          }
+        }
+      }
+      .f_addr{clear: both; display: block; margin:0 10px; text-align:center;  word-break: keep-all;
+        li{display:inline-block; margin:5px 0; color: #aaaaaa;font-size: 15px;
+          @include maxWidth(500px){
+            font-size:12px;
+          } 
+        }
+      }
+    }
+  }//footer End
+}//미디어쿼리 End

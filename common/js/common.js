@@ -192,12 +192,11 @@ $_mediaQueryList.addEventListener('change', changeHandler);
 
 
 //공지사항 (notice)
-function tabResizing1() {
-  
+ 
   function tabRow() {//active li의 높이를 구하고 tab_box 높이 세팅
     var tabH = $('.tab_row').find('li').outerHeight();
     var tabConH = $('.tab_row').find('.active > div').outerHeight();
-    $('.tab_row').height(tabConH + tabH);
+    $('.tab_row').css('height',tabConH + tabH);
   }// tabRow End
 
   $('.tab_row > li > button').on('click', function () {
@@ -209,9 +208,6 @@ function tabResizing1() {
 
   });
 
-  $(window).on('resize load', function () {
-    tabRow();
-  });
   
   //탭 너비 높이 조정
   // var tabH = 0;
@@ -224,7 +220,7 @@ function tabResizing1() {
   // $('.tab_list > ul > li > a').height(tabH);
   // var tabLength = $('.tab_list > ul > li').length;
   // $('.tab_list > ul > li').outerWidth(100 / tabLength + '%');
-}//
+
 
 
 $(document).on('click', '.tab_list > ul > li > a', function (e) {
@@ -483,7 +479,7 @@ $(window).on('load',()=>{
 $(window).on('resize load', function () {
   headH = $('.header').outerHeight();
   headLine('off');
-  tabResizing1();
+  tabRow();
   closeSitemap();
   bodyScroll('on');
   $('.header').removeAttr('style');

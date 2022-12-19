@@ -19,8 +19,8 @@
             i{display:block; margin-top:50%; padding-top:100%;margin:0;border:0 none; background: url(../images/nav_opener.png) no-repeat 50% 50%/90% auto;}
           }
         }
-        .curtain{display:none; position:fixed; z-index:1; left:0; top:0; width:100vw; height:100vh; background-color:rgba(0,0,0,0.8);
-            &:active{ display:block; }
+        .curtain{display:none; position:fixed; z-index:1; left:0; top:0; width:100vw; height:100vh; background-color:rgba(0,0,0,0.5);
+            &.active{ display:block; }
          }
         nav{ position:fixed; z-index:2; left:-120%; top:0; background-color:#fff; border-right:1px solid #c3c3c3; z-index:9999; width:90vw; height:100vh; transition:left .3s ease; 
           &.active{left:0;}

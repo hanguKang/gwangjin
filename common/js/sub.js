@@ -18,7 +18,7 @@ try {
 
 			//네비게이션 페이지별로 active
 			$(()=>{
-				spotNavActive('.menu_item a');
+				//spotNavActive('.menu_item a');
 			});
 			// (function () {
 				
