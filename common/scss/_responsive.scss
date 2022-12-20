@@ -1,14 +1,25 @@
 /*메인페이지 반응형*/
 @include minWidth($m721){
-  .mo{display:none;}
+  .wrapper .mo{display:none;}
 }
 @include maxWidth($m720){
-  .pc{display:none;}
+  .wrapper .pc{display:none;}
 }
 
 /*서브 페이지 테이블 반응형 레이아웃 */
 body{
   $sub_table_view : 900px;
+  #contents{/* padding-top: 52px; */  @include clear; position: relative;  
+    @include maxWidth(1220px) {
+      
+    }
+    @include maxWidth(1080px) {
+      padding-top:50px;
+    }
+    @include maxWidth($m720) {
+      padding-top:100px;
+    }
+  }
   .sub{
       .contents_sub_box{margin:0 auto; max-width:1300px; 
         @include maxWidth($web){width:1000px;

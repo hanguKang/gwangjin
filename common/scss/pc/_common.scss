@@ -18,17 +18,7 @@
 
 
 
-#contents{/* padding-top: 52px; */  @include clear; position: relative;  
-  @include maxWidth(1220px) {
-    
-  }
-   @include maxWidth(1080px) {
-    padding-top:50px;
-  }
-  @include maxWidth($m720) {
-    padding-top:55px;
-  }
-}
+
 
 
 

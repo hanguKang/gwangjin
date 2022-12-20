@@ -1,0 +1,59 @@
+.login_outer{
+  .caution{display:flex; align-items:center; margin: 20px 0; padding:25px 45px;  background-color:#eeeeee;
+    .ico_lock{ display: inline-block; margin-right:20px; width:50px; height:50px; background:url(../images/sub/login/ico_lock.png) no-repeat 50% 50%/contain;
+    }
+    .txt{font-size:$fs-16; line-height:1.25; color:#222222;}
+  }//주의 사항 End 
+   $margin_btm:15px;
+  .log_box{display:flex; justify-content: space-between; align-items:stretch;
+    article{flex:0 0 50%; display:flex; align-items:stretch; justify-content: flex-start;
+      .border_box{padding:25px;}
+    } //공통
+    .log_user{ 
+      .border_box{width:calc(100% - 3px); margin-right:3px; 
+        h1{margin-bottom:$margin_btm; font-size:26px; line-height:1.25; text-align:center;}
+        form{display: flex; flex-direction:column; justify-content: space-between; align-items: strecth;
+          p{position:relative; 
+            input{padding-left:50px; height:48px; border:1px solid #222;}//공통
+            label{position:absolute; left:22px; top:50%; margin:0; padding:0; width:25px; height:22px; background-size:auto; background-position:50% 50%;background-repeat:no-repeat; transform: translateY(-50%);}
+            label[for="id"]{background-image:url(../images/sub/login/ico_user_bk.png);}
+            input#id{border-bottom:0 none;}
+            label[for="pw"]{background-image:url(../images/sub/login/ico_lock_bk.png);}
+            input#pw{ }
+          }
+          .btn_box{display:flex; flex-direction:column; align-items:stretch; justify-content:flex-start; position:relative; margin-top:20px; padding-bottom: 40px; 
+            div{position:absolute; left:0; bottom:0; display:flex; align-items: center;
+              label[for="id_save_chk"]{ order:2; }
+              input#id_save_chk{ -webkit-appearance: checkbox; -moz-appearance: checkbox; -ms-appearance: checkbox; appearance: checkbox; order:1; display:inline-block; padding:0; margin-right:10px; border:1px solid #999; width:18px; height:18px; 
+                :checked{ background-color:#476dc3;
+                  // :after{position:absolute; left:0; top:0; content:'✔'; display:block; width:18px; height:18px; border:1px solid green;}
+                }
+              }
+            }
+            .btn_login{display:flex-block; align-items: center; justify-content:center; height:68px; background-color:#476dc3; color:#fff; }
+          }
+        }
+      }
+    }
+    .join_user{ 
+      .border_box{  display:flex; margin-left:3px; width:calc(100% - 3px); 
+        ul{ flex:0 0 100%; margin-top:calc(32.5px + $margin_btm); margin-bottom:40px; display:flex; flex-direction:column; align-items:stretch; justify-content:space-between; 
+          li{display: flex; flex:0 0 46%; background-color: #eeeeee;
+            a{ flex:1 0 auto; display:flex;
+            .ico{flex:0 0 25%; background-color:#476dc3; background-image: url(../images/sub/login/ico_user_wt.png); background-repeat: no-repeat;  background-position: 50% 50%; }
+            .txt_box{flex: 0 0 75%; padding-left:85px; display:flex; flex-direction:column; align-items: flex-start; justify-content:center; 
+              strong{font-weight:600; font-size:18px; line-height:1.25;}
+              em{display:block; font-size:16px; line-height:1.25;}
+            }
+            }
+            &:last-child{
+              a{
+                .ico{background-image: url(../images/sub/login/ico_find_wt.png);}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

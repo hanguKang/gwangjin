@@ -14,7 +14,7 @@ p { max-height: 9999px; }
 address { font-style: normal; }
 button { margin: 0; padding: 0; -webkit-box-sizing: border-box; box-sizing: border-box; border: 0 none; background-color: transparent; font-family: inherit; font-size: inherit; cursor: pointer;-webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; appearance: none; -webkit-box-sizing: border-box; box-sizing: border-box; cursor: pointer;  }
 caption,legend { height: 1px; width: 1px; overflow: hidden; clip: rect(1px 1px 1px 1px); clip: rect(1px, 1px, 1px, 1px); margin: -1px;}
-.hide { height: 0; width: 0; overflow: hidden; clip: rect(1px 1px 1px 1px); clip: rect(1px, 1px, 1px, 1px); margin: -1px; position:absolute;left:-9999px; right:-9999px; font-size:0; line-height:0; }
+.hide { height: 0; width: 0; overflow: hidden; clip: rect(1px 1px 1px 1px); margin: -1px; position:absolute;left:-9999px; right:-9999px; font-size:0; line-height:0; }
 .clear {clear:both;}
 .br {display:block;}
 table {display:table;width:100%;border-collapse:collapse;border-spacing:0;table-layout:fixed;}
@@ -22,7 +22,7 @@ select::-ms-expand { display: none; }
 input::-ms-check { display: none; }
 form {display:block;width:100%;}
 input, select, textarea {padding: 0 10px; -webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; appearance: none; -webkit-box-sizing: border-box; box-sizing: border-box; width: 100%; display: block; border: 0; font-family: inherit; }
-
+textarea{resize:none;}
 a:visited {
   color: #636363;
   text-decoration: none;
@@ -129,6 +129,8 @@ $header-height: 85px;
   }
 }
 
+//border
+.border_box{border:1px solid #ddd;}
 
 // 반응형 중단점
 $wide : 1301px;
@@ -206,8 +208,26 @@ $m720: 720px;
  
   
 }
-@mixin afterBefore($aftBef : ('_width':auto, '_height':auto,'_border':0 none, 'border-radius':50%, '_padding':0 )){
-  content:''; width:map-get($map: $aftBef, $key:'_width'); height:map-get($map:$aftBef, $key:'_height'); border:map-get($map: $aftBef, $key:'_border'); border-radius:map-get($map:$aftBef, $key:'_border-radius'); padding:map-get($map: $aftBef, $key:'_padding');
+@mixin afterBefore($aftBef : ('_width':auto, '_height':auto,'_border':0 none, '_border-radius':50%, '_padding':0 )){
+  display:block; content:''; width:map-get($map: $aftBef, $key:'_width'); height:map-get($map:$aftBef, $key:'_height'); border:map-get($map: $aftBef, $key:'_border'); border-radius:50%; padding:map-get($map: $aftBef, $key:'_padding');
+}
+@mixin posV_50(){
+  position:absolute; top:50%; left:0; transform:translateY(-50%);
+}
+@mixin posH_50(){
+  position:absolute; left:50%; transform:translateX(-50%);
+}
+@mixin afterBd($prop_bd:('_height':100%, '_bg_clr':'#222')){
+  content:""; position:absolute; right:0; top:50%; transform:translateY(-50%);  height:map-get($map:$prop_bd, $key:'_height'); background-color:map-get($map:$prop_bd, $key:'_bg_clr'); 
+  width:1px; 
 }
 .flex-box{ @include flex-box }
 
+@mixin alignFelxCenter(){
+  display:flex; align-items: center; justify-content: center;
+}
+
+@mixin btnCenter(){
+  display:flex; justify-content: center; align-items: center; padding:20px 0;
+  >*{flex:0 0 232px; margin:0 4px; height:62px; color:#fff; display:flex; justify-content: center; align-items:center;}
+}

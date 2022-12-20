@@ -46,9 +46,6 @@ try {
 				}
 			});
 
-			
-
-
 			//lnb dep2클릭시
 			$(document).on('click', '#lnb .dep2>li>a', function (e) {
 				e.preventDefault();
@@ -56,7 +53,42 @@ try {
 				makeDropDownNav( _this );
 			});
 
+			//input 파일첨부
+			var $fileBox = null;
+  
+			$(function() {
+				init_file();
+			});
+			
+
+			
+			function init_file() {
+				$fileBox = $('.input_file');
+				fileLoad();
+			}
+
+			function fileLoad() {
+				$.each($fileBox, function(idx){
+					var $this = $fileBox.eq(idx),
+							$btnUpload = $this.find('[type="file"]'),
+							$label = $this.find('.file_label');
+					
+					
+					$btnUpload.on('change', function() {
+						var $target = $(this),
+								fileName = $target.val(),
+								$fileText = $target.siblings('.file_name');
+						$fileText.val(fileName);
+					})
+					
+					$btnUpload.on('focusin focusout', function(e) {
 						
+						e.type == 'focusin' ? $label.addClass('file_focus') : $label.removeClass('file_focus');
+					})
+					
+				})
+			}
+
 
 			//sns공유
 			$(function(){

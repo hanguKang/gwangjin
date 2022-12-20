@@ -40,7 +40,7 @@
 main.sub{ @include clear; 
     .contents_sub_box{display: flex;
         .lnb{flex:0 0 256px; position:relative; top:-50px; 
-            > h1 {display:block;width:100%;font-size:32px;color:#fff;text-align:center;line-height:148px; background-color: #283f83; margin-bottom:10px;font-weight: 300;}
+            > h1 {display:block;width:100%;border-bottom:8px solid #e51873; font-size:32px;color:#fff;text-align:center;line-height:148px; background-color: #283f83; margin-bottom:10px;font-weight: 300;}
             .dep2{
                 > li {border-bottom:1px solid #dde1ea;
                     > a{display:block;padding:15px 0;position:relative;font-weight:400;line-height:1.25;
@@ -180,7 +180,7 @@ main.sub{ @include clear;
 
              /* 컨텐츠 타이틀 바*/
              /* 페이지 로케이션 */
-            .sub_top {@include clear; display:flex;justify-content: flex-end;padding-bottom:15px;border-bottom:1px solid #999;line-height:33px;
+            .sub_top {@include clear; display:flex;justify-content: flex-end;padding-bottom:10px;border-bottom:1px solid #999;line-height:33px;
                 > ol{@include align(middle,16px);text-align:left; //타이틀바 로게이션 
                     > li{padding-left:22px;line-height:33px; position: relative;
                         &::before{ position: absolute; content: '>'; top: 0; left: 10px;display: block;}

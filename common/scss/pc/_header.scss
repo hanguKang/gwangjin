@@ -35,12 +35,12 @@
         //   margin-left:0px;
         // }
           
-      }
+      }// ul End
       .util{ float: right; @include clear; margin-right: 80px;
         li{display: inline-block; vertical-align: middle; position: relative;
           a{line-height: 52px; padding: 0 20px;font-weight: 300;} 
         }
-        .btn_sitemap_open{background:url(../images/sitemap_btn.png) no-repeat center/auto; width: 52px; height: 52px; display:inline-block;vertical-align:middle;}
+        @at-root .btn_sitemap_open{background:url(../images/sitemap_btn.png) no-repeat center/auto; width: 52px; height: 52px; display:inline-block;vertical-align:middle;}
         .sitemap{float: right; 
             #gnb2 {display:none;overflow-y:auto;position:fixed;left:0;top:0;width:100%;height:100%;z-index:10;background-color:#ccc;padding-top:50px;
                 .dep1{font-size:2rem;
