@@ -10,14 +10,37 @@ select.p-input{background: #fff url(../images/arrow_dropdown.png) no-repeat righ
 .p-table {position: relative;width: 100%;border-collapse: collapse;margin: 2px 0 8px;}
 
 /* 제목 내용 글상자 */
-.board_txt_box{ padding:45px 15px; margin-bottom:50px; border-bottom:1px solid #222;
+.board_txt_box{ padding:20px 15px; margin-bottom:20px; border-bottom:1px solid #222;
   .tit_1{margin-bottom:45px; font-size:26px; font-weight:500; line-height:1.4;}
   .txt{padding-left:30px; font-size:16px; line-height:30px;
     >li{position:relative; padding-left:30px;
       &:before{ @include afterBefore((_width:4px, _height:4px)); background-color:#e51875; @include posV_50;}
+      &:last-child{color:#ff0033}
+    }
+  }
+
+  //고객광장 > 광나루365 > 주민참여 공모접수
+  &.g_365{
+    .tit_1{padding-left:26%; position:relative; margin-bottom:0; word-break: keep-all;
+      &:before{ position:absolute; left:8%; top:50%; transform:translateY(-50%); @include afterBefore(('_width':76px, '_height':72px,'_border':0 none, '_border-radius':0, '_padding':0 )); background:url(../images/sub/custom/resident_part_tit.png) no-repeat 50% 50%/contain; }
+      strong{display:block; margin-top:15px;}
     }
   }
 }
+
+/* 자주묻는 질문 */
+.question_list{margin-top:50px;
+  ul{display:flex; justify-content: space-between; flex-wrap:wrap;
+    li{ flex:0 0 25%;
+      a{ @include alignFelxCenter; margin:2px; height:60px; border:$border2; background-color:$bg-color2;}    
+      &.active{
+        a{border:0 none; background-color:#486ec3; color:#fff;}
+      }
+    }
+  }
+  
+}
+
 
 /* 검색창 바 */
 .srch-box{
@@ -50,7 +73,7 @@ select.p-input{background: #fff url(../images/arrow_dropdown.png) no-repeat righ
   /* 테이블 내부 th 공지*/
   .tit_notice{position:relative; color:#fff; margin:0 auto; width:47px; height:28px; color:#fff; 
     >em{position:absolute; z-index:1; left:0; top:0; width:100%; height:100%; line-height:26px;} 
-    &::after{content:''; position:absolute; left:0; top:0; width:100%; height:100%; background-color:$color2; }
+    &::after{content:''; position:absolute; left:0; top:0; width:100%; height:100%; background-color:#e51873; }
   }
 
   th, td {padding: 13px 11px; border-bottom: 1px solid #d9d9d9; text-align:center; vertical-align: middle;font-size:16px; line-height:1.4;
@@ -131,18 +154,20 @@ form{
 
 /*----------- Q_A -----------*/
 .q_a{border-top:2px solid #222; 
-  .q_a_list{
-    $left_space:115px;
+  .q_a_list{ $left_space:115px;
+    &.none{text-align:center; line-height:80px; border-bottom:2px solid #222;}
     a{
+      //질문
       div{display:flex; padding:8px 0; border-bottom:1px solid #ddd; background:#eeeeee;
-        .q{display:flex; justify-content:center; align-items:center; flex:0 0 $left_space; position:relative; margin-right:38px; font-size:46px;  
-          &:after{@include afterBd(('_height':100%,'_bg_clr':#222 ));}
+        .q{display:flex; justify-content:center; align-items:center; flex:0 0 $left_space; position:relative; margin-right:38px; font-size:46px; font-weight:600; color:#222; 
+          &:after{@include afterBd(('_height':100%,'_bg_clr':#888 ));}
         }
         .txt_q{ padding:5px 0; color:#222;
           dt{font-size:16px; line-height:26px;}
           dd{font-size:18px; line-height:32px;}
         }
       }
+      //답변내용
       .q_a_txt_box{ display:flex; flex-wrap:wrap; padding : {left:$left_space; top:15px; bottom:15px;}
         >li{ flex:0 0 33.3333%; font-size:14px; line-height:30px; 
           .tit_q_a_sm{
@@ -153,21 +178,51 @@ form{
           }
         }
       }
+      //답변 자주묻는 질문
+      .txt_a{display:flex; padding:40px 0; 
+        dt{display:flex; justify-content:center; align-items:center; flex:0 0 $left_space;  position:relative; margin-right:38px; font-size:46px; font-weight:600; color:#aaa;
+          &:after{ @include afterBd(('_height':100%,'_bg_clr':#cccccc )); }
+        }
+        dd{}
+      }
     }
   }
 }
 
-/*--------------- 일반 게시판 -----------------*/
+/*------------------ 게시판 ----------------*/
 .p-list{border-top: 2px solid #222; background-color:#ffffff; @include flex-box((flex_val:4));
-  $bbs_category:&;
+  $bbs_category:&; //조상요소 선택하기 #1
   &.count3{@include flex-box((flex_val:3,justify_val:flex-start));}
   &.count2{@include flex-box((flex_val:2,justify_val:flex-start));}
-  &__item {position:relative;
+  &__item {position:relative; height:auto;
+    $item:&;
     .link_img{ position:relative; z-index:1; display:flex; flex-direction: column; justify-content: center; align-items: center; min-height:300px; padding:0 5px;
-      img{margin-bottom:15px; width:100%; height:60%;
-        #{$bbs_category}.news &{ width:52%; height:66%; }
-        &.none{width:auto; height:60%;}
-      }
+      .reference_spot{ display:block; position:relative; margin-bottom:15px; width:100%; padding-top:60%; //이미지 크기 비율 정하기
+        $bbs_img_reference:&;//조상요소 선택하기 #2       
+        #{$bbs_category}.question_lib &{padding-top:78%;
+          &::after{ content:''; position:absolute; z-index:1; left:0; top:0; width: 100%; height:100%; background-color:rgba(0,0,0,.5); opacity:0; transition:all .3s ease; text-align:center; font-size:30px; line-height:7.5; color:#fff;
+            @include maxWidth(1300px){
+              font-size:24px;
+            }
+          }
+          
+          &:hover::after{ display:block; opacity:1; }
+        }
+        img{position:absolute; left:50%; top:50%; transform:translateX(-50%) translateY(-50%);   width:100%; height:100%;
+          /* 조상요소 선택하기 #2*/
+          #{$bbs_category}.news &{ width:auto; max-width:46%; height:100%; } //공단소식지 이미지 크기 별도
+          
+          &.none{width:auto; height:100%;} //기본 이미지 없음.
+          #{$bbs_category}.question_lib &.none{width:auto; height:77.5%;} //자주묻는 질문 이미지 없음.
+        }
+
+        @for $i from 1 through 4 {
+          @if $i == 1 { @at-root #{$bbs_category}.question_lib #{$item}:nth-child(#{$i}) .reference_spot:after {content:'광진정보도서관'} }
+          @else if $i == 2 { @at-root #{$bbs_category}.question_lib #{$item}:nth-child(#{$i}) .reference_spot:after {content:'자양한강도서관'} }
+          @else if $i == 3 { @at-root #{$bbs_category}.question_lib #{$item}:nth-child(#{$i}) .reference_spot:after {content:'중곡문화체육센터도서관'} }
+          @else if $i == 4 { @at-root #{$bbs_category}.question_lib #{$item}:nth-child(#{$i}) .reference_spot:after {content:'군자도서관'} }
+        }
+      }//.reference_spot End
       .tit_txt{
         font-size:$fs-16; letter-spacing: -1px;
         .season{ 
@@ -177,12 +232,64 @@ form{
     }
   }
   &.bg>li:after{content:''; position:absolute; left:0; bottom:0; width:100%; height:50%; background:#eeeeee;}
+  //공단소개 > 미디어 > 동영상
   &.vid>li{
     .item_img{position:relative; 
       &::after{content:''; position:absolute; left:50%; top:40%; width:25%; padding-top:25%; border-radius:50%; transform:translateX(-50%) translateY(-50%); background:url(../images/sub/common_board/vid_play_pic.png) no-repeat 50% 50%/contain; }
     }
   }
   
+  //고객광장 > 자주묻는 질문
+  &.question_lib{padding-top:20px;
+    &___item{
+      .link_img { 
+        &:hover:after{ content:''; @include afterBd(('_height':100%, '_bg_clr':#000)); left:0; width:100%; opacity:0.5;}
+        img{ width:100%; height:77.5%;}
+      }
+    }
+    
+  }
+
+  //고객광장 > 광나루365 > 주민참여접수
+  &.g_365.residence{@include flex-box(('flex_val':2, 'justify_val':space-between, 'align_val':center, 'a_margin':0px)); border:0 none;
+    li{margin-bottom:15px; 
+      &:nth-child(odd){
+        a{margin-right:6px}
+      }
+      &:nth-child(even){
+        a{margin-left:6px;}
+      }
+      a{
+        div{
+          .residence_tit{margin-bottom:18px;padding:12px 20px;border-top:2px solid #222; border-bottom:$border2; background-color:$bg-color2; line-height:30px;
+            span{line-height:30px; @include ell2; color:#222;}
+          }
+          .g_365_bbs_box{display:flex; padding:12px 20px;
+            .custom_left{ flex:0 0 75%;
+              span{position:relative; display:block; padding-left:15px;font-size:15px; line-height:30px; color:#7e7e7e; 
+                &:before{ @include  posV_50(); @include afterBefore(('_width':4px, '_height':4px,'_border':0 none, '_border-radius':50%, '_padding':0 )); background-color:#4c4c4c;} 
+                .tit{ margin-right:5px; letter-spacing:1px;}
+                .date_p_0{margin-left:5px;}
+                .date_pd_0{margin-left:5px;}
+              }
+              .period{}
+              .pub_date{
+                .tit{}
+              }
+            }
+            .custom_right{ position:relative; flex:0 0 25%; @include alignFelxCenter;
+              &:before{ @include afterBd(('_height':100%, '_bg_clr':#222)); left:0; left:0; }
+              strong{ @include alignFelxCenter; width:76px; height:34px; color:#fff; font-size:13px; font-weight:500;
+                &.accept_ing{background-color:#486ec3;}
+                &.accept_done{background-color:#000;}
+                &.accept_before{background-color:#283f83;}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 /* -------- 파일 없음 -------*/
 .slct_list{ //선택페이지 
@@ -200,7 +307,7 @@ form{
 }
 
 /*페이징*/
-.p-pagination {position: relative;display: table;margin: 32px auto;}
+.p-pagination {position: relative; display: table; margin: 60px auto;}
 /*각 페이징 요소*/
 .p-page__link {display: table-cell;position: relative;width: 40px;height: 40px;margin-left: 0;margin-right: 0;text-align: center;font-size: .95em;color: #222;line-height: 40px;letter-spacing: -2px;vertical-align: middle;border-top: solid 1px #dedede;border-right: solid 1px #dedede;border-bottom: solid 1px #dedede;background: #fff;
   &.active {position:relative; border-color: #202e70;background: #202e70;color: #fff;font-weight: 400;}
@@ -332,16 +439,24 @@ form{
       }
     }
   }
-  .bbs_view_details{
+  .bbs_view_details, .sign{
     h1{padding:15px; border-bottom:2px solid #000;font-size:$fs-26; line-height:1;}
     div{padding:20px;
       .view_conts{ margin-bottom:350px;
-        .view_tit{ width:10%; height:28px;}
+        .view_tit{ width:10%; height:28px; text-align:left;}
         .view_conts{height:28px;}
       }
     }
-    
   }
+  &.g_365{
+    .bbs_view_details, .sign{ border-bottom:1px solid #222;
+      div{
+        .view_conts{margin-bottom:0;}
+      }
+    }
+    .sign{border-width:2px;}
+  }
+  
   .p-move{ border-bottom:1px solid #000;
     >li{padding-left:15px; display:flex; align-items:center; height:42px; border-top:1px solid #ddd;
       .p-move-title{position:relative; padding-right:12px; 
@@ -355,6 +470,22 @@ form{
   // 목록 보기 
   .show-bbs-list-box{ overflow:hidden; text-align:right; 
     .show-bbs-ist{margin:30px auto 80px auto; padding:12px 30px;  width:234px; height:60px; line-height:36px; text-align:center; background: #476dc3; color:#fff;}
+  }
+  &.g_365{
+    
+    .show-bbs-list-box{display:flex; justify-content: space-between; text-align:left; 
+      >*{vertical-align: middle;}
+      span:first-child{ display: flex; align-items: center;
+        .show-bbs-ist{margin-right:10px; margin-bottom:30px; width:128px; background:#fff; color:#222; border:1px solid #222;} 
+        em{color:#ff0033;}
+      }
+      span{
+        .show-bbs-ist{display:inline-block; width:118px; margin-bottom:30px;
+          &.certified{vertical-align: middle;}
+        }
+      }
+      
+    }
   }
 
 

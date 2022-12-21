@@ -30,7 +30,7 @@
     @include maxWidth(1080px){
       padding:30px 15px; 
     }
-    .fnb{background: url(../images/f_logo.png) no-repeat top left;padding-top: 80px; @include clear; margin-bottom: 50px; float: left;
+    .fnb{background: url(../images/logo@x2_gray.png) no-repeat top left/50% auto;padding-top: 80px; @include clear; margin-bottom: 50px; float: left;
       li{ float: left;position: relative;
         a{color: #fff; padding: 0 22px; font-size: 17px;}
         &::before{content: ''; display: block; right: 0; top: 3px; height: 20px; width: 1px; background-color: #fff; position: absolute;}

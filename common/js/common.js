@@ -194,19 +194,24 @@ $_mediaQueryList.addEventListener('change', changeHandler);
 //공지사항 (notice)
  
   function tabRow() {//active li의 높이를 구하고 tab_box 높이 세팅
+
     var tabH = $('.tab_row').find('li').outerHeight();
     var tabConH = $('.tab_row').find('.active > div').outerHeight();
     $('.tab_row').css('height',tabConH + tabH);
+
+
+    $('ul.tab_row > li > button').on('click', function () {
+
+      let _this = $(this);
+      _this.closest('li').addClass('active').siblings('li').removeClass('active'); //active에 의해서 하위 div가 display:block처리 된다. _main.scss#170
+      tabRow();
+      _this.next('div').attr('aria-hidden','false')
+      .closet('li').siblings('li').children('div').attr('aria-hidden','true');
+  
+    });
   }// tabRow End
 
-  $('.tab_row > li > button').on('click', function () {
-    let _this = $(this);
-    _this.closest('li').addClass('active').siblings('li').removeClass('active'); //active에 의해서 하위 div가 display:block처리 된다. _main.scss#170
-    tabRow();
-    _this.next('div').attr('aria-hidden','false')
-    .closet('li').siblings('li').children('div').attr('aria-hidden','true');
-
-  });
+  
 
   
   //탭 너비 높이 조정

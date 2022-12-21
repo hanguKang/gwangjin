@@ -221,7 +221,7 @@
                         </div>
                       </li>
                 </ul>
-                <button class="mo close" title="메뉴 닫기"><span class="hide">닫기</span></button>
+                <button class="mo close" title="메뉴닫기"><span class="hide">닫기</span></button>
               </nav>
             </div>
           </div>
@@ -229,16 +229,16 @@
 
         <main class="sub">
             <div class="page_spot sub1">
-              <h1 class="sub_title">공단통합민원센터</h1>
+              <h1 class="sub_title">자주 묻는 질문</h1>
             </div>
             <div class="contents_sub_box center_box_pc">
               <nav id="lnb" class="lnb">
                 <h1> 고객광장 </h1>
                 <ul class="dep2">
-                  <li class="menu_item active">
+                  <li class="menu_item">
                     <a href="#" class="menu_btn">공단통합민원센터</a>
                   </li>
-                  <li class="menu_item">
+                  <li class="menu_item active">
                     <a href="#" class="menu_btn">자주 묻는 질문</a>
                   </li>
                   <li class="menu_item">
@@ -258,11 +258,11 @@
               </nav>
               <article class="contents_sub">
                 <header class="sub_top">
-                  <h1 class="hide">공단통합민원센터 게시판</h1>
+                  <h1 class="hide">자주 묻는 질문 게시판</h1>
                   <ol>
                     <li>HOME</li>
                     <li><a href="#">고객광장</a></li>
-                    <li><a href="#">공단통합민원센터</a></li>
+                    <li><a href="#">자주 묻는 질문</a></li>
                   </ol>
                   <ul>
                     <li class="share">
@@ -282,112 +282,152 @@
                   </ul>                     
                 </header>
                 <!-- 컨텐츠 시작 부분-->
-                <article class="details_view_box page">
-                  <form action="">
-                    <div class="question_q">
-                      <header>
-                        <h1>말 줄임 없이 등록화면에서 작성된 제목 전체 노출</h1>
-                        <address>
-                          <p>
-                            <span class="writer">홍길동</span><span class="bar">|</span>
-                            <time datetime="2022-12-08">2022-12-08</time><span class="bar">|</span>
-                            <span class="pub">공개여부 : <b> 비공개 </b></span><span class="bar">|</span>
-                            <span class="accep_no">접수번호 : <b>1234-456789</b></span><span class="bar">|</span>
-                            <span class="status">처리 중</span>
-                          </p>
-                        </address>
-                      </header>
-                      <section class="bbs_file">
-                        <h1>첨부파일</h1>
-                        <ul>
-                          <li>
-                            <a href="#">
-                              <span class="ico_file">
-                                <img src="../../common/images/ico_fie_doc.png" alt="한글파일">
-                              </span>
-                              <span class="file_txt">시설관리공단 샘플 양식 신청서.hwp</span>
-                              <i class="btn_bbs_down">다운로드</i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <span class="ico_file">
-                                <img src="../../common/images/ico_fie_pdf.png" alt="pdf파일">
-                              </span>
-                              <span class="file_txt">
-                                시설관리동단 샘플양식 신청 안내문(2022).hwp
-                              </span>
-                              <i class="btn_bbs_down">다운로드</i>
-                            </a>
-                          </li>
-                        </ul>
-                      </section>
-                      <section class="bbs_txt">
-                        <h1 class="hide">상세 이미지</h1>
-                        <p>질문 또는 요청 글이 노출됨</p>
-                      </section>
-                      <div class="btn_box">
-                        <button class="btn_fix" title="수정하기">수정</button><button class="btn_del" title="삭제하기">삭제</button><a class="btn_list">목록</a>
+                <section class="question_list">
+                  <h1 class="hide">자주 묻는 질문 카테고리</h1>
+                  <ul>
+                    <li class="active"><a href="#">전체보기</a></li>
+                    <li><a href="#">광진문화예술회관</a></li>
+                    <li><a href="#">광진구민체육센터</a></li>
+                    <li><a href="#">중곡문화체육센터</a></li>
+                    <li><a href="#">아차산배수지체육공원</a></li>
+                    <li><a href="#">광장동실내배드민턴장</a></li>
+                    <li><a href="#">중랑천파크골프장</a></li>
+                    <li><a href="#">주차 시설</a></li>
+                    <li><a href="#">도서관 시설</a></li>
+                  </ul>
+                </section>
+                <form action="">
+                  <fieldset class="srch-box custom">
+                    <legend>게시물 검색</legend>
+                    <div class="p-bg p-search-box">
+                      <div class="flex-box">
+                        <select name="" class="p-input main-border sch_condition" title="검색영역 선택" >
+                          <option value="">전체보기</option>
+                          <option value="">광진문화예술회관</option>
+                          <option value="">광진구민체육센터</option>
+                          <option value="">중곡문화체육센터</option>
+                        </select>
+                        <select name="" id="sch_type" class="p-input main-border sch_type" title="검색영역 선택" >
+                          <option value="">제목</option>
+                          <option value="">작성자</option>
+                          <option value="">내용</option>
+                        </select>
+                        <input type="search" class="p-search main-border" placeholder="검색단어를 입력해 주세요." title="검색단어 입력">
+                        <button class="p-button main-border button-color" title="검색하기"><span>검색</span></button>
                       </div>
-                    </div><!-- .question_q End -->
-                    <div class="question_a">
-                      <header>
-                        <h1>말 줄임 없이 등록화면에서 작성된 제목 전체 노출</h1>
-                        <address>
-                          <p>
-                            <span class="writer">관리자</span><span class="bar">|</span>
-                            <time datetime="2022-12-20T14:50">2022-12-20 <span>14:50</span></time>
-                          </p>
-                        </address>
-                      </header>
-                      <section class="bbs_file">
-                        <h1>첨부파일</h1>
-                        <ul>
-                          <li>
-                            <a href="#">
-                              <span class="ico_file">
-                                <img src="../../common/images/ico_fie_doc.png" alt="한글파일">
-                              </span>
-                              <span class="file_txt">시설관리공단 샘플 양식 신청서.hwp</span>
-                              <i class="btn_bbs_down">다운로드</i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <span class="ico_file">
-                                <img src="../../common/images/ico_fie_pdf.png" alt="pdf파일">
-                              </span>
-                              <span class="file_txt">
-                                시설관리동단 샘플양식 신청 안내문(2022).hwp
-                              </span>
-                              <i class="btn_bbs_down">다운로드</i>
-                            </a>
-                          </li>
-                        </ul>
-                      </section>
-                      <section class="bbs_txt">
-                        <h1 class="hide">상세 이미지</h1>
-                        <p>질문 또는 요청 글이 노출됨</p>
-                      </section>
-                    </div>          
-                  </form>
-                </article>
-                <section class="satisfaction_box question"><!-- 만족도 조사-->
-                  <form action="">
-                    <div class="top">
-                      <h1>민원처리에 대하여 어느정도 만족하십니까?</h1>
-                      <dl>
-                        <dt class="hide">민원처리에 대하여 어느정도 만족하십니까?</dt>
-                        <dd><input type="radio" name="satisfaction" value="5" id="star_5" checked="checked"><label for="star_5"><span>매우 만족</span> &starf; &starf; &starf; &starf; &starf;</label></dd>
-                        <dd><input type="radio" name="satisfaction" value="4" id="star_4"><label for="star_4"><span>만족</span> &starf; &starf; &starf; &starf;</label></dd>
-                        <dd><input type="radio" name="satisfaction" value="3" id="star_3"><label for="star_3"><span>보통</span> &starf; &starf; &starf; </label></dd>
-                        <dd><input type="radio" name="satisfaction" value="2" id="star_2"><label for="star_2"><span>불만족</span> &starf; &starf; </label></dd>
-                        <dd><input type="radio" name="satisfaction" value="1" id="star_1"><label for="star_1"><span>매우 불만족</span> &starf;</label></dd>
-                      </dl>
                     </div>
-                    <button class="button-color" title="평가하기">평가하기</button>
-                  </form>
-                </section>            
+                  </fieldset>
+                  <div class="table-tit flex-box">
+                    <p> 총 게시물 <span class="board_count">1</span>건 </p>
+                    <p>&#91; <strong class="current_pg">1</strong> / <span class="amout_pg">1</span> 페이지	&#93;</p>
+                  </div>
+                  <fieldset>
+                    <legend>게시물 목록</legend>
+                    <ul class="q_a">
+                      <li class="q_a_list">
+                        <a href="#">
+                          <div>
+                            <p class="q">Q<span class="hide">question</span></p>
+                            <dl class="txt_q">
+                              <dt>주요 시설 노출</dt>
+                              <dd>질문 관련 내용 전체 노출</dd>
+                            </dl>
+                          </div>
+                          <dl class="txt_a">
+                            <dt>A <span class="hide">answer</span></dt>
+                            <dd>답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출   </dd>
+                          </dl>
+                        </a>
+                      </li>
+                      <li class="q_a_list">
+                        <a href="#">
+                          <div>
+                            <p class="q">Q<span class="hide">question</span></p>
+                            <dl class="txt_q">
+                              <dt>광진문화예술회관</dt>
+                              <dd>헬스장을 처음 이용하는데 운동기구 사용방법을 알려주나요?</dd>
+                            </dl>
+                          </div>
+                          <dl class="txt_a">
+                            <dt>A <span class="hide">answer</span></dt>
+                            <dd>답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 </dd>
+                          </dl>
+                        </a>
+                      </li>
+                      <li class="q_a_list">
+                        <a href="#">
+                          <div>
+                            <p class="q">Q<span class="hide">question</span></p>
+                            <dl class="txt_q">
+                              <dt>광진문화예술회관</dt>
+                              <dd>체육관 앞 공터(스케이트보드 등) 활용 관련</dd>
+                            </dl>
+                          </div>
+                          <dl class="txt_a">
+                            <dt>A <span class="hide">answer</span></dt>
+                            <dd>답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 </dd>
+                          </dl>
+                        </a>
+                      </li>
+                      <li class="q_a_list">
+                        <a href="#">
+                          <div>
+                            <p class="q">Q<span class="hide">question</span></p>
+                            <dl class="txt_q">
+                              <dt>광진문화예술회관</dt>
+                              <dd>체육관 앞 공터(스케이트보드 등) 활용 관련</dd>
+                            </dl>
+                          </div>
+                          <dl class="txt_a">
+                            <dt>A <span class="hide">answer</span></dt>
+                            <dd>답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 </dd>
+                          </dl>
+                        </a>
+                      </li>
+                      <li class="q_a_list">
+                        <a href="#">
+                          <div>
+                            <p class="q">Q<span class="hide">question</span></p>
+                            <dl class="txt_q">
+                              <dt>광진문화예술회관</dt>
+                              <dd>체육관 앞 공터(스케이트보드 등) 활용 관련</dd>
+                            </dl>
+                          </div>
+                          <dl class="txt_a">
+                            <dt>A <span class="hide">answer</span></dt>
+                            <dd>답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 답변관련 내용전체 노출 </dd>
+                          </dl>
+                        </a>
+                      </li>
+                    </ul>
+                  </fieldset>
+                  <div class="p-pagination">								
+                    <span class="p-page__control">
+                      <a href="#" class="p-page__link prev-end" title="맨 처음으로 이동"><span class="hide">최신 페이지로 이동</span></a>
+                      <a href="#" class="p-page__link prev" title="앞 페이지로 이동"><span class="hide">앞 페이지로 이동</span></a>
+                      <a href="#" class="p-page__link prev-one" title="앞 페이지로 이동"><span class="hide">앞 페이지로 이동</span></a>
+                    </span>
+                    <span class="p-page__link-group">
+                      <strong class="p-page__link active">1</strong>
+                      <a href="#" class="p-page__link">2</a>
+                      <a href="#" class="p-page__link">3</a>
+                      <a href="#" class="p-page__link">4</a>
+                      <a href="#" class="p-page__link">5</a>
+                      <a href="#" class="p-page__link">6</a>
+                      <a href="#" class="p-page__link">7</a>
+                      <a href="#" class="p-page__link">8</a>
+                      <a href="#" class="p-page__link">9</a>
+                      <a href="#" class="p-page__link">10</a>
+                    </span>
+                    <span class="p-page__control">
+                      <a href="#" class="p-page__link next" title="뒤로 이동"><span class="hide">뒤로 이동</span></a>
+                      <a href="#" class="p-page__link next-end" title="마지막 페이지 이동"><span class="hide">마지막 페이지로 이동</span></a>
+                      <a href="#" class="p-page__link next-one" title="뒤로 이동"><span class="hide">뒤로 이동</span></a>
+                    </span>
+                    <input type="hidden" name="currentPage" id="currentPage" value="1">
+                  </div>
+                </form>
+                
                 <!-- 켄튼츠 끝 부분 -->
               </article>
             </div><!-- .contents_sub End -->

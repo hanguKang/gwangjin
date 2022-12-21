@@ -43,10 +43,11 @@ a:link {
 //color
 $color1:#c50202;
 $color2:#567eff;
+
 $bg-color1: #f9fafb;
 $bg-color2: #f5f7f9;
 $bg-color3: #eeeeee;
-
+$bg-active: #486ec3;
 
 //border
 $border1: 1px solid #cbcccd;
@@ -209,7 +210,7 @@ $m720: 720px;
   
 }
 @mixin afterBefore($aftBef : ('_width':auto, '_height':auto,'_border':0 none, '_border-radius':50%, '_padding':0 )){
-  display:block; content:''; width:map-get($map: $aftBef, $key:'_width'); height:map-get($map:$aftBef, $key:'_height'); border:map-get($map: $aftBef, $key:'_border'); border-radius:50%; padding:map-get($map: $aftBef, $key:'_padding');
+  display:block; content:''; width:map-get($map: $aftBef, $key:'_width'); height:map-get($map:$aftBef, $key:'_height'); border:map-get($map: $aftBef, $key:'_border'); border-radius:map-get($map: $aftBef, $key:'_border-radius'); padding:map-get($map: $aftBef, $key:'_padding');
 }
 @mixin posV_50(){
   position:absolute; top:50%; left:0; transform:translateY(-50%);
@@ -217,7 +218,7 @@ $m720: 720px;
 @mixin posH_50(){
   position:absolute; left:50%; transform:translateX(-50%);
 }
-@mixin afterBd($prop_bd:('_height':100%, '_bg_clr':'#222')){
+@mixin afterBd($prop_bd:('_height':100%, '_bg_clr':#222)){
   content:""; position:absolute; right:0; top:50%; transform:translateY(-50%);  height:map-get($map:$prop_bd, $key:'_height'); background-color:map-get($map:$prop_bd, $key:'_bg_clr'); 
   width:1px; 
 }
