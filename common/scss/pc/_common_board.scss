@@ -135,12 +135,13 @@ form{
       }
       &.add_file{
         h1{}
-        .input_file{padding:27px 30px;
+        .input_file{padding:27px 30px; 
           .file_focus {outline: 2px solid #000;}
           >*{vertical-align:middle;}
           .file_name {display:inline-block; width: 40%; height: 40px; line-height: 26px; text-indent: 5px; border: 1px solid $bd_color; color: #999999;}
           label{display: inline-block; padding: 10px 20px;color: #fff;vertical-align: middle;background-color: #555555;cursor: pointer;height: 40px; margin-left: 10px;}
           input[type="file"]{position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0 none;}
+          
         }
         &.info{
           .input_file{padding:0;
@@ -567,3 +568,104 @@ form{
   
 }
 
+/* 클린 신고 */
+.clean{
+  header{
+    .report_header_txt{position:relative; padding-left:20px; 
+      &:before{@include posV_50; @include afterBefore(('_width':4px, '_height':4px,'_border':0 none, '_border-radius':50%, '_padding':0 )); background-color:#e61874; }
+    }
+  }
+  
+  .report_list{padding-top:25px; display:flex; flex-wrap:wrap; 
+    section{ flex:0 0 50%; 
+      div{margin:5px 0 5px 0; padding:15px; height:236px; border:1px solid #dddddd;color:#222;
+        h1{position:relative; text-align:center; font-size:20px; line-height:64px; font-weight:500;
+          span.report_icon{display:block; margin:0 auto; width:93px; height:77px; background-position:50% 50%; background-repeat:no-repeat; background-size:contain; 
+            &.decoy{background-image:url(../images/sub/custom/clean_icon_decay_off.png);}
+            &.sexual{background-image:url(../images/sub/custom/clean_icon_sexualCrime_off.png);}
+            &.unJust{background-image:url(../images/sub/custom/clean_icon_unJust_off.png);}
+            &.smAdmin{background-image:url(../images/sub/custom/clean_icon_smAdmin_off.png);}
+          }
+          &:after{@include afterBd(('_height':1px, '_bg_clr':#ddd)); left:0; top:calc(100% + 20px); transform:translateY(0); width:100%; }
+        }
+        p{display:flex; align-items:center; justify-content: space-between; height:40px; margin-top:30px; padding-left:20px; font-size:16px; line-height:20px;
+          span{@include ell2;}
+          a{margin-right:20px; text-align:center; width:118px; height:32px; line-height:32px; background-color:#283f83; color:#fff;font-size:16px;}
+        }
+      }
+      &:nth-child(odd){
+        div{margin-right:5px;}
+      }
+      &:nth-child(even){
+        div{margin-left:5px;}
+      }
+      &.on, &:hover{
+        div{background-color:#476dc3;color:#fff;
+          h1{
+            span.report_icon{
+              &.decoy{background-image:url(../images/sub/custom/clean_icon_decay_on.png);}
+              &.sexual{background-image:url(../images/sub/custom/clean_icon_sexualCrime_on.png);}
+              &.unJust{background-image:url(../images/sub/custom/clean_icon_unJust_on.png);}
+              &.smAdmin{background-image:url(../images/sub/custom/clean_icon_smAdmin_on.png);}
+            }
+          }
+          p{
+            a{background-color:#222; }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+/* 부패 등 공익신고 < 클린신고 */
+.clean{
+  &.call{
+    header{
+      h1{margin-bottom:0;}
+    }
+    dl{padding:25px 15px;
+      dt{margin-bottom:5px; font-weight:500; font-size:20px; line-height:35px; }
+      dd{position:relative; padding-left:22px; font-size:14px; line-height:30px;
+        &:before{@include posV_50; @include afterBefore( ('_width':4px, '_height':4px,'_border':0 none, '_border-radius':50%, '_padding':0 ) ); background-color:#e61874;}
+      }
+    }
+
+    .report_call{ display:flex; 
+      dl{height:240px;
+        &.call{flex:0 0 330px; display:flex; align-items: center; flex-direction:column; background-color:#eeeeee; text-align:center; border:1px solid #e0e0e0;
+          dt{padding-top:50px; 
+            .ico_call{display:block; width:69px; height:69px; background:url(../images/sub/custom/icon_call.png) no-repeat 50% 50%/contain; }
+          }
+          dd{padding-left:0; font-size:30px; font-weight:500;
+            &:before{display:none;}
+          }
+        }
+        &.call_txt{flex:1 0 auto; padding:35px 45px; margin-left:10px; border:1px solid #ddd; 
+          dt{}
+          dd{
+            &:before{ background-color:#222;}
+          }
+        }
+      }
+    }
+    p.btn_box{margin-top:30px; 
+      a{@include alignFelxCenter; margin:0 auto; width:232px; height:62px; background-color:#476dc3; color:#fff; border:0 none;}
+    }
+  }
+}
+
+/* 클린신고하기 */
+form.clean_call_register{
+  h3{font-size:22px; font-weight:500; line-height:60px; }
+  .register{
+    .info{
+      dl.noFlex{
+        dd{border-bottom:0 none;}
+        dd.caution{border-top:0 none; border-bottom:0 none;}
+      }
+    }
+    
+  }
+}
