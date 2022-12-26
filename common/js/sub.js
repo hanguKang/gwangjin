@@ -53,39 +53,95 @@ try {
 				makeDropDownNav( _this );
 			});
 
-			//input 파일첨부
+
+
+
+
+			//input 파일첨부, 비밀번호 
 			var $fileBox = null;
-  
 			$(function() {
 				init_file();
+				init_pwdChck();
 			});
-			
+			function init_pwdChck(){
+				let $pwd1 = $('#residence_pwd1');
+				$pwd1.on({
+					'blur': function(){
+						chckPwd();
+					},
+					'keydown': function(e){
+						if(e.keyCode == 13){
+							
+							chckPwd();
+						}
+						
+					}
+				
+				}
+			)};
 
-			
+			function chckPwd(){
+				
+				let $pwd1 = $('#residence_pwd1');
+				let str = $pwd1.val();
+					let type = $pwd1.attr('type');
+					console.log(type);
+					let pwd_result = chkPwdStrValid(str, type);
+					if(pwd_result){
+						alert(pwd_result);
+					}else{
+						alert('noMatch');
+					}
+			}
 			function init_file() {
 				$fileBox = $('.input_file');
 				fileLoad();
 			}
 
+			function chkPwdStrValid(str, type){
+				
+				var regEx = { pwd_rule: /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/};
+				if (type === "password") {   
+						//console.log(regEx.pwd_rule.test(str));     
+						return regEx.pwd_rule.test(str);    
+				} else {        
+						return false;    
+				}
+			}
+
+
 			function fileLoad() {
+				let tmpEvent = jQuery.Event("keydown", {keyCode:13});
 				$.each($fileBox, function(idx){
 					var $this = $fileBox.eq(idx),
 							$btnUpload = $this.find('[type="file"]'),
-							$label = $this.find('.file_label');
-					
-					
-					$btnUpload.on('change', function() {
-						var $target = $(this),
-								fileName = $target.val(),
-								$fileText = $target.siblings('.file_name');
-						$fileText.val(fileName);
-					})
+							$label = $this.find('.file_label'),
+							$val_input = $this.find('.file_name');
+							//$valTxt = $this.find('.file_name');
+
+					$btnUpload.on({
+						change : function() {
+							var $target = $(this),
+									fileName = $target.val(),
+									$fileText = $target.siblings('.file_name');
+							$fileText.val(fileName);
+						},
+						click : function(){
+							$(this).trigger('change');
+						},
+						keydown : function(e){
+							(e.keyCode == 13)? $(this).trigger('change') : alert('enter를 누르세요');
+						}
+					});
 					
 					$btnUpload.on('focusin focusout', function(e) {
-						
 						e.type == 'focusin' ? $label.addClass('file_focus') : $label.removeClass('file_focus');
-					})
-					
+					});
+					$val_input.on('focus', function(){
+						$(this).blur();
+						$btnUpload.trigger('click');
+					});
+
 				})
 			}
 

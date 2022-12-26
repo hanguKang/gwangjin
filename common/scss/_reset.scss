@@ -49,6 +49,7 @@ $bg-color2: #f5f7f9;
 $bg-color3: #eeeeee;
 $bg-active: #486ec3;
 
+
 //border
 $border1: 1px solid #cbcccd;
 $border2 : 1px solid #dfdfdf;
@@ -212,8 +213,8 @@ $m720: 720px;
 @mixin afterBefore($aftBef : ('_width':auto, '_height':auto,'_border':0 none, '_border-radius':50%, '_padding':0 )){
   display:block; content:''; width:map-get($map: $aftBef, $key:'_width'); height:map-get($map:$aftBef, $key:'_height'); border:map-get($map: $aftBef, $key:'_border'); border-radius:map-get($map: $aftBef, $key:'_border-radius'); padding:map-get($map: $aftBef, $key:'_padding');
 }
-@mixin posV_50(){
-  position:absolute; top:50%; left:0; transform:translateY(-50%);
+@mixin posV_50($_dir:'left'){
+  position:absolute; top:50%; transform:translateY(-50%); @if $_dir == 'left'{left:0;}@else{right:0;}
 }
 @mixin posH_50(){
   position:absolute; left:50%; transform:translateX(-50%);
@@ -224,8 +225,8 @@ $m720: 720px;
 }
 .flex-box{ @include flex-box }
 
-@mixin alignFelxCenter(){
-  display:flex; align-items: center; justify-content: center;
+@mixin alignFelxCenter( $_justify-conts:center){
+  display:flex; align-items: center; justify-content: $_justify-conts;
 }
 
 @mixin btnCenter(){

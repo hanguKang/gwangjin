@@ -1,0 +1,59 @@
+
+.join_content{
+  .for-a11y{position:absolute; width:1px; height:1px; margin:-1px; padding:0; clip:rect(0 0 0 0); overflow:hidden; text-indent:-5000em;}
+  .form {
+    input, button {height:40px; border:1px solid #e2e2e2;}
+    .form_list {
+      .list {position:relative;
+        
+        .guide_txt {position:absolute; top: 0px; left: 30px; width: 100%;height: 100%;padding: 0 30px; line-height:57px; background: #fff;z-index: 1; opacity:0.5;
+          &:after{display:none;}
+        }
+  
+        span.chk { left: auto !important; height: 15px !important; margin-top: -8px !important; background-position: 0px 0px;opacity: 1 !important; filter: alpha(opacity=100);}
+        span.chk.submit {background-position: 0px -18px;}
+        span.icon_bg {display: block;position: absolute;top: 50% !important;right: 25px !important;width: 25px !important;background: url(../images/sprite_common.png) no-repeat 0 0;}
+
+        .button__drop-down{ position:relative; width:150px; height: 40px; border:1px solid #f4f4f4;//button요소 
+          .text{position: absolute; top: 0; left: 0; right: 0; width:150px; height: 40px; text-align:left;  font-weight: bold; font-size: 14px; line-height: 40px; color:  #000; border:$border1; text-indent:20px;
+            &:after{@include posV_50('right'); content:''; position:absolute; right:10px; width:18px; height:12px; background: url(../images/sprite_btn.png) no-repeat 0px 0px;
+
+            }
+          }
+          &.on{
+            .text{
+              &:after{background-position:0 -35px;}
+            }
+          }
+        }//button__drop-down  End 
+        .select_box {position:absolute;display:none; background-color:#fff;
+          ul {overflow-y: scroll;width: 184px; width:100%;height: 140px;min-height: 28px;max-height: 200px;height: auto;margin: 0;border-top: 1px solid #f1f1f1;}
+          &.on{display: block;top: 100%; left:1px; width:100%; height: auto;border: 1px solid #999;border-top: none;}
+        } 
+        .ability_chk {
+          margin: 0px 0 20px 30px;
+          color: #f00d38;
+        }
+        span.icon_bg {
+          font-size:0; line-height:0;
+          position: absolute;
+          top: 50% !important;
+          right: 25px !important;
+          width: 25px !important;
+        }
+        &.type_1{
+          >input{flex:0 0 20%; height:38px;
+            &.first{text-align:right;}
+          }
+          .md_txt{flex:0 1 auto; margin:0 10px;}
+          >div.btn_drop{position:relative; flex:0 0 150px; margin-left:10px;}
+          .ability_chk{display:none; height:40px; margin:0 20px; line-height:40px;}
+        }
+      }
+    } 
+  }
+}
+
+.form ul.form_list > li .select_box.on {
+    
+}
