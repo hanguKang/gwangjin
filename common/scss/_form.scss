@@ -57,3 +57,33 @@
 .form ul.form_list > li .select_box.on {
     
 }
+
+.form_join{
+  div{border:1px solid #dddddd;
+    &.txt_wrapper{background-color:#eeeeee;
+      p.txt_join{padding:15px;}
+      .type_input_box{padding:18px;
+        &.bgNnoe{background-color:#fff;}
+      }
+      &.spaceBox{
+        padding:30px 50px; 
+      }
+    }//.txt_wrapper End
+  }
+  .input_wrapper{padding:18px; background-color:#eeeeee;}
+  .type_input_box{display:flex; align-items: center; 
+    label{order:2; font-size:16px; line-height:16px;}
+    select,input{order:1; margin-right:10px; display: inline-block; width:auto; height:40px; border:1px solid #dedede;}
+    &.noneOrder{
+      label{order:1; word-break: keep-all;}
+      input{order:2; display: inline-block; width:auto;}
+    }
+  }
+  input[type="checkbox"]{display:inline-block; appearance: checkbox; width:auto; accent-color: #000;}
+  input[type="radio"]{display:inline-block; appearance: radio; width:auto; accent-color: #000;}
+  section{margin-bottom:70px;
+    h1{font-size:22px; font-weight:500; line-height:42px;}
+  }
+  textarea{padding:15px;overflow-y:scroll; display:block; width:100%; max-height:280px; font-size:14px; line-height:22px; 
+  }
+}

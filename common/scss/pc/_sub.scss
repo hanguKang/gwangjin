@@ -72,7 +72,7 @@ main.sub{ @include clear;
                     > .dep3 {display:none;border-top:1px solid #dde1ea;font-size:15px;
                         li {
                             a {color:#555;position:relative;padding-left:11px;margin:4px 0;
-                                &:before {content:'';width:3px;height:3px;background-color:#555;border-radius:3px;position:absolute;left:0;top:50%;margin-top:-1.5px;}
+                                &:before {content:''; border:{top: 1px solid #222; right:1px solid #222;}; width:4px;height:4px; position:absolute;left:0; top:50%; transform: translateY(-70%) rotate(45deg); }
                                 // &[target="_blank"]{
                                 //     &:after{
                                 //         padding-right:20px;background:url(../images/icon_lnb_link.png) no-repeat right center;content:'';

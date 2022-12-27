@@ -2442,14 +2442,15 @@ main.sub .contents_sub_box .lnb .dep2 > li > .dep3 li a {
 }
 main.sub .contents_sub_box .lnb .dep2 > li > .dep3 li a:before {
   content: "";
-  width: 3px;
-  height: 3px;
-  background-color: #555;
-  border-radius: 3px;
+  border-top: 1px solid #222;
+  border-right: 1px solid #222;
+  width: 4px;
+  height: 4px;
   position: absolute;
   left: 0;
   top: 50%;
-  margin-top: -1.5px;
+  -webkit-transform: translateY(-70%) rotate(45deg);
+          transform: translateY(-70%) rotate(45deg);
 }
 main.sub .contents_sub_box .lnb .dep2 > li > .dep3 li.selected a, main.sub .contents_sub_box .lnb .dep2 > li > .dep3 li.active a {
   color: #316ed2;
@@ -3070,8 +3071,10 @@ select.p-input {
 /* 제목 내용 글상자 */
 .board_txt_box {
   padding: 20px 15px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #222;
+  margin-bottom: 20px; /*border-bottom:1px solid #222;*/
+}
+.board_txt_box.civil .tit_1 {
+  margin-bottom: 0;
 }
 .board_txt_box .tit_1 {
   margin-bottom: 45px;
@@ -3093,14 +3096,16 @@ select.p-input {
   content: "";
   width: 4px;
   height: 4px;
-  background-color: #e51875;
+  border-radius: 50%;
+  background-color: #222;
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   left: 0;
 }
-.board_txt_box .txt > li:last-child {
+.board_txt_box .txt > li.caution {
+  margin-left: 0;
   color: #ff0033;
 }
 .board_txt_box.g_365 .tit_1 {
@@ -3320,6 +3325,17 @@ select.p-input {
   color: #ff0033;
 }
 
+form .register h3 {
+  font-size: 22px;
+  font-weight: 500;
+  border-bottom: 2px solid #222;
+}
+form .register section { /* border:{left:1px solid #ddd; right:1px solid #ddd;} */
+  /* 공단통합민원센터 등록 */
+}
+form .register section.info:last-of-type {
+  border-bottom: 1px solid #dedede;
+}
 form .register section .required {
   margin-left: 10px;
   color: #ff0033;
@@ -3330,6 +3346,14 @@ form .register section h1 {
   font-size: 26px;
   line-height: 42px;
   font-weight: 500;
+}
+form .register section.info {
+  border-left: 1px solid #dedede;
+  border-right: 1px solid #dedede;
+}
+form .register section.info input {
+  height: 40px;
+  border: 1px solid #dedede;
 }
 form .register section.info dl {
   display: -webkit-box;
@@ -3416,6 +3440,40 @@ form .register section.info dl.noFlex dd.space_lr textarea {
 }
 form .register section.info dl.noFlex dd.noFlex {
   display: block;
+}
+form .register section.pub dd.choice span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 10px;
+}
+form .register section.pub dd.choice span label {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+form .register section.pub dd.choice span input[type=radio] {
+  margin: 0 5px;
+  width: auto;
+  height: auto;
+  -webkit-appearance: radio;
+     -moz-appearance: radio;
+          appearance: radio;
+  width: 18px;
+  height: 18px;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+form .register section.pub dd.choice span input[type=checkbox] {
+  width: auto;
+  height: auto;
+  -webkit-appearance: checkbox;
+     -moz-appearance: checkbox;
+          appearance: checkbox;
+}
+form .register section.pub dd.choice span input[type=radio]:checked {
+  accent-color: #000;
 }
 form .register section.tit p, form .register section.category p, form .register section.txt p {
   padding: 27px 30px;
@@ -3555,6 +3613,26 @@ form .register .btn_box input[type=submit] {
 form .register .btn_box input[type=reset] {
   background-color: #555555;
 }
+form .btn_box.basic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 60px;
+  text-align: center;
+  line-height: 60px;
+}
+form .btn_box.basic a {
+  width: 234px;
+  height: 60px;
+  background-color: #476dc3;
+  color: #fff;
+}
 
 /*------------------ 게시판 ----------------*/
 .p-list {
@@ -3571,7 +3649,7 @@ form .register .btn_box input[type=reset] {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  /*----------- Q_A -----------*/
+  /*----------- 공단통합민원센터 및 공통 Q_A -----------*/
 }
 .p-list > :nth-child(n) {
   -webkit-box-flex: 0;
@@ -3994,6 +4072,8 @@ form .register .btn_box input[type=reset] {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 100%;
           flex: 0 0 100%;
+  margin-bottom: 10px;
+  border: 1px solid #bbbbbb;
 }
 .p-list.q_a .q_a_list.none {
   text-align: center;
@@ -4069,6 +4149,24 @@ form .register .btn_box input[type=reset] {
           flex: 0 0 33.3333%;
   font-size: 14px;
   line-height: 30px;
+}
+.p-list.q_a .q_a_list a .q_a_txt_box > li .txt_q_a_sm_5 {
+  display: inline-block;
+  margin-left: 10px;
+  width: 76px;
+  height: 34px;
+  text-align: center;
+  line-height: 34px;
+  color: #fff;
+}
+.p-list.q_a .q_a_list a .q_a_txt_box > li .txt_q_a_sm_5.done {
+  background-color: #555555;
+}
+.p-list.q_a .q_a_list a .q_a_txt_box > li .txt_q_a_sm_5.waiting {
+  background-color: #283f83;
+}
+.p-list.q_a .q_a_list a .q_a_txt_box > li .txt_q_a_sm_5.receive {
+  background-color: #476dc3;
 }
 .p-list.q_a .q_a_list a .txt_a {
   display: -webkit-box;
@@ -4146,7 +4244,7 @@ form .register .btn_box input[type=reset] {
 .p-pagination {
   position: relative;
   display: table;
-  margin: 60px auto;
+  margin: 30px auto;
 }
 
 /*각 페이징 요소*/
@@ -4680,6 +4778,47 @@ form .register .btn_box input[type=reset] {
 .board_txt_caution h3 .caution {
   margin-left: 0;
 }
+.board_txt_caution ol {
+  padding-left: 15px;
+}
+.board_txt_caution ol li {
+  list-style: decimal;
+  padding: 7px 0;
+  padding-left: 5px;
+  font-size: 16px;
+  line-height: 1;
+}
+.board_txt_caution ol li table {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-top: 2px solid #222;
+}
+.board_txt_caution ol li table th, .board_txt_caution ol li table td {
+  height: 58px;
+  vertical-align: middle;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+.board_txt_caution ol li table thead tr {
+  background-color: #cccccc;
+}
+.board_txt_caution ol li table thead tr th {
+  font-weight: 500;
+}
+.board_txt_caution ol li table tbody {
+  font-size: 15px;
+}
+.board_txt_caution ol li table tbody tr th {
+  font-weight: 500;
+  height: 58px;
+  background-color: #eeeeee;
+}
+.board_txt_caution ol li table tbody tr td {
+  height: 58px;
+}
+.board_txt_caution > p.caution {
+  font-size: 14px;
+}
 .board_txt_caution dl {
   word-break: keep-all;
 }
@@ -4772,8 +4911,9 @@ form .register .btn_box input[type=reset] {
   color: #fff;
   background-color: #486ec3;
 }
-.board_txt_caution + p + .btn_box li a {
+.board_txt_caution + p + .btn_box li a, .board_txt_caution + p + .btn_box li button {
   position: relative;
+  width: 100%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4786,7 +4926,7 @@ form .register .btn_box input[type=reset] {
           justify-content: center;
   color: #fff;
 }
-.board_txt_caution + p + .btn_box li a span {
+.board_txt_caution + p + .btn_box li a span, .board_txt_caution + p + .btn_box li button span {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -4805,10 +4945,10 @@ form .register .btn_box input[type=reset] {
 .board_txt_caution + p + .btn_box li:nth-child(2) {
   background-color: #eeeeee;
 }
-.board_txt_caution + p + .btn_box li:nth-child(2) a {
+.board_txt_caution + p + .btn_box li:nth-child(2) a, .board_txt_caution + p + .btn_box li:nth-child(2) button {
   color: #222;
 }
-.board_txt_caution + p + .btn_box li:nth-child(2) a span {
+.board_txt_caution + p + .btn_box li:nth-child(2) a span, .board_txt_caution + p + .btn_box li:nth-child(2) button span {
   background: url(../images/sub/custom/ico_cellphone.png) no-repeat 0 0/contain;
 }
 
@@ -5100,7 +5240,103 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
   border-bottom: 0 none;
 }
 
-.login_outer .caution {
+/* 이사장에게 바란다 > 목록 > 다이어그램 */
+.step ol {
+  padding: 30px 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.step ol li {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 30px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.step ol li:nth-child(1) {
+  background-color: #87cfff;
+}
+.step ol li:nth-child(2) {
+  background-color: #527ee2;
+}
+.step ol li:nth-child(3) {
+  background-color: #2d51b1;
+}
+.step ol li:nth-child(4) {
+  background-color: #10288d;
+}
+.step ol li span {
+  position: relative;
+  display: block;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 500;
+}
+.step ol li span strong {
+  position: absolute;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: -20px;
+  word-break: keep-all;
+  font-size: 16px;
+  font-weight: 100;
+}
+.step ol li:not(:last-child):after {
+  content: "";
+  position: absolute;
+  right: -15%;
+  top: -15%;
+  border-top: 4px solid #eeeeee;
+  border-right: 4px solid #eeeeee;
+  width: 16px;
+  height: 16px;
+}
+.step p.btn_box {
+  margin-top: 20px;
+}
+.step p.btn_box a, .step p.btn_box button {
+  width: 234px;
+  height: 42px;
+  background-color: #555555;
+  color: #fff;
+  text-align: center;
+  line-height: 42px;
+  font-size: 14px;
+}
+.step.join ol {
+  padding: 60px;
+}
+.step.join ol li {
+  background-color: #eeeeee;
+}
+.step.join ol li span {
+  color: #222;
+}
+.step.join ol li.on {
+  background-color: #476dc3;
+}
+.step.join ol li.on span {
+  color: #fff;
+}
+
+.user_outer .caution {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5111,19 +5347,17 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
   padding: 25px 45px;
   background-color: #eeeeee;
 }
-.login_outer .caution .ico_lock {
+.user_outer .caution .ico_user {
   display: inline-block;
   margin-right: 20px;
-  width: 50px;
-  height: 50px;
-  background: url(../images/sub/login/ico_lock.png) no-repeat 50% 50%/contain;
+  width: 49px;
 }
-.login_outer .caution .txt {
+.user_outer .caution .txt {
   font-size: 1rem;
-  line-height: 1.25;
+  line-height: 1.2;
   color: #222222;
 }
-.login_outer .log_box {
+.user_outer .user_box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5134,7 +5368,7 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
       -ms-flex-align: stretch;
           align-items: stretch;
 }
-.login_outer .log_box article {
+.user_outer .user_box article {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 50%;
           flex: 0 0 50%;
@@ -5148,20 +5382,20 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
-.login_outer .log_box article .border_box {
+.user_outer .user_box article .border_box {
   padding: 25px;
 }
-.login_outer .log_box .log_user .border_box {
-  width: calc(100% - 3px);
-  margin-right: 3px;
-}
-.login_outer .log_box .log_user .border_box h1 {
+.user_outer .user_box article .border_box h1 {
   margin-bottom: 15px;
   font-size: 26px;
   line-height: 1.25;
   text-align: center;
 }
-.login_outer .log_box .log_user .border_box form {
+.user_outer .user_box .user_left_box .border_box {
+  width: calc(100% - 5px);
+  margin-right: 5px;
+}
+.user_outer .user_box .user_left_box .border_box form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5176,15 +5410,15 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
       -ms-flex-align: strecth;
           align-items: strecth;
 }
-.login_outer .log_box .log_user .border_box form p {
+.user_outer .user_box .user_left_box .border_box form p {
   position: relative;
 }
-.login_outer .log_box .log_user .border_box form p input {
+.user_outer .user_box .user_left_box .border_box form p input {
   padding-left: 50px;
   height: 48px;
   border: 1px solid #222;
 }
-.login_outer .log_box .log_user .border_box form p label {
+.user_outer .user_box .user_left_box .border_box form p label {
   position: absolute;
   left: 22px;
   top: 50%;
@@ -5198,16 +5432,16 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
-.login_outer .log_box .log_user .border_box form p label[for=id] {
+.user_outer .user_box .user_left_box .border_box form p label[for=id] {
   background-image: url(../images/sub/login/ico_user_bk.png);
 }
-.login_outer .log_box .log_user .border_box form p input#id {
+.user_outer .user_box .user_left_box .border_box form p input#id {
   border-bottom: 0 none;
 }
-.login_outer .log_box .log_user .border_box form p label[for=pw] {
+.user_outer .user_box .user_left_box .border_box form p label[for=pw] {
   background-image: url(../images/sub/login/ico_lock_bk.png);
 }
-.login_outer .log_box .log_user .border_box form .btn_box {
+.user_outer .user_box .user_left_box .border_box form .btn_box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5225,7 +5459,7 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
   margin-top: 20px;
   padding-bottom: 40px;
 }
-.login_outer .log_box .log_user .border_box form .btn_box div {
+.user_outer .user_box .user_left_box .border_box form .btn_box div {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -5236,12 +5470,12 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
       -ms-flex-align: center;
           align-items: center;
 }
-.login_outer .log_box .log_user .border_box form .btn_box div label[for=id_save_chk] {
+.user_outer .user_box .user_left_box .border_box form .btn_box div label[for=id_save_chk] {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
 }
-.login_outer .log_box .log_user .border_box form .btn_box div input#id_save_chk {
+.user_outer .user_box .user_left_box .border_box form .btn_box div input#id_save_chk {
   -webkit-appearance: checkbox;
   -moz-appearance: checkbox;
   -ms-appearance: checkbox;
@@ -5256,10 +5490,10 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
   width: 18px;
   height: 18px;
 }
-.login_outer .log_box .log_user .border_box form .btn_box div input#id_save_chk :checked {
+.user_outer .user_box .user_left_box .border_box form .btn_box div input#id_save_chk :checked {
   background-color: #476dc3;
 }
-.login_outer .log_box .log_user .border_box form .btn_box .btn_login {
+.user_outer .user_box .user_left_box .border_box form .btn_box .btn_login {
   display: flex-block;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -5271,14 +5505,14 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
   background-color: #476dc3;
   color: #fff;
 }
-.login_outer .log_box .join_user .border_box {
+.user_outer .user_box .user_right_box .border_box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-left: 3px;
-  width: calc(100% - 3px);
+  margin-left: 5px;
+  width: calc(100% - 5px);
 }
-.login_outer .log_box .join_user .border_box ul {
+.user_outer .user_box .user_right_box .border_box ul {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 100%;
           flex: 0 0 100%;
@@ -5298,7 +5532,7 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.login_outer .log_box .join_user .border_box ul li {
+.user_outer .user_box .user_right_box .border_box ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5307,7 +5541,7 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
           flex: 0 0 46%;
   background-color: #eeeeee;
 }
-.login_outer .log_box .join_user .border_box ul li a {
+.user_outer .user_box .user_right_box .border_box ul li a {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
@@ -5315,7 +5549,7 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
   display: -ms-flexbox;
   display: flex;
 }
-.login_outer .log_box .join_user .border_box ul li a .ico {
+.user_outer .user_box .user_right_box .border_box ul li a .ico {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 25%;
           flex: 0 0 25%;
@@ -5324,7 +5558,7 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
-.login_outer .log_box .join_user .border_box ul li a .txt_box {
+.user_outer .user_box .user_right_box .border_box ul li a .txt_box {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 75%;
           flex: 0 0 75%;
@@ -5343,20 +5577,41 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.login_outer .log_box .join_user .border_box ul li a .txt_box strong {
+.user_outer .user_box .user_right_box .border_box ul li a .txt_box strong {
   font-weight: 600;
   font-size: 18px;
   line-height: 1.25;
 }
-.login_outer .log_box .join_user .border_box ul li a .txt_box em {
+.user_outer .user_box .user_right_box .border_box ul li a .txt_box em {
   display: block;
   font-size: 16px;
   line-height: 1.25;
 }
-.login_outer .log_box .join_user .border_box ul li:last-child a .ico {
+.user_outer .user_box .user_right_box .border_box ul li:last-child a .ico {
   background-image: url(../images/sub/login/ico_find_wt.png);
 }
-
+.user_outer .user_box.join {
+  margin-top: 10px;
+}
+.user_outer .user_box.join article {
+  text-align: center;
+}
+.user_outer .user_box.join article p span {
+  display: block;
+}
+.user_outer .user_box.join article .btn_box {
+  margin-top: 24px;
+}
+.user_outer .user_box.join article .btn_box a {
+  height: 68px;
+  background-color: #476dc3;
+  color: #fff;
+  text-align: center;
+  line-height: 68px;
+}
+.user_outer .user_box.join .user_right_box .border_box {
+  display: block;
+}
 /*메인페이지 반응형*/
 @media screen and (min-width: 721px) {
   .wrapper .mo {
@@ -7262,4 +7517,98 @@ body .sub .contents_sub_box {
   height: 40px;
   margin: 0 20px;
   line-height: 40px;
+}
+
+.form_join div {
+  border: 1px solid #dddddd;
+}
+.form_join div.txt_wrapper {
+  background-color: #eeeeee;
+}
+.form_join div.txt_wrapper p.txt_join {
+  padding: 15px;
+}
+.form_join div.txt_wrapper .type_input_box {
+  padding: 18px;
+}
+.form_join div.txt_wrapper .type_input_box.bgNnoe {
+  background-color: #fff;
+}
+.form_join div.txt_wrapper.spaceBox {
+  padding: 30px 50px;
+}
+.form_join .input_wrapper {
+  padding: 18px;
+  background-color: #eeeeee;
+}
+.form_join .type_input_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.form_join .type_input_box label {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  font-size: 16px;
+  line-height: 16px;
+}
+.form_join .type_input_box select, .form_join .type_input_box input {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  margin-right: 10px;
+  display: inline-block;
+  width: auto;
+  height: 40px;
+  border: 1px solid #dedede;
+}
+.form_join .type_input_box.noneOrder label {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  word-break: keep-all;
+}
+.form_join .type_input_box.noneOrder input {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  display: inline-block;
+  width: auto;
+}
+.form_join input[type=checkbox] {
+  display: inline-block;
+  -webkit-appearance: checkbox;
+     -moz-appearance: checkbox;
+          appearance: checkbox;
+  width: auto;
+  accent-color: #000;
+}
+.form_join input[type=radio] {
+  display: inline-block;
+  -webkit-appearance: radio;
+     -moz-appearance: radio;
+          appearance: radio;
+  width: auto;
+  accent-color: #000;
+}
+.form_join section {
+  margin-bottom: 70px;
+}
+.form_join section h1 {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 42px;
+}
+.form_join textarea {
+  padding: 15px;
+  overflow-y: scroll;
+  display: block;
+  width: 100%;
+  max-height: 280px;
+  font-size: 14px;
+  line-height: 22px;
 }/*# sourceMappingURL=default.css.map */

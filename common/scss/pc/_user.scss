@@ -1,17 +1,20 @@
-.login_outer{
+.user_outer{
   .caution{display:flex; align-items:center; margin: 20px 0; padding:25px 45px;  background-color:#eeeeee;
-    .ico_lock{ display: inline-block; margin-right:20px; width:50px; height:50px; background:url(../images/sub/login/ico_lock.png) no-repeat 50% 50%/contain;
+    .ico_user{ display: inline-block; margin-right:20px; width:49px;
     }
-    .txt{font-size:$fs-16; line-height:1.25; color:#222222;}
+    .txt{font-size:$fs-16; line-height:1.2; color:#222222;}
   }//주의 사항 End 
    $margin_btm:15px;
-  .log_box{display:flex; justify-content: space-between; align-items:stretch;
+  .user_box{display:flex; justify-content: space-between; align-items:stretch;
     article{flex:0 0 50%; display:flex; align-items:stretch; justify-content: flex-start;
-      .border_box{padding:25px;}
-    } //공통
-    .log_user{ 
-      .border_box{width:calc(100% - 3px); margin-right:3px; 
+      .border_box{padding:25px;
         h1{margin-bottom:$margin_btm; font-size:26px; line-height:1.25; text-align:center;}
+      }
+    } //공통
+    
+    //로그인
+    .user_left_box{ 
+      .border_box{width:calc(100% - 5px); margin-right:5px; 
         form{display: flex; flex-direction:column; justify-content: space-between; align-items: strecth;
           p{position:relative; 
             input{padding-left:50px; height:48px; border:1px solid #222;}//공통
@@ -35,8 +38,8 @@
         }
       }
     }
-    .join_user{ 
-      .border_box{  display:flex; margin-left:3px; width:calc(100% - 3px); 
+    .user_right_box{ 
+      .border_box{  display:flex; margin-left:5px; width:calc(100% - 5px); 
         ul{ flex:0 0 100%; margin-top:calc(32.5px + $margin_btm); margin-bottom:40px; display:flex; flex-direction:column; align-items:stretch; justify-content:space-between; 
           li{display: flex; flex:0 0 46%; background-color: #eeeeee;
             a{ flex:1 0 auto; display:flex;
@@ -55,5 +58,30 @@
         }
       }
     }
+
+    //회원가입
+    &.join{margin-top:10px;
+      article{text-align:center;
+        h1{}
+        p{
+          span{display:block;}
+        }
+        .btn_box{margin-top:24px;  
+          a{height:68px;background-color:#476dc3; color:#fff; text-align:center; line-height:68px;}
+        }
+      }
+      .user_left_box{
+        .border_box{ 
+
+        }
+      }
+      .user_right_box{
+        .border_box{display:block;}
+      }
+    }//join End
+  }// .user_box End 
+
+  .join_ste1{
+    
   }
 }
