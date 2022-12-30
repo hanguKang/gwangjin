@@ -99,6 +99,9 @@ function join(){
 					( $(this).parent().hasClass("textarea") ) ? $inputType = "textarea" : $inputType = "input" ;
 					$(this).addClass("for-a11y");//.for-a11y라는 클래스 ==> 가이드 text는 사라지고 글자 숨기기
 					$(this).parent().find($inputType).eq(0).focus(); //첫번째 input요소에 focusing
+				}else{
+					$(this).addClass("for-a11y");
+					$(this).parent().find('button').eq(0).focus(); //첫번째 input요소에 focusing
 				} //if End
 			});
 			joinObj.$placeholder.keyup(function(event) {//.guide_txt에 키업을 하면,
@@ -439,6 +442,40 @@ function join(){
 		($(this).is('.js-toggle--active')) ? $(this).text('닫기') : $(this).text('보기');
 		return false;
 	})
+
+	//requried 
+	const $_form = document.querySelector('form');
+	const $_submit = document.querySelectorAll('[type="submit"]')[0];
+	
+
+	function showMsg(e){
+			e.preventDefault(); //리로딩되는 것을 막는다. 
+			//submit 이후 실행될 코드 
+	}//subtmi 버튼 이후 handler
+
+	//console.log($_submit);
+	$_form.addEventListener('submit', showMsg, false); //submit을 클릭하면 바로 리로딩된다. 
+	// $_form.addEventListener('input',event=>{
+	// 	//document.getElementById('regi_usr_id').setCustomValidity('아이디를 형식에 맞게 입력해주세요.');
+	// 	$_submit.disabled = !$_form.checkValidity();
+	// })
+	//
+	
+	//vaildation검사
+	document.querySelectorAll("input").forEach(input => {
+		//input.style.border = '1px solid green';
+		//  input.addEventListener('blur',function(){
+		// // 	//console.log(this);
+		//  });
+		input.addEventListener("invalid", event => { //이벤트는 발생하지만, 각 input요소에서 확인은 동기적으로 되지 않는다. 
+			// 검증 후 폼 요소에 inValidated 클래스로 표시해 둔다
+			//console.log('검증');
+			//console.log(event.target.validity);
+			//this.classList.add('inValidated');
+			document.forms[0].classList.add("inValidated")
+		});
+	});
+
 }
 $(function(){
 	join();

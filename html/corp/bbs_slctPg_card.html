@@ -296,7 +296,7 @@
                   <p>
                     <span class="writer">홍길동</span><span class="bar">|</span>
                     <time datetime="2022-12-08">2022-12-08</time>
-                    조회수: <span class="count">1</span>
+                    조회수<span class="colon">:</span><span class="count">1</span>
                   </p>
                 </address>
               </header>
@@ -305,17 +305,24 @@
                 <div class="flex-box">
                   <img src="../../common/images/sub/common_board/thumb_pic_01_big.png" alt="상세 이미지 ">
                   <table>
+                    <caption>담당부서, 등록일, 조회수</caption>
+                    <thead class="thead-hidden">
+                      <tr>
+                        <th scope="col">구분</th>
+                        <th scope="col">내용</th>
+                      </tr>
+                    </thead>
                     <tbody>
                       <tr>
-                        <th>담당부서 : </th>
+                        <th class="table_th_space">담당&nbsp;부서<span class="colon">:</span></th>
                         <td class="depart">담당부서명</td>
                       </tr>
                       <tr>
-                        <th>등록일 : </th>
+                        <th class="table_th_space">등록일<span class="colon">:</span></th>
                         <td class="regsit_time"> <time datetime="2022-10-10">2022.10.10</time></td>
                       </tr>
                       <tr>
-                        <th>조회수 : </th>
+                        <th class="table_th_space">조회수<span class="colon">:</span></th>
                         <td class="count">1000</td>
                       </tr>
                     </tbody>

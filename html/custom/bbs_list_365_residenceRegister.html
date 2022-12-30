@@ -401,7 +401,7 @@
                           <div class="guide_txt">
                             <label for="residence_pwd1">영문, 숫자 2가지 이상 포함 혼합하여 4자 이상 16자 이하로 입력하세요.</label> 
                           </div>
-                          <input type="password" name="" id="residence_pwd1" aria-describedby="pwd1Msg" aria-autocomplete="list" role="alert" aria-invalid="true"> 
+                          <input type="password" name="" id="residence_pwd1" aria-describedby="pwd1Msg" aria-autocomplete="list" role="alert" aria-invalid="true" pattern="(?=.*[a-zA-Z])(?=.*[0-9]).{4,16}" required> 
                           <p id="pwd1Msg" class="ability_chk"> 영문, 숫자 2가지 이상 포함 혼합하여 4자 이상 16자 이하로 입력하세요. </p>
                           <!-- <span id="pwd1MsgCheck" class="bg_area icon_bg chk pw">비밀번호 입력 체크</span> -->
                         </dd>
@@ -415,7 +415,7 @@
                           <div class="guide_txt">
                             <label for="residence_pwd2">위의 비밀번호를 다시 입력하세요.</label> 
                           </div>
-                          <input type="password" name="" id="residence_pwd2">
+                          <input type="password" name="" id="residence_pwd2" required>
                           <p id="pwd2Msg" class="ability_chk"> 입력한 비밀번호와 일치하지 않습니다. </p>
                           <!-- <span id="pwd2MsgCheck" class="bg_area icon_bg chk pw2">비밀번호 확인 입력 체크</span> -->
                         </dd>

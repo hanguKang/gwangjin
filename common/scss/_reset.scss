@@ -1,6 +1,6 @@
 
 /********* reset.css **********/
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ul, ol, li, form, fieldset, legend, label, input, button, select, textarea, header, main, footer, section, article, aside, menu, nav, table, caption, tbody, tfoot, thead, tr, th, td, summary, figure, figcaption, hgroup { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; -webkit-box-sizing: border-box; box-sizing: border-box;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ul, ol, li, form, fieldset, legend, label, input, button, select, textarea, header, main, footer, section, article, aside, menu, nav, table, caption, tbody, tfoot, thead, tr, th, td, summary, figure, figcaption, hgroup { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; -webkit-box-sizing: border-box; box-sizing: border-box; word-break: keep-all;}
 html, body { width: 100%; height: 100%;}
 body {font-size: 16px; line-height: 1.4; color: #222;font-family:'Noto Sans','sans-serif';letter-spacing:-0.05em;}
 /* HTML5 display-role reset for older browsers */
@@ -13,15 +13,17 @@ img { max-width: 100%; border: 0;vertical-align:middle; }
 p { max-height: 9999px; }
 address { font-style: normal; }
 button { margin: 0; padding: 0; -webkit-box-sizing: border-box; box-sizing: border-box; border: 0 none; background-color: transparent; font-family: inherit; font-size: inherit; cursor: pointer;-webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; appearance: none; -webkit-box-sizing: border-box; box-sizing: border-box; cursor: pointer;  }
-caption,legend { height: 1px; width: 1px; overflow: hidden; clip: rect(1px 1px 1px 1px); clip: rect(1px, 1px, 1px, 1px); margin: -1px;}
+caption,legend { height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); margin: -1px; font-size:0; line-height:0;}
 .hide { height: 0; width: 0; overflow: hidden; clip: rect(1px 1px 1px 1px); margin: -1px; position:absolute;left:-9999px; right:-9999px; font-size:0; line-height:0; }
 .clear {clear:both;}
 .br {display:block;}
 table {display:table;width:100%;border-collapse:collapse;border-spacing:0;table-layout:fixed;}
+.thead-hidden{position: absolute;left:-9999px; top:-9999px; width:0;height: 0;overflow: hidden;font-size:0; line-height:0; }
 select::-ms-expand { display: none; }
 input::-ms-check { display: none; }
 form {display:block;width:100%;}
 input,  select, textarea {padding: 0 10px; -webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; appearance: none; -webkit-box-sizing: border-box; box-sizing: border-box; width: 100%; display: block; border: 0; font-family: inherit; }
+input[type="checkbox"], input[type="radio"]{accent-color: #000;}
 textarea{resize:none;}
 a:visited {
   color: #636363;
@@ -32,6 +34,8 @@ a:link {
   color: #252525;
   text-decoration: none;
 }
+.table_th_space{display: flex; justify-content: space-between; align-items:center;}
+.colon{padding:0 10px;}
 
 
 // input[type="date"]::-webkit-calendar-picker-indicator{
@@ -43,6 +47,7 @@ a:link {
 //color
 $color1:#c50202;
 $color2:#567eff;
+$color3:#e51873;
 
 $bg-color1: #f9fafb;
 $bg-color2: #f5f7f9;
@@ -80,6 +85,33 @@ $fs-28:1.75rem;// 28px
 $fs-30:1.875rem;// 30px
 $fs-32:2rem;// 32px
 $fs-42:2.875rem;// 46px
+
+.w_4{width:4%;}
+.w_5{width:5%;}
+.w_6{width:6%;}
+.w_7{width:7%;}
+.w_8{width:8%;}
+.w_9{width:9%;}
+.w_10{width:10%;}
+.w_15{width:15%;}
+.w_20{width:20%;}
+.w_25{width:25%;}
+.w_30{width:30%;}
+.w_35{width:35%;}
+.w_40{width:40%;}
+.w_45{width:45%;}
+.w_50{width:50%;}
+.w_55{width:55%;}
+.w_60{width:60%;}
+.w_65{width:65%;}
+.w_70{width:70%;}
+.w_75{width:75%;}
+.w_80{width:80%;}
+.w_85{width:85%;}
+.w_90{width:90%;}
+.w_95{width:95%;}
+.required{color:#f00d38;}
+
 
 //style
 $header-height: 85px;

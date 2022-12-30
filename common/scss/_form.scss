@@ -5,8 +5,8 @@
     input, button {height:40px; border:1px solid #e2e2e2;}
     .form_list {
       .list {position:relative;
-        
-        .guide_txt {position:absolute; top: 0px; left: 30px; width: 100%;height: 100%;padding: 0 30px; line-height:57px; background: #fff;z-index: 1; opacity:0.5;
+        .no_border{border:0 none;}
+        .guide_txt {position:absolute; top: 0px; left: 50px; width: calc(100% - 50px); height: 100%;padding: 0; line-height:57px; background: #fff;z-index: 1; opacity:0.3;
           &:after{display:none;}
         }
   
@@ -14,18 +14,23 @@
         span.chk.submit {background-position: 0px -18px;}
         span.icon_bg {display: block;position: absolute;top: 50% !important;right: 25px !important;width: 25px !important;background: url(../images/sprite_common.png) no-repeat 0 0;}
 
-        .button__drop-down{ position:relative; width:150px; height: 40px; border:1px solid #f4f4f4;//button요소 
-          .text{position: absolute; top: 0; left: 0; right: 0; width:150px; height: 40px; text-align:left;  font-weight: bold; font-size: 14px; line-height: 40px; color:  #000; border:$border1; text-indent:20px;
-            &:after{@include posV_50('right'); content:''; position:absolute; right:10px; width:18px; height:12px; background: url(../images/sprite_btn.png) no-repeat 0px 0px;
-
+        .btn_drop{
+          button{border:0 none;}
+          .button__drop-down{ position:relative; width:150px; height: 40px; border:1px solid #f4f4f4;//button요소 
+          
+            .text{position: absolute; top: 0; left: 0; right: 0; width:150px; height: 40px; text-align:left;  font-weight: bold; font-size: 14px; line-height: 40px; color:  #000; border:$border1; text-indent:20px;
+              &:after{@include posV_50('right'); content:''; position:absolute; right:10px; width:18px; height:12px; background: url(../images/sprite_btn.png) no-repeat 0px 0px;
+  
+              }
             }
-          }
-          &.on{
-            .text{
-              &:after{background-position:0 -35px;}
+            &.on{
+              .text{
+                &:after{background-position:0 -35px;}
+              }
             }
-          }
-        }//button__drop-down  End 
+          }//button__drop-down  End 
+        }
+        
         .select_box {position:absolute;display:none; background-color:#fff;
           ul {overflow-y: scroll;width: 184px; width:100%;height: 140px;min-height: 28px;max-height: 200px;height: auto;margin: 0;border-top: 1px solid #f1f1f1;}
           &.on{display: block;top: 100%; left:1px; width:100%; height: auto;border: 1px solid #999;border-top: none;}
@@ -41,7 +46,7 @@
           right: 25px !important;
           width: 25px !important;
         }
-        &.type_1{
+        &.type_1{//목록에 있는 input의 타입을 결정
           >input{flex:0 0 20%; height:38px;
             &.first{text-align:right;}
           }
@@ -58,32 +63,243 @@
     
 }
 
+/*회원가입 단계별*/
 .form_join{
-  div{border:1px solid #dddddd;
-    &.txt_wrapper{background-color:#eeeeee;
-      p.txt_join{padding:15px;}
-      .type_input_box{padding:18px;
-        &.bgNnoe{background-color:#fff;}
-      }
-      &.spaceBox{
-        padding:30px 50px; 
-      }
-    }//.txt_wrapper End
+  legend{
+    &.notHide{height: auto; width: auto; overflow: visible;  clip: auto; margin: 0; font-size:16px; line-height:1.25;
+      &.input_tit{width:100px;}
+    }
   }
+  .input_tit{display:inline-block; width:100px; 
+    .required{font-weight:800;
+      &.clr_red{float:right; margin-right:10px; font-weight:300; color:#f00d38;}
+    }
+  }
+  
+
+  .text_outer{border:1px solid #dddddd;}
+  .txt_wrapper{border:1px solid #dfdfdf;background-color:#eeeeee;
+    p.txt_join{padding:30px 17px;}
+    .type_input_box{padding:18px;
+      &.bgNnoe{background-color:#fff;}
+    }
+    &.spaceBox{
+      padding:30px 50px; 
+      fieldset{margin-bottom:16px; }
+    }
+  }//.txt_wrapper End
+  
   .input_wrapper{padding:18px; background-color:#eeeeee;}
+  .float_box{overflow:hidden;
+    legend{float:left; height:40px; line-height:40px;}
+    p{float:left; height:40px; line-height:40px;}
+  }
+  .rowBox{display:flex;}
   .type_input_box{display:flex; align-items: center; 
     label{order:2; font-size:16px; line-height:16px;}
-    select,input{order:1; margin-right:10px; display: inline-block; width:auto; height:40px; border:1px solid #dedede;}
-    &.noneOrder{
+    select,input{order:1; margin-right:5px; display: inline-block; width:auto; height:40px; border:1px solid #dedede;}
+    &.noneOrder{padding:3px 0;
       label{order:1; word-break: keep-all;}
       input{order:2; display: inline-block; width:auto;}
     }
   }
   input[type="checkbox"]{display:inline-block; appearance: checkbox; width:auto; accent-color: #000;}
   input[type="radio"]{display:inline-block; appearance: radio; width:auto; accent-color: #000;}
-  section{margin-bottom:70px;
+  >section{margin-bottom:70px;
     h1{font-size:22px; font-weight:500; line-height:42px;}
   }
-  textarea{padding:15px;overflow-y:scroll; display:block; width:100%; max-height:280px; font-size:14px; line-height:22px; 
+  .terms_text{padding:17px;overflow-y:scroll; display:block; width:100%; min-height:200px; max-height:280px; font-size:14px; line-height:22px; color:#333;
+    h2, h3, p, table {font-size:14px;}
+    h2{line-height:34px;
+      &.subsidiary_law{margin:0; margin-top:40px;}
+    }
+    h3{margin-top:20px;line-height:24px;}
+    p, li{line-height:20px;}
+    table{margin-top:20px;}
+    table, th, td{border:1px solid #dedede;}
+    table>thead>tr{background-color:#f2f9f6;}
+    table>thead>tr>th{height:32px;}
+    table>tbody>tr>td{padding-left:10px; height:28px;}
+
+  }
+  /*버튼들*/
+  .btn_box{@include btnCenter; 
+    >input{cursor:pointer; height:60px;}
+    input[type="submit"]{background-color:#486ec3;}
+    input[type="reset"]{background-color:#555555;}
+    &.basic{margin-bottom:120px; display:flex; justify-content:center; align-items:center; margin-top:60px; text-align:center; line-height:60px;
+      
+      a, input, .btn_submit {width:234px; height: 60px; background-color:#476dc3; color:#fff;
+        &.cancel{background-color:#555555;}
+      }
+    }
+  }
+
+  /* step02 */
+  &.form_join_02{
+    section{
+      h1{
+        .descriped{margin-left:20px; font-size:16px; font-weight:300; color:#444; }
+      }
+      .seperate_box{display:flex; align-items: stretch;
+        article{flex:0 0 50%; padding:32px 25px; border:1px solid #dedede;
+            &:nth-of-type(1){@include alignFelxCenter;}
+          h1{font-weight:300; text-align:center;
+            &.none{font-size:16px; font-weight:300;}
+          }
+          ul{display:flex; margin-top:35px;
+            li{flex:0 0 50%; 
+              a{@include alignFelxCenter; color:#fff; height:86px;
+                .regi_txt{margin-left:10px;}
+              }
+              &:first-child{
+                a{margin-right:5px; background-color:#476dc3;}
+              }
+              &:last-child{
+                a{margin-left:5px; background-color:#555555;}
+              }
+            }
+          }// ul End
+          &.old_info{display:block; padding:0; 
+            dl{ display:flex; flex-direction:column; font-weight:300; height:75%;
+              >*{flex:1 0 auto; border-bottom:1px solid #dedede;}
+              
+              .old_id{margin-left:10px;}
+              .bar{padding:0 10px; }
+              .old_date{margin-right:10px;}
+              dt{@include alignFelxCenter; font-size:22px; 
+                .old_tit{margin-right:10px;}
+                span{font-size:16px;}
+              }
+              dd{padding-left:50px; display:flex; align-items: center;
+                i{flex:0 0 24%; }
+                span{font-size:14px;}
+              }
+              &+p{padding-left:50px; height:25%; display:flex; align-items: center; background-color:#555; color:#fff; 
+                i{flex:0 0 24%; }
+                .old_yes{margin:0 10px;font-size:14px;}
+              }
+            }
+          }
+        }//article End
+      }//seperate_box End
+      ul.certify{display:flex;
+        li{ flex:0 0 50%;
+          a{
+            display:flex;
+          .ico_regi_step_2{@include alignFelxCenter; flex:0 0 80px; height:86px; background-color:#476dc3; }
+          .regi_txt{@include alignFelxCenter; flex:0 0 calc(100% - 86px); background-color:#eee;}
+          }
+          &:first-child{
+            a{margin-right:5px;}
+          }
+          &:last-child{
+            a{margin-left:5px;}
+          }
+        }
+        
+      }
+    }
+    .txt_wrapper{
+      ul{padding:25px 50px; 
+        li{height:50px; line-height:50px;
+          .get_label{display:inline-block; width:80px;
+            .colon{float:right;}
+          }
+        }
+      }
+    }
+
+  }
+
+  /* step03 */
+  &.form_join_03{
+    //validate 
+    input[required]:valid{border-color:blue;}
+    &.inValidated{
+      input[required]:invalid{border-color:red;}
+    }
+    
+
+    .register_user, .modify_usr{
+      >ul{border : {top:1px solid #dedede; left:1px solid #dedede; right:1px solid #dedede;}
+        >li{display:flex; border-bottom:1px solid #dedede; 
+          .regi_usr_tit{display:flex; flex:0 0 180px; padding:20px; background-color:#eee; justify-content: space-between;
+            .required{margin-right:10px; color:#f00d38;}
+          }
+          .regi_usr_txt{flex:1 0 auto;  padding:20px; 
+            em{position:relative; display:block; margin-top:10px; letter-spacing:-1px; 
+              &:first-of-type{margin-top:0;}
+              &.chk_pwd{ opacity:0;  
+                &.alert{ opacity:1; font-size:20px; font-weight:900;color:#f00d38; };
+              }
+
+              .spaceL{padding-left:14px;}
+            }
+            input, select{display:inline-block; height:40px; border:1px solid #dedede;}
+
+            // .form > .form_list > .list 폼작성 스타일링과 합치기
+            .input_box{
+              >*{vertical-align:middle; margin:10px; }
+              span{display:inline-flex; align-items: center; margin-right:20px;
+                label{order:2;}
+                input{order:1; width:14px; margin:0 5px; height:14px;}
+              }
+            }
+            &.list{
+              input.alert, select.alert {border-color:#f00d38;}//valid 불통
+              em.required{ transition:transform .3s ease; font-size:16px; line-height:1.6;
+                &.alert{font-size:20px; font-weight:900;}//valid 불통
+                span{
+                  &.alert{font-size:20px; font-weight:900;};
+                }
+              }
+              .guide_txt { padding-top:20px; padding-left:0; padding-right:0; left:30px; height:60px; width:calc(100% - 30px);
+                &:after{display:none;}
+                &.flex_box{display:flex; 
+                  label{margin-right:10px; height:40px; line-height:40px;}
+                  p{height:40px;line-height:40px;}
+                }
+              }//.guide_txt End
+              input{margin-bottom:10px; height:40px; 
+                +button{margin-left:20px; width:140px; background-color:#333; color:#fff;}
+              }
+              .spaceR{margin-right:10px;}
+              .btn_drop{height: 40px;
+                .button__drop-down{border:0 none;}
+              }
+              .ability_chk{margin:0;}
+            
+              .msg_box{display:none;
+                &.alert{display:block; color:#f00d38;}
+              }
+              &.type_1{display:flex;}
+              
+            }
+            
+          }
+        }// > li End 
+      }// >ul End
+    }// register_user End
+
+  }//step03 End
+
+  /* step04 */
+  &.form_join_04{
+    .caution{display:flex; align-items:flex-start; margin: 20px 0; padding:25px 45px;  background-color:#eeeeee;
+      .ico_user{ display: inline-block; margin-top:4px; margin-right:20px; width:49px;
+      }
+      .caution_tit{display:block;  margin-bottom:15px; font-size:22px; line-height:26px;color:#222;}
+      .txt{display:block; font-size:$fs-16; line-height:1.2; color:#222; font-size:16px; line-height:16px;}
+    }//주의 사항 End 
+
+    .join_04_done{max-width:492px; margin:50px auto 240px auto; padding:38px 30px 30px 30px; border:1px solid #ddd;
+      dt{font-size:26px; line-height:26px; font-weight:100; text-align:center;}
+      dd.join_04_img{margin:20px 0; text-align:center; }
+      dd.btn_box{ flex-wrap:wrap; padding:0;
+        .go_login{margin-bottom:10px; flex:0 0 100%; background-color:#486ec3;}
+        .go_main{flex:0 0 100%; background-color:#555;}
+      }
+    }
   }
 }

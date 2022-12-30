@@ -68,6 +68,7 @@ select.p-input{background: #fff url(../images/arrow_dropdown.png) no-repeat righ
   button.p-button{flex:0 0 9%;} 
 }
 /* 테이블 */
+
 .table-tit{margin-top:17px; height:30px; line-height:30px;
   .board_count, .current_pg {padding:0 5px; color:$color2;}
   .amount{font-weight:900;}
@@ -113,6 +114,7 @@ form{
       //등록하기
       
       &.info{ border:{left:1px solid #dedede; right:1px solid #dedede;}
+        &.noBorderLR{ border:{left:0 none; right:0 none;} }
         input{height:40px; border:1px solid #dedede;}
         dl{display: flex; flex-wrap:wrap;
           dt,dd{ height:58px;  border-bottom:1px solid $bd_color; background-color:$bg;}
@@ -456,8 +458,8 @@ form{
 
   .bbs_pic{
     div.flex-box{ align-items:flex-start;  padding:40px;
-      table{margin:30px 45px;
-        th{width:30%; text-align:left;}
+      table{margin:30px 45px; width:auto;
+        th{ text-align:left;}
         td{}
       }
     }
@@ -492,8 +494,8 @@ form{
   .bbs_view_details, .sign{
     h1{padding:15px; border-bottom:2px solid #000;font-size:$fs-26; line-height:1;}
     div{padding:20px;
-      .view_conts{ margin-bottom:350px;
-        .view_tit{ width:10%; height:28px; text-align:left;}
+      .view_conts{ margin-bottom:50px; width:auto;
+        .view_tit{  height:28px; text-align:left;}
         .view_conts{height:28px;}
       }
     }
@@ -501,7 +503,7 @@ form{
   &.g_365{
     .bbs_view_details, .sign{ border-bottom:1px solid #222;
       div{
-        .view_conts{margin-bottom:0;}
+        .view_conts{margin-bottom:0; width:auto;}
       }
     }
     .sign{border-width:2px;}
@@ -571,7 +573,7 @@ form{
   dl{ word-break:keep-all;
     div{margin-top:16px;}
     dt{position:relative; padding-left:12px; margin-bottom:6px; font-size:16px; line-height:20px; color:#232323; font-weight:500;
-        &:after{ @include afterBefore(('_width':4px, '_height':4px,'_border':0 none, '_border-radius':50%, '_padding':0 )); background-color:#fe0036; @include posV_50;}
+        &:after{ @include afterBefore(('_width':4px, '_height':4px,'_border':0 none, '_border-radius':50%, '_padding':0 )); background-color:#222; @include posV_50;}
     }
     dd{position:relative; margin-left:12px; margin-bottom:4px; padding-left:12px;font-size:15px; line-height:19px; color:#202020;
       &:after{ @include afterBefore(('_width':6px, '_height':1px,'_border':0 none, '_border-radius':0, '_padding':0 )); background-color:#222222; @include posV_50; top:8px;}
@@ -599,7 +601,7 @@ form{
 /* 공모접수확인 */
 .details_view_box{
   //제목 부분
-  p.guide{padding:40px 0;}
+  p.guide{padding:40px 0; border-bottom:2px solid #222;}
   &.residenceConfirm{
     header{border-bottom:2px solid #222;
       h1{ margin-bottom:0; height:30px; line-height:30px;}
@@ -677,7 +679,7 @@ form{
     dl{padding:25px 15px;
       dt{margin-bottom:5px; font-weight:500; font-size:20px; line-height:35px; }
       dd{position:relative; padding-left:22px; font-size:14px; line-height:30px;
-        &:before{@include posV_50; @include afterBefore( ('_width':4px, '_height':4px,'_border':0 none, '_border-radius':50%, '_padding':0 ) ); background-color:#e61874;}
+        &:before{@include posV_50; @include afterBefore( ('_width':4px, '_height':4px,'_border':0 none, '_border-radius':50%, '_padding':0 ) ); background-color:#222;}
       }
     }
 
@@ -743,7 +745,9 @@ form.clean_call_register{
         span{color:#222;}
         &.on{background-color:#476dc3; 
           span{color:#fff;}
+          &:not(:last-child):after{border-color:#476dc3;}
         }
+        
       }
     }
   }

@@ -4,6 +4,7 @@
     }
     .txt{font-size:$fs-16; line-height:1.2; color:#222222;}
   }//주의 사항 End 
+  .usr_guide_text{padding:10px;}
    $margin_btm:15px;
   .user_box{display:flex; justify-content: space-between; align-items:stretch;
     article{flex:0 0 50%; display:flex; align-items:stretch; justify-content: flex-start;
@@ -66,8 +67,15 @@
         p{
           span{display:block;}
         }
-        .btn_box{margin-top:24px;  
-          a{height:68px;background-color:#476dc3; color:#fff; text-align:center; line-height:68px;}
+        .btn_box{display:flex;  margin-top:24px;  
+          a{flex:1 1 50%; margin:0 4px; height:68px;background-color:#476dc3; color:#fff; text-align:center; line-height:68px;
+            &.cancel{background-color:#555;}
+          }
+          &.basic{
+            a{
+              &.cancel{background-color:#555;}
+            }
+          }
         }
       }
       .user_left_box{

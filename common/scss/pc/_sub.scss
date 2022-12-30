@@ -81,7 +81,7 @@ main.sub{ @include clear;
                             }
                             &.selected,&.active {
                                 a {color:#316ed2;text-decoration:underline;text-underline-offset: 0.2em;
-                                    &:before {background-color:#316ed2;}
+                                    &:before {border-color:#316ed2; background-color:rgba(49,110,210,0.1);}
                                 }
                             }
                         }
