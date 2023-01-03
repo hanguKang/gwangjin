@@ -828,7 +828,7 @@
                     <h1>중복회원가입체크 정보 입력</h1>
                     <ul class="txt_wrapper spaceBox step01">
                       <li>
-                        <strong class="regi_usr_tit"><span class="stp1_chk_tit">회원이름</span><span class="required clr_red">(&nbsp;&#42;&nbsp;)</span></strong>
+                        <strong class="regi_usr_tit u_14"><span class="stp1_chk_tit">회원이름</span><em>( 14세 미만 )</em><span class="required clr_red">(&nbsp;&#42;&nbsp;)</span></strong>
                         <div class="regi_usr_txt type_input_box noneOrder">
                           <div class="guide_txt hide">
                             <label for="user_name" class="input_tit">회원이름</label>
@@ -837,7 +837,7 @@
                         </div>
                       </li>
                       <li>
-                        <strong class="regi_usr_tit"><span class="stp1_chk_tit">생년월일</span><span class="required clr_red">(&nbsp;&#42;&nbsp;)</span></strong>
+                        <strong class="regi_usr_tit u_14"><span class="stp1_chk_tit">생년월일</span><em>( 14세 미만 )</em><span class="required clr_red">(&nbsp;&#42;&nbsp;)</span></strong>
                         <div class="regi_usr_txt type_input_box noneOrder">
                           <div class="guide_txt hide">
                             <label for="user_birth" class="input_tit">생년월일</label>
@@ -846,14 +846,14 @@
                         </div>
                       </li>
                       <li class="poseVetical_50">
-                        <strong class="regi_usr_tit float_box"><span class="stp1_chk_tit">성별</span><span class="required clr_red">(&nbsp;&#42;&nbsp;)</span></strong>
+                        <strong class="regi_usr_tit float_box u_14"><span class="stp1_chk_tit">성별</span><em>( 14세 미만 )</em><span class="required clr_red">(&nbsp;&#42;&nbsp;)</span></strong>
                         <div class="regi_usr_txt rowBox input_rad_box">
-                          <span class="type_input_box"><input type="radio" name="gender" value="m" checked id="male"><label for="male">남성</label></span>
-                          <span class="type_input_box"><input type="radio" name="gender"  value="w" id="female"><label for="female">여성</label></span>
+                          <span class="type_input_box"><label for="male">남성</label><input type="radio" name="gender"  checked id="male"></span>
+                          <span class="type_input_box"><label for="female">여성</label><input type="radio" name="gender" id="female"></span>
                         </div>
                       </li>
                       <li class="list">
-                        <strong class="regi_usr_tit"><span class="stp1_chk_tit">휴대폰</span><span class="required clr_red">(&nbsp;&#42;&nbsp;)</span></strong>
+                        <strong class="regi_usr_tit u_14"><span class="stp1_chk_tit">휴대폰</span><em>( 14세 미만 )</em><span class="required clr_red">(&nbsp;&#42;&nbsp;)</span></strong>
                         <div class="regi_usr_txt type_input_box noneOrder">
                           <label for="join_phone_1" class="input_tit hide">휴대폰<span class="required clr_red">(&nbsp;&#42;&nbsp;)</span></label>
                           <select name="" id="join_phone_1">
@@ -898,6 +898,7 @@
                       </dl>
                     </div>
                     <div class="bottom">
+                      <label for="opinions_regis" class="hide">의견 등록 메세지 입력</label>
                       <textarea name="" id="opinions_regis" cols="30" rows="10"></textarea>
                       <button class="button-color" title="의견등록" type="button">의견등록</button>
                     </div>

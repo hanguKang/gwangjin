@@ -8,6 +8,7 @@
         .no_border{border:0 none;}
         .guide_txt {position:absolute; top: 0px; left: 50px; width: calc(100% - 50px); height: 100%;padding: 0; line-height:57px; background: #fff;z-index: 1; opacity:0.3;
           &:after{display:none;}
+          &.alert{opacity:1; color:#f00d38;}
         }
   
         span.chk { left: auto !important; height: 15px !important; margin-top: -8px !important; background-position: 0px 0px;opacity: 1 !important; filter: alpha(opacity=100);}
@@ -65,14 +66,28 @@
 
 /*회원가입 단계별*/
 .form_join{
-  legend{
-    &.notHide{height: auto; width: auto; overflow: visible;  clip: auto; margin: 0; font-size:16px; line-height:1.25;
-      &.input_tit{width:100px;}
-    }
-  }
-  .input_tit{display:inline-block; width:100px; 
-    .required{font-weight:800;
-      &.clr_red{float:right; margin-right:10px; font-weight:300; color:#f00d38;}
+  ul.step01{
+    li{display:flex;
+      &.poseVetical_50{
+        .regi_usr_tit{justify-content: space-between;}
+        .regi_usr_tit, .regi_usr_txt{padding:0; align-items: center; }
+      }
+      .regi_usr_tit{flex:0 1 auto; min-width:12%; display:flex; justify-content: space-between; padding-top:10px;
+        &.u_14{min-width:20%;}
+          .stp1_chk_tit{flex:0 0 60px;}
+          em{flex:0 0 80px; text-align:center; color:#555;}
+          .required{flex:0 0 30px; margin-right:20px; font-weight:800;
+            &.clr_red{font-weight:300; color:#9c001d;}
+
+        }
+      }
+      .regi_usr_txt{flex:1 0 auto; flex-wrap:wrap;
+        .ability_chk{display:none; flex:0 0 100%; order:3; color:#9c001d; padding-top:10px;
+          &.alert{display:block; }
+        }
+      }
+      
+      
     }
   }
   
@@ -90,14 +105,14 @@
   }//.txt_wrapper End
   
   .input_wrapper{padding:18px; background-color:#eeeeee;}
-  .float_box{overflow:hidden;
-    legend{float:left; height:40px; line-height:40px;}
-    p{float:left; height:40px; line-height:40px;}
-  }
   .rowBox{display:flex;}
   .type_input_box{display:flex; align-items: center; 
     label{order:2; font-size:16px; line-height:16px;}
-    select,input{order:1; margin-right:5px; display: inline-block; width:auto; height:40px; border:1px solid #dedede;}
+    select,input{
+      order:1; margin-right:5px; display: inline-block; width:auto; height:40px; border:1px solid #dedede;
+      &.alert{border-color:#f00d38;};
+      
+    }
     &.noneOrder{padding:3px 0;
       label{order:1; word-break: keep-all;}
       input{order:2; display: inline-block; width:auto;}
@@ -148,21 +163,21 @@
             &.none{font-size:16px; font-weight:300;}
           }
           ul{display:flex; margin-top:35px;
-            li{flex:0 0 50%; 
-              a{@include alignFelxCenter; color:#fff; height:86px;
+            li{flex:0 0 100%; margin:0 auto;
+              button{@include alignFelxCenter; color:#fff; width:100%; height:86px;
                 .regi_txt{margin-left:10px;}
               }
-              &:first-child{
-                a{margin-right:5px; background-color:#476dc3;}
+              &.active{
+                button{background-color:#476dc3;}
               }
-              &:last-child{
-                a{margin-left:5px; background-color:#555555;}
+              &.cancel{
+                button{background-color:#555555;}
               }
             }
           }// ul End
           &.old_info{display:block; padding:0; 
-            dl{ display:flex; flex-direction:column; font-weight:300; height:75%;
-              >*{flex:1 0 auto; border-bottom:1px solid #dedede;}
+            dl{ display:flex; flex-direction:column; font-weight:300; height:100%;
+              >*{flex:1 0 0; border-bottom:1px solid #dedede;}
               
               .old_id{margin-left:10px;}
               .bar{padding:0 10px; }
@@ -171,9 +186,11 @@
                 .old_tit{margin-right:10px;}
                 span{font-size:16px;}
               }
-              dd{padding-left:50px; display:flex; align-items: center;
-                i{flex:0 0 24%; }
+              dd{padding-left:50px; display:flex; align-items: center;color:#fff;
+                button{flex:0 0 24%; text-align:left; color:#fff;}
                 span{font-size:14px;}
+                &.active{background-color:#476dc3; }
+                &.cancel{background-color:#555555; }
               }
               &+p{padding-left:50px; height:25%; display:flex; align-items: center; background-color:#555; color:#fff; 
                 i{flex:0 0 24%; }
@@ -227,19 +244,21 @@
           .regi_usr_tit{display:flex; flex:0 0 180px; padding:20px; background-color:#eee; justify-content: space-between;
             .required{margin-right:10px; color:#f00d38;}
           }
-          .regi_usr_txt{flex:1 0 auto;  padding:20px; 
-            em{position:relative; display:block; margin-top:10px; letter-spacing:-1px; 
+          .regi_usr_txt{flex:1 0 calc(100% - 180px); padding:20px;             
+            .required_msg_box{position:relative; display:block; margin-top:10px; letter-spacing:-1px; 
               &:first-of-type{margin-top:0;}
-              &.chk_pwd{ opacity:0;  
-                &.alert{ opacity:1; font-size:20px; font-weight:900;color:#f00d38; };
-              }
-
               .spaceL{padding-left:14px;}
+            }
+            .ability_chk{display:none;
+              &.alert{display:block; color:#f00d38;}
+            }
+            .chk_pwd{ 
+              &.alert{ display:block; font-size:20px; font-weight:900;color:#f00d38; };
             }
             input, select{display:inline-block; height:40px; border:1px solid #dedede;}
 
             // .form > .form_list > .list 폼작성 스타일링과 합치기
-            .input_box{
+            .input_rad_box{
               >*{vertical-align:middle; margin:10px; }
               span{display:inline-flex; align-items: center; margin-right:20px;
                 label{order:2;}
@@ -248,9 +267,9 @@
             }
             &.list{
               input.alert, select.alert {border-color:#f00d38;}//valid 불통
-              em.required{ transition:transform .3s ease; font-size:16px; line-height:1.6;
-                &.alert{font-size:20px; font-weight:900;}//valid 불통
-                span{
+              .required_msg_box{ transition:transform .3s ease; font-size:16px; line-height:1.6; color:#f00d38;
+                //&.alert{font-size:20px; font-weight:900;}//valid 불통
+                span{display: block;
                   &.alert{font-size:20px; font-weight:900;};
                 }
               }
@@ -302,4 +321,17 @@
       }
     }
   }
+}
+
+/* 팝업 창 */
+.usr_modify_box_popup{position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; 
+  .usr_modify_curtain{position:absolute; left:0; top:0; width:100vw; height:100vh; background-color:rgba(0,0,0,.5);}
+  .usr_modify_wrapper{position:absolute; left:50%; top:50%; transform:translateX(-50%) translateY(-50%); width:100%; max-width:962px; background-color:#fff;
+    >h1{padding:0 20px; height:47px; font-size:18px; line-height:47px; background-color:#333; color:#fff;}
+    .join_content{padding:20px 50px; border:1px solid #f2f2f2; 
+      .btn_box{margin:30px auto 40px auto; }
+    }
+    .usr_modify_close{position:absolute; right:20px; top:15px; color:#fff; cursor:pointer;}
+  }
+  
 }

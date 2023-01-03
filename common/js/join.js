@@ -97,11 +97,14 @@ function join(){
 			joinObj.$placeholder.click(function(){ //.guide_txt (가이드 글자) 클릭하면 ==> 가이드 글자 사라지고, input요소에 focus된다. 
 			  if( $(this).closest(".list").find("input").attr("readonly") != "readonly"){
 					( $(this).parent().hasClass("textarea") ) ? $inputType = "textarea" : $inputType = "input" ;
-					$(this).addClass("for-a11y");//.for-a11y라는 클래스 ==> 가이드 text는 사라지고 글자 숨기기
+					$(this).addClass("for-a11y");//.for-a11y 클래스 ==> 가이드 text는 사라지고 글자 숨기기
+					if($(this).has('alert')){
+						$(this).removeClass('alert');
+					}
 					$(this).parent().find($inputType).eq(0).focus(); //첫번째 input요소에 focusing
 				}else{
 					$(this).addClass("for-a11y");
-					$(this).parent().find('button').eq(0).focus(); //첫번째 input요소에 focusing
+					$(this).parent().find('button').eq(0).focus(); //첫번째 button요소에 focusing
 				} //if End
 			});
 			joinObj.$placeholder.keyup(function(event) {//.guide_txt에 키업을 하면,
@@ -120,7 +123,6 @@ function join(){
 				}
 			}).blur(function(){
         //값이 없거나 undefined라면 
-        //console.log(11111114);
 				if($(this).siblings("input").val() == undefined){
 					( $(this).val() == "" )? $(this).parent().find(".guide_txt").removeClass("for-a11y") : $(this).parent().find(".guide_txt").addClass("for-a11y");
 				}else{
@@ -171,7 +173,6 @@ function join(){
 						if (hit == "직접입력") { 
               //alert(45679);
 							
-							
 							//input_email.val("").focus();
               setTimeout(()=>{input_email.val("").focus();},300); 
             }else{
@@ -215,7 +216,7 @@ function join(){
 					})
 				}
 				btn.addEventListener("click", function () {//버튼 클릭
-					setTimeout(function () { //0.5초 이후에 시작하는 것은 191줄의 #1의 값을 미리 넣고 시작하기 위해서이다. 
+					setTimeout(function () { //0.5초 이후에 시작하는 것은 #1의 값을 먼저 넣기 위해서이다. 클릭하는 순간 blur 이벤트 발생 시작하기 위해서이다. 
             //console.log(1233+beforeOuterHtml);
 						let expandEl = document.querySelector("#" + btn.getAttribute("aria-controls"));
             

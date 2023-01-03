@@ -66,73 +66,88 @@ try {
 				init_addr();
 				init_phone();
 				init_carNum();
+				init_rad();
+				init_pop_btn();
 			});
 
+			function init_pop_btn(){
+				$('.modify_btn_box').children('.btn_submit').on('click',()=>{
+					let result = confirm('비밀번호를 수정하시겠습니까?');
+					
+					//코드 .... 
+
+					if(result){
+						alert('수정이 완료되었습니다. ');
+
+					}
+					
+				});
+				$('.modify_btn_box').children('.cancel').on('click',()=>{
+					$('.usr_modify_box_popup').css('display','none');
+				});
+				$('.usr_modify_close').on('click',()=>{
+					$('.usr_modify_box_popup').css('display','none');
+				});
+			}
+			function init_rad(){
+				let $input_rads = $(".input_rad_box").find('input[type="radio"]');
+				for(let i =0; i<$input_rads.length; i++ ){
+					$input_rads.eq(i).on('click',()=>{
+						$input_rads.eq(i).attr('aria-selected', true).closest('.type_input_box').siblings('.type_input_box')
+						.children('input[type="radio"]').attr('aria-selected', false);
+					});
+				}
+			}
+
+			function chck_carNum(car_val, car_num){
+				let result = car_val.replace(/\s/g,'');
+				//console.log(result);
+				car_num.val(result);
+			}
 			function init_carNum(){
 
 				let car_num = $('#regi_usr_carNo');
 				car_num.on('blur',()=>{
-					//alert(1234);
 					let car_val = car_num.val();
 					chck_carNum(car_val, car_num);
 				});
 			}
-			function chck_carNum(car_val, car_num){
-
-				let result = car_val.replace(/\s/g,'');
-				console.log(result);
-				car_num.val(result);
-			}
-
+			
 			function init_phone(){
 				//전화번호, 핸드폰 값 모두 합치기
-				
-				$('#regi_phone_3').on('blur',()=>{
-					let local_str = '#regi_phone_';
-					let local_result = null;
-					local_result = formatPhoneNumber(local_str);
-					if(!local_result){
-						for(let i =1; i<4; i++){
-							$(local_str+i).addClass('alert');
+				let acrossPhone = $('.acrossPhone');
+				for(let i=0; i< acrossPhone.length; i++){
+					acrossPhone.eq(i).on('blur',()=>{
+						let lastIdx = acrossPhone.eq(i).attr('id').lastIndexOf('_');
+						let acPhone_str = '#'+acrossPhone.eq(i).attr('id').substring(0, lastIdx+1);
+						//console.log(acPhone_str);
+						let tel_result = null;
+						tel_result = formatPhoneNumber(acPhone_str);
+						if(!tel_result){//잘못됐다면
+							$(acPhone_str+i).addClass('alert');
+							accessAriaInvalid(acrossPhone, !tel_result);
+						}else{
+							$(acPhone_str+i).removeClass('alert');
+							accessAriaInvalid(acrossPhone, tel_result);
 						}
-					}else{
-						for(let i =1; i<4; i++){
-							$(local_str+i).removeClass('alert');
-						}
-					}
-				});
-				$('#join_phone_3').on('blur',()=>{
-					let cellphone_str = '#join_phone_';
-					let cell_result= null; 
-					cell_result = formatPhoneNumber(cellphone_str);
-					if(!cell_result){
-						for(let i =1; i<4; i++){
-							$(cellphone_str+i).addClass('alert');
-						}
-					}else{
-						for(let i =1; i<4; i++){
-							$(cellphone_str+i).addClass('alert');
-						}
-					}
-				});
-
+					});
+				}
 				//formatPhoneNumber (str);
 			}
 
 
 			function formatPhoneNumber (str) {
-
-				let total_phone_No='';
-				let local = $(str+'1').val();
-				let local_phone_1 = $(str+'2').val();
-				local_phone_1 = local_phone_1.replace(/\s/,'');
-				let local_phone_2 = $(str+'3').val();
-				local_phone_2 = local_phone_2.replace(/\s/,'');
-				total_phone_No = local+local_phone_1+local_phone_2;
-
-				let $pattern = '/^[0-9]+$/';
 				
-				if(!local_phone_1.match($pattern)){
+				let total_phone_No = '';
+				let local = $(str+'1').val();				
+				let phone_1 = $(str+'2').val();
+				phone_1 = phone_1.replace(/\s/,'');
+				let phone_2 = $(str+'3').val();
+				phone_2 = phone_2.replace(/\s/,'');
+				total_phone_No = local+phone_1+phone_2;
+				let $pattern = /^[0-9]+$/;
+
+				if(!phone_1.match($pattern)){ //잘못되면
 					$(str+'2').val('');
 					$(str+'2').attr('placeholder','숫자를 입력하세요').nextAll('.msg_box').addClass('alert').text('정확한 전화번호를 입력하세요.');
 					$(str+'2').addClass('alert');
@@ -143,7 +158,7 @@ try {
 					$(str+'2').removeClass('alert');
 				}
 
-				if(!local_phone_2.match($pattern)){
+				if(!phone_2.match($pattern)){//잘못되면
 					$(str+'3').val('');
 					$(str+'3').attr('placeholder','숫자를 입력하세요').nextAll('.msg_box').addClass('alert').text('정확한 전화번호를 입력하세요.');
 					$(str+'3').addClass('alert');
@@ -155,7 +170,7 @@ try {
 				}
 
 			
-				if(local_phone_1.length<3 || local_phone_1.length > 4 ){
+				if(phone_1.length<3 || phone_1.length > 4 ){//잘못되면
 					$(str+'2').attr('placeholder','최소 3개, 최대 4개 숫자를 입력하세요').nextAll('.msg_box').addClass('alert').text('정확한 전화번호를 입력하세요.');
 					$(str+'2').addClass('alert');
 					$(str+'2').focus();		
@@ -165,7 +180,7 @@ try {
 					$(str+'2').removeClass('alert');
 				}
 
-				if(local_phone_2.length != 4 ){
+				if(phone_2.length != 4 ){//잘못되면
 					$(str+'3').attr('placeholder','4개 숫자를 입력하세요').nextAll('.msg_box').addClass('alert').text('정확한 전화번호를 입력하세요.');
 					$(str+'3').addClass('alert');
 					$(str+'2').focus();
@@ -173,20 +188,10 @@ try {
 				}else{
 					$(str+'3').attr('placeholder','').nextAll('.msg_box').removeClass('alert').text('전화 번호를 입력하세요.');
 					$(str+'3').removeClass('alert');
+					return true; //마지막에 if문으로 true남기지 않고 마지막 이전 if문에서 return해버리면, 아직 유효성 검사하지 않은 input들의 값을 판별하지 못한다. 
 				}
 
-				if (typeof total_phone_No !== 'string') return false;
-				total_phone_No = total_phone_No.replace(/[^0-9]/g, '');
-				if(total_phone_No.length < 9){
-					$('#regi_phone_1').focus();
-					return false; 
-				}
-
-				// if (total_phone_No.indexOf('82') == 0) {
-				// 		return total_phone_No.replace(/(^82)(2|\d{2})(\d+)?(\d{4})$/, '+$1-$2-$3-$4'); // +82
-				// } else if (total_phone_No.indexOf('1') == 0) {
-				// 		return total_phone_No.replace(/(^1\d{3})(\d{4})$/, '$1-$2'); // 1588, 1566, 1677, ...
-				// }
+				//
 				// return total_phone_No.replace(/(^02|^0504|^0505|^0\d{2})(\d+)?(\d{4})$/, '$1-$2-$3'); // 02/0504/0505/010/011/031
 			}
 
@@ -225,9 +230,9 @@ try {
 					//alert($_idVal);
 					result = chckId($_idVal);
 					if(result){
-						$_id.removeClass('alert').nextAll('em.required').removeClass('alert');
+						$_id.removeClass('alert').nextAll('.required_msg_box').children('.sameStr').removeClass('alert');
 					}else{
-						$_id.focus().addClass('alert').nextAll('em.required').addClass('alert');
+						$_id.focus().addClass('alert').nextAll('.required_msg_box').children('.sameStr').addClass('alert');
 					}//return false
 
 				});
@@ -242,6 +247,32 @@ try {
 				return result;    
 			}
 
+			function accessAriaInvalid(elem, bool){
+				let pwd = elem;
+				let $ariaElm = $('#'+ pwd.attr('aria-describedby') );
+				pwd.attr('aria-invalid', !bool);
+				
+				// if(pwd.val() == '' && $ariaElm.hasClass('ability_chk')){
+					
+				// 	$ariaElm.addClass('alert');
+				// 	$ariaElm.attr('aria-hidden', false);
+				// 	return;
+				// }
+
+				if(!bool && $ariaElm.hasClass('ability_chk')){	// true이면, 잘못된 정보라면
+																											//ablility_chk는 aria-describedby가 가리키는 해당 요소이다. 이 요소는 기본적으로 display:none으로 이벤트 발생시 나타난다. 
+																											//이 요소는 checkbox, raido버튼 등의 aria-descripbedby과 연관된 요소의 문구로써 display:block으로 숨기지 않는 것과 구분하는 방법으로 사용한다. 
+					$ariaElm.removeClass('alert');
+					$ariaElm.attr('aria-hidden',true);
+					return;
+				}else if(bool && $ariaElm.hasClass('ability_chk')){
+					$ariaElm.addClass('alert');
+					$ariaElm.attr('aria-hidden',false);
+					return;
+				}
+				
+			}
+
 			function factory_pwd($pwd, $pwd_val){
 				// console.log($pwd);
 				// console.log($pwd_val);
@@ -252,39 +283,58 @@ try {
 				if(forId.length > 0 && forId.val() != ''){
 					// alert($pwd.attr('id'));
 					// alert(forId.attr('id'));
-					let result_same_str = chkPwdId($pwd.attr('id'), forId.attr('id') );
+					let result_same_str = chkPwdId($pwd.attr('id'), forId.attr('id') );factory_pwd
 					if(result_same_str){
-						$pwd.nextAll('em.required').children('span.sameStr').removeClass('alert');
+						$pwd.nextAll('.required_msg_box').children('.sameStr').removeClass('alert');
 					}else{
-						$pwd.nextAll('em.required').children('span.sameStr').addClass('alert');
+						$pwd.nextAll('.required_msg_box').children('.sameStr').addClass('alert');
 					}
 				}
 				
 				//alert('연속숫자'+result_continue);
 				if(result_continue){//연속된 숫자
 					//console.log(result);
-					$pwd.addClass('alert').nextAll('em.required').children('.continueNum').addClass('alert');
+					$pwd.addClass('alert').nextAll('.required_msg_box').children('.continueNum').addClass('alert');
 				}else{//연속된 숫자 
-					$pwd.removeClass('alert').nextAll('em.required').children('.continueNum').removeClass('alert');
+					$pwd.removeClass('alert').nextAll('.required_msg_box').children('.continueNum').removeClass('alert');
 				}
+
 				if(result_pw){
 					//console.log('ok');
-					$pwd.nextAll('em.required').children('.pwd_pass').removeClass('alert');
+					$pwd.nextAll('.required_msg_box').children('.pwd_pass').removeClass('alert');
 				}else{
 					//console.log('no');
-					$pwd.nextAll('em.required').children('.pwd_pass').addClass('alert');
+					//console.log($pwd.nextAll('.required_msg_box'));
+					$pwd.nextAll('.required_msg_box').children('.pwd_pass').addClass('alert');
 				}
+				accessAriaInvalid($pwd, result_pw);
 				
+			}
+
+			function chckPwdSameResult($pwd, result){
+				//alert(result);
+				if(result){// 두 비번이 일치하지 않으면,
+					//$pwd.nextAll('.chk_pwd').text('비밀 번호가 일치하지 않습니다.').addClass('alert');
+					if($pwd.val() !=''){
+						$pwd.nextAll('.chk_pwd').text('비밀 번호가 일치하지 않습니다.').addClass('alert');
+					}else{
+						$pwd.nextAll('.chk_pwd').text('값을 입력하시오.').addClass('alert');
+					}
 					
+				}else{
+					$pwd.nextAll('.chk_pwd').removeClass('alert');
+				}
 			}
 
 			function init_pwdChck(){
 				let $pwd1 = $('#regi_usr_pwd1'); //회원가입 비번
-				let $pwd2 = $('#regi_usr_pwd2'); //회원가입 비번
+				let $pwd2 = $('#regi_usr_pwd2'); //회원가입 비번 확인
 				let $pwd3 = $('#residence_pwd1'); //주민참여 등록 비번
-				let $pwd4 = $('#residence_pwd2'); //주민참여 등록 비번
+				let $pwd4 = $('#residence_pwd2'); //주민참여 등록 비번 확인
 				let $pwd5 = $('#modify_usr_pwd1'); //비번 수정
-				let $pwd6 = $('#modify_usr_pwd2'); //비번 수정
+				let $pwd6 = $('#modify_usr_pwd2'); //비번 수정 확인
+				let $pwd7 = $('#modify_usr_new_pwd1'); //비번 수정 팝업
+				let $pwd8 = $('#modify_usr_new_pwd2'); //비번 수정 확인팝업
 				//let $pwd2 = $('#regi_usr_pwd1');
 				// $pwd1.on({
 				// 	'blur': function(){
@@ -302,12 +352,14 @@ try {
 				// 	}
 				// });
 
-				
-				$pwd1.on('blur', function(){
+				/* 비번입력 */
+				$pwd1.on('blur', function(e){
 					let pwd_val = $pwd1.val();
 					//alert(pwd_val);
 					//^(?=.*[a-zA-Z])(?=.*[!@#$%^&*-_])(?=[0-9]*)[\da-zA-Z!@#$%^&*-_]{10,20}$
 					factory_pwd( $pwd1, pwd_val );
+					
+					//$pwd2.off('blur');
 				});
 
 				$pwd3.on('blur', function(){
@@ -321,48 +373,89 @@ try {
 						console.log('no');
 					}
 				});
-
 				$pwd5.on('blur', function(){
-					
 					let pwd_val = $pwd5.val();
 					//alert(pwd_val);
 					//^(?=.*[a-zA-Z])(?=.*[!@#$%^&*-_])(?=[0-9]*)[\da-zA-Z!@#$%^&*-_]{10,20}$
 					factory_pwd( $pwd5, pwd_val );
 				});
-
-
-				$pwd2.on({
-					'blur': function(){
-						let result = chckPwd($pwd1, $pwd2);
-
-						if(!result){
-							$pwd2.nextAll('.chk_pwd').addClass('alert');
+				$pwd7.on(
+					{	'focus': function (){
+						let existing_pwd = $('#existing_usr_pwd');	
+							if(existing_pwd.val() == ''){
+								existing_pwd.closest('.list').find('.guide_txt').addClass('alert');
+								//existing_pwd.focus();
+							}
+						},//focus End
+						'change':function(){
+							if(existing_pwd.val() == ''){
+								existing_pwd.closest('.list').find('.guide_txt').addClass('alert');
+								//existing_pwd.focus();
+							}
+						},
+						'blur' : function(){
+						let pwd_val = $pwd7.val();
+						let existing_pwd = $('#existing_usr_pwd');
+						let result = null;
+						//alert(pwd_val);
+						//^(?=.*[a-zA-Z])(?=.*[!@#$%^&*-_])(?=[0-9]*)[\da-zA-Z!@#$%^&*-_]{10,20}$
+						factory_pwd( $pwd7, pwd_val );
+						result = chckPwdSame( existing_pwd, $pwd7 );
+						
+						if(result){ //비번 같은지 확인해서 기존 번호와 같지 않으면 alert을 띄우지만, 이 비번의 값은 기존 비밀번호와 일치하면 잘못된 것이기 때문에 alert을 포함한다. 
+							if($pwd7.val() !='' && existing_pwd.val() !=''){
+								$pwd7.nextAll('.chk_pwd').text('기존 비밀번호와 값이 일치하지 않습니다.').addClass('alert');
+							}else if($pwd7.val() ==''){
+								$pwd7.nextAll('.chk_pwd').text('값을 입력하시오').addClass('alert');
+							}
+							
 						}else{
-							$pwd2.nextAll('.chk_pwd').removeClass('alert');
+							$pwd7.nextAll('.chk_pwd').removeClass('alert');
 						}
-
-					}
-				}); 
-
-				$pwd4.on({
-					'blur': function(){
-						chckPwd($pwd3, $pwd4);
-					}
+					}//blur End 
 				});
 
-				$pwd6.on({
-					'blur': function(){
-						let result = chckPwd($pwd5, $pwd6);
-
-						if(!result){
-							$pwd6.nextAll('.chk_pwd').addClass('alert');
-						}else{
-							$pwd6.nextAll('.chk_pwd').removeClass('alert');
-						}
-
+				/* 비번 확인 */
+				$pwd2.on({
+					//'focus':function(e){
+						//e.preventDefault();
+						//console.log('in');
+						// setTimeout(()=>{
+						// 	$($pwd2).bind('blur',()=>{
+						// 		console.log('나갔다');
+						// 	});
+						// },100);
+						
+					//},
+					'blur': function(e){
+						//console.log('out');
+						let result = chckPwdSame($pwd1, $pwd2);
+						//alert(result);
+						accessAriaInvalid($pwd2, result);
+						chckPwdSameResult($pwd2, result);
 					}
 				}); 
-			};
+				$pwd4.on({
+					'blur': function(){
+						chckPwdSame($pwd3, $pwd4);
+					}
+				});
+				$pwd6.on({
+					'blur': function(){
+						let result = chckPwdSame($pwd5, $pwd6);
+						accessAriaInvalid($pwd6, result);
+						chckPwdSameResult($pwd6, result);
+					}
+				}); 
+				$pwd8.on({
+					'blur': function(){
+						let result = chckPwdSame($pwd7, $pwd8);
+						accessAriaInvalid($pwd8, result);
+						chckPwdSameResult($pwd8, result);
+					}
+				});
+			};//init_pwdChck End
+			
 
 
 			function continuousPw(str = '', max = 3) {
@@ -385,7 +478,7 @@ try {
 			function chkPwdStrValid(str, units){
 				//console.log(units);
 				let regStr = null;
-				if(units.attr('id') == 'regi_usr_pwd1' || units.attr('id') == 'modify_usr_pwd1' ){//회원등록 3단계 페이지 :  join_step3_agree_register_new.html
+				if(units.attr('id') == 'regi_usr_pwd1' || units.attr('id') == 'modify_usr_pwd1' || units.attr('id') == 'modify_usr_new_pwd1' ){//회원등록 3단계 페이지 :  join_step3_agree_register_new.html
 					//regStr =  /^(?=.*[a-zA-Z])(?=.*[!@#$%^&*-_])(?=[0-9]*)[\da-zA-Z!@#$%^&*-_]{10,20}$/
 					let pw = units.val();
 					//console.log(pw);
@@ -395,24 +488,23 @@ try {
 
 					
 					if(pw.length < 10 || pw.length > 20){
-						alert("10자리 ~ 20자리 이내로 입력해주세요.");
+						//alert("10자리 ~ 20자리 이내로 입력해주세요.");
 						return false;
 					}else if(pw.search(/\s/) != -1){
-						alert("비밀번호는 공백 없이 입력해주세요.");
+						//alert("비밀번호는 공백 없이 입력해주세요.");
 						return false;
 					}else if(   (num < 0 && eng < 0) || (eng < 0 && spe < 0) || (spe < 0 && num < 0) ){
-						
-						alert("영문,숫자, 특수문자 중 2가지 이상을 혼합하여 입력해주세요.");
+						//alert("영문,숫자, 특수문자 중 2가지 이상을 혼합하여 입력해주세요.");
 						return false;
 					}else {
-						console.log('eng',eng);
-						console.log('num',num);
-						console.log('spe',spe);
+						// console.log('eng',eng);
+						// console.log('num',num);
+						// console.log('spe',spe);
 						if( eng != -1 && spe != -1){
-							console.log("통과");
+							//console.log("통과");
 							return true;	 
 						}else{
-							alert("영문,특수문자를 혼합하여 입력해주세요.");
+							//alert("영문,특수문자를 혼합하여 입력해주세요.");
 							return false;
 						}
 						
@@ -431,7 +523,7 @@ try {
 				
 			}// chkPwdStrValid End
 
-			function chckPwd(pwd1, pwd2){
+			function chckPwdSame(pwd1, pwd2){
 				//alert(1234);
 				let $pwd1, $pwd2, $pwd1_val, $pwd2_val, $pwd1_type, $pwd2_type;
 				$pwd1 = pwd1;
@@ -440,19 +532,31 @@ try {
 				$pwd2 = pwd2;
 				$pwd2_val = $pwd2.val();
 				$pwd2_type = $pwd2.attr('type');
-				console.log(!!$pwd1);
-				console.log($pwd1_val);
-				console.log($pwd1_type);
+				// console.log(!!$pwd1);
+				// console.log($pwd1_val);
+				// console.log($pwd1_type);
 				
 				if( !!$pwd1 && $pwd1_val !=''  && $pwd1_type == 'password' && !!$pwd2 && $pwd2_val !=''  && $pwd2_type == 'password'){
-					console.log($pwd2_val);
+					//console.log($pwd2_val);
 					//let $pwd_result = chkPwdStrValid($pwd1_val, $pwd1_type);
 					if($pwd1_val == $pwd2_val){
-						return true;
+						return false; //비번이 서로 일치한다. 
 					}else{
-						return false;
+						return true;
 					}
+				}else if(!!$pwd1 && $pwd1_val =='' && !!$pwd2 && $pwd2_val !=''){
+					//return true; 
+					$pwd1.focus();
+					return true;
+				}else if(!!$pwd1 && $pwd1_val !='' && !!$pwd2 && $pwd2_val ==''){
+					//return true; 
+					$pwd2.focus();
+					return true;
+				}else if(!!$pwd1 && $pwd1_val =='' && !!$pwd2 && $pwd2_val ==''){
+					//$pwd1.focus();
+					return true;
 				}
+
 				
 				
 			}

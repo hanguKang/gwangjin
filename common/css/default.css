@@ -501,7 +501,7 @@ a:link {
 }
 
 .required {
-  color: #f00d38;
+  color: #9c001d;
 }
 
 /*clear*/
@@ -7559,6 +7559,10 @@ body .sub .contents_sub_box {
 .join_content .form .form_list .list .guide_txt:after {
   display: none;
 }
+.join_content .form .form_list .list .guide_txt.alert {
+  opacity: 1;
+  color: #f00d38;
+}
 .join_content .form .form_list .list span.chk {
   left: auto !important;
   height: 15px !important;
@@ -7691,30 +7695,81 @@ body .sub .contents_sub_box {
   /* step03 */
   /* step04 */
 }
-.form_join legend.notHide {
-  height: auto;
-  width: auto;
-  overflow: visible;
-  clip: auto;
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.25;
+.form_join ul.step01 li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
-.form_join legend.notHide.input_tit {
-  width: 100px;
+.form_join ul.step01 li.poseVetical_50 .regi_usr_tit {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
-.form_join .input_tit {
-  display: inline-block;
-  width: 100px;
+.form_join ul.step01 li.poseVetical_50 .regi_usr_tit, .form_join ul.step01 li.poseVetical_50 .regi_usr_txt {
+  padding: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-.form_join .input_tit .required {
+.form_join ul.step01 li .regi_usr_tit {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  min-width: 12%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 10px;
+}
+.form_join ul.step01 li .regi_usr_tit.u_14 {
+  min-width: 20%;
+}
+.form_join ul.step01 li .regi_usr_tit .stp1_chk_tit {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 60px;
+          flex: 0 0 60px;
+}
+.form_join ul.step01 li .regi_usr_tit em {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 80px;
+          flex: 0 0 80px;
+  text-align: center;
+  color: #555;
+}
+.form_join ul.step01 li .regi_usr_tit .required {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30px;
+          flex: 0 0 30px;
+  margin-right: 20px;
   font-weight: 800;
 }
-.form_join .input_tit .required.clr_red {
-  float: right;
-  margin-right: 10px;
+.form_join ul.step01 li .regi_usr_tit .required.clr_red {
   font-weight: 300;
-  color: #f00d38;
+  color: #9c001d;
+}
+.form_join ul.step01 li .regi_usr_txt {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.form_join ul.step01 li .regi_usr_txt .ability_chk {
+  display: none;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  color: #9c001d;
+  padding-top: 10px;
+}
+.form_join ul.step01 li .regi_usr_txt .ability_chk.alert {
+  display: block;
 }
 .form_join .text_outer {
   border: 1px solid #dddddd;
@@ -7741,19 +7796,6 @@ body .sub .contents_sub_box {
 .form_join .input_wrapper {
   padding: 18px;
   background-color: #eeeeee;
-}
-.form_join .float_box {
-  overflow: hidden;
-}
-.form_join .float_box legend {
-  float: left;
-  height: 40px;
-  line-height: 40px;
-}
-.form_join .float_box p {
-  float: left;
-  height: 40px;
-  line-height: 40px;
 }
 .form_join .rowBox {
   display: -webkit-box;
@@ -7784,6 +7826,9 @@ body .sub .contents_sub_box {
   width: auto;
   height: 40px;
   border: 1px solid #dedede;
+}
+.form_join .type_input_box select.alert, .form_join .type_input_box input.alert {
+  border-color: #f00d38;
 }
 .form_join .type_input_box.noneOrder {
   padding: 3px 0;
@@ -7980,10 +8025,11 @@ body .sub .contents_sub_box {
 }
 .form_join.form_join_02 section .seperate_box article ul li {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 50%;
-          flex: 0 0 50%;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  margin: 0 auto;
 }
-.form_join.form_join_02 section .seperate_box article ul li a {
+.form_join.form_join_02 section .seperate_box article ul li button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7994,17 +8040,16 @@ body .sub .contents_sub_box {
       -ms-flex-pack: center;
           justify-content: center;
   color: #fff;
+  width: 100%;
   height: 86px;
 }
-.form_join.form_join_02 section .seperate_box article ul li a .regi_txt {
+.form_join.form_join_02 section .seperate_box article ul li button .regi_txt {
   margin-left: 10px;
 }
-.form_join.form_join_02 section .seperate_box article ul li:first-child a {
-  margin-right: 5px;
+.form_join.form_join_02 section .seperate_box article ul li.active button {
   background-color: #476dc3;
 }
-.form_join.form_join_02 section .seperate_box article ul li:last-child a {
-  margin-left: 5px;
+.form_join.form_join_02 section .seperate_box article ul li.cancel button {
   background-color: #555555;
 }
 .form_join.form_join_02 section .seperate_box article.old_info {
@@ -8020,12 +8065,12 @@ body .sub .contents_sub_box {
       -ms-flex-direction: column;
           flex-direction: column;
   font-weight: 300;
-  height: 75%;
+  height: 100%;
 }
 .form_join.form_join_02 section .seperate_box article.old_info dl > * {
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
+      -ms-flex: 1 0 0px;
+          flex: 1 0 0;
   border-bottom: 1px solid #dedede;
 }
 .form_join.form_join_02 section .seperate_box article.old_info dl .old_id {
@@ -8063,14 +8108,23 @@ body .sub .contents_sub_box {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #fff;
 }
-.form_join.form_join_02 section .seperate_box article.old_info dl dd i {
+.form_join.form_join_02 section .seperate_box article.old_info dl dd button {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 24%;
           flex: 0 0 24%;
+  text-align: left;
+  color: #fff;
 }
 .form_join.form_join_02 section .seperate_box article.old_info dl dd span {
   font-size: 14px;
+}
+.form_join.form_join_02 section .seperate_box article.old_info dl dd.active {
+  background-color: #476dc3;
+}
+.form_join.form_join_02 section .seperate_box article.old_info dl dd.cancel {
+  background-color: #555555;
 }
 .form_join.form_join_02 section .seperate_box article.old_info dl + p {
   padding-left: 50px;
@@ -8195,41 +8249,45 @@ body .sub .contents_sub_box {
 }
 .form_join.form_join_03 .register_user > ul > li .regi_usr_txt, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt {
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
+      -ms-flex: 1 0 calc(100% - 180px);
+          flex: 1 0 calc(100% - 180px);
   padding: 20px;
 }
-.form_join.form_join_03 .register_user > ul > li .regi_usr_txt em, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt em {
+.form_join.form_join_03 .register_user > ul > li .regi_usr_txt .required_msg_box, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt .required_msg_box {
   position: relative;
   display: block;
   margin-top: 10px;
   letter-spacing: -1px;
 }
-.form_join.form_join_03 .register_user > ul > li .regi_usr_txt em:first-of-type, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt em:first-of-type {
+.form_join.form_join_03 .register_user > ul > li .regi_usr_txt .required_msg_box:first-of-type, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt .required_msg_box:first-of-type {
   margin-top: 0;
 }
-.form_join.form_join_03 .register_user > ul > li .regi_usr_txt em.chk_pwd, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt em.chk_pwd {
-  opacity: 0;
+.form_join.form_join_03 .register_user > ul > li .regi_usr_txt .required_msg_box .spaceL, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt .required_msg_box .spaceL {
+  padding-left: 14px;
 }
-.form_join.form_join_03 .register_user > ul > li .regi_usr_txt em.chk_pwd.alert, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt em.chk_pwd.alert {
-  opacity: 1;
+.form_join.form_join_03 .register_user > ul > li .regi_usr_txt .ability_chk, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt .ability_chk {
+  display: none;
+}
+.form_join.form_join_03 .register_user > ul > li .regi_usr_txt .ability_chk.alert, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt .ability_chk.alert {
+  display: block;
+  color: #f00d38;
+}
+.form_join.form_join_03 .register_user > ul > li .regi_usr_txt .chk_pwd.alert, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt .chk_pwd.alert {
+  display: block;
   font-size: 20px;
   font-weight: 900;
   color: #f00d38;
-}
-.form_join.form_join_03 .register_user > ul > li .regi_usr_txt em .spaceL, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt em .spaceL {
-  padding-left: 14px;
 }
 .form_join.form_join_03 .register_user > ul > li .regi_usr_txt input, .form_join.form_join_03 .register_user > ul > li .regi_usr_txt select, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt input, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt select {
   display: inline-block;
   height: 40px;
   border: 1px solid #dedede;
 }
-.form_join.form_join_03 .register_user > ul > li .regi_usr_txt .input_box > *, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt .input_box > * {
+.form_join.form_join_03 .register_user > ul > li .regi_usr_txt .input_rad_box > *, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt .input_rad_box > * {
   vertical-align: middle;
   margin: 10px;
 }
-.form_join.form_join_03 .register_user > ul > li .regi_usr_txt .input_box span, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt .input_box span {
+.form_join.form_join_03 .register_user > ul > li .regi_usr_txt .input_rad_box span, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt .input_rad_box span {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -8238,12 +8296,12 @@ body .sub .contents_sub_box {
           align-items: center;
   margin-right: 20px;
 }
-.form_join.form_join_03 .register_user > ul > li .regi_usr_txt .input_box span label, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt .input_box span label {
+.form_join.form_join_03 .register_user > ul > li .regi_usr_txt .input_rad_box span label, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt .input_rad_box span label {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
 }
-.form_join.form_join_03 .register_user > ul > li .regi_usr_txt .input_box span input, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt .input_box span input {
+.form_join.form_join_03 .register_user > ul > li .regi_usr_txt .input_rad_box span input, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt .input_rad_box span input {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
@@ -8254,19 +8312,19 @@ body .sub .contents_sub_box {
 .form_join.form_join_03 .register_user > ul > li .regi_usr_txt.list input.alert, .form_join.form_join_03 .register_user > ul > li .regi_usr_txt.list select.alert, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt.list input.alert, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt.list select.alert {
   border-color: #f00d38;
 }
-.form_join.form_join_03 .register_user > ul > li .regi_usr_txt.list em.required, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt.list em.required {
+.form_join.form_join_03 .register_user > ul > li .regi_usr_txt.list .required_msg_box, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt.list .required_msg_box {
   -webkit-transition: -webkit-transform 0.3s ease;
   transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   font-size: 16px;
   line-height: 1.6;
+  color: #f00d38;
 }
-.form_join.form_join_03 .register_user > ul > li .regi_usr_txt.list em.required.alert, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt.list em.required.alert {
-  font-size: 20px;
-  font-weight: 900;
+.form_join.form_join_03 .register_user > ul > li .regi_usr_txt.list .required_msg_box span, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt.list .required_msg_box span {
+  display: block;
 }
-.form_join.form_join_03 .register_user > ul > li .regi_usr_txt.list em.required span.alert, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt.list em.required span.alert {
+.form_join.form_join_03 .register_user > ul > li .regi_usr_txt.list .required_msg_box span.alert, .form_join.form_join_03 .modify_usr > ul > li .regi_usr_txt.list .required_msg_box span.alert {
   font-size: 20px;
   font-weight: 900;
 }
@@ -8394,4 +8452,54 @@ body .sub .contents_sub_box {
       -ms-flex: 0 0 100%;
           flex: 0 0 100%;
   background-color: #555;
+}
+
+/* 팝업 창 */
+.usr_modify_box_popup {
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.usr_modify_box_popup .usr_modify_curtain {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.usr_modify_box_popup .usr_modify_wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  width: 100%;
+  max-width: 962px;
+  background-color: #fff;
+}
+.usr_modify_box_popup .usr_modify_wrapper > h1 {
+  padding: 0 20px;
+  height: 47px;
+  font-size: 18px;
+  line-height: 47px;
+  background-color: #333;
+  color: #fff;
+}
+.usr_modify_box_popup .usr_modify_wrapper .join_content {
+  padding: 20px 50px;
+  border: 1px solid #f2f2f2;
+}
+.usr_modify_box_popup .usr_modify_wrapper .join_content .btn_box {
+  margin: 30px auto 40px auto;
+}
+.usr_modify_box_popup .usr_modify_wrapper .usr_modify_close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  color: #fff;
+  cursor: pointer;
 }/*# sourceMappingURL=default.css.map */
