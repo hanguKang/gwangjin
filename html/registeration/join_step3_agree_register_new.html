@@ -11,13 +11,13 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <script src="../../common/js/jquery-3.6.0.min.js"></script>
   <!--<script src="../../common/js/jquery-1.11.3.min.js"></script>-->
-  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
+  <!-- <script type="text/javascript" src="//code.jquery.com/jquery-migrate-3.3.2.min.js"></script> -->
   <script src="../../common/js/aos.js"></script>
   <script src="../../common/js/slick.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="../../common/js/common.js"></script>
   <script src="../../common/js/sub.js"></script>
-  <script src="../../common/js/join.js"></script>
+  <!-- <script src="../../common/js/join.js"></script> -->
 </head>      
 <body>
     <div class="wrapper">
@@ -30,27 +30,27 @@
         <!-- 헤더 -->
         <header class="header">
           <div class="hd_top pc">
-              <ul>
-                  <li>
-                      <a href="#">광진구시설관리공단</a>
-                  </li>
-                  <li>
-                      <a href="#">통합주차</a>
-                  </li>
-                  <li>
-                      <a href="#">문화체육시설</a>
-                  </li>
-              </ul>
-              <ol class="util">
-                  <li><a href="#">로그인</a></li>
-                  <li><a href="#">회원가입</a></li>
-                  <li> <a href="#" class="btn_sitemap_open"><span class="hide">사이트맵 열기</span></a></li>
-              </ol>
+            <ul>
+                <li>
+                    <a href="#" class="inverse">광진구시설관리공단</a>
+                </li>
+                <li>
+                    <a href="#" class="inverse">통합주차</a>
+                </li>
+                <li>
+                    <a href="#" class="inverse">문화체육시설</a>
+                </li>
+            </ul>
+            <ol class="util">
+                <li><a href="#" class="inverse">로그인</a></li>
+                <li><a href="#" class="inverse">회원가입</a></li>
+                <li><a href="#" class="btn_sitemap_open inverse"><span class="hide">사이트맵 열기</span></a></li>
+            </ol>
           </div>
           <div class="layer_gnb">
             <div id="gnb" class="gnb">
               <h1 class="logo"><a href="#"><span class="hide">로고</span></a></h1>
-              <p class="mo showNav"><button title="메뉴보기"><span class="hide">메뉴보기</span></button></p>
+              <p class="mo showNav"><button title="메뉴보기" type="button"><span class="hide">메뉴보기</span></button></p>
               <nav>
                 <div class="mo"><p class="link_home"><a href="#"><span class="hide">홈으로 이동</span></a></p></div>
                 <h1 class="hide">글로벌 네비게이터</h1>
@@ -222,7 +222,7 @@
                         </div>
                       </li>
                 </ul>
-                <button class="mo close" title="메뉴닫기"><span class="hide">닫기</span></button>
+                <button class="mo close" title="메뉴닫기" type="button"><span class="hide">닫기</span></button>
               </nav>
             </div>
           </div>
@@ -274,7 +274,7 @@
                   </ol>
                   <ul>
                     <li class="share">
-                      <button title="공유하기"><span class="hide">공유하기</span></button>
+                      <button title="공유하기" type="button"><span class="hide">공유하기</span></button>
                       <div class="share_box">
                         <ul>
                           <li><a href="#" class="facebook" id="share_popup_facebook"><img src="../../common/images/share_facebook.png" alt="페이스북"></a></li>
@@ -316,42 +316,29 @@
                         </li>
                         <li class="list">
                           <strong class="regi_usr_tit">아이디 <span class="required clr_red">( &nbsp;&#42;&nbsp; )</span></strong>
-                          <div class="regi_usr_txt list">
-                            <div class="guide_txt flex_box">
-                              <label for="regi_usr_id">ID를 만들어주세요</label>
-                              <p class="placeholder">띄어쓰기 없이 영/숫자 4-12자</p>
-                            </div>
-                            <input type="text" name="" id="regi_usr_id" class="w_45 forId" maxlength="12" aria-describedby="idMsg" pattern="^[A-Za-z0-9]{4,12}" required /><button>중복확인</button>
-                            <p class="required_msg_box"><span> 공백없는 4~12자의 영문자와 숫자를 사용합니다.</span></p>
-                            <p id="idMsg" class="ability_chk" role="alert" aria-hidden="true" style="display: block;">필수 정보입니다.</p>
+                          <div class="regi_usr_txt list">                            
+                            <label for="regi_usr_id" class="hide">ID를 만들어주세요</label>
+                            <input type="text" name="" id="regi_usr_id" class="w_45 forId" maxlength="12" pattern="^[A-Za-z0-9]{4,12}" placeholder="띄어쓰기 없이 영/숫자 4-12자를 입력하시오." required /><button type="button">중복확인</button>
                           </div>
                         </li>
                         <li class="list">
                           <strong class="regi_usr_tit">비밀번호 <span class="required clr_red">( &nbsp;&#42;&nbsp; )</span></strong>
                           <div class="regi_usr_txt list">
-                            <div class="guide_txt flex_box">
-                              <label for="regi_usr_pwd1">비밀번호를 입력하세요.</label>
-                              <p class="placeholder">띄어쓰기 없이 영/특수문자/숫자 2종, 10-20자</p>
-                            </div>
-                            <input type="password" name="" id="regi_usr_pwd1" class="w_65" maxlength="20" aria-describedby="pwdMsg1" pattern="^(?=.*[a-zA-Z]{1,})(?=.*[!@#$%^&*-_]{1,})(?=.*[0-9]{0,})[\da-zA-Z!@#$%^&*-_]{10,20}$" required />
+                            <label for="regi_usr_pwd1" class="hide">비밀번호를 입력하세요.</label>
+                            <input type="password" name="" id="regi_usr_pwd1" class="w_65" placeholder="ex) gwangjin#$%^143" maxlength="20" pattern="^(?=.*[a-zA-Z]{1,})(?=.*[!@#$%^&*-_]{1,})(?=.*[0-9]{0,})[\da-zA-Z!@#$%^&*-_]{10,20}$" required />
                             <p class="required_msg_box">
-                              <span class="pwd_pass">&#8251; 영문, 숫자, 특수문자(~`!@#$%^&*()-_) 중 2가지 이상 혼합하여 10~20자 조합.</span>
+                              <span class="pwd_pass">&#8251; 영문, 숫자, 특수문자(~`!@#$%^&*()-_) 중 2가지 이상 혼합하여 10~20자 입력하세요.</span>
                               <span class="spaceL">(단, 영문자, 특수문자는 반드시 포함)</span>
-                              <span class="continueNum">&#8251; 같거나 연속된 문자열(123 또는 abc 등)은 3자 이상 사용 할 수 없음.</span>
-                              <span class="sameStr">&#8251; 아이디가 포함된 비밀번호는 사용하실 수 없음.</span>
+                              <span class="continueNum">&#8251; 같거나 연속된 문자열(123 또는 abc 등)은 3자 이상 사용 할 수 없습니다..</span>
+                              <span class="sameStr">&#8251; 아이디가 포함된 비밀번호는 사용하실 수 없습니다.</span>
                             </p>
-                            <p id="pwdMsg1" class="ability_chk" aria-hidden="true" role="alert" >영문, 숫자, 특수문자(~`!@#$%^&*()-_) 중 2가지 이상 혼합하여 10~20자로 입력하셔야하며, 같거나 연속된 문자열(123 또는 abc 등)은 3자 이상 사용 할 수 없습니다. 또한 아이디가 포함된 비밀번호는 사용하실 수 없습니다. </p>
                           </div>
                         </li>
                         <li class="list">
                           <strong class="regi_usr_tit">비밀번호&nbsp;확인 <span class="required clr_red">( &nbsp;&#42;&nbsp; )</span></strong>
                           <div class="regi_usr_txt list">
-                            <div class="guide_txt flex_box">
-                              <label for="regi_usr_pwd2">비밀번호를 확인 하세요.</label>
-                              <p class="placeholder">입력한 비밀번호와 같은 번호를 입력하세요.</p>
-                            </div>
-                            <input type="password" name="" id="regi_usr_pwd2" class="w_65" aria-describedby="pwdMsg2" required />
-                            <p id="pwdMsg2" class="chk_pwd ability_chk" aria-hidden="true" role="alert" >비밀번호가 일치하지 않습니다.</p>
+                            <label for="regi_usr_pwd2" class="hide">비밀번호를 확인 하세요.</label>
+                            <input type="password" name="" id="regi_usr_pwd2" class="w_65" placeholder="ex) gwangjin#$%^143  => 먼저 입력한 비밀번호와 같은 번호 입력" required />
                           </div>
                         </li>
                         <li>
@@ -361,11 +348,11 @@
                             <i class="input_rad_box">
                               <span>
                                 <label for="solar">양력</label>
-                                <input type="radio" name="calendar" aria-selected="true" id="solar" checked>
+                                <input type="radio" name="calendar" id="solar" checked>
                               </span>
                               <span>
-                                <label for="lunar">양력</label>
-                                <input type="radio" name="calendar" aria-selected="false" id="lunar">
+                                <label for="lunar">음력</label>
+                                <input type="radio" name="calendar" id="lunar">
                               </span> 
                             </i>
                           </div>
@@ -373,60 +360,48 @@
                         <li class="list">
                           <strong class="regi_usr_tit">이메일  <span class="required clr_red">( &nbsp;&#42;&nbsp; )</span></strong>
                           <div class="regi_usr_txt list type_1">
-                            <div class="guide_txt flex_box">
-                              <label for="regi_email1">이메일을 입력하세요.</label>
-                            </div>
-                            <input type="text" name="" id="regi_email1" class="first" aria-label="이메일 주소 앞자리" aria-describedby="emailMsgInput" required />
+                            <input type="text" name="" id="regi_email1" class="first" placeholder="ex) honggildong" title="이메일 주소 앞자리" required />
                             <span class="md_txt">@</span>
-                            <input type="text" name="" id="regi_mail2" aria-label="이메일 주소 뒷자리" class="email w_20" aria-describedby="emailMsgInput" required /> 
-                            <div class="btn_drop">
-                              <button type="button" class="button__drop-down right" aria-label="이메일 주소 뒷 자리 선택입력" aria-haspopup="listbox" aria-expanded="false" aria-controls="mail_server"><span class="text">직접입력</span></button>
-                              <div class="select_box right" id="mail_server">
-                                <ul class="text_box" role="listbox">
-                                  <li role="none" class="on"><button type="button" role="option" class="button__option" aria-selected="true" tabindex="0">직접입력</button></li>
-                                  <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">naver.com</button></li>
-                                  <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">daum.net</button></li>
-                                  <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">hotmail.com</button></li>
-                                  <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">nate.com</button></li>
-                                  <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">yahoo.co.kr</button></li>
-                                  <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">paran.com</button></li>
-                                  <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">empas.com</button></li>
-                                  <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">dreamwiz.com</button></li>
-                                  <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">freechal.com</button></li>
-                                  <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">lycos.co.kr</button></li>
-                                  <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">korea.com</button></li>
-                                  <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">gmail.com</button></li>
-                                  <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">hanmir.com</button></li>
-                                </ul>
-                              </div>
-                            </div>
-                            <p id="emailMsgInput" class="ability_chk" role="alert" > 이메일 주소를 다시 확인해 주세요.</p>
+                            <input type="text" name="" id="regi_mail2" title="이메일 주소 뒷자리" placeholder="ex) naver.com" class="email w_20" required />                            
+                            <select class="text_box simple">
+                              <option value="" selected>직접입력</option>
+                              <option value="naver.com">naver.com</option>
+                              <option value="daum.net">daum.net</option>
+                              <option value="hotmail.com">hotmail.com</option>
+                              <option value="nate.com">nate.com</option>
+                              <option value="yahoo.co.kr">yahoo.co.kr</option>
+                              <option value="paran.com">paran.com</option>
+                              <option value="empas.com">empas.com</option>
+                              <option value="dreamwiz.com">dreamwiz.com</option>
+                              <option value="freechal.com">freechal.com</option>
+                              <option value="lycos.co.kr">lycos.co.kr</option>
+                              <option value="korea.com">korea.com</option>
+                              <option value="gmail.com">gmail.com</option>
+                              <option value="hanmir.com">hanmir.com</option>
+                            </select>
                           </div>
                         </li>
                         <li class="list">
                           <strong class="regi_usr_tit">주소 <span class="required clr_red">( &nbsp;&#42;&nbsp; )</span></strong>
                           <div class="regi_usr_txt list">
-                            <div class="guide_txt flex_box">
-                              <label for="regi_usr_addr1">주소를 입력하세요.</label>
-                              <p class="placeholder">우편번호 버튼을 선택하세요.</p>
-                            </div>
-                            <input type="text" name="" id="regi_usr_addr1" class="w_45" readonly required /><button>우편번호 찾기</button><br/> 
-                            <input type="text" name="" id="regi_usr_addr2" readonly required /> <br/>
+                            <label for="regi_usr_addr1" class="hide">주소를 입력하세요.</label>
+                            <input type="text" name="" id="regi_usr_addr1" class="w_45" placeholder="ex) 133-180 (우편번호 버튼을 선택하세요.)" readonly required /><button type="button">우편번호 찾기</button>
+                            <input type="text" name="" id="regi_usr_addr2" placeholder="ex) 서울 광진구 광진구청 광진구청도로1가" readonly required /> <br/>
                             <input type="text" name="" id="regi_usr_addr3" required placeholder="상세주소"/> 
                           </div>
                         </li>
                         <li class="list">
                           <strong class="regi_usr_tit">차량번호 <span class="required clr_red">( &nbsp;&#42;&nbsp; )</span> </strong>
                           <div class="regi_usr_txt list">
-                            <input type="text" name="" id="regi_usr_carNo" class="w_45"aria-describedby="carNoMsg">
-                            <p id="carNoMsg" class="required_msg_box" role="alert" >예. 52가1234, 1234가4567, 서울27마8972 <span class="alertSpace">(공백없이 붙여서쓰세요)</span></p>
+                            <input type="text" name="" id="regi_usr_carNo" class="w_45" placeholder="차량번호를 공백없이 입력하시오.">
+                            <p id="carNoMsg" class="required_msg_box">예. 52가1234, 1234가4567, 서울27마8972 <span class="alertSpace">(공백없이 붙여서쓰세요)</span></p>
                           </div>
                         </li>
                         <li class="list">
                           <strong class="regi_usr_tit">연락처</strong>
                           <div class="regi_usr_txt list">
                             <label for="regi_tel_1" class="input_tit hide">전화</label>
-                            <select name="" id="regi_tel_1" class="w_8"  aria-label="전화번호 지역번호 자리" >
+                            <select name="" id="regi_tel_1" class="w_8"  title="전화번호 지역번호 자리" >
                               <option value="02" selected>서울 </option>
                               <option value="031">경기 </option>
                               <option value="032">인천</option>
@@ -445,9 +420,8 @@
                               <option value="063">전북 </option>
                               <option value="064">제주 </option>
                             </select> - 
-                            <input type="text" name="" id="regi_tel_2" class="w_20" maxlength="4" aria-label="전화번호 가운데 자리" aria-describedby="telMsg" /> - 
-                            <input type="text" name="" id="regi_tel_3" class="w_20 acrossPhone" maxlength="4" aria-label="전화번호 마지막 자리" aria-describedby="telMsg" />
-                            <p id="telMsg" class="msg_box" role="alert" >전화 번호를 입력하세요.</p>
+                            <input type="text" name="" id="regi_tel_2" class="w_20" maxlength="4" title="전화번호 가운데 자리"/> - 
+                            <input type="text" name="" id="regi_tel_3" class="w_20 acrossPhone" maxlength="4"  title="전화번호 마지막 자리" />
                           </div>
                         </li>
                         <li class="list">
@@ -455,26 +429,25 @@
                           <div class="regi_usr_txt list">
                             <label for="regi_phone_1" class="input_tit hide">휴대폰</label>
                             <select name="" id="regi_phone_1" class="w_8" required>
-                              <option value="" selected aria-selected="true">010</option>
+                              <option value="" selected>010</option>
                               <option value="">011</option>
                               <option value="">016</option>
                               <option value="">017</option>
                               <option value="">018</option>
                               <option value="">019</option>
                             </select> - 
-                            <input type="text" name="" id="regi_phone_2" class="w_20" aria-label="휴대폰번호 가운데 자리" aria-describedby="hpReg3Msg" required> - 
-                            <input type="text" name="" id="regi_phone_3" class="w_20 acrossPhone" aria-label="휴대폰번호 마지막 자리" aria-describedby="hpReg3Msg" required>
-                            <p id="hpReg3Msg" class="msg_box ability_chk" role="alert" >전화번호를 정확하게 입력해 주세요.</p>
+                            <input type="text" name="" id="regi_phone_2" class="w_20" title="휴대폰번호 가운데 자리" required> - 
+                            <input type="text" name="" id="regi_phone_3" class="w_20 acrossPhone" title="휴대폰번호 마지막 자리" required>
                           </div>
                         </li>
                         <li>
                           <strong class="regi_usr_tit">이메일&nbsp;수신  <span class="required clr_red">( &nbsp;&#42;&nbsp; )</span> </strong>
                           <div class="regi_usr_txt">
                             <i class="rowBox input_rad_box">
-                              <span class="type_input_box"><label for="regi_usr_email1">동의</label><input type="radio" name="regi_usr_email" aria-selected="true" aria-labelledby="emailMsgGet"  id="regi_usr_email1" checked></span>
-                              <span class="type_input_box"><label for="regi_usr_email2">거부</label><input type="radio" name="regi_usr_email" aria-selected="false" aria-labelledby="emailMsgGet"  id="regi_usr_email2"></span>
+                              <span class="type_input_box"><label for="regi_usr_email1">동의</label><input type="radio" name="regi_usr_email"  id="regi_usr_email1" checked></span>
+                              <span class="type_input_box"><label for="regi_usr_email2">거부</label><input type="radio" name="regi_usr_email"  id="regi_usr_email2"></span>
                             </i>
-                            <p id="emailMsgGet" class="required_msg_box" role="alert" >
+                            <p id="emailMsgGet" class="required_msg_box">
                               이메일 수신에 동의하시면 개인 이용정보 및 소식정보를 받아보실 수 있습니다.
                             </p>
                           </div>
@@ -483,10 +456,10 @@
                           <strong class="regi_usr_tit">SMS&nbsp;수신 <span class="required clr_red">( &nbsp;&#42;&nbsp; )</span> </strong>
                           <div class="regi_usr_txt">
                             <i class="rowBox input_rad_box">
-                              <span class="type_input_box"><label for="regi_usr_sms1">동의</label><input type="radio" name="regi_usr_sms" aria-selected="true" aria-labelledby="smsMsg" id="regi_usr_sms1" checked></span>
-                              <span class="type_input_box"><label for="regi_usr_sms2">거부</label><input type="radio" name="regi_usr_sms" aria-selected="false" aria-labelledby="smsMsg"  id="regi_usr_sms2"></span>
+                              <span class="type_input_box"><label for="regi_usr_sms1">동의</label><input type="radio" name="regi_usr_sms" id="regi_usr_sms1" checked></span>
+                              <span class="type_input_box"><label for="regi_usr_sms2">거부</label><input type="radio" name="regi_usr_sms"  id="regi_usr_sms2"></span>
                             </i>
-                            <p id="smsMsg" class="required_msg_box" role="alert" >
+                            <p id="smsMsg" class="required_msg_box">
                               수신에 동의하시면 각종 알림정보( 수강 / 대관 / 묻고답하기 등)를 무료로 받아보실 수 있습니다.
                             </p>
                           </div>
@@ -495,10 +468,10 @@
                           <strong class="regi_usr_tit">DM&nbsp;수신 <span class="required clr_red">( &nbsp;&#42;&nbsp; )</span> </strong>
                           <div class="regi_usr_txt">
                             <i class="rowBox input_rad_box">
-                              <span class="type_input_box"><label for="regi_usr_dm1">동의</label><input type="radio" name="regi_usr_dm" aria-selected="true" aria-describedby="dmMsg" id="regi_usr_dm1" checked></span>
-                              <span class="type_input_box"><label for="regi_usr_dm2">거부</label><input type="radio" name="regi_usr_dm" aria-selected="false" aria-describedby="dmMsg" id="regi_usr_dm2"></span>
+                              <span class="type_input_box"><label for="regi_usr_dm1">동의</label><input type="radio" name="regi_usr_dm" aria-describedby="dmMsg" id="regi_usr_dm1" checked></span>
+                              <span class="type_input_box"><label for="regi_usr_dm2">거부</label><input type="radio" name="regi_usr_dm" aria-describedby="dmMsg" id="regi_usr_dm2"></span>
                             </i>
-                            <p id="dmMsg" class="required_msg_box" role="alert" >
+                            <p id="dmMsg" class="required_msg_box">
                               DM 수신에 동의하시면 우편물을 받아보실 수 있습니다.
                             </p>
                           </div>
@@ -532,8 +505,9 @@
                       </dl>
                     </div>
                     <div class="bottom">
+                      <label for="opinions_regis" class="hide">의견 등록하기</label>
                       <textarea name="" id="opinions_regis" cols="30" rows="10"></textarea>
-                      <button class="button-color" title="의견등록">의견등록</button>
+                      <button class="button-color" title="의견등록" type="button">의견등록</button>
                     </div>
                   </form>
                 </section>

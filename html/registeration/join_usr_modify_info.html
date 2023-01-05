@@ -16,6 +16,7 @@
   <script src="../../common/js/slick.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="../../common/js/common.js"></script>
+  <script src="../../common/js/sub.js"></script>
 </head>      
 <body>
     <div class="wrapper">
@@ -228,7 +229,7 @@
 
         <main class="sub">
             <div class="page_spot sub1">
-              <h1 class="sub_title">아이디 / 비밀번호 찾기</h1>
+              <h1 class="sub_title">개인정보 수정</h1>
             </div>
             <div class="contents_sub_box center_box_pc">
               <nav id="lnb" class="lnb">
@@ -264,7 +265,7 @@
               </nav>
               <article class="contents_sub">
                 <header class="sub_top">
-                  <h1 class="hide">개인정보 수정</h1>
+                  <h1 class="hide">로그인</h1>
                   <ol>
                     <li>HOME</li>
                     <li><a href="#">해당화면 상위 메뉴명</a></li>
@@ -288,31 +289,180 @@
                   </ul>
                      
                 </header>
-                <section class="user_outer join_content">
-                  <h1 class="hide">로그인 및 회원가입</h1>
-                  <p class="caution">
-                    <span class="ico_user"><img src="../../common/images/sub/login/ico_lock.png" alt="아이콘 로그인 주의사항"></span> <span class="txt">개인정보보호를 안전하게 보호하기 위하여 비밀번호를 다시 한 번 입력해주세요. </span>
-                  </p>
-                  <p class="usr_guide_text">&#8251; 계정 통합은 회원가입화면으로 이동하여 진행하시기 바랍니다.</p>
-                  <form action="" class="form_join form_join_03 form ">
-                    <div class="modify_usr">
+                <section class="step join">
+                  <h1 class="hide">'이사장에게 바란다' 접수단계</h1>
+                  <ol class="diagram">
+                    <li><span><strong>약관&nbsp;동의</strong>1단계</span></li>
+                    <li><span><strong>약관&nbsp;동의</strong>2단계</span></li>
+                    <li class="on"><span><strong>약관&nbsp;동의</strong>3단계</span></li>
+                    <li><span><strong>약관&nbsp;동의</strong>4단계</span></li>
+                  </ol>
+                </section>
+                <section class="join_content">
+                  <h1 class="hide">회원가입 양식</h1>
+                  <form action="" class="form_join form_join_03 form form_join_change">
+                    <section class="register_user">
+                      <h1 class="register_user_tit">
+                        회원정보
+                        <span class="required">필수입력항목&#42;</span>
+                      </h1>
                       <ul class="form_list">
-                        <li class="list">
+                        <li>
+                          <strong class="regi_usr_tit">회원&nbsp;이름</strong>
+                          <div class="regi_usr_txt regi_usr_name">홍길동</div>
+                        </li>
+                        <li>
+                          <strong class="regi_usr_tit">성별</strong>
+                          <div class="regi_usr_txt regi_usr_gender">남성</div>
+                        </li>
+                        <li class="already_list">
                           <strong class="regi_usr_tit">아이디</strong>
-                          <div class="regi_usr_txt">
+                          <div class="regi_usr_txt list">
                             <span class="regi_usr_id_change">gwangjin2022</span>
                           </div>
                         </li>
+                        <li class="list">
+                          <strong class="regi_usr_tit">비밀번호</strong>
+                          <div class="regi_usr_txt list">
+                            <button type="button" title="비밀번호 수정하기" class="btn_change">비밀번호 수정</button>
+                          </div>
+                        </li>
                         <li>
-                          <strong class="regi_usr_tit">비밀번호 <span class="required clr_red">( &nbsp;&#42;&nbsp; )</span> </strong>
-                          <div class="regi_usr_txt"><label for="modify_pwd" class="hide">비밀번호 입력</label><input type="password" name="" id="modify_pwd"></div>
+                          <strong class="regi_usr_tit">생년월일</strong>
+                          <div class="regi_usr_txt list">
+                            <span class="regi_usr_birth">1999-01-20</span><span class="lunarSolar">( 양력 )</span>
+                          </div>
+                        </li>
+                        <li class="list">
+                          <strong class="regi_usr_tit">이메일 <span class="required clr_red">( &nbsp;&#42;&nbsp; )</span></strong>
+                          <div class="regi_usr_txt list type_1">
+                            <label for="regi_email1_change" class="hide">이메일을 입력하세요.</label>
+                            <input type="text" name="" id="regi_email1_change" class="first" value="gwangjin2022" required />
+                            <span class="md_txt">@</span>
+                            <input type="text" name="" id="regi_mail2_change" value="text.com" required /> 
+                            <select class="text_box simple" id="regi_mail3_change">
+                              <option value="" selected>직접입력</option>
+                              <option value="naver.com">naver.com</option>
+                              <option value="daum.net">daum.net</option>
+                              <option value="hotmail.com">hotmail.com</option>
+                              <option value="nate.com">nate.com</option>
+                              <option value="yahoo.co.kr">yahoo.co.kr</option>
+                              <option value="paran.com">paran.com</option>
+                              <option value="empas.com">empas.com</option>
+                              <option value="dreamwiz.com">dreamwiz.com</option>
+                              <option value="freechal.com">freechal.com</option>
+                              <option value="lycos.co.kr">lycos.co.kr</option>
+                              <option value="korea.com">korea.com</option>
+                              <option value="gmail.com">gmail.com</option>
+                              <option value="hanmir.com">hanmir.com</option>
+                            </select>
+                          </div>
+                        </li>
+                        <li class="list">
+                          <strong class="regi_usr_tit">주소 <span class="required clr_red">( &nbsp;&#42;&nbsp; )</span></strong>
+                          <div class="regi_usr_txt list">
+                            <label for="regi_usr_addr1_change" class="hide">주소를 입력하세요.</label>
+                            <input type="text" name="" id="regi_usr_addr1_change" class="w_45" readonly required /><button type="button">우편번호 찾기</button><br/> 
+                            <input type="text" name="" id="regi_usr_addr2_change" readonly required /> <br/>
+                            <input type="text" name="" id="regi_usr_addr3_change" required placeholder="상세주소"/> 
+                          </div>
+                        </li>
+                        <li class="list">
+                          <strong class="regi_usr_tit">차량번호 <span class="required clr_red">( &nbsp;&#42;&nbsp; )</span> </strong>
+                          <div class="regi_usr_txt list">
+                            <label for="regi_usr_addr1_change" class="hide">차량 번호를 입력하세요.</label>
+                            <input type="text" name="" id="regi_usr_carNo_change" class="w_45" value="서울27마8972">
+                            <p id="carNoMsg_change" class="required_msg_box" role="alert" >예. 52가1234, 1234가4567, 서울27마8972 <span class="alertSpace">(공백없이 붙여서쓰세요)</span></p>
+                          </div>
+                        </li>
+                        <li class="list">
+                          <strong class="regi_usr_tit">연락처</strong>
+                          <div class="regi_usr_txt list">
+                            <label for="regi_tel_1_change" class="input_tit hide">전화</label>
+                            <select name="" id="regi_tel_1_change" class="w_8"  aria-label="전화번호 지역번호 자리" >
+                              <option value="02" selected>서울 </option>
+                              <option value="031">경기 </option>
+                              <option value="032">인천</option>
+                              <option value="033">강원 </option>
+                              <option value="041">충남 </option>
+                              <option value="042">대전 </option>
+                              <option value="043">충북 </option>
+                              <option value="051">부산 </option>
+                              <option value="052">울산 </option>
+                              <option value="053">대구 </option>
+                              <option value="054">경북 </option>
+                              <option value="054">경북 </option>
+                              <option value="055">경남 </option>
+                              <option value="061">전남 </option>
+                              <option value="062">광주 </option>
+                              <option value="063">전북 </option>
+                              <option value="064">제주 </option>
+                            </select> - 
+                            <input type="text" name="" id="regi_tel_2_change" class="w_20" maxlength="4" aria-label="전화번호 가운데 자리" /> - 
+                            <input type="text" name="" id="regi_tel_3_change" class="w_20 acrossPhone" maxlength="4" aria-label="전화번호 마지막 자리" />
+                            <p id="telMsg" class="msg_box" role="alert" >전화 번호를 입력하세요.</p>
+                          </div>
+                        </li>
+                        <li class="list">
+                          <strong class="regi_usr_tit">휴대폰 <span class="required clr_red"> ( &nbsp;&#42;&nbsp; ) </span> </strong>
+                          <div class="regi_usr_txt list">
+                            <label for="regi_phone_1" class="input_tit hide">휴대폰</label>
+                            <select name="" id="regi_phone_1" class="w_8" required>
+                              <option value="" selected aria-selected="true">010</option>
+                              <option value="">011</option>
+                              <option value="">016</option>
+                              <option value="">017</option>
+                              <option value="">018</option>
+                              <option value="">019</option>
+                            </select> - 
+                            <input type="text" name="" id="regi_phone_2" class="w_20" aria-label="휴대폰번호 가운데 자리" required> - 
+                            <input type="text" name="" id="regi_phone_3" class="w_20 acrossPhone" aria-label="휴대폰번호 마지막 자리" required>
+                            <p id="hpReg3Msg" class="msg_box ability_chk" role="alert" >전화번호를 정확하게 입력해 주세요.</p>
+                          </div>
+                        </li>
+                        <li>
+                          <strong class="regi_usr_tit">이메일&nbsp;수신  <span class="required clr_red">( &nbsp;&#42;&nbsp; )</span> </strong>
+                          <div class="regi_usr_txt">
+                            <i class="rowBox input_rad_box">
+                              <span class="type_input_box"><label for="regi_usr_email1_change">동의</label><input type="radio" name="regi_usr_email_change" id="regi_usr_email1_change" checked></span>
+                              <span class="type_input_box"><label for="regi_usr_email2_change">거부</label><input type="radio" name="regi_usr_email_change" id="regi_usr_email2_change"></span>
+                            </i>
+                            <p id="emailMsgGet" class="required_msg_box" role="alert" >
+                              이메일 수신에 동의하시면 개인 이용정보 및 소식정보를 받아보실 수 있습니다.
+                            </p>
+                          </div>
+                        </li>
+                        <li>
+                          <strong class="regi_usr_tit">SMS&nbsp;수신 <span class="required clr_red">( &nbsp;&#42;&nbsp; )</span> </strong>
+                          <div class="regi_usr_txt">
+                            <i class="rowBox input_rad_box">
+                              <span class="type_input_box"><label for="regi_usr_sms1_change">동의</label><input type="radio" name="regi_usr_sms_change" aria-selected="true" id="regi_usr_sms1_change" checked></span>
+                              <span class="type_input_box"><label for="regi_usr_sms2_change">거부</label><input type="radio" name="regi_usr_sms_change" aria-selected="false" id="regi_usr_sms2_change"></span>
+                            </i>
+                            <p id="smsMsg" class="required_msg_box" role="alert" >
+                              수신에 동의하시면 각종 알림정보( 수강 / 대관 / 묻고답하기 등)를 무료로 받아보실 수 있습니다.
+                            </p>
+                          </div>
+                        </li>
+                        <li>
+                          <strong class="regi_usr_tit">DM&nbsp;수신 <span class="required clr_red">( &nbsp;&#42;&nbsp; )</span> </strong>
+                          <div class="regi_usr_txt">
+                            <i class="rowBox input_rad_box">
+                              <span class="type_input_box"><label for="regi_usr_dm1_change">동의</label><input type="radio" name="regi_usr_dm_change" id="regi_usr_dm1_change" checked></span>
+                              <span class="type_input_box"><label for="regi_usr_dm2_change">거부</label><input type="radio" name="regi_usr_dm_change" id="regi_usr_dm2_change"></span>
+                            </i>
+                            <p id="dmMsg" class="required_msg_box" role="alert" >
+                              DM 수신에 동의하시면 우편물을 받아보실 수 있습니다.
+                            </p>
+                          </div>
                         </li>
                       </ul>
-                      <p class="btn_box basic"><button class="btn_submit" type="button">확인</button></p>
-                    </div>
+                      <p class="btn_box">
+                        <input type="submit" value="확인"><input type="reset" value="취소">
+                      </p>
+                    </section>
                   </form>
                 </section>
-              
                 <address>
                   <p class="addr">
                     <span class="department"> 콘텐츠 관리부서 <span class="bar">|</span> 문화사업팀 </span> 
@@ -341,14 +491,11 @@
                     </div>
                   </form>
                 </section>
-                
-      
               </article>
             </div><!-- .contents_sub End -->
         </main>
     <!-- footer -->
         <footer class="footer">
-
         <div class="f_nav">
           <div class="container">
             <ul class="fnb">

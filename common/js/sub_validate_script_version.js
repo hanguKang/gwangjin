@@ -60,22 +60,17 @@ try {
 			//input 파일첨부, 비밀번호 
 			var $fileBox = null;
 			$(function() {
-				//init_idChck();
-				//init_pwdChck();
+				init_idChck();
+				init_pwdChck();
 				init_file();
-				//init_addr();
+				init_addr();
 				init_phone();
-				//init_carNum();
-				//init_rad();
+				init_carNum();
+				init_rad();
 				init_pop_btn();
 			});
 
 			function init_pop_btn(){
-
-				$('#btn_change_pop').on('click',function(){
-					$('.usr_modify_box_popup').css('display','block');
-				});
-
 				$('.modify_btn_box').children('.btn_submit').on('click',()=>{
 					let result = confirm('비밀번호를 수정하시겠습니까?');
 					
@@ -231,50 +226,88 @@ try {
 				let $_id = $('#regi_usr_id');
 				$_id.on('blur',()=>{
 					let $_idVal = $_id.val();
-					chckId($_idVal);
+					let result = null;
+					//alert($_idVal);
+					result = chckId($_idVal);
+					if(result){
+						$_id.removeClass('alert').nextAll('.required_msg_box').children('.sameStr').removeClass('alert');
+					}else{
+						$_id.focus().addClass('alert').nextAll('.required_msg_box').children('.sameStr').addClass('alert');
+					}//return false
+
 				});
-				return;
 			}
 			function chckId($_idVal){
 				if($_idVal.search(/\s/) != -1){
-					alert('아이디를 입력하세요');
-					return;
+					return false;
 				}
 				let regEx = { id_rule: /^[A-Za-z0-9]{4,12}/};
 				//console.log(regEx.id_rule.test($_idVal));     
 				let result = regEx.id_rule.test($_idVal);    
+				return result;    
+			}
+
+			function accessAriaInvalid(elem, bool){
+				let pwd = elem;
+				let $ariaElm = $('#'+ pwd.attr('aria-describedby') );
+				pwd.attr('aria-invalid', !bool);
 				
-				if(!result){
-					alert('형식에 맞는 아이디를 입력하세요.');
+				// if(pwd.val() == '' && $ariaElm.hasClass('ability_chk')){
+					
+				// 	$ariaElm.addClass('alert');
+				// 	$ariaElm.attr('aria-hidden', false);
+				// 	return;
+				// }
+
+				if(!bool && $ariaElm.hasClass('ability_chk')){	// true이면, 잘못된 정보라면
+																											//ablility_chk는 aria-describedby가 가리키는 해당 요소이다. 이 요소는 기본적으로 display:none으로 이벤트 발생시 나타난다. 
+																											//이 요소는 checkbox, raido버튼 등의 aria-descripbedby과 연관된 요소의 문구로써 display:block으로 숨기지 않는 것과 구분하는 방법으로 사용한다. 
+					$ariaElm.removeClass('alert');
+					$ariaElm.attr('aria-hidden',true);
+					return;
+				}else if(bool && $ariaElm.hasClass('ability_chk')){
+					$ariaElm.addClass('alert');
+					$ariaElm.attr('aria-hidden',false);
 					return;
 				}
-				return;
+				
 			}
 
 			function factory_pwd($pwd, $pwd_val){
 				// console.log($pwd);
 				// console.log($pwd_val);
 				let result_pw = chkPwdStrValid($pwd_val, $pwd);
-				if(!result_pw) return false;
-
 				let result_continue = continuousPw( $pwd_val );
 				let forId = $(".list").find('.forId').eq(0);
 				//alert(forId);
 				if(forId.length > 0 && forId.val() != ''){
+					// alert($pwd.attr('id'));
+					// alert(forId.attr('id'));
 					let result_same_str = chkPwdId($pwd.attr('id'), forId.attr('id') );factory_pwd
 					if(result_same_str){
-						alert('아이디와 비번이 같습니다.');
-						return;
+						$pwd.nextAll('.required_msg_box').children('.sameStr').removeClass('alert');
+					}else{
+						$pwd.nextAll('.required_msg_box').children('.sameStr').addClass('alert');
 					}
 				}
 				
+				//alert('연속숫자'+result_continue);
 				if(result_continue){//연속된 숫자
 					//console.log(result);
-					alert('연속된 숫자입니다.');
-					return;
+					$pwd.addClass('alert').nextAll('.required_msg_box').children('.continueNum').addClass('alert');
+				}else{//연속된 숫자 
+					$pwd.removeClass('alert').nextAll('.required_msg_box').children('.continueNum').removeClass('alert');
 				}
 
-				return;
+				if(result_pw){
+					//console.log('ok');
+					$pwd.nextAll('.required_msg_box').children('.pwd_pass').removeClass('alert');
+				}else{
+					//console.log('no');
+					//console.log($pwd.nextAll('.required_msg_box'));
+					$pwd.nextAll('.required_msg_box').children('.pwd_pass').addClass('alert');
+				}
+				accessAriaInvalid($pwd, result_pw);
 				
 			}
 
@@ -291,7 +324,6 @@ try {
 				}else{
 					$pwd.nextAll('.chk_pwd').removeClass('alert');
 				}
-				return;
 			}
 
 			function init_pwdChck(){
@@ -303,17 +335,37 @@ try {
 				let $pwd6 = $('#modify_usr_pwd2'); //비번 수정 확인
 				let $pwd7 = $('#modify_usr_new_pwd1'); //비번 수정 팝업
 				let $pwd8 = $('#modify_usr_new_pwd2'); //비번 수정 확인팝업
+				//let $pwd2 = $('#regi_usr_pwd1');
+				// $pwd1.on({
+				// 	'blur': function(){
+				// 		chckPwd1(false);
+				// 	},
+				// 	'keydown': function(e){
+				// 		if(e.keyCode == 13){
+				// 			chckPwd1(false);
+				// 		}
+				// 	}
+				// });
+				// $pwd1_chk.on({
+				// 	'blur': function(){
+				// 		chckPwd1(true);
+				// 	}
+				// });
 
 				/* 비번입력 */
 				$pwd1.on('blur', function(e){
 					let pwd_val = $pwd1.val();
+					//alert(pwd_val);
+					//^(?=.*[a-zA-Z])(?=.*[!@#$%^&*-_])(?=[0-9]*)[\da-zA-Z!@#$%^&*-_]{10,20}$
 					factory_pwd( $pwd1, pwd_val );
-					$pwd2.off('blur');
-					return;
+					
+					//$pwd2.off('blur');
 				});
 
 				$pwd3.on('blur', function(){
 					let pwd_val = $pwd1.val();
+					//console.log(pwd_val);
+					//^(?=.*[a-zA-Z])(?=.*[!@#$%^&*-_])(?=[0-9]*)[\da-zA-Z!@#$%^&*-_]{10,20}$
 					let result_pw = chkPwdStrValid(pwd_val, $pwd3);
 					if(result_pw){
 						console.log('ok');
@@ -365,17 +417,22 @@ try {
 
 				/* 비번 확인 */
 				$pwd2.on({
-					'focus':function(){
-
-						setTimeout(()=>{
-							$pwd2.on('blur',function(){
-								
-								chckPwdSame($pwd1, $pwd2);
-								return;
-							});
-						},100);
+					//'focus':function(e){
+						//e.preventDefault();
+						//console.log('in');
+						// setTimeout(()=>{
+						// 	$($pwd2).bind('blur',()=>{
+						// 		console.log('나갔다');
+						// 	});
+						// },100);
 						
-						return;
+					//},
+					'blur': function(e){
+						//console.log('out');
+						let result = chckPwdSame($pwd1, $pwd2);
+						//alert(result);
+						accessAriaInvalid($pwd2, result);
+						chckPwdSameResult($pwd2, result);
 					}
 				}); 
 				$pwd4.on({
@@ -431,13 +488,13 @@ try {
 
 					
 					if(pw.length < 10 || pw.length > 20){
-						alert("10자리 ~ 20자리 이내로 입력해주세요.");
+						//alert("10자리 ~ 20자리 이내로 입력해주세요.");
 						return false;
 					}else if(pw.search(/\s/) != -1){
-						alert("비밀번호는 공백 없이 입력해주세요.");
+						//alert("비밀번호는 공백 없이 입력해주세요.");
 						return false;
 					}else if(   (num < 0 && eng < 0) || (eng < 0 && spe < 0) || (spe < 0 && num < 0) ){
-						alert("영문,숫자, 특수문자 중 2가지 이상을 혼합하여 입력해주세요.");
+						//alert("영문,숫자, 특수문자 중 2가지 이상을 혼합하여 입력해주세요.");
 						return false;
 					}else {
 						// console.log('eng',eng);
@@ -447,7 +504,7 @@ try {
 							//console.log("통과");
 							return true;	 
 						}else{
-							alert("영문,특수문자를 혼합하여 입력해주세요.");
+							//alert("영문,특수문자를 혼합하여 입력해주세요.");
 							return false;
 						}
 						
@@ -482,30 +539,29 @@ try {
 				if( !!$pwd1 && $pwd1_val !=''  && $pwd1_type == 'password' && !!$pwd2 && $pwd2_val !=''  && $pwd2_type == 'password'){
 					//console.log($pwd2_val);
 					//let $pwd_result = chkPwdStrValid($pwd1_val, $pwd1_type);
-					
 					if($pwd1_val == $pwd2_val){
-						return; //비번이 서로 일치한다. 
+						return false; //비번이 서로 일치한다. 
 					}else{
-						alert('비번이 서로 일치하지 않습니다.');
-						return;
+						return true;
 					}
 				}else if(!!$pwd1 && $pwd1_val =='' && !!$pwd2 && $pwd2_val !=''){
 					//return true; 
-					alert('첫번째 비밀번호를 입력하지 않으셨습니다.');
+					alert('비밀번호를 입력하지 않으셨습니다.');
 					//$pwd1.focus(); 
-					return;
+					return true;
 				}else if(!!$pwd1 && $pwd1_val !='' && !!$pwd2 && $pwd2_val ==''){
 					//return true; 
 					alert('비밀번호 확인을 입력하지 않으셨습니다.');
 					//$pwd2.focus();
-					return;
+					return true;
 				}else if(!!$pwd1 && $pwd1_val =='' && !!$pwd2 && $pwd2_val ==''){
 					//$pwd1.focus();
-					alert('첫번째 비밀번호와 비밀번호 확인을 입력하지 않으셨습니다.');
-					return;
+					alert('비밀번호와 비밀번호 확인을 입력하지 않으셨습니다.');
+					return true;
 				}
 
-				return;
+				
+				
 			}
 			function init_file() {
 				$fileBox = $('.input_file');

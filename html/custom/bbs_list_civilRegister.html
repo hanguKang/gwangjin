@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <script src="../../common/js/jquery-3.6.0.min.js"></script>
   <!--<script src="../../common/js/jquery-1.11.3.min.js"></script>-->
-  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
+  <!-- <script type="text/javascript" src="//code.jquery.com/jquery-migrate-3.3.2.min.js"></script> -->
   <script src="../../common/js/aos.js"></script>
   <script src="../../common/js/slick.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
@@ -29,27 +29,27 @@
         <!-- 헤더 -->
         <header class="header">
           <div class="hd_top pc">
-              <ul>
-                  <li>
-                      <a href="#">광진구시설관리공단</a>
-                  </li>
-                  <li>
-                      <a href="#">통합주차</a>
-                  </li>
-                  <li>
-                      <a href="#">문화체육시설</a>
-                  </li>
-              </ul>
-              <ol class="util">
-                  <li><a href="#">로그인</a></li>
-                  <li><a href="#">회원가입</a></li>
-                  <li> <a href="#" class="btn_sitemap_open"><span class="hide">사이트맵 열기</span></a></li>
-              </ol>
-          </div>
+            <ul>
+                <li>
+                    <a href="#" class="inverse">광진구시설관리공단</a>
+                </li>
+                <li>
+                    <a href="#" class="inverse">통합주차</a>
+                </li>
+                <li>
+                    <a href="#" class="inverse">문화체육시설</a>
+                </li>
+            </ul>
+            <ol class="util">
+                <li><a href="#" class="inverse">로그인</a></li>
+                <li><a href="#" class="inverse">회원가입</a></li>
+                <li><a href="#" class="btn_sitemap_open inverse"><span class="hide">사이트맵 열기</span></a></li>
+            </ol>
+        </div>
           <div class="layer_gnb">
             <div id="gnb" class="gnb">
               <h1 class="logo"><a href="#"><span class="hide">로고</span></a></h1>
-              <p class="mo showNav"><button title="메뉴보기"><span class="hide">메뉴보기</span></button></p>
+              <p class="mo showNav"><button title="메뉴보기" type="button"><span class="hide">메뉴보기</span></button></p>
               <nav>
                 <div class="mo"><p class="link_home"><a href="#"><span class="hide">홈으로 이동</span></a></p></div>
                 <h1 class="hide">글로벌 네비게이터</h1>
@@ -221,7 +221,7 @@
                         </div>
                       </li>
                 </ul>
-                <button class="mo close" title="메뉴닫기"><span class="hide">닫기</span></button>
+                <button class="mo close" title="메뉴닫기" type="button"><span class="hide">닫기</span></button>
               </nav>
             </div>
           </div>
@@ -266,7 +266,7 @@
                   </ol>
                   <ul>
                     <li class="share">
-                      <button title="공유하기"><span class="hide">공유하기</span></button>
+                      <button title="공유하기" type="button"><span class="hide">공유하기</span></button>
                       <div class="share_box">
                         <ul>
                           <li><a href="#" class="facebook" id="share_popup_facebook"><img src="../../common/images/share_facebook.png" alt="페이스북"></a></li>
@@ -331,7 +331,8 @@
                       <dl class="noFlex input_file">
                         <dt> 첨부파일 <span class="required">(	&#42; )</span> </dt>
                         <dd>
-                          <input type="text" readonly="readonly" class="file_name" placeholder="선택된 파일 없음">
+                          <label for="file_name" class="hide">파일명 보기</label>
+                          <input type="text" readonly="readonly" id="file_name" class="file_name" placeholder="선택된 파일 없음">
                           <label for="file" class="file_label">파일찾기</label>
                           <input type="file" name="" id="file">
                         </dd>
@@ -342,6 +343,7 @@
                       <dl class="noFlex">
                         <dt> 내용 <span class="required">( 	&#42; )</span></dt>
                         <dd class="space_lr noFlex">
+                          <label for="residence_reg_txt1" class="hide">내용 보기</label>
                           <textarea name="" id="residence_reg_txt1" cols="30" rows="10"></textarea>
                         </dd>
                       </dl>

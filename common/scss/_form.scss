@@ -2,7 +2,9 @@
 .join_content{
   .for-a11y{position:absolute; width:1px; height:1px; margin:-1px; padding:0; clip:rect(0 0 0 0); overflow:hidden; text-indent:-5000em;}
   .form {
-    input, button {height:40px; border:1px solid #e2e2e2;}
+    input, button, select {height:40px; border:1px solid #e2e2e2;
+      &.text_box{width:20%; margin-left:15px;}
+    }
     .form_list {
       .list {position:relative;
         .no_border{border:0 none;}
@@ -11,6 +13,8 @@
           &.alert{opacity:1; color:#f00d38;}
         }
   
+
+
         span.chk { left: auto !important; height: 15px !important; margin-top: -8px !important; background-position: 0px 0px;opacity: 1 !important; filter: alpha(opacity=100);}
         span.chk.submit {background-position: 0px -18px;}
         span.icon_bg {display: block;position: absolute;top: 50% !important;right: 25px !important;width: 25px !important;background: url(../images/sprite_common.png) no-repeat 0 0;}
@@ -32,8 +36,8 @@
           }//button__drop-down  End 
         }
         
-        .select_box {position:absolute;display:none; background-color:#fff;
-          ul {overflow-y: scroll;width: 184px; width:100%;height: 140px;min-height: 28px;max-height: 200px;height: auto;margin: 0;border-top: 1px solid #f1f1f1;}
+        .select_box {position:absolute; z-index:1000; display:none; background-color:#fff;
+          ul {position:relative; z-index:1000; overflow-y: scroll;width: 184px; width:100%;height: 140px;min-height: 28px;max-height: 200px;height: auto;margin: 0;border-top: 1px solid #f1f1f1;}
           &.on{display: block;top: 100%; left:1px; width:100%; height: auto;border: 1px solid #999;border-top: none;}
         } 
         .ability_chk {
@@ -52,7 +56,7 @@
             &.first{text-align:right;}
           }
           .md_txt{flex:0 1 auto; margin:0 10px;}
-          >div.btn_drop{position:relative; flex:0 0 150px; margin-left:10px;}
+          >div.btn_drop{position:relative; z-index:100; flex:0 0 150px; margin-left:10px;}
           .ability_chk{display:none; height:40px; margin:0 20px; line-height:40px;}
         }
       }
@@ -157,47 +161,52 @@
         .descriped{margin-left:20px; font-size:16px; font-weight:300; color:#444; }
       }
       .seperate_box{display:flex; align-items: stretch;
-        article{flex:0 0 50%; padding:32px 25px; border:1px solid #dedede;
-            &:nth-of-type(1){@include alignFelxCenter;}
+        article{ flex:0 0 50%; border:1px solid #dedede;
           h1{font-weight:300; text-align:center;
-            &.none{font-size:16px; font-weight:300;}
+            &.none{@include alignFelxCenter; height:100%; font-size:16px; font-weight:300; }
           }
-          ul{display:flex; margin-top:35px;
-            li{flex:0 0 100%; margin:0 auto;
-              button{@include alignFelxCenter; color:#fff; width:100%; height:86px;
+          dl{display:flex; align-items: stretch; flex-wrap:wrap; padding-bottom:20px;
+            dt{flex:0 0 100%; height:75px; display: flex; align-items: center; justify-content: center; font-size:22px; font-weight:300;}
+            dd{flex:0 0 100%; margin:10px auto  auto; display:flex; align-items:center; font-size:18px; 
+              input{margin:0 15px; width:16px; height:16px;}
+              label{@include alignFelxCenter; color:#fff; margin:0 auto; width:80%;  height:86px;
+                .old_tit{margin-right:15px;} 
+                span{margin:0 10px; font-weight:100;
+                  &.bar{margin:0 5px;}
+                }
                 .regi_txt{margin-left:10px;}
               }
-              &.active{
-                button{background-color:#476dc3;}
-              }
-              &.cancel{
-                button{background-color:#555555;}
+              input{
+                &+label{background-color:#555555;}
+                &:checked+label{background-color:#476dc3;
+                  .old_tit{}
+                }
               }
             }
-          }// ul End
-          &.old_info{display:block; padding:0; 
-            dl{ display:flex; flex-direction:column; font-weight:300; height:100%;
-              >*{flex:1 0 0; border-bottom:1px solid #dedede;}
+          }// dl End
+          // &.old_info{display:block; padding:0; 
+          //   dl{ display:flex; flex-direction:column; font-weight:300; height:100%;
+          //     >*{flex:1 0 0; border-bottom:1px solid #dedede;}
               
-              .old_id{margin-left:10px;}
-              .bar{padding:0 10px; }
-              .old_date{margin-right:10px;}
-              dt{@include alignFelxCenter; font-size:22px; 
-                .old_tit{margin-right:10px;}
-                span{font-size:16px;}
-              }
-              dd{padding-left:50px; display:flex; align-items: center;color:#fff;
-                button{flex:0 0 24%; text-align:left; color:#fff;}
-                span{font-size:14px;}
-                &.active{background-color:#476dc3; }
-                &.cancel{background-color:#555555; }
-              }
-              &+p{padding-left:50px; height:25%; display:flex; align-items: center; background-color:#555; color:#fff; 
-                i{flex:0 0 24%; }
-                .old_yes{margin:0 10px;font-size:14px;}
-              }
-            }
-          }
+          //     .old_id{margin-left:10px;}
+          //     .bar{padding:0 10px; }
+          //     .old_date{margin-right:10px;}
+          //     dt{@include alignFelxCenter; font-size:22px; 
+          //       .old_tit{margin-right:10px;}
+          //       span{font-size:16px;}
+          //     }
+          //     dd{padding-left:50px; display:flex; align-items: center;color:#fff;
+          //       button{flex:0 0 24%; text-align:left; color:#fff;}
+          //       span{font-size:14px;}
+          //       &.active{background-color:#476dc3; }
+          //       &.cancel{background-color:#555555; }
+          //     }
+          //     &+p{padding-left:50px; height:25%; display:flex; align-items: center; background-color:#555; color:#fff; 
+          //       i{flex:0 0 24%; }
+          //       .old_yes{margin:0 10px;font-size:14px;}
+          //     }
+          //   }
+          // }
         }//article End
       }//seperate_box End
       ul.certify{display:flex;
@@ -257,6 +266,9 @@
             }
             input, select{display:inline-block; height:40px; border:1px solid #dedede;}
 
+            //script 없이 심플 버전
+            select.simple{flex:0 0 20%; margin-left:10px;}
+
             // .form > .form_list > .list 폼작성 스타일링과 합치기
             .input_rad_box{
               >*{vertical-align:middle; margin:10px; }
@@ -265,7 +277,7 @@
                 input{order:1; width:14px; margin:0 5px; height:14px;}
               }
             }
-            &.list{
+            &.list_inner, &.list{ position:relative; 
               input.alert, select.alert {border-color:#f00d38;}//valid 불통
               .required_msg_box{ transition:transform .3s ease; font-size:16px; line-height:1.6; color:#f00d38;
                 //&.alert{font-size:20px; font-weight:900;}//valid 불통
@@ -281,10 +293,10 @@
                 }
               }//.guide_txt End
               input{margin-bottom:10px; height:40px; 
-                +button{margin-left:20px; width:140px; background-color:#333; color:#fff;}
+                +button{margin-left:20px; width:140px; background-color:#555; color:#fff;}
               }
               .spaceR{margin-right:10px;}
-              .btn_drop{height: 40px;
+              .btn_drop{position:relative; z-index:1000; height: 40px;
                 .button__drop-down{border:0 none;}
               }
               .ability_chk{margin:0;}
@@ -323,8 +335,8 @@
   }
 }
 
-/* 팝업 창 */
-.usr_modify_box_popup{position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; 
+/* 비밀번호 수정 팝업 창 */
+.usr_modify_box_popup{display:none;position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; 
   .usr_modify_curtain{position:absolute; left:0; top:0; width:100vw; height:100vh; background-color:rgba(0,0,0,.5);}
   .usr_modify_wrapper{position:absolute; left:50%; top:50%; transform:translateX(-50%) translateY(-50%); width:100%; max-width:962px; background-color:#fff;
     >h1{padding:0 20px; height:47px; font-size:18px; line-height:47px; background-color:#333; color:#fff;}
@@ -332,6 +344,22 @@
       .btn_box{margin:30px auto 40px auto; }
     }
     .usr_modify_close{position:absolute; right:20px; top:15px; color:#fff; cursor:pointer;}
+  }
+  
+}
+
+/* 개인정보 수정하기 */
+.form_join_change{
+  .form_list{
+    li{
+      .regi_usr_txt{
+        .btn_change{padding:0 20px; background-color:#555; color:#fff;}
+        &.list{
+          
+        }
+      }
+      
+    }
   }
   
 }

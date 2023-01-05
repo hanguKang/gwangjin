@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <script src="../../common/js/jquery-3.6.0.min.js"></script>
   <!--<script src="../../common/js/jquery-1.11.3.min.js"></script>-->
-  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
+  <!-- <script type="text/javascript" src="//code.jquery.com/jquery-migrate-3.3.2.min.js"></script> -->
   <script src="../../common/js/aos.js"></script>
   <script src="../../common/js/slick.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
@@ -30,27 +30,27 @@
         <!-- 헤더 -->
         <header class="header">
           <div class="hd_top pc">
-              <ul>
-                  <li>
-                      <a href="#">광진구시설관리공단</a>
-                  </li>
-                  <li>
-                      <a href="#">통합주차</a>
-                  </li>
-                  <li>
-                      <a href="#">문화체육시설</a>
-                  </li>
-              </ul>
-              <ol class="util">
-                  <li><a href="#">로그인</a></li>
-                  <li><a href="#">회원가입</a></li>
-                  <li> <a href="#" class="btn_sitemap_open"><span class="hide">사이트맵 열기</span></a></li>
-              </ol>
-          </div>
+            <ul>
+                <li>
+                    <a href="#" class="inverse">광진구시설관리공단</a>
+                </li>
+                <li>
+                    <a href="#" class="inverse">통합주차</a>
+                </li>
+                <li>
+                    <a href="#" class="inverse">문화체육시설</a>
+                </li>
+            </ul>
+            <ol class="util">
+                <li><a href="#" class="inverse">로그인</a></li>
+                <li><a href="#" class="inverse">회원가입</a></li>
+                <li><a href="#" class="btn_sitemap_open inverse"><span class="hide">사이트맵 열기</span></a></li>
+            </ol>
+        </div>
           <div class="layer_gnb">
             <div id="gnb" class="gnb">
               <h1 class="logo"><a href="#"><span class="hide">로고</span></a></h1>
-              <p class="mo showNav"><button title="메뉴보기"><span class="hide">메뉴보기</span></button></p>
+              <p class="mo showNav"><button title="메뉴보기" type="button"><span class="hide">메뉴보기</span></button></p>
               <nav>
                 <div class="mo"><p class="link_home"><a href="#"><span class="hide">홈으로 이동</span></a></p></div>
                 <h1 class="hide">글로벌 네비게이터</h1>
@@ -222,7 +222,7 @@
                         </div>
                       </li>
                 </ul>
-                <button class="mo close" title="메뉴닫기"><span class="hide">닫기</span></button>
+                <button class="mo close" title="메뉴닫기" type="button"><span class="hide">닫기</span></button>
               </nav>
             </div>
           </div>
@@ -274,7 +274,7 @@
                   </ol>
                   <ul>
                     <li class="share">
-                      <button title="공유하기"><span class="hide">공유하기</span></button>
+                      <button title="공유하기" type="button"><span class="hide">공유하기</span></button>
                       <div class="share_box">
                         <ul>
                           <li><a href="#" class="facebook" id="share_popup_facebook"><img src="../../common/images/share_facebook.png" alt="페이스북"></a></li>
@@ -301,15 +301,14 @@
                       <ul class="form_list">
                         <li class="list">
                           <strong class="regi_usr_tit">아이디</strong>
-                          <div class="regi_usr_txt"> <label for="modify_usr_id1" class="hide">아이디 확인</label> <input type="text" name="" id="modify_usr_id1" readonly value="gwangjin2022" class="no_border forId"></div>
+                          <div class="regi_usr_txt">
+                            <span class="regi_usr_id_change">gwangjin2022</span>
+                          </div>
                         </li>
                         <li>
                           <strong class="regi_usr_tit">비밀번호 변경 <span class="required clr_red">( &nbsp;&#42;&nbsp; )</span> </strong>
                           <div class="regi_usr_txt list">
-                            <div class="guide_txt flex_box">
-                              <label for="modify_usr_pwd1">비밀번호를 입력하세요.</label>
-                              <p class="placeholder">띄어쓰기 없이 영/특수문자/숫자 2종, 10-20자</p>
-                            </div>
+                            <label for="modify_usr_pwd1" class="hide">비밀번호를 입력하세요.</label>
                             <input type="password" name="" id="modify_usr_pwd1" aria-labelledby="modify_usr_pwd_msg1" class="w_65" maxlength="20" pattern="^(?=.*[a-zA-Z])(?=.*[!@#$%^&*-_])(?=[0-9]*)[\da-zA-Z!@#$%^&*-_]{10,20}$" required />
                             <p class="required_msg_box">
                               <span class="pwd_pass">&#8251; 영문, 숫자, 특수문자(~`!@#$%^&*()-_) 중 2가지 이상 혼합하여 10~20자로 입력하세요.</span>
@@ -317,25 +316,19 @@
                               <span class="continueNum">&#8251; 같거나 연속된 문자열(123 또는 abc 등)은 3자 이상 사용 할 수 없습니다.</span>
                               <span class="sameStr">&#8251; 아이디가 포함된 비밀번호는 사용하실 수 없습니다.</span>
                             </p>
-                            <p id="modify_usr_pwd_msg1" aria-hidden="true"  class="chk_pwd ability_chk" role="alert">기존 비밀번호와 일치하지 않습니다.</p>
                           </div>
                         </li>
                         <li class="list">
                           <strong class="regi_usr_tit">비밀번호&nbsp;확인 <span class="required clr_red">( &nbsp;&#42;&nbsp; )</span></strong>
                           <div class="regi_usr_txt list">
-                            <div class="guide_txt flex_box">
-                              <label for="modify_usr_pwd2">비밀번호를 확인 하세요.</label>
-                              <p class="placeholder">입력한 비밀번호와 같은 번호를 입력하세요.</p>
-                            </div>
+                            <label for="modify_usr_pwd2" class="hide">비밀번호를 확인 하세요.</label>
                             <input type="password" name="" id="modify_usr_pwd2" class="w_65" required />
-                            <p class="chk_pwd ability_chk">비밀번호가 일치하지 않습니다.</p>
                           </div>
                         </li>
                       </ul>
                       <p class="btn_box basic">
                         <input type="submit" class="btn_submit" value="확인">
-                        <input type="submit" class="cancel" value="취소">
-                        
+                        <input type="reset" class="cancel" value="취소">
                       </p>
                     </div>
                   </form>
@@ -363,8 +356,9 @@
                       </dl>
                     </div>
                     <div class="bottom">
+                      <label for="opinions_regis" class="hide">의견 등록하기</label>
                       <textarea name="" id="opinions_regis" cols="30" rows="10"></textarea>
-                      <button class="button-color" title="의견등록">의견등록</button>
+                      <button class="button-color" title="의견등록" type="button">의견등록</button>
                     </div>
                   </form>
                 </section>

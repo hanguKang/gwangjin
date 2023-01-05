@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../common/css/slick.css">
+  <script src="../../common/js/jquery-3.6.0.min.js"></script>
+  <script src="../../common/js/slick.js"></script>
+  <style>
+    .hide{display:none;}
+    *{margin:0; padding:0;}
+    body{overflow-y:scroll; padding:0 100px;}
+    .wrapper{
+      margin-left:47px;
+      width:calc(100% - 500px);
+    }
+    .link_slide {
+      margin:40px;
+      
+      border:1px solid red;
+      
+      height: 260px;
+      margin-top: 40px;
+      overflow: hidden;
+    }
+    .link_slide .item {
+      float: left;
+      width: 124px; 
+      text-align: center;
+    }
+    .link_slide .item a {
+      display:block; width:124px;
+      word-break: keep-all;
+      height: 133px;
+    }
+    .link_slide .item .img {
+      width: 53px;
+      height: 53px;
+      margin: 0 auto 18px;
+    }
+    .slick-slide .img img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper link">
+    <div class="link_slide">
+      <div class="item">
+        <a href="/www/common/cntnts/selectContents.do?cntnts_id=C0001225" tabindex="0">
+          <div class="img">
+            <img src="https://www.ansan.go.kr/cmsdata/web_upload/banner_w/20211116/1637052127484M680ZKZJ6AD7ZF8ZFRG4AOOCE.png" alt="사회복지">
+          </div> 사회복지
+        </a>
+        <a href="/www/common/cntnts/selectContents.do?cntnts_id=C0001539" tabindex="0">
+          <div class="img">
+            <img src="https://www.ansan.go.kr/cmsdata/web_upload/banner_w/20211116/1637057377443RTFSTF59XC2S0EWWHEHA63WGD.png" alt="청년정책">
+          </div> 청년정책
+        </a>
+      </div>
+      <div class="item">
+        <a href="/www/common/bbs/selectPageListBbs.do?bbs_code=B0261" tabindex="0">
+          <div class="img">
+            <img src="https://www.ansan.go.kr/cmsdata/web_upload/banner_w/20211116/16370521275400ZM9I1UBD8341R5PD7MZ6EOHS.png" alt="경제/일자리">
+          </div> 경제/일자리</a>
+        <a href="https://hope.ansan.go.kr" tabindex="0">
+          <div class="img">
+            <img src="https://www.ansan.go.kr/cmsdata/web_upload/banner_w/20211116/1637052127567C64A14YJCJTEX686J5RGU13G0.png" alt="마을 만들기">
+          </div> 마을 만들기
+        </a>
+        </div>
+        <div class="item">
+        <a href="/www/common/cntnts/selectContents.do?cntnts_id=C0001277" tabindex="0">
+          <div class="img">
+            <img src="https://www.ansan.go.kr/cmsdata/web_upload/banner_w/20211116/1637052127595E945RWLISHU5DQHMH5N0MJFV9.png" alt="부동산">
+          </div> 부동산
+        </a>
+        <a href="/www/common/cntnts/selectContents.do?cntnts_id=C0001379" tabindex="0">
+          <div class="img">
+            <img src="https://www.ansan.go.kr/cmsdata/web_upload/banner_w/20211116/16370521276241ZMMSNHQ2Q9XQXDBS4RG0T4AB.png" alt="생활정보">
+          </div> 생활정보
+        </a>
+        </div>
+        <div class="item">
+        <a href="/www/common/cntnts/selectContents.do?cntnts_id=C0001442" tabindex="0">
+          <div class="img">
+            <img src="https://www.ansan.go.kr/cmsdata/web_upload/banner_w/20211116/1637052127652EY1VS45WQKT3EDTCPLNL3LC44.png" alt="도시계획">
+          </div> 도시계획
+        </a>
+        <a href="/www/common/cntnts/selectContents.do?cntnts_id=C0001448" tabindex="0">
+          <div class="img">
+            <img src="https://www.ansan.go.kr/cmsdata/web_upload/banner_w/20211116/1637052127697F3IPN4B578EYXDN4PMJ952TSW.png" alt="아동친화 도시">
+          </div> 아동친화 도시
+        </a>
+        </div>
+        <div class="item">
+          <a href="/www/common/cntnts/selectContents.do?cntnts_id=C0001306" tabindex="0">
+            <div class="img">
+              <img src="https://www.ansan.go.kr/cmsdata/web_upload/banner_w/20211116/1637052127724V7PESUJOF33UXRECO0B2IZAHN.png" alt="체육시설" style="width: auto; height: 100%;">
+          </div> 체육시설
+          </a>
+          <a href="/www/common/cntnts/selectContents.do?cntnts_id=C0001487" tabindex="0"><div class="img">
+              <img src="https://www.ansan.go.kr/cmsdata/web_upload/banner_w/20211116/1637052127753BLWBM97RLOWXAYBE9SQS1GHB5.png" alt="산업/기업 지원">
+            </div> 산업/기업 지원
+          </a>
+        </div>
+        <div class="item">
+          <a href="/www/common/cntnts/selectContents.do?cntnts_id=C0001308" tabindex="0">
+            <div class="img">
+              <img src="https://www.ansan.go.kr/cmsdata/web_upload/banner_w/20211116/1637052127781T9ABTDP8H8LIVZ1781ZZ3GRP2.png" alt="교통">
+            </div> 교통
+          </a>
+          <a href="/www/common/cntnts/selectContents.do?cntnts_id=C0001507" tabindex="0">
+            <div class="img">
+              <img src="https://www.ansan.go.kr/cmsdata/web_upload/banner_w/20211116/1637052127809T97XZTN5E2XLNVG4HLH3CNYXF.png" alt="여성정보">
+            </div> 여성정보
+          </a>
+        </div>
+        <div class="item">
+          <a href="/www/common/bbs/selectPageListBbs.do?bbs_code=B0274" tabindex="0"><div class="img">
+              <img src="https://www.ansan.go.kr/cmsdata/web_upload/banner_w/20211116/16370521278389R126PHTMUVC762WYM3UEE6PK.png" alt="환경">
+            </div> 환경
+          </a>
+          <a href="/www/common/cntnts/selectContents.do?cntnts_id=C0001520" tabindex="0">
+            <div class="img">
+              <img src="https://www.ansan.go.kr/cmsdata/web_upload/banner_w/20211116/1637052127866NRIOHJV3E5N61LA3I6DWONYZL.png" alt="노인정보">
+            </div> 노인정보
+          </a>
+        </div>
+        <div class="item">
+          <a href="/www/common/cntnts/selectContents.do?cntnts_id=C0001365" tabindex="0">
+            <div class="img">
+              <img src="https://www.ansan.go.kr/cmsdata/web_upload/banner_w/20211116/1637052127896ZZ67SMGURY27LMXSDKAX0Q2QO.png" alt="소비자">
+            </div> 소비자
+          </a>
+          <a href="/www/common/cntnts/selectContents.do?cntnts_id=C0001536" tabindex="0">
+            <div class="img">
+              <img src="https://www.ansan.go.kr/cmsdata/web_upload/banner_w/20211116/1637052127923KH2NF03G5FARLO141K1E6QUPO.png" alt="공공주택">
+            </div> 공공주택
+          </a>
+        </div>
+        <div class="item">
+          <a href="/www/common/cntnts/selectContents.do?cntnts_id=C0001369" tabindex="0">
+            <div class="img">
+              <img src="https://www.ansan.go.kr/cmsdata/web_upload/banner_w/20211116/1637052127951K9ZMUDHJWJP8D9FDCUXQ86DZP.png" alt="민방위">
+            </div> 민방위
+          </a>
+          <a href="/www/common/cntnts/selectContents.do?cntnts_id=C0001551" tabindex="0">
+            <div class="img">
+              <img src="https://www.ansan.go.kr/cmsdata/web_upload/banner_w/20211116/1637052127977BOL2NBRRE9VFHUNQ28CVNO8LE.png" alt="안전(재난/재해)">
+            </div> 안전(재난/재해)
+          </a>            
+        </div>
+        <div class="item">
+          <a href="/www/common/cntnts/selectContents.do?cntnts_id=www01611" tabindex="-1">
+            <div class="img">
+              <img src="https://www.ansan.go.kr/cmsdata/web_upload/banner_w/20220620/1655688056201MACZNJEWDFZB35FJCCPKBXNXU.png" alt="노동정책">
+            </div> 노동정책
+          </a>
+        </div>
+    </div>
+    <div>
+      <button type="button" class="prev">
+        <span class="hide">이전으로 이동</span>
+      </button>
+      <button type="button" class="next">
+        <span class="hide">다음으로 이동</span>
+      </button>
+    </div>
+  </div>
+  <input type="text" id="tx1">
+  <input type="text" id="tx2">
+  <input type="text" id="tx3">
+  <script>
+    let i_1 = document.querySelector('#tx1');
+    let i_2 = document.querySelector('#tx1');
+    let i_3 = document.querySelector('#tx1');
+
+    i_1.addEventListener('focusout',()=>{
+      alert(1234);
+    });
+    i_2.addEventListener('focusout',()=>{
+      alert(5678);
+    });
+    i_3.addEventListener('focusout',()=>{
+      alert(9101112);
+    });
+
+    $(()=>{
+      var lSlide = $('.link_slide');
+      var maxItems = Math.round(lSlide.width() / 124);
+      lSlide.slick({
+        variableWidth: true,
+        infinite: false,
+//        slidesToShow: maxItems,
+        slidesToShow: 9,
+        speed: 350,
+        slidesToScroll: 1,
+        autoplay: false,
+        cssEase: 'ease-in',
+        initialSlide: 0,
+        dots: false,
+        prevArrow: $('.link > div .prev'), //arrow 설정
+        nextArrow: $('.link > div .next'), //arrow 설정
+        responsive: [
+          {
+              breakpoint: 1900,
+              settings: {
+                  infinite: true,
+                  slidesToShow: 8,
+                  swipeToSlide: true,
+              },
+          },
+        ],
+      });
+      $(lSlide).slick('refresh');
+
+    });
+  </script>
+</body>
+</html>

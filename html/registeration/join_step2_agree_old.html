@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <script src="../../common/js/jquery-3.6.0.min.js"></script>
   <!--<script src="../../common/js/jquery-1.11.3.min.js"></script>-->
-  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
+  <!-- <script type="text/javascript" src="//code.jquery.com/jquery-migrate-3.3.2.min.js"></script> -->
   <script src="../../common/js/aos.js"></script>
   <script src="../../common/js/slick.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
@@ -28,22 +28,22 @@
         <!-- 헤더 -->
         <header class="header">
           <div class="hd_top pc">
-              <ul>
-                  <li>
-                      <a href="#">광진구시설관리공단</a>
-                  </li>
-                  <li>
-                      <a href="#">통합주차</a>
-                  </li>
-                  <li>
-                      <a href="#">문화체육시설</a>
-                  </li>
-              </ul>
-              <ol class="util">
-                  <li><a href="#">로그인</a></li>
-                  <li><a href="#">회원가입</a></li>
-                  <li> <a href="#" class="btn_sitemap_open"><span class="hide">사이트맵 열기</span></a></li>
-              </ol>
+            <ul>
+                <li>
+                    <a href="#" class="inverse">광진구시설관리공단</a>
+                </li>
+                <li>
+                    <a href="#" class="inverse">통합주차</a>
+                </li>
+                <li>
+                    <a href="#" class="inverse">문화체육시설</a>
+                </li>
+            </ul>
+            <ol class="util">
+                <li><a href="#" class="inverse">로그인</a></li>
+                <li><a href="#" class="inverse">회원가입</a></li>
+                <li><a href="#" class="btn_sitemap_open inverse"><span class="hide">사이트맵 열기</span></a></li>
+            </ol>
           </div>
           <div class="layer_gnb">
             <div id="gnb" class="gnb">
@@ -315,18 +315,26 @@
                       <article class="old_info">
                         <h1 class="hide">홈페이지에 가입 정보</h1>
                         <dl>
-                          <dt><button type="button" title="홈페이지 선택" class="old_tit">홈페이지</button> ( <span class="old_id"> 아이디 </span><span class="bar">|</span> <span class="old_date"> 가입 일자 </span> ) </dt>
-                          <dd class="active"><button type="button" title="시설관리공단 선택" class="old_tit">시설관리공단</button> ( <span class="old_id"> 아이디 </span><span class="bar">|</span> <span class="old_date"> 가입 일자 </span> ) </dd>
-                          <dd class="active"><button type="button" title="통합주차 선택" class="old_tit">통합 주차</button> ( <span class="old_id"> 아이디 </span><span class="bar">|</span> <span class="old_date"> 가입 일자 </span> ) </dd>
-                          <dd class="cancel"><button type="button" title="문화센터 선택" class="old_tit">문화센터</button> ( <span class="old_id"> 아이디 </span><span class="bar">|</span> <span class="old_date"> 가입 일자 </span>)</dl>
+                          <dt class="old_tit">홈페이지  ( <span class="old_id"> 아이디 </span><span class="bar">|</span> <span class="old_date"> 가입 일자 </span> ) </dt>
+                          <dd>
+                            <input type="radio" name="unify_facility" id="unify_usr_rad_facility" title="시설관리공단 선택" class="hide" checked > <label for ="unify_usr_rad_facility"><span class="old_tit"> 시설관리공단 </span>( <span class="old_id"> 아이디 </span><span class="bar">|</span> <span class="old_date"> 가입 일자 </span> ) </label>
+                          </dd>
+                          <dd>
+                            <input type="radio" name="unify_facility" id="unify_usr_rad_parking" title="통합주차 선택" class="hide"> <label for ="unify_usr_rad_parking"> <span class="old_tit"> 통합주차 </span> ( <span class="old_id"> 아이디 </span><span class="bar">|</span> <span class="old_date"> 가입 일자 </span> ) </label>
+                          </dd>
+                          <!-- <dd class="cancel">
+                            <button type="button" title="문화센터 선택" class="old_tit">문화센터</button> ( <span class="old_id"> 아이디 </span><span class="bar">|</span> <span class="old_date"> 가입 일자 </span>)
+                          </dd> -->
                         </dl>
                       </article>
                       <article>
-                        <h1>통합 홈페이지 선택</h1>
-                        <ul class="consolidated_accnt">
-                          <li class="active"><button type="button"><span class="ico_regi_step_2"><img src="../../common/images/sub/join/icon_park.png" alt="주차관련 아이콘"></span><span class="regi_txt">통합 주차</span></button></li>
+                        <h1 class="hide">통합 홈페이지 선택</h1>
+                        <dl class="consolidated_accnt">
+                          <dt>통합 홈페이지 선택</dt>
+                          <dd>
+                            <input type="checkbox" name="" id="unify_usr_chk_parking" class="hide"> <label class="ico_regi_step_2" for="unify_usr_chk_parking" ><img src="../../common/images/sub/join/icon_park.png" alt="주차 아이콘"><span class="regi_txt old_tit">통합 주차</span></label></dd>
                           <!-- <li><a href="#"><span class="ico_regi_step_2"><img src="../../common/images/sub/join/icon_culture.png" alt="문화센터 등록 아이콘"></span><span class="regi_txt">문화 센터</span></a></li> -->
-                        </ul>
+                        </dl>
                       </article>
                     </div>
                   </section>

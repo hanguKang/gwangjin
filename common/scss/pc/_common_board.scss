@@ -221,7 +221,7 @@ form{
           /* 조상요소 선택하기 #2*/
           #{$bbs_category}.news &{ width:auto; max-width:46%; height:100%; } //공단소식지 이미지 크기 별도
           
-          &.none{width:auto; height:100%;} //기본 이미지 없음.
+          &.none{width:auto; height:50%;} //기본 이미지 없음.
           #{$bbs_category}.question_lib &.none{width:auto; height:77.5%;} //자주묻는 질문 이미지 없음.
         }
 

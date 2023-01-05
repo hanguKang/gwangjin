@@ -94,7 +94,14 @@ function join(){
 		placeholder : function(){ // .guide_txt (가이드 글자)  이벤트 
 			let $inputType;
 			let $input = joinObj.$placeholder.closest(".list").find("input");
+			/* 값이 이미 존재하는 지 확인 */
+			for(let i = 0; i < $input.length; i++){
+				if($input.eq(i).val() != ''){
+					$input.eq(i).closest('.list').find('.guide_txt').addClass('for-a11y');
+				}
+			}
 			joinObj.$placeholder.click(function(){ //.guide_txt (가이드 글자) 클릭하면 ==> 가이드 글자 사라지고, input요소에 focus된다. 
+				
 			  if( $(this).closest(".list").find("input").attr("readonly") != "readonly"){
 					( $(this).parent().hasClass("textarea") ) ? $inputType = "textarea" : $inputType = "input" ;
 					$(this).addClass("for-a11y");//.for-a11y 클래스 ==> 가이드 text는 사라지고 글자 숨기기
@@ -119,6 +126,7 @@ function join(){
       //존재하는 모든 input요소들
 			$input.focus(function(){
 				if( $(this).attr("readonly") != "readonly" || $(this).val() != ""){ // 작동할 수 있는 보통 input 요소라면 
+					console.log(55555556666666);
 					$(this).parent().find("> .guide_txt").addClass("for-a11y");
 				}
 			}).blur(function(){
@@ -152,7 +160,7 @@ function join(){
           //alert(1324);
 					$(this).next('.select_box').toggleClass('on');
 
-					$(this).closest(".list").css({"z-index":"2"}).siblings("li").css({"z-index":"0"}).find(".select_box").removeClass("on");
+					$(this).closest(".list").css({"z-index":"1000"}).siblings("li").css({"z-index":"0"}).find(".select_box").removeClass("on");
 					($(this).parent().hasClass("on") ) ? $(this).parent().removeClass("on") : $(this).parent().addClass("on");
 					$('.form_list').css("position","static");
 				}

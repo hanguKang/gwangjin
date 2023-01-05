@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <script src="../../common/js/jquery-3.6.0.min.js"></script>
   <!--<script src="../../common/js/jquery-1.11.3.min.js"></script>-->
-  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
+  <!-- <script type="text/javascript" src="//code.jquery.com/jquery-migrate-3.3.2.min.js"></script> -->
   <script src="../../common/js/aos.js"></script>
   <script src="../../common/js/slick.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
@@ -28,22 +28,22 @@
         <!-- 헤더 -->
         <header class="header">
           <div class="hd_top pc">
-              <ul>
-                  <li>
-                      <a href="#">광진구시설관리공단</a>
-                  </li>
-                  <li>
-                      <a href="#">통합주차</a>
-                  </li>
-                  <li>
-                      <a href="#">문화체육시설</a>
-                  </li>
-              </ul>
-              <ol class="util">
-                  <li><a href="#">로그인</a></li>
-                  <li><a href="#">회원가입</a></li>
-                  <li> <a href="#" class="btn_sitemap_open"><span class="hide">사이트맵 열기</span></a></li>
-              </ol>
+            <ul>
+                <li>
+                    <a href="#" class="inverse">광진구시설관리공단</a>
+                </li>
+                <li>
+                    <a href="#" class="inverse">통합주차</a>
+                </li>
+                <li>
+                    <a href="#" class="inverse">문화체육시설</a>
+                </li>
+            </ul>
+            <ol class="util">
+                <li><a href="#" class="inverse">로그인</a></li>
+                <li><a href="#" class="inverse">회원가입</a></li>
+                <li><a href="#" class="btn_sitemap_open inverse"><span class="hide">사이트맵 열기</span></a></li>
+            </ol>
           </div>
           <div class="layer_gnb">
             <div id="gnb" class="gnb">
@@ -316,11 +316,15 @@
                         <h1 class="none">홈페이지에 가입하신 계정이 없습니다.</h1>
                       </article>
                       <article>
-                        <h1>통합 홈페이지 선택</h1>
-                        <ul class="consolidated_accnt">
-                          <li class="active"><button type="button" title="통합주차 선택"><span class="ico_regi_step_2"><img src="../../common/images/sub/join/icon_park.png" alt="주차관련 아이콘"></span><span class="regi_txt">통합 주차</span></button></li>
+                        <h1 class="hide">통합 홈페이지 선택</h1>
+                        <dl class="consolidated_accnt">
+                          <dt>통합 홈페이지 선택</dt>
+                          <dd class="active">
+                            <input type="checkbox" name="" id="unify_usr_chk_parking_new" class="hide">
+                            <label class="ico_regi_step_2" for="unify_usr_chk_parking_new"><img src="../../common/images/sub/join/icon_park.png" alt="주차관련 아이콘"><span class="regi_txt old_tit">통합 주차</span></label>
+                          </dd>
                           <!-- <li><a href="#"><span class="ico_regi_step_2"><img src="../../common/images/sub/join/icon_culture.png" alt="문화센터 등록 아이콘"></span><span class="regi_txt">문화 센터</span></a></li> -->
-                        </ul>
+                        </dl>
                       </article>
                     </div>
                   </section>
@@ -354,6 +358,7 @@
                       </dl>
                     </div>
                     <div class="bottom">
+                      <label for="opinions_regis" class="hide">의견 등록하기</label>
                       <textarea name="" id="opinions_regis" cols="30" rows="10"></textarea>
                       <button class="button-color" title="의견등록" type="button">의견등록</button>
                     </div>

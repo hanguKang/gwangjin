@@ -11,13 +11,13 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <script src="../../common/js/jquery-3.6.0.min.js"></script>
   <!--<script src="../../common/js/jquery-1.11.3.min.js"></script>-->
-  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
+  <!-- <script type="text/javascript" src="//code.jquery.com/jquery-migrate-3.3.2.min.js"></script> -->
   <script src="../../common/js/aos.js"></script>
   <script src="../../common/js/slick.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="../../common/js/common.js"></script>
   <script src="../../common/js/sub.js"></script>
-  <script src="../../common/js/join.js"></script>
+  <!-- <script src="../../common/js/join.js"></script> -->
 </head>      
 <body>
     <div class="wrapper">
@@ -30,27 +30,27 @@
         <!-- 헤더 -->
         <header class="header">
           <div class="hd_top pc">
-              <ul>
-                  <li>
-                      <a href="#">광진구시설관리공단</a>
-                  </li>
-                  <li>
-                      <a href="#">통합주차</a>
-                  </li>
-                  <li>
-                      <a href="#">문화체육시설</a>
-                  </li>
-              </ul>
-              <ol class="util">
-                  <li><a href="#">로그인</a></li>
-                  <li><a href="#">회원가입</a></li>
-                  <li> <a href="#" class="btn_sitemap_open"><span class="hide">사이트맵 열기</span></a></li>
-              </ol>
-          </div>
+            <ul>
+                <li>
+                    <a href="#" class="inverse">광진구시설관리공단</a>
+                </li>
+                <li>
+                    <a href="#" class="inverse">통합주차</a>
+                </li>
+                <li>
+                    <a href="#" class="inverse">문화체육시설</a>
+                </li>
+            </ul>
+            <ol class="util">
+                <li><a href="#" class="inverse">로그인</a></li>
+                <li><a href="#" class="inverse">회원가입</a></li>
+                <li><a href="#" class="btn_sitemap_open inverse"><span class="hide">사이트맵 열기</span></a></li>
+            </ol>
+        </div>
           <div class="layer_gnb">
             <div id="gnb" class="gnb">
               <h1 class="logo"><a href="#"><span class="hide">로고</span></a></h1>
-              <p class="mo showNav"><button title="메뉴보기"><span class="hide">메뉴보기</span></button></p>
+              <p class="mo showNav"><button title="메뉴보기" type="button"><span class="hide">메뉴보기</span></button></p>
               <nav>
                 <div class="mo"><p class="link_home"><a href="#"><span class="hide">홈으로 이동</span></a></p></div>
                 <h1 class="hide">글로벌 네비게이터</h1>
@@ -222,7 +222,7 @@
                         </div>
                       </li>
                 </ul>
-                <button class="mo close" title="메뉴닫기"><span class="hide">닫기</span></button>
+                <button class="mo close" title="메뉴닫기" type="button"><span class="hide">닫기</span></button>
               </nav>
             </div>
           </div>
@@ -267,7 +267,7 @@
                   </ol>
                   <ul>
                     <li class="share">
-                      <button title="공유하기"><span class="hide">공유하기</span></button>
+                      <button title="공유하기" type="button"><span class="hide">공유하기</span></button>
                       <div class="share_box">
                         <ul>
                           <li><a href="#" class="facebook" id="share_popup_facebook"><img src="../../common/images/share_facebook.png" alt="페이스북"></a></li>
@@ -310,32 +310,25 @@
                       <dl class="noFlex">
                         <dt>이메일</dt>
                         <dd class="list type_1">
-                          <div class="guide_txt">
-                            <label for="email1">이메일을 입력하세요.</label>
-                          </div>
-                          <input type="text" name="" id="email1" class="first" palceholder="@korean.or.kr" aria-label="이메일 주소 앞자리" aria-describedby="emailMsg" role="alert" aria-invalid="true"><span class="md_txt">@</span><input type="text" name="" id="mail2" aria-label="이메일 주소 뒷자리" class="email" aria-describedby="emailMsg" role="alert" aria-invalid="true"> 
-                          <div class="btn_drop">
-                            <button type="button" class="button__drop-down right" aria-label="이메일 주소 뒷 자리 선택입력" aria-haspopup="listbox" aria-expanded="false" aria-controls="mail_server"><span class="text">직접입력</span></button>
-                            <div class="select_box right" id="mail_server">
-                              <ul class="text_box" role="listbox">
-                                <li role="none" class="on"><button type="button" role="option" class="button__option" aria-selected="true" tabindex="0">직접입력</button></li>
-                                <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">naver.com</button></li>
-                                <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">daum.net</button></li>
-                                <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">hotmail.com</button></li>
-                                <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">nate.com</button></li>
-                                <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">yahoo.co.kr</button></li>
-                                <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">paran.com</button></li>
-                                <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">empas.com</button></li>
-                                <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">dreamwiz.com</button></li>
-                                <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">freechal.com</button></li>
-                                <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">lycos.co.kr</button></li>
-                                <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">korea.com</button></li>
-                                <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">gmail.com</button></li>
-                                <li role="none"><button type="button" role="option" class="button__option" aria-selected="false" tabindex="-1">hanmir.com</button></li>
-                              </ul>
-                            </div>
-                          </div>
-                          <p id="emailMsg" class="ability_chk"> 이메일 주소를 다시 확인해 주세요.</p>
+                          <label for="email_regidence_1" class="hide">이메일을 입력하세요.</label>
+                          <input type="text" name=""  placeholder="ex) honggildong" id="email_regidence_1" class="first"><span class="md_txt">@</span><input type="text" placeholder="ex) naver.com" name="" class="email"> 
+                          <select class="text_box simple" name="" id="email_regidence_2">
+                            <option value="" selected>직접입력</option>
+                            <option value="naver.com">naver.com</option>
+                            <option value="daum.net">daum.net</option>
+                            <option value="hotmail.com">hotmail.com</option>
+                            <option value="nate.com">nate.com</option>
+                            <option value="yahoo.co.kr">yahoo.co.kr</option>
+                            <option value="paran.com">paran.com</option>
+                            <option value="empas.com">empas.com</option>
+                            <option value="dreamwiz.com">dreamwiz.com</option>
+                            <option value="freechal.com">freechal.com</option>
+                            <option value="lycos.co.kr">lycos.co.kr</option>
+                            <option value="korea.com">korea.com</option>
+                            <option value="gmail.com">gmail.com</option>
+                            <option value="hanmir.com">hanmir.com</option>
+                          </select>
+                          <p id="emailRegMsg" role="alert" class="ability_chk"> 이메일 주소를 다시 확인해 주세요.</p>
                         </dd>
                       </dl><!-- 이메일 등록 -->
                     </section>
@@ -351,7 +344,8 @@
                       <dl class="noFlex input_file">
                         <dt> 첨부파일 <span class="required">(	&#42; )</span> </dt>
                         <dd>
-                          <input type="text" readonly="readonly" class="file_name" placeholder="선택된 파일 없음">
+                          <label for="readFile" class="hide">파일명 보기</label>
+                          <input type="text" readonly="readonly" id="readFile" class="file_name" placeholder="선택된 파일 없음">
                           <label for="file" class="file_label">파일찾기</label>
                           <input type="file" name="" id="file">
                         </dd>
@@ -398,11 +392,9 @@
                       <dl class="noFlex">
                         <dt>비밀번호  <span class="required">( 	&#42; )</span> </dt>
                         <dd class="list type_1 space_lr noFlex">
-                          <div class="guide_txt">
-                            <label for="residence_pwd1">영문, 숫자 2가지 이상 포함 혼합하여 4자 이상 16자 이하로 입력하세요.</label> 
-                          </div>
-                          <input type="password" name="" id="residence_pwd1" aria-describedby="pwd1Msg" aria-autocomplete="list" role="alert" aria-invalid="true" pattern="(?=.*[a-zA-Z])(?=.*[0-9]).{4,16}" required> 
-                          <p id="pwd1Msg" class="ability_chk"> 영문, 숫자 2가지 이상 포함 혼합하여 4자 이상 16자 이하로 입력하세요. </p>
+                          <label for="residence_pwd1" class="hide">영문, 숫자 2가지 이상 포함 혼합하여 4자 이상 16자 이하로 입력하세요.</label> 
+                          <input type="password" name="" id="residence_pwd1" pattern="(?=.*[a-zA-Z])(?=.*[0-9]).{4,16}" placeholder="ex) gwangjin143" required> 
+                          <!-- <p id="pwd1Msg" class="ability_chk" role="alert"> 영문, 숫자 2가지 이상 포함 혼합하여 4자 이상 16자 이하로 입력하세요. </p> -->
                           <!-- <span id="pwd1MsgCheck" class="bg_area icon_bg chk pw">비밀번호 입력 체크</span> -->
                         </dd>
                       </dl>
@@ -412,11 +404,9 @@
                       <dl class="noFlex">
                         <dt>비밀번호 확인  <span class="required">( 	&#42; )</span> </dt>
                         <dd class="list type_1 space_lr noFlex">
-                          <div class="guide_txt">
-                            <label for="residence_pwd2">위의 비밀번호를 다시 입력하세요.</label> 
-                          </div>
-                          <input type="password" name="" id="residence_pwd2" required>
-                          <p id="pwd2Msg" class="ability_chk"> 입력한 비밀번호와 일치하지 않습니다. </p>
+                          <label for="residence_pwd2" class="hide">위의 비밀번호를 다시 입력하세요.</label> 
+                          <input type="password" name="" id="residence_pwd2" placeholder="ex) gwangjin143" required>
+                          <!-- <p id="pwd2Msg" class="ability_chk"> 입력한 비밀번호와 일치하지 않습니다. </p> -->
                           <!-- <span id="pwd2MsgCheck" class="bg_area icon_bg chk pw2">비밀번호 확인 입력 체크</span> -->
                         </dd>
                       </dl>
