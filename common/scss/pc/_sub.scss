@@ -205,7 +205,7 @@ main.sub{ @include clear;
                 >ul{ @include align(middle,16px); display: flex; align-items:center;
                     li{width:34px; height:34px; text-align:center;}
                     .share {display:inline-block;padding-left:0;background:none;margin-left:25px;position:relative; overflow:hidden;
-                        button {background-image:url(../images/btn_share_off.png);width:17px;height:17px;vertical-align:middle;background-repeat:no-repeat;background-position:center;background-size:cover;transition:all 0.3s;}
+                        button {background-image:url(../images/btn_share_off.png);width:17px;height:17px;vertical-align:middle;background-repeat:no-repeat;background-position:center;background-size:80% auto;transition:all 0.3s;}
                         .share_box {position:absolute;top: 34px;right: 0;width: 34px;
                             ul{border:1px solid #000; box-shadow:8px 8px 25px 0 rgba(0,0,0,0.12);
                                 &:before{position:absolute;right:25px;top:-12px;width:17px;height:12px;background:url(../images/arrow_share.png) no-repeat center;content:'';}

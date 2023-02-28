@@ -1,0 +1,62 @@
+@include maxWidth($web){
+  .page{
+    .greeting_view{
+      .gt_show_box{
+        .gt_show_txt{margin:40px 0 0 40px;}
+      }
+    }
+  }
+}
+@include maxWidth($tab){
+  .page{
+    .greeting_view{
+      .gt_show_box{
+        .gt_show_txt{}
+      }
+    }
+    .greeting_txt{margin-top:-153px; margin-bottom:78px;
+      div{width:100%; height:auto; background-color:#fff;
+        
+      }
+      footer{
+        text-align:right;
+        em{display:inline-block;
+          text-align:left;
+        }
+      }
+    }
+  }
+}
+
+@include maxWidth($m720){
+  .page{
+    .greeting_view{ 
+      .gt_show_box{ background-position:90% 80%; height:auto;
+        .gt_show_txt{margin:0px auto;  padding-top:140px; width:100%; opacity:0.5;}
+      }
+    }
+    .greeting_txt{margin-top:0; margin-bottom:78px;
+      div{
+        header{
+          h1{
+            b{}
+          }
+          p{}
+        }
+        div{
+          p{
+            &:first-child{}
+            &:nth-child(2){}
+          }
+        }
+        
+      }
+      footer{
+        text-align:right;
+        em{display:inline-block;
+          text-align:left;
+        }
+      }
+    }
+  }
+}

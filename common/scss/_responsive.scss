@@ -9,6 +9,19 @@
 /*서브 페이지 테이블 반응형 레이아웃 */
 body{
   $sub_table_view : 900px;
+
+
+  .page_spot {
+    @include maxWidth(1080px) {
+
+    }
+    @include maxWidth($m720) {
+      margin-top:70px;
+    }
+
+  }
+
+
   #contents{/* padding-top: 52px; */  @include clear; position: relative;  
     @include maxWidth(1220px) {
       
@@ -43,14 +56,63 @@ body{
           }
           .contents_sub{ width: 100%;}
         }
-        
+
+
+
+
+        /*서브 컨텐츠 공통 */
         .contents_sub{ 
           @include minWidth($wide){}
           @include maxWidth($web){}
           @include maxWidth($tab){padding-left:0;}
-        }
-        
-      }
+          @include maxWidth($m720){
+            /* 콘텐츠 관리부서*/
+            .cntnsMngDeprt{
+              footer{ border-top:1px solid #ccc; padding-top:20px;
+                address{display:flex; justify-content: center;
+                  p{ text-align:center;
+                    flex:0 0 33.3333%; margin:0 5px;
+                    b{display:block; font-weight:700;}
+                  }
+                }
+              }
+            }
+            /*만족도 조사*/
+            .satisfaction_box { padding:10px; background-color: #eeeeee;
+              form{
+                div.top{ height:auto;
+                  h1{position:relative;
+                    &:after{left:auto; right:-15px;}
+                  }
+                  dl{
+                    dd{margin-bottom:10px;
+                      label .star{display: block;}
+                    }
+                  }
+                }
+                div.bottom{
+                  textarea{
+                    flex:0 0 75%;
+                  }
+                  button{
+                    flex:0 0 25%;
+                  }
+                }
+              }
+            }//satisfaction End
+          }//모바일 @include 서브 콘텐츠 끝
 
+        }        
+      }
+  }//.sub 끝
+  /*푸터*/
+  footer{
+
+    @include maxWidth($m720){width:100%;
+      .addr{ padding:10px;
+        li{color:#ccc; font-weight:100;}
+      }
+    }
+    
   }
 }

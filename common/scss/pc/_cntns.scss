@@ -1,0 +1,99 @@
+
+  /*공통*/
+  .sub{
+    .contents_sub_box{
+      .contents_sub{
+        $line-height:30px; 
+        $bg-color:#eee;
+        $bg-color_blue: #476dc2;
+        section{ margin-top:30px; font-size:16px; line-height:$line-height;
+          h1{font-size:26px; line-height:62px; font-weight:500;}
+          .before_dot{position:relative; padding-left:10px;
+            &:before{content:""; position:absolute; left:0; top:$line-height/2; width:$circle; height:$circle; border-radius:50%; background-color:#202020; transform:translateY(-50%);}
+          }
+          .before_dot_w{
+            &:before{background-color:#fff;}
+          }
+        }
+        .flex_box{
+          display:flex; justify-content: space-between; flex-wrap:wrap;
+          &.cnt_3{
+            > *{ flex: 0 0 30%; }
+          }
+          &.cnt_4{
+            > *{ flex: 0 0 24%; }
+          }
+          .item_bg{background-color:$bg-color;}
+          
+        }
+
+        .box_bg{padding-bottom:18px; background-color:$bg-color_blue; color:#fff;}
+        .btn_blk{
+          width:100px;height:32px; color:#fff;  background-color:#000; line-height:32px; text-align:center;
+        }
+      }
+      
+    }
+  }
+
+.page{
+  
+  /*공단소개 > 이사장 인사말 corp>cntns_greeting.html*/
+  .greeting_view{
+    .gt_show_box{padding-top:1px; height:595px; background-color:#dce3ed; background-image:url(../images/sub/corp/greeting_ceo.png); background-position:90% 0; background-size:contain; background-repeat:no-repeat; 
+      .gt_show_txt{margin:80px 0 0 90px; box-sizing:border-box; padding-top:100px; width:316px; height:316px; background-color:#283f83; color:#fff; font-size:20px; line-height:28px; text-align:center;}
+    }
+  }
+  .greeting_txt{margin-top:-153px; margin-bottom:78px;
+    div{width:494px; height:578px; background-color:#fff;
+      header{border-bottom:0 none; color:#273f7f;
+        h1{font-size:30px; line-height:50px; font-weight:500; color:#273f7f;
+          b{font-size:40px;}
+        }
+        p{font-size:20px; line-height:28px;}
+      }
+      div{font-size:16px; line-height:26px;
+        p{margin:20px 0; 
+          &:first-child{margin-bottom:8px;}
+          &:nth-child(2){margin-top:8px;}
+        }
+      }
+      
+    }
+    footer{
+      text-align:right;
+      em{display:inline-block; text-align:left; font-size:18px; line-height:22px;
+      }
+    }
+  }
+
+}
+
+.sub{
+    /*공단소개 > 일반현황 corp>cntns_gegeral_status.html*/
+    .height_296{
+      li{box-sizing:border-box; padding-top:150px;text-align:center; font-size:14px; line-height:18px;background-repeat:no-repeat; background-position:50% 20%;
+        .btn_blk{margin:40px auto 0 auto;}
+
+        &:first-child{background-image:url(../images/sub/corp/ico_foundation_1.png); }
+        &:nth-child(2){background-image:url(../images/sub/corp/ico_foundation_2.png); }
+        &:nth-child(3){background-image:url(../images/sub/corp/ico_foundation_3.png); }
+      }
+    }
+    .height_470{
+      li{
+        dl{margin:28px;
+          dt{margin-bottom:16px; font-size:20px; line-height:20px; font-weight:500; }
+          dd{line-height:20px;}
+        }
+      }
+    }
+}
+.cntnsMngDeprt{ margin-top: 70px; padding: 42px 0 35px 0; border-top: 1px solid #dfdfdf; 
+  footer{margin-bottom:34px;
+    address{display:flex; justify-content: center;
+      p{margin:0 15px;}
+    }
+  }
+}
+

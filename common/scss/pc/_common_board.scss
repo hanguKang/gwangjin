@@ -396,9 +396,10 @@ form{
       dl{flex:0 0 85%; display: flex; justify-content: flex-start; align-content: stretch; flex-wrap: wrap; font-size:$fs-16; padding-left:40px;
         @include maxWidth($web){padding-left:30px;}
         dt{flex:0 0 100%; margin-bottom:18px;}
-        dd{flex:1 0 auto; 
+        dd{flex:1 0 auto; margin-left:20px;
           @include maxWidth($web){
             &:nth-child(n){
+              margin-left:0;
               flex:0 0 50%;
             }
           }
