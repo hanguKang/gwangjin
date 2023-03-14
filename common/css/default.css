@@ -2878,6 +2878,9 @@ main.sub .contents_sub_box .contents_sub .sub_top > ol > li:first-of-type::befor
 }
 main.sub .contents_sub_box .contents_sub .sub_top > ul {
   font-size: 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5895,12 +5898,23 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 24%;
           flex: 0 0 24%;
+  max-width: 24%;
 }
 .sub .contents_sub_box .contents_sub .flex_box .item_bg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   background-color: #eee;
 }
 .sub .contents_sub_box .contents_sub .box_bg {
-  padding-bottom: 18px;
+  padding: 24px;
   background-color: #476dc2;
   color: #fff;
 }
@@ -5988,12 +6002,14 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
 }
 
 .sub {
-  /*공단소개 > 일반현황 corp>cntns_gegeral_status.html*/
+  /*공단소개 > 일반현황 corp>cntns_gegeralStatus.html*/
+  /*공단미션 비전*/
 }
 .sub .height_296 li {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding-top: 150px;
+  padding-bottom: 38px;
   text-align: center;
   font-size: 14px;
   line-height: 18px;
@@ -6014,6 +6030,13 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
 }
 .sub .height_470 li dl {
   margin: 28px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  word-break: break-all;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 .sub .height_470 li dl dt {
   margin-bottom: 16px;
@@ -6023,6 +6046,252 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
 }
 .sub .height_470 li dl dd {
   line-height: 20px;
+}
+.sub .contents_sub_box .missionVission {
+  position: relative;
+}
+.sub .contents_sub_box .missionVission:before {
+  position: absolute;
+  z-index: -1;
+  left: 70px;
+  top: 0;
+  content: "";
+  width: 0;
+  height: 100%;
+  border-left: 1px solid #dddddd;
+}
+.sub .contents_sub_box .missionVission .msVs {
+  padding-left: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.sub .contents_sub_box .missionVission .msVs .tit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background-color: #eeeeee;
+  font-size: 18px;
+  line-height: 22px;
+  margin-right: 104px;
+}
+.sub .contents_sub_box .missionVission .msVs .tit span {
+  display: block;
+  text-align: center;
+}
+.sub .contents_sub_box .missionVission .msVs .list_boxes {
+  margin: 0 auto;
+  text-align: center;
+  padding-right: 70px;
+  width: calc(100% - 204px); /* .titl width: 110px; margin-right:104px; padding-right:70px;*/
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(1) .list_boxes {
+  font-size: 20px;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(1) .list_boxes em {
+  font-size: 30px;
+  font-weight: 500;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(1) .list_boxes em strong {
+  font-weight: 700;
+  color: #283f83;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(2) .list_boxes .circle_outer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 26%;
+          flex: 0 0 26%;
+  border-radius: 50%;
+  padding: 24px;
+  margin: 0 -10px;
+  color: #fff;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes:before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  padding-top: 100%;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes:nth-child(odd) {
+  background-color: rgba(50, 50, 50, 0.8);
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes:nth-child(even) {
+  background-color: rgba(240, 30, 120, 0.8);
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes .txt_list {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 300;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes .txt_list li {
+  margin-bottom: 14px;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes b {
+  display: block;
+  height: 22px;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes span {
+  display: block;
+  height: 22px;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(3) {
+  background-color: rgba(200, 200, 200, 0.3);
+  padding: 30px 0 30px 16px;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(3) .tit {
+  background-color: #fff;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(3) .list_boxes ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(3) .list_boxes ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 24%;
+          flex: 0 0 24%;
+  padding: 120px 0 0 0;
+  margin: 0 3px;
+  background-color: #fff;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(3) .list_boxes ul li:nth-child(1) {
+  background: #fff url(../images/sub/corp/mission_ico_01.png) no-repeat 50% 20%;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(3) .list_boxes ul li:nth-child(2) {
+  background: #fff url(../images/sub/corp/mission_ico_02.png) no-repeat 50% 20%;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(3) .list_boxes ul li:nth-child(3) {
+  background: #fff url(../images/sub/corp/mission_ico_03.png) no-repeat 50% 20%;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(3) .list_boxes ul li:nth-child(4) {
+  background: #fff url(../images/sub/corp/mission_ico_04.png) no-repeat 50% 20%;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(3) .list_boxes ul li span {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  display: block;
+  padding: 30px 20px;
+  font-size: 16px;
+  line-height: 20px;
+  background-color: #476dc2;
+  color: #fff;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(4) .list_boxes ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(4) .list_boxes ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 24%;
+          flex: 0 0 24%;
+  padding: 0;
+  border-radius: 50%;
+  margin: 0 3px;
+  background-color: #fff;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(4) .list_boxes ul li:before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  padding-top: 100%;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(4) .list_boxes ul li span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(4) .list_boxes ul li:nth-child(1) {
+  background: #87cfff;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(4) .list_boxes ul li:nth-child(2) {
+  background: #527ee1;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(4) .list_boxes ul li:nth-child(3) {
+  background: #2d51b1;
+}
+.sub .contents_sub_box .missionVission .msVs:nth-child(4) .list_boxes ul li:nth-child(4) {
+  background: #10278d;
+}
+.sub .contents_sub_box .missionVission aside {
+  background-color: #eee;
+  padding: 30px;
+  margin-top: 50px;
+}
+.sub .contents_sub_box .missionVission aside h1 {
+  margin-bottom: 24px;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+}
+.sub .contents_sub_box .missionVission aside h1 em {
+  color: #283f83;
+  font-size: 24px;
 }
 
 .cntnsMngDeprt {
@@ -6046,49 +6315,604 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
 }
 
 @media screen and (max-width: 1300px) {
-  .page .greeting_view .gt_show_box .gt_show_txt {
+  main.sub .page {
+    /*공단 미션 비전*/
+  }
+  main.sub .page .greeting_view .gt_show_box .gt_show_txt {
     margin: 40px 0 0 40px;
+  }
+  main.sub .page.missionVission .msVs {
+    /* 자식요소 제목 컨텐츠 공통*/
+    /*각 컨텐츠 */
+  }
+  main.sub .page.missionVission .msVs .tit {
+    margin-right: 20px;
+  }
+  main.sub .page.missionVission .msVs .list_boxes {
+    margin: 0 auto;
+    text-align: center;
+    padding-right: 20px;
+    width: calc(100% - 130px); /* .titl width: 110px; margin-right:20px; padding-right:20px;*/
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 46%;
+            flex: 0 0 46%;
+    margin: 0 -20px;
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes:nth-child(1) {
+    margin-bottom: -20px;
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes:nth-child(2) {
+    margin-bottom: -20px;
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes:nth-child(3) {
+    margin-top: -20px;
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes:nth-child(4) {
+    margin-top: -20px;
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes .txt_list {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 300;
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes .txt_list li {
+    margin-bottom: 14px;
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes b {
+    display: block;
+    height: 22px;
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes span {
+    display: block;
+    height: 22px;
+  }
+  main.sub .page.missionVission .msVs:nth-child(3) .list_boxes ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+  main.sub .page.missionVission .msVs:nth-child(3) .list_boxes ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 46%;
+            flex: 0 0 46%;
+    padding: 120px 0 0 0;
+    margin: 8px;
+  }
+  main.sub .page.missionVission .msVs:nth-child(3) .list_boxes ul li span {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    height: 120px;
+    display: block;
+    padding: 30px 20px;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: #476dc2;
+    color: #fff;
+  }
+  main.sub .page.missionVission .msVs:nth-child(4) .list_boxes ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  main.sub .page.missionVission .msVs:nth-child(4) .list_boxes ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 24%;
+            flex: 0 0 24%;
+    padding: 0;
+    border-radius: 50%;
+    margin: 0 3px;
+    background-color: #fff;
+  }
+  main.sub .page.missionVission .msVs:nth-child(4) .list_boxes ul li:before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    padding-top: 100%;
+  }
+  main.sub .page.missionVission .msVs:nth-child(4) .list_boxes ul li span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #fff;
+  }
+  main.sub .page.missionVission .msVs:nth-child(4) .list_boxes ul li:nth-child(1) {
+    background: #87cfff;
+  }
+  main.sub .page.missionVission .msVs:nth-child(4) .list_boxes ul li:nth-child(2) {
+    background: #527ee1;
+  }
+  main.sub .page.missionVission .msVs:nth-child(4) .list_boxes ul li:nth-child(3) {
+    background: #2d51b1;
+  }
+  main.sub .page.missionVission .msVs:nth-child(4) .list_boxes ul li:nth-child(4) {
+    background: #10278d;
+  }
+  main.sub .page.missionVission aside {
+    background-color: #eee;
+    padding: 30px;
+    margin-top: 50px;
+  }
+  main.sub .page.missionVission aside h1 {
+    margin-bottom: 24px;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+  }
+  main.sub .page.missionVission aside h1 em {
+    color: #283f83;
+    font-size: 24px;
   }
 }
 @media screen and (max-width: 1080px) {
-  .page .greeting_txt {
+  /*공통 */
+  .cntnsMngDeprt {
+    border-top: 0 none;
+  }
+  /*본문*/
+  main.sub .page {
+    /* 이사장 인사말 */
+    /*일반현황*/
+    /*공단미션 비전*/
+  }
+  main.sub .page.greeting .greeting_txt {
     margin-top: -153px;
     margin-bottom: 78px;
   }
-  .page .greeting_txt div {
+  main.sub .page.greeting .greeting_txt div {
     width: 100%;
     height: auto;
     background-color: #fff;
   }
-  .page .greeting_txt footer {
+  main.sub .page.greeting .greeting_txt footer {
     text-align: right;
   }
-  .page .greeting_txt footer em {
+  main.sub .page.greeting .greeting_txt footer em {
     display: inline-block;
     text-align: left;
   }
+  main.sub .page.generalStatus .flex_box.cnt_3 .item_bg span {
+    padding: 0 20px;
+  }
+  main.sub .page.generalStatus .flex_box.cnt_4 .item_bg {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 48%;
+            flex: 0 0 48%;
+    max-width: 48%;
+    margin-bottom: 20px;
+  }
+  main.sub .page.missionVission .msVs .tit {
+    margin-right: 20px;
+  }
+  main.sub .page.missionVission .msVs .list_boxes {
+    margin: 0 auto;
+    text-align: center;
+    padding-right: 20px;
+    width: calc(100% - 130px); /* .titl width: 110px; margin-right:20px; padding-right:20px;*/
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 46%;
+            flex: 0 0 46%;
+    margin: 0 -20px;
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes .txt_list {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 100;
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes .txt_list li {
+    margin-bottom: 6px;
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes b {
+    display: block;
+    height: 22px;
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes span {
+    display: block;
+    height: 22px;
+  }
+  main.sub .page.missionVission .msVs:nth-child(3) .list_boxes ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+  main.sub .page.missionVission .msVs:nth-child(3) .list_boxes ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 46%;
+            flex: 0 0 46%;
+    padding: 120px 0 0 0;
+    margin: 8px;
+  }
+  main.sub .page.missionVission .msVs:nth-child(3) .list_boxes ul li span {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    height: 120px;
+    display: block;
+    padding: 30px 20px;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: #476dc2;
+    color: #fff;
+  }
+  main.sub .page.missionVission .msVs:nth-child(4) .list_boxes ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  main.sub .page.missionVission .msVs:nth-child(4) .list_boxes ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 24%;
+            flex: 0 0 24%;
+    padding: 0;
+    border-radius: 50%;
+    margin: 0 3px;
+    background-color: #fff;
+  }
+  main.sub .page.missionVission .msVs:nth-child(4) .list_boxes ul li:before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    padding-top: 100%;
+  }
+  main.sub .page.missionVission .msVs:nth-child(4) .list_boxes ul li span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #fff;
+  }
+  main.sub .page.missionVission .msVs:nth-child(4) .list_boxes ul li:nth-child(1) {
+    background: #87cfff;
+  }
+  main.sub .page.missionVission .msVs:nth-child(4) .list_boxes ul li:nth-child(2) {
+    background: #527ee1;
+  }
+  main.sub .page.missionVission .msVs:nth-child(4) .list_boxes ul li:nth-child(3) {
+    background: #2d51b1;
+  }
+  main.sub .page.missionVission .msVs:nth-child(4) .list_boxes ul li:nth-child(4) {
+    background: #10278d;
+  }
+  main.sub .page.missionVission aside {
+    background-color: #eee;
+    padding: 30px;
+    margin-top: 50px;
+  }
+  main.sub .page.missionVission aside h1 {
+    margin-bottom: 24px;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+  }
+  main.sub .page.missionVission aside h1 em {
+    color: #283f83;
+    font-size: 24px;
+  }
 }
 @media screen and (max-width: 720px) {
-  .page .greeting_view .gt_show_box {
+  /*공통 */
+  .cntnsMngDeprt {
+    border-top: 0 none;
+  }
+  main.sub {
+    /*본문*/
+  }
+  main.sub .contents_sub_box .contents_sub .sub_top ul .share {
+    margin-left: 0;
+  }
+  main.sub .contents_sub_box .contents_sub .sub_top ul .print_btn {
+    margin-left: 0;
+  }
+  main.sub .page {
+    /*이사장 인사말 */
+    /*일반현황*/
+    /*공단미션 비전*/
+  }
+  main.sub .page .greeting_view .gt_show_box {
     background-position: 90% 80%;
     height: auto;
   }
-  .page .greeting_view .gt_show_box .gt_show_txt {
+  main.sub .page .greeting_view .gt_show_box .gt_show_txt {
     margin: 0px auto;
     padding-top: 140px;
     width: 100%;
     opacity: 0.5;
   }
-  .page .greeting_txt {
+  main.sub .page .greeting_txt {
     margin-top: 0;
     margin-bottom: 78px;
   }
-  .page .greeting_txt footer {
+  main.sub .page .greeting_txt footer {
     text-align: right;
   }
-  .page .greeting_txt footer em {
+  main.sub .page .greeting_txt footer em {
     display: inline-block;
     text-align: left;
+  }
+  main.sub .page.generalStatus .flex_box.cnt_3 .item_bg {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    margin-bottom: 20px;
+  }
+  main.sub .page.generalStatus .flex_box.cnt_3 .item_bg span {
+    padding: 0 20px;
+  }
+  main.sub .page.generalStatus .flex_box.cnt_4 .item_bg {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  main.sub .page.missionVission:before {
+    left: 55px;
+  }
+  main.sub .page.missionVission .msVs .tit {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+  }
+  main.sub .page.missionVission .msVs .list_boxes {
+    margin: 0 auto;
+    text-align: center;
+    padding-right: 20px;
+    width: calc(100% - 120px); /* .titl width: 110px; margin-right:20px; padding-right:20px;*/
+  }
+  main.sub .page.missionVission .msVs:nth-child(1) .list_boxes p {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  main.sub .page.missionVission .msVs:nth-child(1) .list_boxes p em {
+    display: block;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 300;
+  }
+  main.sub .page.missionVission .msVs:nth-child(1) .list_boxes p em strong {
+    font-weight: 500;
+    color: #283f83;
+  }
+  main.sub .page.missionVission .msVs:nth-child(1) .list_boxes p em strong:nth-child(2) {
+    display: block;
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes {
+    padding-right: 0px;
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 55%;
+            flex: 0 0 55%;
+    margin: -6px;
+    padding: 0;
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes:nth-child(1) {
+    margin-bottom: -6px;
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes:nth-child(2) {
+    margin-bottom: -6px;
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes:nth-child(3) {
+    margin-top: -6px;
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes:nth-child(4) {
+    margin-top: -6px;
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes .txt_list {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 100;
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes .txt_list li {
+    margin-bottom: 6px;
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes b {
+    display: block;
+    height: 16px;
+  }
+  main.sub .page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes span {
+    display: block;
+    height: 16px;
+  }
+  main.sub .page.missionVission .msVs:nth-child(3) .list_boxes {
+    padding-right: 0px;
+    width: calc(100% - 100px);
+  }
+  main.sub .page.missionVission .msVs:nth-child(3) .list_boxes ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+  main.sub .page.missionVission .msVs:nth-child(3) .list_boxes ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 46%;
+            flex: 0 0 46%;
+    max-width: 46%;
+    width: 100%;
+    padding: 120px 0 0 0;
+    margin: 4px;
+  }
+  main.sub .page.missionVission .msVs:nth-child(3) .list_boxes ul li span {
+    height: 100px;
+    padding: 20px 10px;
+    font-size: 14px;
+    line-height: 18px;
+    background-color: #476dc2;
+    color: #fff;
+  }
+  main.sub .page.missionVission .msVs:nth-child(4) .list_boxes ul {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  main.sub .page.missionVission .msVs:nth-child(4) .list_boxes ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 46%;
+            flex: 0 0 46%;
+    padding: 0;
+    border-radius: 50%;
+    margin: 0 3px;
+    background-color: #fff;
+  }
+  main.sub .page.missionVission .msVs:nth-child(4) .list_boxes ul li:before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    padding-top: 100%;
+  }
+  main.sub .page.missionVission .msVs:nth-child(4) .list_boxes ul li span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #fff;
+  }
+  main.sub .page.missionVission .msVs:nth-child(4) .list_boxes ul li:nth-child(1) {
+    background: #87cfff;
+  }
+  main.sub .page.missionVission .msVs:nth-child(4) .list_boxes ul li:nth-child(2) {
+    background: #527ee1;
+  }
+  main.sub .page.missionVission .msVs:nth-child(4) .list_boxes ul li:nth-child(3) {
+    background: #2d51b1;
+    margin-top: 6px;
+  }
+  main.sub .page.missionVission .msVs:nth-child(4) .list_boxes ul li:nth-child(4) {
+    background: #10278d;
+    margin-top: 6px;
+  }
+  main.sub .page.missionVission aside {
+    background-color: #eee;
+    padding: 30px;
+    margin-top: 50px;
+  }
+  main.sub .page.missionVission aside h1 {
+    margin-bottom: 24px;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+  }
+  main.sub .page.missionVission aside h1 em {
+    color: #283f83;
+    font-size: 24px;
   }
 }
 /*메인페이지 반응형*/

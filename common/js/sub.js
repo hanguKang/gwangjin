@@ -718,21 +718,21 @@ try {
 
 			//컨텐츠 
 			$(function(){
-				$('.cntnts_height').each(function(){
-					let cntns_heights = $(this).attr('class');
-					let idx_1 = cntns_heights.indexOf('height_');
-					let idx_2 = cntns_heights.indexOf(' ', idx_1);
-					let heights = 0; 
-					if(idx_2 == -1){
-						idx_2 = cntns_heights.length-1; 
-						heights = parseInt(cntns_heights.substring(idx_1+7));
-					}else{
-						heights = parseInt(cntns_heights.substring(idx_1+7, idx_2));
-					}
+				// $('.cntnts_height').each(function(){
+				// 	let cntns_heights = $(this).attr('class');
+				// 	let idx_1 = cntns_heights.indexOf('height_');
+				// 	let idx_2 = cntns_heights.indexOf(' ', idx_1);
+				// 	let heights = 0; 
+				// 	if(idx_2 == -1){
+				// 		idx_2 = cntns_heights.length-1; 
+				// 		heights = parseInt(cntns_heights.substring(idx_1+7));
+				// 	}else{
+				// 		heights = parseInt(cntns_heights.substring(idx_1+7, idx_2));
+				// 	}
 					
-					$(this).children().css('height',heights);
+				// 	$(this).children().css('height',heights);
 
-				});
+				// });
 				
 				
 			})

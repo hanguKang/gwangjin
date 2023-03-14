@@ -1,61 +1,300 @@
 @include maxWidth($web){
-  .page{
-    .greeting_view{
-      .gt_show_box{
-        .gt_show_txt{margin:40px 0 0 40px;}
+  main.sub{
+    
+    .page{
+      .greeting_view{
+        .gt_show_box{
+          .gt_show_txt{margin:40px 0 0 40px;}
+        }
+      }
+      /*공단 미션 비전*/
+      &.missionVission{
+        .msVs{
+          /* 자식요소 제목 컨텐츠 공통*/
+          .tit{margin-right:20px;}
+          .list_boxes{margin:0 auto; text-align: center;  padding-right:20px; width:calc(100% - 130px); /* .titl width: 110px; margin-right:20px; padding-right:20px;*/}
+          /*각 컨텐츠 */
+          &:nth-child(1){ }
+          &:nth-child(2){
+            .list_boxes{
+              .circle_outer { flex-wrap:wrap;
+                .circle_boxes { display: flex; flex-wrap:wrap; flex:0 0 46%; margin:0 -20px; 
+                  &:nth-child(1){margin-bottom:-20px; }
+                  &:nth-child(2){margin-bottom:-20px;}
+                  &:nth-child(3){margin-top:-20px;}
+                  &:nth-child(4){margin-top:-20px;}
+                  .txt_list{display:inline-block;  vertical-align: top; font-size:18px; line-height:22px; font-weight:300;
+                    li{margin-bottom:14px;}
+                  }
+                  b{display:block; height:22px; }
+                  span{display:block; height:22px;}
+                  
+                }
+              }
+            }
+          }
+          &:nth-child(3){
+            .list_boxes{
+              ul{display: flex; flex-wrap:wrap; justify-content: center; align-items:stretch; 
+                li{ display: flex; justify-content: center; align-items:center; flex:0 0 46%; padding:120px 0 0 0; margin:8px;
+                  span{ box-sizing:border-box; width:100%; height:120px; display:block; padding:30px 20px;  font-size:16px; line-height:20px; background-color:#476dc2; color:#fff;
+                  }
+                }
+              }
+            }
+          }
+          &:nth-child(4){
+            .list_boxes{
+              ul{display: flex; justify-content: center; align-items: flex-start; 
+                li{ display: flex; justify-content: center;  flex:0 0 24%; padding:0; border-radius:50%; margin:0 3px; background-color:#fff;
+                  &:before{content:""; display:inline-block; width:0; padding-top:100%;}
+                  span{display:flex; align-items: center; color:#fff;}
+                  &:nth-child(1){background:#87cfff;}
+                  &:nth-child(2){background:#527ee1;}
+                  &:nth-child(3){background:#2d51b1;}
+                  &:nth-child(4){background:#10278d;}
+                }
+              }
+            }
+          }
+        }
+        aside{background-color:#eee; padding:30px; margin-top:50px;
+          h1{margin-bottom:24px; font-size:18px; line-height:26px; text-align:center; 
+            em{color:#283f83;font-size:24px;}
+          }
+        }
+      
       }
     }
   }
 }
 @include maxWidth($tab){
-  .page{
-    .greeting_view{
-      .gt_show_box{
-        .gt_show_txt{}
-      }
-    }
-    .greeting_txt{margin-top:-153px; margin-bottom:78px;
-      div{width:100%; height:auto; background-color:#fff;
-        
-      }
-      footer{
-        text-align:right;
-        em{display:inline-block;
-          text-align:left;
+  /*공통 */
+  .cntnsMngDeprt { border-top:0 none; }
+  /*본문*/
+  main.sub{
+    .page{      
+      /* 이사장 인사말 */
+      &.greeting{
+        .greeting_view{ 
+          .gt_show_box{
+            .gt_show_txt{}
+          }
         }
+        .greeting_txt{margin-top:-153px; margin-bottom:78px;
+          div{width:100%; height:auto; background-color:#fff;
+              
+          }
+          footer{
+            text-align:right;
+            em{display:inline-block;
+              text-align:left;
+            }
+          }
+        }
+      }
+
+      /*일반현황*/
+      &.generalStatus{ 
+        .flex_box{
+          &.cnt_3{
+            .item_bg{
+              span{padding:0 20px; 
+              }
+            }
+          }
+          &.cnt_4{
+            .item_bg{ flex: 0 0 48%; max-width:48%; margin-bottom:20px;
+            }
+          }
+        }
+      }
+        /*공단미션 비전*/
+      &.missionVission{
+        .msVs{
+          .tit{margin-right:20px;}
+          .list_boxes{margin:0 auto; text-align: center;  padding-right:20px; width:calc(100% - 130px); /* .titl width: 110px; margin-right:20px; padding-right:20px;*/}
+          &:nth-child(1){ }
+          &:nth-child(2){
+            .list_boxes{
+              .circle_outer {
+                .circle_boxes { display: flex; flex-wrap:wrap; flex:0 0 46%; margin:0 -20px; 
+                  .txt_list{display:inline-block;  vertical-align: top; font-size:16px; line-height:18px; font-weight:100;
+                    li{margin-bottom:6px;}
+                  }
+                  b{display:block; height:22px; }
+                  span{display:block; height:22px;}
+                  
+                }
+              }
+            }
+          }
+          &:nth-child(3){
+            .list_boxes{
+              ul{display: flex; flex-wrap:wrap; justify-content: center; align-items:stretch; 
+                li{ display: flex; justify-content: center; align-items:center; flex:0 0 46%; padding:120px 0 0 0; margin:8px;
+                  span{ box-sizing:border-box; width:100%; height:120px; display:block; padding:30px 20px;  font-size:16px; line-height:20px; background-color:#476dc2; color:#fff;
+                  }
+                }
+              }
+            }
+          }
+          &:nth-child(4){
+            .list_boxes{
+              ul{display: flex; justify-content: center; align-items: flex-start; 
+                li{ display: flex; justify-content: center;  flex:0 0 24%; padding:0; border-radius:50%; margin:0 3px; background-color:#fff;
+                  &:before{content:""; display:inline-block; width:0; padding-top:100%;}
+                  span{display:flex; align-items: center; color:#fff;}
+                  &:nth-child(1){background:#87cfff;}
+                  &:nth-child(2){background:#527ee1;}
+                  &:nth-child(3){background:#2d51b1;}
+                  &:nth-child(4){background:#10278d;}
+                }
+              }
+            }
+          }
+        }
+        aside{background-color:#eee; padding:30px; margin-top:50px;
+          h1{margin-bottom:24px; font-size:18px; line-height:26px; text-align:center; 
+            em{color:#283f83;font-size:24px;}
+          }
+        }
+      
       }
     }
   }
 }
 
 @include maxWidth($m720){
-  .page{
-    .greeting_view{ 
-      .gt_show_box{ background-position:90% 80%; height:auto;
-        .gt_show_txt{margin:0px auto;  padding-top:140px; width:100%; opacity:0.5;}
-      }
+  /*공통 */
+  .cntnsMngDeprt { border-top:0 none; }
+  main.sub{
+    .contents_sub_box {
+      .contents_sub{
+        .sub_top {
+          ul{
+            .share{margin-left:0;}
+            .print_btn{margin-left:0;}
+          } 
+        } 
+      } 
     }
-    .greeting_txt{margin-top:0; margin-bottom:78px;
-      div{
-        header{
-          h1{
-            b{}
-          }
-          p{}
+
+    /*본문*/
+    .page{
+      /*이사장 인사말 */
+      .greeting_view{ 
+        .gt_show_box{ background-position:90% 80%; height:auto;
+          .gt_show_txt{margin:0px auto;  padding-top:140px; width:100%; opacity:0.5;}
         }
-        div{
-          p{
-            &:first-child{}
-            &:nth-child(2){}
-          }
-        }
-        
       }
-      footer{
-        text-align:right;
-        em{display:inline-block;
-          text-align:left;
+      .greeting_txt{margin-top:0; margin-bottom:78px;
+        div{
+          header{
+            h1{
+              b{}
+            }
+            p{}
+          }
+          div{
+            p{
+              &:first-child{}
+              &:nth-child(2){}
+            }
+          }
+          
         }
+        footer{
+          text-align:right;
+          em{display:inline-block;
+            text-align:left;
+          }
+        }
+      }
+
+      /*일반현황*/
+      &.generalStatus{ 
+        .flex_box{
+          &.cnt_3{
+            .item_bg{ flex: 0 0 100%; margin-bottom:20px;
+              span{padding:0 20px; 
+              }
+            }
+          }
+          &.cnt_4{ 
+            .item_bg{ flex: 0 0 100%; max-width:100%; margin-bottom:20px;
+            }
+          }
+        }
+      }
+
+      /*공단미션 비전*/
+      &.missionVission{ 
+        &:before{left:55px; }
+        .msVs{
+          .tit{width:80px; height:80px; margin-right:10px;}
+          .list_boxes{margin:0 auto; text-align: center;  padding-right:20px; width:calc(100% - 120px); /* .titl width: 110px; margin-right:20px; padding-right:20px;*/}
+          &:nth-child(1){ 
+            .list_boxes{
+              p{ font-size:18px; line-height:20px;
+                em{display:block; font-size:24px; line-height:28px;  font-weight:300;
+                  strong{font-weight:500; color:#283f83; 
+                    &:nth-child(2){display:block;}
+                  }
+                }
+              }
+              
+            }
+          }
+          &:nth-child(2){
+            .list_boxes{padding-right:0px; 
+              .circle_outer { flex-wrap:wrap; 
+                .circle_boxes { display: flex;flex:0 0 55%; margin:-6px; padding:0;
+                  &:nth-child(1){margin-bottom:-6px; }
+                  &:nth-child(2){margin-bottom:-6px;}
+                  &:nth-child(3){margin-top:-6px;}
+                  &:nth-child(4){margin-top:-6px;}
+                  .txt_list{display:inline-block;  vertical-align: top; font-size:14px; line-height:16px; font-weight:100;
+                    li{margin-bottom:6px;}
+                  }
+                  b{display:block; height:16px; }
+                  span{display:block; height:16px;}
+                  
+                }
+              }
+            }
+          }
+          &:nth-child(3){
+            .list_boxes{padding-right:0px; width: calc(100% - 100px);
+              ul{display: flex; flex-wrap:wrap; justify-content: center; align-items:stretch; 
+                li{ display: flex; justify-content: center; align-items:center; flex:0 0 46%; max-width:46%; width:100%; padding:120px 0 0 0; margin:4px;
+                  span{ height:100px; padding:20px 10px;  font-size:14px; line-height:18px; background-color:#476dc2; color:#fff;
+                  }
+                }
+              }
+            }
+          }
+          &:nth-child(4){
+            .list_boxes{
+              ul{flex-wrap:wrap;
+                li{ display: flex; justify-content: center;  flex:0 0 46%; padding:0; border-radius:50%; margin:0 3px; background-color:#fff;
+                  &:before{content:""; display:inline-block; width:0; padding-top:100%;}
+                  span{display:flex; align-items: center; color:#fff;}
+                  &:nth-child(1){background:#87cfff;}
+                  &:nth-child(2){background:#527ee1;}
+                  &:nth-child(3){background:#2d51b1; margin-top:6px;}
+                  &:nth-child(4){background:#10278d; margin-top:6px;}
+                }
+              }
+            }
+          }
+        }
+        aside{background-color:#eee; padding:30px; margin-top:50px;
+          h1{margin-bottom:24px; font-size:18px; line-height:26px; text-align:center; 
+            em{color:#283f83;font-size:24px;}
+          }
+        }
+      
       }
     }
   }
