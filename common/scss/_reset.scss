@@ -135,6 +135,10 @@ $fs-42:2.875rem;// 46px
 //style
 $header-height: 85px;
 
+.dot{padding-left:15px; position:relative; color:#222; line-height:22px; 
+  &:before{content:""; position:absolute; left:0; top:50%; transform:translateY(-50%); width:4px; height:4px; border-radius:50%; background:#000; }
+}
+
 //mixin
 /*clear*/
 @mixin clear{&:after {content: ''; display: block; clear: both;}}

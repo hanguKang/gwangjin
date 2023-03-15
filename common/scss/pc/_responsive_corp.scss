@@ -167,7 +167,7 @@
 
 @include maxWidth($m720){
   /*공통 */
-  .cntnsMngDeprt { border-top:0 none; }
+  .cntnsMngDeprt { margin-top:20px; padding:20px 0;  border-top:0 none;  }
   main.sub{
     .contents_sub_box {
       .contents_sub{
@@ -210,7 +210,7 @@
             text-align:left;
           }
         }
-      }
+      } //.greeting End 이사장 인사말 끝
 
       /*일반현황*/
       &.generalStatus{ 
@@ -226,7 +226,7 @@
             }
           }
         }
-      }
+      } //.generalStauts End 일반 현황 끝
 
       /*공단미션 비전*/
       &.missionVission{ 
@@ -249,7 +249,7 @@
           &:nth-child(2){
             .list_boxes{padding-right:0px; 
               .circle_outer { flex-wrap:wrap; 
-                .circle_boxes { display: flex;flex:0 0 55%; margin:-6px; padding:0;
+                .circle_boxes { display: flex;flex:0 0 52%; margin:-6px; padding:0;
                   &:nth-child(1){margin-bottom:-6px; }
                   &:nth-child(2){margin-bottom:-6px;}
                   &:nth-child(3){margin-top:-6px;}
@@ -295,7 +295,39 @@
           }
         }
       
-      }
-    }
-  }
-}
+      } //missionVission End 공단미션 비젼 끝
+
+      /* 연혁 */
+      &.history{
+        .tab_period_outer{overflow:hidden; position:relative; border-top:2px solid #000; margin-top:20px;  height:42px;  
+          .tab_period{position:absolute; left:0; top:0; z-index:1; width:100%; display:block; margin-top:0;
+            .period_item{ font-size:16px; line-height:40px; text-align:left; height:40px; 
+              $g:&;          
+              &.active{ 
+                button{color:#fff; background-color:#476dc3; }
+              }
+              button{display: block; width: 100%;  padding-left:15px; margin:0; box-sizing:border-box; text-align:left; 
+                @at-root #{$g}:nth-of-type(1) button{margin-left:0px; width:100%;}
+                @at-root #{$g}:nth-of-type(4) button{margin-right:0px; width:100%;}
+                @at-root #{$g}:nth-of-type(5) button{margin-left:0px; width:100%;}
+              }              
+            }
+          }
+        }//.tab_period_outer  
+        .historyData{ margin-top:10px;
+          .period_data{border-top:2px solid #222; 
+            .period_data_item{padding:10px; border-bottom:1px solid #e0e0e0; display:flex; align-items:center;             
+              .year{margin-right:28px; font-size:24px; font-weight:500; color:#476dc3;}
+              .data{font-size:14px; line-height:22px;
+                .dataItem{
+                  &:before{top:12px; }
+                }
+              }
+            }
+          }
+        }//.historyData End     
+      } //histroy End 연혁 끝
+    }//.page End
+  }//main.sub End 
+
+}//미디어쿼리 모바일 끝 

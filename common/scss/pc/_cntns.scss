@@ -167,6 +167,36 @@
       }
     }
     
+    /* 연혁 history */
+    .history{
+      .tab_period{display:flex; flex-wrap:wrap; margin-top:20px;
+        .period_item{flex:0 0 25%; font-size:16px; line-height:60px; text-align:center; 
+          $g:&;          
+          &.active{ 
+            button{color:#fff; background-color:#476dc3;}
+          }
+          button{display: block; width:calc(100% - 4px);  margin:0 2px 4px 2px; box-sizing:border-box; border:1px solid #e0e0e0; background-color:#f6f7f8; color:#222;
+            @at-root #{$g}:nth-of-type(1) button{margin-left:0; width:calc(100% - 2px);}
+            @at-root #{$g}:nth-of-type(2) button{}
+            @at-root #{$g}:nth-of-type(3) button{}
+            @at-root #{$g}:nth-of-type(4) button{margin-right:0; width:calc(100% - 2px);}
+            @at-root #{$g}:nth-of-type(5) button{margin-left:0; width:calc(100% - 2px);}
+          }
+          
+        }
+      }
+      .historyData{ display:none;
+        &.active{display:block; }
+        .period_data{border-top:2px solid #222; 
+          .period_data_item{padding:24px 15px; border-bottom:1px solid #e0e0e0; display:flex; align-items:center;
+            .year{margin-right:180px; font-size:44px; font-weight:500; color:#476dc3;}
+            .data{line-height:22px;
+              .dataItem{}
+            }
+          }
+        }
+      }//.historyData End
+    }
 }
 .cntnsMngDeprt{ margin-top: 70px; padding: 42px 0 35px 0; border-top: 1px solid #dfdfdf; 
   footer{margin-bottom:34px;

@@ -196,6 +196,7 @@ main.sub{ @include clear;
                             //&::before{display: none;}
                         }
                         &:last-child{
+                            a{font-weight:700;}
                            // &::before{display: none;}
                         }
                     }

@@ -577,6 +577,25 @@ a:link.inverse {
   padding-left: 85px;
 }
 
+.dot {
+  padding-left: 15px;
+  position: relative;
+  color: #222;
+  line-height: 22px;
+}
+.dot:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #000;
+}
+
 /*clear*/
 /*요소 세로 중앙정렬*/
 /*아이템 정렬*/
@@ -2876,6 +2895,9 @@ main.sub .contents_sub_box .contents_sub .sub_top > ol > li:first-of-type img {
 main.sub .contents_sub_box .contents_sub .sub_top > ol > li:first-of-type::before {
   display: none;
 }
+main.sub .contents_sub_box .contents_sub .sub_top > ol > li:last-child a {
+  font-weight: 700;
+}
 main.sub .contents_sub_box .contents_sub .sub_top > ul {
   font-size: 0;
   -webkit-box-flex: 0;
@@ -4065,8 +4087,15 @@ form .btn_box.basic a {
 }
 
 .p-list__item .link_img .tit_txt {
+  padding: 0 20px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 1rem;
   letter-spacing: -1px;
+  line-height: 20px;
 }
 .p-list__item .link_img .tit_txt .season {
   font-size: 0.9375rem;
@@ -4591,24 +4620,17 @@ form .btn_box.basic a {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 30px;
-  height: 90px;
 }
-.satisfaction_box form div.top h1 {
+.satisfaction_box form div.top h1.tit {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 15%;
           flex: 0 0 15%;
   font-size: 1.4375rem;
+  line-height: 36px;
   word-break: keep-all;
 }
-.satisfaction_box form div.top h1::after {
-  content: "";
-  position: absolute;
-  left: 15%;
-  top: 0;
-  height: 100%;
-  border-right: 1px solid #cbcccd;
-}
 .satisfaction_box form div.top dl {
+  position: relative;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 85%;
           flex: 0 0 85%;
@@ -4624,6 +4646,14 @@ form .btn_box.basic a {
       flex-wrap: wrap;
   font-size: 1rem;
   padding-left: 40px;
+}
+.satisfaction_box form div.top dl::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0;
+  height: 100%;
+  border-right: 1px solid #cbcccd;
 }
 @media screen and (max-width: 1300px) {
   .satisfaction_box form div.top dl {
@@ -6004,6 +6034,7 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
 .sub {
   /*공단소개 > 일반현황 corp>cntns_gegeralStatus.html*/
   /*공단미션 비전*/
+  /* 연혁 history */
 }
 .sub .height_296 li {
   -webkit-box-sizing: border-box;
@@ -6293,7 +6324,79 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
   color: #283f83;
   font-size: 24px;
 }
+.sub .history .tab_period {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 20px;
+}
+.sub .history .tab_period .period_item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
+  font-size: 16px;
+  line-height: 60px;
+  text-align: center;
+}
+.sub .history .tab_period .period_item.active button {
+  color: #fff;
+  background-color: #476dc3;
+}
+.sub .history .tab_period .period_item button {
+  display: block;
+  width: calc(100% - 4px);
+  margin: 0 2px 4px 2px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #e0e0e0;
+  background-color: #f6f7f8;
+  color: #222;
+}
+.sub .history .tab_period .period_item:nth-of-type(1) button {
+  margin-left: 0;
+  width: calc(100% - 2px);
+}
 
+.sub .history .tab_period .period_item:nth-of-type(4) button {
+  margin-right: 0;
+  width: calc(100% - 2px);
+}
+
+.sub .history .tab_period .period_item:nth-of-type(5) button {
+  margin-left: 0;
+  width: calc(100% - 2px);
+}
+
+.sub .history .historyData {
+  display: none;
+}
+.sub .history .historyData.active {
+  display: block;
+}
+.sub .history .historyData .period_data {
+  border-top: 2px solid #222;
+}
+.sub .history .historyData .period_data .period_data_item {
+  padding: 24px 15px;
+  border-bottom: 1px solid #e0e0e0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.sub .history .historyData .period_data .period_data_item .year {
+  margin-right: 180px;
+  font-size: 44px;
+  font-weight: 500;
+  color: #476dc3;
+}
+.sub .history .historyData .period_data .period_data_item .data {
+  line-height: 22px;
+}
 .cntnsMngDeprt {
   margin-top: 70px;
   padding: 42px 0 35px 0;
@@ -6677,6 +6780,8 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
 @media screen and (max-width: 720px) {
   /*공통 */
   .cntnsMngDeprt {
+    margin-top: 20px;
+    padding: 20px 0;
     border-top: 0 none;
   }
   main.sub {
@@ -6692,6 +6797,7 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
     /*이사장 인사말 */
     /*일반현황*/
     /*공단미션 비전*/
+    /* 연혁 */
   }
   main.sub .page .greeting_view .gt_show_box {
     background-position: 90% 80%;
@@ -6773,8 +6879,8 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 55%;
-            flex: 0 0 55%;
+        -ms-flex: 0 0 52%;
+            flex: 0 0 52%;
     margin: -6px;
     padding: 0;
   }
@@ -6914,6 +7020,82 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
     color: #283f83;
     font-size: 24px;
   }
+  main.sub .page.history .tab_period_outer {
+    overflow: hidden;
+    position: relative;
+    border-top: 2px solid #000;
+    margin-top: 20px;
+    height: 42px;
+  }
+  main.sub .page.history .tab_period_outer .tab_period {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    display: block;
+    margin-top: 0;
+  }
+  main.sub .page.history .tab_period_outer .tab_period .period_item {
+    font-size: 16px;
+    line-height: 40px;
+    text-align: left;
+    height: 40px;
+  }
+  main.sub .page.history .tab_period_outer .tab_period .period_item.active button {
+    color: #fff;
+    background-color: #476dc3;
+  }
+  main.sub .page.history .tab_period_outer .tab_period .period_item button {
+    display: block;
+    width: 100%;
+    padding-left: 15px;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    text-align: left;
+  }
+  main.sub .page.history .tab_period_outer .tab_period .period_item:nth-of-type(1) button {
+    margin-left: 0px;
+    width: 100%;
+  }
+  main.sub .page.history .tab_period_outer .tab_period .period_item:nth-of-type(4) button {
+    margin-right: 0px;
+    width: 100%;
+  }
+  main.sub .page.history .tab_period_outer .tab_period .period_item:nth-of-type(5) button {
+    margin-left: 0px;
+    width: 100%;
+  }
+  main.sub .page.history .historyData {
+    margin-top: 10px;
+  }
+  main.sub .page.history .historyData .period_data {
+    border-top: 2px solid #222;
+  }
+  main.sub .page.history .historyData .period_data .period_data_item {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main.sub .page.history .historyData .period_data .period_data_item .year {
+    margin-right: 28px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #476dc3;
+  }
+  main.sub .page.history .historyData .period_data .period_data_item .data {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  main.sub .page.history .historyData .period_data .period_data_item .data .dataItem:before {
+    top: 12px;
+  }
 }
 /*메인페이지 반응형*/
 @media screen and (min-width: 721px) {
@@ -7048,14 +7230,15 @@ body .sub .contents_sub_box {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 33.3333%;
             flex: 0 0 33.3333%;
-    margin: 0 5px;
+    margin: 0;
   }
   body .sub .contents_sub_box .contents_sub .cntnsMngDeprt footer address p b {
     display: block;
     font-weight: 700;
   }
   body .sub .contents_sub_box .contents_sub .satisfaction_box {
-    padding: 10px;
+    overflow: hidden;
+    padding: 15px;
     background-color: #eeeeee;
   }
   body .sub .contents_sub_box .contents_sub .satisfaction_box form div.top {
@@ -7063,16 +7246,35 @@ body .sub .contents_sub_box {
   }
   body .sub .contents_sub_box .contents_sub .satisfaction_box form div.top h1 {
     position: relative;
+    line-height: 36px;
   }
-  body .sub .contents_sub_box .contents_sub .satisfaction_box form div.top h1:after {
-    left: auto;
-    right: -15px;
+  body .sub .contents_sub_box .contents_sub .satisfaction_box form div.top dl {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(85% - 15px);
+            flex: 0 0 calc(85% - 15px);
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  body .sub .contents_sub_box .contents_sub .satisfaction_box form div.top dl::after {
+    left: 10px;
+  }
+  body .sub .contents_sub_box .contents_sub .satisfaction_box form div.top dl dt {
+    word-break: keep-all;
+    padding-right: 10px;
+    line-height: 24px;
   }
   body .sub .contents_sub_box .contents_sub .satisfaction_box form div.top dl dd {
     margin-bottom: 10px;
   }
-  body .sub .contents_sub_box .contents_sub .satisfaction_box form div.top dl dd label .star {
+  body .sub .contents_sub_box .contents_sub .satisfaction_box form div.top dl dd label span {
+    line-height: 24px;
+    height: 24px;
+  }
+  body .sub .contents_sub_box .contents_sub .satisfaction_box form div.top dl dd label span.star {
     display: block;
+  }
+  body .sub .contents_sub_box .contents_sub .satisfaction_box form div.bottom {
+    height: 98px;
   }
   body .sub .contents_sub_box .contents_sub .satisfaction_box form div.bottom textarea {
     -webkit-box-flex: 0;

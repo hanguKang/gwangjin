@@ -232,8 +232,7 @@ form{
           @else if $i == 4 { @at-root #{$bbs_category}.question_lib #{$item}:nth-child(#{$i}) .reference_spot:after {content:'군자도서관'} }
         }
       }//.reference_spot End
-      .tit_txt{
-        font-size:$fs-16; letter-spacing: -1px;
+      .tit_txt{padding:0 20px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow:hidden; text-overflow:ellipsis; font-size:$fs-16; letter-spacing: -1px; line-height:20px; 
         .season{ 
           font-size:$fs-15;
         }
@@ -389,11 +388,10 @@ form{
 /*만족도 조사*/
 .satisfaction_box{ padding:32px 52px; background-color:$bg-color3;
   form{
-    div.top{position:relative;  display:flex; align-items:center; margin-bottom:30px; height:90px; 
-      h1{ flex:0 0 15%; font-size:$fs-23; word-break: keep-all;
-        &::after{content:''; position:absolute; left:15%; top:0; height:100%; border-right:$border1;}
-      }
-      dl{flex:0 0 85%; display: flex; justify-content: flex-start; align-content: stretch; flex-wrap: wrap; font-size:$fs-16; padding-left:40px;
+    div.top{position:relative;  display:flex; align-items:center; margin-bottom:30px; 
+      h1.tit{ flex:0 0 15%; font-size:$fs-23; line-height:36px; word-break: keep-all; }
+      dl{position:relative; flex:0 0 85%; display: flex; justify-content: flex-start; align-content: stretch; flex-wrap: wrap; font-size:$fs-16; padding-left:40px;
+        &::after{content:''; position:absolute; left:0px; top:0; height:100%; border-right:$border1;}
         @include maxWidth($web){padding-left:30px;}
         dt{flex:0 0 100%; margin-bottom:18px;}
         dd{flex:1 0 auto; margin-left:20px;

@@ -718,21 +718,12 @@ try {
 
 			//컨텐츠 
 			$(function(){
-				// $('.cntnts_height').each(function(){
-				// 	let cntns_heights = $(this).attr('class');
-				// 	let idx_1 = cntns_heights.indexOf('height_');
-				// 	let idx_2 = cntns_heights.indexOf(' ', idx_1);
-				// 	let heights = 0; 
-				// 	if(idx_2 == -1){
-				// 		idx_2 = cntns_heights.length-1; 
-				// 		heights = parseInt(cntns_heights.substring(idx_1+7));
-				// 	}else{
-				// 		heights = parseInt(cntns_heights.substring(idx_1+7, idx_2));
-				// 	}
-					
-				// 	$(this).children().css('height',heights);
-
-				// });
+				//alert(123456);
+				/* TAB 메뉴 */
+				$('.page_tab_item>button').on('click',function(e){
+					let idx = $(this).parent().addClass('active').siblings().removeClass('active').end().index();
+					$('.tab_conts_outer').children('.page_tab_contents').eq(idx).addClass('active').siblings().removeClass('active');
+				})
 				
 				
 			})

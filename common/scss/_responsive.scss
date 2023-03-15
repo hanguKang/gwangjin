@@ -71,26 +71,31 @@ body{
               footer{ border-top:1px solid #ccc; padding-top:20px;
                 address{display:flex; justify-content: center;
                   p{ text-align:center;
-                    flex:0 0 33.3333%; margin:0 5px;
+                    flex:0 0 33.3333%; margin:0;
                     b{display:block; font-weight:700;}
                   }
                 }
               }
             }
             /*만족도 조사*/
-            .satisfaction_box { padding:10px; background-color: #eeeeee;
+            .satisfaction_box {overflow:hidden;  padding:15px; background-color: #eeeeee;
               form{
                 div.top{ height:auto;
-                  h1{position:relative;
-                    &:after{left:auto; right:-15px;}
-                  }
-                  dl{
+                  h1{position:relative;line-height:36px;}
+                  dl{ flex:0 0 calc(85% - 15px); box-sizing:border-box; 
+                    &::after{left:10px;}//만족도 조사 구분선
+                    dt{ word-break:keep-all; padding-right:10px; line-height:24px;}
                     dd{margin-bottom:10px;
-                      label .star{display: block;}
+                      label {
+                        span{ line-height:24px; height:24px;
+                          &.star{display: block;}
+                        }
+                        
+                      }
                     }
                   }
                 }
-                div.bottom{
+                div.bottom{ height:98px;
                   textarea{
                     flex:0 0 75%;
                   }
