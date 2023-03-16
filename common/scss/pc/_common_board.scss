@@ -33,8 +33,8 @@ select.p-input{background: #fff url(../images/arrow_dropdown.png) no-repeat righ
 
 /* 자주묻는 질문 */
 .question_list{margin-top:50px;
-  ul{display:flex; justify-content: space-between; flex-wrap:wrap;
-    li{ flex:0 0 25%;
+  ul{ @include flex-box(('flex_val':4 ,'a_margin':2px));
+    li{
       a{ @include alignFelxCenter; margin:2px; height:60px; border:$border2; background-color:$bg-color2;}    
       &.active{
         a{border:0 none; background-color:#486ec3; color:#fff;}
@@ -205,7 +205,7 @@ form{
   &.count2{@include flex-box((flex_val:2,justify_val:flex-start));}
   &__item {position:relative; height:auto;
     $item:&;
-    .link_img{ position:relative; z-index:1; display:flex; flex-direction: column; justify-content: center; align-items: center; min-height:300px; padding:0 5px;
+    .link_img{ position:relative; z-index:1; display:flex; flex-direction: column; justify-content: center; align-items: center; height:100%; max-height:300px;  padding:45px 5px 0 5px;
       .reference_spot{ display:block; position:relative; margin-bottom:15px; width:100%; padding-top:60%; //이미지 크기 비율 정하기
         $bbs_img_reference:&;//조상요소 선택하기 #2       
         #{$bbs_category}.question_lib &{padding-top:78%;
@@ -219,20 +219,24 @@ form{
         }
         img{position:absolute; left:50%; top:50%; transform:translateX(-50%) translateY(-50%);   width:100%; height:100%;
           /* 조상요소 선택하기 #2*/
-          #{$bbs_category}.news &{ width:auto; max-width:46%; height:100%; } //공단소식지 이미지 크기 별도
+          #{$bbs_category}.news &{ width:auto; width:46%; height:100%; } //공단소식지 이미지 크기 별도
           
           &.none{width:auto; height:50%;} //기본 이미지 없음.
           #{$bbs_category}.question_lib &.none{width:auto; height:77.5%;} //자주묻는 질문 이미지 없음.
         }
 
         @for $i from 1 through 4 {
-          @if $i == 1 { @at-root #{$bbs_category}.question_lib #{$item}:nth-child(#{$i}) .reference_spot:after {content:'광진정보도서관'} }
-          @else if $i == 2 { @at-root #{$bbs_category}.question_lib #{$item}:nth-child(#{$i}) .reference_spot:after {content:'자양한강도서관'} }
-          @else if $i == 3 { @at-root #{$bbs_category}.question_lib #{$item}:nth-child(#{$i}) .reference_spot:after {content:'중곡문화체육센터도서관'} }
-          @else if $i == 4 { @at-root #{$bbs_category}.question_lib #{$item}:nth-child(#{$i}) .reference_spot:after {content:'군자도서관'} }
+          $title_txt:'';
+          @if $i == 1 { $title_txt: '광진정보도서관' }
+          @else if $i == 2 { $title_txt: '자양한강도서관' }
+          @else if $i == 3 { $title_txt: '중곡문화체육센터도서관' }
+          @else if $i == 4 { $title_txt: '군자도서관' }
+
+          @at-root #{$bbs_category}.question_lib #{$item}:nth-child(#{$i}) .reference_spot:after {content:$title_txt}
         }
       }//.reference_spot End
-      .tit_txt{padding:0 20px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow:hidden; text-overflow:ellipsis; font-size:$fs-16; letter-spacing: -1px; line-height:20px; 
+      .tit_txt{padding:14px 20px 0 20px; margin-bottom:38px;  font-size:$fs-16; letter-spacing: -1px; line-height:20px; @include ell2;
+
         .season{ 
           font-size:$fs-15;
         }

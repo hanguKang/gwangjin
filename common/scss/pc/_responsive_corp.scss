@@ -300,11 +300,21 @@
       /* 연혁 */
       &.history{
         .tab_period_outer{overflow:hidden; position:relative; border-top:2px solid #000; margin-top:20px;  height:42px;  
-          .tab_period{position:absolute; left:0; top:0; z-index:1; width:100%; display:block; margin-top:0;
+          &.open{overflow:visible;}
+          .tab_period{
+            &.m_tab{position:absolute; left:0; top:0; z-index:1; width:100%; display:block; margin-top:0; //모바일 탭 
+              &.open{top:0;
+                .period_item{
+                  &.active{
+                    button{background-image:url(../images/tab_mobile_less.png); background-repeat:no-repeat; background-position:95% 50%; }
+                  }
+                }
+              }
+            }
             .period_item{ font-size:16px; line-height:40px; text-align:left; height:40px; 
               $g:&;          
               &.active{ 
-                button{color:#fff; background-color:#476dc3; }
+                button{color:#fff; background-color:#476dc3; background-image:url(../images/tab_mobile_more.png); background-repeat:no-repeat; background-position:95% 50%;}
               }
               button{display: block; width: 100%;  padding-left:15px; margin:0; box-sizing:border-box; text-align:left; 
                 @at-root #{$g}:nth-of-type(1) button{margin-left:0px; width:100%;}

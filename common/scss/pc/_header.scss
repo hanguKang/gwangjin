@@ -78,7 +78,7 @@
         }
       }
       nav{flex:0 0 auto;  @include clear; width: calc(100% - 589px); 
-        .nav_items{ display:flex;  justify-content: space-between; font-size:22px;  
+        .nav_items{ display:flex;  justify-content: space-between; font-size:22px;  height:70px; 
           >li{flex:0 0 20%; 
               &:hover{
                   >a{font-weight: 600;} 
@@ -95,7 +95,7 @@
                   a{padding-left: 0; }
               }
             
-            >a{font-weight: 400; position: relative; padding-top:24px;  height: 46px;  white-space:nowrap; 
+            >a{font-weight: 400; position: relative; padding-top:24px;  height: 70px;  white-space:nowrap; 
               @include maxWidth(1080px){
                 font-size:18px;
               }

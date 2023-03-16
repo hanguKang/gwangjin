@@ -38,7 +38,11 @@ a:link {
 }
 .table_th_space{display: flex; justify-content: space-between; align-items:center;}
 .colon{padding:0 10px;}
-
+body{
+  &.fixing{
+    width:100vw; height:100vh; overflow:hidden; 
+  }
+}
 
 // input[type="date"]::-webkit-calendar-picker-indicator{
 //   opacity:0;
@@ -159,7 +163,7 @@ $header-height: 85px;
     > :nth-child(n) {font-size:$font-size;display:inline-block;vertical-align:$align;}
 }
 
-/*아이템 정렬*/
+/*아이템 정렬*/ 
 @mixin ftItem($i, $pd){
 	> :nth-child(n){
 		float:left;
@@ -235,7 +239,7 @@ $circle:4px;
   
   $g:&;
   $space : map-get($map: $flex_prop, $key: 'a_margin');
-  
+  @debug $space;
   @each $prop, $val in $flex_prop{
     @if $prop == 'align_val' {
       align-items: $val; 
@@ -252,9 +256,12 @@ $circle:4px;
         }@else if type-of($val) == 'number'{
           $n-val:1/$val*100%;
           flex:0 0 $n-val;
+          @include maxWidth($m720){
+            flex:0 0 50%;
+          }
         }
         // #{&g}{justify-content: flex-start;}
-        >a{display:flex; align-items:center; justify-content:center; margin:0 $space+$space;}
+        >a{display:flex; align-items:center; justify-content:center; margin:$space;}
       }
       >:first-child{
         >a{margin-left:0;}

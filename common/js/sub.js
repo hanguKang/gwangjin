@@ -68,7 +68,103 @@ try {
 				//init_carNum();
 				//init_rad();
 				init_pop_btn();
+
+				init_tab();
+				
+				init_pop_img();
+
 			});
+
+			function init_pop_img(){
+				$('.btn_pop').on('click',function(e){
+					let $_current_target = $(e.currentTarget),
+					$_src = $_current_target.find('img').attr('src');
+					$('.curtain').addClass('active');
+					$('.big_img').addClass('active').find('img').attr('src', $_src);
+					$('body').addClass('fixing');
+				});
+				$('.btn_pop_close').on('click',function(){
+					$('.curtain').removeClass('active');
+					$('.big_img').removeClass('active');
+					$('body').removeClass('fixing');
+				});
+
+			}
+
+			function init_tab(){
+				/* TAB 메뉴 */
+				
+				
+				let $tab_list_outer = $('.tab_list_outer'),
+				$tab_list = $('.tab_list'),
+				$is_mobile = false,
+				idx = 0; 
+
+				
+
+				$tab_list.on('click', function(e){
+					//console.log(1234);
+					$is_mobile = init_mobile();
+
+					let $_btn = e.target,
+					$_this = e.currentTarget; 
+					
+					if( $tab_list.hasClass('open') || !$is_mobile ){ 						
+						idx = $($_btn).parent().addClass('active').siblings().removeClass('active').end().index();					
+						$('.tab_conts_list').children('.tab_contents').eq(idx).addClass('active').siblings().removeClass('active');	
+					}
+					
+					
+					if($is_mobile){
+						console.log('모바일');
+						if(!$tab_list.hasClass('open')){
+							$tab_list.addClass('open');
+							$tab_list_outer.addClass('open');					
+						}else{
+							$tab_list.removeClass('open');
+							$tab_list_outer.removeClass('open');						
+						}
+
+						//1. 초기화
+						let $tab_list_height = parseInt($tab_list.parent().css('height')),					
+						$tab_pose = $tab_list_height*idx; 
+
+						console.log($tab_list_height, idx, $tab_pose);
+						//2. mobile
+						if($tab_list.hasClass('open')){
+							$tab_pose = 0; 
+							$tab_list_outer.addClass('open');
+						}else{
+							$tab_list_outer.removeClass('open');
+						}
+						$tab_list.css('top', -$tab_pose);
+
+					}else{
+						console.log('웹');
+						$tab_list.removeClass('open');
+						$tab_list_outer.removeClass('open');					
+
+						//1. 초기화 
+						$tab_list.removeClass('m_tab').css('top',0);
+					}			
+				});// 클릭 이벤트 
+
+				
+			}
+
+			function init_mobile(){
+				let media_1 = window.matchMedia('only screen and ( max-width: 720px )'),
+    		media_2 = window.matchMedia('only screen and (pointer:coarse)'),
+				result = false; 
+
+				if(media_1.matches || media_2.matches){
+					
+					result = true; 
+
+				}
+
+				return result;
+			}
 
 			function init_pop_btn(){
 
@@ -716,17 +812,7 @@ try {
 				});
 			});
 
-			//컨텐츠 
-			$(function(){
-				//alert(123456);
-				/* TAB 메뉴 */
-				$('.page_tab_item>button').on('click',function(e){
-					let idx = $(this).parent().addClass('active').siblings().removeClass('active').end().index();
-					$('.tab_conts_outer').children('.page_tab_contents').eq(idx).addClass('active').siblings().removeClass('active');
-				})
-				
-				
-			})
+			
 		}else{
 			throw '제이쿼리가 없습니다.';
 		}
