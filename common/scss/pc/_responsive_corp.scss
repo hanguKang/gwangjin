@@ -65,6 +65,54 @@
         }
       
       }
+
+      /* 조직도 */
+      &.organization{
+        .flow_chart{
+          .organ_depth1{           
+            $_circle_val : 94px;
+            .organ_2{               
+              .organ_2_1{
+                margin-right:20px;
+                &:before{
+                }
+                >:nth-child(1){
+                  a{margin:0 4px;}
+                }
+              }
+              .organ_2_2{flex:0 1 auto; 
+                >:nth-child(n){position:relative; flex:0 1 auto; margin-bottom:20px;
+                  &:before{ }
+                  &:after{}
+                }
+                >:nth-child(1){
+                }
+                >:nth-child(2){
+                }
+                >:nth-child(3){
+                }
+                >:nth-child(4){
+                }
+                >:nth-child(5){
+                  &:after{left:-54%;}
+                }
+                >:nth-child(6){
+                  &:before{display:none;}
+                  &:after{display:none;}
+                }
+                >:nth-child(7){
+                  &:before{display:none;}
+                  &:after{display:none;}
+                }
+                >:nth-child(8){         
+                  &:before{display:none;}
+                  &:after{display:none;}         
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -161,6 +209,72 @@
         }
       
       }
+      /* 조직도 */
+      &.organization{
+        .flow_chart{
+          .organ_depth1{           
+            $_circle_val : 94px;
+            .organ_2{               
+              .organ_2_1{
+                margin-right:20px;
+                &:before{
+                }
+                >:nth-child(1){
+                  a{margin:0 4px;}
+                }
+              }
+              .organ_2_2{flex:0 1 auto; 
+                >:nth-child(n){position:relative; flex:0 1 auto; margin-bottom:20px;
+                  &:before{ }
+                  &:after{}
+                }
+                >:nth-child(1){
+                }
+                >:nth-child(2){
+                }
+                >:nth-child(3){
+                }
+                >:nth-child(4){
+                }
+                >:nth-child(5){
+                }
+                >:nth-child(6){
+                  &:before{display:block; }
+                  &:after{display:block; left:-54%;}
+                  @include maxWidth(996px){
+                    &:before{display:none;}
+                    &:after{display:none;}
+                  }
+                  @include maxWidth(900px){
+                    &:before{display:block; }
+                    &:after{display:block; left:-54%;}
+                  }
+                  @include maxWidth(776px){
+                    &:before{display:none;}
+                    &:after{display:none;}
+                  }
+                }
+                >:nth-child(7){
+                  &:before{display:none;}
+                  &:after{display:none;}
+                  @include maxWidth(900px){
+                    &:before{display:block;}
+                    &:after{display:block; left:-52%;}
+                  }
+                  @include maxWidth(878px){
+                    &:before{display:none;}
+                    &:after{display:none;}
+                  }
+                }
+                >:nth-child(8){         
+                  &:before{display:none;}
+                  &:after{display:none;}         
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -183,35 +297,39 @@
     /*본문*/
     .page{
       /*이사장 인사말 */
-      .greeting_view{ 
-        .gt_show_box{ background-position:90% 80%; height:auto;
-          .gt_show_txt{margin:0px auto;  padding-top:140px; width:100%; opacity:0.5;}
+      &.greeting{
+        .greeting_view{ 
+          .gt_show_box{ background-position:90% 80%; height:auto;
+            .gt_show_txt{margin:0px auto;  padding-top:140px; width:100%; opacity:0.5;}
+            .btn{position:static; display:block; 
+              a{display:block; height:42px; color:#fff;}
+            }
+          }
         }
+        .greeting_txt{margin-top:0; margin-bottom:78px;
+          div{position:relative; 
+            header{ /*position: absolute; top: -120px;*/ background-color:#fff;
+              p{font-size:16px; line-height:22px}
+              h1{font-size:18px; line-height:24px; 
+                b{font-size:24px; line-height:30px; }
+              }
+            }
+            div{
+              p{
+                &:first-child{}
+                &:nth-child(2){}
+              }
+            }
+            
+          }
+          footer{text-align:right;
+            img{position:static; margin-bottom:30px;}
+            em{display:inline-block;
+              text-align:left;
+            }
+          }
+        } //.greeting End 이사장 인사말 끝
       }
-      .greeting_txt{margin-top:0; margin-bottom:78px;
-        div{
-          header{
-            h1{
-              b{}
-            }
-            p{}
-          }
-          div{
-            p{
-              &:first-child{}
-              &:nth-child(2){}
-            }
-          }
-          
-        }
-        footer{
-          text-align:right;
-          em{display:inline-block;
-            text-align:left;
-          }
-        }
-      } //.greeting End 이사장 인사말 끝
-
       /*일반현황*/
       &.generalStatus{ 
         .flex_box{
@@ -337,6 +455,88 @@
           }
         }//.historyData End     
       } //histroy End 연혁 끝
+      
+            /* 조직도 */
+            &.organization{
+              .flow_chart{
+                .organ_depth1{           
+                  $_circle_val : 94px;
+                  .organ_2{               
+                    .organ_2_1{
+                      margin-right:20px;
+                      &:before{
+                      }
+                      >:nth-child(1){
+                        a{margin:0 4px;}
+                      }
+                    }
+                    .organ_2_2{flex:0 1 auto; 
+                      >:nth-child(n){position:relative; flex:0 1 auto; margin-bottom:20px;
+                        &:before{ }
+                        &:after{}
+                      }
+                      >:nth-child(1){
+                      }
+                      >:nth-child(2){
+                        &:after{left:-52%;}
+                      }
+                      >:nth-child(3){
+                        &:after{left:-52%;}
+                        @include maxWidth(453px){
+                          &:before{display:none;}
+                          &:after{display:none;}
+                        }
+                      }
+                      >:nth-child(4){
+                        &:after{left:-52%;}
+                        @include maxWidth(572px){
+                          &:before{display:none;}
+                          &:after{display:none;}
+                        }
+                      }
+                      >:nth-child(5){
+                        @include maxWidth(674px){
+                          &:before{display:none;}
+                          &:after{display:none;}
+                        }
+                      }
+                      >:nth-child(6){
+                        &:before{display:block; }
+                        &:after{display:block; left:-54%;}
+                        @include maxWidth(996px){
+                          &:before{display:none;}
+                          &:after{display:none;}
+                        }
+                        @include maxWidth(900px){
+                          &:before{display:block; }
+                          &:after{display:block; left:-54%;}
+                        }
+                        @include maxWidth(776px){
+                          &:before{display:none;}
+                          &:after{display:none;}
+                        }
+                      }
+                      >:nth-child(7){
+                        &:before{display:none;}
+                        &:after{display:none;}
+                        @include maxWidth(900px){
+                          &:before{display:block;}
+                          &:after{display:block; left:-52%;}
+                        }
+                        @include maxWidth(878px){
+                          &:before{display:none;}
+                          &:after{display:none;}
+                        }
+                      }
+                      >:nth-child(8){         
+                        &:before{display:none;}
+                        &:after{display:none;}         
+                      }
+                    }
+                  }
+                }
+              }
+            }
     }//.page End
   }//main.sub End 
 

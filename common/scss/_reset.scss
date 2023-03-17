@@ -60,6 +60,7 @@ $bg-color2: #f5f7f9;
 $bg-color3: #eeeeee;
 $bg-active: #486ec3;
 
+$btn-color1:#555555;
 
 //border
 $border1: 1px solid #cbcccd;
@@ -143,6 +144,9 @@ $header-height: 85px;
   &:before{content:""; position:absolute; left:0; top:50%; transform:translateY(-50%); width:4px; height:4px; border-radius:50%; background:#000; }
 }
 
+.btn{display:inline-block;height:42px; background-color:$btn-color1; color:#fff; font-size:16px; line-height:42px; text-align:center;
+  >*{ padding:0 56px;}
+}
 //mixin
 /*clear*/
 @mixin clear{&:after {content: ''; display: block; clear: both;}}
@@ -231,15 +235,15 @@ $circle:4px;
 
 
 /* flex 관련 */
-@mixin flex-box( $flex_prop:('flex_val':0 0 auto, 'justify_val':space-between, 'align_val':center, 'a_margin':0px) ){
+@mixin flex-box( $flex_prop:('flex_val':0 0 auto, 'justify_val':space-between, 'align_val':center, 'a_margin':0px,'_wrap':wrap) ){
   display:flex; 
   align-items: center;
   justify-content: space-between;
-  flex-wrap:wrap;
+  flex-wrap:  map-get($map: $flex_prop, $key: '_wrap');
   
   $g:&;
   $space : map-get($map: $flex_prop, $key: 'a_margin');
-  @debug $space;
+
   @each $prop, $val in $flex_prop{
     @if $prop == 'align_val' {
       align-items: $val; 
@@ -249,11 +253,9 @@ $circle:4px;
     }
 
     @if $prop == 'flex_val' {
-      > :nth-child(n){
-        
-        @if type-of($val) == 'string'{
-          flex:$val;
-        }@else if type-of($val) == 'number'{
+      > :nth-child(n){        
+        flex:$val; 
+        @if type-of($val) == 'number'{
           $n-val:1/$val*100%;
           flex:0 0 $n-val;
           @include maxWidth($m720){
@@ -270,6 +272,7 @@ $circle:4px;
         >a{margin-right:0;}
       }
     }
+    
   }
  
   

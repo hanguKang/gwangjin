@@ -33,7 +33,7 @@ select.p-input{background: #fff url(../images/arrow_dropdown.png) no-repeat righ
 
 /* 자주묻는 질문 */
 .question_list{margin-top:50px;
-  ul{ @include flex-box(('flex_val':4 ,'a_margin':2px));
+  ul{ @include flex-box(('flex_val':4 ,'a_margin':2px, '_wrap':wrap));
     li{
       a{ @include alignFelxCenter; margin:2px; height:60px; border:$border2; background-color:$bg-color2;}    
       &.active{
@@ -199,10 +199,10 @@ form{
 
 
 /*------------------ 게시판 ----------------*/
-.p-list{border-top: 2px solid #222; background-color:#ffffff; @include flex-box((flex_val:4));
+.p-list{border-top: 2px solid #222; background-color:#ffffff; @include flex-box(('flex_val':4, '_wrap':wrap));
   $bbs_category:&; //조상요소 선택하기 #1
-  &.count3{@include flex-box((flex_val:3,justify_val:flex-start));}
-  &.count2{@include flex-box((flex_val:2,justify_val:flex-start));}
+  &.count3{@include flex-box(('flex_val':3,'justify_val':flex-start,'_wrap':wrap));}
+  &.count2{@include flex-box(('flex_val':2,'justify_val':flex-start,'_wrap':wrap));}
   &__item {position:relative; height:auto;
     $item:&;
     .link_img{ position:relative; z-index:1; display:flex; flex-direction: column; justify-content: center; align-items: center; height:100%; max-height:300px;  padding:45px 5px 0 5px;
@@ -263,7 +263,7 @@ form{
   }
 
   //고객광장 > 광나루365 > 주민참여접수
-  &.g_365.residence{@include flex-box(('flex_val':2, 'justify_val':space-between, 'align_val':center, 'a_margin':0px)); border:0 none;
+  &.g_365.residence{@include flex-box(('flex_val':2, 'justify_val':space-between, 'align_val':center, 'a_margin':0px, '_wrap':wrap)); border:0 none;
     li{margin-bottom:15px; 
       &:nth-child(odd){
         a{margin-right:6px}

@@ -602,6 +602,19 @@ body.fixing {
   background: #000;
 }
 
+.btn {
+  display: inline-block;
+  height: 42px;
+  background-color: #555555;
+  color: #fff;
+  font-size: 16px;
+  line-height: 42px;
+  text-align: center;
+}
+.btn > * {
+  padding: 0 56px;
+}
+
 /*clear*/
 /*요소 세로 중앙정렬*/
 /*아이템 정렬*/
@@ -625,6 +638,11 @@ body.fixing {
       flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+}
+.flex-box > :nth-child(n) {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 .flex-box > :nth-child(n) > a {
   display: -webkit-box;
@@ -3098,8 +3116,6 @@ main.sub .contents_sub_box .contents_sub .sub_conts_nav .sub_conts_navList {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 main.sub .contents_sub_box .contents_sub .sub_conts_nav .sub_conts_navList .sub_conts_navItem > a {
   border: 1px solid #e8e8e8;
@@ -3125,10 +3141,11 @@ main.sub .contents_sub_box .contents_sub .sub_conts_nav .sub_conts_navList.count
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 main.sub .contents_sub_box .contents_sub .sub_conts_nav .sub_conts_navList.count5 > :nth-child(n) {
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 20%;
           flex: 0 0 20%;
@@ -3168,10 +3185,11 @@ main.sub .contents_sub_box .contents_sub .sub_conts_nav .sub_conts_navList.count
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 main.sub .contents_sub_box .contents_sub .sub_conts_nav .sub_conts_navList.count4 > :nth-child(n) {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 25%;
           flex: 0 0 25%;
@@ -3211,10 +3229,11 @@ main.sub .contents_sub_box .contents_sub .sub_conts_nav .sub_conts_navList.count
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 main.sub .contents_sub_box .contents_sub .sub_conts_nav .sub_conts_navList.count3 > :nth-child(n) {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 33.3333333333%;
           flex: 0 0 33.3333333333%;
@@ -3254,10 +3273,11 @@ main.sub .contents_sub_box .contents_sub .sub_conts_nav .sub_conts_navList.count
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 main.sub .contents_sub_box .contents_sub .sub_conts_nav .sub_conts_navList.count2 > :nth-child(n) {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 50%;
           flex: 0 0 50%;
@@ -3418,6 +3438,9 @@ select.p-input {
       flex-wrap: wrap;
 }
 .question_list ul > :nth-child(n) {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 25%;
           flex: 0 0 25%;
@@ -3950,6 +3973,9 @@ form .btn_box.basic a {
   /*----------- 공단통합민원센터 및 공통 Q_A -----------*/
 }
 .p-list > :nth-child(n) {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 25%;
           flex: 0 0 25%;
@@ -3995,6 +4021,9 @@ form .btn_box.basic a {
           justify-content: flex-start;
 }
 .p-list.count3 > :nth-child(n) {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 33.3333333333%;
           flex: 0 0 33.3333333333%;
@@ -4040,6 +4069,9 @@ form .btn_box.basic a {
           justify-content: flex-start;
 }
 .p-list.count2 > :nth-child(n) {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 50%;
           flex: 0 0 50%;
@@ -4245,6 +4277,9 @@ form .btn_box.basic a {
   border: 0 none;
 }
 .p-list.g_365.residence > :nth-child(n) {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 50%;
           flex: 0 0 50%;
@@ -6094,9 +6129,59 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
 }
 
 .page {
+  /*공단소개 > 일반현황 corp>cntns_gegeralStatus.html*/
   /*공단소개 > 이사장 인사말 corp>cntns_greeting.html*/
+  /*공단미션 비전 corp > cntns_missionVision.html*/
+  /* 연혁 corp > cntns_history.html */
+  /* 인증현황  corp > bbs_list_certification_status*/
+  /*공단현황 조직안내 corp >  cntns_organizationChart.html*/
 }
-.page .greeting_view .gt_show_box {
+.page .height_296 li {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-top: 150px;
+  padding-bottom: 38px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 18px;
+  background-repeat: no-repeat;
+  background-position: 50% 20%;
+}
+.page .height_296 li .btn_blk {
+  margin: 40px auto 0 auto;
+}
+.page .height_296 li:first-child {
+  background-image: url(../images/sub/corp/ico_foundation_1.png);
+}
+.page .height_296 li:nth-child(2) {
+  background-image: url(../images/sub/corp/ico_foundation_2.png);
+}
+.page .height_296 li:nth-child(3) {
+  background-image: url(../images/sub/corp/ico_foundation_3.png);
+}
+.page .height_470 li dl {
+  margin: 28px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  word-break: break-all;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+.page .height_470 li dl dt {
+  margin-bottom: 16px;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 500;
+}
+.page .height_470 li dl dd {
+  line-height: 20px;
+}
+.page.greeting .greeting_view {
+  position: relative;
+}
+.page.greeting .greeting_view .gt_show_box {
   padding-top: 1px;
   height: 595px;
   background-color: #dce3ed;
@@ -6105,7 +6190,7 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
   background-size: contain;
   background-repeat: no-repeat;
 }
-.page .greeting_view .gt_show_box .gt_show_txt {
+.page.greeting .greeting_view .gt_show_box .gt_show_txt {
   margin: 80px 0 0 90px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -6118,107 +6203,74 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
   line-height: 28px;
   text-align: center;
 }
-.page .greeting_txt {
+.page.greeting .greeting_view .gt_show_box .btn {
+  position: absolute;
+  right: 0;
+  bottom: -62px;
+}
+.page.greeting .greeting_view .gt_show_box .btn a {
+  display: block;
+  height: 42px;
+  color: #fff;
+}
+.page.greeting .greeting_txt {
   margin-top: -153px;
   margin-bottom: 78px;
 }
-.page .greeting_txt div {
+.page.greeting .greeting_txt div {
   width: 494px;
   height: 578px;
   background-color: #fff;
 }
-.page .greeting_txt div header {
+.page.greeting .greeting_txt div header {
   border-bottom: 0 none;
   color: #273f7f;
 }
-.page .greeting_txt div header h1 {
+.page.greeting .greeting_txt div header h1 {
   font-size: 30px;
   line-height: 50px;
   font-weight: 500;
   color: #273f7f;
 }
-.page .greeting_txt div header h1 b {
+.page.greeting .greeting_txt div header h1 b {
   font-size: 40px;
 }
-.page .greeting_txt div header p {
+.page.greeting .greeting_txt div header p {
   font-size: 20px;
   line-height: 28px;
 }
-.page .greeting_txt div div {
+.page.greeting .greeting_txt div div {
   font-size: 16px;
   line-height: 26px;
 }
-.page .greeting_txt div div p {
+.page.greeting .greeting_txt div div p {
   margin: 20px 0;
 }
-.page .greeting_txt div div p:first-child {
+.page.greeting .greeting_txt div div p:first-child {
   margin-bottom: 8px;
 }
-.page .greeting_txt div div p:nth-child(2) {
+.page.greeting .greeting_txt div div p:nth-child(2) {
   margin-top: 8px;
 }
-.page .greeting_txt footer {
+.page.greeting .greeting_txt footer {
+  position: relative;
   text-align: right;
 }
-.page .greeting_txt footer em {
+.page.greeting .greeting_txt footer img {
+  position: absolute;
+  top: -92px;
+  right: 0;
+}
+.page.greeting .greeting_txt footer em {
   display: inline-block;
   text-align: left;
   font-size: 18px;
   line-height: 22px;
 }
-
-.sub {
-  /*공단소개 > 일반현황 corp>cntns_gegeralStatus.html*/
-  /*공단미션 비전*/
-  /* 연혁 history */
-  /* 인증현황 */
-}
-.sub .height_296 li {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding-top: 150px;
-  padding-bottom: 38px;
-  text-align: center;
-  font-size: 14px;
-  line-height: 18px;
-  background-repeat: no-repeat;
-  background-position: 50% 20%;
-}
-.sub .height_296 li .btn_blk {
-  margin: 40px auto 0 auto;
-}
-.sub .height_296 li:first-child {
-  background-image: url(../images/sub/corp/ico_foundation_1.png);
-}
-.sub .height_296 li:nth-child(2) {
-  background-image: url(../images/sub/corp/ico_foundation_2.png);
-}
-.sub .height_296 li:nth-child(3) {
-  background-image: url(../images/sub/corp/ico_foundation_3.png);
-}
-.sub .height_470 li dl {
-  margin: 28px;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
-  word-break: break-all;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
-}
-.sub .height_470 li dl dt {
-  margin-bottom: 16px;
-  font-size: 20px;
-  line-height: 20px;
-  font-weight: 500;
-}
-.sub .height_470 li dl dd {
-  line-height: 20px;
-}
-.sub .contents_sub_box .missionVission {
+.page.missionVission {
   position: relative;
 }
-.sub .contents_sub_box .missionVission:before {
+.page.missionVission:before {
   position: absolute;
   z-index: -1;
   left: 70px;
@@ -6228,7 +6280,7 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
   height: 100%;
   border-left: 1px solid #dddddd;
 }
-.sub .contents_sub_box .missionVission .msVs {
+.page.missionVission .msVs {
   padding-left: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6237,7 +6289,7 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
       -ms-flex-align: center;
           align-items: center;
 }
-.sub .contents_sub_box .missionVission .msVs .tit {
+.page.missionVission .msVs .tit {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6255,28 +6307,28 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
   line-height: 22px;
   margin-right: 104px;
 }
-.sub .contents_sub_box .missionVission .msVs .tit span {
+.page.missionVission .msVs .tit span {
   display: block;
   text-align: center;
 }
-.sub .contents_sub_box .missionVission .msVs .list_boxes {
+.page.missionVission .msVs .list_boxes {
   margin: 0 auto;
   text-align: center;
   padding-right: 70px;
   width: calc(100% - 204px); /* .titl width: 110px; margin-right:104px; padding-right:70px;*/
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(1) .list_boxes {
+.page.missionVission .msVs:nth-child(1) .list_boxes {
   font-size: 20px;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(1) .list_boxes em {
+.page.missionVission .msVs:nth-child(1) .list_boxes em {
   font-size: 30px;
   font-weight: 500;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(1) .list_boxes em strong {
+.page.missionVission .msVs:nth-child(1) .list_boxes em strong {
   font-weight: 700;
   color: #283f83;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(2) .list_boxes .circle_outer {
+.page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6287,7 +6339,7 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
       -ms-flex-align: start;
           align-items: flex-start;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes {
+.page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6305,44 +6357,44 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
   margin: 0 -10px;
   color: #fff;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes:before {
+.page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes:before {
   content: "";
   display: inline-block;
   width: 0;
   padding-top: 100%;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes:nth-child(odd) {
+.page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes:nth-child(odd) {
   background-color: rgba(50, 50, 50, 0.8);
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes:nth-child(even) {
+.page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes:nth-child(even) {
   background-color: rgba(240, 30, 120, 0.8);
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes .txt_list {
+.page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes .txt_list {
   display: inline-block;
   vertical-align: top;
   font-size: 18px;
   line-height: 22px;
   font-weight: 300;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes .txt_list li {
+.page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes .txt_list li {
   margin-bottom: 14px;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes b {
+.page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes b {
   display: block;
   height: 22px;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes span {
+.page.missionVission .msVs:nth-child(2) .list_boxes .circle_outer .circle_boxes span {
   display: block;
   height: 22px;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(3) {
+.page.missionVission .msVs:nth-child(3) {
   background-color: rgba(200, 200, 200, 0.3);
   padding: 30px 0 30px 16px;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(3) .tit {
+.page.missionVission .msVs:nth-child(3) .tit {
   background-color: #fff;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(3) .list_boxes ul {
+.page.missionVission .msVs:nth-child(3) .list_boxes ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6353,7 +6405,7 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
       -ms-flex-align: start;
           align-items: flex-start;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(3) .list_boxes ul li {
+.page.missionVission .msVs:nth-child(3) .list_boxes ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6370,19 +6422,19 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
   margin: 0 3px;
   background-color: #fff;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(3) .list_boxes ul li:nth-child(1) {
+.page.missionVission .msVs:nth-child(3) .list_boxes ul li:nth-child(1) {
   background: #fff url(../images/sub/corp/mission_ico_01.png) no-repeat 50% 20%;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(3) .list_boxes ul li:nth-child(2) {
+.page.missionVission .msVs:nth-child(3) .list_boxes ul li:nth-child(2) {
   background: #fff url(../images/sub/corp/mission_ico_02.png) no-repeat 50% 20%;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(3) .list_boxes ul li:nth-child(3) {
+.page.missionVission .msVs:nth-child(3) .list_boxes ul li:nth-child(3) {
   background: #fff url(../images/sub/corp/mission_ico_03.png) no-repeat 50% 20%;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(3) .list_boxes ul li:nth-child(4) {
+.page.missionVission .msVs:nth-child(3) .list_boxes ul li:nth-child(4) {
   background: #fff url(../images/sub/corp/mission_ico_04.png) no-repeat 50% 20%;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(3) .list_boxes ul li span {
+.page.missionVission .msVs:nth-child(3) .list_boxes ul li span {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
@@ -6393,7 +6445,7 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
   background-color: #476dc2;
   color: #fff;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(4) .list_boxes ul {
+.page.missionVission .msVs:nth-child(4) .list_boxes ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6404,7 +6456,7 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
       -ms-flex-align: start;
           align-items: flex-start;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(4) .list_boxes ul li {
+.page.missionVission .msVs:nth-child(4) .list_boxes ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6419,13 +6471,13 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
   margin: 0 3px;
   background-color: #fff;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(4) .list_boxes ul li:before {
+.page.missionVission .msVs:nth-child(4) .list_boxes ul li:before {
   content: "";
   display: inline-block;
   width: 0;
   padding-top: 100%;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(4) .list_boxes ul li span {
+.page.missionVission .msVs:nth-child(4) .list_boxes ul li span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6434,34 +6486,34 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
           align-items: center;
   color: #fff;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(4) .list_boxes ul li:nth-child(1) {
+.page.missionVission .msVs:nth-child(4) .list_boxes ul li:nth-child(1) {
   background: #87cfff;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(4) .list_boxes ul li:nth-child(2) {
+.page.missionVission .msVs:nth-child(4) .list_boxes ul li:nth-child(2) {
   background: #527ee1;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(4) .list_boxes ul li:nth-child(3) {
+.page.missionVission .msVs:nth-child(4) .list_boxes ul li:nth-child(3) {
   background: #2d51b1;
 }
-.sub .contents_sub_box .missionVission .msVs:nth-child(4) .list_boxes ul li:nth-child(4) {
+.page.missionVission .msVs:nth-child(4) .list_boxes ul li:nth-child(4) {
   background: #10278d;
 }
-.sub .contents_sub_box .missionVission aside {
+.page.missionVission aside {
   background-color: #eee;
   padding: 30px;
   margin-top: 50px;
 }
-.sub .contents_sub_box .missionVission aside h1 {
+.page.missionVission aside h1 {
   margin-bottom: 24px;
   font-size: 18px;
   line-height: 26px;
   text-align: center;
 }
-.sub .contents_sub_box .missionVission aside h1 em {
+.page.missionVission aside h1 em {
   color: #283f83;
   font-size: 24px;
 }
-.sub .history .tab_period {
+.page .history .tab_period {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6469,7 +6521,7 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
       flex-wrap: wrap;
   margin-top: 20px;
 }
-.sub .history .tab_period .period_item {
+.page .history .tab_period .period_item {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 25%;
           flex: 0 0 25%;
@@ -6477,11 +6529,11 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
   line-height: 60px;
   text-align: center;
 }
-.sub .history .tab_period .period_item.active button {
+.page .history .tab_period .period_item.active button {
   color: #fff;
   background-color: #476dc3;
 }
-.sub .history .tab_period .period_item button {
+.page .history .tab_period .period_item button {
   display: block;
   width: calc(100% - 4px);
   margin: 0 2px 4px 2px;
@@ -6491,31 +6543,31 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
   background-color: #f6f7f8;
   color: #222;
 }
-.sub .history .tab_period .period_item:nth-of-type(1) button {
+.page .history .tab_period .period_item:nth-of-type(1) button {
   margin-left: 0;
   width: calc(100% - 2px);
 }
 
-.sub .history .tab_period .period_item:nth-of-type(4) button {
+.page .history .tab_period .period_item:nth-of-type(4) button {
   margin-right: 0;
   width: calc(100% - 2px);
 }
 
-.sub .history .tab_period .period_item:nth-of-type(5) button {
+.page .history .tab_period .period_item:nth-of-type(5) button {
   margin-left: 0;
   width: calc(100% - 2px);
 }
 
-.sub .history .historyData {
+.page .history .historyData {
   display: none;
 }
-.sub .history .historyData.active {
+.page .history .historyData.active {
   display: block;
 }
-.sub .history .historyData .period_data {
+.page .history .historyData .period_data {
   border-top: 2px solid #222;
 }
-.sub .history .historyData .period_data .period_data_item {
+.page .history .historyData .period_data .period_data_item {
   padding: 24px 15px;
   border-bottom: 1px solid #e0e0e0;
   display: -webkit-box;
@@ -6525,21 +6577,21 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
       -ms-flex-align: center;
           align-items: center;
 }
-.sub .history .historyData .period_data .period_data_item .year {
+.page .history .historyData .period_data .period_data_item .year {
   margin-right: 180px;
   font-size: 44px;
   font-weight: 500;
   color: #476dc3;
 }
-.sub .history .historyData .period_data .period_data_item .data {
+.page .history .historyData .period_data .period_data_item .data {
   line-height: 22px;
 }
-.sub .big_img {
+.page .big_img {
   width: 560px;
   height: 740px;
   background: #fff;
 }
-.sub .big_img .pop_header {
+.page .big_img .pop_header {
   height: 48px;
   background-color: #283f83;
   color: #fff;
@@ -6548,7 +6600,7 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
   text-align: left;
   padding-left: 60px;
 }
-.sub .big_img .conts_img {
+.page .big_img .conts_img {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
@@ -6557,7 +6609,7 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
   border: 1px solid #d9d9d9;
   border-top: 0 none;
 }
-.sub .big_img .conts_img h2 {
+.page .big_img .conts_img h2 {
   font-size: 24px;
   line-height: 34px;
   font-weight: 500;
@@ -6567,9 +6619,278 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
-.sub .big_img .conts_img img {
+.page .big_img .conts_img img {
   width: 100%;
   height: calc(100% - 60px);
+}
+.page.organization .flow_chart {
+  position: relative;
+}
+.page.organization .flow_chart .organ_depth1 .organ_1 {
+  margin-bottom: 95px;
+}
+.page.organization .flow_chart .organ_depth1 .organ_1 h2 {
+  margin: 0 auto;
+  width: 186px;
+  height: 186px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #fff;
+  font-weight: 200;
+}
+.page.organization .flow_chart .organ_depth1 .organ_1 h2.organ_1_1 {
+  margin-bottom: -26px;
+  background-color: rgba(240, 30, 120, 0.8);
+}
+.page.organization .flow_chart .organ_depth1 .organ_1 h2.organ_1_1:after {
+  position: absolute;
+  left: 100px;
+  background-color: #ccc;
+  display: block;
+  content: "";
+  width: calc(50% - 100px);
+  height: 1px;
+  border: 0 none;
+  border-radius: 0;
+  padding: 0;
+  -webkit-transform: translate(-48px, 80px);
+          transform: translate(-48px, 80px);
+}
+.page.organization .flow_chart .organ_depth1 .organ_1 h2.organ_1_2 {
+  background-color: rgba(50, 50, 50, 0.8);
+  position: relative;
+}
+.page.organization .flow_chart .organ_depth1 .organ_1 h2.organ_1_2:before {
+  display: block;
+  content: "";
+  width: 1px;
+  height: 60px;
+  border: 0 none;
+  border-radius: 0;
+  padding: 0;
+  position: absolute;
+  left: 50%;
+  bottom: -60px;
+  background-color: #ccc;
+}
+.page.organization .flow_chart .organ_depth1 .organ_2, .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 > :nth-child(n), .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_1 > :nth-child(n) {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 > :nth-child(n) > a, .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_1 > :nth-child(n) > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 4px;
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 > :first-child > a, .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_1 > :first-child > a {
+  margin-left: 0;
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 > :last-child > a, .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_1 > :last-child > a {
+  margin-right: 0;
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 .organ_2s li a {
+  width: 94px;
+  height: 94px;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 200;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 .organ_2s li a .line {
+  display: block;
+  height: 20px;
+  line-height: 20px;
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_1 {
+  position: relative;
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_1:before {
+  position: absolute;
+  left: 51px;
+  top: -268px;
+  display: block;
+  content: "";
+  width: 1px;
+  height: 268px;
+  border: 0 none;
+  border-radius: 0;
+  padding: 0;
+  background-color: #ccc;
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_1 > :nth-child(1) a, .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_1 .organ_2_1 > :nth-child(1) a {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  background-color: rgb(85, 178, 255);
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  align-items: center;
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(n) {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(n) > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 4px;
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :first-child > a {
+  margin-left: 0;
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :last-child > a {
+  margin-right: 0;
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(n) {
+  position: relative;
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(n):before {
+  display: block;
+  content: "";
+  width: 1px;
+  height: 35px;
+  border: 0 none;
+  border-radius: 0;
+  padding: 0;
+  position: absolute;
+  left: 47px;
+  top: -35px;
+  background-color: #ccc;
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(n):after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 1px;
+  border: 0 none;
+  border-radius: 0;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  top: -35px;
+  background-color: #ccc;
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(1):after {
+  left: 49px;
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(1) a {
+  background-color: rgb(55, 154, 255);
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(2) a {
+  background-color: rgb(69, 113, 221);
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(3) a {
+  background-color: rgb(52, 94, 214);
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(4) a {
+  background-color: rgb(45, 81, 177);
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(5) a {
+  background-color: rgb(28, 60, 161);
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(6) a {
+  background-color: rgb(16, 39, 141);
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(7) a {
+  background-color: rgb(5, 17, 109);
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(8):after {
+  left: -50%;
+}
+.page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(8) a {
+  background-color: rgb(2, 8, 86);
+}
+.page.organization .table {
+  margin-top: 44px;
+}
+.page.organization .table table th span {
+  display: inline;
+}
+@media screen and (max-width: 640px) {
+  .page.organization .table table th span {
+    display: block;
+  }
+}
+@media screen and (max-width: 450px) {
+  .page.organization .table table th:first-child {
+    width: 13%;
+  }
+}
+.page.organization .table table th, .page.organization .table table td {
+  border: 1px solid #dddddd;
+}
+.page.organization .table table th:first-child, .page.organization .table table td:first-child {
+  border-left: 0 none;
+}
+.page.organization .table table th:last-child, .page.organization .table table td:last-child {
+  border-right: 0 none;
 }
 
 .cntnsMngDeprt {
@@ -6595,6 +6916,7 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
 @media screen and (max-width: 1300px) {
   main.sub .page {
     /*공단 미션 비전*/
+    /* 조직도 */
   }
   main.sub .page .greeting_view .gt_show_box .gt_show_txt {
     margin: 40px 0 0 40px;
@@ -6766,6 +7088,45 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
     color: #283f83;
     font-size: 24px;
   }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_1 {
+    margin-right: 20px;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_1 > :nth-child(1) a, main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_1 .organ_2_1 > :nth-child(1) a {
+    margin: 0 4px;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(n) {
+    position: relative;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+    margin-bottom: 20px;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(5):after {
+    left: -54%;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(6):before {
+    display: none;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(6):after {
+    display: none;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(7):before {
+    display: none;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(7):after {
+    display: none;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(8):before {
+    display: none;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(8):after {
+    display: none;
+  }
 }
 @media screen and (max-width: 1080px) {
   /*공통 */
@@ -6777,6 +7138,7 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
     /* 이사장 인사말 */
     /*일반현황*/
     /*공단미션 비전*/
+    /* 조직도 */
   }
   main.sub .page.greeting .greeting_txt {
     margin-top: -153px;
@@ -6951,6 +7313,89 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
     color: #283f83;
     font-size: 24px;
   }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_1 {
+    margin-right: 20px;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_1 > :nth-child(1) a, main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_1 .organ_2_1 > :nth-child(1) a {
+    margin: 0 4px;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(n) {
+    position: relative;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+    margin-bottom: 20px;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(6):before {
+    display: block;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(6):after {
+    display: block;
+    left: -54%;
+  }
+}
+@media screen and (max-width: 1080px) and (max-width: 996px) {
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(6):before {
+    display: none;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(6):after {
+    display: none;
+  }
+}
+@media screen and (max-width: 1080px) and (max-width: 900px) {
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(6):before {
+    display: block;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(6):after {
+    display: block;
+    left: -54%;
+  }
+}
+@media screen and (max-width: 1080px) and (max-width: 776px) {
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(6):before {
+    display: none;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(6):after {
+    display: none;
+  }
+}
+@media screen and (max-width: 1080px) {
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(7):before {
+    display: none;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(7):after {
+    display: none;
+  }
+}
+@media screen and (max-width: 1080px) and (max-width: 900px) {
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(7):before {
+    display: block;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(7):after {
+    display: block;
+    left: -52%;
+  }
+}
+@media screen and (max-width: 1080px) and (max-width: 878px) {
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(7):before {
+    display: none;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(7):after {
+    display: none;
+  }
+}
+@media screen and (max-width: 1080px) {
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(8):before {
+    display: none;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(8):after {
+    display: none;
+  }
 }
 @media screen and (max-width: 720px) {
   /*공통 */
@@ -6973,25 +7418,57 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
     /*일반현황*/
     /*공단미션 비전*/
     /* 연혁 */
+    /* 조직도 */
   }
-  main.sub .page .greeting_view .gt_show_box {
+  main.sub .page.greeting .greeting_view .gt_show_box {
     background-position: 90% 80%;
     height: auto;
   }
-  main.sub .page .greeting_view .gt_show_box .gt_show_txt {
+  main.sub .page.greeting .greeting_view .gt_show_box .gt_show_txt {
     margin: 0px auto;
     padding-top: 140px;
     width: 100%;
     opacity: 0.5;
   }
-  main.sub .page .greeting_txt {
+  main.sub .page.greeting .greeting_view .gt_show_box .btn {
+    position: static;
+    display: block;
+  }
+  main.sub .page.greeting .greeting_view .gt_show_box .btn a {
+    display: block;
+    height: 42px;
+    color: #fff;
+  }
+  main.sub .page.greeting .greeting_txt {
     margin-top: 0;
     margin-bottom: 78px;
   }
-  main.sub .page .greeting_txt footer {
+  main.sub .page.greeting .greeting_txt div {
+    position: relative;
+  }
+  main.sub .page.greeting .greeting_txt div header { /*position: absolute; top: -120px;*/
+    background-color: #fff;
+  }
+  main.sub .page.greeting .greeting_txt div header p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  main.sub .page.greeting .greeting_txt div header h1 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  main.sub .page.greeting .greeting_txt div header h1 b {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  main.sub .page.greeting .greeting_txt footer {
     text-align: right;
   }
-  main.sub .page .greeting_txt footer em {
+  main.sub .page.greeting .greeting_txt footer img {
+    position: static;
+    margin-bottom: 30px;
+  }
+  main.sub .page.greeting .greeting_txt footer em {
     display: inline-block;
     text-align: left;
   }
@@ -7284,6 +7761,126 @@ form.clean_call_register .register .info dl.noFlex dd.caution {
   }
   main.sub .page.history .historyData .period_data .period_data_item .data .dataItem:before {
     top: 12px;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_1 {
+    margin-right: 20px;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_1 > :nth-child(1) a, main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_1 .organ_2_1 > :nth-child(1) a {
+    margin: 0 4px;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(n) {
+    position: relative;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+    margin-bottom: 20px;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(2):after {
+    left: -52%;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(3):after {
+    left: -52%;
+  }
+}
+@media screen and (max-width: 720px) and (max-width: 453px) {
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(3):before {
+    display: none;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(3):after {
+    display: none;
+  }
+}
+@media screen and (max-width: 720px) {
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(4):after {
+    left: -52%;
+  }
+}
+@media screen and (max-width: 720px) and (max-width: 572px) {
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(4):before {
+    display: none;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(4):after {
+    display: none;
+  }
+}
+@media screen and (max-width: 720px) and (max-width: 674px) {
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(5):before {
+    display: none;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(5):after {
+    display: none;
+  }
+}
+@media screen and (max-width: 720px) {
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(6):before {
+    display: block;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(6):after {
+    display: block;
+    left: -54%;
+  }
+}
+@media screen and (max-width: 720px) and (max-width: 996px) {
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(6):before {
+    display: none;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(6):after {
+    display: none;
+  }
+}
+@media screen and (max-width: 720px) and (max-width: 900px) {
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(6):before {
+    display: block;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(6):after {
+    display: block;
+    left: -54%;
+  }
+}
+@media screen and (max-width: 720px) and (max-width: 776px) {
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(6):before {
+    display: none;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(6):after {
+    display: none;
+  }
+}
+@media screen and (max-width: 720px) {
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(7):before {
+    display: none;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(7):after {
+    display: none;
+  }
+}
+@media screen and (max-width: 720px) and (max-width: 900px) {
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(7):before {
+    display: block;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(7):after {
+    display: block;
+    left: -52%;
+  }
+}
+@media screen and (max-width: 720px) and (max-width: 878px) {
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(7):before {
+    display: none;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(7):after {
+    display: none;
+  }
+}
+@media screen and (max-width: 720px) {
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(8):before {
+    display: none;
+  }
+  main.sub .page.organization .flow_chart .organ_depth1 .organ_2 .organ_2_2 > :nth-child(8):after {
+    display: none;
   }
 }
 /*메인페이지 반응형*/

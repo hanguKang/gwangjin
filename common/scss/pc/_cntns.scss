@@ -25,7 +25,7 @@
         section{ margin-top:30px; font-size:16px; line-height:$line-height;
           h1{font-size:26px; line-height:62px; font-weight:500;}
           .before_dot{position:relative; padding-left:10px;
-            &:before{content:""; position:absolute; left:0; top:$line-height/2; width:$circle; height:$circle; border-radius:50%; background-color:#202020; transform:translateY(-50%);}
+            &:before{content:""; position:absolute; left:0; top:calc($line-height / 2); width:$circle; height:$circle; border-radius:50%; background-color:#202020; transform:translateY(-50%);}
           }
           .before_dot_w{
             &:before{background-color:#fff;}
@@ -49,182 +49,276 @@
         .btn_blk{
           width:100px;height:32px; color:#fff;  background-color:#000; line-height:32px; text-align:center;
         }
-      }
-      
+      }      
     }
+ 
+    
   }
 
 .page{
-  
+     /*공단소개 > 일반현황 corp>cntns_gegeralStatus.html*/
+  .height_296{
+    li{box-sizing:border-box; padding-top:150px; padding-bottom:38px; text-align:center; font-size:14px; line-height:18px;background-repeat:no-repeat; background-position:50% 20%;
+      .btn_blk{margin:40px auto 0 auto;}
+
+      &:first-child{background-image:url(../images/sub/corp/ico_foundation_1.png); }
+      &:nth-child(2){background-image:url(../images/sub/corp/ico_foundation_2.png); }
+      &:nth-child(3){background-image:url(../images/sub/corp/ico_foundation_3.png); }
+    }
+  }
+  .height_470{
+    li{
+      dl{margin:28px; flex:1 0 auto; word-break: break-all; hyphens: auto;
+        dt{margin-bottom:16px; font-size:20px; line-height:20px; font-weight:500; }
+        dd{line-height:20px;}
+      }
+    }
+  }
+
+
   /*공단소개 > 이사장 인사말 corp>cntns_greeting.html*/
-  .greeting_view{
-    .gt_show_box{padding-top:1px; height:595px; background-color:#dce3ed; background-image:url(../images/sub/corp/greeting_ceo.png); background-position:90% 0; background-size:contain; background-repeat:no-repeat; 
-      .gt_show_txt{margin:80px 0 0 90px; box-sizing:border-box; padding-top:100px; width:316px; height:316px; background-color:#283f83; color:#fff; font-size:20px; line-height:28px; text-align:center;}
+  &.greeting{
+    .greeting_view{position:relative;
+      .gt_show_box{padding-top:1px; height:595px; background-color:#dce3ed; background-image:url(../images/sub/corp/greeting_ceo.png); background-position:90% 0; background-size:contain; background-repeat:no-repeat; 
+        .gt_show_txt{margin:80px 0 0 90px; box-sizing:border-box; padding-top:100px; width:316px; height:316px; background-color:#283f83; color:#fff; font-size:20px; line-height:28px; text-align:center;}
+        .btn{position:absolute; right:0; bottom:-62px; 
+          a{display:block; height:42px; color:#fff;}
+        }
+      }
+    }
+    .greeting_txt{margin-top:-153px; margin-bottom:78px;
+      div{width:494px; height:578px; background-color:#fff;
+        header{border-bottom:0 none; color:#273f7f;
+          h1{font-size:30px; line-height:50px; font-weight:500; color:#273f7f;
+            b{font-size:40px;}
+          }
+          p{font-size:20px; line-height:28px;}
+        }
+        div{font-size:16px; line-height:26px;
+          p{margin:20px 0; 
+            &:first-child{margin-bottom:8px;}
+            &:nth-child(2){margin-top:8px;}
+          }
+        }
+        
+      }
+      footer{position:relative; text-align:right;
+        img{position:absolute; top:-92px; right:0;}
+        em{display:inline-block; text-align:left; font-size:18px; line-height:22px;}
+      }
     }
   }
-  .greeting_txt{margin-top:-153px; margin-bottom:78px;
-    div{width:494px; height:578px; background-color:#fff;
-      header{border-bottom:0 none; color:#273f7f;
-        h1{font-size:30px; line-height:50px; font-weight:500; color:#273f7f;
-          b{font-size:40px;}
-        }
-        p{font-size:20px; line-height:28px;}
-      }
-      div{font-size:16px; line-height:26px;
-        p{margin:20px 0; 
-          &:first-child{margin-bottom:8px;}
-          &:nth-child(2){margin-top:8px;}
-        }
-      }
-      
+
+  /*공단미션 비전 corp > cntns_missionVision.html*/
+  &.missionVission{position:relative; 
+    &:before{
+      position:absolute; z-index:-1; left:70px; top:0; content:""; width:0; height:100%; border-left:1px solid #dddddd;
     }
-    footer{
-      text-align:right;
-      em{display:inline-block; text-align:left; font-size:18px; line-height:22px;
+    .msVs{padding-left:16px; display: flex; align-items: center;
+      .tit{display:flex; justify-content: center; align-items: center; width:110px; height:110px; border-radius:50%; background-color:#eeeeee; font-size:18px; line-height:22px; margin-right:104px;
+        span{display:block; text-align:center; }
+      }
+      .list_boxes{margin:0 auto; text-align: center;  padding-right:70px; width:calc(100% - 204px); /* .titl width: 110px; margin-right:104px; padding-right:70px;*/
+
+      }
+      &:nth-child(1){ 
+        .list_boxes{
+          font-size:20px; 
+          em{font-size:30px; font-weight:500;
+            strong{font-weight:700; color:#283f83; }
+          }
+        }
+      }
+      &:nth-child(2){
+        .list_boxes{
+          .circle_outer {display:flex; justify-content: center; align-items: flex-start;
+            .circle_boxes { display: flex; justify-content: center ; align-items:center; flex:0 0 26%; border-radius:50%; padding:24px; margin:0 -10px;  color:#fff;
+              &:before{content:""; display:inline-block; width:0; padding-top:100%;}
+              &:nth-child(odd){background-color:rgba(50, 50, 50, 0.8); }
+              &:nth-child(even){background-color:rgba(240, 30, 120, 0.8); }
+              .txt_list{display:inline-block;  vertical-align: top; font-size:18px; line-height:22px; font-weight:300;
+                li{margin-bottom:14px;}
+              }
+              b{display:block; height:22px; }
+              span{display:block; height:22px;}
+              
+            }
+          }
+        }
+      }
+      &:nth-child(3){background-color:rgba(200,200,200, 0.3); padding:30px 0 30px 16px; 
+        .tit{background-color:#fff;}
+        .list_boxes{
+          ul{display: flex; justify-content: center; align-items: flex-start; 
+            li{ display: flex; justify-content: center; align-items:center; flex:0 0 24%; padding:120px 0 0 0; margin:0 3px; background-color:#fff;
+              &:nth-child(1){background:#fff url(../images/sub/corp/mission_ico_01.png) no-repeat 50% 20%; }
+              &:nth-child(2){background:#fff url(../images/sub/corp/mission_ico_02.png) no-repeat 50% 20%; }
+              &:nth-child(3){background:#fff url(../images/sub/corp/mission_ico_03.png) no-repeat 50% 20%; }
+              &:nth-child(4){background:#fff url(../images/sub/corp/mission_ico_04.png) no-repeat 50% 20%; }
+              span{ box-sizing:border-box; width:100%; display:block; padding:30px 20px; font-size:16px; line-height:20px; background-color:#476dc2; color:#fff;
+              }
+            }
+          }
+        }
+      }
+      &:nth-child(4){
+        .list_boxes{
+          ul{display: flex; justify-content: center; align-items: flex-start; 
+            li{ display: flex; justify-content: center;  flex:0 0 24%; padding:0; border-radius:50%; margin:0 3px; background-color:#fff;
+              &:before{content:""; display:inline-block; width:0; padding-top:100%;}
+              span{display:flex; align-items: center; color:#fff;}
+              &:nth-child(1){background:#87cfff;}
+              &:nth-child(2){background:#527ee1;}
+              &:nth-child(3){background:#2d51b1;}
+              &:nth-child(4){background:#10278d;}
+            }
+          }
+        }
+      }
+    }
+    aside{background-color:#eee; padding:30px; margin-top:50px;
+      h1{margin-bottom:24px; font-size:18px; line-height:26px; text-align:center; 
+        em{color:#283f83;font-size:24px;}
       }
     }
   }
-
-}
-
-.sub{
-    /*공단소개 > 일반현황 corp>cntns_gegeralStatus.html*/
-    .height_296{
-      li{box-sizing:border-box; padding-top:150px; padding-bottom:38px; text-align:center; font-size:14px; line-height:18px;background-repeat:no-repeat; background-position:50% 20%;
-        .btn_blk{margin:40px auto 0 auto;}
-
-        &:first-child{background-image:url(../images/sub/corp/ico_foundation_1.png); }
-        &:nth-child(2){background-image:url(../images/sub/corp/ico_foundation_2.png); }
-        &:nth-child(3){background-image:url(../images/sub/corp/ico_foundation_3.png); }
+  
+  /* 연혁 corp > cntns_history.html */
+  .history{
+    .tab_period{display:flex; flex-wrap:wrap; margin-top:20px;
+      .period_item{flex:0 0 25%; font-size:16px; line-height:60px; text-align:center; 
+        $g:&;          
+        &.active{ 
+          button{color:#fff; background-color:#476dc3;}
+        }
+        button{display: block; width:calc(100% - 4px);  margin:0 2px 4px 2px; box-sizing:border-box; border:1px solid #e0e0e0; background-color:#f6f7f8; color:#222;
+          @at-root #{$g}:nth-of-type(1) button{margin-left:0; width:calc(100% - 2px);}
+          @at-root #{$g}:nth-of-type(2) button{}
+          @at-root #{$g}:nth-of-type(3) button{}
+          @at-root #{$g}:nth-of-type(4) button{margin-right:0; width:calc(100% - 2px);}
+          @at-root #{$g}:nth-of-type(5) button{margin-left:0; width:calc(100% - 2px);}
+        }
+        
       }
     }
-    .height_470{
-      li{
-        dl{margin:28px; flex:1 0 auto; word-break: break-all; hyphens: auto;
-          dt{margin-bottom:16px; font-size:20px; line-height:20px; font-weight:500; }
-          dd{line-height:20px;}
+    .historyData{ display:none;
+      &.active{display:block; }
+      .period_data{border-top:2px solid #222; 
+        .period_data_item{padding:24px 15px; border-bottom:1px solid #e0e0e0; display:flex; align-items:center;
+          .year{margin-right:180px; font-size:44px; font-weight:500; color:#476dc3;}
+          .data{line-height:22px;
+            .dataItem{}
+          }
         }
       }
+    }//.historyData End
+  }
+
+  /* 인증현황  corp > bbs_list_certification_status*/
+  .big_img{width:560px; height:740px; background:#fff; 
+    .pop_header{height:48px; background-color:#283f83; color:#fff; font-size:20px; line-height:48px; text-align:left; padding-left:60px; 
+
     }
+    .conts_img{box-sizing:border-box; width:100%; height:calc(100% - 48px); padding:30px 60px; border:1px solid #d9d9d9; border-top:0 none;
+      h2{font-size:24px; line-height:34px; font-weight:500; @include ell2;}
+      img{width:100%; height:calc(100% - 60px);}
+    }
+  }
 
-    /*공단미션 비전*/
-    .contents_sub_box {
-      .missionVission{position:relative; 
-        &:before{
-          position:absolute; z-index:-1; left:70px; top:0; content:""; width:0; height:100%; border-left:1px solid #dddddd;
+  /*공단현황 조직안내 corp >  cntns_organizationChart.html*/
+  &.organization{ 
+    .flow_chart{position:relative;
+      .organ_depth1{
+        .organ_1{margin-bottom:95px; //#1 - .organ_2_1:before
+          h2{ margin:0 auto; width:186px; height:186px; border-radius:50%; @include alignFelxCenter;color:#fff; font-weight:200;
+            &.organ_1_1{margin-bottom:-26px; background-color:rgba(240, 30, 120, 0.8);
+              &:after{ position:absolute; left:100px; background-color:#ccc; @include afterBefore(('_width':calc(50% - 100px), '_height':1px,'_border':0 none, '_border-radius':0, '_padding':0 )); transform:translate(-48px, 80px); }
+            }
+            &.organ_1_2{background-color:rgba(50, 50, 50, 0.8); position:relative;
+              &:before{@include afterBefore(('_width':1px, '_height':60px, '_border':0 none, '_border-radius':0, '_padding':0 )); position:absolute; left:50%; bottom:-60px; background-color:#ccc;}
+            }
+          }
         }
-        .msVs{padding-left:16px; display: flex; align-items: center;
-          .tit{display:flex; justify-content: center; align-items: center; width:110px; height:110px; border-radius:50%; background-color:#eeeeee; font-size:18px; line-height:22px; margin-right:104px;
-            span{display:block; text-align:center; }
-          }
-          .list_boxes{margin:0 auto; text-align: center;  padding-right:70px; width:calc(100% - 204px); /* .titl width: 110px; margin-right:104px; padding-right:70px;*/
-
-          }
-          &:nth-child(1){ 
-            .list_boxes{
-              font-size:20px; 
-              em{font-size:30px; font-weight:500;
-                strong{font-weight:700; color:#283f83; }
+        $_circle_val : 94px;
+        .organ_2{ @include flex-box( ('flex_val':0 1 auto, 'justify_val':space-between, 'align_val':flex-start, 'a_margin':0 4px, '_wrap':nowrap) ); 
+          .organ_2s{
+            li{ 
+              a{width:$_circle_val; height:$_circle_val; border-radius:50%;color:#fff; font-weight:200; @include alignFelxCenter; flex-direction: column;
+                .line{display:block; height:20px; line-height:20px;}
+                .line1{}
+                .line2{}
               }
             }
           }
-          &:nth-child(2){
-            .list_boxes{
-              .circle_outer {display:flex; justify-content: center; align-items: flex-start;
-                .circle_boxes { display: flex; justify-content: center ; align-items:center; flex:0 0 26%; border-radius:50%; padding:24px; margin:0 -10px;  color:#fff;
-                  &:before{content:""; display:inline-block; width:0; padding-top:100%;}
-                  &:nth-child(odd){background-color:rgba(50, 50, 50, 0.8); }
-                  &:nth-child(even){background-color:rgba(240, 30, 120, 0.8); }
-                  .txt_list{display:inline-block;  vertical-align: top; font-size:18px; line-height:22px; font-weight:300;
-                    li{margin-bottom:14px;}
-                  }
-                  b{display:block; height:22px; }
-                  span{display:block; height:22px;}
-                  
-                }
-              }
+          .organ_2_1{@extend .organ_2; position:relative; 
+            &:before{position:absolute; left:calc($_circle_val / 2)+4px; top:-268px; @include afterBefore(('_width':1px, '_height':95px + 186px - 13px,'_border':0 none, '_border-radius':0, '_padding':0 )); //#1 
+              background-color:#ccc; 
+            }
+            >:nth-child(1){
+              a{flex:0 0 auto; background-color:rgba(85,178,255,1);}
             }
           }
-          &:nth-child(3){background-color:rgba(200,200,200, 0.3); padding:30px 0 30px 16px; 
-            .tit{background-color:#fff;}
-            .list_boxes{
-              ul{display: flex; justify-content: center; align-items: flex-start; 
-                li{ display: flex; justify-content: center; align-items:center; flex:0 0 24%; padding:120px 0 0 0; margin:0 3px; background-color:#fff;
-                  &:nth-child(1){background:#fff url(../images/sub/corp/mission_ico_01.png) no-repeat 50% 20%; }
-                  &:nth-child(2){background:#fff url(../images/sub/corp/mission_ico_02.png) no-repeat 50% 20%; }
-                  &:nth-child(3){background:#fff url(../images/sub/corp/mission_ico_03.png) no-repeat 50% 20%; }
-                  &:nth-child(4){background:#fff url(../images/sub/corp/mission_ico_04.png) no-repeat 50% 20%; }
-                  span{ box-sizing:border-box; width:100%; display:block; padding:30px 20px; font-size:16px; line-height:20px; background-color:#476dc2; color:#fff;
-                  }
-                }
-              }
+          .organ_2_2{@include flex-box( ('flex_val':1 0 auto, 'justify_val':flex-start, 'align_val':center, 'a_margin':0 4px, '_wrap':wrap) );
+            
+            >:nth-child(n){position:relative;
+              &:before{@include afterBefore(('_width':1px, '_height':35px,'_border':0 none, '_border-radius':0, '_padding':0 )); position:absolute; left:calc($_circle_val / 2); top:-35px;background-color:#ccc; }
+              &:after{@include afterBefore(('_width':100%, '_height':1px,'_border':0 none, '_border-radius':0, '_padding':0 )); position:absolute; left:0; top:-35px;background-color:#ccc;}
             }
-          }
-          &:nth-child(4){
-            .list_boxes{
-              ul{display: flex; justify-content: center; align-items: flex-start; 
-                li{ display: flex; justify-content: center;  flex:0 0 24%; padding:0; border-radius:50%; margin:0 3px; background-color:#fff;
-                  &:before{content:""; display:inline-block; width:0; padding-top:100%;}
-                  span{display:flex; align-items: center; color:#fff;}
-                  &:nth-child(1){background:#87cfff;}
-                  &:nth-child(2){background:#527ee1;}
-                  &:nth-child(3){background:#2d51b1;}
-                  &:nth-child(4){background:#10278d;}
-                }
-              }
+            >:nth-child(1){
+              &:after{left:49px;}
+              a{background-color:rgba(55,154,255,1);}
             }
-          }
-        }
-        aside{background-color:#eee; padding:30px; margin-top:50px;
-          h1{margin-bottom:24px; font-size:18px; line-height:26px; text-align:center; 
-            em{color:#283f83;font-size:24px;}
-          }
-        }
-      }
-    }
-    
-    /* 연혁 history */
-    .history{
-      .tab_period{display:flex; flex-wrap:wrap; margin-top:20px;
-        .period_item{flex:0 0 25%; font-size:16px; line-height:60px; text-align:center; 
-          $g:&;          
-          &.active{ 
-            button{color:#fff; background-color:#476dc3;}
-          }
-          button{display: block; width:calc(100% - 4px);  margin:0 2px 4px 2px; box-sizing:border-box; border:1px solid #e0e0e0; background-color:#f6f7f8; color:#222;
-            @at-root #{$g}:nth-of-type(1) button{margin-left:0; width:calc(100% - 2px);}
-            @at-root #{$g}:nth-of-type(2) button{}
-            @at-root #{$g}:nth-of-type(3) button{}
-            @at-root #{$g}:nth-of-type(4) button{margin-right:0; width:calc(100% - 2px);}
-            @at-root #{$g}:nth-of-type(5) button{margin-left:0; width:calc(100% - 2px);}
-          }
-          
-        }
-      }
-      .historyData{ display:none;
-        &.active{display:block; }
-        .period_data{border-top:2px solid #222; 
-          .period_data_item{padding:24px 15px; border-bottom:1px solid #e0e0e0; display:flex; align-items:center;
-            .year{margin-right:180px; font-size:44px; font-weight:500; color:#476dc3;}
-            .data{line-height:22px;
-              .dataItem{}
+            >:nth-child(2){
+              a{background-color:rgba(69,113,221,1);}
             }
-          }
-        }
-      }//.historyData End
-    }
+            >:nth-child(3){
+              a{background-color:rgba(52,94,214,1);}
+            }
+            >:nth-child(4){
+              a{background-color:rgba(45,81,177,1);}
+            }
+            >:nth-child(5){
 
-    /* 인증현황 */
-    .big_img{width:560px; height:740px; background:#fff; 
-      .pop_header{height:48px; background-color:#283f83; color:#fff; font-size:20px; line-height:48px; text-align:left; padding-left:60px; 
-
-      }
-      .conts_img{box-sizing:border-box; width:100%; height:calc(100% - 48px); padding:30px 60px; border:1px solid #d9d9d9; border-top:0 none;
-        h2{font-size:24px; line-height:34px; font-weight:500; @include ell2;}
-        img{width:100%; height:calc(100% - 60px);}
+              a{background-color:rgba(28,60,161,1);}
+            }
+            >:nth-child(6){
+              a{background-color:rgba(16, 39, 141,1);}
+            }
+            >:nth-child(7){
+              a{background-color:rgba(5,17,109,1);}
+            }
+            >:nth-child(8){
+              &:after{left:-50%;}
+              a{background-color:rgba(2,8,86,1);}
+            }
+          }
+        }
       }
     }
-}
+    .table{margin-top:44px;
+      table{
+        th{
+          span{display:inline;
+            @include maxWidth(640px){            
+              display:block; 
+            }
+          }
+          &:first-child{
+            @include maxWidth(450px){            
+             width:13%;
+            }
+          }
+        }
+        th,td{border:1px solid #dddddd;
+          &:first-child{border-left:0 none;}
+          &:last-child {border-right:0 none;}
+        }
+      }
+    }
+  }
+} // .page End 
+
+
 .cntnsMngDeprt{ margin-top: 70px; padding: 42px 0 35px 0; border-top: 1px solid #dfdfdf; 
   footer{margin-bottom:34px;
     address{display:flex; justify-content: center;
