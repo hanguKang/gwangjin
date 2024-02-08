@@ -1,6 +1,6 @@
 @include maxWidth($m720){
   /*--------- 모바일은 점수를 높여서(header.header) pc에 의해서 방해받지 않고 표현되도록 한다. ---------*/
-  header.header{height:70px; background-color:#ffffff; 
+  header.header{height:auto; background-color:#ffffff; box-shadow:0 5px 5px rgba(0,0,0,0.3);
     &.active {border-radius:0;
       &:before {top:55px;}
     }

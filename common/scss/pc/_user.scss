@@ -6,7 +6,7 @@
   }//주의 사항 End 
   .usr_guide_text{padding:10px;}
    $margin_btm:15px;
-  .user_box{display:flex; justify-content: space-between; align-items:stretch;
+  .user_box{display:flex; justify-content: space-between; align-items:stretch; flex-wrap:wrap;
     article{flex:0 0 50%; display:flex; align-items:stretch; justify-content: flex-start;
       .border_box{padding:25px;
         h1{margin-bottom:$margin_btm; font-size:26px; line-height:1.25; text-align:center;}
@@ -38,22 +38,41 @@
           }
         }
       }
+      @include maxWidth($m720){margin-bottom:20px; 
+        .border_box{width:100%;margin-right:0;
+          
+        }
+      }
     }
     .user_right_box{ 
       .border_box{  display:flex; margin-left:5px; width:calc(100% - 5px); 
         ul{ flex:0 0 100%; margin-top:calc(32.5px + $margin_btm); margin-bottom:40px; display:flex; flex-direction:column; align-items:stretch; justify-content:space-between; 
           li{display: flex; flex:0 0 46%; background-color: #eeeeee;
             a{ flex:1 0 auto; display:flex;
-            .ico{flex:0 0 25%; background-color:#476dc3; background-image: url(../images/sub/login/ico_user_wt.png); background-repeat: no-repeat;  background-position: 50% 50%; }
-            .txt_box{flex: 0 0 75%; padding-left:85px; display:flex; flex-direction:column; align-items: flex-start; justify-content:center; 
-              strong{font-weight:600; font-size:18px; line-height:1.25;}
-              em{display:block; font-size:16px; line-height:1.25;}
-            }
+              .ico{flex:0 0 25%; background-color:#476dc3; background-image: url(../images/sub/login/ico_user_wt.png); background-repeat: no-repeat;  background-position: 50% 50%; }
+              .txt_box{flex: 0 0 75%; padding-left:85px; display:flex; flex-direction:column; align-items: flex-start; justify-content:center; 
+                strong{font-weight:600; font-size:18px; line-height:1.25;}
+                em{display:block; font-size:16px; line-height:1.25;}
+              }
             }
             &:last-child{
               a{
                 .ico{background-image: url(../images/sub/login/ico_find_wt.png);}
               }
+            }
+          }
+        }
+      }
+      @include maxWidth($m720){
+        .border_box{ margin-left:0; width:100%; 
+          ul{
+            li{margin-bottom:15px; 
+              a{
+                .txt_box{
+                  padding-left:10px;
+                }  
+              }
+              
             }
           }
         }
@@ -67,15 +86,25 @@
         p{
           span{display:block;}
         }
-        .btn_box{display:flex;  margin-top:24px;  
-          a{flex:1 1 50%; margin:0 4px; height:68px;background-color:#476dc3; color:#fff; text-align:center; line-height:68px;
-            &.cancel{background-color:#555;}
+        .btn_box{display:flex;  margin-top:24px;  flex-wrap:wrap;
+          a{flex:1 1 50%; height:60px; background-color:transparent;
+            span{display:block; background-color:#476dc3; color:#fff; text-align:center; line-height:60px;}
+            &.cancel{
+              span{margin-left:6px; background-color:#555;}
+            }
+            &:first-child{
+              span{margin-right:6px;}
+            }
           }
           &.basic{
             a{
-              &.cancel{background-color:#555;}
+              &.cancel{}
             }
           }
+          @include maxWidth($m720){
+            a{ margin-bottom:15px;}
+          }
+          
         }
       }
       .user_left_box{
@@ -87,9 +116,22 @@
         .border_box{display:block;}
       }
     }//join End
+
+    
   }// .user_box End 
 
   .join_ste1{
+    
+  }
+
+  @include maxWidth(540px){
+    .caution{padding:15px 20px;
+      .ico_user{flex:0 0 20%; margin-right:10px; }
+      .txt{flex:0 0 80%;}
+    }
+    .user_box{
+      article{flex:0 0 100%;}
+    }
     
   }
 }

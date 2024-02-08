@@ -28,8 +28,8 @@
         </div>
         <!-- 헤더 -->
         <header class="header">
-          <div class="hd_top pc">
-              <ul>
+          <div class="hd_top">
+              <ul class="pc">
                   <li>
                       <a href="#">광진구시설관리공단</a>
                   </li>
@@ -43,13 +43,18 @@
               <ol class="util">
                   <li><a href="#">로그인</a></li>
                   <li><a href="#">회원가입</a></li>
-                  <li> <a href="#" class="btn_sitemap_open"><span class="hide">사이트맵 열기</span></a></li>
+                  <li class="pc"> <a href="#" class="btn_sitemap_open"><span class="hide">사이트맵 열기</span></a></li>
               </ol>
           </div>
           <div class="layer_gnb">
             <div id="gnb" class="gnb">
               <h1 class="logo"><a href="#"><span class="hide">로고</span></a></h1>
-              <p class="mo showNav"><button title="메뉴보기" type="button"><span class="hide">메뉴보기</span></button></p>
+              <p class="mo showNav">
+                <button>
+                  <i><span class="hide">메뉴보기</span></i>
+                </button>
+              </p>
+              <div class="mo curtain"></div>
               <nav>
                 <div class="mo"><p class="link_home"><a href="#"><span class="hide">홈으로 이동</span></a></p></div>
                 <h1 class="hide">글로벌 네비게이터</h1>
@@ -70,7 +75,7 @@
                         <div class="dep2_wrap">                          
                           <div class="nav_item_tit">
                               <h2>시설 안내</h2>
-                              <img src="../../common/images/gnb_tit_icon_1.png" alt="시설안내 아이콘">
+                              <img src="../common/images/gnb_tit_icon_1.png" alt="시설안내 아이콘">
                           </div>
                           <ul class="dep2">
                               <li><a href="#" class="menu_btn">문화/공공체육시설</a></li>
@@ -84,7 +89,7 @@
                         <div class="dep2_wrap">
                             <div class="nav_item_tit">
                                 <h2>정보마당</h2>
-                                <img src="../../common/images/gnb_tit_icon_1.png" alt="정보마당 아이콘">
+                                <img src="../common/images/gnb_tit_icon_1.png" alt="정보마당 아이콘">
                             </div>
                             <ul class="dep2">
                                 <li class="on"><a href="#" class="menu_btn">공지사항</a></li>
@@ -101,7 +106,7 @@
                         <div class="dep2_wrap">
                             <div class="nav_item_tit">
                                 <h2>고객광장</h2>
-                                <img src="../../common/images/gnb_tit_icon_1.png" alt="고객광장 아이콘">
+                                <img src="../common/images/gnb_tit_icon_1.png" alt="고객광장 아이콘">
                             </div>
                             <ul class="dep2">
                                 <li><a href="#" class="menu_btn">고객의 소리</a></li>
@@ -117,7 +122,7 @@
                         <div class="dep2_wrap">
                           <div class="nav_item_tit">
                               <h2>지속가능성 경영</h2>
-                              <img src="../../common/images/gnb_tit_icon_1.png" alt="지속가능성 경영 아이콘">
+                              <img src="../common/images/gnb_tit_icon_1.png" alt="지속가능성 경영 아이콘">
                           </div>
                           <ul class="dep2">
                               <li>
@@ -188,7 +193,7 @@
                         <div class="dep2_wrap">
                             <div class="nav_item_tit">
                                 <h2>공단소개</h2>
-                                <img src="../../common/images/gnb_tit_icon_1.png" alt="공단소개 아이콘">
+                                <img src="../common/images/gnb_tit_icon_1.png" alt="공단소개 아이콘">
                             </div>
                             <ul class="dep2">
                                 <li>
@@ -221,14 +226,14 @@
                         </div>
                       </li>
                 </ul>
-                <button class="mo close" title="메뉴닫기" type="button"><span class="hide"> 전체메뉴 닫기</span></button>
+                <button class="mo close"><span class="hide">닫기</span></button>
               </nav>
             </div>
           </div>
         </header><!-- header End -->
 
         <main class="sub">
-            <div class="page_spot sub1">
+            <div class="page_spot sub1 corp">
               <h1 class="sub_title">연혁</h1>
             </div>
             <div class="contents_sub_box center_box_pc">
@@ -292,221 +297,224 @@
                 </header>
                 <!-- 컨텐츠 시작 부분-->
                 <div class="history page">
-                  <div class="tab_period_outer tab_list_outer">
-                    <ul class="tab_period tab_list m_tab">
-                      <li class="period_item active tab_item"><button><span>2004 ~ 2008</span></button></li>
-                      <li class="period_item tab_item"><button><span>2009 ~ 2013</span></button></li>
-                      <li class="period_item tab_item"><button><span>2014 ~ 2018</span></button></li>
-                      <li class="period_item tab_item"><button><span>2019 ~ 2022</span></button></li>
-                      <li class="period_item tab_item"><button><span>2023</span></button></li>
-                    </ul>
-                  </div>
-                  <div class="tab_conts_list">
-                    <section class="historyData tab_contents active" id="showHistory_0"><!--    2004 ~ 2008 -->
-                      <h1 class="hide">2004년 ~ 2008년 변천사</h1>
-                      <ol class="period_data">
-                        <li class="period_data_item">
-                          <strong class="year">2004</strong>
-                          <ul class="data">
-                            <li class="dataItem dot"><time data-time="2004-02-16">02.16</time>  <span>광진구 주차장 수탁운영</span></li>
-                            <li class="dataItem dot"><time data-time="2004-01-07">01.07</time> <span>서울특별시 광징구시설관리공단 창립</span></li> 
-                            <li class="dataItem dot"><time data-time="2004-02-16">01.03</time> <span>초대이사장 취임(김성현)</span></li>
-                          </ul>
-                        </li>
-                        <li class="period_data_item">
-                          <strong class="year">2005</strong>
-                          <ul class="data">
-                            <li class="dataItem dot"><time data-time="2005-08-01">08.01</time> <span>광진정보도서관 수탁운영</span></li>
-                            <li class="dataItem dot"><time data-time="2005-05-02">05.02</time> <span>광진문화예술회관 수탁운영</span></li>
-                          </ul>
-                        </li>
-                        <li class="period_data_item">
-                          <strong class="year">2006</strong>
-                          <ul class="data">
-                            <li class="dataItem dot"><time data-time="2006-07-01">07.01</time> <span>한국서비스품질우수기업 인증</span></li>
-                            <li class="dataItem dot"><time data-time="2006-05-24">05.24</time> <span>광진구체육센터 수탁운영</span></li>
-                          </ul>
-                        </li>
-                        <li class="period_data_item">
-                          <strong class="year">2007</strong>
-                          <ul class="data">
-                            <li class="dataItem dot"><time data-time="2007-07-01">07.01</time> <span>나루아트센터 수탁운영</span></li>
-                            <li class="dataItem dot"><time data-time="2007-05-24">01.08</time> <span>제2대 이사장 취임(박주경)</span></li>
-                          </ul>
-                        </li>
-                        <li class="period_data_item">
-                          <strong class="year">2008</strong>
-                          <ul class="data">
-                            <li class="dataItem dot"><time data-time="2008-10-01">10.01</time> <span>중곡문화체육센터 수탁운영</span></li>
-                            <li class="dataItem dot"><time data-time="2008-06-27">06.27</time> <span>자양제4동 도서관 수탁운영</span></li>
-                          </ul>
-                        </li>
-                      </ol>
-                    </section>
-                    <section class="historyData tab_contents" id="showHistory_1"><!--    2009 ~ 2013 -->
-                      <h1 class="hide">2009년 ~ 2013년 변천사</h1>
-                      <ol class="period_data">
-                        <li class="period_data_item">
-                          <strong class="year">2010</strong>
-                          <ul class="data">
-                            <li class="dataItem dot"><time data-time="2010-10-11">10.11</time> <span>제3대 이사장 취임(이기석)</span></li>
-                            <li class="dataItem dot"><time data-time="2010-06-21">06.21</time> <span>제4회 도서관현장발전 우수상(문화체육관광부)</span></li>
-                          </ul>
-                        </li>
-                        <li class="period_data_item">
-                          <strong class="year">2011</strong>
-                          <ul class="data">
-                            <li class="dataItem dot"><time data-time="2011-12-28">07.01</time> <span>환경경영시스템(ISO 14001)인증</span></li>
-                            <li class="dataItem dot"><time data-time="2011-11-18">05.24</time> <span>안전보건경영시스템(KOSHA 18001)인증</span></li>
-                          </ul>
-                        </li>
-                        <li class="period_data_item">
-                          <strong class="year">2012</strong>
-                          <ul class="data">
-                            <li class="dataItem dot"><time data-time="2012-12-02">12.02</time> <span>생산성경영체제 Level 5 인증(지식경제부장관)</span></li>
-                            <li class="dataItem dot"><time data-time="2012-12-03">12.03</time> <span>한국서비스품질 우수기관 인증획득</span></li>
-                            <li class="dataItem dot"><time data-time="2012-05-15">05.15</time> <span>아차산배수지체육공원 인조잔디축구장 수탁운영</span></li>
-                          </ul>
-                        </li>
-                        <li class="period_data_item">
-                          <strong class="year">2013</strong>
-                          <ul class="data">
-                            <li class="dataItem dot"><time data-time="2013-12-01">12.01</time> <span>책읽는 서울 '한도서관 한책읽기' 서울시장 표창</span></li>
-                            <li class="dataItem dot"><time data-time="2013-11-07">11.07</time> <span>생산성경영시스템(Level 5) 인증(사후심사)</span></li>
-                            <li class="dataItem dot"><time data-time="2013-09-04">09.04</time> <span>제37회 국가생산성대회 장관표창(미래경영부문) 챔피언 경진대회 회장상 수상</span></li>
-                            <li class="dataItem dot"><time data-time="2013-07-01">07.01</time> <span>아차산배수지체육공원 수탁운영(풋살장, 족구장)</span></li>
-                          </ul>
-                        </li>
-                      </ol>
-                    </section>
-                    <section class="historyData tab_contents" id="showHistory_2"><!--    2014 ~ 2018 -->
-                      <h1 class="hide">2014년 ~ 2018년 변천사</h1>
-                      <ol class="period_data">
-                        <li class="period_data_item">
-                          <strong class="year">2014</strong>
-                          <ul class="data">
-                            <li class="dataItem dot"><time data-time="2014-12-15">12.15</time>  <span>생산성경영시스템(Level 5 plus) 인증 (사후 심사)</span></li>
-                            <li class="dataItem dot"><time data-time="2014-11-18">11.18</time> <span>민방위 훈련 우수단체 표창(소방방재청)</span></li> 
-                            <li class="dataItem dot"><time data-time="2014-10-29">10.29</time> <span>2014년 전국도서관 운영평가 대통령상 수상</span></li>
-                            <li class="dataItem dot"><time data-time="2014-09-03">09.03</time>  <span>국가생산성 경진대회 장려상 수상(한국생산성본부)</span></li>
-                            <li class="dataItem dot"><time data-time="2014-03-14">03.14</time> <span>광진정보도서관 무한상상실 시범운영 우수기관 선정(미래창조과학부)</span></li> 
-                            <li class="dataItem dot"><time data-time="2014-02-01">02.01</time> <span>구의제3동도서관 수탁운영</span></li>
-                          </ul>
-                        </li>
-                        <li class="period_data_item">
-                          <strong class="year">2015</strong>
-                          <ul class="data">
-                            <li class="dataItem dot"><time data-time="2015-12-30">12.30</time> <span>2015년 우수공공체육시설(구민체육센터) 선정(문화체육관광부)</span></li>
-                            <li class="dataItem dot"><time data-time="2015-11-10">11.10</time> <span>무재해 1배수 달성 인증</span></li>
-                            <li class="dataItem dot"><time data-time="2015-11-01">11.01</time> <span>공연장(나루아트센터) 수탁 종료</span></li>
-                            <li class="dataItem dot"><time data-time="2015-09-09">09.09</time> <span>제39회 국가생산성대회 한국생산성본부 회장 표창 국가생산성대상 챔피언경진대회 장려상 수상</span></li>
-                            <li class="dataItem dot"><time data-time="2015-05-13">05.13</time> <span>제4대 이사장 취임(이명래)</span></li>
-                          </ul>
-                        </li>
-                        <li class="period_data_item">
-                          <strong class="year">2016</strong>
-                          <ul class="data">
-                            <li class="dataItem dot"><time data-time="2016-10-26">10.26</time> <span>2016년도 전국도서관 운영평가 문화체육관광부 장관상(광진정보 도서관)</span></li>
-                            <li class="dataItem dot"><time data-time="2016-10-26">10.26</time> <span>2016년도 전국도서관 운영평가 국무총리상(중곡문화체육센터 도서관)</span></li>
-                            <li class="dataItem dot"><time data-time="2016-10-12">10.12</time> <span>2016년도 날씨경영 우수기업 선정</span></li>
-                            <li class="dataItem dot"><time data-time="2016-09-25">09.25</time> <span>제40회 국가생산성대회 한국생산성본부 회장 표창 국가생산성대상 챔피언경진대회 장려상 수상</span></li>
-                          </ul>
-                        </li>
-                        <li class="period_data_item">
-                          <strong class="year">2017</strong>
-                          <ul class="data">
-                            <li class="dataItem dot"><time data-time="2017-12-19">12.19</time> <span>여성가족부 주관 가족친화기관 인증</span></li>
-                            <li class="dataItem dot"><time data-time="2017-10-18">10.18</time> <span>제41회 국가생산성대회 서비스우수기업 장관 표창 국가생산성대회 한국생산성본부 회장상
-                            </span></li>
-                            <li class="dataItem dot"><time data-time="2017-09-22">09.22</time> <span>인적자원개발 우수기관(Best-HRD) 인증</span></li>
-                            <li class="dataItem dot"><time data-time="2017-09-13">09.13</time> <span>한국서비스품질 우수기업 재인증</span></li>
-                            <li class="dataItem dot"><time data-time="2017-05-31">05.31</time> <span>실내공기질 우수시설 선정</span></li>
-                            <li class="dataItem dot"><time data-time="2017-05-29">05.29</time> <span>안전보건경영시스템 재인증(7년 연속)</span></li>
-                            <li class="dataItem dot"><time data-time="2017-05-23">05.23</time> <span>무재해 2배 인증</span></li>
-                            <li class="dataItem dot"><time data-time="2017-04-27">04.27</time> <span>아차산배수지 체육시설 수탁운영 체결(테니스장, 정구장)</span></li>
-                            <li class="dataItem dot"><time data-time="2017-03-25">03.25</time> <span>에너지유공 산업통상자원부장관 표창
-                            </span></li>
-                            <li class="dataItem dot"><time data-time="2017-01-01">01.01</time> <span>광장동 실내배드민턴장 수탁운영 체결</span></li>
-                          </ul>
-                        </li>
-                        <li class="period_data_item">
-                          <strong class="year">2018</strong>
-                          <ul class="data">
-                            <li class="dataItem dot"><time data-time="2018-12-14">12.14</time> <span>소비자중심경영(CCM) 인증
-                            </span></li>
-                            <li class="dataItem dot"><time data-time="2018-11-18">11.18</time> <span>제44회 국가품질경영대회 산업통상자원부 장관 표창</span></li>
-                            <li class="dataItem dot"><time data-time="2018-11-08">11.08</time> <span>한국서비스품질 우수기업 재인증</span></li>
-                            <li class="dataItem dot"><time data-time="2018-10-24">10.24</time> <span>2018년도 전국도서관 운영평가 대통령상 수상</span></li>
-                            <li class="dataItem dot"><time data-time="2018-07-25">07.25</time> <span>안전보건경영시스템(KOSHA18001) 8년 연속 인증 유지</span></li>
-                            <li class="dataItem dot"><time data-time="2018-06-14">06.14</time> <span>환경정보공개대상 환경부 장관 표창</span></li>
-                            <li class="dataItem dot"><time data-time="2018-05-28">05.28</time> <span>무재해 3배수 달성</span></li>                          
-                          </ul>
-                        </li>
-                      </ol>
-                    </section>
-                    <section class="historyData tab_contents" id="showHistory_3"><!--    2019 ~ 2022 -->
-                      <h1 class="hide">2019년 ~ 2022년 변천사</h1>
-                      <ol class="period_data">
-                        <li class="period_data_item">
-                          <strong class="year">2019</strong>
-                          <ul class="data">
-                            <li class="dataItem dot"><time data-time="2019-12-31">12.31</time>  <span>웹접근성 품질 인증(과학기술정보통신부)</span></li>
-                            <li class="dataItem dot"><time data-time="2019-12-03">12.03</time> <span>생존수영 교육수영장 안전인증</span></li> 
-                            <li class="dataItem dot"><time data-time="2019-08-20">08.20</time> <span>안전보건경영시스템(KOSHA18001) 9년 연속 인증 유지</span></li>
-                            <li class="dataItem dot"><time data-time="2019-08-08">08.08</time> <span>제5대 이사장 취임(김상국)</span></li> 
-                            <li class="dataItem dot"><time data-time="2019-05-03">05.03</time> <span>지방공기업 발전 ‘사회적 가치 공헌’ 유공 행정안전부 장관 표창</span></li>
-                          </ul>
-                        </li>
-                        <li class="period_data_item">
-                          <strong class="year">2020</strong>
-                          <ul class="data">
-                            <li class="dataItem dot"><time data-time="2020-12-31">12.31</time>  <span>서울시민카드 이용활성화 기관평가 최우수상 수상</span></li>
-                            <li class="dataItem dot"><time data-time="2020-11-30">11.30</time> <span>여성가족부 가족친화경영 재인증</span></li> 
-                            <li class="dataItem dot"><time data-time="2020-11-30">11.30</time> <span>보건복지부 지역사회공헌 인정제 인증 획득</span></li>
-                            <li class="dataItem dot"><time data-time="2020-11-25">11.25</time> <span>폭력예방교육 우수기관 여성가족부 장관 표창</span></li> 
-                            <li class="dataItem dot"><time data-time="2020-10-28">10.28</time> <span>전국도서관운영평가 문화체육관광부 특별상(장관상) 수상</span></li>
-                            <li class="dataItem dot"><time data-time="2020-09-28">09.28</time> <span>인적자원개발 우수기관(Best-HRD) 재인증</span></li> 
-                            <li class="dataItem dot"><time data-time="2020-08-06">08.06</time> <span>한국산업안전보건공단 KOSHA-MS 인증 획득</span></li>
-                            <li class="dataItem dot"><time data-time="2020-07-13">07.13</time> <span>ISO 10002 고객만족경영시스템 인증 획득</span></li> 
-                            <li class="dataItem dot"><time data-time="2020-06-03">06.03</time> <span>구의2동 주택가 공동주차장 ‘범죄예방 우수시설’인증 획득
-                            </span></li>
-                          </ul>
-                        </li>
-                        <li class="period_data_item">
-                          <strong class="year">2021</strong>
-                          <ul class="data">
-                            <li class="dataItem dot"><time data-time="2021-12-20">12.20</time>  <span>광진구민체육센터 ‘범죄예방 우수시설’인증 획득</span></li>
-                            <li class="dataItem dot"><time data-time="2021-12-03">12.03</time> <span>보건복지부 지역사회공헌 인정제 재인증</span></li> 
-                            <li class="dataItem dot"><time data-time="2021-12-01">12.01</time> <span>교육기부 우수기관 및 동아리 인증제 획득</span></li>
-                            <li class="dataItem dot"><time data-time="2021-12-01">12.01</time> <span>한국서비스품질우수기업 재인증</span></li> 
-                            <li class="dataItem dot"><time data-time="2021-11-02">11.02</time> <span>제45회 국가생산성대회 산업통상자원부 장관 표창</span></li>
-                            <li class="dataItem dot"><time data-time="2021-06-03">06.03</time> <span>문화사업팀 수영장 「생존수영 교육수영장 안전인증」 획득</span></li> 
-                            <li class="dataItem dot"><time data-time="2021-02-13">02.13</time> <span>구민체육팀 수영장 「생존수영 교육수영장 안전인증」 획득</span></li>
-                          </ul>
-                        </li>
-                        <li class="period_data_item">
-                          <strong class="year">2022</strong>
-                          <ul class="data">
-                            <li class="dataItem dot"><time data-time="2007-07-01">07.01</time> <span>나루아트센터 수탁운영</span></li>
-                            <li class="dataItem dot"><time data-time="2007-05-24">01.08</time> <span>제2대 이사장 취임(박주경)</span></li>
-                          </ul>
-                        </li>                     
-                      </ol>
-                    </section>
-                    <section class="historyData tab_contents" id="showHistory_4"><!--   2023 -->
-                      <h1 class="hide">2023년 변천사</h1>
-                      <ol class="period_data">
-                        <li class="period_data_item">
-                          <strong class="year">2023</strong>
-                          <ul class="data">
-                            <li class="dataItem dot"><time data-time="2004-02-16">02.16</time>  <span>광진구 주차장 수탁운영</span></li>
-                            <li class="dataItem dot"><time data-time="2004-01-07">01.07</time> <span>서울특별시 광징구시설관리공단 창립</span></li> 
-                            <li class="dataItem dot"><time data-time="2004-02-16">01.03</time> <span>초대이사장 취임(김성현)</span></li>
-                          </ul>
-                        </li>
-                      </ol>
-                    </section>
-                  </div>                  
+                  <div class="tab_wrap">
+                    <nav class="tab_list_outer">
+                      <h1 class="hide">연혁 연도별 카테고리</h1>
+                      <ul class="tab_list">
+                        <li class="tab_item cnt4_more active"><a href="#" class="btn">2004 ~ 2008</a></li>
+                        <li class="tab_item cnt4_more"><a href="#" class="btn">2009 ~ 2013</a></li>
+                        <li class="tab_item cnt4_more"><a href="#" class="btn">2014 ~ 2018</a></li>
+                        <li class="tab_item cnt4_more"><a href="#" class="btn">2019 ~ 2022</a></li>
+                        <li class="tab_item cnt4_more"><a href="#" class="btn">2023</a></li>
+                      </ul>
+                    </nav>
+                    <div class="tab_conts_list tab_conts_list_clk">
+                      <section class="historyData tab_contents active" id="showHistory_0"><!--    2004 ~ 2008 -->
+                        <h1 class="hide">2004년 ~ 2008년 변천사</h1>
+                        <ol class="period_data">
+                          <li class="period_data_item">
+                            <strong class="year">2004</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2004-02-16">02.16</time>  <span>광진구 주차장 수탁운영</span></li>
+                              <li class="dataItem dot"><time data-time="2004-01-07">01.07</time> <span>서울특별시 광징구시설관리공단 창립</span></li> 
+                              <li class="dataItem dot"><time data-time="2004-02-16">01.03</time> <span>초대이사장 취임(김성현)</span></li>
+                            </ul>
+                          </li>
+                          <li class="period_data_item">
+                            <strong class="year">2005</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2005-08-01">08.01</time> <span>광진정보도서관 수탁운영</span></li>
+                              <li class="dataItem dot"><time data-time="2005-05-02">05.02</time> <span>광진문화예술회관 수탁운영</span></li>
+                            </ul>
+                          </li>
+                          <li class="period_data_item">
+                            <strong class="year">2006</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2006-07-01">07.01</time> <span>한국서비스품질우수기업 인증</span></li>
+                              <li class="dataItem dot"><time data-time="2006-05-24">05.24</time> <span>광진구체육센터 수탁운영</span></li>
+                            </ul>
+                          </li>
+                          <li class="period_data_item">
+                            <strong class="year">2007</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2007-07-01">07.01</time> <span>나루아트센터 수탁운영</span></li>
+                              <li class="dataItem dot"><time data-time="2007-05-24">01.08</time> <span>제2대 이사장 취임(박주경)</span></li>
+                            </ul>
+                          </li>
+                          <li class="period_data_item">
+                            <strong class="year">2008</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2008-10-01">10.01</time> <span>중곡문화체육센터 수탁운영</span></li>
+                              <li class="dataItem dot"><time data-time="2008-06-27">06.27</time> <span>자양제4동 도서관 수탁운영</span></li>
+                            </ul>
+                          </li>
+                        </ol>
+                      </section>
+                      <section class="historyData tab_contents" id="showHistory_1"><!--    2009 ~ 2013 -->
+                        <h1 class="hide">2009년 ~ 2013년 변천사</h1>
+                        <ol class="period_data">
+                          <li class="period_data_item">
+                            <strong class="year">2010</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2010-10-11">10.11</time> <span>제3대 이사장 취임(이기석)</span></li>
+                              <li class="dataItem dot"><time data-time="2010-06-21">06.21</time> <span>제4회 도서관현장발전 우수상(문화체육관광부)</span></li>
+                            </ul>
+                          </li>
+                          <li class="period_data_item">
+                            <strong class="year">2011</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2011-12-28">07.01</time> <span>환경경영시스템(ISO 14001)인증</span></li>
+                              <li class="dataItem dot"><time data-time="2011-11-18">05.24</time> <span>안전보건경영시스템(KOSHA 18001)인증</span></li>
+                            </ul>
+                          </li>
+                          <li class="period_data_item">
+                            <strong class="year">2012</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2012-12-02">12.02</time> <span>생산성경영체제 Level 5 인증(지식경제부장관)</span></li>
+                              <li class="dataItem dot"><time data-time="2012-12-03">12.03</time> <span>한국서비스품질 우수기관 인증획득</span></li>
+                              <li class="dataItem dot"><time data-time="2012-05-15">05.15</time> <span>아차산배수지체육공원 인조잔디축구장 수탁운영</span></li>
+                            </ul>
+                          </li>
+                          <li class="period_data_item">
+                            <strong class="year">2013</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2013-12-01">12.01</time> <span>책읽는 서울 '한도서관 한책읽기' 서울시장 표창</span></li>
+                              <li class="dataItem dot"><time data-time="2013-11-07">11.07</time> <span>생산성경영시스템(Level 5) 인증(사후심사)</span></li>
+                              <li class="dataItem dot"><time data-time="2013-09-04">09.04</time> <span>제37회 국가생산성대회 장관표창(미래경영부문) 챔피언 경진대회 회장상 수상</span></li>
+                              <li class="dataItem dot"><time data-time="2013-07-01">07.01</time> <span>아차산배수지체육공원 수탁운영(풋살장, 족구장)</span></li>
+                            </ul>
+                          </li>
+                        </ol>
+                      </section>
+                      <section class="historyData tab_contents" id="showHistory_2"><!--    2014 ~ 2018 -->
+                        <h1 class="hide">2014년 ~ 2018년 변천사</h1>
+                        <ol class="period_data">
+                          <li class="period_data_item">
+                            <strong class="year">2014</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2014-12-15">12.15</time>  <span>생산성경영시스템(Level 5 plus) 인증 (사후 심사)</span></li>
+                              <li class="dataItem dot"><time data-time="2014-11-18">11.18</time> <span>민방위 훈련 우수단체 표창(소방방재청)</span></li> 
+                              <li class="dataItem dot"><time data-time="2014-10-29">10.29</time> <span>2014년 전국도서관 운영평가 대통령상 수상</span></li>
+                              <li class="dataItem dot"><time data-time="2014-09-03">09.03</time>  <span>국가생산성 경진대회 장려상 수상(한국생산성본부)</span></li>
+                              <li class="dataItem dot"><time data-time="2014-03-14">03.14</time> <span>광진정보도서관 무한상상실 시범운영 우수기관 선정(미래창조과학부)</span></li> 
+                              <li class="dataItem dot"><time data-time="2014-02-01">02.01</time> <span>구의제3동도서관 수탁운영</span></li>
+                            </ul>
+                          </li>
+                          <li class="period_data_item">
+                            <strong class="year">2015</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2015-12-30">12.30</time> <span>2015년 우수공공체육시설(구민체육센터) 선정(문화체육관광부)</span></li>
+                              <li class="dataItem dot"><time data-time="2015-11-10">11.10</time> <span>무재해 1배수 달성 인증</span></li>
+                              <li class="dataItem dot"><time data-time="2015-11-01">11.01</time> <span>공연장(나루아트센터) 수탁 종료</span></li>
+                              <li class="dataItem dot"><time data-time="2015-09-09">09.09</time> <span>제39회 국가생산성대회 한국생산성본부 회장 표창 국가생산성대상 챔피언경진대회 장려상 수상</span></li>
+                              <li class="dataItem dot"><time data-time="2015-05-13">05.13</time> <span>제4대 이사장 취임(이명래)</span></li>
+                            </ul>
+                          </li>
+                          <li class="period_data_item">
+                            <strong class="year">2016</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2016-10-26">10.26</time> <span>2016년도 전국도서관 운영평가 문화체육관광부 장관상(광진정보 도서관)</span></li>
+                              <li class="dataItem dot"><time data-time="2016-10-26">10.26</time> <span>2016년도 전국도서관 운영평가 국무총리상(중곡문화체육센터 도서관)</span></li>
+                              <li class="dataItem dot"><time data-time="2016-10-12">10.12</time> <span>2016년도 날씨경영 우수기업 선정</span></li>
+                              <li class="dataItem dot"><time data-time="2016-09-25">09.25</time> <span>제40회 국가생산성대회 한국생산성본부 회장 표창 국가생산성대상 챔피언경진대회 장려상 수상</span></li>
+                            </ul>
+                          </li>
+                          <li class="period_data_item">
+                            <strong class="year">2017</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2017-12-19">12.19</time> <span>여성가족부 주관 가족친화기관 인증</span></li>
+                              <li class="dataItem dot"><time data-time="2017-10-18">10.18</time> <span>제41회 국가생산성대회 서비스우수기업 장관 표창 국가생산성대회 한국생산성본부 회장상
+                              </span></li>
+                              <li class="dataItem dot"><time data-time="2017-09-22">09.22</time> <span>인적자원개발 우수기관(Best-HRD) 인증</span></li>
+                              <li class="dataItem dot"><time data-time="2017-09-13">09.13</time> <span>한국서비스품질 우수기업 재인증</span></li>
+                              <li class="dataItem dot"><time data-time="2017-05-31">05.31</time> <span>실내공기질 우수시설 선정</span></li>
+                              <li class="dataItem dot"><time data-time="2017-05-29">05.29</time> <span>안전보건경영시스템 재인증(7년 연속)</span></li>
+                              <li class="dataItem dot"><time data-time="2017-05-23">05.23</time> <span>무재해 2배 인증</span></li>
+                              <li class="dataItem dot"><time data-time="2017-04-27">04.27</time> <span>아차산배수지 체육시설 수탁운영 체결(테니스장, 정구장)</span></li>
+                              <li class="dataItem dot"><time data-time="2017-03-25">03.25</time> <span>에너지유공 산업통상자원부장관 표창
+                              </span></li>
+                              <li class="dataItem dot"><time data-time="2017-01-01">01.01</time> <span>광장동 실내배드민턴장 수탁운영 체결</span></li>
+                            </ul>
+                          </li>
+                          <li class="period_data_item">
+                            <strong class="year">2018</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2018-12-14">12.14</time> <span>소비자중심경영(CCM) 인증
+                              </span></li>
+                              <li class="dataItem dot"><time data-time="2018-11-18">11.18</time> <span>제44회 국가품질경영대회 산업통상자원부 장관 표창</span></li>
+                              <li class="dataItem dot"><time data-time="2018-11-08">11.08</time> <span>한국서비스품질 우수기업 재인증</span></li>
+                              <li class="dataItem dot"><time data-time="2018-10-24">10.24</time> <span>2018년도 전국도서관 운영평가 대통령상 수상</span></li>
+                              <li class="dataItem dot"><time data-time="2018-07-25">07.25</time> <span>안전보건경영시스템(KOSHA18001) 8년 연속 인증 유지</span></li>
+                              <li class="dataItem dot"><time data-time="2018-06-14">06.14</time> <span>환경정보공개대상 환경부 장관 표창</span></li>
+                              <li class="dataItem dot"><time data-time="2018-05-28">05.28</time> <span>무재해 3배수 달성</span></li>                          
+                            </ul>
+                          </li>
+                        </ol>
+                      </section>
+                      <section class="historyData tab_contents" id="showHistory_3"><!--    2019 ~ 2022 -->
+                        <h1 class="hide">2019년 ~ 2022년 변천사</h1>
+                        <ol class="period_data">
+                          <li class="period_data_item">
+                            <strong class="year">2019</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2019-12-31">12.31</time>  <span>웹접근성 품질 인증(과학기술정보통신부)</span></li>
+                              <li class="dataItem dot"><time data-time="2019-12-03">12.03</time> <span>생존수영 교육수영장 안전인증</span></li> 
+                              <li class="dataItem dot"><time data-time="2019-08-20">08.20</time> <span>안전보건경영시스템(KOSHA18001) 9년 연속 인증 유지</span></li>
+                              <li class="dataItem dot"><time data-time="2019-08-08">08.08</time> <span>제5대 이사장 취임(김상국)</span></li> 
+                              <li class="dataItem dot"><time data-time="2019-05-03">05.03</time> <span>지방공기업 발전 ‘사회적 가치 공헌’ 유공 행정안전부 장관 표창</span></li>
+                            </ul>
+                          </li>
+                          <li class="period_data_item">
+                            <strong class="year">2020</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2020-12-31">12.31</time>  <span>서울시민카드 이용활성화 기관평가 최우수상 수상</span></li>
+                              <li class="dataItem dot"><time data-time="2020-11-30">11.30</time> <span>여성가족부 가족친화경영 재인증</span></li> 
+                              <li class="dataItem dot"><time data-time="2020-11-30">11.30</time> <span>보건복지부 지역사회공헌 인정제 인증 획득</span></li>
+                              <li class="dataItem dot"><time data-time="2020-11-25">11.25</time> <span>폭력예방교육 우수기관 여성가족부 장관 표창</span></li> 
+                              <li class="dataItem dot"><time data-time="2020-10-28">10.28</time> <span>전국도서관운영평가 문화체육관광부 특별상(장관상) 수상</span></li>
+                              <li class="dataItem dot"><time data-time="2020-09-28">09.28</time> <span>인적자원개발 우수기관(Best-HRD) 재인증</span></li> 
+                              <li class="dataItem dot"><time data-time="2020-08-06">08.06</time> <span>한국산업안전보건공단 KOSHA-MS 인증 획득</span></li>
+                              <li class="dataItem dot"><time data-time="2020-07-13">07.13</time> <span>ISO 10002 고객만족경영시스템 인증 획득</span></li> 
+                              <li class="dataItem dot"><time data-time="2020-06-03">06.03</time> <span>구의2동 주택가 공동주차장 ‘범죄예방 우수시설’인증 획득
+                              </span></li>
+                            </ul>
+                          </li>
+                          <li class="period_data_item">
+                            <strong class="year">2021</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2021-12-20">12.20</time>  <span>광진구민체육센터 ‘범죄예방 우수시설’인증 획득</span></li>
+                              <li class="dataItem dot"><time data-time="2021-12-03">12.03</time> <span>보건복지부 지역사회공헌 인정제 재인증</span></li> 
+                              <li class="dataItem dot"><time data-time="2021-12-01">12.01</time> <span>교육기부 우수기관 및 동아리 인증제 획득</span></li>
+                              <li class="dataItem dot"><time data-time="2021-12-01">12.01</time> <span>한국서비스품질우수기업 재인증</span></li> 
+                              <li class="dataItem dot"><time data-time="2021-11-02">11.02</time> <span>제45회 국가생산성대회 산업통상자원부 장관 표창</span></li>
+                              <li class="dataItem dot"><time data-time="2021-06-03">06.03</time> <span>문화사업팀 수영장 「생존수영 교육수영장 안전인증」 획득</span></li> 
+                              <li class="dataItem dot"><time data-time="2021-02-13">02.13</time> <span>구민체육팀 수영장 「생존수영 교육수영장 안전인증」 획득</span></li>
+                            </ul>
+                          </li>
+                          <li class="period_data_item">
+                            <strong class="year">2022</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2007-07-01">07.01</time> <span>나루아트센터 수탁운영</span></li>
+                              <li class="dataItem dot"><time data-time="2007-05-24">01.08</time> <span>제2대 이사장 취임(박주경)</span></li>
+                            </ul>
+                          </li>                     
+                        </ol>
+                      </section>
+                      <section class="historyData tab_contents" id="showHistory_4"><!--   2023 -->
+                        <h1 class="hide">2023년 변천사</h1>
+                        <ol class="period_data">
+                          <li class="period_data_item">
+                            <strong class="year">2023</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2004-02-16">02.16</time>  <span>광진구 주차장 수탁운영</span></li>
+                              <li class="dataItem dot"><time data-time="2004-01-07">01.07</time> <span>서울특별시 광징구시설관리공단 창립</span></li> 
+                              <li class="dataItem dot"><time data-time="2004-02-16">01.03</time> <span>초대이사장 취임(김성현)</span></li>
+                            </ul>
+                          </li>
+                        </ol>
+                      </section>
+                    </div><!-- tab_conts_list End-->
+                  </div>   <!-- tab_wrap End-->           
                 </div>
                 <!-- 켄튼츠 본문 끝 부분 -->
                 <article class="cntnsMngDeprt">

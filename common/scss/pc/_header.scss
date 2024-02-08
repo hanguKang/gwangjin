@@ -6,15 +6,19 @@
 
 
 /*헤더*/
-.header{$headH:80px;position:absolute; top: 0; left: 0; width:100%;  z-index: 100;  transition:border-radius 0.1s; /* overflow-y:hidden; box-shadow:0 0 10px rgba(0,0,0,0.1);  */
+.header{$headH:80px;position:fixed; top: 0; left: 0; width:100%;  z-index: 100;  transition:border-radius 0.1s; background-color:#f2f2f2; transition: transform 200ms ease-in-out 0s,
+  background-color 400ms ease-in-out 0s;
+  &.active_bg{ box-shadow:0 5px 5px rgba(0,0,0,0.2);}
+  /* overflow-y:hidden; box-shadow:0 0 10px rgba(0,0,0,0.1);  */
   /* &.active {border-radius:0 0 80px 0;transition:border-radius 0.1s;
     &:before {content:'';width:100%;height:1px;background-color:#ececec;position:absolute;left:0;top:100px;display:block;z-index:11;}
   } */
+  
   .hd_top { @include clear; background-color: #333; color: #fff; height: 52px; 
 
       ul{float: left; margin-left: 80px; font-size:16px;
         li{display: inline-block; vertical-align: middle;position: relative;
-          a{line-height: 52px; padding: 0 4.5em; font-weight: 300;} 
+          a{line-height: 52px; padding: 0 4.5em; font-weight: 300; color:#fff;} 
           &:before{content: ""; display: block; width: 2px; height: 15px; background: #dbdbdb; position: absolute; top: 56%; transform: translateY(-60%); left: -2px;}
           &:first-child{
             a{padding-left: 0;}
@@ -38,7 +42,7 @@
       }// ul End
       .util{ float: right; @include clear; margin-right: 80px;
         li{display: inline-block; vertical-align: middle; position: relative;
-          a{line-height: 52px; padding: 0 20px;font-weight: 300;} 
+          a{line-height: 52px; padding: 0 20px;font-weight: 300; color:#fff;} 
         }
         @at-root .btn_sitemap_open{background:url(../images/sitemap_btn.png) no-repeat center/auto; width: 52px; height: 52px; display:inline-block;vertical-align:middle;}
         .sitemap{float: right; 
@@ -56,14 +60,12 @@
           font-size:14px;
           .btn_sitemap_open{width:30px; height:30px; background-size:60%; }
         }
-        // @include minWidth(721px){
-        //   margin-right:0px;
-        // }
-        
       }
+      
   }
- .layer_gnb{@include clear; background:transparent;
-  &.sub, &:hover { }
+ .layer_gnb{@include clear; background-color:transparent;
+  &.sub, &:hover {}
+  &:hover { background-color:#f2f2f2;}
   .gnb{display:flex; text-align:center; font-size:0;z-index:12; 
    /* 
     &::before{position: absolute; display: block; content: ''; width: 90px; height: 1px; background-color: #d9d9d9; left: -80px; top: 70px;}
@@ -177,5 +179,27 @@
           }
       }
   }
-  
+  @include maxWidth($m720){
+        
+  }
 }
+
+@media screen and (max-width: 720px) {
+  header.header .hd_top ul {
+    display: none;
+  }
+  header.header .hd_top .util li:first-child {
+    width: unset;
+  }
+  header.header .hd_top .util li:last-child {
+    display: none;
+  }
+  header.header .layer_gnb .gnb .logo {
+    margin: 0 0 0 10px;
+    padding-top: 5px;
+  }
+  header.header .layer_gnb .gnb .showNav {
+    top: 10px;
+  }
+}
+

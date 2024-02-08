@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+  <title>?</title>
+  <link rel="stylesheet" href="../../common/css/default.css">
+  <link rel="stylesheet" href="../../common/css/slick.css" />
+  <link rel="stylesheet" href="../../common/css/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <script src="../../common/js/jquery-3.6.0.min.js"></script>
+  <!--<script src="../../common/js/jquery-1.11.3.min.js"></script>-->
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
+  <script src="../../common/js/aos.js"></script>
+  <script src="../../common/js/slick.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="../../common/js/common.js"></script>
+  <script src="../../common/js/sub.js"></script>
+</head>      
+<body>
+    <div class="wrapper">
+        <!-- 스킵내비게이션 -->
+        <div class="skip_navi">
+            <strong class="hide">바로가기 메뉴</strong>
+            <a href="#contents">본문 바로가기</a>
+            <a href="#gnb">주메뉴 바로가기</a>
+        </div>
+        <!-- 헤더 -->
+        <header class="header">
+          <div class="hd_top">
+              <ul class="pc">
+                  <li>
+                      <a href="#">광진구시설관리공단</a>
+                  </li>
+                  <li>
+                      <a href="#">통합주차</a>
+                  </li>
+                  <li>
+                      <a href="#">문화체육시설</a>
+                  </li>
+              </ul>
+              <ol class="util">
+                  <li><a href="#">로그인</a></li>
+                  <li><a href="#">회원가입</a></li>
+                  <li class="pc"> <a href="#" class="btn_sitemap_open"><span class="hide">사이트맵 열기</span></a></li>
+              </ol>
+          </div>
+          <div class="layer_gnb">
+            <div id="gnb" class="gnb">
+              <h1 class="logo"><a href="#"><span class="hide">로고</span></a></h1>
+              <p class="mo showNav">
+                <button>
+                  <i><span class="hide">메뉴보기</span></i>
+                </button>
+              </p>
+              <div class="mo curtain"></div>
+              <nav>
+                <div class="mo"><p class="link_home"><a href="#"><span class="hide">홈으로 이동</span></a></p></div>
+                <h1 class="hide">글로벌 네비게이터</h1>
+                <ul class="mo">
+                  <li class="active">
+                      <a href="#">광진구시설관리공단</a>
+                  </li>
+                  <li>
+                      <a href="#">통합주차</a>
+                  </li>
+                  <li>
+                      <a href="#">문화체육시설</a>
+                  </li>
+                </ul>
+                <ul class="nav_items dep1">
+                    <li class="nav_item">
+                        <a href="#"><span>시설 안내</span></a>
+                        <div class="dep2_wrap">                          
+                          <div class="nav_item_tit">
+                              <h2>시설 안내</h2>
+                              <img src="../common/images/gnb_tit_icon_1.png" alt="시설안내 아이콘">
+                          </div>
+                          <ul class="dep2">
+                              <li><a href="#" class="menu_btn">문화/공공체육시설</a></li>
+                              <li><a href="#" class="menu_btn">도서관 시설</a></li>
+                              <li><a href="#" class="menu_btn">주차 시설</a></li>
+                          </ul>                          
+                        </div>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#"><span>정보마당</span></a>
+                        <div class="dep2_wrap">
+                            <div class="nav_item_tit">
+                                <h2>정보마당</h2>
+                                <img src="../common/images/gnb_tit_icon_1.png" alt="정보마당 아이콘">
+                            </div>
+                            <ul class="dep2">
+                                <li class="on"><a href="#" class="menu_btn">공지사항</a></li>
+                                <li><a href="#" class="menu_btn">채용공고</a></li>
+                                <li><a href="#" class="menu_btn">입찰정보</a></li>
+                                <li><a href="#" class="menu_btn">수의계약내역 공개</a></li>
+                                <li><a href="#" class="menu_btn">고시 및 공고</a></li>
+                                <li><a href="#" class="menu_btn">자료실</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#"><span>고객 광장</span></a>
+                        <div class="dep2_wrap">
+                            <div class="nav_item_tit">
+                                <h2>고객광장</h2>
+                                <img src="../common/images/gnb_tit_icon_1.png" alt="고객광장 아이콘">
+                            </div>
+                            <ul class="dep2">
+                                <li><a href="#" class="menu_btn">고객의 소리</a></li>
+                                <li><a href="#" class="menu_btn">자주 묻는 질문</a></li>
+                                <li><a href="#" class="menu_btn">Q&A</a></li>
+                                <li><a href="#" class="menu_btn">클린신고</a></li>
+                                <li><a href="#" class="menu_btn">광나루24!(고객 제안)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#"><span>지속가능성 경영</span></a>
+                        <div class="dep2_wrap">
+                          <div class="nav_item_tit">
+                              <h2>지속가능성 경영</h2>
+                              <img src="../common/images/gnb_tit_icon_1.png" alt="지속가능성 경영 아이콘">
+                          </div>
+                          <ul class="dep2">
+                              <li>
+                                <a href="#" class="menu_btn">열린혁신</a>
+                                <ul class="dep3">
+                                    <li><a href="#">열린혁신</a></li>
+                                    <li><a href="#">주민참여형 제안사업</a></li>
+                                    <li><a href="#">적극행정</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="menu_btn">정보공개</a>
+                                <ul class="dep3">
+                                    <li><a href="#">행정정보공개</a></li>
+                                    <li><a href="#">사전정보공표</a></li>
+                                    <li><a href="#">정보목록</a></li>
+                                    <li><a href="#">경영공시 및 현황</a></li>
+                                    <li><a href="#">공공데이터 개방</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="menu_btn">ESG경영</a>
+                                <ul class="dep3">
+                                    <li><a href="#">경영 전략체계</a></li>
+                                    <li><a href="#">실천선언문</a></li>
+                                    <li><a href="#">ESG경영 자료실</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="menu_btn">윤리·인권</a>
+                                <ul class="dep3">
+                                    <li><a href="#">윤리경영헌장</a></li>
+                                    <li><a href="#">임직원행동강령</a></li>
+                                    <li><a href="#">윤리경영주요활동</a></li>
+                                    <li><a href="#">인권경영 이행사항</a></li>
+                                    <li><a href="#">인권경영 선언문</a></li>
+                                    <li><a href="#">인권영향평가</a></li>
+                                    <li><a href="#">인권경영주요활동</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="menu_btn">안전·보건</a>
+                                <ul class="dep3">
+                                    <li><a href="#">안전·보건 경영방침</a></li>
+                                    <li><a href="#">목표 및 과제</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="menu_btn">고객서비스</a>
+                                <ul class="dep3">
+                                    <li><a href="#">고객만족경영시스템</a></li>
+                                    <li><a href="#">고객만족도 조사결과</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="menu_btn">사회공헌</a>
+                                <ul class="dep3">
+                                    <li><a href="#">사회공헌 경영방침</a></li>
+                                    <li><a href="#">목표 및 과제</a></li>
+                                </ul>
+                              </li>
+                          </ul>
+    
+                        </div>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#"><span>공단소개</span></a>
+                        <div class="dep2_wrap">
+                            <div class="nav_item_tit">
+                                <h2>공단소개</h2>
+                                <img src="../common/images/gnb_tit_icon_1.png" alt="공단소개 아이콘">
+                            </div>
+                            <ul class="dep2">
+                                <li>
+                                  <a href="#" class="menu_btn">이사장 인사말</a>
+                                </li>
+                                <li>
+                                  <a href="#" class="menu_btn">공단 현황</a>
+                                  <ul class="dep3">
+                                      <li><a href="#">일반현황</a></li>
+                                      <li><a href="#">공단 미션·비전</a></li>
+                                      <li><a href="#">연혁</a></li>
+                                      <li><a href="#">인증현황</a></li>
+                                      <li><a href="#">조직 안내</a></li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <a href="#" class="menu_btn">홍보 마당</a>
+                                  <ul class="dep3">
+                                    <li><a href="#">미디어</a></li>
+                                    <li><a href="#">뉴미디어 바로 가기</a></li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <a href="#" class="menu_btn">공단CI</a>
+                                </li>
+                                <li>
+                                  <a href="#" class="menu_btn">오시는 길</a>
+                                </li>
+                            </ul>
+                        </div>
+                      </li>
+                </ul>
+                <button class="mo close"><span class="hide">닫기</span></button>
+              </nav>
+            </div>
+          </div>
+        </header><!-- header End -->
+
+        <main class="sub">
+            <div class="page_spot sub1 site">
+              <h1 class="sub_title">?</h1>
+            </div>
+            <div class="contents_sub_box center_box_pc">
+              <nav id="lnb" class="lnb">
+                <h1> ? </h1>
+                <ul class="dep2">
+                  <li class="menu_item">
+                    <a href="#" class="menu_btn">이사장 인사말</a>
+                  </li>
+                  <li class="menu_item">
+                    <a href="#" class="menu_btn">공단 현황</a>
+                    <ul class="dep3">
+                      <li><a href="#">일반 현황</a></li>
+                      <li><a href="#">공단 미션&#183;비전</a></li>
+                      <li><a href="#">연혁</a></li>
+                      <li><a href="#">인증현황</a></li>
+                      <li><a href="#">조직 안내</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu_item">
+                    <a href="#" class="menu_btn">홍보 마당</a>
+                    <ul class="dep3">
+                      <li class=""><a href="#">미디어</a></li>
+                      <li><a href="#">뉴미디어 바로가기</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu_item">
+                    <a href="#" class="menu_btn">공단CI</a>
+                  </li>
+                  <li class="menu_item">
+                    <a href="#" class="menu_btn">오시는 길</a>
+                  </li>
+                </ul>
+              </nav>
+              <article class="contents_sub">
+                <header class="sub_top">
+                  <h1 class="hide">카드 뉴스 게시판</h1>
+                  <ol>
+                    <li>HOME</li>
+                    <li><a href="#">?</a></li>
+                    <li><a href="#">?</a></li>
+                    <li><a href="#">?</a></li>
+                  </ol>
+                  <ul>
+                    <li class="share">
+                      <button title="공유하기" type="button"><span class="hide">sns 공유하기 열기</span></button>
+                      <div class="share_box">
+                        <ul>
+                          <li><a href="#" class="facebook" id="share_popup_facebook"><img src="../../common/images/share_facebook.png" alt="페이스북"></a></li>
+                          <li><a href="#" class="twitter" id="share_popup_twitter"><img src="../../common/images/share_twitter.png" alt="트위터"></a></li>
+                          <li><a href="#" class="blog" id="share_popup_band"><img src="../../common/images/share_band.png" alt="블로그"></a></li>
+                          <li><a href="#" class="kko" id="share_popup_kakao"><img src="../../common/images/share_kakao.png" alt="카카오"></a></li>
+                          <li><a href="#" class="kkostory" id="share_popup_kakao_story"><img src="../../common/images/share_kakao_stroy.png" alt="카카오스토리"></a></li>
+                        </ul>
+                        <p class="share_close"><a href="#"><span class="hide">sns 공유하기 닫기</span></a></p>
+                      </div>
+                    </li>
+                    <li class="print_btn"><a href="#"><span class="hide">프린트하기</span></a></li>
+                  </ul>
+                     
+                </header>
+                <!-- 컨텐츠 본문 시작 부분-->
+                <section class="page membTerm privacy">
+                  <h1 class="cntns_title">&lt;광진구시설관리공단&gt; 개인정보 처리방침</h1>
+                  <p class="txt txt_p">&lt;광진구시설관리공단&gt;이 취급하는 모든 개인정보는 관련 법령에 근거하여 수집 · 보유 및 처리되고 있습니다. 「개인정보보호법」은 이러한 개인정보의 
+                    취급에 대한 일반적 규범을 제시하고 있으며 , &lt;광진구시설관리공단&gt;은 이러한 법령의 규정에 따라 수집 · 보유 및 처리하는 개인정보를 공공업무의 적절한 
+                    수행과 이용자의 권익을 보호하기 위해 적법하고 적정하게 취급할 것입니다.</p>
+                  <p class="txt txt_p">또한, &lt;광진구시설관리공단&gt;은 관련 법령에서 규정한 바에 따라 보유하고 있는 개인정보에 대한 열람, 정정·삭제, 처리정지 요구 등 이용자의 권익을 존중
+                    하며, 이용자는 이러한 법령상 권익의 침해 등에 대하여 행정심판법에서 정하는 바에 따라 행정심판을 청구할 수 있습니다.</p>
+                  <p class="txt txt_p">&lt;광진구시설관리공단&gt;은 개인정보보호법 제 30조에 따라 정보주체의 개인정보 보호 및 권익을 보호하고 개인정보와 관련한 이용자의 고충을 원활하게 처
+                    리할 수 있도록 다음과 같은 개인정보 처리방침을 수립 · 공개하고 있으며, 개인정보처리방침을 개정하는 경우 웹사이트 공지사항(또는 개별공지)을 통하여 
+                    공지할 것입니다.</p>
+                  <h1>본 방침은 2022년 1월 1일부터 시행됩니다.</h1>
+                  <div class="p-table-define">
+                    <h2 class="p-table-define__title">【주요 개인정보 처리 표시(라벨링)】</h2>
+                    <ul class="ico_list">
+                      <li><a href=""><img src="../../common/images/sub/site/ico_privacy_user.png" alt=""><span class="ico_txt">일반 개인정보 수집
+                        <br>※세부항목은 개인정보 처리방침 본문 확인</span></a></li>
+                      <li><a href=""><img src="../../common/images/sub/site/ico_privacy_porpose.png" alt=""><span class="ico_txt">개인정보 처리목적</span></a></li>
+                      <li><a href=""><img src="../../common/images/sub/site/ico_privacy_period.png" alt=""><span class="ico_txt">개인정보의 보유 기간</span></a></li>
+                      <li><a href=""><img src="../../common/images/sub/site/ico_privacy_provision.png" alt=""><span class="ico_txt">개인정보의 제공</span></a></li>
+                      <li><a href=""><img src="../../common/images/sub/site/ico_privacy_entrust.png" alt=""><span class="ico_txt">처리위탁</span></a></li>
+                      <li><a href=""><img src="../../common/images/sub/site/ico_privacy_complainProcess.png" alt=""><span class="ico_txt">고충처리부서</span></a></li>
+                    </ul>
+                  </div>
+                  <div class="p-table-define">
+                    <h2 class="p-table-define__title">목차</h2>
+                    <div class="p-table-list">
+                      <ol class="p-txt-1 p-txt">
+                        <li>- 제1조 (개인정보의 처리 목적)</li>
+                        <li>- 제2조 (개인정보의 처리 및 보유 기간)</li>
+                        <li>- 제3조 (개인정보의 제3자 제공)</li>
+                        <li>- 제4조 (개인정보의 파기)</li>
+                        <li>- 제5조 (개인정보처리 위탁)</li>
+                        <li>- 제6조 (정보주체의 권리·의무 및 그 행사방법)</li>
+                        <li>- 제7조 (개인정보보호 책임자 및 개인정보 보호 업무 담당자)</li>
+                        <li>- 제8조 (개인정보 자동 수집 장치의 설치/운영 및 거부에 관한 사항)</li>
+                        <li>- 제9조 (처리하는 개인정보 항목)</li>
+                      </ol>
+                      <ol class="p-txt-2 p-txt">
+                        <li>- 제10조 (개인정보의 안전성 확보 조치)</li>
+                        <li>- 제11조 (정보주체의 권익침해에 대한 구제방법)</li>
+                        <li>- 제12조(개인정보 열람청구)</li>
+                        <li>- 제13조 (개인정보의 추가적인 이용·제공의 기준)</li>
+                        <li>- 제14조 (개인정보파일 등록 현황)</li>
+                        <li>- 제15조 (개인정보영향평가 수행 결과)</li>
+                        <li>- 제16조 (개인정보 관리수준평가 결과)</li>
+                        <li>- 제17조 (영상정보처리기기 운영·관리에 관한 사항)</li>
+                        <li>- 제18조 (개인정보 처리방침의 변경)</li>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <section class="term_txt">
+                    <h1 class="term_subTitle">제1조 (개인정보의 처리 목적) <img src="../../common/images/sub/site/ico_privacy_porpose.png" alt=""></h1>
+                    <ol class="txt">
+                      <li>&lt;광진구시설관리공단&gt;은 개인정보를 다음의 목적을 위해 처리합니다. 처리한 개인정보는 다음의 목적이외의 용도로는 사용되지 않으며 이용 목적이 변경되
+                        는 경우에는 개인정보 보호법 제18조에 따라 별도의 동의를 받는 등 필요한 조치를 이행할 예정입니다.
+                        <ol class="kor_list">
+                          <li class="kor_item"><stron>서비스 제공 : </stron>교육 콘텐츠 제공, 본인인증, 증명서발급(교육료 납입증명서) 등 서비스 제공에 관련한 목적으로 개인정보를 처리합니다.</li>
+                          <li class="kor_item"><strong>민원처리 : </strong>개인정보 열람, 개인정보 정정·삭제, 개인정보 처리정지 요구, 개인정보 유출사고 신고 등 개인정보와 관련된 민원처리를목적으로 개인정보를 처리합니다.</li>
+                        </ol>
+                      </li>
+                      <li>&lt;광진구시설관리공단&gt;이 개인정보 보호법 제32조에 따라 등록·공개하는 개인정보파일의 처리목적은 다음과 같습니다.
+                        <div class="s-table">
+                          <table class="p-table user-table">
+                            <caption class="hide">광진구시설관리공단 개인정보파일 처리 : 개인정보파일의 명칭, 운영근거/처리목적, 개인정보파일에 기록되는 개인정보의 항목, 보유기간 정보 제공</caption>
+                              <thead>
+                                <tr>
+                                  <th scope="col">개인정보파일의 명칭</th>
+                                  <th scope="col">운영근거/처리목적</th>
+                                  <th scope="col">개인정보파일에 기록되는 개인정보의 항목</th>
+                                  <th scope="col">보유기간</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th>문화체육시설 회원 DB</th>
+                                  <td>
+                                    <dl>
+                                      <dt>운영근거</dt>
+                                      <dd>- 서울특별시 광진구 문화예술회관 
+                                          설치 및 운영에 관한 조례</dd>
+                                      <dt>처리목적</dt>
+                                      <dd>- 광진구시설관리공단 문화체육시
+                                        설에서 제공하는 서비스 이용</dd>
+                                    </dl>
+                                  </td>
+                                  <td>이름 : 필수 <br> 생년월일:필수 <br> 집주소:필수<br>
+                                    핸드폰(연락처) : 필수<br> E-Mail</td>
+                                  <td>탈퇴 또는 재동의 2년</td>
+                                </tr>
+                                <tr>
+                                  <th>광진구립도서관 회원 DB</th>
+                                  <td>
+                                    <dl>
+                                      <dt>운영근거</dt>
+                                      <dd>- 도서관법 28조, 정보주체의 동의</dd>
+                                      <dt>처리목적</dt>
+                                      <dd>- 도서관 서비스(대출 등) 제공 및 도
+                                        서관 운영 정보의 체계적 운영·관리</dd>
+                                    </dl>
+                                  </td>
+                                  <td>이름 : 필수 <br> 생년월일:필수 <br> 집주소:필수<br>
+                                    핸드폰(연락처) : 필수<br> E-Mail : 필수</td>
+                                  <td>탈퇴 또는 재동의 2년</td>
+                                </tr>
+                                <tr>
+                                  <th>통합 주차관리시스템 DB</th>
+                                  <td>
+                                    <dl>
+                                      <dt>운영근거</dt>
+                                      <dd>- 서울특별시 광진구 주차장 설치 및 
+                                        관리조례 제9조</dd>
+                                      <dt>처리목적</dt>
+                                      <dd>- 주차사업팀 주차 신청자 관리</dd>
+                                    </dl>
+                                  </td>
+                                  <td>이름 : 필수 <br> 생년월일:필수 <br> 집주소:필수<br>
+                                    핸드폰(연락처) : 필수<br> E-Mail</td>
+                                  <td>탈퇴 또는 재동의 2년</td>
+                                </tr>
+                              </tbody>
+                          </table>
+                        </div>
+                      </li>
+                    </ol>
+                  </section>
+
+                  <section class="term_txt">
+                    <h1 class="term_subTitle">제2조 (개인정보의 처리 및 보유 기간)<img src="../../common/images/sub/site/ico_privacy_user.png" alt=""><img src="../../common/images/sub/site/ico_privacy_period.png" alt=""></h1>
+                    <ol class="txt">
+                      <li>&lt;광진구시설관리공단&gt;은 법령에 따른 개인정보 보유·이용기간 또는 정보주체로부터 개인정보를 수집시에 동의받은 개인정보 보유·이용기간 내에서 개인
+                        정보를 처리·보유합니다.</li>
+                      <li>각각의 개인정보 처리 및 보유 기간은 다음과 같습니다.
+                        <ol class="kor_list">
+                          <li class="kor_item"><stron>서비스 제공 : </stron>서비스 제공 종료 후 3년</li>
+                          <li class="kor_item"><strong>민원처리 : </strong>민원처리 종료 후 3년</li>
+                          <li class="kor_item"><strong>회계처리 및 요급 수납 등 관련 근거 자료 : </strong>5년</li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </section>
+                  <section class="term_txt">
+                    <h1 class="term_subTitle">제3조 (개인정보의 제3자 제공)<img src="../../common/images/sub/site/ico_privacy_provision.png" alt=""></h1>
+                    <p class="txt">본 약관에서 사용하는 용어의 정의는 다음과 같습니다.</p>
+                    <ol class="txt">
+                      <li>원칙적으로 이용자의 개인정보를 제1조 (개인정보의 처리 목적)에서 명시한 범위 내에서 처리하며, 이용자의 사전 동의 없이는 본래의 범위를 초과하여 처리
+                        하거나 제3자에게 제공하지 않습니다. 단, 다음의 경우에는 개인정보를 처리할 수 있습니다. 가. 이용자가 사전에 제3자 제공 및 공개에 동의한 경우 나. 법령 
+                        등에 의해 제공이 요구되는 경우 다. 서비스의 제공에 관한 계약의 이행을 위하여 필요한 개인정보로서 경제적/기술적인 사유로 통상의 동의를 받는 것이 현저
+                        히 곤란한 경우 라. 개인을 식별하기에 특정할 수 없는 상태로 가공하여 이용하는 경우</li>
+                      <li>&lt;광진구시설관리공단&gt;은 아래에 해당하는 개인정보를 회원가입시 실명인증 및 공공 I-PIN 인증시에만 제3자 제공을 하고 있으며, 정보주체의 동의 없이는 
+                        제공되지 않습니다.
+                        <div class="s-table">
+                          <table class="p-table user-table">
+                            <caption class="hide">광진구시설관리공단 회원가입시 실명인증 관련 항목: 제공받는 자, 제공받는 자의 개인정보 이용 목적, 제공하는 개인정보의 항목, 제공받는 자의 개인정보 보유 및 이용 기간에 대한 정보 제공 </caption>
+                            <thead class="hide">
+                              <tr>
+                                <th scope="col">항목</th>
+                                <th scope="col">정보</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">제공받는 자</th>
+                                <td>나이스 신용평가정보(주)</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">제공받는 자의 개인정보 이용 목적</th>
+                                <td>실명확인, I-PIN 인증</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">제공하는 개인정보의 항목</th>
+                                <td>이름, 주민등록번호/ 외국인등록번호, 법정대리인(이름, 주민등록번호), I-PIN(개인식별번호), 
+                                  법정대리인(I-PIN(개인식별번호))</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">제공받는 자의 개인정보 보유 및 이용 기간</th>
+                                <td>신용평가 기관에서는 이미 보유하고 있는 개인정보이기 때문에 별도로 저장하지 않음</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        - 개인정보의 제3자 제공(선택)
+                        <div class="s-table">
+                          <table class="p-table user-table w_division_01">
+                            <caption class="hide">개인정보의 제3자 제공 : 개인정보파일명, 제공 받는 자, 제공근거, 제공목적, 제공항목, 제공 받는 자 보유 및 이용기간 정보 제공</caption>
+                            <thead>
+                              <tr>
+                                <th scope="col" class="soft">개인정보파일명</th>
+                                <th scope="col" class="soft">제공 받는 자</th>
+                                <th scope="col" class="soft">제공근거</th>
+                                <th scope="col" class="soft">제공목적</th>
+                                <th scope="col" class="soft">제공항목</th>
+                                <th scope="col" class="soft">제공 받는 자 <br> 보유 및 이용기간</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>광진구 시설관리 <br>
+                                  공단회원 정보</td>
+                                <td>서울시 <br>
+                                  (서울시민카드)</td>
+                                <td>이용자 (정보주체) <br>
+                                  동의</td>
+                                <td>광진구시설관리공단 <br>
+                                  회원의 서울시민카드 <br>
+                                  서비스 이용</td>
+                                <td>회원정보 : 회원이름<br>
+                                  생년월일<br>
+                                  휴대전화번호<br>
+                                  센터코드<br>
+                                  회원코드<br>
+                                  회원탈퇴여부<br>
+                                  회원카드번호<br>
+                                  연동상태값<br>
+                                  회원카드삭제여부<br>
+                                  연동날짜<br>
+                                  - 수강내역: 센터코드<br>
+                                  회원코드<br>
+                                  강좌명<br>
+                                  이용시작일<br>
+                                  이용종료일<br>
+                                  이용상태<br>
+                                  강좌코드<br>
+                                  매출연결순번<br>
+                                  결제금액<br>
+                                  강습등록순번<br>
+                                  연동 상태값<br>
+                                  연동 삭제여부<br>
+                                  연동 날짜</td>
+                                <td>서울시민카드 <br>
+                                  탈퇴시까지</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </li>
+                      
+                    </ol>
+                  </section>                  
+                  <section class="term_txt">
+                    <h1 class="term_subTitle">제4조 (개인정보의 파기) <img src="../../common/images/sub/site/ico_privacy_garbage.png" alt=""></h1>
+                    <p class="txt">&lt;광진구시설관리공단&gt;은 원칙적으로 개인정보 처리목적이 달성된 경우에는 지체없이 해당 개인정보를 파기합니다. 다만, 다른 법률에 따라 보존하여야하는 경우에는 그러하지 않습니다. 파기의 절차, 기한 및 방법은 다음과 같습니다.</p>
+                    <ol class="txt">
+                      <li><strong>파기절차</strong> 
+                        이용자가 입력한 정보는 목적 달성 후 내부 방침 및 관련 법령에 따라 일정기간 저장된 후 혹은 즉시 파기됩니다.</li>
+                      <li><strong>파기기한</strong>
+                        이용자의 개인정보는 개인정보의 보유기간이 경과된 경우 보유기간의 종료일로부터 5일 이내에, 개인정보의 처리 목적 달성 등 그 개인정보가 불필요하게 
+                        되었을 때에는 개인정보의 처리가 불필요한 것으로 인정되는 날로부터 5일 이내에 그 개인정보를 파기합니다.</li>
+                      <li><strong>파기방법</strong>
+                        &lt;광진구시설관리공단&gt;에서 처리하는 개인정보파일은 전자적 파일 형태로 기록되기 때문에 재생할 수 없는 기술적 방법을 사용하여 파기합니다.</li>
+                    </ol>
+                  </section>
+                  <section class="term_txt">
+                    <h1 class="term_subTitle">제5조 (개인정보처리 위탁)</h1>
+                    <ol class="txt">
+                      <li>&lt;광진구시설관리공단&gt;은 원활한 개인정보 업무처리를 위하여 다음과 같이 개인정보 처리업무를 위탁하고 있습니다.
+                        <div class="s-table">
+                          <table class="p-table user-table w_division_02">
+                            <caption class="hide">개인정보 처리업무를 위탁 : 수탁업체, 전화번호, 위탁업무 내용 정보 제공</caption>
+                            <thead>
+                              <tr>
+                                <th scope="col">수탁업체</th>
+                                <th scope="col">전화번호</th>
+                                <th scope="col">위탁업무 내용</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th>(주)혁산정보시스템</th>
+                                <td>02-1577-6846</td>
+                                <td>공단, 문화예술회관, 구민체육센터, 중곡문화체육센터,공공체육시설,
+                                  광장동 배드민턴장 회원관리시스템 및 홈페이지 유지보수</td>
+                              </tr>
+                              <tr>
+                                <th>성북구도시관리공단</th>
+                                <td>070-8644-8023</td>
+                                <td>거주자우선주차 및 부정주차단속시스템 유지보수</td>
+                              </tr>
+                              <tr>
+                                <th>(주)제이넷</th>
+                                <td>02-425-0070</td>
+                                <td>도서관리시스템 유지보수</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </li>
+                      <li>개인정보의 처리업무를 위탁하는 경우 다음의 내용이 포함된 문서에 의하여 처리하고 있습니다.
+                        <ol class="kor_list">
+                          <li class="kor_item">위탁업무 수행 목적 외 개인정보의 처리 금지에 관한 사항</li>
+                          <li class="kor_item">개인정보의 관리적·기술적 보호조치에 관한 사항</li>
+                          <li class="kor_item">개인정보의 안전관리에 관한 사항</li>
+                          <li class="kor_item">위탁업무의 목적 및 범위</li>
+                          <li class="kor_item">재위탁 제한에 관한 사항</li>
+                          <li class="kor_item">개인정보 안전성 확보 조치에 관한 사항</li>
+                          <li class="kor_item">위탁업무와 관련하여 보유하고 있는 개인정보의 관리현황점검 등 감독에 관한 사항</li>
+                          <li class="kor_item">수탁자가 준수하여야할 의무를 위반한 경우의 손해배상책임에 관한 사항</li>
+                        </ol>                        
+                      </li>
+                      <li>위탁업무의 내용이나 수탁자가 변경될 경우에는 지체없이 본 개인정보 처리방침을 통하여 공개하도록 하겠습니다.</li>
+                    </ol>                    
+                  </section>
+                  <section class="term_txt">
+                    <h1 class="term_subTitle">제6조 (정보주체의 권리·의무 및 그 행사방법) <img src="../../common/images/sub/site/ico_privacy_garbage.png" alt=""> </h1>
+                    <ol class="txt">
+                      <li>정보주체는 광진구시설관리공단에 대해 언제든지 다음 각 호의 개인정보 보호 관련 권리를 행사할 수 있습니다.
+                        <ol class="circle_list">
+                          <li class="circle_item">개인정보 열람요구</li>
+                          <li class="circle_item">오류 등이 있을 경우 정정 요구</li>
+                          <li class="circle_item">삭제요구</li>
+                          <li class="circle_item">처리정지 요구</li>
+                        </ol>
+                      </li>
+                      <li>제1항에 따른 권리 행사는 광진구시설관리공단에 대해 서면, 전화, 전자우편, 모사전송(FAX) 등을 통하여 하실 수 있으며 광진구시설관리공단은 이에 대해 
+                        지체없이 조치하겠습니다.
+                        <p>※ 개인정보 열람, 정정 삭제, 처리정지 청구는 개인정보파일을 보관하고 있는 기관을 통해 직접신청(오프라인) 하시거나 개인정보보호종합지원포털(www.
+                          privacy.go.kr)을 통해 신청하실 수 있습니다. 직접 신청하실 때는 하단의 “별지서식”을 사용하시기 바랍니다.</p>
+                      </li>
+                      <li>정보주체가 개인정보의 오류 등에 대한 정정 또는 삭제를 요구한 경우에는 광진구시설관리공단은 정정 또는 삭제를 완료할 때까지 당해 개인정보를 이용하
+                        거나 제공하지 않습니다.</li>
+                      <li>제1항에 따른 권리 행사는 정보주체의 법정대리인이나 위임을 받은 자 등 대리인을 통하여 하실 수 있습니다. 이 경우 개인정보 보호법 시행규칙 별지 제11호 
+                        서식에 따른 위임장을 제출하셔야 합니다.</li>
+                      <li>정보주체는 개인정보 보호법 등 관계법령을 위반하여 광진구시설관리공단이 처리하고 있는 정보주체 본인이나 타인의 개인정보 및 사생활을 침해하여서는 
+                        아니됩니다.</li>
+                    </ol>                    
+                  </section>
+
+
+
+                  
+                  <section class="term_txt">
+                    <h1 class="term_subTitle">제7조 (개인정보보호 책임자 및 개인정보 보호 업무 담당자) <img src="../../common/images/sub/site/ico_privacy_complainProcess.png" alt=""></h1>
+                    <p calss="txt">&lt;광진구시설관리공단&gt;은 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위하여 아래와 같이 개인정보 보호책임자 및 실무담당자를 지정하고 있습니다. (개인정보보호법 제31조 제1항에 따른 개인정보 보호책임자)</p>
+                    <div class="p-table-define usr-define">
+                      <div class="p-table-list">
+                        <div class="p-table-list-item">
+                          <h1 class="p-table-define__title">개인정보 보호책임자</h1>
+                          <ul class="p-txt p-txt_1 usr-define">
+                            <li>
+                              <dl class="table-cell">
+                                <dt>직책</dt>
+                                <dd>상임이사</dd>
+                              </dl>
+                            </li>
+                            <li>
+                              <dl class="table-cell">
+                                <dt>성명</dt>
+                                <dd>오정식</dd>
+                              </dl>
+                            </li>
+                            <li>
+                              <dl class="table-cell">
+                                <dt>전화</dt>
+                                <dd>02-425-0070</dd>
+                              </dl>
+                            </li>
+                            <li>
+                              <dl class="table-cell">
+                                <dt>이메일</dt>
+                                <dd>donghaeng@gwangjin.or.kr</dd>
+                              </dl>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="p-table-list-item">
+                          <h1 class="p-table-define__title">개인정보 보호담당자</h1>
+                          <ul class="p-txt p-txt_2 usr-define">
+                            <li>
+                              <dl class="table-cell">
+                                <dt>담당부서</dt>
+                                <dd>기획재정팀</dd>
+                              </dl>
+                            </li>
+                            <li>
+                              <dl class="table-cell cell_1-3">
+                                <dt>성명</dt>
+                                <dd>김진용</dd>
+                                <dd>유희준</dd>
+                              </dl>
+                            </li>
+                            <li>
+                              <dl class="table-cell cell_1-3">
+                                <dt>전화</dt>
+                                <dd>02-2049-4558</dd>
+                                <dd>02-2049-4558</dd>
+                              </dl>
+                            </li>
+                            <li>
+                              <dl class="table-cell cell_1-3">
+                                <dt>이메일</dt>
+                                <dd>hunny1124@gwangjin.or.kr</dd>
+                                <dd>heejun1979@gwangjin.or.kr</dd>
+                              </dl>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  
+                  <section class="term_txt">
+                    <h1 class="term_subTitle">제8조 (개인정보 자동 수집 장치의 설치/운영 및 거부에 관한 사항) <img src="../../common/images/sub/site/ico_privacy_AI.png" alt=""></h1>
+                    <ol class="txt">
+                      <li>&lt;광진구시설관리공단&gt;은 이용자에게 개별적인 맞춤서비스를 제공하기 위해 이용정보를 저장하고 수시로 불러오는 ‘쿠키(cookie)’를 사용합니다.</li>
+                      <li> 쿠키란 홈페이지 또는 모바일 서비스를 운영하는데 이용되는 서버가 이용자의 브라우저에 보내는 아주 작은 텍스트 파일로, 이용자의 단말기의 하드디스크
+                        에 저장됩니다. 홈페이지 이용과정에서 아래 개인정보 항목이 자동으로 수집될 수 있습니다.
+                        <ol class="kor_list">
+                          <li class="kor_item"><strong>쿠키의 사용목적:</strong> 이용자가 방문한 각 서비스와 웹 사이트들에 대한 방문 및 이용형태, 인기 검색어, 보안접속 여부, 등을 파악하여 이용자에게 최적화된 정보 제공을 위해 사용됩니다.</li>
+                          <li class="kor_item"><strong>쿠키의 설치/운영 및 거부 : </strong>
+                            -  쿠키 설치는 이용자의 선택권에 달려있으며, 쿠키 설치를 거부하였을 경우 서비스 제공에 어려움이 발생할 수도 있습니다.
+                            <strong>쿠키 설치 허용 여부를 지정하는 방법> (익스플로러의 경우)></strong>
+                            <ol class="circle_list">
+                              <li class="circle_item">[도구] 메뉴에서 [인터넷 옵션]을 선택합니다.</li>
+                              <li class="circle_item">[개인정보 탭]을 클릭합니다.</li>
+                              <li class="circle_item">[개인정보보호 수준]을 설정합니다.</li>
+                            </ol>
+                          </li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </section>
+                  <section class="term_txt">
+                    <h1 class="term_subTitle">제9조 (처리하는 개인정보 항목)<img src="../../common/images/sub/site/ico_privacy_filepng.png" alt=""></h1>
+                    <p class="txt">광진구시설관리공단>은 다음의 개인정보 항목을 처리하고 있습니다.</p>
+                    <ol class="txt">
+                      <li>홈페이지 회원 가입 및 관리
+                        <ul>
+                          <li>-필수항목 : 이름, 아이디, 비밀번호, 이메일, 핸드폰</li>
+                          <li>-선택항목 : 전화번호</li>
+                        </ul>
+                      </li>
+                      <li>민원사무 처리
+                        <ul>
+                          <li>-필수항목 : 이름, 핸드폰번호</li>
+                          <li>-선택항목 : 연락처, 이메일, 주소</li>
+                        </ul>
+                      </li>
+                      <li>인터넷 서비스 이용과정에서 아래 개인정보 항목이 자동으로 생성되어 수집될 수 있습니다.
+                        <ul>
+                          <li>-IP주소, 쿠키, MAC주소, 서비스 이용기록, 방문기록, 불량 이용기록 등</li>                          
+                        </ul>
+                      </li>
+                    </ol>
+                  </section>
+                  <section class="term_txt">
+                    <h1 class="term_subTitle">제10조 (개인정보의 안전성 확보 조치)<img src="../../common/images/sub/site/ico_privacy_safeCategory.png" alt=""></h1>
+                    <p class="txt">&lt;광진구시설관리공단&gt;은 「개인정보보호법」 제29조에 따라 다음과 같이 안전성 확보에 필요한 기술적, 관리적, 물리적 조치를 하고 있습니다.</p>
+                    <ol class="txt">
+                      <li>
+                        <strong>내부관리계획의 수립 및 시행</strong>
+                        &lt;광진구시설관리공단&gt;의 내부관리계획 수립 및 시행은 행정안전부의 내부관리 지침을 준수하여 시행합니다.
+                      </li>
+                      <li>
+                        <strong>개인정보 취급 담당자의 최소화 및 교육</strong>                        
+                        개인정보를 취급하는 담당자를 지정하고 최소화하여 개인정보를 관리하는 대책을 시행하고 있습니다.
+                      </li>
+                      <li>
+                        <strong>개인정보에 대한 접근 제한</strong>                        
+                        개인정보를 처리하는 데이터베이스시스템에 대한 접근권한의 부여, 변경, 말소를 통하여 개인정보에 대한 접근통제를 위하여 필요한 조치를 하고 있으며 침입차단시스템을 이용하여 외부로부터의 무단 접근을 통제하고 있습니다.
+                      </li>
+                      <li>
+                        <strong>접속기록의 보관 및 위변조 방지</strong>                        
+                        개인정보처리시스템에 접속한 기록(웹 로그, 요약정보 등)을 최소 6개월 이상 보관, 관리하고 있으며, 접속 기록이 위변조 및 도난, 분실되지 않도록 보안기능을 사용하고 있습니다.
+                      </li>
+                      <li>
+                        <strong>개인정보의 암호화</strong>                        
+                        이용자의 개인정보는 암호화 되어 저장 및 관리되고 있습니다. 또한 중요한 데이터는 저장 및 전송 시 암호화하여 사용하는 등의 별도 보안기능을 사용하고 있습니다.
+                      </li>
+                      <li>
+                        <strong>해킹 등에 대비한 기술적 대책</strong>                        
+                        <광진구시설관리공단>은 해킹이나 컴퓨터 바이러스 등에 의한 개인정보 유출 및 훼손을 막기 위하여 보안프로그램을 설치하고 주기적인 갱신·점검을 하며 외부로부터 접근이 통제된 구역에 시스템을 설치하고 기술적/물리적으로 감시 및 차단하고 있습니다. 또한 네트워크 트래픽의 통제(Monitoring)는 물론 불법적으로 정보를 변경하는 등의 시도를 탐지하고 있습니다.
+                      </li>
+                      <li>
+                        <strong>비인가자에 대한 출입 통제</strong>                        
+                        개인정보를 보관하고 있는 개인정보시스템의 물리적 보관 장소를 별도로 두고 이에 대해 출입통제 절차를 수립, 운영하고 있습니다.
+                      </li>
+                    </ol>
+                  </section>
+                  <section class="term_txt">
+                    <h1 class="term_subTitle">제11조 (정보주체의 권익침해에 대한 구제방법)<img src="../../common/images/sub/site/ico_privacy_rightInterest.png" alt=""></h1>
+                    <p class="txt">정보주체는 아래의 기관에 대해 개인정보 침해에 대한 피해구제, 상담 등을 문의하실 수 있습니다.
+                      &lt;아래의 기관은 광진구시설관리공단과는 별개의 기관으로서, 광진구시설관리공단의 자체적인 개인정보 불만처리, 피해구제 결과에 만족하지 못하시거나 보다 
+                      자세한 도움이 필요하시면 문의하여 주시기 바랍니다&gt;</p>
+                    <dl class="triangle">
+                      <dt>개인정보 침해신고센터 (한국인터넷진흥원 운영)</dt>
+                      <dd>- 소관업무 : 개인정보 침해사실 신고, 상담 신청</dd>
+                      <dd>- 홈페이지 : privacy.kisa.or.kr</dd>
+                      <dd>- 전화 : (국번없이) 118</dd>
+                      <dd>- 주소 : (58324) 전남 나주시 진흥길 9 (빛가람동 301-2) 3층 개인정보침해 신고센터</dd>
+                      <dt>개인정보 분쟁조정위원회 (한국인터넷진흥원 운영)</dt>
+                      <dd>- 소관업무 : 개인정보 분쟁조정신청, 집단분쟁조정 (민사적 해결)</dd>
+                      <dd>- 홈페이지 : www.kopico.go.kr</dd>
+                      <dd>- 전화 : (국번없이)1833-6972</dd>
+                      <dd>- 주소 : (03171) 서울특별시 종로구 세종대로 209 정부서울청사 4층</dd>
+                      <dt>대검찰청 사이버범죄수사과 : (국번없이) 1301 (www.spo.go.kr)</dt>
+                      <dt>경찰청 사이버안전국 : (국번없이) 182 (http://cyberbureau.police.go.kr)</dt>                      
+                    </dl>
+                  </section>                  
+                  <section class="term_txt">
+                    <h1 class="term_subTitle">제12조(개인정보 열람청구)<img src="../../common/images/sub/site/ico_privacy_infoAccess.png" alt=""></h1>
+                    <ol class="txt">
+                      <li>정보주체는 개인정보 보호법 제35조에 따른 개인정보의 열람 청구를 아래의 부서에 할 수 있습니다. 행정안전부는 정보주체의 개인정보 열람청구가 신속하게 처리되도록 노력하겠습니다.  
+                        <dl class="triangle">
+                          <dt>개인정보 열람청구 접수·처리 부서</dt>
+                          <dd class="dd_table">
+                            <ul class="p-table-define m-t-10">
+                              <li class="p-table-define__title">개인정보 담당자</li>
+                              <li class="p-table-list item-2">
+                                <div class="p-table-cell p-table-cell-th w-20">담당부서</div>
+                                <div class="p-table-cell p-table-cell-td w-80">시설안전팀</div>
+                              </li>
+                              <li class="p-table-list item-2">
+                                <div class="p-table-cell p-table-cell-th w-20">성명</div>
+                                <div class="p-table-cell p-table-cell-td w-80"><span class="split">김진용</span><span class="split">유희준</span></div>
+                              </li>
+                              <li class="p-table-list item-2">
+                                <div class="p-table-cell p-table-cell-th w-20">전화</div>
+                                <div class="p-table-cell p-table-cell-td w-80">02-2049-4558</div>
+                              </li>
+                              <li class="p-table-list item-2">
+                                <div class="p-table-cell p-table-cell-th w-20">팩스(FAX)</div>
+                                <div class="p-table-cell p-table-cell-td w-80">02-2049-4568</div>
+                              </li>
+                              <li class="p-table-list item-2">
+                                <div class="p-table-cell p-table-cell-th w-20">이메일</div>
+                                <div class="p-table-cell p-table-cell-td w-80"><span class="split">kimjy0508@gwangjin.or.kr</span><span class="split"> heejun1979@gwangjin.or.kr</span></div>
+                              </li>
+                            </ul>
+                          </dd>                           
+                        </dl>
+                      </li>
+                      <li>정보주체께서는 제1항의 열람청구 접수·처리부서 이외에, 행정안전부의 ‘개인정보보호 종합지원 포털’ 웹사이트(www.privacy.go.kr )를 통하여서도 개인정보 열람청구를 하실 수 있습니다. 
+                        <dl class="triangle">
+                          <dt>행정안전부 개인정보보호 종합지원 포털 → 개인정보 민원 → 개인정보 열람등 요구</dt>
+                        </dl>
+                      </li>
+                    </ol>
+                  </section>
+                  <section class="term_txt">
+                    <h1 class="term_subTitle">제13조 (개인정보의 추가적인 이용·제공의 기준)<img src="../../common/images/sub/site/ico_privacy_useCriteria.png" alt=""></h1>
+                    <ol class="txt">
+                      <li>광진구시설관리공단은 절대 개인정보의 추가적인 이용·제공을 하지 않습니다.</li>
+                    </ol>
+                  </section>
+                  <section class="term_txt">
+                    <h1 class="term_subTitle">제14조 (개인정보파일 등록 현황)</h1>
+                    <ol class="txt">
+                      <li>광진구시설관리공단은 개인정보를 운영근거/처리목적 등 개인정보 처리방침에서 명시한 범위 내에서 처리하고 있으며, 「개인정보보호법」 제32조에 따라 개인정보파일을 운영하고 있습니다.
+                      </li>
+                      <li>개인정보파일의 처리목적, 보유기간, 및 항목은 개인정보파일의 특성에 따라 달리 규정하고 있으며, 개인정보파일별 상세한 내용은 <span class="break">https://www.privacy.go.kr/wcp/dcl/per/personalInfoFileList.do</span> 에서 확인하시기 바랍니다.
+                      </li>
+                    </ol>
+                  </section>
+                  <section class="term_txt">
+                    <h1 class="term_subTitle">제15조 (개인정보영향평가 수행 결과)</h1>
+                    <p class="txt">해당사항 없음</p>
+                  </section>
+                  <section class="term_txt">
+                    <h1 class="term_subTitle">제16조 (개인정보 관리수준평가 결과)</h1>
+                    <ol class="txt">
+                      <li>광진구시설관리공단은 정보주체의 개인정보를 안전하게 관리하기 위해 「개인정보 보호법」 제11조에 따라 매년 개인정보보호위원회에서 실시하는 “공공기관 개인정보 관리수준진단”을 받고 있습니다.</li>
+                      <li>광진구시설관리공단은 2021년도 개인정보 관리수준진단 평가에서 ’양호‘ 등급을 획득하였습니다</li>
+                    </ol>
+                  </section>
+                  <section class="term_txt">
+                    <h1 class="term_subTitle">제17조 (영상정보처리기기 운영·관리에 관한 사항)<img src="../../common/images/sub/site/ico_privacy_operationManagement.png" alt=""></h1>
+                    <p class="txt">영상정보처리기기 운영방침은 별도 페이지에서 확인하실 수 있습니다.(https://www.gwangjin.or.kr/page/etc/cctv.php)</p>
+                  </section>
+                  <section class="term_txt">
+                    <h1 class="term_subTitle">제18조 (개인정보 처리방침의 변경)<img src="../../common/images/sub/site/ico_privacy_change.png" alt=""></h1>
+                    <ol class="txt">
+                      <li>분야별로 관리되는 개인정보파일의 수량 변동으로 인한 변경사유 발생시는 고지를 생략합니다.</li>
+                      <li>이 개인정보 처리방침은 2022년 1월 1일부터 적용됩니다.</li>
+                      <li>이전의 개인정보 처리방침은 아래에서 확인하실 수 있습니다.</li>
+                    </ol>
+                  </section>
+                  <ul class="dowonload">
+                    <li class="list_item"><span class="down_txt">  2018.1.1~2018.10.8 개인정보 처리방침 보기</span><button class="btn"> <span>  다운로드 <img src="../../common/images/ico_down.png" alt=""></span></button></li>
+                    <li class="list_item"><span class="down_txt">2018.10.9~2018.12.31 개인정보 처리방침 보기</span><button class="btn"> <span> 다운로드 <img src="../../common/images/ico_down.png" alt=""></span></button></li>
+                    <li class="list_item"><span class="down_txt">2019.1.1~2020.12.31 개인정보 처리방침 보기</span><button class="btn"> <span> 다운로드 <img src="../../common/images/ico_down.png" alt=""></span></button></li>
+                  </ul>
+                </section>
+
+                <!-- 컨텐츠 본문 하단 부분 -->
+                <article class="cntnsMngDeprt">
+                  <h1 class="hide">콘텐츠 관리부서</h1>
+                  <footer>
+                    <address>
+                      <p>콘텐츠 관리부서 <span class="pc"> | </span> <b>문화사업팀</b></p>
+                      <p>담당자/직위  <span class="pc"> | </span>  <b>홍길동/차장</b></p>
+                      <p><a href="tel:02-2049-1234">전화번호  <span class="pc"> ☎ </span>  <b>02-2049-1234</b></a></p>
+                    </address>
+                  </footer>
+                </article>
+                <section class="satisfaction_box"><!-- 만족도 조사-->
+                  <form action="">
+                    <div class="top">
+                      <h1 class="tit">만족도 조사</h1>
+                      <dl>
+                        <dt>이 페이지에서 제공하는 정보에 대하여 만족하시나요?</dt>
+                        <dd><input type="radio" name="satisfaction" value="5" id="star_5" checked="checked"><label for="star_5"><span>매우 만족</span><span class="star">&starf; &starf; &starf; &starf; &starf;</span></label></dd>
+                        <dd><input type="radio" name="satisfaction" value="4" id="star_4"><label for="star_4"><span>만족</span><span class="star">&starf; &starf; &starf; &starf;</span></label></dd>
+                        <dd><input type="radio" name="satisfaction" value="3" id="star_3"><label for="star_3"><span>보통</span> <span class="star"> &starf; &starf; &starf;</span> </label></dd>
+                        <dd><input type="radio" name="satisfaction" value="2" id="star_2"><label for="star_2"><span>불만족</span> <span class="star"> &starf; &starf;</span> </label></dd>
+                        <dd><input type="radio" name="satisfaction" value="1" id="star_1"><label for="star_1"><span>매우 불만족</span><span class="star">&starf;</span></label></dd>
+                      </dl>
+                    </div>
+                    <div class="bottom">
+                      <label for="opinions_regis" class="hide">의견등록 쓰기</label>
+                      <textarea name="" id="opinions_regis" cols="30" rows="10" placeholder="로그인 후 참여가능하며, 로그인 화면 이동시, 작성하신 의견은 삭제됩니다."></textarea>
+                      <button class="button-color" title="의견등록" type="button">의견등록</button>
+                    </div>
+                  </form>
+                </section><!-- 만족도 조사 끝-->
+                <!-- 켄튼츠 끝 부분 -->
+              </article>
+            </div><!-- .contents_sub End -->
+        </main>
+    <!-- footer -->
+        <footer class="footer">
+        <div class="f_nav">
+          <div class="container">
+            <ul class="fnb">
+              <li><a href="#">개인정보처리방침</a></li>
+              <li><a href="#">이메일무단수집거부</a></li>
+              <li><a href="#">영상정보처리기기 운영&#183;관리 방침침</a></li>
+              <li><a href="#"><span>찾아오시는 길</span></a></li>
+            </ul>
+            <ul class="sns">
+              <li><a href="#"><img src="../../common/images/f_sns_facebook.png" alt="페이스북"></a>
+              </li>
+              <li><a href="#"><img src="../../common/images/f_sns_twi.png" alt="트윗터"></a>
+              </li>
+              <li><a href="#"><img src="../../common/images/f_sns_blog.png" alt="블로그"></a></li>
+              <li><a href="#"><img src="../../common/images/f_sns_instagram.png" alt="인스타그램"></a></li>
+            </ul>
+            <ol class="addr">
+              <li>(05065) 서울특별시 광진구 능동로 76 광진구시설관리공단 (우 05065) 고유번호: 206-82-07233</li>
+              <li class="copy">Copyright © 2022 gwangjin FMC. All rights reserved.</li>
+              <li>본 사이트에 게시된 이메일주소는 자동수집을 거부하며, 이를 위반시 정보통신망법에 의해 처벌될 수 있습니다.</li>
+            </ol>
+          </div>
+        </div>
+        </footer>
+    <div class="curtain"></div>
+    <!-- footer -->
+    </div>
+</body>
+</html>

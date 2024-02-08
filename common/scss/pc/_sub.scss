@@ -1,17 +1,18 @@
 
 
-.page_spot {height:150px;text-align:center; padding-top:50px;margin-top: 122px;position:relative;overflow:hidden;font-size:46px; font-weight: 500;background-repeat:no-repeat;background-size:115% auto;background-position:50% 50%; z-index:-1;animation: bg-zoom 3s; 
-    
-    &.sub1 {background-image:url(../images/bg_pagespot_1.png);}
-    &.sub2 {background-image:url(../images/bg_pagespot_2.jpg);}
-    &.sub3 {background-image:url(../images/bg_pagespot_3.jpg);}
-    &.sub4 {background-image:url(../images/bg_pagespot_4.jpg);}
-    &.sub5 {background-image:url(../images/bg_pagespot_5.jpg);}
-    &.sub6 {background-image:url(../images/bg_pagespot_6.jpg);}
-    &.sub7 {background-image:url(../images/bg_pagespot_7.jpg);}   
+.page_spot {height:150px;text-align:center; padding-top:50px;margin-top: 122px;position:relative;overflow:hidden;font-size:46px; font-weight: 500;background-repeat:no-repeat;background-size:115% auto;background-position:50% 50%; z-index:-1;animation: bg-zoom 3s; animation-fill-mode:forwards;
+    background-image:url(../images/bg_pagespot_1.png);
+    &.corp {background-image:url(../images/bg_corp.png);}
+    &.site {background-image:url(../images/bg_site.png);}
+    &.sustain_manage {background-image:url(../images/bg_sustain_manage.png);}
+    &.registeration {background-image:url(../images/bg_login.png);}
+    &.login {background-image:url(../images/bg_login.png);}
+    &.custom {background-image:url(../images/bg_custom.png);}
+    &.facility {background-image:url(../images/bg_facility.png);}   
+    &.info {background-image:url(../images/bg_pagespot_1.png);}
     @keyframes bg-zoom {
-      from {background-size:115% auto;}
-      to {background-size:100% auto;}
+      from {background-size:auto 115%;}
+      to {background-size:auto 100%;}
     }
     span {display:block;margin-top:9px;font-size:18px;font-weight:400;}
     @include maxWidth($tab){
@@ -19,20 +20,24 @@
       span {font-size:15px;margin-top:6px;}
     }
     @include maxWidth($m720){
-      height:120px;padding-top:35px;font-size:21px;
-      &.sub1 {background-image:url(../images/bg_pagespot_1_m.jpg);}
-      &.sub2 {background-image:url(../images/bg_pagespot_2_m.jpg);}
-      &.sub3 {background-image:url(../images/bg_pagespot_3_m.jpg);}
-      &.sub4 {background-image:url(../images/bg_pagespot_4_m.jpg);}
-      &.sub5 {background-image:url(../images/bg_pagespot_5_m.jpg);}
-      &.sub6 {background-image:url(../images/bg_pagespot_6_m.jpg);}
-      &.sub7 {background-image:url(../images/bg_pagespot_7_m.jpg);} 
+        box-sizing:content-box; height:100px;padding-top:35px;font-size:21px;
+        &.corp {background-image:url(../images/bg_corp.png);}
+        &.site {background-image:url(../images/bg_site.png);}
+        &.sustain_manage {background-image:url(../images/bg_sustain_manage.png);}
+        &.registeration {background-image:url(../images/bg_login.png);}
+        &.login {background-image:url(../images/bg_login.png);}
+        &.custom {background-image:url(../images/bg_custom.png);}
+        &.facility {background-image:url(../images/bg_facility.png);}   
+        &.info {background-image:url(../images/bg_pagespot_1.png);}
+        background-size:cover;
       span {font-size:11px;margin-top:3px;}
     }
 
 
     /*sub 페이지 제목*/
-    .sub_title { font-family: 'Noto Sans'; font-weight:500; font-size: $fs-42;  line-height:1; color:#222;}
+    .sub_title { font-family: 'Noto Sans'; font-weight:500; font-size: $fs-42;  line-height:1; color:#222;
+        @include maxWidth($m720){font-size:24px; }
+    }
     
 }
 
@@ -181,13 +186,14 @@ main.sub{ @include clear;
              /* 컨텐츠 타이틀 바*/
              /* 페이지 로케이션 */
             .sub_top {@include clear; display:flex;justify-content: flex-end;padding-bottom:10px;border-bottom:1px solid #999;line-height:33px;
-                > ol{@include align(middle,16px);text-align:left; //타이틀바 로게이션 
+                > ol{display:flex; justify-content: flex-end; flex-wrap:wrap; align-items:center; list-style: none; counter-reset: list 0;//타이틀바 로게이션 
                     > li{padding-left:22px;line-height:33px; position: relative;
-                        &::before{ position: absolute; content: '>'; top: 0; left: 10px;display: block;}
+                        &::before{content: counter(list, decimal);counter-increment: list; color:#222; clip: rect(1px 1px 1px 1px); clip-path:inset(50%);  position:absolute; display: inline-block; width: 1px; height:1px; margin-left: -1em}
+                        &::after{ position: absolute; content: '>'; top: 0; left: 10px;display: block;}
                         a {color:#222;display:inline-block;}
                         &:first-of-type {padding-left:0;background-image:none;
                             img {vertical-align:-1px;}
-                            &::before{display: none;}
+                            &::after{display: none;}
                         }
                         &:nth-last-of-type(3) {
                             //a {color:#316ed2;}
@@ -243,13 +249,23 @@ main.sub{ @include clear;
                 .title{ margin-bottom: 20px;
                     span{font-size: 22px;} 
                 }
-                .sub_top {margin-bottom:20px;
+                .sub_top {margin-bottom:20px; height:32px; align-items: center;
                     > h2 {font-size:22px;line-height:30px;}
-                    > ol{@include align(middle,12px);
-                        > li{padding-left:24px;background-size:5px auto;line-height:15px;background-position:left 10px center;          
-                        &:first-of-type {
-                            img {vertical-align:-1px;width:16.5px;}
-                        }             
+                    > ol{ @include align(middle,12px);
+                        > li{padding-left:18px;background-size:5px auto;line-height:15px;background-position:left 10px center; line-height:16px; height:16px;
+                            &:before{left:6px;}         
+                            &:first-of-type {
+                                img {vertical-align:-1px;width:16.5px;}
+                            } 
+                        }
+                        &.cnt_5{flex-wrap:wrap; align-items: flex-start; height:auto;
+                            >li{
+                                &:nth-child(1){flex:0 1 auto; margin-left:40%;}
+                                &:nth-child(2){flex:0 1 auto; }
+                                &:nth-child(3){flex:0 1 auto; }
+                                &:nth-child(4){flex:0 1 auto; }
+                                &:nth-child(5){flex:0 1 auto; }
+                            }
                         }
                     }  
                     .share { /* sns 시작*/
@@ -280,6 +296,13 @@ main.sub{ @include clear;
                     &.count3{@include flex-box((flex_val:3,a_margin:2px));}
                     &.count2{@include flex-box((flex_val:2,a_margin:2px));}
                 }
+                /*2024-01-10 강한구 지속가능경영 > 4depth tab메뉴*/
+                &.depth_4_tab{margin:12px 0;
+                    .sub_conts_navList{
+                        .sub_conts_navItem{
+                            a{height:40px; line-height: 40px;}}
+                    }
+                }/*2024-01-10 강한구 지속가능경영 > 4depth tab메뉴 끝*/
             }
             
             >form{
@@ -289,3 +312,168 @@ main.sub{ @include clear;
     }
 }
 
+/* 경영공시 */
+.yecont{display:none;}
+.hclaytit_w{position:relative;color:#383a3d; margin-bottom:15px;margin-top: 20px;}
+.hctit{font-size:30px;line-height:30px;font-weight:700;margin-bottom:12px;}
+.hcsub{margin-top:3px;font-size:15px;}
+.hclay{position:absolute;bottom:0;right:0;font-size:14px;}
+.etri{position:relative;top:5px;}
+
+/* 경영공시 테이블 */
+.tbl_sty03 table{width:100%;table-layout:fixed;}
+.tbl_sty03 table th{font-weight:500 !important;color:#222 !important;}
+.tbl_sty03 table thead th{border-top:1px solid #404040;border-bottom:1px solid #404040;padding:9px 10px 10px;font-weight:500;color:#222;text-align:center;}
+.tbl_sty03 table tfoot th,
+.tbl_sty03 table tfoot td,
+.tbl_sty03 table tbody th,
+.tbl_sty03 table tbody td{padding:10px 25px;border-bottom:1px solid #d1d1d1;border-right:1px solid #d1d1d1;color:#666;text-align:right;font-size:15px;font-weight:300;letter-spacing:0;}
+.tbl_sty03 table td.tdbg{background:#f5f5f5;}
+.tbl_sty03 table tfoot th.last, .tbl_sty03 table tbody td.last, .tbl_sty03 table td.last{border-right:0;}
+.tbl_sty03 table td.tal{text-align:left;color:#222;}
+.tbl_sty03 table strong{font-weight:700;color:#222 !important;}
+.tbl_sty03 table tbody tr:nth-child(even){background:#f5f5f5;}
+.tbl_sty03 table tbody tr.bg td{background:#f5f5f5;}
+.tbl_sty03 table tfoot tr td:first-child,
+.tbl_sty03 table tfoot tr th:first-child,
+.tbl_sty03 table tbody tr td:first-child,
+.tbl_sty03 table tbody tr th:first-child{text-align:left;font-weight:300;}
+.tbl_sty03 table tbody tr th.fir{text-align:left;font-weight:300;}
+.tbl_sty03 table tbody tr td.fir{text-align:left;font-weight:300;}
+
+.tbl_sty03.type2 table tfoot tr td:first-child,
+.tbl_sty03.type2 table tfoot tr th:first-child,
+.tbl_sty03.type2 table tbody tr td:first-child,
+.tbl_sty03.type2 table tbody tr th:first-child{text-align:center;}
+.tbl_sty03.type2 table tfoot th,
+.tbl_sty03.type2 table tfoot td,
+.tbl_sty03.type2 table tbody th,
+.tbl_sty03.type2 table tbody td{text-align:center;}
+.tbl_sty03.type2 table tbody tr th.fir{text-align:center;font-weight:300;}
+.tbl_sty03.type2 table tbody tr td.fir{text-align:center;font-weight:300;}
+.tbl_sty03.type2 table tbody tr td.left{text-align:left !important;}
+
+
+/* 경영공시 이사회회의록*/
+.ndata_ctb{width:100%;table-layout:fixed;}
+.ndata_ctb thead th{border-top:1px solid #404040;border-bottom:1px solid #404040;padding:9px 10px 10px;font-weight:500;color:#222;}
+.ndata_ctb tbody td,
+.ndata_ctb tbody th{padding:10px 10px;border-bottom:1px solid #d1d1d1;border-right:1px solid #d1d1d1;color:#666;text-align:center;font-size:15px;font-weight:300;letter-spacing:0;}
+.ndata_ctb td.tdbg,
+.ndata_ctb tbody th.tdbg,
+.ndata_ctb tbody td.local_bg{background:#f5f5f5;}
+.ndata_ctb tbody td.local_bg{font-weight:500;color:#222;border-right:0;text-align:center;}
+.ndata_ctb tbody th.tdbg{font-weight:400;text-align:left;}
+.ndata_ctb.type2 td{padding:15px;text-align:left; word-break:keep-all !important;}
+.ndata_ctb td.last{border-right:0;}
+.ndata_ctb td.tal{text-align:left;}
+.ndata_ctb td.tar{text-align:right;}
+.ndata_ctb td.tac{text-align:center;}
+.ndata_ctb tfoot{position:relative;z-index:2;}
+.ndata_ctb td strong{font-weight:700;color:#222;}
+
+.ndata_ctb tr.total td{font-weight:500;}
+.ndata_ctb tr.total td.fir{}
+.ndata_ctb tr.total .linelow{padding:0 !important;height:1px;border:0;position:relative;}
+.ndata_ctb tr.total .linelow .line{background:#404040;position:absolute;top:-1px;left:0;width:100%;height:1px;}
+
+
+/* 지속가능경영보고서 */
+.report01{color:#003078;font-weight:500;font-size:24px;line-height:30px;}
+.report02{color:#383a3d;font-size:16px;}
+.rep_tit{color:#383a3d;font-size:30px;line-height:32px;font-weight:700;margin-bottom:23px;}
+.report_list{}
+.report_list > li{margin-bottom:30px;}
+.report_list > li:last-child{margin-bottom:0;}
+.report_item{border-top:1px solid #404040;border-bottom:1px solid #d1d1d1;}
+.rep_thum{background:#dcdcdc;width:159px;height:227px;margin:30px 0 0 35px;}
+.rep_thum img{border:1px solid #d1d1d1;width:159px;height:227px;margin:-8px 0 0 -8px}
+.rep_cell{float:left;}
+.rep_cell.repleft{background:#f5f5f5;width:214px;border-right:1px solid #d1d1d1;padding-bottom:20px;}
+.rep_cell.repleft .btn_down{margin:15px 0 0 28px}
+.rep_cell.repright{width:655px;margin-left:25px;padding-top:25px;}
+.rep_cell .repr01{font-size:22px;color:#222222;font-weight:500;margin-bottom:20px;}
+.rep_cell .repr02{line-height:25px;}
+.rep_ment{margin-top:20px;}
+
+
+
+.ybox_w{margin-top:45px;border:1px solid #d5dae0;border-bottom:0;}
+.ybox_low{border-bottom:1px solid #d5dae0;padding:20px;}
+.ybox_w.type2 .ybox_low{padding:40px;}
+.ybox_low.ydlow01{}
+.ybox_low.ydlow02{background:#f6f9fb;position:relative;padding:20px 40px;}
+.ybox_low.ydlow03{margin-top:23px;padding-bottom:80px;background:url("/down/y_images/ethimg_01.png") no-repeat 100% 100%;}
+.ybox_low.ydlow03.type2{background-image:url("/down/y_images/ethimg_02.png");border-bottom:0;}
+.ybox_low.ydlow03.type3{background-image:url("/down/y_images/starndimg_01.png");}
+.ybox_low.ydlow04{background: #003078 url("/down/y_images/bot_blue.png") no-repeat 50% 0;padding-top:50px !important;border:0;text-align:center;color:#fff;font-size:24px;}
+.ybox_low .skyp{color:#5b5f76;font-size:20px;line-height:30px;}
+.ybox_low .sky_allow{position:absolute;bottom:-31px;left:50%;width:60px;height:31px;margin:0 0 0 -30px;background:url("/down/y_images/bot_tri.png") no-repeat 0 0;}
+
+
+.btn_down{color:#fff;background:#5b5f76 url("/down/y_images/ico_down.png") no-repeat 100% 50%;display:inline;display:inline-block;padding:10px 50px 10px 24px;min-width:90px;text-align:left;}
+.btn_down:hover{display:inline;display:inline-block;color:#fff;}
+.btn_down span{}
+
+
+
+.clear_both{clear:both;}
+
+
+/*지속가능경영 > 고객서비스 > 고객만족영영시스템 > 서비스이행 tab 포토리스트 2024-01-10*/
+.details_view_box {
+    &.photo_box{
+        .photo_list{
+          .photo_list_ul{ // 각 사진 목록
+            .photo_list_li{
+              .tit{ font-weight:600;
+                &.bg_blue{padding:6px ; background-color:#dae5ff; height:34px; line-height:22px; font-size:16px;
+                  .dot{margin-left:15px;
+                    &:before{background-color:#476dc3;}
+                  }
+                }
+                
+              }
+              //.flex_photo_box
+              .flex_photo_box{display: flex; justify-content: space-between; align-items: stretch; padding:10px;
+                $photo_w : 226px;
+                .photo_img{position:relative; flex:0 0 $photo_w; width:$photo_w; padding-top:$photo_w;
+                    img{position:absolute; left:0; top:0; width:100%; height:100%;}
+                }
+                  // 각 사진에 해당하는 컨텐츠 하위 목록 
+                .photo_txt{flex:0 0 calc(100% - 246px);
+                    .photo_txt_ul{
+                      .photo_txt_li{margin-bottom:8px; display: flex; align-items: start; line-height:24px;
+                        .dot{height:24px;}
+                        .txt{}
+                      }
+                    }
+
+                    &.flex_col{display: flex; flex-direction: column;justify-content: flex-start; align-items: start;
+                        .tit{margin-bottom:15px;}
+                        .btn_photo{margin-top:auto;
+                            .btn{padding-left:20px; padding-right:20px;
+                            }
+                        }
+                    }
+                    
+                }
+                @include maxWidth($m720){
+                    flex-direction:column; 
+                    &.flex_m {flex-direction:row; align-items: start;
+                        .photo_img{flex:0 0 40%; height:0; width:40%; padding-top:54%; align-self:start}
+                        .photo_txt{flex: 0 0 calc(100% - 150px); margin-left:20px;
+                            .flex_col{
+                                .tit{margin-bottom:10px;}
+                            }
+                        }
+                    }
+                    .photo_img{align-self: center;}
+                  }
+                }
+                
+            }
+          }
+        }
+       }
+}

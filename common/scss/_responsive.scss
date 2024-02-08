@@ -16,7 +16,7 @@ body{
 
     }
     @include maxWidth($m720) {
-      margin-top:70px;
+      margin-top:88px;
     }
 
   }
@@ -30,7 +30,7 @@ body{
       padding-top:50px;
     }
     @include maxWidth($m720) {
-      padding-top:100px;
+      padding-top:88px;
     }
   }
   .sub{
@@ -119,5 +119,40 @@ body{
       }
     }
     
+  }
+}
+
+/* 2023-11-21 추가 */
+.s-table {
+	overflow-x: auto;
+}
+.s-table table {
+	min-width: 950px;
+    width: 100%;
+    table-layout: fixed;
+}
+
+@media screen and (max-width: 560px) {
+  .responsive-table th:nth-child(5),
+  .responsive-table td:nth-child(5) {
+    display: none;
+  }
+}
+@media screen and (max-width: 520px) {
+  .responsive-table th:nth-child(6),
+  .responsive-table td:nth-child(6) {
+    display: none;
+  }
+}
+@media screen and (max-width: 465px) {
+  .responsive-table th:nth-child(1),
+  .responsive-table td:nth-child(1) {
+    display: none;
+  }
+}
+@media screen and (max-width: 410px) {
+  .responsive-table th:nth-child(3),
+  .responsive-table td:nth-child(3) {
+    display: none;
   }
 }

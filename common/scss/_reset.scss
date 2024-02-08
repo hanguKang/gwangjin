@@ -6,15 +6,15 @@ body {font-size: 16px; line-height: 1.4; color: #222;font-family:'Noto Sans','sa
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
 h1, h2, h3, h4, h5, h6 { font-size: 1rem; font-weight: normal;}
-ul, ol, li { list-style-type: none; }
+ul, ol, li {list-style:none; }
 ul:after,ol:after,dl:after {}
 a {color: inherit; text-decoration: none; display:block;}
 img { max-width: 100%; border: 0;vertical-align:middle; }
 p { max-height: 9999px; }
 address { font-style: normal; }
 button { margin: 0; padding: 0; -webkit-box-sizing: border-box; box-sizing: border-box; border: 0 none; background-color: transparent; font-family: inherit; font-size: inherit; cursor: pointer;-webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; appearance: none; -webkit-box-sizing: border-box; box-sizing: border-box; cursor: pointer;  }
-caption,legend { height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); margin: -1px; font-size:0; line-height:0;}
-.hide { height: 1px; width: 1px; overflow: hidden; clip: rect(1px 1px 1px 1px); clip-path:inset(50%);  position:absolute; font-size:100%; line-height:1; }
+caption,legend { height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); font-size:100%; line-height:1;}
+.hide { margin:auto; height: 1px; width: 1px; overflow: hidden; clip: rect(1px 1px 1px 1px); clip-path:inset(50%);  position:absolute; font-size:100%; line-height:1; }
 .clear {clear:both;}
 .br {display:block;}
 table {display:table;width:100%;border-collapse:collapse;border-spacing:0;table-layout:fixed;}
@@ -25,11 +25,11 @@ form {display:block;width:100%;}
 input,  select, textarea {padding: 0 10px; -webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; appearance: none; -webkit-box-sizing: border-box; box-sizing: border-box; width: 100%; display: block; border: 0; font-family: inherit; }
 input[type="checkbox"], input[type="radio"]{accent-color: #000;}
 textarea{resize:none;}
-a:visited {
-  color: #636363;
-  text-decoration: none;
-  &.inverse{ color:#fff;}
-}
+// a:visited {
+//   color: #636363;
+//   text-decoration: none;
+//   &.inverse{ color:#fff;}
+// }
 a:link {
   /*color: #636363;*/
   color: #252525;
@@ -44,6 +44,8 @@ body{
   }
 }
 
+.border_line{border:1px solid #ddd;}
+
 // input[type="date"]::-webkit-calendar-picker-indicator{
 //   opacity:0;
 //   z-index: 1;
@@ -54,6 +56,16 @@ body{
 $color1:#c50202;
 $color2:#567eff;
 $color3:#e51873;
+$t-color-primary:#222222;
+$t-color-secondary:#555555;
+$t-color-gray:#808080;
+
+.txt-primary{color:$t-color-primary;}
+.txt-scondary{color:$t-color-secondary;}
+.txt-gray{color:$t-color-gray;}
+
+
+$main_color:#283f83;
 
 $bg-color1: #f9fafb;
 $bg-color2: #f5f7f9;
@@ -65,7 +77,7 @@ $btn-color1:#555555;
 //border
 $border1: 1px solid #cbcccd;
 $border2 : 1px solid #dfdfdf;
-
+$bd_color:#dedede;
 //font-family
 $ff-noto:'Noto Sans','sans-serif';
 $ff-gm:'GmarketSans','sans-serif';
@@ -93,6 +105,26 @@ $fs-30:1.875rem;// 30px
 $fs-32:2rem;// 32px
 $fs-42:2.875rem;// 46px
 
+.fs-10{font-size:$fs-10;}// 12px
+.fs-12{font-size:$fs-12;}// 12px
+.fs-13{font-size:$fs-13;}// 13px
+.fs-14{font-size:$fs-14;}// 14px
+.fs-15{font-size:$fs-15;}// 15px
+.fs-16{font-size:$fs-16;}// 16px
+.fs-17{font-size:$fs-17;}// 17px
+.fs-18{font-size:$fs-18;}// 18px
+.fs-19{font-size:$fs-19;}// 19px
+.fs-20{font-size:$fs-20;}// 20px
+.fs-21{font-size:$fs-21;}// 21px
+.fs-22{font-size:$fs-22;}// 22px
+.fs-23{font-size:$fs-23;}// 23px
+.fs-24{font-size:$fs-24;}// 24px
+.fs-26{font-size:$fs-26;}// 26px
+.fs-28{font-size:$fs-28;}// 28px
+.fs-30{font-size:$fs-30;}// 30px
+.fs-32{font-size:$fs-32;}// 32px
+.fs-42{font-size:$fs-42;}// 46px
+
 .w_4{width:4%;}
 .w_5{width:5%;}
 .w_6{width:6%;}
@@ -117,7 +149,7 @@ $fs-42:2.875rem;// 46px
 .w_85{width:85%;}
 .w_90{width:90%;}
 .w_95{width:95%;}
-.required{color:#9c001d;}
+.required{color:#ff0033;}
 
 .padding_left_5{padding-left:5px;}
 .padding_left_10{padding-left:10px;}
@@ -137,27 +169,142 @@ $fs-42:2.875rem;// 46px
 .padding_left_80{padding-left:80px;}
 .padding_left_85{padding-left:85px;}
 
+.m-t-10{margin-top:10px;}
+.m-t-12{margin-top:12px;}
+.m-t-14{margin-top:14px;}
+.m-t-18{margin-top:18px;}
+.m-t-20{margin-top:20px;}
+.m-t-24{margin-top:24px;}
+.m-t-28{margin-top:28px;}
+.m-t-32{margin-top:32px;}
+.m-t-40{margin-top:40px;}
+
+.m-b-10{margin-bottom:10px;}
+.m-b-12{margin-bottom:12px;}
+.m-b-14{margin-bottom:14px;}
+.m-b-18{margin-bottom:18px;}
+.m-b-20{margin-bottom:20px;}
+.m-b-24{margin-bottom:24px;}
+.m-b-28{margin-bottom:28px;}
+.m-b-32{margin-bottom:32px;}
+.m-b-40{margin-bottom:40px;}
+
+.m-s-10{margin-left:10px;}
+.m-s-12{margin-left:12px;}
+.m-s-14{margin-left:14px;}
+.m-s-18{margin-left:18px;}
+.m-s-20{margin-left:20px;}
+.m-s-24{margin-left:24px;}
+.m-s-28{margin-left:28px;}
+.m-s-32{margin-left:32px;}
+.m-s-40{margin-left:40px;}
+
+.m-e-10{margin-right:10px;}
+.m-e-12{margin-right:12px;}
+.m-e-14{margin-right:14px;}
+.m-e-18{margin-right:18px;}
+.m-e-20{margin-right:20px;}
+.m-e-24{margin-right:24px;}
+.m-e-28{margin-right:28px;}
+.m-e-32{margin-right:32px;}
+.m-e-40{margin-right:40px;}
+
+.break{word-break: break-all; hyphens: auto;}
+/* 공지사항 */
+.term_txt{
+  ul, ol {line-height: 1.8;margin: 0;padding-inline-start: 1.5em;list-style-position: inside;}
+  ul {list-style-type: square;}
+  ol {list-style-type: decimal;}
+  li::marker {color:$btn-color1;font-size: $fs-16;font-weight: bold;}
+  ol {counter-reset: list 0;
+    >li{margin-top:20px;
+     &:before {content: counter(list, decimal) " )  ";counter-increment: list;} 
+     li{margin-top:10px;}
+    }
+  }
+  
+  .circle_list {counter-reset: circle 0; //시작 목록을 지정, 별도 지정 없으면0부터 시작
+    .circle_item {position: relative;list-style: none;padding-left:24px; 
+      &.digit_2{
+        &:before{left:0.2em;}
+        &:after{}
+      }
+      &:before {position: absolute;top: $fs-16;left: 0.4em;transform: translateY(-50%);counter-increment: circle 1;content: counter(circle); font-size: 0.8em;} //counter-increment: 변수 시작숫자 -> 1부터 시작, counter(circle) ->content: ["추가문자열"] counter(변수명->부모요소의 변수명) ["추가문자열"] content: counter(var-count) ": "; , counter-increment"으로 지정한 값만큼씩 자동 증가
+      
+      &:after {content: '';position: absolute;top: $fs-16;left: 0;transform: translateY(-50%);display: inline-block;border: 1px solid #333;border-radius: 50%;width: 1em;height: 1em;}
+    }
+  }
+  .kor_list{
+    .kor_item{list-style-type:hangul; margin-top:10px; 
+      &:before{content:''}
+    }
+  }
+
+}
+
 //style
 $header-height: 85px;
+figure{
+  >img{width:100%;}
+  figcaption{
+    ol{list-style-type: decimal;}
+  }
+}
+.slogan_box{margin-bottom:36px; padding:20px; background-color:$bg-color3; font-size:20px; line-height:30px; 
+  &.center{text-align:center;}
+  p{font-weight:300; color:#333;}
+  strong{font-weight:500;
+    &.fs_big{font-size:20px; }
+  }
 
-.dot{padding-left:15px; position:relative; color:#222; line-height:22px; 
+  &.tri_tail{position:relative;
+    &:before{content:""; position:absolute; left:50%; bottom:0; width:24px; height:24px; background-color:$bg-color3; transform:translate(-50%, 55%) rotate(45deg) ; }
+  }
+  &.tri_head{position:relative;
+    &:before{content:""; position:absolute; left:50%; top:-26px; width:24px; height:24px; background-color:$bg-color3; transform:translate(-50%, 55%) rotate(45deg) ; }
+  }
+}
+.txt_right{text-align:right;
+  .emphasizing{display:block; font-weight:500;}
+}
+.dot{padding-left:15px; position:relative; color:#222; line-height:22px; word-break: break-all;
   &:before{content:""; position:absolute; left:0; top:50%; transform:translateY(-50%); width:4px; height:4px; border-radius:50%; background:#000; }
 }
 
-.btn{display:inline-block;height:42px; background-color:$btn-color1; color:#fff; font-size:16px; line-height:42px; text-align:center;
+.btn{display:inline-block;height:42px; background-color:$btn-color1; color:#fff; font-size:16px; line-height:42px; text-align:center; 
+  &.btn_s{background-color:$bg-active; color:#fff;}
   >*{ padding:0 56px;}
 }
 //mixin
 /*clear*/
 @mixin clear{&:after {content: ''; display: block; clear: both;}}
 
+@mixin upPoint{
+  @content;
+}
 
 // ... 처리
-@mixin ell1{max-width: 100%; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+@mixin ell1{display:block; max-width: 100%; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
 @mixin ell2{text-overflow: ellipsis; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;}
 @mixin ell3{text-overflow: ellipsis; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;}
 @mixin ell4{text-overflow: ellipsis; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;}
 @mixin ell6{text-overflow: ellipsis; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical;}
+
+@mixin ellipsis($lines: 1) {
+  @if ($lines==1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+  }
+}
+.text-ellipsis { @include ellipsis; }
+.long-text { @include ellipsis(3); }
 
 
 /*요소 세로 중앙정렬*/
@@ -171,7 +318,10 @@ $header-height: 85px;
 @mixin ftItem($i, $pd){
 	> :nth-child(n){
 		float:left;
-		width:calc(#{100 / $i}% - #{($i - 1) * $pd / $i}px);
+    $r1 : calc(100 / $i)*1%;
+    $r2 : ( calc(($i - 1)*$pd) / $i )*1px;
+
+		width:calc($r1 - $r2);
 		margin-right:#{$pd}px;
 	}
 	> :nth-of-type(#{$i}n){margin-right:0;}
@@ -244,22 +394,25 @@ $circle:4px;
   $g:&;
   $space : map-get($map: $flex_prop, $key: 'a_margin');
 
-  @each $prop, $val in $flex_prop{
-    @if $prop == 'align_val' {
+  @each $key, $val in $flex_prop{
+    @if $key == 'align_val' {
       align-items: $val; 
     }
-    @if $prop == 'justify_val' {
+    @if $key == 'justify_val' {
       justify-content: $val;
     }
 
-    @if $prop == 'flex_val' {
+    @if $key == 'flex_val' {
       > :nth-child(n){        
         flex:$val; 
         @if type-of($val) == 'number'{
-          $n-val:1/$val*100%;
+          $n-val: calc( 1 / $val )*100%;
           flex:0 0 $n-val;
           @include maxWidth($m720){
             flex:0 0 50%;
+            @if $val == 2{
+              flex:0 0 100%;
+            }
           }
         }
         // #{&g}{justify-content: flex-start;}
@@ -300,4 +453,5 @@ $circle:4px;
   display:flex; justify-content: center; align-items: center; padding:20px 0;
   >*{flex:0 0 232px; margin:0 4px; height:62px; color:#fff; display:flex; justify-content: center; align-items:center;}
 }
+
 

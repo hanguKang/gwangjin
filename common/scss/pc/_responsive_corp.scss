@@ -112,6 +112,22 @@
             }
           }
         }
+        .table{
+          table{
+            td{
+              .organ_title{
+                em{
+                  span{ }
+                }
+                
+              }
+              .tel, .fax{ 
+                em{}
+                span{display:block; vertical-align:middle;}
+              }    
+            }
+          }
+        }
       }
     }
   }
@@ -285,7 +301,8 @@
   main.sub{
     .contents_sub_box {
       .contents_sub{
-        .sub_top {
+        .sub_top {position: relative ;z-index: 1;
+      
           ul{
             .share{margin-left:0;}
             .print_btn{margin-left:0;}
@@ -293,6 +310,8 @@
         } 
       } 
     }
+    
+
 
     /*본문*/
     .page{
@@ -350,6 +369,11 @@
       &.missionVission{ 
         &:before{left:55px; }
         .msVs{
+          &:first-of-type{
+            .tit{position:relative; 
+              &:before{content:"";position:absolute; transform:translateX(-50%); width:10px; height:50%; left:50%; top:-50%; background:#fff; }
+            }  
+          }
           .tit{width:80px; height:80px; margin-right:10px;}
           .list_boxes{margin:0 auto; text-align: center;  padding-right:20px; width:calc(100% - 120px); /* .titl width: 110px; margin-right:20px; padding-right:20px;*/}
           &:nth-child(1){ 
@@ -424,20 +448,21 @@
               &.open{top:0;
                 .period_item{
                   &.active{
-                    button{background-image:url(../images/tab_mobile_less.png); background-repeat:no-repeat; background-position:95% 50%; }
+                    .btn{ background-image:none; }
                   }
+                  .btn{height:40px;}
                 }
               }
             }
             .period_item{ font-size:16px; line-height:40px; text-align:left; height:40px; 
               $g:&;          
               &.active{ 
-                button{color:#fff; background-color:#476dc3; background-image:url(../images/tab_mobile_more.png); background-repeat:no-repeat; background-position:95% 50%;}
+                .btn{color:#fff; background-color:#476dc3; background-image:url(../images/tab_mobile_more.png); background-repeat:no-repeat; background-position:95% 50%;}
               }
-              button{display: block; width: 100%;  padding-left:15px; margin:0; box-sizing:border-box; text-align:left; 
-                @at-root #{$g}:nth-of-type(1) button{margin-left:0px; width:100%;}
-                @at-root #{$g}:nth-of-type(4) button{margin-right:0px; width:100%;}
-                @at-root #{$g}:nth-of-type(5) button{margin-left:0px; width:100%;}
+              .btn{display: block; width: 100%; height:40px; padding-left:15px; margin:0; box-sizing:border-box; text-align:left; 
+                @at-root #{$g}:nth-of-type(1) .btn{margin-left:0px; width:100%;}
+                @at-root #{$g}:nth-of-type(4) .btn{margin-right:0px; width:100%;}
+                @at-root #{$g}:nth-of-type(5) .btn{margin-left:0px; width:100%;}
               }              
             }
           }
@@ -456,87 +481,133 @@
         }//.historyData End     
       } //histroy End 연혁 끝
       
-            /* 조직도 */
-            &.organization{
-              .flow_chart{
-                .organ_depth1{           
-                  $_circle_val : 94px;
-                  .organ_2{               
-                    .organ_2_1{
-                      margin-right:20px;
-                      &:before{
-                      }
-                      >:nth-child(1){
-                        a{margin:0 4px;}
-                      }
-                    }
-                    .organ_2_2{flex:0 1 auto; 
-                      >:nth-child(n){position:relative; flex:0 1 auto; margin-bottom:20px;
-                        &:before{ }
-                        &:after{}
-                      }
-                      >:nth-child(1){
-                      }
-                      >:nth-child(2){
-                        &:after{left:-52%;}
-                      }
-                      >:nth-child(3){
-                        &:after{left:-52%;}
-                        @include maxWidth(453px){
-                          &:before{display:none;}
-                          &:after{display:none;}
-                        }
-                      }
-                      >:nth-child(4){
-                        &:after{left:-52%;}
-                        @include maxWidth(572px){
-                          &:before{display:none;}
-                          &:after{display:none;}
-                        }
-                      }
-                      >:nth-child(5){
-                        @include maxWidth(674px){
-                          &:before{display:none;}
-                          &:after{display:none;}
-                        }
-                      }
-                      >:nth-child(6){
-                        &:before{display:block; }
-                        &:after{display:block; left:-54%;}
-                        @include maxWidth(996px){
-                          &:before{display:none;}
-                          &:after{display:none;}
-                        }
-                        @include maxWidth(900px){
-                          &:before{display:block; }
-                          &:after{display:block; left:-54%;}
-                        }
-                        @include maxWidth(776px){
-                          &:before{display:none;}
-                          &:after{display:none;}
-                        }
-                      }
-                      >:nth-child(7){
-                        &:before{display:none;}
-                        &:after{display:none;}
-                        @include maxWidth(900px){
-                          &:before{display:block;}
-                          &:after{display:block; left:-52%;}
-                        }
-                        @include maxWidth(878px){
-                          &:before{display:none;}
-                          &:after{display:none;}
-                        }
-                      }
-                      >:nth-child(8){         
-                        &:before{display:none;}
-                        &:after{display:none;}         
-                      }
-                    }
+      /* 조직도 */
+      &.organization{
+        .flow_chart{
+          .organ_depth1{           
+            $_circle_val : 94px;
+            .organ_2{               
+              .organ_2_1{
+                margin-right:20px;
+                &:before{
+                }
+                >:nth-child(1){
+                  a{margin:0 4px;}
+                }
+              }
+              .organ_2_2{flex:0 1 auto; 
+                >:nth-child(n){position:relative; flex:0 1 auto; margin-bottom:20px;
+                  &:before{ }
+                  &:after{}
+                }
+                >:nth-child(1){
+                }
+                >:nth-child(2){
+                  &:after{left:-52%;}
+                }
+                >:nth-child(3){
+                  &:after{left:-52%;}
+                  @include maxWidth(453px){
+                    &:before{display:none;}
+                    &:after{display:none;}
+                  }
+                }
+                >:nth-child(4){
+                  &:after{left:-52%;}
+                  @include maxWidth(572px){
+                    &:before{display:none;}
+                    &:after{display:none;}
+                  }
+                }
+                >:nth-child(5){
+                  @include maxWidth(674px){
+                    &:before{display:none;}
+                    &:after{display:none;}
+                  }
+                }
+                >:nth-child(6){
+                  &:before{display:block; }
+                  &:after{display:block; left:-54%;}
+                  @include maxWidth(996px){
+                    &:before{display:none;}
+                    &:after{display:none;}
+                  }
+                  @include maxWidth(900px){
+                    &:before{display:block; }
+                    &:after{display:block; left:-54%;}
+                  }
+                  @include maxWidth(776px){
+                    &:before{display:none;}
+                    &:after{display:none;}
+                  }
+                }
+                >:nth-child(7){
+                  &:before{display:none;}
+                  &:after{display:none;}
+                  @include maxWidth(900px){
+                    &:before{display:block;}
+                    &:after{display:block; left:-52%;}
+                  }
+                  @include maxWidth(878px){
+                    &:before{display:none;}
+                    &:after{display:none;}
+                  }
+                }
+                >:nth-child(8){         
+                  &:before{display:none;}
+                  &:after{display:none;}         
+                }
+              }
+            }
+          }
+        }
+        .table{
+          table{
+            &.organ_table{
+              thead{
+                tr{
+                  th{word-break:break-all;
+                    &:nth-child(1){width:16%;}
+                    &:nth-child(2){width:16%;}
+                    &:nth-child(3){width:16%;}
+                    &:nth-child(4){width:16%;}
+                    &:nth-child(5){width:auto;}
                   }
                 }
               }
             }
+            tbody{
+              th{word-break:break-all;}
+
+              td{word-break:break-all;
+                .organ_title{
+                  em{
+                    span{ display:block; }
+                  }
+                  
+                }
+                .tel, .fax{ 
+                  em{}
+                  span{display:block; vertical-align:middle;}
+                }    
+              }
+            }
+            
+            
+          }
+        }
+      }//조직도 .organization End
+
+      /* 뉴미디어 바로가기 */
+      &.newMedia{
+        .wrapper{margin-top:20px;
+          &.sns_box{
+            .sns_list{@include flex-box(('flex_val':0 0 44%, 'justify_val':space-between, 'align_val':center, 'a_margin':0px,'_wrap':wrap));
+              >:nth-child(n){margin-top:60px; }
+            }
+          }
+        }
+      }
     }//.page End
   }//main.sub End 
 

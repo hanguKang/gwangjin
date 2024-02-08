@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+  <title>?</title>
+  <link rel="stylesheet" href="../../common/css/default.css">
+  <link rel="stylesheet" href="../../common/css/slick.css" />
+  <link rel="stylesheet" href="../../common/css/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <script src="../../common/js/jquery-3.6.0.min.js"></script>
+  <!--<script src="../../common/js/jquery-1.11.3.min.js"></script>-->
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
+  <script src="../../common/js/aos.js"></script>
+  <script src="../../common/js/slick.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="../../common/js/common.js"></script>
+  <script src="../../common/js/sub.js"></script>
+</head>      
+<body>
+    <div class="wrapper">
+        <!-- 스킵내비게이션 -->
+        <div class="skip_navi">
+            <strong class="hide">바로가기 메뉴</strong>
+            <a href="#contents">본문 바로가기</a>
+            <a href="#gnb">주메뉴 바로가기</a>
+        </div>
+        <!-- 헤더 -->
+        <header class="header">
+          <div class="hd_top">
+              <ul class="pc">
+                  <li>
+                      <a href="#">광진구시설관리공단</a>
+                  </li>
+                  <li>
+                      <a href="#">통합주차</a>
+                  </li>
+                  <li>
+                      <a href="#">문화체육시설</a>
+                  </li>
+              </ul>
+              <ol class="util">
+                  <li><a href="#">로그인</a></li>
+                  <li><a href="#">회원가입</a></li>
+                  <li class="pc"> <a href="#" class="btn_sitemap_open"><span class="hide">사이트맵 열기</span></a></li>
+              </ol>
+          </div>
+          <div class="layer_gnb">
+            <div id="gnb" class="gnb">
+              <h1 class="logo"><a href="#"><span class="hide">로고</span></a></h1>
+              <p class="mo showNav">
+                <button>
+                  <i><span class="hide">메뉴보기</span></i>
+                </button>
+              </p>
+              <div class="mo curtain"></div>
+              <nav>
+                <div class="mo"><p class="link_home"><a href="#"><span class="hide">홈으로 이동</span></a></p></div>
+                <h1 class="hide">글로벌 네비게이터</h1>
+                <ul class="mo">
+                  <li class="active">
+                      <a href="#">광진구시설관리공단</a>
+                  </li>
+                  <li>
+                      <a href="#">통합주차</a>
+                  </li>
+                  <li>
+                      <a href="#">문화체육시설</a>
+                  </li>
+                </ul>
+                <ul class="nav_items dep1">
+                    <li class="nav_item">
+                        <a href="#"><span>시설 안내</span></a>
+                        <div class="dep2_wrap">                          
+                          <div class="nav_item_tit">
+                              <h2>시설 안내</h2>
+                              <img src="../common/images/gnb_tit_icon_1.png" alt="시설안내 아이콘">
+                          </div>
+                          <ul class="dep2">
+                              <li><a href="#" class="menu_btn">문화/공공체육시설</a></li>
+                              <li><a href="#" class="menu_btn">도서관 시설</a></li>
+                              <li><a href="#" class="menu_btn">주차 시설</a></li>
+                          </ul>                          
+                        </div>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#"><span>정보마당</span></a>
+                        <div class="dep2_wrap">
+                            <div class="nav_item_tit">
+                                <h2>정보마당</h2>
+                                <img src="../common/images/gnb_tit_icon_1.png" alt="정보마당 아이콘">
+                            </div>
+                            <ul class="dep2">
+                                <li class="on"><a href="#" class="menu_btn">공지사항</a></li>
+                                <li><a href="#" class="menu_btn">채용공고</a></li>
+                                <li><a href="#" class="menu_btn">입찰정보</a></li>
+                                <li><a href="#" class="menu_btn">수의계약내역 공개</a></li>
+                                <li><a href="#" class="menu_btn">고시 및 공고</a></li>
+                                <li><a href="#" class="menu_btn">자료실</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#"><span>고객 광장</span></a>
+                        <div class="dep2_wrap">
+                            <div class="nav_item_tit">
+                                <h2>고객광장</h2>
+                                <img src="../common/images/gnb_tit_icon_1.png" alt="고객광장 아이콘">
+                            </div>
+                            <ul class="dep2">
+                                <li><a href="#" class="menu_btn">고객의 소리</a></li>
+                                <li><a href="#" class="menu_btn">자주 묻는 질문</a></li>
+                                <li><a href="#" class="menu_btn">Q&A</a></li>
+                                <li><a href="#" class="menu_btn">클린신고</a></li>
+                                <li><a href="#" class="menu_btn">광나루24!(고객 제안)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#"><span>지속가능성 경영</span></a>
+                        <div class="dep2_wrap">
+                          <div class="nav_item_tit">
+                              <h2>지속가능성 경영</h2>
+                              <img src="../common/images/gnb_tit_icon_1.png" alt="지속가능성 경영 아이콘">
+                          </div>
+                          <ul class="dep2">
+                              <li>
+                                <a href="#" class="menu_btn">열린혁신</a>
+                                <ul class="dep3">
+                                    <li><a href="#">열린혁신</a></li>
+                                    <li><a href="#">주민참여형 제안사업</a></li>
+                                    <li><a href="#">적극행정</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="menu_btn">정보공개</a>
+                                <ul class="dep3">
+                                    <li><a href="#">행정정보공개</a></li>
+                                    <li><a href="#">사전정보공표</a></li>
+                                    <li><a href="#">정보목록</a></li>
+                                    <li><a href="#">경영공시 및 현황</a></li>
+                                    <li><a href="#">공공데이터 개방</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="menu_btn">ESG경영</a>
+                                <ul class="dep3">
+                                    <li><a href="#">경영 전략체계</a></li>
+                                    <li><a href="#">실천선언문</a></li>
+                                    <li><a href="#">ESG경영 자료실</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="menu_btn">윤리·인권</a>
+                                <ul class="dep3">
+                                    <li><a href="#">윤리경영헌장</a></li>
+                                    <li><a href="#">임직원행동강령</a></li>
+                                    <li><a href="#">윤리경영주요활동</a></li>
+                                    <li><a href="#">인권경영 이행사항</a></li>
+                                    <li><a href="#">인권경영 선언문</a></li>
+                                    <li><a href="#">인권영향평가</a></li>
+                                    <li><a href="#">인권경영주요활동</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="menu_btn">안전·보건</a>
+                                <ul class="dep3">
+                                    <li><a href="#">안전·보건 경영방침</a></li>
+                                    <li><a href="#">목표 및 과제</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="menu_btn">고객서비스</a>
+                                <ul class="dep3">
+                                    <li><a href="#">고객만족경영시스템</a></li>
+                                    <li><a href="#">고객만족도 조사결과</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="menu_btn">사회공헌</a>
+                                <ul class="dep3">
+                                    <li><a href="#">사회공헌 경영방침</a></li>
+                                    <li><a href="#">목표 및 과제</a></li>
+                                </ul>
+                              </li>
+                          </ul>
+    
+                        </div>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#"><span>공단소개</span></a>
+                        <div class="dep2_wrap">
+                            <div class="nav_item_tit">
+                                <h2>공단소개</h2>
+                                <img src="../common/images/gnb_tit_icon_1.png" alt="공단소개 아이콘">
+                            </div>
+                            <ul class="dep2">
+                                <li>
+                                  <a href="#" class="menu_btn">이사장 인사말</a>
+                                </li>
+                                <li>
+                                  <a href="#" class="menu_btn">공단 현황</a>
+                                  <ul class="dep3">
+                                      <li><a href="#">일반현황</a></li>
+                                      <li><a href="#">공단 미션·비전</a></li>
+                                      <li><a href="#">연혁</a></li>
+                                      <li><a href="#">인증현황</a></li>
+                                      <li><a href="#">조직 안내</a></li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <a href="#" class="menu_btn">홍보 마당</a>
+                                  <ul class="dep3">
+                                    <li><a href="#">미디어</a></li>
+                                    <li><a href="#">뉴미디어 바로 가기</a></li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <a href="#" class="menu_btn">공단CI</a>
+                                </li>
+                                <li>
+                                  <a href="#" class="menu_btn">오시는 길</a>
+                                </li>
+                            </ul>
+                        </div>
+                      </li>
+                </ul>
+                <button class="mo close"><span class="hide">닫기</span></button>
+              </nav>
+            </div>
+          </div>
+        </header><!-- header End -->
+
+        <main class="sub">
+            <div class="page_spot sub1 sustain_manage">
+              <h1 class="sub_title">?</h1>
+            </div>
+            <div class="contents_sub_box center_box_pc">
+              <nav id="lnb" class="lnb">
+                <h1> ? </h1>
+                <ul class="dep2">
+                  <li class="menu_item">
+                    <a href="#" class="menu_btn">이사장 인사말</a>
+                  </li>
+                  <li class="menu_item">
+                    <a href="#" class="menu_btn">공단 현황</a>
+                    <ul class="dep3">
+                      <li><a href="#">일반 현황</a></li>
+                      <li><a href="#">공단 미션&#183;비전</a></li>
+                      <li><a href="#">연혁</a></li>
+                      <li><a href="#">인증현황</a></li>
+                      <li><a href="#">조직 안내</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu_item">
+                    <a href="#" class="menu_btn">홍보 마당</a>
+                    <ul class="dep3">
+                      <li class=""><a href="#">미디어</a></li>
+                      <li><a href="#">뉴미디어 바로가기</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu_item">
+                    <a href="#" class="menu_btn">공단CI</a>
+                  </li>
+                  <li class="menu_item">
+                    <a href="#" class="menu_btn">오시는 길</a>
+                  </li>
+                </ul>
+              </nav>
+              <article class="contents_sub">
+                <header class="sub_top">
+                  <h1 class="hide">카드 뉴스 게시판</h1>
+                  <ol>
+                    <li>HOME</li>
+                    <li><a href="#">?</a></li>
+                    <li><a href="#">?</a></li>
+                    <li><a href="#">?</a></li>
+                  </ol>
+                  <ul>
+                    <li class="share">
+                      <button title="공유하기" type="button"><span class="hide">sns 공유하기 열기</span></button>
+                      <div class="share_box">
+                        <ul>
+                          <li><a href="#" class="facebook" id="share_popup_facebook"><img src="../../common/images/share_facebook.png" alt="페이스북"></a></li>
+                          <li><a href="#" class="twitter" id="share_popup_twitter"><img src="../../common/images/share_twitter.png" alt="트위터"></a></li>
+                          <li><a href="#" class="blog" id="share_popup_band"><img src="../../common/images/share_band.png" alt="블로그"></a></li>
+                          <li><a href="#" class="kko" id="share_popup_kakao"><img src="../../common/images/share_kakao.png" alt="카카오"></a></li>
+                          <li><a href="#" class="kkostory" id="share_popup_kakao_story"><img src="../../common/images/share_kakao_stroy.png" alt="카카오스토리"></a></li>
+                        </ul>
+                        <p class="share_close"><a href="#"><span class="hide">sns 공유하기 닫기</span></a></p>
+                      </div>
+                    </li>
+                    <li class="print_btn"><a href="#"><span class="hide">프린트하기</span></a></li>
+                  </ul>
+                     
+                </header>
+                <!-- 컨텐츠 본문 시작 부분-->
+                <section class="page privateDestInfo">
+                  <div class="tab_wrap">
+                    <nav class="sub_conts_nav tab_list_outer">
+                      <h1 class="hide">적극행정 네비게이터</h1>
+                      <ul class="tab_list">
+                        <li class="tab_item cnt4_more"><a href="#" class="btn">정보공개제도의 필요성</a></li>
+                        <li class="tab_item cnt4_more"><a href="#" class="btn">정보공개절차</a></li>
+                        <li class="tab_item cnt4_more"><a href="#" class="btn">불복구제절차</a></li>
+                        <li class="tab_item cnt4_more"><a href="#" class="btn">수수료</a></li>
+                        <li class="tab_item cnt4_more active"><a href="#" class="btn">비공개 대상정보</a></li>
+                        <li class="tab_item cnt4_more"><a href="#" class="btn" target="_blank" title="새창">정보공개절차 <img src="../../common/images/ico_link.png" alt=""></a></li>
+                      </ul>
+                    </nav>
+                    <h1>이의 신청 법령상 비공개대상 정보</h1>
+                    <article class="txt_box_type1 no_bg">
+                      <h1 class="tit"> - 다른 법률 또는 법률에 의한 명령에 의하여 비밀로 유지되거나 비공개 사항으로 규정된 정보</h1>
+                      <p class="txt dot">민원사무처리와 관련하여 민원인의 권익이 침해되는 정보, 그 밖에 법률 또는 법률에 의한 명령에 의하여 개별적·구체적으로 비밀 또는 비공개하도록 
+                        규정된 정보</p>
+                    </article>
+                    <article class="txt_box_type1">
+                      <h1 class="tit"> - 국가안전보장 · 신체 및 재산의 보호 기타 공공의 안전과 이익에 관련된 정보</h1>
+                      <p class="txt dot">정보통신망 구성도, 정보보호시스템 현황, 정보보호를 위한 내부대책과 전략 등 공개될 경우 해킹 ·사이버 테러 등 정부정보보호에 지장을 줄 수 있는 정보</p>
+                    </article>
+                    <article class="txt_box_type1 no_bg">
+                      <h1 class="tit"> - 국민의 생명 · 신체 및 재산의 보호에 현저한 지장을 초래할 우려가 있다고 인정되는 정보</h1>
+                      <p class="txt dot">개인정보, 금융거래자료 , 신체에 관한 정보 등</p>
+                    </article>
+                    <article class="txt_box_type1">
+                      <h1 class="tit"> - 진행 중인 재판에 관련된 정보와 범죄의 예방, 수사, 공소의 제기 및 유지, 형의 집행, 교정, 보안처분에 관한 사항으로서 직무수행을 현저히 곤란하게 하거나 형사피고인의 공정한 재판을 받을 권리를 침해하는 정보</h1>
+                      <p class="txt dot">진행중인 재판과 직접 ·구체적으로 관련되는 정보로서 재판의 심리 또는 재판결과에 영향을 미치는 정보</p>
+                    </article>
+
+                    <article class="txt_box_type1 no_bg">
+                      <h1 class="tit"> - 감사 ·감독 · 입찰계약 · 인사관리 · 의사결정과정 또는 내부검토과정에 있는 사항으로서 업무의 공정한 수행이나 연구 · 개발에 현저한 지장을 초래하는 정보</h1>
+                      <p class="txt dot">감사의 범위 · 방법 · 시기 · 검사의 결과 및 조치사항, 입찰예정가격, 직원의 인사기록, 내부조직관리에 관한 정보</p>
+                    </article>
+                    <article class="txt_box_type1">
+                      <h1 class="tit"> - 이름/주민등록번호 등에 의하여 특정인을 식별할 수 있는 개인에 관한 정보</h1>
+                      <p class="txt dot">민원인 또는 고객의 개인인적사항, 각종 위원회 위원의 개인정보, 직원 급여에 관한 정보, 홈페이지 회원정보
+                      </p>
+                    </article>
+
+                    <article class="txt_box_type1 no_bg">
+                      <h1 class="tit"> - 법인, 단체 또는 개인의 영업상 비밀에 관한 사항으로서 법인 등의 정당한 이익을 침해하는 정보</h1>
+                      <p class="txt dot">용역수행과 관련한 제안업체에 대한 평가결과, 민간업체가 제출한 사항으로 업체의 기술 ·시공실적 ·내부관리 등에 관한 정보</p>
+                    </article>
+                    <article class="txt_box_type1">
+                      <h1 class="tit"> - 특정인에게 이익 또는 불이익을 줄 우려가 있다고 인정되는 정보</h1>
+                      <p class="txt dot">도시개발, 각종 사업게획 등 진행중인 사업에 관한 정보</p>
+                    </article>
+
+                    <h1>비공개대상정보 범위에 관한 세부기준</h1>
+                    <ul class="p-list count2 g_365 residence">
+                      <li>
+                        <div href="#" class="link border_line">
+                          <div>
+                            
+                            <p class="residence_tit center"> 
+                                <span>경영감사팀(부서공통)</span>
+                            </p>
+                            <div class="g_365_bbs_box">
+                              <ul class="g_365_bbs_box_list">
+                                <li class="g_365_bbs_box_item"><em class="tit">소관사항 : </em><span class="txt">민원 조사 분석 </span></li>
+                                <li class="line_2 g_365_bbs_box_item">
+                                  <em class="tit">비공개대상정보 : </em>
+                                  <span class="txt">- 민원사무처리와 관련하여 취득한 민원</span>
+                                  <span class="txt">- 내용과 민원인 신상정보</span></li>
+                                <li class="g_365_bbs_box_item"><em class="tit">근거 : </em><span class="txt">제1호</span></li>
+                                <li class="g_365_bbs_box_item"><em class="tit">구체적사유 : </em><span class="txt">민원처리에 관한 법률 제7조</span></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div href="#" class="link border_line">
+                          <div>
+                            <p class="residence_tit center"> <span>경영감사팀(부서공통)</span></p>
+                            <div class="g_365_bbs_box">
+                              <ul class="g_365_bbs_box_list">
+                                <li class="g_365_bbs_box_item"><em class="tit">소관사항 : </em><span class="txt">소송업무</span></li>
+                                <li class="line_2 g_365_bbs_box_item"><em class="tit">비공개대상정보 : </em><span class="txt">- 행정소송 등 재판과 관련 소장, 준비서면, 사실조회서 등 소송진행 자료</span></li>
+                                <li class="g_365_bbs_box_item"><em class="tit">근거 : </em><span class="txt">제4호</span></li>
+                                <li class="g_365_bbs_box_item"><em class="tit">구체적사유 : </em><span class="txt">공정한 재판을 받을 권리 침해 방지</span></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div href="#" class="link border_line">
+                          <div>
+                            <p class="residence_tit center"> <span>경영감사팀(주차사업팀)</span></p>
+                            <div class="g_365_bbs_box">
+                              <ul class="g_365_bbs_box_list">
+                                <li class="g_365_bbs_box_item"><em class="tit">소관사항 : </em><span class="txt">사회복무요원 관리</span></li>
+                                <li class="line_2 g_365_bbs_box_item"><em class="tit">비공개대상정보 : </em><span class="txt">- 사회복무요원 신상정보</span></li>
+                                <li class="g_365_bbs_box_item"><em class="tit">근거 : </em><span class="txt">제6호</span></li>
+                                <li class="g_365_bbs_box_item"><em class="tit">구체적사유 : </em><span class="txt">개인정보 보호</span></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div href="#" class="link border_line">
+                          <div>
+                            <p class="residence_tit center"> <span>경영감사팀</span></p>
+                            <div class="g_365_bbs_box">
+                              <ul class="g_365_bbs_box_list">
+                                <li class="g_365_bbs_box_item"><em class="tit">소관사항 : </em><span class="txt">감사ㆍ조사ㆍ사정</span></li>
+                                <li class="line_2 g_365_bbs_box_item"><em class="tit">비공개대상정보 : </em><span class="txt">- 불시 감사, 조사, 직무감찰 등에 관한 사항</span></li>
+                                <li class="g_365_bbs_box_item"><em class="tit">근거 : </em><span class="txt">제5호</span></li>
+                                <li class="g_365_bbs_box_item"><em class="tit">구체적사유 : </em><span class="txt">증거인멸 등 업무의 공정한 수행에 지장 초래</span></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div href="#" class="link border_line">
+                          <div>
+                            <p class="residence_tit center"> <span> 경영감사팀</span></p>
+                            <div class="g_365_bbs_box">
+                              <ul class="g_365_bbs_box_list">
+                                <li class="g_365_bbs_box_item"><em class="tit">소관사항 : </em><span class="txt">임직원의 임용</span></li>
+                                <li class="line_2 g_365_bbs_box_item"><em class="tit">비공개대상정보 : </em><span class="txt">- 임용, 승진, 전보 등 인사관련사항, 승진심사 및 인사위원회 관련사항</span></li>
+                                <li class="g_365_bbs_box_item"><em class="tit">근거 : </em><span class="txt">제5호</span></li>
+                                <li class="g_365_bbs_box_item"><em class="tit">구체적사유 : </em><span class="txt">인사업무의 공정성 저해</span></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div href="#" class="link border_line">
+                          <div>
+                            <p class="residence_tit center"> <span>경영감사팀</span></p>
+                            <div class="g_365_bbs_box">
+                              <ul class="g_365_bbs_box_list">
+                                <li class="g_365_bbs_box_item"><em class="tit">소관사항 : </em><span class="txt">근무성적평정</span></li>
+                                <li class="line_2 g_365_bbs_box_item"><em class="tit">비공개대상정보 : </em><span class="txt">- 개인에 대한 평가기록</span></li>
+                                <li class="g_365_bbs_box_item"><em class="tit">근거 : </em><span class="txt"></span>제6호</li>
+                                <li class="g_365_bbs_box_item"><em class="tit">구체적사유 : </em><span class="txt">직무와 상관없는 개인의 민감한 개인정보</span></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div href="#" class="link border_line">
+                          <div>
+                            <p class="residence_tit center"> <span>경영감사팀</span></p>
+                            <div class="g_365_bbs_box">
+                              <ul class="g_365_bbs_box_list">
+                                <li class="g_365_bbs_box_item"><em class="tit">소관사항 : </em><span class="txt">채권압류</span></li>
+                                <li class="line_2 g_365_bbs_box_item"><em class="tit">비공개대상정보 : </em><span class="txt">- 직원 급여압류 관련 자료</span></li>
+                                <li class="g_365_bbs_box_item"><em class="tit">근거 : </em><span class="txt">제6호</span></li>
+                                <li class="g_365_bbs_box_item"><em class="tit">구체적사유 : </em><span class="txt">개인정보 보호 및 사생활의 비밀 보호</span></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div href="#" class="link border_line">
+                          <div>
+                            <p class="residence_tit center"> <span>경영감사팀</span></p>
+                            <div class="g_365_bbs_box">
+                              <ul class="g_365_bbs_box_list">
+                                <li class="g_365_bbs_box_item"><em class="tit">소관사항 : </em><span class="txt">성과상여금</span></li>
+                                <li class="line_2 g_365_bbs_box_item"><em class="tit">비공개대상정보 : </em><span class="txt">-  개인별성과급 평가자료 및 지급내역</span></li>
+                                <li class="g_365_bbs_box_item"><em class="tit">근거 : </em><span class="txt">제6호</span></li>
+                                <li class="g_365_bbs_box_item"><em class="tit">구체적사유 : </em><span class="txt">개인 사생활의 비밀 보호</span></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div href="#" class="link border_line">
+                          <div>
+                            <p class="residence_tit center"> <span>경영감사팀</span></p>
+                            <div class="g_365_bbs_box">
+                              <ul class="g_365_bbs_box_list">
+                                <li class="g_365_bbs_box_item"><em class="tit">소관사항 : </em><span class="txt">징계</span></li>
+                                <li class="line_2 g_365_bbs_box_item"><em class="tit">비공개대상정보 : </em><span class="txt">- 징계의결요구서, 관련자에 대한 증거자료, 징계회의록 등</span></li>
+                                <li class="g_365_bbs_box_item"><em class="tit">근거 : </em><span class="txt">제6호</span></li>
+                                <li class="g_365_bbs_box_item"><em class="tit">구체적사유 : </em><span class="txt">개인정보 보호 및 사생활의 비밀 보호</span></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div href="#" class="link border_line">
+                          <div>
+                            <p class="residence_tit center"> <span>기획재정팀</span></p>
+                            <div class="g_365_bbs_box">
+                              <ul class="g_365_bbs_box_list">
+                                <li class="g_365_bbs_box_item"><em class="tit">소관사항 : </em><span class="txt">정보통신보안</span></li>
+                                <li class="line_2 g_365_bbs_box_item"><em class="tit">비공개대상정보 : </em><span class="txt">- 정보통신시스템 설치ㆍ운용 현황, 정보통신망 세부 구성도, IP주소, 
+                                  정보통신보안업무 추진계획 및 내부전략 등</span></li>
+                                <li class="g_365_bbs_box_item"><em class="tit">근거 : </em><span class="txt">제2호</span></li>
+                                <li class="g_365_bbs_box_item"><em class="tit">구체적사유 : </em><span class="txt">공개될 경우 해킹ㆍ사이버테러 등 국가안보 및 국가의 
+                                  중대한 이익 침해 우려</span></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div href="#" class="link border_line">
+                          <div>
+                            <p class="residence_tit center"> <span>기획재정팀</span></p>
+                            <div class="g_365_bbs_box">
+                              <ul class="g_365_bbs_box_list">
+                                <li class="g_365_bbs_box_item"><em class="tit">소관사항 : </em><span class="txt">계약심사</span></li>
+                                <li class="line_2 g_365_bbs_box_item"><em class="tit">비공개대상정보 : </em><span class="txt">- 계약에 관한 의사결정과정 또는 내부검토과정에 있는 정보</span></li>
+                                <li class="g_365_bbs_box_item"><em class="tit">근거 : </em><span class="txt">제5호</span></li>
+                                <li class="g_365_bbs_box_item"><em class="tit">구체적사유 : </em><span class="txt">공정한 업무 수행에 지장 초래</span></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div href="#" class="link border_line">
+                          <div>
+                            <p class="residence_tit center"> <span>주차사업팀</span></p>
+                            <div class="g_365_bbs_box">
+                              <ul class="g_365_bbs_box_list">
+                                <li class="g_365_bbs_box_item"><em class="tit">소관사항 : </em><span class="txt">자동차 등록 업무</span></li>
+                                <li class="line_2 g_365_bbs_box_item"><em class="tit">비공개대상정보 : </em><span class="txt">- 자동차등록 민원 처리시 취득한 민원인의 신상정보</span></li>
+                                <li class="g_365_bbs_box_item"><em class="tit">근거 : </em><span class="txt">제1호</span></li>
+                                <li class="g_365_bbs_box_item"><em class="tit">구체적사유 : </em><span class="txt">민원처리에 관한 법률 제7조</span></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+
+                <!-- 컨텐츠 본문 하단 부분 -->
+                <article class="cntnsMngDeprt">
+                  <h1 class="hide">콘텐츠 관리부서</h1>
+                  <footer>
+                    <address>
+                      <p>콘텐츠 관리부서 <span class="pc"> | </span> <b>문화사업팀</b></p>
+                      <p>담당자/직위  <span class="pc"> | </span>  <b>홍길동/차장</b></p>
+                      <p><a href="tel:02-2049-1234">전화번호  <span class="pc"> ☎ </span>  <b>02-2049-1234</b></a></p>
+                    </address>
+                  </footer>
+                </article>
+                <section class="satisfaction_box"><!-- 만족도 조사-->
+                  <form action="">
+                    <div class="top">
+                      <h1 class="tit">만족도 조사</h1>
+                      <dl>
+                        <dt>이 페이지에서 제공하는 정보에 대하여 만족하시나요?</dt>
+                        <dd><input type="radio" name="satisfaction" value="5" id="star_5" checked="checked"><label for="star_5"><span>매우 만족</span><span class="star">&starf; &starf; &starf; &starf; &starf;</span></label></dd>
+                        <dd><input type="radio" name="satisfaction" value="4" id="star_4"><label for="star_4"><span>만족</span><span class="star">&starf; &starf; &starf; &starf;</span></label></dd>
+                        <dd><input type="radio" name="satisfaction" value="3" id="star_3"><label for="star_3"><span>보통</span> <span class="star"> &starf; &starf; &starf;</span> </label></dd>
+                        <dd><input type="radio" name="satisfaction" value="2" id="star_2"><label for="star_2"><span>불만족</span> <span class="star"> &starf; &starf;</span> </label></dd>
+                        <dd><input type="radio" name="satisfaction" value="1" id="star_1"><label for="star_1"><span>매우 불만족</span><span class="star">&starf;</span></label></dd>
+                      </dl>
+                    </div>
+                    <div class="bottom">
+                      <label for="opinions_regis" class="hide">의견등록 쓰기</label>
+                      <textarea name="" id="opinions_regis" cols="30" rows="10" placeholder="로그인 후 참여가능하며, 로그인 화면 이동시, 작성하신 의견은 삭제됩니다."></textarea>
+                      <button class="button-color" title="의견등록" type="button">의견등록</button>
+                    </div>
+                  </form>
+                </section><!-- 만족도 조사 끝-->
+                <!-- 켄튼츠 끝 부분 -->
+              </article>
+            </div><!-- .contents_sub End -->
+        </main>
+    <!-- footer -->
+        <footer class="footer">
+        <div class="f_nav">
+          <div class="container">
+            <ul class="fnb">
+              <li><a href="#">개인정보처리방침</a></li>
+              <li><a href="#">이메일무단수집거부</a></li>
+              <li><a href="#">영상정보처리기기 운영&#183;관리 방침침</a></li>
+              <li><a href="#"><span>찾아오시는 길</span></a></li>
+            </ul>
+            <ul class="sns">
+              <li><a href="#"><img src="../../common/images/f_sns_facebook.png" alt="페이스북"></a>
+              </li>
+              <li><a href="#"><img src="../../common/images/f_sns_twi.png" alt="트윗터"></a>
+              </li>
+              <li><a href="#"><img src="../../common/images/f_sns_blog.png" alt="블로그"></a></li>
+              <li><a href="#"><img src="../../common/images/f_sns_instagram.png" alt="인스타그램"></a></li>
+            </ul>
+            <ol class="addr">
+              <li>(05065) 서울특별시 광진구 능동로 76 광진구시설관리공단 (우 05065) 고유번호: 206-82-07233</li>
+              <li class="copy">Copyright © 2022 gwangjin FMC. All rights reserved.</li>
+              <li>본 사이트에 게시된 이메일주소는 자동수집을 거부하며, 이를 위반시 정보통신망법에 의해 처벌될 수 있습니다.</li>
+            </ol>
+          </div>
+        </div>
+        </footer>
+    <div class="curtain"></div>
+    <!-- footer -->
+    </div>
+</body>
+</html>

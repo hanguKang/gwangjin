@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+  <title>?</title>
+  <link rel="stylesheet" href="../../common/css/default.css">
+  <link rel="stylesheet" href="../../common/css/slick.css" />
+  <link rel="stylesheet" href="../../common/css/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <script src="../../common/js/jquery-3.6.0.min.js"></script>
+  <!--<script src="../../common/js/jquery-1.11.3.min.js"></script>-->
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
+  <script src="../../common/js/aos.js"></script>
+  <script src="../../common/js/slick.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="../../common/js/common.js"></script>
+  <script src="../../common/js/sub.js"></script>
+</head>      
+<body>
+    <div class="wrapper">
+        <!-- 스킵내비게이션 -->
+        <div class="skip_navi">
+            <strong class="hide">바로가기 메뉴</strong>
+            <a href="#contents">본문 바로가기</a>
+            <a href="#gnb">주메뉴 바로가기</a>
+        </div>
+        <!-- 헤더 -->
+        <header class="header">
+          <div class="hd_top">
+              <ul class="pc">
+                  <li>
+                      <a href="#">광진구시설관리공단</a>
+                  </li>
+                  <li>
+                      <a href="#">통합주차</a>
+                  </li>
+                  <li>
+                      <a href="#">문화체육시설</a>
+                  </li>
+              </ul>
+              <ol class="util">
+                  <li><a href="#">로그인</a></li>
+                  <li><a href="#">회원가입</a></li>
+                  <li class="pc"> <a href="#" class="btn_sitemap_open"><span class="hide">사이트맵 열기</span></a></li>
+              </ol>
+          </div>
+          <div class="layer_gnb">
+            <div id="gnb" class="gnb">
+              <h1 class="logo"><a href="#"><span class="hide">로고</span></a></h1>
+              <p class="mo showNav">
+                <button>
+                  <i><span class="hide">메뉴보기</span></i>
+                </button>
+              </p>
+              <div class="mo curtain"></div>
+              <nav>
+                <div class="mo"><p class="link_home"><a href="#"><span class="hide">홈으로 이동</span></a></p></div>
+                <h1 class="hide">글로벌 네비게이터</h1>
+                <ul class="mo">
+                  <li class="active">
+                      <a href="#">광진구시설관리공단</a>
+                  </li>
+                  <li>
+                      <a href="#">통합주차</a>
+                  </li>
+                  <li>
+                      <a href="#">문화체육시설</a>
+                  </li>
+                </ul>
+                <ul class="nav_items dep1">
+                    <li class="nav_item">
+                        <a href="#"><span>시설 안내</span></a>
+                        <div class="dep2_wrap">                          
+                          <div class="nav_item_tit">
+                              <h2>시설 안내</h2>
+                              <img src="../common/images/gnb_tit_icon_1.png" alt="시설안내 아이콘">
+                          </div>
+                          <ul class="dep2">
+                              <li><a href="#" class="menu_btn">문화/공공체육시설</a></li>
+                              <li><a href="#" class="menu_btn">도서관 시설</a></li>
+                              <li><a href="#" class="menu_btn">주차 시설</a></li>
+                          </ul>                          
+                        </div>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#"><span>정보마당</span></a>
+                        <div class="dep2_wrap">
+                            <div class="nav_item_tit">
+                                <h2>정보마당</h2>
+                                <img src="../common/images/gnb_tit_icon_1.png" alt="정보마당 아이콘">
+                            </div>
+                            <ul class="dep2">
+                                <li class="on"><a href="#" class="menu_btn">공지사항</a></li>
+                                <li><a href="#" class="menu_btn">채용공고</a></li>
+                                <li><a href="#" class="menu_btn">입찰정보</a></li>
+                                <li><a href="#" class="menu_btn">수의계약내역 공개</a></li>
+                                <li><a href="#" class="menu_btn">고시 및 공고</a></li>
+                                <li><a href="#" class="menu_btn">자료실</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#"><span>고객 광장</span></a>
+                        <div class="dep2_wrap">
+                            <div class="nav_item_tit">
+                                <h2>고객광장</h2>
+                                <img src="../common/images/gnb_tit_icon_1.png" alt="고객광장 아이콘">
+                            </div>
+                            <ul class="dep2">
+                                <li><a href="#" class="menu_btn">고객의 소리</a></li>
+                                <li><a href="#" class="menu_btn">자주 묻는 질문</a></li>
+                                <li><a href="#" class="menu_btn">Q&A</a></li>
+                                <li><a href="#" class="menu_btn">클린신고</a></li>
+                                <li><a href="#" class="menu_btn">광나루24!(고객 제안)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#"><span>지속가능성 경영</span></a>
+                        <div class="dep2_wrap">
+                          <div class="nav_item_tit">
+                              <h2>지속가능성 경영</h2>
+                              <img src="../common/images/gnb_tit_icon_1.png" alt="지속가능성 경영 아이콘">
+                          </div>
+                          <ul class="dep2">
+                              <li>
+                                <a href="#" class="menu_btn">열린혁신</a>
+                                <ul class="dep3">
+                                    <li><a href="#">열린혁신</a></li>
+                                    <li><a href="#">주민참여형 제안사업</a></li>
+                                    <li><a href="#">적극행정</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="menu_btn">정보공개</a>
+                                <ul class="dep3">
+                                    <li><a href="#">행정정보공개</a></li>
+                                    <li><a href="#">사전정보공표</a></li>
+                                    <li><a href="#">정보목록</a></li>
+                                    <li><a href="#">경영공시 및 현황</a></li>
+                                    <li><a href="#">공공데이터 개방</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="menu_btn">ESG경영</a>
+                                <ul class="dep3">
+                                    <li><a href="#">경영 전략체계</a></li>
+                                    <li><a href="#">실천선언문</a></li>
+                                    <li><a href="#">ESG경영 자료실</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="menu_btn">윤리·인권</a>
+                                <ul class="dep3">
+                                    <li><a href="#">윤리경영헌장</a></li>
+                                    <li><a href="#">임직원행동강령</a></li>
+                                    <li><a href="#">윤리경영주요활동</a></li>
+                                    <li><a href="#">인권경영 이행사항</a></li>
+                                    <li><a href="#">인권경영 선언문</a></li>
+                                    <li><a href="#">인권영향평가</a></li>
+                                    <li><a href="#">인권경영주요활동</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="menu_btn">안전·보건</a>
+                                <ul class="dep3">
+                                    <li><a href="#">안전·보건 경영방침</a></li>
+                                    <li><a href="#">목표 및 과제</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="menu_btn">고객서비스</a>
+                                <ul class="dep3">
+                                    <li><a href="#">고객만족경영시스템</a></li>
+                                    <li><a href="#">고객만족도 조사결과</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="menu_btn">사회공헌</a>
+                                <ul class="dep3">
+                                    <li><a href="#">사회공헌 경영방침</a></li>
+                                    <li><a href="#">목표 및 과제</a></li>
+                                </ul>
+                              </li>
+                          </ul>
+    
+                        </div>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#"><span>공단소개</span></a>
+                        <div class="dep2_wrap">
+                            <div class="nav_item_tit">
+                                <h2>공단소개</h2>
+                                <img src="../common/images/gnb_tit_icon_1.png" alt="공단소개 아이콘">
+                            </div>
+                            <ul class="dep2">
+                                <li>
+                                  <a href="#" class="menu_btn">이사장 인사말</a>
+                                </li>
+                                <li>
+                                  <a href="#" class="menu_btn">공단 현황</a>
+                                  <ul class="dep3">
+                                      <li><a href="#">일반현황</a></li>
+                                      <li><a href="#">공단 미션·비전</a></li>
+                                      <li><a href="#">연혁</a></li>
+                                      <li><a href="#">인증현황</a></li>
+                                      <li><a href="#">조직 안내</a></li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <a href="#" class="menu_btn">홍보 마당</a>
+                                  <ul class="dep3">
+                                    <li><a href="#">미디어</a></li>
+                                    <li><a href="#">뉴미디어 바로 가기</a></li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <a href="#" class="menu_btn">공단CI</a>
+                                </li>
+                                <li>
+                                  <a href="#" class="menu_btn">오시는 길</a>
+                                </li>
+                            </ul>
+                        </div>
+                      </li>
+                </ul>
+                <button class="mo close"><span class="hide">닫기</span></button>
+              </nav>
+            </div>
+          </div>
+        </header><!-- header End -->
+
+        <main class="sub">
+            <div class="page_spot sub1">
+              <h1 class="sub_title">?</h1>
+            </div>
+            <div class="contents_sub_box center_box_pc">
+              <nav id="lnb" class="lnb">
+                <h1> ? </h1>
+                <ul class="dep2">
+                  <li class="menu_item">
+                    <a href="#" class="menu_btn">이사장 인사말</a>
+                  </li>
+                  <li class="menu_item">
+                    <a href="#" class="menu_btn">공단 현황</a>
+                    <ul class="dep3">
+                      <li><a href="#">일반 현황</a></li>
+                      <li><a href="#">공단 미션&#183;비전</a></li>
+                      <li><a href="#">연혁</a></li>
+                      <li><a href="#">인증현황</a></li>
+                      <li><a href="#">조직 안내</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu_item">
+                    <a href="#" class="menu_btn">홍보 마당</a>
+                    <ul class="dep3">
+                      <li class=""><a href="#">미디어</a></li>
+                      <li><a href="#">뉴미디어 바로가기</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu_item">
+                    <a href="#" class="menu_btn">공단CI</a>
+                  </li>
+                  <li class="menu_item">
+                    <a href="#" class="menu_btn">오시는 길</a>
+                  </li>
+                </ul>
+              </nav>
+              <article class="contents_sub">
+                <header class="sub_top">
+                  <h1 class="hide">카드 뉴스 게시판</h1>
+                  <ol>
+                    <li>HOME</li>
+                    <li><a href="#">?</a></li>
+                    <li><a href="#">?</a></li>
+                    <li><a href="#">?</a></li>
+                  </ol>
+                  <ul>
+                    <li class="share">
+                      <button title="공유하기" type="button"><span class="hide">sns 공유하기 열기</span></button>
+                      <div class="share_box">
+                        <ul>
+                          <li><a href="#" class="facebook" id="share_popup_facebook"><img src="../../common/images/share_facebook.png" alt="페이스북"></a></li>
+                          <li><a href="#" class="twitter" id="share_popup_twitter"><img src="../../common/images/share_twitter.png" alt="트위터"></a></li>
+                          <li><a href="#" class="blog" id="share_popup_band"><img src="../../common/images/share_band.png" alt="블로그"></a></li>
+                          <li><a href="#" class="kko" id="share_popup_kakao"><img src="../../common/images/share_kakao.png" alt="카카오"></a></li>
+                          <li><a href="#" class="kkostory" id="share_popup_kakao_story"><img src="../../common/images/share_kakao_stroy.png" alt="카카오스토리"></a></li>
+                        </ul>
+                        <p class="share_close"><a href="#"><span class="hide">sns 공유하기 닫기</span></a></p>
+                      </div>
+                    </li>
+                    <li class="print_btn"><a href="#"><span class="hide">프린트하기</span></a></li>
+                  </ul>
+                     
+                </header>
+                <!-- 컨텐츠 본문 시작 부분-->
+                <div class="history page">
+                  <div class="tab_wrap">
+                    <div class="tab_list_outer">
+                      <ul class="tab_list--link tab_list m_tab">
+                        <li class="tab_item--link cnt3"><a href="#" class="btn">고객서비스헌장</a href="#"></li>
+                        <li class="tab_item--link cnt3 active"><a href="#" class="btn">서비스이행표준</a href="#"></li>
+                        <li class="tab_item--link cnt3"><a href="#" class="btn">소비자중심경영 운영 매뉴얼</a href="#"></li>
+                      </ul>
+                    </div>
+                    <div class="tab_list_outer">
+                      <ul class="tab_list m_tab tab_list--cmn nowrap">
+                        <li class="tab_item tab_sty_txt dot"><button class="btn btn--cmn">공통서비스</button></li>
+                        <li class="tab_item tab_sty_txt dot"><button class="btn btn--cmn">주차</button></li>
+                        <li class="tab_item tab_sty_txt dot active"><button class="btn btn--cmn">체육시설</button></li>
+                        <li class="tab_item tab_sty_txt dot"><button class="btn btn--cmn">도서관</button></li>
+                      </ul>
+
+                    </div>
+                    <div class="tab_conts_list">
+                      <section class="tab_contents active">
+                        <article class="tab_item_txt">
+                          <h1 class="tab_item_tit">체육센터 관리 및 운영 분야</h1>
+                          <div class="tab_txt_box">
+                            <div class="tab_item_img"><img src="../../common/images/sub/sustain_manage/tab_txt_sports_01.png" alt="도서 대출 반납 사진"></div>
+                            <div class="tab_txt_list">
+                              <ul>
+                                <li class="tab_txt_item dot">고객이 잘 볼 수 있는 곳에 이용안내문을 부착하여 모든 고객이 편리하게 이용하도록 하겠습니다.</li>
+                                <li class="tab_txt_item dot">전 지도강사에게 연 6회 이상 친절 교육을 실시하여 체계적이고 책임감있는 지도로 고객의 건강증진과 문화생활 향상을 위해 노력하겠습니다.</li>
+                                <li class="tab_txt_item dot">고객의 편익증진을 위하여 회원등록 업무에 대해 센터 방문 및 인터넷 접수를 병행하여 고객의 이용에 불편이 없도록 최선을 다하겠습니다.
+                                  </li>
+                                <li class="tab_txt_item dot">외부전문기관을 통하여 수질을 측정하여 물을 지속적으로 관리하는 등 최적의 상태에서 수영을 할 수 있도록 하겠습니다.</li>
+                                <li class="tab_txt_item dot">시설물에 정기적인 안전점검과 유지보수를 실시하고, 안전사고 예방을 위한 준수사항을 충분히 숙지하여 고객과 시설물의 안전관리에 만전을 기하겠습니다.</li>
+                                <li class="tab_txt_item dot">고객들의 체력향상 및 취미활동 활성화를 위하여 다양한 프로그램을 개발하고 방학기간 중 체력단련 프로그램을 개설 운영하여 지역주민과 어린이ㆍ청소년들의 심신 단련을 도모하겠습니다.</li>
+                                <li class="tab_txt_item dot">체육시설 이용 중 상처를 입었을 경우 구급약품을 비치하여 응급치료 후 인근병원으로 안내하겠습니다.</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </article>
+                        <article class="tab_item_txt">
+                          <h1 class="tab_item_tit">수영장 관리</h1>
+                          <div class="tab_txt_box">
+                            <div class="tab_item_img"><img src="../../common/images/sub/sustain_manage/tab_txt_sports_02.png" alt="책장의 도서 사진"></div>
+                            <div class="tab_txt_list">
+                              <ul>
+                                <li class="tab_txt_item"><strong class="tit">쾌적하고 안전한 운영환경 제공</strong> 
+                                  <ul class="sub_list">
+                                    <li class="sub_item dot">수영장, 탈의실, 샤워실 등을 청결히 유지하겠습니다.</li>
+                                    <li class="sub_item dot">정기적으로 살균하고 점검 관리하여 깨끗한 수질과 적정한 수온을 유지 하도록 하겠습니다.</li>
+                                    <li class="sub_item dot">깨끗한 수질을 유지를 위해 수질관리 설비를 정기적으로 점검 관리하겠습니다.</li>
+                                  </ul>
+                                </li>
+                                <li class="tab_txt_item"><strong class="tit">회원지도 부문</strong> 
+                                  <ul class="sub_list">
+                                    <li class="sub_item dot">전문지식을 갖춘 전문 강사가 수영강습을 진행합니다.</li>
+                                    <li class="sub_item dot">수준에 맞는 단계별 강습과 입수지도를 실시하겠습니다.</li>
+                                  </ul>
+                                </li>
+                                <li class="tab_txt_item"><strong class="tit">고객님께 드리는 말씀</strong> 
+                                  <ul class="sub_list">
+                                    <li class="sub_item dot">전수영복, 수모, 수경을 착용하여 주시기 바랍니다.</li>
+                                    <li class="sub_item dot">물에 들어가기 전에 깨끗이 샤워하고 간단한 준비운동을 하시기 바랍니다.</li>
+                                    <li class="sub_item dot">수영 중 몸이 떨리고 소름이 끼치며, 추워질 때는 수영을 하지 말아야 합니다.</li>
+                                    <li class="sub_item dot">눈병, 피부병, 기타 공공위생에 영향을 미치는 환자 및 음주를 하신 분은 이용하실 수 없습니다.</li>
+                                    <li class="sub_item dot">타인에게 혐오감을 주는 문신 또는 타투를 하신 분은 이용하실 수 없습니다.</li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </article>
+                        <article class="tab_item_txt">
+                          <h1 class="tab_item_tit">헬스장 관리</h1>
+                          <div class="tab_txt_box">
+                            <div class="tab_item_img"><img src="../../common/images/sub/sustain_manage/tab_txt_sports_03.png" alt="문의 관련 타이핑 사진"></div>
+                            <div class="tab_txt_list">
+                              <ul>
+                                <li class="tab_txt_item"><strong class="tit">쾌적하고 안전한 운영환경 제공</strong> 
+                                  <ul class="sub_list">
+                                    <li class="sub_item dot">운동공간과 탈의실, 샤워실 등을 청결히 유지하겠습니다.</li>
+                                    <li class="sub_item dot">정운동기구과 운동시설을 안전하게 이용할 수 있도록 수시로 점검하고 이용에 불편이 없도록 하겠습니다.</li>
+                                  </ul>
+                                </li>
+                                <li class="tab_txt_item"><strong class="tit">회원지도 부문</strong> 
+                                  <ul class="sub_list">
+                                    <li class="sub_item dot">운영시간에는 전문강사가 상시 대기하여 친절하게 지도해드립니다.</li>
+                                    <li class="sub_item dot">전문지식을 갖춘 전문 강사가 헬스장 내 기구 사용법과 운동방법을 안내해 드립니다.</li>
+                                    <li class="sub_item dot">운동효과를 극대화하기 위해서 올바른 자세와 호흡법 등을 지도해 드리겠습니다.</li>
+                                  </ul>
+                                </li>
+                                <li class="tab_txt_item"><strong class="tit">고객님께 드리는 말씀</strong> 
+                                  <ul class="sub_list">
+                                    <li class="sub_item dot">운동 전에 간단한 준비운동을 하시기 바랍니다.</li>
+                                    <li class="sub_item dot">운동 중에 이상이 생기면 운동을 중단하고 도움을 청하시기 바랍니다.</li>
+                                    <li class="sub_item dot">운동량을 늘리거나 새로운 기구를 사용하기 전에는 부상이나 사고가 발생 되지 않도록 강사의 지도를 요청하시기 바랍니다.</li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </article>
+                        <article class="tab_item_txt">
+                          <h1 class="tab_item_tit">에어로빅장ㆍ대체육관ㆍ문화교실 등 관리</h1>
+                          <div class="tab_txt_box">
+                            <div class="tab_item_img"><img src="../../common/images/sub/sustain_manage/tab_txt_sports_04.png" alt="문의 관련 타이핑 사진"></div>
+                            <div class="tab_txt_list">
+                              <ul>
+                                <li class="tab_txt_item"><strong class="tit">쾌적하고 안전한 운영환경 제공</strong> 
+                                  <ul class="sub_list">
+                                    <li class="sub_item dot">수시로 공조기 가동을 통한 환기로 쾌적함을 유지하겠습니다.</li>
+                                    <li class="sub_item dot">운동기구과 운동시설을 안전하겠습니다.</li>
+                                    <li class="sub_item dot">업장의 청결 상태를 최상으로 유지하겠습니다.</li>
+                                  </ul>
+                                </li>
+                                <li class="tab_txt_item"><strong class="tit">회원지도 부문</strong> 
+                                  <ul class="sub_list">
+                                    <li class="sub_item dot">전문지식을 갖춘 전문 강사가 운동 및 수업을 진행하여 최고의 강습을 제공하겠습니다.</li>
+                                    <li class="sub_item dot">다양한 프로그램을 개발(요가, 댄스스포츠 등) 회원들의 요구사항에 부응 하겠습니다.</li>
+                                    <li class="sub_item dot">체계적이고 과학적인 프로그램 운영을 통해 회원의 건강과 체력 수준을 향상 시키겠습니다.</li>
+                                    <li class="sub_item dot">지도강사 실명제로 각 체육시설에 강사 프로필을 게시하고 강습 시간을 철저히 준수하겠습니다.</li>
+                                  </ul>
+                                </li>
+                                <li class="tab_txt_item"><strong class="tit">고객님께 드리는 말씀</strong> 
+                                  <ul class="sub_list">
+                                    <li class="sub_item dot">운동 전에 간단한 준비운동을 하시기 바랍니다.</li>
+                                    <li class="sub_item dot">운동 중에 이상이 생기면 운동을 중단하고 도움을 청하시기 바랍니다.</li>
+                                    <li class="sub_item dot">체육관, 다목적실 등 실내에서 운동하실 때에는 실내전용 운동화를 착용하셔야 합니다.</li>
+                                    <li class="sub_item dot">사용하는 시설물의 바닥과 비품 등이 훼손, 파손되지 않도록 주의하여야 하며 훼손하였을 경우 원상 복구 하여야 합니다.</li>
+                                    <li class="sub_item dot">운동 후 사용하신 교구재 등은 다른 이용객이 사용에 불편이 없도록 제자리에 정리정돈을 하고, 청결을 유지하여 주십시오.</li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </article>
+                        <article class="tab_item_txt">
+                          <h1 class="tab_item_tit">유아스포츠단 관리</h1>
+                          <div class="tab_txt_box">
+                            <div class="tab_item_img"><img src="../../common/images/sub/sustain_manage/tab_txt_sports_05.png" alt="문의 관련 타이핑 사진"></div>
+                            <div class="tab_txt_list">
+                              <ul>
+                                <li class="tab_txt_item"><strong class="tit">단원지도 부문</strong> 
+                                  <ul class="sub_list">
+                                    <li class="sub_item dot">질 높고 품격있는 교육의 장 마련을 위해 스포츠단 모든 교사가 연구하며 자질을 향상 시키겠습니다.</li>
+                                    <li class="sub_item dot">단원의 눈높이에 맞는 학습지도 및 수업방법 개선을 위해 부단히 노력하겠습니다.</li>
+                                    <li class="sub_item dot">다양한 학습경험 제공을 위해 현장학습 및 견학을 실시하겠습니다.</li>
+                                    <li class="sub_item dot">단원들이 안심하고 즐겁게 유아스포츠단 생활을 할 수 있도록 교육환경 개선을 위해 최선을 다하겠습니다.</li>
+                                    <li class="sub_item dot">성장기 유아들에게 적합한 양질의 급식이 제공 될 수 있도록 식당의 위생ㆍ안전 점검을 수시로 실시하겠습니다.</li>
+                                  </ul>
+                                </li>
+                                <li class="tab_txt_item"><strong class="tit">학부모 응대 부문</strong> 
+                                  <ul class="sub_list">
+                                    <li class="sub_item dot">단원과 학부모를 밝은 미소와 상냥한 말씨로 정중하게 맞이 하겠습니다.</li>
+                                    <li class="sub_item dot">교육의 모든 내용을 공개하고, 유아스포츠단 운영 전반에 대한 소중한 의견을 반영하여 신뢰있는 교육 및 서비스 향상을 위해 노력하겠습니다.</li>
+                                    <li class="sub_item dot">모든 민원을 민원인(학부모)의 입장에서 신속ㆍ정확ㆍ친절하게 처리하겠습니다.</li>
+                                    <li class="sub_item dot">부모참여 기회를 확대하고, 단원의 스포츠단 생활 전반에 대하여 친절하게 안내, 상담해 드리겠습니다.</li>
+                                  </ul>
+                                </li>
+                                <li class="tab_txt_item"><strong class="tit">고객님께 드리는 말씀</strong> 
+                                  <ul class="sub_list">
+                                    <li class="sub_item dot">친절하고 공정한 서비스를 받을 권리가 있으므로 적극적으로 권리를 행사하여 주시기 바랍니다.</li>
+                                    <li class="sub_item dot">불가피하게 학부모님의 요구를 수용하지 못할 경우에는 널리 이해하시는 아량을 베풀어 주시기 바랍니다.</li>
+                                    <li class="sub_item dot">학부모께서 주시는 의견은 스포츠단 발전의 밑거름이 될 수 있으므로 잘못 된 점에 대해서는 반드시 지적하여 주시기 바랍니다.</li>
+                                    <li class="sub_item dot">학부모 여러분께서는 최상의 교육과 차별화된 서비스를 받으실 수 있으며, 스포츠단의 한 구성원으로서 스포츠단 발전과 교육에 관심을 가지고 적극 동참ㆍ협조하여 주시기 바랍니다.</li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </article>
+                        <article class="tab_item_txt">
+                          <h1 class="tab_item_tit">대관 관리</h1>
+                          <div class="tab_txt_box">
+                            <div class="tab_item_img"><img src="../../common/images/sub/sustain_manage/tab_txt_sports_06.png" alt="문의 관련 타이핑 사진"></div>
+                            <div class="tab_txt_list">
+                              <ul>
+                                <li class="tab_txt_item"><strong class="tit">단원지도 부문</strong> 
+                                  <ul class="sub_list">
+                                    <li class="sub_item dot">고객이 희망하는 대관일정을 최대한 반영하며, 신청서 작성 및 이용방법에 대하여 친절히 안내해 드리겠습니다.</li>
+                                    <li class="sub_item dot">대관시설 이용전 확인전화를 통하여 고객의 대관일정에 이상없음을 안내 하여 이용하시는 시설물에 대하여 불편함이 없도록 최대한 협조하겠습니다.</li>
+                                    <li class="sub_item dot">사용료에 대하여 자세히 설명드리고, 요금 납부시 세금계산서를 발급해 드리겠습니다.</li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </article>
+                        <article class="tab_item_txt">
+                          <h1 class="tab_item_tit">골프장 관리</h1>
+                          <div class="tab_txt_box">
+                            <div class="tab_item_img"><img src="../../common/images/sub/sustain_manage/tab_txt_sports_07.png" alt="문의 관련 타이핑 사진"></div>
+                            <div class="tab_txt_list">
+                              <ul>
+                                <li class="tab_txt_item"><strong class="tit">쾌적하고 안전한 운영환경 제공</strong> 
+                                  <ul class="sub_list">
+                                    <li class="sub_item dot">운동공간과 탈의실, 샤워실 등을 청결히 유지하겠습니다.</li>
+                                    <li class="sub_item dot">운동기구과 운동시설을 안전하게 이용할 수 있도록 수시로 점검하고 이용에 불편이 없도록 하겠습니다.</li>
+                                  </ul>
+                                </li>
+                                <li class="tab_txt_item"><strong class="tit">회원지도 부문</strong> 
+                                  <ul class="sub_list">
+                                    <li class="sub_item dot">운영시간에는 전문강사가 상시 대기하여 정성껏 지도해 드립니다.</li>
+                                    <li class="sub_item dot">전문지식을 갖춘 전문 강사가 골프스윙 자세 및 골프규칙(골프에티켓)을 상세히 지도해 드립니다.</li>
+                                  </ul>
+                                </li>
+                                <li class="tab_txt_item"><strong class="tit">고객님께 드리는 말씀</strong> 
+                                  <ul class="sub_list">
+                                    <li class="sub_item dot">운동 전에 간단한 준비운동을 하시기 바랍니다.</li>
+                                    <li class="sub_item dot">운동 중에 이상이 생기면 운동을 중단하고 도움을 요청하시기 바랍니다.</li>
+                                    <li class="sub_item dot">골프 스윙시 안전거리 확보로 부상이나 사고가 발생되지 않도록 강사에게 지도를 요청하시기 바랍니다.</li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </article>
+                        <article class="tab_item_txt">
+                          <h1 class="tab_item_tit">셔틀버스 및 부대시설(주차장ㆍ샤워장ㆍ체온회복실 등) 관리</h1>
+                          <div class="tab_txt_box">
+                            <div class="tab_item_img"><img src="../../common/images/sub/sustain_manage/tab_txt_sports_08.png" alt="문의 관련 타이핑 사진"></div>
+                            <div class="tab_txt_list">
+                              <ul>
+                                <li class="tab_txt_item dot">고객 편의를 위하여 운행하고 있는 셔틀버스는 지정된 장소 및 시간 준수 하여 운행하겠으며 부득이 운행을 하지 못할 경우 사전에 예고토록 하겠습니다</li>
+                                <li class="tab_txt_item dot">주차장 이용에 불편함이 없도록 최선을 다하겠습니다.</li>
+                                <li class="tab_txt_item dot">장애인 및 여성우선 주차공간을 확보하여 불편함이 없도록 하겠습니다.</li>
+                                <li class="tab_txt_item dot">샤워장ㆍ탈의실ㆍ체온회복실 이용에 불편함이 없도록 청소상태 및 적정 온도유지에 노력하겠습니다.</li>
+                                <li class="tab_txt_item dot">모든 시설물에 담당자를 지정 청결 및 시설물관리에 노력하겠습니다.</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </article>
+                      </section>
+                    </div>    
+                  </div><!-- .tab_wrap End -->              
+                </div>
+
+                <!-- 컨텐츠 본문 하단 부분 -->
+                <article class="cntnsMngDeprt">
+                  <h1 class="hide">콘텐츠 관리부서</h1>
+                  <footer>
+                    <address>
+                      <p>콘텐츠 관리부서 <span class="pc"> | </span> <b>문화사업팀</b></p>
+                      <p>담당자/직위  <span class="pc"> | </span>  <b>홍길동/차장</b></p>
+                      <p><a href="tel:02-2049-1234">전화번호  <span class="pc"> ☎ </span>  <b>02-2049-1234</b></a></p>
+                    </address>
+                  </footer>
+                </article>
+                <section class="satisfaction_box"><!-- 만족도 조사-->
+                  <form action="">
+                    <div class="top">
+                      <h1 class="tit">만족도 조사</h1>
+                      <dl>
+                        <dt>이 페이지에서 제공하는 정보에 대하여 만족하시나요?</dt>
+                        <dd><input type="radio" name="satisfaction" value="5" id="star_5" checked="checked"><label for="star_5"><span>매우 만족</span><span class="star">&starf; &starf; &starf; &starf; &starf;</span></label></dd>
+                        <dd><input type="radio" name="satisfaction" value="4" id="star_4"><label for="star_4"><span>만족</span><span class="star">&starf; &starf; &starf; &starf;</span></label></dd>
+                        <dd><input type="radio" name="satisfaction" value="3" id="star_3"><label for="star_3"><span>보통</span> <span class="star"> &starf; &starf; &starf;</span> </label></dd>
+                        <dd><input type="radio" name="satisfaction" value="2" id="star_2"><label for="star_2"><span>불만족</span> <span class="star"> &starf; &starf;</span> </label></dd>
+                        <dd><input type="radio" name="satisfaction" value="1" id="star_1"><label for="star_1"><span>매우 불만족</span><span class="star">&starf;</span></label></dd>
+                      </dl>
+                    </div>
+                    <div class="bottom">
+                      <label for="opinions_regis" class="hide">의견등록 쓰기</label>
+                      <textarea name="" id="opinions_regis" cols="30" rows="10" placeholder="로그인 후 참여가능하며, 로그인 화면 이동시, 작성하신 의견은 삭제됩니다."></textarea>
+                      <button class="button-color" title="의견등록" type="button">의견등록</button>
+                    </div>
+                  </form>
+                </section><!-- 만족도 조사 끝-->
+                <!-- 켄튼츠 끝 부분 -->
+              </article>
+            </div><!-- .contents_sub End -->
+        </main>
+    <!-- footer -->
+        <footer class="footer">
+        <div class="f_nav">
+          <div class="container">
+            <ul class="fnb">
+              <li><a href="#">개인정보처리방침</a></li>
+              <li><a href="#">이메일무단수집거부</a></li>
+              <li><a href="#">영상정보처리기기 운영&#183;관리 방침침</a></li>
+              <li><a href="#"><span>찾아오시는 길</span></a></li>
+            </ul>
+            <ul class="sns">
+              <li><a href="#"><img src="../../common/images/f_sns_facebook.png" alt="페이스북"></a>
+              </li>
+              <li><a href="#"><img src="../../common/images/f_sns_twi.png" alt="트윗터"></a>
+              </li>
+              <li><a href="#"><img src="../../common/images/f_sns_blog.png" alt="블로그"></a></li>
+              <li><a href="#"><img src="../../common/images/f_sns_instagram.png" alt="인스타그램"></a></li>
+            </ul>
+            <ol class="addr">
+              <li>(05065) 서울특별시 광진구 능동로 76 광진구시설관리공단 (우 05065) 고유번호: 206-82-07233</li>
+              <li class="copy">Copyright © 2022 gwangjin FMC. All rights reserved.</li>
+              <li>본 사이트에 게시된 이메일주소는 자동수집을 거부하며, 이를 위반시 정보통신망법에 의해 처벌될 수 있습니다.</li>
+            </ol>
+          </div>
+        </div>
+        </footer>
+    <div class="curtain"></div>
+    <!-- footer -->
+    </div>
+</body>
+</html>

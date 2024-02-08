@@ -27,28 +27,33 @@
     <!-- 헤더 -->
     <!-- lnb 안산시의회 형식 참고, header 배경 화이트로 변경진행 -->
     <header class="header">
-      <div class="hd_top pc">
-        <ul>
-            <li>
-                <a href="#" class="inverse">광진구시설관리공단</a>
-            </li>
-            <li>
-                <a href="#" class="inverse">통합주차</a>
-            </li>
-            <li>
-                <a href="#" class="inverse">문화체육시설</a>
-            </li>
-        </ul>
-        <ol class="util">
-            <li><a href="#" class="inverse">로그인</a></li>
-            <li><a href="#" class="inverse">회원가입</a></li>
-            <li><a href="#" class="btn_sitemap_open inverse"><span class="hide">사이트맵 열기</span></a></li>
-        </ol>
-    </div>
+      <div class="hd_top">
+          <ul class="pc">
+              <li>
+                  <a href="#">광진구시설관리공단</a>
+              </li>
+              <li>
+                  <a href="#">통합주차</a>
+              </li>
+              <li>
+                  <a href="#">문화체육시설</a>
+              </li>
+          </ul>
+          <ol class="util">
+              <li><a href="#">로그인</a></li>
+              <li><a href="#">회원가입</a></li>
+              <li class="pc"> <a href="#" class="btn_sitemap_open"><span class="hide">사이트맵 열기</span></a></li>
+          </ol>
+      </div>
       <div class="layer_gnb">
         <div id="gnb" class="gnb">
           <h1 class="logo"><a href="#"><span class="hide">로고</span></a></h1>
-          <p class="mo showNav"><button title="메뉴보기" type="button"><span class="hide">메뉴보기</span></button></p>
+          <p class="mo showNav">
+            <button>
+              <i><span class="hide">메뉴보기</span></i>
+            </button>
+          </p>
+          <div class="mo curtain"></div>
           <nav>
             <div class="mo"><p class="link_home"><a href="#"><span class="hide">홈으로 이동</span></a></p></div>
             <h1 class="hide">글로벌 네비게이터</h1>
@@ -69,7 +74,7 @@
                     <div class="dep2_wrap">                          
                       <div class="nav_item_tit">
                           <h2>시설 안내</h2>
-                          <img src="../../common/images/gnb_tit_icon_1.png" alt="시설안내 아이콘">
+                          <img src="../common/images/gnb_tit_icon_1.png" alt="시설안내 아이콘">
                       </div>
                       <ul class="dep2">
                           <li><a href="#" class="menu_btn">문화/공공체육시설</a></li>
@@ -83,7 +88,7 @@
                     <div class="dep2_wrap">
                         <div class="nav_item_tit">
                             <h2>정보마당</h2>
-                            <img src="../../common/images/gnb_tit_icon_1.png" alt="정보마당 아이콘">
+                            <img src="../common/images/gnb_tit_icon_1.png" alt="정보마당 아이콘">
                         </div>
                         <ul class="dep2">
                             <li class="on"><a href="#" class="menu_btn">공지사항</a></li>
@@ -100,7 +105,7 @@
                     <div class="dep2_wrap">
                         <div class="nav_item_tit">
                             <h2>고객광장</h2>
-                            <img src="../../common/images/gnb_tit_icon_1.png" alt="고객광장 아이콘">
+                            <img src="../common/images/gnb_tit_icon_1.png" alt="고객광장 아이콘">
                         </div>
                         <ul class="dep2">
                             <li><a href="#" class="menu_btn">고객의 소리</a></li>
@@ -116,7 +121,7 @@
                     <div class="dep2_wrap">
                       <div class="nav_item_tit">
                           <h2>지속가능성 경영</h2>
-                          <img src="../../common/images/gnb_tit_icon_1.png" alt="지속가능성 경영 아이콘">
+                          <img src="../common/images/gnb_tit_icon_1.png" alt="지속가능성 경영 아이콘">
                       </div>
                       <ul class="dep2">
                           <li>
@@ -187,7 +192,7 @@
                     <div class="dep2_wrap">
                         <div class="nav_item_tit">
                             <h2>공단소개</h2>
-                            <img src="../../common/images/gnb_tit_icon_1.png" alt="공단소개 아이콘">
+                            <img src="../common/images/gnb_tit_icon_1.png" alt="공단소개 아이콘">
                         </div>
                         <ul class="dep2">
                             <li>
@@ -220,14 +225,14 @@
                     </div>
                   </li>
             </ul>
-            <button class="mo close" title="메뉴닫기" type="button"><span class="hide">닫기</span></button>
+            <button class="mo close"><span class="hide">닫기</span></button>
           </nav>
         </div>
       </div>
     </header><!-- header End -->
 
     <main class="sub">
-      <div class="page_spot sub1">
+      <div class="page_spot sub1 info">
         <h1 class="sub_title">공지사항</h1>
       </div>
       <div class="contents_sub_box center_box_pc">
@@ -301,7 +306,7 @@
             </div>
             <fieldset>
               <legend>게시물 목록</legend>
-              <table class="p-table normal">
+              <table class="p-table normal rspns">
                 <caption>게시판 목록 - 번호 ,제목 ,등록자 ,등록일, 조회수</caption>
                 <thead>
                   <tr>
@@ -380,17 +385,17 @@
                 <a href="#" class="p-page__link prev-one" title="앞 페이지로 이동"><span class="hide">앞 페이지로 이동</span></a>
               </span>
               <span class="p-page__link-group">
-                <strong class="p-page__link active">1</strong>
-                <a href="#" class="p-page__link">2</a>
-                <a href="#" class="p-page__link">3</a>
-                <a href="#" class="p-page__link">4</a>
-                <a href="#" class="p-page__link">5</a>
-                <a href="#" class="p-page__link">6</a>
-                <a href="#" class="p-page__link">7</a>
-                <a href="#" class="p-page__link">8</a>
-                <a href="#" class="p-page__link">9</a>
-                <a href="#" class="p-page__link">10</a>
-              </span>
+                <strong class="p-page__link active">1</strong><!--
+              --><a href="#" class="p-page__link">2</a><!--
+              --><a href="#" class="p-page__link">3</a><!--
+              --><a href="#" class="p-page__link">4</a><!--
+              --><a href="#" class="p-page__link">5</a><!--
+              --><a href="#" class="p-page__link">6</a><!--
+              --><a href="#" class="p-page__link">7</a><!--
+              --><a href="#" class="p-page__link">8</a><!--
+              --><a href="#" class="p-page__link">9</a><!--
+              --><a href="#" class="p-page__link">10</a><!--
+            --></span>
               <span class="p-page__control">
                 <a href="#" class="p-page__link next" title="뒤로 이동"><span class="hide">뒤로 이동</span></a>
                 <a href="#" class="p-page__link next-end" title="마지막 페이지 이동"><span class="hide">마지막 페이지로 이동</span></a>

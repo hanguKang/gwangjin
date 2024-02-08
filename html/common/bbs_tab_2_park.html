@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+  <title>?</title>
+  <link rel="stylesheet" href="../../common/css/default.css">
+  <link rel="stylesheet" href="../../common/css/slick.css" />
+  <link rel="stylesheet" href="../../common/css/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <script src="../../common/js/jquery-3.6.0.min.js"></script>
+  <!--<script src="../../common/js/jquery-1.11.3.min.js"></script>-->
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
+  <script src="../../common/js/aos.js"></script>
+  <script src="../../common/js/slick.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="../../common/js/common.js"></script>
+  <script src="../../common/js/sub.js"></script>
+</head>      
+<body>
+    <div class="wrapper">
+        <!-- 스킵내비게이션 -->
+        <div class="skip_navi">
+            <strong class="hide">바로가기 메뉴</strong>
+            <a href="#contents">본문 바로가기</a>
+            <a href="#gnb">주메뉴 바로가기</a>
+        </div>
+        <!-- 헤더 -->
+        <header class="header">
+          <div class="hd_top">
+              <ul class="pc">
+                  <li>
+                      <a href="#">광진구시설관리공단</a>
+                  </li>
+                  <li>
+                      <a href="#">통합주차</a>
+                  </li>
+                  <li>
+                      <a href="#">문화체육시설</a>
+                  </li>
+              </ul>
+              <ol class="util">
+                  <li><a href="#">로그인</a></li>
+                  <li><a href="#">회원가입</a></li>
+                  <li class="pc"> <a href="#" class="btn_sitemap_open"><span class="hide">사이트맵 열기</span></a></li>
+              </ol>
+          </div>
+          <div class="layer_gnb">
+            <div id="gnb" class="gnb">
+              <h1 class="logo"><a href="#"><span class="hide">로고</span></a></h1>
+              <p class="mo showNav">
+                <button>
+                  <i><span class="hide">메뉴보기</span></i>
+                </button>
+              </p>
+              <div class="mo curtain"></div>
+              <nav>
+                <div class="mo"><p class="link_home"><a href="#"><span class="hide">홈으로 이동</span></a></p></div>
+                <h1 class="hide">글로벌 네비게이터</h1>
+                <ul class="mo">
+                  <li class="active">
+                      <a href="#">광진구시설관리공단</a>
+                  </li>
+                  <li>
+                      <a href="#">통합주차</a>
+                  </li>
+                  <li>
+                      <a href="#">문화체육시설</a>
+                  </li>
+                </ul>
+                <ul class="nav_items dep1">
+                    <li class="nav_item">
+                        <a href="#"><span>시설 안내</span></a>
+                        <div class="dep2_wrap">                          
+                          <div class="nav_item_tit">
+                              <h2>시설 안내</h2>
+                              <img src="../common/images/gnb_tit_icon_1.png" alt="시설안내 아이콘">
+                          </div>
+                          <ul class="dep2">
+                              <li><a href="#" class="menu_btn">문화/공공체육시설</a></li>
+                              <li><a href="#" class="menu_btn">도서관 시설</a></li>
+                              <li><a href="#" class="menu_btn">주차 시설</a></li>
+                          </ul>                          
+                        </div>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#"><span>정보마당</span></a>
+                        <div class="dep2_wrap">
+                            <div class="nav_item_tit">
+                                <h2>정보마당</h2>
+                                <img src="../common/images/gnb_tit_icon_1.png" alt="정보마당 아이콘">
+                            </div>
+                            <ul class="dep2">
+                                <li class="on"><a href="#" class="menu_btn">공지사항</a></li>
+                                <li><a href="#" class="menu_btn">채용공고</a></li>
+                                <li><a href="#" class="menu_btn">입찰정보</a></li>
+                                <li><a href="#" class="menu_btn">수의계약내역 공개</a></li>
+                                <li><a href="#" class="menu_btn">고시 및 공고</a></li>
+                                <li><a href="#" class="menu_btn">자료실</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#"><span>고객 광장</span></a>
+                        <div class="dep2_wrap">
+                            <div class="nav_item_tit">
+                                <h2>고객광장</h2>
+                                <img src="../common/images/gnb_tit_icon_1.png" alt="고객광장 아이콘">
+                            </div>
+                            <ul class="dep2">
+                                <li><a href="#" class="menu_btn">고객의 소리</a></li>
+                                <li><a href="#" class="menu_btn">자주 묻는 질문</a></li>
+                                <li><a href="#" class="menu_btn">Q&A</a></li>
+                                <li><a href="#" class="menu_btn">클린신고</a></li>
+                                <li><a href="#" class="menu_btn">광나루24!(고객 제안)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#"><span>지속가능성 경영</span></a>
+                        <div class="dep2_wrap">
+                          <div class="nav_item_tit">
+                              <h2>지속가능성 경영</h2>
+                              <img src="../common/images/gnb_tit_icon_1.png" alt="지속가능성 경영 아이콘">
+                          </div>
+                          <ul class="dep2">
+                              <li>
+                                <a href="#" class="menu_btn">열린혁신</a>
+                                <ul class="dep3">
+                                    <li><a href="#">열린혁신</a></li>
+                                    <li><a href="#">주민참여형 제안사업</a></li>
+                                    <li><a href="#">적극행정</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="menu_btn">정보공개</a>
+                                <ul class="dep3">
+                                    <li><a href="#">행정정보공개</a></li>
+                                    <li><a href="#">사전정보공표</a></li>
+                                    <li><a href="#">정보목록</a></li>
+                                    <li><a href="#">경영공시 및 현황</a></li>
+                                    <li><a href="#">공공데이터 개방</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="menu_btn">ESG경영</a>
+                                <ul class="dep3">
+                                    <li><a href="#">경영 전략체계</a></li>
+                                    <li><a href="#">실천선언문</a></li>
+                                    <li><a href="#">ESG경영 자료실</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="menu_btn">윤리·인권</a>
+                                <ul class="dep3">
+                                    <li><a href="#">윤리경영헌장</a></li>
+                                    <li><a href="#">임직원행동강령</a></li>
+                                    <li><a href="#">윤리경영주요활동</a></li>
+                                    <li><a href="#">인권경영 이행사항</a></li>
+                                    <li><a href="#">인권경영 선언문</a></li>
+                                    <li><a href="#">인권영향평가</a></li>
+                                    <li><a href="#">인권경영주요활동</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="menu_btn">안전·보건</a>
+                                <ul class="dep3">
+                                    <li><a href="#">안전·보건 경영방침</a></li>
+                                    <li><a href="#">목표 및 과제</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="menu_btn">고객서비스</a>
+                                <ul class="dep3">
+                                    <li><a href="#">고객만족경영시스템</a></li>
+                                    <li><a href="#">고객만족도 조사결과</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="menu_btn">사회공헌</a>
+                                <ul class="dep3">
+                                    <li><a href="#">사회공헌 경영방침</a></li>
+                                    <li><a href="#">목표 및 과제</a></li>
+                                </ul>
+                              </li>
+                          </ul>
+    
+                        </div>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#"><span>공단소개</span></a>
+                        <div class="dep2_wrap">
+                            <div class="nav_item_tit">
+                                <h2>공단소개</h2>
+                                <img src="../common/images/gnb_tit_icon_1.png" alt="공단소개 아이콘">
+                            </div>
+                            <ul class="dep2">
+                                <li>
+                                  <a href="#" class="menu_btn">이사장 인사말</a>
+                                </li>
+                                <li>
+                                  <a href="#" class="menu_btn">공단 현황</a>
+                                  <ul class="dep3">
+                                      <li><a href="#">일반현황</a></li>
+                                      <li><a href="#">공단 미션·비전</a></li>
+                                      <li><a href="#">연혁</a></li>
+                                      <li><a href="#">인증현황</a></li>
+                                      <li><a href="#">조직 안내</a></li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <a href="#" class="menu_btn">홍보 마당</a>
+                                  <ul class="dep3">
+                                    <li><a href="#">미디어</a></li>
+                                    <li><a href="#">뉴미디어 바로 가기</a></li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <a href="#" class="menu_btn">공단CI</a>
+                                </li>
+                                <li>
+                                  <a href="#" class="menu_btn">오시는 길</a>
+                                </li>
+                            </ul>
+                        </div>
+                      </li>
+                </ul>
+                <button class="mo close"><span class="hide">닫기</span></button>
+              </nav>
+            </div>
+          </div>
+        </header><!-- header End -->
+
+        <main class="sub">
+            <div class="page_spot sub1">
+              <h1 class="sub_title">?</h1>
+            </div>
+            <div class="contents_sub_box center_box_pc">
+              <nav id="lnb" class="lnb">
+                <h1> ? </h1>
+                <ul class="dep2">
+                  <li class="menu_item">
+                    <a href="#" class="menu_btn">이사장 인사말</a>
+                  </li>
+                  <li class="menu_item">
+                    <a href="#" class="menu_btn">공단 현황</a>
+                    <ul class="dep3">
+                      <li><a href="#">일반 현황</a></li>
+                      <li><a href="#">공단 미션&#183;비전</a></li>
+                      <li><a href="#">연혁</a></li>
+                      <li><a href="#">인증현황</a></li>
+                      <li><a href="#">조직 안내</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu_item">
+                    <a href="#" class="menu_btn">홍보 마당</a>
+                    <ul class="dep3">
+                      <li class=""><a href="#">미디어</a></li>
+                      <li><a href="#">뉴미디어 바로가기</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu_item">
+                    <a href="#" class="menu_btn">공단CI</a>
+                  </li>
+                  <li class="menu_item">
+                    <a href="#" class="menu_btn">오시는 길</a>
+                  </li>
+                </ul>
+              </nav>
+              <article class="contents_sub">
+                <header class="sub_top">
+                  <h1 class="hide">카드 뉴스 게시판</h1>
+                  <ol>
+                    <li>HOME</li>
+                    <li><a href="#">?</a></li>
+                    <li><a href="#">?</a></li>
+                    <li><a href="#">?</a></li>
+                  </ol>
+                  <ul>
+                    <li class="share">
+                      <button title="공유하기" type="button"><span class="hide">sns 공유하기 열기</span></button>
+                      <div class="share_box">
+                        <ul>
+                          <li><a href="#" class="facebook" id="share_popup_facebook"><img src="../../common/images/share_facebook.png" alt="페이스북"></a></li>
+                          <li><a href="#" class="twitter" id="share_popup_twitter"><img src="../../common/images/share_twitter.png" alt="트위터"></a></li>
+                          <li><a href="#" class="blog" id="share_popup_band"><img src="../../common/images/share_band.png" alt="블로그"></a></li>
+                          <li><a href="#" class="kko" id="share_popup_kakao"><img src="../../common/images/share_kakao.png" alt="카카오"></a></li>
+                          <li><a href="#" class="kkostory" id="share_popup_kakao_story"><img src="../../common/images/share_kakao_stroy.png" alt="카카오스토리"></a></li>
+                        </ul>
+                        <p class="share_close"><a href="#"><span class="hide">sns 공유하기 닫기</span></a></p>
+                      </div>
+                    </li>
+                    <li class="print_btn"><a href="#"><span class="hide">프린트하기</span></a></li>
+                  </ul>
+                     
+                </header>
+                <!-- 컨텐츠 본문 시작 부분-->
+                <div class="history page">
+                  <div class="tab_wrap">
+                    <div class="tab_list_outer">
+                      <ul class="tab_list--link tab_list m_tab">
+                        <li class="tab_item--link cnt3"><a href="#" class="btn">고객서비스헌장</a href="#"></li>
+                        <li class="tab_item--link cnt3 active"><a href="#" class="btn">서비스이행표준</a href="#"></li>
+                        <li class="tab_item--link cnt3"><a href="#" class="btn">소비자중심경영 운영 매뉴얼</a href="#"></li>
+                      </ul>
+                    </div>
+                    <div class="tab_list_outer">
+                      <ul class="tab_list m_tab tab_list--cmn nowrap">
+                        <li class="tab_item tab_sty_txt dot"><button class="btn btn--cmn">공통서비스</button></li>
+                        <li class="tab_item tab_sty_txt dot active"><button class="btn btn--cmn">주차</button></li>
+                        <li class="tab_item tab_sty_txt dot"><button class="btn btn--cmn">체육시설</button></li>
+                        <li class="tab_item tab_sty_txt dot"><button class="btn btn--cmn">도서관</button></li>
+                      </ul>
+
+                    </div>
+                    <div class="tab_conts_list">
+                      <section class="tab_contents active">
+                        <article class="tab_item_txt">
+                          <h1 class="tab_item_tit">공영주차장 분야</h1>
+                          <div class="tab_txt_box">
+                            <div class="tab_item_img"><img src="../../common/images/sub/sustain_manage/tab_txt_park_01.png" alt="방문 관련 사진"></div>
+                            <div class="tab_txt_list">
+                              <ul>
+                                <li class="tab_txt_item dot">매일 운영개시 10분전에 주차장 내외를 청소정비하고 일일점검 및 보완함으로써 쾌적하고 안전한 주차관리 환경을 조성하겠습니다.</li>
+                                <li class="tab_txt_item dot">주차장 이용고객에게 불쾌감을 주지 않도록 고운말, 바른말 사용을 생활화 하겠습니다.</li>
+                                <li class="tab_txt_item dot">고객안전 및 편의를 위해 차량 입·출차시 차량을 안내하며 주차요금과 이용방법을 친절히 설명하겠습니다.</li>
+                                <li class="tab_txt_item dot">장애우 혹은 거동이 불편하신 승객을 탑승하신 차량의 경우 입차 시 주차 관리원에게 말씀하여 주시면 승/하차 시 불편함이 없도록 안내하겠습니다.</li>
+                                <li class="tab_txt_item dot">여행 주차구획을 설치하고 우선 주차토록 관리함으로써 여성고객들의 주차불편을 적극적으로 해소하겠습니다.</li>
+                                <li class="tab_txt_item dot">주차요금 징수 시 주차시간과 요금내역을 알려드리고, 받은 금액 확인 후 영수증을 즉시 교부하여 드리겠습니다.</li>
+                                <li class="tab_txt_item dot">장애우, 국가유공상이자, 고엽제후유의증 환자 차량의 경우 해당 증명서를 출차 시 제시하여 주시면 본인확인 후 이용혜택을 드리겠습니다</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </article>
+                        <article class="tab_item_txt">
+                          <h1 class="tab_item_tit">부정주차단속 지원분야</h1>
+                          <div class="tab_txt_box">
+                            <div class="tab_item_img"><img src="../../common/images/sub/sustain_manage/tab_txt_park_02.png" alt="전화통화 관련 사진"></div>
+                            <div class="tab_txt_list">
+                              <ul>
+                                <li class="tab_txt_item dot">주차단속 지원분야에 종사하는 모든 직원은 광진구 주차문화 향상ㆍ발전에 기여하고 쾌적한 광진구를 만드는데 최선의 노력 다하겠습니다.</li>
+                                <li class="tab_txt_item dot">주민의 부정정차 단속요청 민원은 접수 즉시 처리함으로써 주민생활 불편의 최소화에 기여하겠습니다.</li>
+                                <li class="tab_txt_item dot">단속 지원 시설ㆍ장비의 첨단화, 전산화를 통하여 부정주차 단속업무의 효율성과 정확성 및 신속성을 높이도록 최선을 다하겠습니다.</li>
+                                <li class="tab_txt_item dot">모든 주차단속 지원요원은 단속된 차주에 대하여 공손하고 부드러운 자세로 임하며 자기의견을 주장하기 전에 상대방의 의견을 경청하고 수용하는 자세를 갖도록 하겠습니다.</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </article>
+                      </section>
+                      <section class="tab_contents"><!--    2009 ~ 2013 -->
+                        <h1 class="hide">2009년 ~ 2013년 변천사</h1>
+                        <ol class="period_data">
+                          <li class="period_data_item">
+                            <strong class="year">2010</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2010-10-11">10.11</time> <span>제3대 이사장 취임(이기석)</span></li>
+                              <li class="dataItem dot"><time data-time="2010-06-21">06.21</time> <span>제4회 도서관현장발전 우수상(문화체육관광부)</span></li>
+                            </ul>
+                          </li>
+                          <li class="period_data_item">
+                            <strong class="year">2011</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2011-12-28">07.01</time> <span>환경경영시스템(ISO 14001)인증</span></li>
+                              <li class="dataItem dot"><time data-time="2011-11-18">05.24</time> <span>안전보건경영시스템(KOSHA 18001)인증</span></li>
+                            </ul>
+                          </li>
+                          <li class="period_data_item">
+                            <strong class="year">2012</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2012-12-02">12.02</time> <span>생산성경영체제 Level 5 인증(지식경제부장관)</span></li>
+                              <li class="dataItem dot"><time data-time="2012-12-03">12.03</time> <span>한국서비스품질 우수기관 인증획득</span></li>
+                              <li class="dataItem dot"><time data-time="2012-05-15">05.15</time> <span>아차산배수지체육공원 인조잔디축구장 수탁운영</span></li>
+                            </ul>
+                          </li>
+                          <li class="period_data_item">
+                            <strong class="year">2013</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2013-12-01">12.01</time> <span>책읽는 서울 '한도서관 한책읽기' 서울시장 표창</span></li>
+                              <li class="dataItem dot"><time data-time="2013-11-07">11.07</time> <span>생산성경영시스템(Level 5) 인증(사후심사)</span></li>
+                              <li class="dataItem dot"><time data-time="2013-09-04">09.04</time> <span>제37회 국가생산성대회 장관표창(미래경영부문) 챔피언 경진대회 회장상 수상</span></li>
+                              <li class="dataItem dot"><time data-time="2013-07-01">07.01</time> <span>아차산배수지체육공원 수탁운영(풋살장, 족구장)</span></li>
+                            </ul>
+                          </li>
+                        </ol>
+                      </section>
+                      <section class="tab_contents"><!--    2014 ~ 2018 -->
+                        <h1 class="hide">2014년 ~ 2018년 변천사</h1>
+                        <ol class="period_data">
+                          <li class="period_data_item">
+                            <strong class="year">2014</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2014-12-15">12.15</time>  <span>생산성경영시스템(Level 5 plus) 인증 (사후 심사)</span></li>
+                              <li class="dataItem dot"><time data-time="2014-11-18">11.18</time> <span>민방위 훈련 우수단체 표창(소방방재청)</span></li> 
+                              <li class="dataItem dot"><time data-time="2014-10-29">10.29</time> <span>2014년 전국도서관 운영평가 대통령상 수상</span></li>
+                              <li class="dataItem dot"><time data-time="2014-09-03">09.03</time>  <span>국가생산성 경진대회 장려상 수상(한국생산성본부)</span></li>
+                              <li class="dataItem dot"><time data-time="2014-03-14">03.14</time> <span>광진정보도서관 무한상상실 시범운영 우수기관 선정(미래창조과학부)</span></li> 
+                              <li class="dataItem dot"><time data-time="2014-02-01">02.01</time> <span>구의제3동도서관 수탁운영</span></li>
+                            </ul>
+                          </li>
+                          <li class="period_data_item">
+                            <strong class="year">2015</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2015-12-30">12.30</time> <span>2015년 우수공공체육시설(구민체육센터) 선정(문화체육관광부)</span></li>
+                              <li class="dataItem dot"><time data-time="2015-11-10">11.10</time> <span>무재해 1배수 달성 인증</span></li>
+                              <li class="dataItem dot"><time data-time="2015-11-01">11.01</time> <span>공연장(나루아트센터) 수탁 종료</span></li>
+                              <li class="dataItem dot"><time data-time="2015-09-09">09.09</time> <span>제39회 국가생산성대회 한국생산성본부 회장 표창 국가생산성대상 챔피언경진대회 장려상 수상</span></li>
+                              <li class="dataItem dot"><time data-time="2015-05-13">05.13</time> <span>제4대 이사장 취임(이명래)</span></li>
+                            </ul>
+                          </li>
+                          <li class="period_data_item">
+                            <strong class="year">2016</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2016-10-26">10.26</time> <span>2016년도 전국도서관 운영평가 문화체육관광부 장관상(광진정보 도서관)</span></li>
+                              <li class="dataItem dot"><time data-time="2016-10-26">10.26</time> <span>2016년도 전국도서관 운영평가 국무총리상(중곡문화체육센터 도서관)</span></li>
+                              <li class="dataItem dot"><time data-time="2016-10-12">10.12</time> <span>2016년도 날씨경영 우수기업 선정</span></li>
+                              <li class="dataItem dot"><time data-time="2016-09-25">09.25</time> <span>제40회 국가생산성대회 한국생산성본부 회장 표창 국가생산성대상 챔피언경진대회 장려상 수상</span></li>
+                            </ul>
+                          </li>
+                          <li class="period_data_item">
+                            <strong class="year">2017</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2017-12-19">12.19</time> <span>여성가족부 주관 가족친화기관 인증</span></li>
+                              <li class="dataItem dot"><time data-time="2017-10-18">10.18</time> <span>제41회 국가생산성대회 서비스우수기업 장관 표창 국가생산성대회 한국생산성본부 회장상
+                              </span></li>
+                              <li class="dataItem dot"><time data-time="2017-09-22">09.22</time> <span>인적자원개발 우수기관(Best-HRD) 인증</span></li>
+                              <li class="dataItem dot"><time data-time="2017-09-13">09.13</time> <span>한국서비스품질 우수기업 재인증</span></li>
+                              <li class="dataItem dot"><time data-time="2017-05-31">05.31</time> <span>실내공기질 우수시설 선정</span></li>
+                              <li class="dataItem dot"><time data-time="2017-05-29">05.29</time> <span>안전보건경영시스템 재인증(7년 연속)</span></li>
+                              <li class="dataItem dot"><time data-time="2017-05-23">05.23</time> <span>무재해 2배 인증</span></li>
+                              <li class="dataItem dot"><time data-time="2017-04-27">04.27</time> <span>아차산배수지 체육시설 수탁운영 체결(테니스장, 정구장)</span></li>
+                              <li class="dataItem dot"><time data-time="2017-03-25">03.25</time> <span>에너지유공 산업통상자원부장관 표창
+                              </span></li>
+                              <li class="dataItem dot"><time data-time="2017-01-01">01.01</time> <span>광장동 실내배드민턴장 수탁운영 체결</span></li>
+                            </ul>
+                          </li>
+                          <li class="period_data_item">
+                            <strong class="year">2018</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2018-12-14">12.14</time> <span>소비자중심경영(CCM) 인증
+                              </span></li>
+                              <li class="dataItem dot"><time data-time="2018-11-18">11.18</time> <span>제44회 국가품질경영대회 산업통상자원부 장관 표창</span></li>
+                              <li class="dataItem dot"><time data-time="2018-11-08">11.08</time> <span>한국서비스품질 우수기업 재인증</span></li>
+                              <li class="dataItem dot"><time data-time="2018-10-24">10.24</time> <span>2018년도 전국도서관 운영평가 대통령상 수상</span></li>
+                              <li class="dataItem dot"><time data-time="2018-07-25">07.25</time> <span>안전보건경영시스템(KOSHA18001) 8년 연속 인증 유지</span></li>
+                              <li class="dataItem dot"><time data-time="2018-06-14">06.14</time> <span>환경정보공개대상 환경부 장관 표창</span></li>
+                              <li class="dataItem dot"><time data-time="2018-05-28">05.28</time> <span>무재해 3배수 달성</span></li>                          
+                            </ul>
+                          </li>
+                        </ol>
+                      </section>
+                      <section class="tab_contents"><!--    2019 ~ 2022 -->
+                        <h1 class="hide">2019년 ~ 2022년 변천사</h1>
+                        <ol class="period_data">
+                          <li class="period_data_item">
+                            <strong class="year">2019</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2019-12-31">12.31</time>  <span>웹접근성 품질 인증(과학기술정보통신부)</span></li>
+                              <li class="dataItem dot"><time data-time="2019-12-03">12.03</time> <span>생존수영 교육수영장 안전인증</span></li> 
+                              <li class="dataItem dot"><time data-time="2019-08-20">08.20</time> <span>안전보건경영시스템(KOSHA18001) 9년 연속 인증 유지</span></li>
+                              <li class="dataItem dot"><time data-time="2019-08-08">08.08</time> <span>제5대 이사장 취임(김상국)</span></li> 
+                              <li class="dataItem dot"><time data-time="2019-05-03">05.03</time> <span>지방공기업 발전 ‘사회적 가치 공헌’ 유공 행정안전부 장관 표창</span></li>
+                            </ul>
+                          </li>
+                          <li class="period_data_item">
+                            <strong class="year">2020</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2020-12-31">12.31</time>  <span>서울시민카드 이용활성화 기관평가 최우수상 수상</span></li>
+                              <li class="dataItem dot"><time data-time="2020-11-30">11.30</time> <span>여성가족부 가족친화경영 재인증</span></li> 
+                              <li class="dataItem dot"><time data-time="2020-11-30">11.30</time> <span>보건복지부 지역사회공헌 인정제 인증 획득</span></li>
+                              <li class="dataItem dot"><time data-time="2020-11-25">11.25</time> <span>폭력예방교육 우수기관 여성가족부 장관 표창</span></li> 
+                              <li class="dataItem dot"><time data-time="2020-10-28">10.28</time> <span>전국도서관운영평가 문화체육관광부 특별상(장관상) 수상</span></li>
+                              <li class="dataItem dot"><time data-time="2020-09-28">09.28</time> <span>인적자원개발 우수기관(Best-HRD) 재인증</span></li> 
+                              <li class="dataItem dot"><time data-time="2020-08-06">08.06</time> <span>한국산업안전보건공단 KOSHA-MS 인증 획득</span></li>
+                              <li class="dataItem dot"><time data-time="2020-07-13">07.13</time> <span>ISO 10002 고객만족경영시스템 인증 획득</span></li> 
+                              <li class="dataItem dot"><time data-time="2020-06-03">06.03</time> <span>구의2동 주택가 공동주차장 ‘범죄예방 우수시설’인증 획득
+                              </span></li>
+                            </ul>
+                          </li>
+                          <li class="period_data_item">
+                            <strong class="year">2021</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2021-12-20">12.20</time>  <span>광진구민체육센터 ‘범죄예방 우수시설’인증 획득</span></li>
+                              <li class="dataItem dot"><time data-time="2021-12-03">12.03</time> <span>보건복지부 지역사회공헌 인정제 재인증</span></li> 
+                              <li class="dataItem dot"><time data-time="2021-12-01">12.01</time> <span>교육기부 우수기관 및 동아리 인증제 획득</span></li>
+                              <li class="dataItem dot"><time data-time="2021-12-01">12.01</time> <span>한국서비스품질우수기업 재인증</span></li> 
+                              <li class="dataItem dot"><time data-time="2021-11-02">11.02</time> <span>제45회 국가생산성대회 산업통상자원부 장관 표창</span></li>
+                              <li class="dataItem dot"><time data-time="2021-06-03">06.03</time> <span>문화사업팀 수영장 「생존수영 교육수영장 안전인증」 획득</span></li> 
+                              <li class="dataItem dot"><time data-time="2021-02-13">02.13</time> <span>구민체육팀 수영장 「생존수영 교육수영장 안전인증」 획득</span></li>
+                            </ul>
+                          </li>
+                          <li class="period_data_item">
+                            <strong class="year">2022</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2007-07-01">07.01</time> <span>나루아트센터 수탁운영</span></li>
+                              <li class="dataItem dot"><time data-time="2007-05-24">01.08</time> <span>제2대 이사장 취임(박주경)</span></li>
+                            </ul>
+                          </li>                     
+                        </ol>
+                      </section>
+                      <section class="tab_contents"><!--   2023 -->
+                        <h1 class="hide">2023년 변천사</h1>
+                        <ol class="period_data">
+                          <li class="period_data_item">
+                            <strong class="year">2023</strong>
+                            <ul class="data">
+                              <li class="dataItem dot"><time data-time="2004-02-16">02.16</time>  <span>광진구 주차장 수탁운영</span></li>
+                              <li class="dataItem dot"><time data-time="2004-01-07">01.07</time> <span>서울특별시 광징구시설관리공단 창립</span></li> 
+                              <li class="dataItem dot"><time data-time="2004-02-16">01.03</time> <span>초대이사장 취임(김성현)</span></li>
+                            </ul>
+                          </li>
+                        </ol>
+                      </section>
+                    </div>    
+                  </div><!-- .tab_wrap End -->              
+                </div>
+
+                <!-- 컨텐츠 본문 하단 부분 -->
+                <article class="cntnsMngDeprt">
+                  <h1 class="hide">콘텐츠 관리부서</h1>
+                  <footer>
+                    <address>
+                      <p>콘텐츠 관리부서 <span class="pc"> | </span> <b>문화사업팀</b></p>
+                      <p>담당자/직위  <span class="pc"> | </span>  <b>홍길동/차장</b></p>
+                      <p><a href="tel:02-2049-1234">전화번호  <span class="pc"> ☎ </span>  <b>02-2049-1234</b></a></p>
+                    </address>
+                  </footer>
+                </article>
+                <section class="satisfaction_box"><!-- 만족도 조사-->
+                  <form action="">
+                    <div class="top">
+                      <h1 class="tit">만족도 조사</h1>
+                      <dl>
+                        <dt>이 페이지에서 제공하는 정보에 대하여 만족하시나요?</dt>
+                        <dd><input type="radio" name="satisfaction" value="5" id="star_5" checked="checked"><label for="star_5"><span>매우 만족</span><span class="star">&starf; &starf; &starf; &starf; &starf;</span></label></dd>
+                        <dd><input type="radio" name="satisfaction" value="4" id="star_4"><label for="star_4"><span>만족</span><span class="star">&starf; &starf; &starf; &starf;</span></label></dd>
+                        <dd><input type="radio" name="satisfaction" value="3" id="star_3"><label for="star_3"><span>보통</span> <span class="star"> &starf; &starf; &starf;</span> </label></dd>
+                        <dd><input type="radio" name="satisfaction" value="2" id="star_2"><label for="star_2"><span>불만족</span> <span class="star"> &starf; &starf;</span> </label></dd>
+                        <dd><input type="radio" name="satisfaction" value="1" id="star_1"><label for="star_1"><span>매우 불만족</span><span class="star">&starf;</span></label></dd>
+                      </dl>
+                    </div>
+                    <div class="bottom">
+                      <label for="opinions_regis" class="hide">의견등록 쓰기</label>
+                      <textarea name="" id="opinions_regis" cols="30" rows="10" placeholder="로그인 후 참여가능하며, 로그인 화면 이동시, 작성하신 의견은 삭제됩니다."></textarea>
+                      <button class="button-color" title="의견등록" type="button">의견등록</button>
+                    </div>
+                  </form>
+                </section><!-- 만족도 조사 끝-->
+                <!-- 켄튼츠 끝 부분 -->
+              </article>
+            </div><!-- .contents_sub End -->
+        </main>
+    <!-- footer -->
+        <footer class="footer">
+        <div class="f_nav">
+          <div class="container">
+            <ul class="fnb">
+              <li><a href="#">개인정보처리방침</a></li>
+              <li><a href="#">이메일무단수집거부</a></li>
+              <li><a href="#">영상정보처리기기 운영&#183;관리 방침침</a></li>
+              <li><a href="#"><span>찾아오시는 길</span></a></li>
+            </ul>
+            <ul class="sns">
+              <li><a href="#"><img src="../../common/images/f_sns_facebook.png" alt="페이스북"></a>
+              </li>
+              <li><a href="#"><img src="../../common/images/f_sns_twi.png" alt="트윗터"></a>
+              </li>
+              <li><a href="#"><img src="../../common/images/f_sns_blog.png" alt="블로그"></a></li>
+              <li><a href="#"><img src="../../common/images/f_sns_instagram.png" alt="인스타그램"></a></li>
+            </ul>
+            <ol class="addr">
+              <li>(05065) 서울특별시 광진구 능동로 76 광진구시설관리공단 (우 05065) 고유번호: 206-82-07233</li>
+              <li class="copy">Copyright © 2022 gwangjin FMC. All rights reserved.</li>
+              <li>본 사이트에 게시된 이메일주소는 자동수집을 거부하며, 이를 위반시 정보통신망법에 의해 처벌될 수 있습니다.</li>
+            </ol>
+          </div>
+        </div>
+        </footer>
+    <div class="curtain"></div>
+    <!-- footer -->
+    </div>
+</body>
+</html>
